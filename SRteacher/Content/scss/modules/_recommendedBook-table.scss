@@ -1,0 +1,107 @@
+//202501 修改SmartReading  _recommendedBook-table.scss 為flex 給 SR教師端用
+$main-color: $primary;
+$default-gray: $gray-500;
+$default-black: $gray-900;
+
+.recommendedBook-table{
+	display: flex;
+	thead{
+		display:none;
+	}
+	tbody{ 
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		tr{ 
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			width: calc(100% - .25rem*2);
+			margin: .25rem;
+			background-color: #FFF !important;
+			position: relative;
+			@media screen and (min-width: 576px) {
+			width: calc(50% - .25rem*2);	
+			}
+			@media screen and (min-width: 768px) {
+			width: calc(50% - .25rem*2);	
+			}
+			@media screen and (min-width: 992px) {
+			width: calc(25% - .25rem*2);	
+			}
+			@media screen and (min-width: 1200px) {
+			width: calc(25% - .25rem*2);	
+			}
+			td{
+				white-space: nowrap; 
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 100%;
+				line-height: 1;
+				border-color: transparent;
+				&.book-id{ 
+					display:none;
+				}
+				&.book-good{
+					width: auto;
+					position: absolute;
+					z-index:5;
+					top:-5px;
+					right:-7px;
+				}
+				&.book-front{ 
+					width: 100%;
+					height: 0;
+					padding-bottom: 100%;
+					text-align:center;
+					>a{ 
+						display:block;
+					}
+					img{ 
+						width:100%;
+						height:auto;
+					}
+				}
+				&.book-name{
+					font-size: 1rem;
+					font-weight: 500;
+					color: $default-black;
+				}
+				&.book-added, &.book-SR, &.book-sort, &.book-topic{
+					font-size: .8rem;
+					color: $default-black;
+					padding-top: .2rem;
+					padding-bottom: .2rem;
+					&:before {
+						content: attr(data-th) " : ";
+					}
+				}
+				&.book-ebook{ 
+					font-size: .8rem;
+					width: auto;
+				}
+				&.book-checkbox{
+					width: auto;
+				}
+                &.book-bookplanet{
+					width: 100%;
+					height: 0;
+					padding-bottom: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 5;
+                    > img{
+                        width: 50%;
+                        filter:drop-shadow(0 0 2px rgba(0,0,0, .1));
+						position: absolute;
+						bottom: .25rem*1.5;
+						left: .25rem*3;
+                    }
+				}
+			}
+			
+		}
+	}	
+}

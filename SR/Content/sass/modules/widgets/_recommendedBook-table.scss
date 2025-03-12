@@ -1,0 +1,160 @@
+.recommendedBook-table{
+	thead{
+		display:none;
+	}
+	tbody{ 
+		tr{ 
+			overflow:hidden;
+			position:relative;
+			margin:5px;
+			display:inline-block;
+			background-color:#FFF !important;
+			vertical-align:middle;
+			td{
+				display: block;
+				table-layout:fixed;
+				white-space:nowrap; 
+				overflow:hidden;
+				text-overflow:ellipsis;
+				position:relative;
+				&.book-id{ 
+					display:none;
+				}
+				&.book-good{
+					position:absolute;
+					z-index:5;
+					top:-5px;
+					right:-7px;
+				}
+				&.book-front{ 
+					padding: 10px 10px 0 10px; 
+					text-align:center;
+					>a{ 
+						display:block;
+					}
+					img{ 
+						width:100%;
+						height:auto;
+					}
+				}
+				&.book-name{
+					font-size:1em;
+					font-weight:400;
+					color:$default-black;
+					padding: 10px 10px 6px 10px;
+				}
+				&.book-added, &.book-SR, &.book-sort, &.book-topic{
+					padding: 0px 10px 2px 10px;
+					color:$default-black;
+					&:before {
+						content: attr(data-th) " : ";
+					}
+				}
+				&.book-ebook{
+					width:calc((100% - 20px)*0.38);
+					height:35px;
+					float:left;
+					padding: 8px 0px 8px 10px;
+					text-align:left;
+					vertical-align:middle;
+					line-height:35px;
+					text-overflow:clip;
+                    text-indent: 0;
+					>img{
+						vertical-align:middle;
+						margin-top:-1px;
+					}
+                    &.text-hidden{
+                        text-indent: -9999px;
+                        overflow: hidden;
+                    }
+				}
+				&.book-addRP{ 
+					width:calc((100% - 20px)*0.62);
+					height:35px;
+					float:left;
+					padding: 8px 10px 8px 0px;
+					text-align:right;
+					text-overflow:clip;
+					.recommendedBook-table__btn-addRP{
+						background-color:#FFF;
+						border:1px solid $main-color;
+						color:$main-color;
+						font-size:18px;
+						padding: 3px 5px;
+						border-radius: 6px;
+						&:hover, &:focus, &:active{
+							background-color:$main-color;
+							border:1px solid $main-color;
+							color:#FFF;
+						}
+					}
+				}
+                &.book-bookplanet{
+					position:absolute;
+					z-index:5;
+                    transform: translateY(-100%);
+                    padding-left: 15px;
+                    left: 0;
+					top: calc(100vw - 17px - 40px - 10px - 10px + 10px);
+					@media screen and (min-width: 576px) {
+                    top: calc((100vw - 17px - 40px)/2 - 10px - 10px - 10px + 10px);    	
+                    }
+                    @media screen and (min-width: 768px) {
+                    top: 229.97px - 10px - 10px + 10px;      
+                    }
+                    @media screen and (min-width: 992px) {
+                    top: 225px - 10px - 10px + 10px;    	
+                    }
+                    @media screen and (min-width: 1200px) {
+                    top: 218px - 10px - 10px + 10px;    
+                    }
+                    > img{
+                        width: 50%;
+                        filter:drop-shadow(0 0 2px rgba(0,0,0, .1));
+                    }
+				}
+			}
+			
+		}
+		/*set width&height*/
+		tr{ 
+			width:calc(100vw - 17px - 40px);
+			height:calc((100vw - 17px - 40px) + 167px);		
+			td.book-front{ height:calc(100vw - 17px - 40px - 10px - 10px); }
+            td.book-name{ width: calc(100% - 10px - 10px);}
+		}
+		@media screen and (min-width: 576px) {
+		tr{ 
+			width:calc((100vw - 17px - 40px)/2 - 10px);
+			height:calc(((100vw - 17px - 40px)/2 - 10px) + 167px);		
+			td.book-front{ height:calc((100vw - 17px - 40px)/2 - 10px - 10px - 10px); }
+            td.book-name{ width: calc(100% - 10px - 10px);}
+		}	
+		}
+		@media screen and (min-width: 768px) {
+		tr{ 
+			width:calc(33.33% - 5px - 5px);
+			height:229.97px + 167px;		
+			td.book-front{ height:229.97px - 10px - 10px; }
+            td.book-name{ width: calc(750px/3 - 10px - 10px);}
+		}	
+		}
+		@media screen and (min-width: 992px) {
+		tr{ 
+			width:calc(25% - 5px - 5px);
+			height:225px + 167px;	
+			td.book-front{ height:225px - 10px - 10px; }
+            td.book-name{ width: calc(970px/4 - 10px - 10px);}
+		}	
+		}
+		@media screen and (min-width: 1200px) {
+		tr{ 
+			width:calc(20% - 5px - 5px); 
+			height: 218px + 167px;	
+			td.book-front{ height:218px - 10px - 10px; }
+            td.book-name{ width: calc(1180px/5 - 10px - 10px);}
+		}	
+		}
+	}	
+}

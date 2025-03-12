@@ -1,0 +1,30 @@
+.base-collapse, .base-collapse:focus{ 
+	font-size:18px;
+	line-height:1em;
+	color:$main-color;
+	font-weight:300;
+	text-decoration:none;
+	background-image: url(../images/collapse-up.png);
+	background-repeat:no-repeat;
+	background-position:top 0.4em right;
+	background-size:0.9em auto;
+	padding-right:1.1em;
+	&.collapsed{
+		background-image: url(../images/collapse-down.png);
+	}
+	&:hover, &:active{
+		position:relative;
+		text-decoration:none;
+		color:$main-color;
+		&::after{
+			content:"";
+			display:block;
+			width:calc(100% - 1.1em);
+			height:1px;
+			background-color:$main-color;
+			position:absolute;
+			bottom:-4px;
+			left:0;
+		}
+	}
+}

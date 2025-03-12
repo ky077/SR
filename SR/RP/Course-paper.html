@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 閱讀歷程檔案">
+<meta name="author" content="SmartReading 適性閱讀 閱讀歷程檔案">
+<title>SmartReading 適性閱讀 閱讀歷程檔案</title>
+<link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="../Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="../Content/css/PAPER/course-paper.css">
+</head>
+
+<body>
+<div class="forPrint-block">
+<div class="container">
+  <div class="course-paper">
+    <div class="forPrint-logo"><img src="../Content/images/SRlogo.svg" alt="SmartReading"/></div>  
+      
+    <div class="course-paper-content">
+      <!-- -->
+      <div class="row">
+        <div class="col-md-12">
+          <a class="course-paper__download hidden-print" href="../資料檔/Course-paper.pdf" target="_blank">下載PDF</a> <span class="course-paper__date"> 計算時間：<br>
+          <label>2020/08/01</label>
+          ~
+          <label>2021/07/31</label>
+          </span>
+        </div>
+      </div>
+      <!-- -->
+      <div class="row course-paper__section1">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <div class="row course-paper__title">
+              <div class="col-sm-6 col-md-6 col-md-offset-1">
+                <div class="course-paper__title-img">
+                  <img src="../Content/images/course-paper/stepBook.png" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-5">
+                <div class="course-paper__title-text">
+                  <small>閱讀歷程</small>檔案
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <table class="course-paper__data-table">
+              <tbody>
+                <tr>
+                  <th>姓名：</th>
+                  <td><label>張花花</label></td>
+                </tr>
+                <tr>
+                  <th>學校：</th>
+                  <td><label>國立臺灣師範大學</label></td>
+                </tr>
+                <tr>
+                  <th>年級：</th>
+                  <td><label>7</label></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- -->
+      <div class="course-paper__decoration">
+        <div class="decoration-fileRope">
+        </div>
+      </div>
+      <!-- -->
+      <div class="course-paper__section2">
+        <div class="row">
+          <div class="col-md-4 col-lg-5">
+            <div class="course-paper__chart-title">
+              整體閱讀狀況與閱讀偏好
+            </div>
+            <div class="course-paper__chart-canvas">
+              <!-- /未完成評量時display:block;，已完成評量時display:none;-->
+              <div class="chart-canvas_empty" style="display:none;">
+                <span>尚未完成<br>
+                閱讀評量</span>
+              </div>
+              <!-- 未完成評量時出現/ --> 
+              <!-- /未完成、已完成評量時，皆需出現 -->
+              <canvas id="doughnut-readingStatus"> </canvas>
+              <div class="chart-canvas__pre">
+                <div class="chart-canvas__pre-flex">
+                  <div>
+                    <small>實際完成:</small>
+                    <label>100</label>
+                    %
+                  </div>
+                </div>
+              </div>
+              <!-- 未完成、已完成評量時，皆需出現/ -->
+            </div>
+          </div>
+          <div class="col-md-8 col-lg-6">
+            <table class="course-paper__status-table">
+              <tbody>
+                <tr>
+                  <th>整體閱讀本數與評量數</th>
+                  <td><div class="status-table__bookNum">
+                      · 總共規劃書籍數：
+                      <label>18</label>
+                      本
+                    </div>
+                    <div class="status-table__bookNum">
+                      · 完成閱讀與讀後評量書籍數：
+                      <label>21</label>
+                      本
+                    </div></td>
+                </tr>
+                <tr>
+                  <th>你的讀後評量表現</th>
+                  <td><div class="status-table__performance">
+                      A+：
+                      <label>12</label>
+                      本
+                    </div>
+                    <div class="status-table__performance">
+                      A：
+                      <label>0</label>
+                      本
+                    </div>
+                    <div class="status-table__performance">
+                      B：
+                      <label>0</label>
+                      本
+                    </div></td>
+                </tr>
+                <tr>
+                  <th>我的書房評量次數</th>
+                  <td> 
+                    <div class="status-table__myStudy">
+                      <label>12</label>
+                      筆記本
+                    </div>
+                    <div class="status-table__myStudy">
+                      <label>12</label>
+                      影音
+                    </div>
+                    <div class="status-table__myStudy">
+                      <label>0</label>
+                      錄音
+                    </div>
+                    <div class="status-table__myStudy">
+                      <label>0</label>
+                      繪畫
+                    </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- -->
+      <div class="course-paper__section3">
+        <div class="row">
+          <div class="col-md-7 col-lg-6 col-lg-offset-1">
+            <div class="course-paper__category-num">
+              在閱讀學習期間，總共完成了
+              <label>9</label>
+              個類別的書籍
+            </div>
+            <ul class="course-paper__category-ul clearfix">
+              <li><span class="category-ul__title">懸疑推理/冒險/科幻<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">財經商管<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">傳 記<i></i></span> <span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">自然科普<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">世界文學<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">科普/自然生態<i></i></span> <span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">兒童文學<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">休閒生活<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">哲學心理<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">社會史地<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">繪 本<i></i></span> <span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">醫藥保健<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">兒童文學<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">休閒生活<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">哲學心理<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">社會史地<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">繪 本<i></i></span> <span class="category-ul__num">
+                <label>0</label>
+                本</span></li>
+              <li><span class="category-ul__title">醫藥保健<i></i></span><span class="category-ul__num">
+                <label>0</label>
+                本</span></li>  
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <div class="course-paper__category-img">
+              <img src="../Content/images/course-paper/magicBook.png" class="img-responsive center-block">
+            </div> 
+          </div>
+        </div>
+      </div>
+      <!-- -->
+    </div>
+  </div>
+</div>
+</div>
+</body>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<script src="../Script/jquery.min.js"></script>
+<script src="../Script/bootstrap-lg.min.js"></script>
+<script src="../Content/widgets/Chart.js-2.9.4/dist/Chart.js"></script>
+<script type="text/javascript">
+// round corners
+Chart.pluginService.register({
+    afterUpdate: function (chart) {
+        if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {
+            var arc = chart.getDatasetMeta(0).data[chart.config.options.elements.arc.roundedCornersFor];
+            arc.round = {
+                x: (chart.chartArea.left + chart.chartArea.right) / 2,
+                y: (chart.chartArea.top + chart.chartArea.bottom) / 2,
+                radius: (chart.outerRadius + chart.innerRadius) / 2,
+                thickness: (chart.outerRadius - chart.innerRadius) / 2 - 1,
+                backgroundColor: arc._model.backgroundColor
+            }
+        }
+    },
+
+    afterDraw: function (chart) {
+        if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {
+            var ctx = chart.chart.ctx;
+            var arc = chart.getDatasetMeta(0).data[chart.config.options.elements.arc.roundedCornersFor];
+            var startAngle = Math.PI / 2 - arc._view.startAngle;
+            var endAngle = Math.PI / 2 - arc._view.endAngle;
+
+            ctx.save();
+            ctx.translate(arc.round.x, arc.round.y);
+            //console.log(arc.round.startAngle)
+            ctx.fillStyle = arc.round.backgroundColor;
+            ctx.beginPath();
+            ctx.arc(arc.round.radius * Math.sin(startAngle), arc.round.radius * Math.cos(startAngle), arc.round.thickness, 0, 2 * Math.PI);
+            ctx.arc(arc.round.radius * Math.sin(endAngle), arc.round.radius * Math.cos(endAngle), arc.round.thickness, 0, 2 * Math.PI);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+    },
+});
+
+// doughnut      
+var ctx = document.getElementById("doughnut-readingStatus");
+var myDoughnutChart = new Chart(ctx, {
+	type: 'doughnut',
+	data: {
+		datasets: [{
+        	data: [86, 14],
+			backgroundColor: [
+                "#93d761",
+				"#d9ecda",
+            ],
+			borderColor: [
+                "rgba(255,255,255,0)",
+				"rgba(255,255,255,0)",
+            ],
+    	}],
+		labels: [
+        	"實際完成",
+			"未完成",
+        ],
+	},
+	options: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: false
+      },
+	  cutoutPercentage: 70,
+	  elements: {
+            arc: {
+                roundedCornersFor: 0
+            },
+	  },
+      /*animation: { 
+          duration: 0 
+      }*/   
+    } 
+});
+</script>
+</html>

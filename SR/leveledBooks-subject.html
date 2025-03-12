@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀">
+<meta name="author" content="SmartReading 適性閱讀">
+<title>SmartReading 適性閱讀</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navi-main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">展開選單</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html"><img src="Content/images/HeaderLogo.png" alt="SmartReading 適性閱讀" class="img-responsive"></a> </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <!--<li class="navTab-index"><a href="index.html">首頁</a></li>-->
+              <li class="navTab-about dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">關於SR&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li class="navTab-books dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">閱讀分級&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                  <li><a href="leveledBooks-subject.html">主題書單</a></li>
+                </ul>
+              </li>
+              <li class="navTab-activity dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li class="navTab-article dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">專欄文章&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="article-list.html#teamShare">團隊分享</a></li>
+                  <li><a href="article-list.html#recommend">推薦好書</a></li>
+                  <li><a href="article-list.html#subject">主題書單</a></li>
+                </ul>
+              </li>
+              <li class="navTab-partner dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">合作夥伴&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li class="navTab-trial dropdown"><a href="TRIAL/index.html">線上體驗</a> </li>
+              <li class="navTab-products dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">相關產品&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://23.99.115.155/srkidshub/" target="_blank">漢字詞系列</a></li>
+                  <li><a href="http://140.122.118.58/SR-CFL/index.html" target="_blank">SR-CFL</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="login.html" class="btn navi-main__loginBtn">登入</a></li>
+              <li class="dropdown"><a href="#" class="navi-main__languageBtn" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu navi-main__languageMenu">
+                  <li><a href="" check="checked"><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;English(United States)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main> 
+  <!-- subject-search start -->
+  <div class="recommendedBook-search subject-search">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-horizontal">
+            <div class="form-group recommendedBook-search__book"> <label class="col-md-5 col-lg-4 control-label"> <img src="Content/images/leveledBooks/h2-img-subject.png" class="">
+              <h2>主題書單</h2>
+              </label>
+              <div class="col-md-7 col-lg-7">
+                <div class="recommendedBook-search__slogan"> <img src="Content/images/leveledBooks/slogan-subject.png" class="img-responsive"> </div>
+                <div class="input-group">
+                  <input type="text" class="form-control input-lg" id="searchBook" placeholder="輸入書名..." value="">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-lg recommendedBook-search__btn-search">查詢</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group subject-search__sort">
+              <div class="col-sm-12 form-inline">
+                <div class="" data-toggle="buttons"> <label id="s1" class="btn Dcheck-style active">
+                    <input type="radio">
+                    情緒教育</label> <label id="s2" class="btn Dcheck-style">
+                    <input type="radio">
+                    科普圖書</label> <label id="s3" class="btn Dcheck-style">
+                    <input type="radio">
+                    布可星球</label> <label id="s4" class="btn Dcheck-style" data-toggle="collapse" data-target="#collapse-s4" aria-expanded="false" aria-controls="collapse-s4">
+                    <input type="radio">
+                    SDGs書單</label> </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group recommendedBook-search__sort subject-search__sort-sub collapse" id="collapse-s4">
+                  <div class="col-lg-12">
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-1" value="1">
+                      <label for="sort-1"><span>1</span><span>消除貧窮</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-2" value="2">
+                      <label for="sort-2"><span>2</span><span>消除飢餓</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-3" value="3">
+                      <label for="sort-3"><span>3</span><span>良好健康和福祉</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-4" value="4">
+                      <label for="sort-4"><span>4</span><span>優質教育</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-5" value="5">
+                      <label for="sort-5"><span>5</span><span>性別平等</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-6" value="6">
+                      <label for="sort-6"><span>6</span><span>潔淨水與衛生</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-7" value="7">
+                      <label for="sort-7"><span>7</span><span>可負擔的潔淨能源</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-8" value="8">
+                      <label for="sort-8"><span>8</span><span>尊嚴就業與經濟發展</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-9" value="9">
+                      <label for="sort-9"><span>9</span><span>產業創新與基礎設施</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-10" value="10">
+                      <label for="sort-10"><span>10</span><span>減少不平等</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-11" value="11">
+                      <label for="sort-11"><span>11</span><span>永續城市與社區</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-12" value="12">
+                      <label for="sort-12"><span>12</span><span>負責任的消費與生產</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-13" value="13">
+                      <label for="sort-13"><span>13</span><span>氣候行動</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-14" value="14">
+                      <label for="sort-14"><span>14</span><span>水下生命</span></label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-15" value="15">
+                      <label for="sort-15"><span>15</span><span>陸域生命</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-16" value="16">
+                      <label for="sort-16"><span>16</span><span>和平正義與有力的制度</span> </label> </div>
+                    <div class="checkbox checkbox-inline icheck-success-white">
+                      <input type="checkbox" id="sort-17" value="17">
+                      <label for="sort-17"><span>17</span><span>夥伴關係</span> </label> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- subject-search end--> 
+  
+  <!-- subject-list start -->
+  <div class="subject-list">
+    <div class="container">
+      <table id="" class="table leveledBooks-table recommendedBook-table subject-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>書封面</th>
+            <th>書名</th>
+            <th>圖書難度</th>
+            <th>適讀年級</th>
+            <th>SDG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="book-id">1</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">我會關心別人我會關心別人</td>
+            <td class="book-SR" data-th="圖書難度">SR 999</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">2</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+            <td class="book-name">三隻餓狼想吃雞</td>
+            <td class="book-SR" data-th="圖書難度">SR 265</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">2</td>
+          </tr>
+          <tr>
+            <td class="book-id">3</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+            <td class="book-name">害怕的時候</td>
+            <td class="book-SR" data-th="圖書難度">SR 187</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">3</td>
+          </tr>
+          <tr>
+            <td class="book-id">4</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+            <td class="book-name">第一條魚</td>
+            <td class="book-SR" data-th="圖書難度">SR 187</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">4</td>
+          </tr>
+          <tr>
+            <td class="book-id">5</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
+            <td class="book-name">走進生命花園</td>
+            <td class="book-SR" data-th="圖書難度">SR 448</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">5</td>
+          </tr>
+          <tr>
+            <td class="book-id">6</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">10隻橡皮小鴨</td>
+            <td class="book-SR" data-th="圖書難度">SR 342</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">6</td>
+          </tr>
+          <tr>
+            <td class="book-id">7</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+            <td class="book-name">團圓</td>
+            <td class="book-SR" data-th="圖書難度">SR 258</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">7</td>
+          </tr>
+          <tr>
+            <td class="book-id">8</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+            <td class="book-name">影子和我</td>
+            <td class="book-SR" data-th="圖書難度">SR 279</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">8</td>
+          </tr>
+          <tr>
+            <td class="book-id">9</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+            <td class="book-name">小琪的房間</td>
+            <td class="book-SR" data-th="圖書難度">SR 330</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">9</td>
+          </tr>
+          <tr>
+            <td class="book-id">10</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
+            <td class="book-name">瘋狂愛上書</td>
+            <td class="book-SR" data-th="圖書難度">SR 338</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">10</td>
+          </tr>
+          <tr>
+            <td class="book-id">11</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">一吋蟲</td>
+            <td class="book-SR" data-th="圖書難度">SR 388</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">11</td>
+          </tr>
+          <tr>
+            <td class="book-id">12</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+            <td class="book-name">我的媽媽真麻煩</td>
+            <td class="book-SR" data-th="圖書難度">SR 250</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">12</td>
+          </tr>
+          <tr>
+            <td class="book-id">13</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+            <td class="book-name">一個人開門</td>
+            <td class="book-SR" data-th="圖書難度">SR 259</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">13</td>
+          </tr>
+          <tr>
+            <td class="book-id">14</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
+            <td class="book-name">不要放手喔！</td>
+            <td class="book-SR" data-th="圖書難度">SR 276</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">14</td>
+          </tr>
+          <tr>
+            <td class="book-id">15</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">石頭湯</td>
+            <td class="book-SR" data-th="圖書難度">SR 338</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">15</td>
+          </tr>
+          <tr>
+            <td class="book-id">16</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+            <td class="book-name">有你，真好</td>
+            <td class="book-SR" data-th="圖書難度">SR 282</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">16</td>
+          </tr>
+          <tr>
+            <td class="book-id">17</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+            <td class="book-name">帶不走的小蝸牛</td>
+            <td class="book-SR" data-th="圖書難度">SR 366</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">17</td>
+          </tr>
+          <tr>
+            <td class="book-id">18</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+            <td class="book-name">爺爺的肉丸子湯</td>
+            <td class="book-SR" data-th="圖書難度">SR 298</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">19</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+            <td class="book-name">1000把大提琴的合奏</td>
+            <td class="book-SR" data-th="圖書難度">SR 338</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">20</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
+            <td class="book-name">五月木棉飛</td>
+            <td class="book-SR" data-th="圖書難度">SR 400</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">21</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">甘蔗的滋味</td>
+            <td class="book-SR" data-th="圖書難度">SR 312</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">22</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+            <td class="book-name">伊索寓言II</td>
+            <td class="book-SR" data-th="圖書難度">SR 454</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">23</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+            <td class="book-name">那魯：勇士那魯和雲豹的故事</td>
+            <td class="book-SR" data-th="圖書難度">SR 457</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">24</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+            <td class="book-name">做個讓人激賞的少年生活家</td>
+            <td class="book-SR" data-th="圖書難度">SR 531</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">25</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
+            <td class="book-name">編織的幸福</td>
+            <td class="book-SR" data-th="圖書難度">SR 312</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+          <tr>
+            <td class="book-id">26</td>
+            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+            <td class="book-name">魔法小翅膀</td>
+            <td class="book-SR" data-th="圖書難度">SR 438</td>
+            <td class="book-grade" data-th="適讀年級">一年級</td>
+            <td class="book-SDG" data-th="SDG">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- subject-list end --> 
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> 
+  <!-- footer-info start -->
+  <div class="footer-info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-3 col-lg-offset-0">
+          <ul class="footer-info__info">
+            <li><img src="Content/images/HeaderLogo.png" width="249" height="116"></li>
+            <li><i class="far fa-envelope"></i>service@smartreading.net</li>
+            <li><i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<br>
+              國立臺灣師範大學</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-2">
+          <div class="footer-info__social"><a class="footer-info__social-youtube hover-effect-dark" href="https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ" role="button" target="_blank"><i class="fab fa-youtube"></i></a> <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a> </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-7 col-lg-offset-0">
+          <nav class="footer-info__sitemap">
+            <ul class="nav-justified">
+              <li><span>關於SR</span>
+                <ul>
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li><span>閱讀分級</span>
+                <ul>
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                </ul>
+              </li>
+              <li><span>活動專區</span>
+                <ul>
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li><span>合作夥伴</span>
+                <ul>
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li><a href="TRIAL/index.html">線上體驗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-info end --> 
+  <!-- footer-products start -->
+  <div class="footer-products">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-12 col-lg-offset-0"> <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline footer-products__title">相關產品</span> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item  hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCS/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCL/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CVS/icon.png" class="img-responsive"> </a> </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-products end --> 
+</footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- Modal#modal-bookIntro -->
+<div class="modal fade modal-style1 modal-bookIntro" id="modal-bookIntro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg modal-md-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="bookIntro-front"> <img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg" class="img-responsive"> </div>
+            <div class="bookIntro-SR"> 圖書難度：SR 450 </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="bookIntro-name"> 海底兩萬里 </div>
+            <div class="bookIntro-detail"> 作 者：文/陳仰聖，圖/張致中 </div>
+            <div class="bookIntro-detail"> 出版年份：2019年 </div>
+            <div class="bookIntro-detail"> 適讀年級：一年級 </div>
+            <div class="bookIntro-detail detail-SDG" style="display: none;"> SDGs類別：消除貧窮 </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-6">
+            <div class="row">
+              <div class="col-xs-0 col-sm-0 col-md-12 col-lg-7"> </div>
+              <div class="col-sm-6 col-md-12 col-lg-5">
+                <div class="bookIntro-publish"> 出版社：聯經出版社 </div>
+                <div class="bookIntro-publish-img"> <img src="Content/images/partner/biz/link.png" class="img-responsive center-block"> 
+                  <!--<img src="../Content/images/recommendedBook/publish-empty.png" class="img-responsive center-block" alt="無出版社圖片">--> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-lg-5">
+            <h2 class="index-base-h2 h3">借閱電子書<small>BORROW E-BOOK</small></h2>
+            <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-e-library" aria-expanded="false" aria-controls="collapse-e-library"><img src="Content/images/recommendedBook/bookIntro-btn-e-library.png">公共圖書館</button>
+            <!-- RWD 需兩處入值，此為xs處 --> 
+            <!-- xs collapse collapse-e-* start-->
+            <div class="col-xs-12 hidden-lg">
+              <div class="collapse bookIntro-collapse collapse-e-library"><a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a> </div>
+            </div>
+            <!-- xs collapse collapse-e-* end--> 
+          </div>
+          <div class="col-xs-12 col-lg-4">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-2">
+                <h2 class="index-base-h2 h3">借閱實體書<small>BORROW BOOK</small></h2>
+                <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-library" aria-expanded="false" aria-controls="collapse-library"><img src="Content/images/recommendedBook/bookIntro-btn-library.png">公共圖書館</button>
+                <!-- RWD 需兩處入值，此為xs處 --> 
+                <!-- xs collapse collapse-library start-->
+                <div class="col-xs-12 hidden-lg">
+                  <div class="collapse bookIntro-collapse collapse-library"> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a> </div>
+                </div>
+                <!-- xs collapse collapse-library end--> 
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-3"> </div>
+          <!-- RWD 需兩處入值，此為lg處 --> 
+          <!-- lg collapse all start-->
+          <div class="hidden-xs hidden-sm hidden-md col-lg-12">
+            <div class="collapse bookIntro-collapse collapse-e-library"><a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a> </div>
+            <div class="collapse bookIntro-collapse collapse-library"> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a> </div>
+            <div class="collapse bookIntro-collapse collapse-buy"> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/hyread.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/udn.png" width="270" height="80"></a> </div>
+          </div>
+          <!-- lg collapse all end--> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Script/jquery.min.js"></script> 
+<script src="Script/bootstrap-lg.min.js"></script> 
+<script src="Script/ie10-viewport-bug-workaround.js"></script> 
+<!-- widgets js --> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script>
+$(document).ready(function() {
+	//datatables (demo，正式需工程師改寫~~)
+	$('.leveledBooks-table').DataTable({
+        autoWidth: false,
+		responsive: true,
+		searching: true,
+		pageLength: 15,
+		pagingType: "simple_numbers",
+		columnDefs: [
+						{ "targets": 0 , "orderable": false },  //book-id
+						{ "targets": 1 , "orderable": false },  //book-front
+						{ "targets": 2 , "orderable": false },  //book-name
+						{ "targets": 3 , "orderable": false },  //book-SR
+						{ "targets": 4 , "orderable": false },  //book-grade
+                        { "targets": 5 , "orderable": false, "visible": false,
+                          "render": function (data, type, row, meta) {
+                            return '<label class="label-SDG' + data + '">' + data + '</label>';
+                          }   
+                        },  //book-SDGs
+					 ],	 
+		dom:'<"leveledBooks-table__header clearfix"B<"pull-right"ip>>'+
+			'r'+
+			'<""<""t>>'+
+			'<"leveledBooks-table__footer clearfix"pi>',
+		buttons:[	
+					{
+					  text: '圖書難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+					  attr:  { id: 'sort_SR'},
+					  action: function () {
+						if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
+							this.order( [ 3, 'desc' ] ).draw();
+							$('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+						}else{//原本null or desc↓變asc↑
+							this.order( [ 3, 'asc' ] ).draw();
+							$('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+						}//if there has "SR 1000", that will need to debug......
+					  }
+					},
+				],
+		language: {
+			"processing":   "處理中...",
+			"loadingRecords": "載入中...",
+			"lengthMenu":   "顯示 _MENU_ 項結果",
+			"zeroRecords":  "沒有符合的結果",
+			"info":         "<span class='footer-hide'>共&nbsp;_TOTAL_&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;_PAGE_&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;_PAGES_&nbsp;<span class='header-hide'>頁</span>",
+			"infoEmpty":    "<span class='footer-hide'>共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;0&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;0&nbsp;<span class='header-hide'>頁</span>",
+			"infoFiltered": "(從 _MAX_ 本書中篩選的結果)",
+			"infoPostFix":  "",
+			"search":       "搜尋：",
+			"paginate": {
+				"first":    "第一頁",
+				"previous": "<i class='fa fa-angle-left' aria-hidden='true'></i><span>&nbsp;上一頁</span>",
+				"next":     "<span>下一頁&nbsp;</span><i class='fa fa-angle-right' aria-hidden='true'></i>",
+				"last":     "最後一頁"
+			},
+			"aria": {
+				"sortAscending":  ": 升冪排列",
+				"sortDescending": ": 降冪排列"
+			}
+		},
+    });
+	
+	//到第X頁
+	var inputHTML =	'<div class="add_dataTables_input">'+
+						'到第&nbsp;'+
+						'<input type="text" class="form-control input-lg input-inline paginate_input" id="textGotoPage" data-prev="" value="">'+ 
+						'&nbsp;頁'+
+						'<a class="btn btn-lg paginate_button" id="btnGotoPage">確定</a>'+
+					'</div>';
+	$('.leveledBooks-table__footer').append(inputHTML);
+	$("#btnGotoPage").click(function(){
+		var textGotoPage = $("#textGotoPage").val();
+		var info = $('.leveledBooks-table').DataTable().page.info();
+		if(parseInt(textGotoPage) > 0 && parseInt(textGotoPage)<=info.pages){
+			$('.leveledBooks-table').DataTable().page(parseInt(textGotoPage)-1).draw(false);
+		}else{
+			alert('請輸入正確頁數。');
+		}
+	});
+	
+	//點擊table頁碼滑動至最表格上方
+	$('.leveledBooks-table').on('page.dt', function() {
+		$('html, body').animate({scrollTop: $(".recommendedBook-search").offset().top - 80}, 500);
+	});
+});
+</script> 
+<!-- K's js --> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	$('.navTab-books').addClass('active');
+	
+	$(window).trigger('resize');
+
+    //點選[SDGs書單]
+    $('.subject-search__sort #s4').on('click', function () {
+        //do something... (出現SDGs書單)
+        
+        //顯示表格內[5].book-SDG欄位
+        $('.leveledBooks-table').DataTable().columns( [5] ).visible( true );
+        
+        //顯示.modal-bookIntro .detail-SDG資訊
+        $('.modal-bookIntro .detail-SDG').show();
+        
+        //純模擬用，顯示SDGs名稱
+        demoModalSDGs();
+    });    
+    
+    //因[SDGs書單]有collapse，點選其他[項目]
+    $('.subject-search__sort [data-toggle="buttons"] > label:not([data-toggle="collapse"])').on('click', function () {
+        //do something... (出現點選項目書單)
+        
+        //關閉.collapse
+        $('.collapse').collapse('hide');
+        
+        //清空SDGs書單.collapse裡的選擇
+        $('#collapse-s4 input[type="checkbox"]').prop('checked', false);
+        
+        //隱藏表格內[5].book-SDG欄位
+        $('.leveledBooks-table').DataTable().columns( [5] ).visible( false );
+        
+        //隱藏.modal-bookIntro .detail-SDG資訊
+        $('.modal-bookIntro .detail-SDGs').hide();
+    });
+    
+    //[SDGs書單]選取子分類
+    $('#collapse-s4 input[type="checkbox"]').on('change', function() {
+        var selectedValues = []; 
+
+        $('#collapse-s4 input[type="checkbox"]:checked').each(function() {
+            selectedValues.push("^" + $(this).val() + "$");
+        });
+        
+        $('.leveledBooks-table').DataTable().column(5).search(selectedValues.join("|"), true, false, true).draw();
+    });
+});
+$(window).on('load',function() {
+    $(window).trigger('resize');
+});
+$(window).on('resize',function() {
+	//modify bootstrap Collapse.js
+	$('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function(){
+		$(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded","false");
+		$(this).attr("aria-expanded","true");
+		$($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse').removeClass('in');
+	});
+});
+ 
+//模擬用
+function demoModalSDGs(){ 
+    const dataSDGs = [ 
+        {
+            "tw": "消除貧窮",
+            "en": "No poverty"
+        },
+        {
+            "tw": "消除飢餓",
+            "en": "Zero hunger"
+        },
+        {
+            "tw": "良好健康和福祉",
+            "en": "Good health and well-being"
+        },
+        {
+            "tw": "優質教育",
+            "en": "Quality education"
+        },
+        {
+            "tw": "性別平等",
+            "en": "Gender equality"
+        },
+        {
+            "tw": "潔淨水與衛生",
+            "en": "Clean water and sanitation"
+        },
+        {
+            "tw": "可負擔的潔淨能源",
+            "en": "Affordable and clean energy"
+        },
+        {
+            "tw": "尊嚴就業與經濟發展",
+            "en": "Decent work and economic growth"
+        },
+        {
+            "tw": "產業創新與基礎設施",
+            "en": "Industry, Innovation and Infrastructure"
+        },
+        {
+            "tw": "減少不平等",
+            "en": "Reduced inequality"
+        },
+        {
+            "tw": "永續城市與社區",
+            "en": "Sustainable cities and communities"
+        },
+        {
+            "tw": "負責任的消費與生產",
+            "en": "Responsible consumption and production"
+        },
+        {
+            "tw": "氣候行動",
+            "en": "Climate action"
+        },
+        {
+            "tw": "水下生命",
+            "en": "Life below water"
+        },
+        {
+            "tw": "陸域生命",
+            "en": "Life on land"
+        },
+        {
+            "tw": "和平正義與有力的制度",
+            "en": "Peace, justice and strong institutions"
+        },
+        {
+            "tw": "夥伴關係",
+            "en": "Partnership for the goals"
+        }
+    ];
+    
+    //get search
+    let lang = 'tw';
+    let params = new URLSearchParams(document.location.search);
+    if (params.has('lang')){
+         lang = params.get('lang');    
+    } 
+    
+    //SDGs書單 子類別 顯示中英文
+    let html = '', 
+        optionText = '';
+    
+    for(let i=0; i<dataSDGs.length; i++){ 
+        if(lang == 'en'){
+            optionText = dataSDGs[i].en;  
+        }else{
+            optionText = dataSDGs[i].tw;  
+        }
+
+        $('.subject-search__sort-sub .checkbox:nth-child('+Number(i+1)+') span:nth-child(1)').text( Number(i+1) );
+        $('.subject-search__sort-sub .checkbox:nth-child('+Number(i+1)+') span:nth-child(2)').text( optionText );
+    }
+    
+    //#modal-bookIntro顯示SDG名稱    
+    $('[data-target="#modal-bookIntro"]').click(function(){console.log('click');
+        let current = $(this).parents('tr').find('.book-SDG').text(); console.log(current);
+        
+        let currentText = '';
+        if(lang == 'en'){
+            currentText = dataSDGs[current-1].en;  
+        }else{
+            currentText = dataSDGs[current-1].tw;  
+        }
+        $('#modal-bookIntro').on('show.bs.modal', function (e) {
+            $('.detail-SDG').text( 'SDGs類別：' + currentText );
+        })
+    });  
+}    
+</script>
+</body>
+</html>

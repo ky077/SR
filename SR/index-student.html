@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀">
+<meta name="author" content="SmartReading 適性閱讀">
+<title>SmartReading 適性閱讀</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navi-main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">展開選單</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index-student.html"><img src="Content/images/logo/sr_logo.svg" alt="SmartReading 適性閱讀" class="img-responsive"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="navTab-index"><a href="index-student.html">首頁</a></li>
+              <li class="navTab-abouut dropdown"> <a href="../#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">關於SR&nbsp;<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="../about-us.aspx">關於我們</a></li><li><a href="../about-sys.aspx">SR系統介紹</a></li><li><a href="../about-dacc.aspx">中文閱讀能力診斷</a></li><li><a href="../about-leveledBooks.aspx">圖書難度分級</a></li><li><a href="../about-SR.aspx">SR值說明</a></li></ul></li>
+              <li class="navTab-dacc dropdown"> <a href="DACC/DACC.html">能力檢測</a> </li>
+              <li class="navTab-RecommendedBookList dropdown"> <a href="RP/RecommendedBookList.html">推薦書單</a> </li>
+              <li class="navTab-RecommendedArticle dropdown"> <a href="../RA/RecommendedArticle2022.aspx">推薦文章</a> </li>  
+              <li class="navTab-RPList dropdown"><a href="RP/RPList.html">閱讀計畫</a> </li>
+                
+              <!--<li class="navTab-RAList"><a href="RP/tRAList.html">教師推薦文章</a> </li>  
+              <li class="navTab-superBoard dropdown"><a href="RP/superBoard.html">SR金榜</a> </li>
+              <li class="navTab-CourseList dropdown"> <a href="RP/Course.html">閱讀歷程檔案</a> </li>-->
+                
+              <li class="navTab-storytelling dropdown"> <a href="../ST/storytelling.aspx">說書頻道</a> </li> 
+              <li class="navTab-ContestReport dropdown"> <a href="../Contest/reading_contest.aspx">大賽報表</a> </li> 
+              <li class="navTab-ContestManual dropdown"> <a href="../Contest/contest_manual.aspx">使用手冊</a> </li> 
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown"><a class="navi-main__loginedBtn" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你好，張花花！</a>
+                <ul class="dropdown-menu navi-main__userMenu">
+                  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcvlWityd3GvuaFTmMc2ZM-TBVDQeMXUVrejDktGskw1Hzig/viewform" target="_blank"><i class="fas fa-bullhorn"></i>&nbsp;問題回報</a></li>
+                  <li><a href="index.html" class="btn navi-main__logoutBtn">登出</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navi-main__languageBtn" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu navi-main__languageMenu">
+                  <li><a href="" check="checked"><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;English(United States)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main> 
+  
+  <!-- student-data start -->
+  <div class="student-data">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="student-data__photo">
+          	<!-- 依性別給予預設圖片-->
+            <img src="Content/images/index-student\userPhoto-f.jpg">
+            <!--<img src="Content/images/index-student\userPhoto-m.jpg">-->
+            <!-- 上傳照片，先隱藏 --> 
+            <!--<label class="student-data__photo-edit">
+              <input id="" style="display:none;" type="file">
+              <i class="fas fa-camera"></i> </label>-->
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="student-data__data">
+            <h2>基本資料
+              <button type="button" class="btn btn-main pull-right" data-toggle="modal" data-target="#modal-editUserData"> 編輯基本資料 </button>
+              <strong></strong></h2>
+            <div class="row">
+              <div class="col-sm-12">
+                <p>帳號
+                  <label>zhanghauhua123456@student.net</label>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <p>姓名
+                  <label>張花花</label>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-8">
+                <p>學校
+                  <label>國立臺灣師範大學</label>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <p>班級
+                  <label>三年二班</label>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-8">
+                <p>學號
+                  <label>109001</label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- student-data end --> 
+  
+  <!-- student-DACC start -->
+  <div class="student-DACC">
+    <div class="container">
+      <h2 class="index-base-h2 h3">能力檢測<small>ASSESSMENT PORTFOLIO</small></h2>
+      <div class="indexStudent-block">
+        <!-- /未進行能力檢測 -->
+        <div class="indexStudent-block__beforeTest">
+          <div class="indexStudent-block__beforeTest-content">
+            <img src="Content/images/index-student/DACC-before-img.png">
+            <div>
+              <!--<h3>你尚未進行DACC檢測喲！</h3>
+              <p>全方位的中文評測系統可以協助你<br>
+                • 快速地瞭解自己的中文閱讀程度<br>
+                • 提供整體閱讀程度的評估<br>
+                • 診斷出各種閱讀技能的表現。</p>-->
+              <!-- 後測 -->
+              <p>後測可以協助你<br>
+                • 瞭解透過閱讀任務後，你的中文閱讀程度累積<br>
+                • 提供整體閱讀程度的評估<br>
+              </p>
+              <!-- 後測：場次登記中 -->
+              <p>後測登記期間為<span class="text-red">2022/03/01-2022/03/20</span><br>
+                請於期間內<a href="#" class="" type="button" data-toggle="modal" data-target="#modal-contestRegister">點此登記</a>。<br> 
+                <span class="text-red">提醒您！若未於主辦單位公告時間內登記，<br>
+                系統將依照您的報名考區自動安排。</span></p>
+              <!-- 後測：場次已登記 -->
+              <p><span class="text-red">你已登記&nbsp;4/23&nbsp;(六)實體&nbsp;上午場09:40-11:20&nbsp;<br>
+                國立臺灣體育運動大學&nbsp;後測考試。</span></p>  
+            </div>
+          </div>
+        </div>
+        <!-- 未進行能力檢測/--> 
+        <!-- /已完成能力檢測-->
+        <div class="indexStudent-block__afterTest" style="display:none;">
+          <div class="student-DACC__DACC">
+            <div class="table-responsive">
+              <table class="table table-bordered daccPage-DACC__table student-DACC__table">
+                <thead>
+                  <tr>
+                    <td rowspan="2">測次</td>
+                    <td rowspan="2">DACC<br>
+                      等級</td>
+                    <td rowspan="2">SR值</td>
+                    <td colspan="5">整體閱讀理解能力</td>
+                    <td rowspan="2">施測日期</td>
+                  </tr>
+                  <tr>
+                    <td>字詞辨識</td>
+                    <td>表層文意理解</td>
+                    <td>文意統整</td>
+                    <td>分析評鑑</td>
+                    <td>推論理解</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="dacc-icon-times">3</span></td>
+                    <td>5</td>
+                    <td>SR427</td>
+                    <td>SR80</td>
+                    <td>SR81</td>
+                    <td>SR87</td>
+                    <td>SR98</td>
+                    <td>SR79</td>
+                    <td>12/15/2020</td>
+                  </tr>
+                  <tr>
+                    <td><span class="dacc-icon-times">2</span></td>
+                    <td>5</td>
+                    <td>SR427</td>
+                    <td>SR80</td>
+                    <td>SR81</td>
+                    <td>SR87</td>
+                    <td>SR98</td>
+                    <td>SR79</td>
+                    <td>11/15/2019</td>
+                  </tr>
+                  <tr>
+                    <td><span class="dacc-icon-times">1</span></td>
+                    <td>4</td>
+                    <td>SR427</td>
+                    <td>SR80</td>
+                    <td>SR81</td>
+                    <td>SR87</td>
+                    <td>SR98</td>
+                    <td>SR79</td>
+                    <td>10/15/2018</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="student-DACC__SRi daccPage-SRi">
+            <div class="daccPage-SRi__earlier">
+              <div class="daccPage-SRi__earlier-title">
+                閱讀偏好測驗結果：
+              </div>
+              <div class="daccPage-SRi__earlier-content">
+                <div class="daccPage-SRi__earlier-tag">
+                  科幻靈異
+                </div>
+                <div class="daccPage-SRi__earlier-tag">
+                  冒險推理
+                </div>
+                <div class="daccPage-SRi__earlier-tag">
+                  感性抒情
+                </div>
+                <div class="daccPage-SRi__earlier-tag">
+                  詩詞國學
+                </div>
+                <div class="daccPage-SRi__earlier-tag">
+                  旅遊紀實
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 已完成能力檢測/--> 
+        <a href="DACC/DACC.html" class="indexStudent-more hover-effect-dark"><img src="Content/images/index-student/circle-more.png" width="33" height="32">更多能力檢測<small>MORE</small></a>
+      </div>
+    </div>
+  </div>
+  <!-- student-DACC end --> 
+  
+  <!-- student-recommendedBook start -->
+  <div class="student-recommendedBook">
+    <div class="container">
+      <h2 class="index-base-h2 h3">推薦書單<small>RECOMMENDED BOOK LIST</small></h2>
+      <div class="indexStudent-block">
+        <!-- /未進行檢測沒有推薦書單 -->
+        <div class="indexStudent-block__beforeTest">
+          <div class="indexStudent-block__beforeTest-content">
+            <img src="Content/images/index-student/recommendedBook-before-img.png">
+            <div>
+              <h3>系統推薦適合你的書單 </h3>
+              <p>適性測驗與文本難度量尺<br>
+                能讓學生獲得符合自己程度所能閱讀的書籍。<br>
+                <span class="text-red special-paragraph"><span>*&nbsp;</span>請先進行測驗了解自己的閱讀能力，<br>
+                系統會根據你的能力推薦書單</span></p>
+            </div>
+          </div>
+        </div>
+        <!-- 未進行檢測沒有推薦書單/ --> 
+        <!-- /已進行檢測，有推薦書單 -->
+        <div class="indexStudent-block__afterTest" style="display:none;">
+          <div class="for-recommendedBook-table">
+            <table id="" class="table leveledBooks-table recommendedBook-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>優選書單</th>
+                  <th>書封面</th>
+                  <th>書名</th>
+                  <th>圖書難度</th>
+                  <th>分類</th>
+                  <th>題本類別</th>
+                  <th>電子書</th>
+                  <th>加入閱讀計畫</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="book-id">1</td>
+                  <td class="book-good"><img src="Content/images/recommendedBook/goodBook.png" width="66" height="65"></td>
+                  <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+                  <td class="book-name">我會關心別人我會關心別人</td>
+                  <td class="book-SR" data-th="圖書難度">SR 999</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育成長/生命教</td>
+                  <td class="book-topic" data-th="題本類別">摘要題成長/生命教</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button" onclick="alert('已成功加入閱讀計畫清單！')">加入閱讀計畫</button></td>
+                </tr>
+                <tr>
+                  <td class="book-id">2</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
+                  <td class="book-name">三隻餓狼想吃雞</td>
+                  <td class="book-SR" data-th="圖書難度">SR 265</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button" onclick="alert('已成功加入閱讀計畫清單！')">加入閱讀計畫</button></td>
+                </tr>
+                <tr class="hidden-sm">
+                  <td class="book-id">3</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
+                  <td class="book-name">害怕的時候</td>
+                  <td class="book-SR" data-th="圖書難度">SR 187</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button" onclick="alert('已成功加入閱讀計畫清單！')">加入閱讀計畫</button></td>
+                </tr>
+                <tr class="hidden-sm hidden-md">
+                  <td class="book-id">4</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
+                  <td class="book-name">第一條魚</td>
+                  <td class="book-SR" data-th="圖書難度">SR 187</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button" onclick="alert('已成功加入閱讀計畫清單！')">加入閱讀計畫</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /已進行檢測，有推薦書單 --> 
+        <a href="RP/RecommendedBookList.html" class="indexStudent-more hover-effect-dark" disabled="disabled"><img src="Content/images/index-student/circle-more.png" width="33" height="32">更多推薦書單<small>MORE</small></a>
+      </div>
+    </div>
+  </div>
+  <!-- student-recommendedBook end --> 
+  
+  <!-- student-RP start -->
+  <div class="student-RP">
+    <div class="container">
+      <h2 class="index-base-h2 h3">閱讀計畫<small>READING PLAN</small></h2>
+      <div class="indexStudent-block">
+        <div class="indexStudent-block__beforeTest">
+          <!-- /未安排閱讀計畫 -->
+          <div class="indexStudent-block__beforeTest-content">
+            <img src="Content/images/index-student/RP-before-img.png">
+            <div>
+              <h3>你尚未制定閱讀計畫喲！ </h3>
+              <p>你可以規劃自己的閱讀時間與進度，<br>
+                透過這些有系統的紀錄，<br>
+                能更加瞭解自己進步的情形。</p>
+            </div>
+          </div>
+        </div>
+        <!-- 未安排閱讀計畫/ --> 
+        <!-- /已安排閱讀計畫 -->
+        <div class="indexStudent-block__afterTest" style="display:none;">
+          <div class="for-recommendedBook-table">
+            <table id="" class="table leveledBooks-table recommendedBook-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>優選書單</th>
+                  <th>書封面</th>
+                  <th>書名</th>
+                  <th>圖書難度</th>
+                  <th>分類</th>
+                  <th>題本類別</th>
+                  <th>電子書</th>
+                  <th>加入閱讀計畫</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="book-id">1</td>
+                  <td class="book-good"><img src="Content/images/recommendedBook/goodBook.png" width="66" height="65"></td>
+                  <td class="book-front"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></td>
+                  <td class="book-name">我會關心別人我會關心別人</td>
+                  <td class="book-SR" data-th="圖書難度">SR 999</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育成長/生命教</td>
+                  <td class="book-topic" data-th="題本類別">摘要題成長/生命教</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"></td>
+                </tr>
+                <tr>
+                  <td class="book-id">2</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></td>
+                  <td class="book-name">三隻餓狼想吃雞</td>
+                  <td class="book-SR" data-th="圖書難度">SR 265</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"></td>
+                </tr>
+                <tr class="hidden-sm">
+                  <td class="book-id">3</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></td>
+                  <td class="book-name">害怕的時候</td>
+                  <td class="book-SR" data-th="圖書難度">SR 187</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"></td>
+                </tr>
+                <tr class="hidden-sm hidden-md">
+                  <td class="book-id">4</td>
+                  <td class="book-good"></td>
+                  <td class="book-front"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></td>
+                  <td class="book-name">第一條魚</td>
+                  <td class="book-SR" data-th="圖書難度">SR 187</td>
+                  <td class="book-sort" data-th="分類">成長/生命教育</td>
+                  <td class="book-topic" data-th="題本類別">摘要題</td>
+                  <td class="book-ebook"><img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
+                  <td class="book-addRP"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- 已安排閱讀計畫/ --> 
+        <a href="RP/RPList.html" class="indexStudent-more hover-effect-dark" disabled="disabled"><img src="Content/images/index-student/circle-more.png" width="33" height="32">更多閱讀計畫<small>MORE</small></a>
+      </div>
+    </div>
+  </div>
+  <!-- student-RP end --> 
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> 
+  <!-- footer-info start -->
+  <div class="footer-info footer-info-simple">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-0">
+          <img src="Content/images/HeaderLogo.png" width="249" height="116">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-2">
+          <div class="footer-info__social">
+            <a class="footer-info__social-youtube hover-effect-dark" href="https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ" role="button" target="_blank"><i class="fab fa-youtube"></i></a> <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-0">
+          <div class="footer-info__contact">
+            <div class="footer-info__contact-title">
+              聯繫我們
+            </div>
+            <div class="footer-info__contact-text row">
+              <div class="col-lg-5">
+                <div class="contact-email">
+                  <i class="far fa-envelope"></i>smartreadingcontest@gmail.com
+                </div>
+              </div>
+              <div class="col-lg-7 col-lg-pull-1">
+                <div class="contact-add">
+                  <i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<span class="contact-add__space">國立臺灣師範大學</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-info end --> 
+  <!-- footer-copyright start -->
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          © 2021 College of Education e-Learning Lab. NTNU, All rights reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-copyright end --> 
+</footer>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- Modal#modal-bookIntro -->
+<div class="modal fade modal-style1 modal-bookIntro" id="modal-bookIntro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg modal-md-full" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="bookIntro-front">
+              <img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg" class="img-responsive">
+            </div>
+            <div class="bookIntro-SR">
+              圖書難度：SR 450
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="bookIntro-name">
+              海底兩萬里
+            </div>
+            <div class="bookIntro-detail">
+              ISBN：9789860340495
+            </div>
+            <div class="bookIntro-detail">
+              作 者：文/陳仰聖，圖/張致中
+            </div>
+            <div class="bookIntro-detail">
+              出版年份：2019年
+            </div>
+            <div class="bookIntro-detail">
+              字 數：5779
+            </div>
+            <div class="bookIntro-detail">
+              分 類：成長/生命教育
+            </div>
+            <div class="bookIntro-detail">
+              題本類別：摘要題
+            </div>
+            <button class="btn btn-main bookIntro-addRP" type="button">加入閱讀計畫</button>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-6">
+            <div class="row">
+              <div class="col-sm-6 col-md-12 col-lg-7">
+                <div class="bookIntro-score">
+                  已有 30 人評分
+                </div>
+                <div class="bookIntro-scale">
+                  <div class="row">
+                    <div class="col-xs-6 col-lg-5">
+                      <img src="Content/images/recommendedBook/heart.png" width="21" height="20">喜歡 4.5
+                    </div>
+                    <div class="col-xs-6 col-lg-5">
+                      <img src="Content/images/recommendedBook/seed.png" width="21" height="20">收穫 5.0
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-12 col-lg-5">
+                <div class="bookIntro-publish">
+                  出版社：聯經出版社
+                </div>
+                <div class="bookIntro-publish-img">
+                  <img src="Content/images/partner/biz/link.png" class="img-responsive center-block"> 
+                  <!--<img src="Content/images/recommendedBook/publish-empty.png" class="img-responsive center-block" alt="無出版社圖片">-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-lg-5">
+            <h2 class="index-base-h2 h3">借閱電子書<small>BORROW E-BOOK</small></h2>
+            <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-e-SR" aria-expanded="false" aria-controls="collapse-e-SR"><img src="Content/images/recommendedBook/bookIntro-btn-e-SR.png">SR線上圖書館</button>
+            <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-e-library" aria-expanded="false" aria-controls="collapse-e-library"><img src="Content/images/recommendedBook/bookIntro-btn-e-library.png">公共圖書館</button>
+            <!-- RWD 需兩處入值，此為xs處 --> 
+            <!-- xs collapse collapse-e-* start-->
+            <div class="col-xs-12 hidden-lg">
+              <div class="collapse bookIntro-collapse collapse-e-SR">
+                <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/china.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/hyread.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/udn.png" width="270" height="80"></a>
+              </div>
+              <div class="collapse bookIntro-collapse collapse-e-library">
+                <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a>
+              </div>
+            </div>
+            <!-- xs collapse collapse-e-* end-->
+          </div>
+          <div class="col-xs-12 col-lg-4">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-2">
+                <h2 class="index-base-h2 h3">借閱實體書<small>BORROW BOOK</small></h2>
+                <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-library" aria-expanded="false" aria-controls="collapse-library"><img src="Content/images/recommendedBook/bookIntro-btn-library.png">公共圖書館</button>
+                <!-- RWD 需兩處入值，此為xs處 --> 
+                <!-- xs collapse collapse-library start-->
+                <div class="col-xs-12 hidden-lg">
+                  <div class="collapse bookIntro-collapse collapse-library">
+                    <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a>
+                  </div>
+                </div>
+                <!-- xs collapse collapse-library end-->
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-3">
+            <h2 class="index-base-h2 h3">哪裡買書？<small>BUY BOOKS</small></h2>
+            <button class="btn btn-default bookIntro-btnBorrow" type="button" data-toggle="collapse" href=".collapse-buy" aria-expanded="false" aria-controls="collapse-buy"><img src="Content/images/recommendedBook/bookIntro-btn-buy.png">去購買</button>
+            <!-- RWD 需兩處入值，此為xs處 --> 
+            <!-- xs collapse collapse-buy start-->
+            <div class="col-xs-12 hidden-lg">
+              <div class="collapse bookIntro-collapse collapse-buy">
+                <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/hyread.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/udn.png" width="270" height="80"></a>
+              </div>
+            </div>
+            <!-- xs collapse collapse-buy end-->
+          </div>
+          <!-- RWD 需兩處入值，此為lg處 --> 
+          <!-- lg collapse all start-->
+          <div class="hidden-xs hidden-sm hidden-md col-lg-12">
+            <div class="collapse bookIntro-collapse collapse-e-SR">
+              <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/china.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/hyread.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/udn.png" width="270" height="80"></a>
+            </div>
+            <div class="collapse bookIntro-collapse collapse-e-library">
+              <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a>
+            </div>
+            <div class="collapse bookIntro-collapse collapse-library">
+              <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NTCL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/TPL.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/NLPI.png" width="270" height="80"></a>
+            </div>
+            <div class="collapse bookIntro-collapse collapse-buy">
+              <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/hyread.png" width="270" height="80"></a> <a class="btn bookIntro-linkBorrow hover-effect-dark" href="#" role="button"><img src="Content/images/recommendedBook/borrowLink/udn.png" width="270" height="80"></a>
+            </div>
+          </div>
+          <!-- lg collapse all end-->
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="index-base-h2 h3">書籍簡介<small>BOOKS INTRODUCTION</small></h2>
+            <div class="bookIntro-introText">
+              科幻小說之父凡爾納所寫的這部《海底兩萬里》，在體裁上包含了：描述、新聞體裁的報導敘述、對話等等寫作手法，內容則從包含故事和科學知識包含
+              再一個想像的情節”海怪來襲” 之下。故事從1869年3月20日開始連載，一開始就受到讀者歡迎。半年後，上篇先出版。直到1870年6月20日刊載完畢之
+              後，再出版下篇。初版賣了五萬冊，是當時的暢銷書。本故事透過阿羅納克斯教授的第一人稱口吻描述，經由各種對海底奇觀的描述、情節的展開和人物
+              的對話，展現了作者凡爾納對海底世界的非凡想像和他的豐富知識，尤其可以看到他對地質學的理解和他對海洋的感情。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal#modal-editUserData -->
+<div class="modal fade modal-style1" id="modal-editUserData" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal SR-form-style1">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>帳號/信箱</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="account" placeholder="帳號/信箱" value="zhanghauhua123456@student.net" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>密碼</label>
+            <div class="col-sm-9">
+              <div class="input-group show_hide_password">
+                <input type="password" class="form-control" id="password" placeholder="請輸入密碼" value="1234">
+                <div class="input-group-addon">
+                  <a href=""><i class="fas fa-eye-slash"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">中文姓名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="ChineseName" placeholder="中文姓名" value="張花花">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">英文姓名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="EnglishName" placeholder="英文姓名" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">身份證號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="idNumber" placeholder="身份證號" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>學校</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="school" placeholder="學校" value="國立臺灣師範大學" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">班級</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="class" placeholder="班級" value="三年二班">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">學號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="studentId" placeholder="學號" value="109001">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">座號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="seatNumber" placeholder="座號" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">入學年</label>
+            <div class="col-sm-9">
+              <select class="form-control" disabled>
+                <option>110</option>
+                <option selected>109</option>
+                <option>108</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>語系</label>
+            <div class="col-sm-9">
+              <select class="form-control" disabled>
+                <option selected>中文(正體)</option>
+                <option>中文(简体)</option>
+                <option>English(United States)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">性別</label>
+            <div class="col-sm-9">
+              <div class="radio icheck-success radio-inline">
+                <input type="radio" checked="" id="gender-m" name="gender">
+                <label for="gender-m">男</label>
+              </div>
+              <div class="radio icheck-success radio-inline">
+                <input type="radio" checked="checked" id="gender-f" name="gender">
+                <label for="gender-f">女</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-main">確定修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal#modal-contestRegister -->
+<div class="modal fade modal-style1" id="modal-contestRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal SR-form-style1">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>帳號/信箱</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="contest-account" placeholder="帳號/信箱" value="zhanghauhua123456@student.net" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>密碼</label>
+            <div class="col-sm-9">
+              <div class="input-group show_hide_password">
+                <input type="password" class="form-control" id="contest-password" placeholder="請輸入密碼" value="1234">
+                <div class="input-group-addon"> <a href=""><i class="fas fa-eye-slash"></i></a> </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">中文姓名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-ChineseName" placeholder="中文姓名" value="張花花">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">英文姓名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-EnglishName" placeholder="英文姓名" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">身份證號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-idNumber" placeholder="身份證號" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>學校</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-school" placeholder="學校" value="國立臺灣師範大學" disabled>
+            </div>
+          </div>
+          <!--<div class="form-group">
+            <label for="" class="col-sm-3 control-label">班級</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-class" placeholder="班級" value="三年二班">
+            </div>
+          </div>-->
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">學號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-studentId" placeholder="學號" value="109001">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">座號</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="contest-seatNumber" placeholder="座號" value=" ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">入學年</label>
+            <div class="col-sm-9">
+              <select class="form-control" disabled>
+                <option>110</option>
+                <option selected>109</option>
+                <option>108</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>語系</label>
+            <div class="col-sm-9">
+              <select class="form-control" disabled>
+                <option selected>中文(正體)</option>
+                <option>中文(简体)</option>
+                <option>English(United States)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">性別</label>
+            <div class="col-sm-9">
+              <div class="radio icheck-success radio-inline">
+                <input type="radio" checked="" id="contest-gender-m" name="gender">
+                <label for="contest-gender-m">男</label>
+              </div>
+              <div class="radio icheck-success radio-inline">
+                <input type="radio" checked="checked" id="contest-gender-f" name="gender">
+                <label for="contest-gender-f">女</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-main">確定修改</button>
+      </div>
+    </div>
+  </div>
+</div>      
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Script/jquery.min.js"></script> 
+<script src="Script/bootstrap-lg.min.js"></script> 
+<script src="Script/ie10-viewport-bug-workaround.js"></script> 
+<!-- widgets js --> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	$('.navTab-index').addClass('active');
+	
+	
+	//for demo	
+	$('.student-DACC a.indexStudent-more').click(function(e){
+		//按更多能力檢測，假裝做完DACC後，呈現DACC數值
+		e.preventDefault();
+		alert('~~~點擊模擬假裝已做完DACC~~~\n~~~正式請直接連結至DACC/DACC.html進行測驗~~~')
+		$('.student-DACC').find('.indexStudent-block__beforeTest').hide();
+		$('.student-DACC').find('.indexStudent-block__afterTest').show();
+		//假裝做完能力檢測，出現推薦書單
+		$('.student-recommendedBook').find('.indexStudent-block__beforeTest').hide();
+		$('.student-recommendedBook').find('.indexStudent-block__afterTest').show();
+		$('.student-recommendedBook').find('a.indexStudent-more').removeAttr('disabled');
+	});
+	$('.student-recommendedBook a.indexStudent-more').click(function(e){
+		if( $(this).attr('disabled')=="disabled" ){
+			e.preventDefault();
+			alert('請先進行能力檢測喲！');
+			$('html,body').animate({scrollTop:$('.student-DACC').offset().top}, 800);
+		}else{
+			//window.location.href = "RP/RecommendedBookList.html";
+		}
+	});
+	$('.student-RP a.indexStudent-more').click(function(e){
+		if( $(this).attr('disabled')=="disabled" ){
+			e.preventDefault();
+			alert('請先至推薦書單內挑選書籍並制定閱讀計畫喲！');
+			$('html,body').animate({scrollTop:$('.student-recommendedBook').offset().top}, 800);
+		}else{
+			//window.location.href = "RP/RPList.html";
+		}
+	});
+	//假裝在推廌書單內選書加入閱讀計畫，出現閱讀計畫內容
+	$('.student-recommendedBook .recommendedBook-table__btn-addRP').click(function(){
+		$('.student-RP').find('.indexStudent-block__beforeTest').hide();
+		$('.student-RP').find('.indexStudent-block__afterTest').show();
+		$('.student-RP').find('a.indexStudent-more').removeAttr('disabled');	
+	});
+	
+	//密碼顯示/隱藏
+	$(".show_hide_password").on('keyup', function(event) {
+		$(this).find('input[type="password"]').addClass('hidePD');
+	});
+	$(".show_hide_password a").on('click', function(event) {
+		event.preventDefault();
+		if( $(this).parents('.show_hide_password').find('input').val() != "" ){
+			if( $(this).parent().prev('input').attr("type") == "text"){//原本是顯示密碼
+				$(this).parent().prev('input').attr('type', 'password').addClass('hidePD').removeClass('showPD');//變成隱藏密碼
+				$(this).find('i').addClass( "fa-eye-slash" );
+				$(this).find('i').removeClass( "ffa-eye" );
+			}else if($('.show_hide_password input').attr("type") == "password"){//原本是隱藏密碼
+				$(this).parent().prev('input').attr('type', 'text').addClass('showPD').removeClass('hidePD');//變成顯示密碼
+				$(this).find('i').removeClass( "fa-eye-slash" );
+				$(this).find('i').addClass( "fa-eye" );
+			}
+		}else if( $(this).parents('.show_hide_password').find('input').val() == "" ){
+			$(this).parent().prev('input').attr('type', 'text').addClass('hidePD').removeClass('showPD');
+		}
+	});
+});
+</script>
+</body>
+</html>

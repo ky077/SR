@@ -1,0 +1,218 @@
+$color-SDG1:  #dc252e;
+$color-SDG2:  #cc9c2c;
+$color-SDG3:  #2a9547;
+$color-SDG4:  #b92232;
+$color-SDG5:  #e1412d;
+$color-SDG6:  #1ca3ca;
+$color-SDG7:  #f3b221;
+$color-SDG8:  #891c37;
+$color-SDG9:  #e66b29;
+$color-SDG10: #d01f7c;
+$color-SDG11: #ef992c;
+$color-SDG12: #c8892d;
+$color-SDG13: #46743d;
+$color-SDG14: #1076af;
+$color-SDG15: #41a849;
+$color-SDG16: #005285;
+$color-SDG17: #163464;
+
+.subject-search{
+    .recommendedBook-search__book{
+        margin-bottom: 45px;
+        >.control-label{
+            padding-left: 0px;
+            >img{
+                margin-bottom: -57px;
+            }
+        }
+    }
+    .subject-search__sort{
+        [data-toggle="collapse"][aria-expanded="true"]{
+            position: relative;
+            overflow: visible;
+            &::before{ 
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 15px 15px 15px;
+                border-color: transparent transparent #f1f1f1 transparent;
+                position: absolute;
+                bottom: -5px - 15px;
+                left: 50%;
+                z-index: 2;
+                transform: translateX(-50%);
+            }
+        }
+        
+        .subject-search__sort-sub{
+            background-color: #f1f1f1;
+            margin: 15px 0;
+            padding: 15px 0;
+            > div{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .icheck-success-white > input:first-child + label::before, 
+            .icheck-success-white > input:first-child + input[type="hidden"] + label::before {
+                background-color: #fff;
+            }
+            
+            .checkbox.checkbox-inline.icheck-success-white{
+                text-align: left;
+                display: inline-block;
+                color: $default-black;
+                min-height: auto;
+                padding-top: 0;
+                min-width: 100%;
+                width: 100%;
+                mac-width: 100%;
+                margin: 5px 0 !important;
+                @media screen and (min-width: 576px) {
+                min-width: calc((100% - 15px*2)/2);
+                width: calc((100% - 15px*2)/2);
+                max-width: calc((100% - 15px*2)/2);    
+                margin: 5px 0 !important;
+                }
+                @media screen and (min-width: 992px) {
+                min-width: calc((100% - 15px*2)/3);
+                width: calc((100% - 15px*2)/3);
+                max-width: calc((100% - 15px*2)/3);    
+                margin: 5px 0 !important;
+                }
+                @media screen and (min-width: 1200px) {
+                min-width: calc((100% - 15px*2)/4);
+                width: calc((100% - 15px*2)/4);
+                max-width: calc((100% - 15px*2)/4);   
+                margin: 5px 0 !important;
+                }
+                label{
+                    line-height: 1.4;
+                    padding-left: calc(16px + .5rem + 2rem + .5rem) !important;
+                    text-indent: -2rem - .5rem;
+                  
+                    span:nth-child(1){ 
+                        display: inline-block;
+                        width: 2rem;
+                        text-align: center;
+                        margin-right: .5rem;
+                        text-indent: 0;
+                    }
+                    &::before{
+                        margin-left: calc(-16px - .5rem);
+                        margin-top: calc((1em*1.4 - 16px)/2);
+                    }
+                    &::after{
+                        top:  calc(-5px + ((1em*1.4 - 16px)/2));
+                    }
+                }
+            }
+        }    
+    }
+}
+
+.subject-list{
+    background-color:#edf1f4;
+	padding-top:15px;
+	@media screen and (min-width: 1200px) {
+	>.container{
+		width: 1180px;
+	}
+	}
+    /*.dataTables_wrapper {
+		.leveledBooks-table__header {
+    		background-color: transparent;
+		}
+	}*/
+    @import "../modules/widgets/recommendedBook-table";
+    .recommendedBook-table{
+        tbody{ 
+            tr{ 
+                td{
+                    &.book-grade{
+                        padding: 0px 10px 2px 10px;
+                        color:$default-black;
+                        &:before {
+                            content: attr(data-th) " : ";
+                        }
+                    }
+                    &.book-SDG{
+                        padding: 0px 10px 2px 10px;
+                        color: #fff;
+                        font-weight: 500;
+                        text-shadow: 1px 1px rgba(0,0,0, .2);
+                        &:before {
+                            content: attr(data-th); 
+                            font-weight: 500;
+                            margin-right: .5rem;
+                            margin-left: .5rem;
+                            position: relative;
+                            z-index: 2;
+                        } 
+                        [class*="label-SDG"]{
+                            font-weight: 500;
+                            margin-left: -4.2rem;
+                            padding-left: 4.2rem;
+                            padding-right: .5rem;
+                            position: relative;
+                            z-index: 1;    
+                        }
+                        .label-SDG1{  background-color:  $color-SDG1;}
+                        .label-SDG2{  background-color:  $color-SDG2;}
+                        .label-SDG3{  background-color:  $color-SDG3;}
+                        .label-SDG4{  background-color:  $color-SDG4;}
+                        .label-SDG5{  background-color:  $color-SDG5;}
+                        .label-SDG6{  background-color:  $color-SDG6;}
+                        .label-SDG7{  background-color:  $color-SDG7;}
+                        .label-SDG8{  background-color:  $color-SDG8;}
+                        .label-SDG9{  background-color:  $color-SDG9;}
+                        .label-SDG10{ background-color: $color-SDG10;}
+                        .label-SDG11{ background-color: $color-SDG11;}
+                        .label-SDG12{ background-color: $color-SDG12;}
+                        .label-SDG13{ background-color: $color-SDG13;}
+                        .label-SDG14{ background-color: $color-SDG14;}
+                        .label-SDG15{ background-color: $color-SDG15;}
+                        .label-SDG16{ background-color: $color-SDG16;}
+                        .label-SDG17{ background-color: $color-SDG17;}
+                    }
+                }
+            }
+            /*set width&height*/
+            tr{ 
+                height: auto;
+                padding-bottom: 10px;
+            }
+            /*tr{ 
+                height:calc((100vw - 17px - 40px) + 45px + 25px*3);		
+            }*/
+            /*@media screen and (min-width: 576px) {
+            tr{ 
+                height:calc(((100vw - 17px - 40px)/2 - 10px) + 45px + 25px*3);		
+            }	
+            }
+            @media screen and (min-width: 768px) {
+            tr{ 
+                height:229.97px + 45px + 25px*3;
+            }	
+            }
+            @media screen and (min-width: 992px) {
+            tr{ 
+                height:225px + 45px + 25px*3;	
+            }	
+            }
+            @media screen and (min-width: 1200px) {
+            tr{ 
+                height: 218px + 45px + 25px*3;	
+            }
+            }*/	
+        }
+    }
+}
+
+.modal-bookIntro .bookIntro-detail.detail-SDG {
+    @media screen and (min-width: 1200px) {
+    white-space: nowrap;
+    }
+
+}

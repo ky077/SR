@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀">
+<meta name="author" content="SmartReading 適性閱讀">
+<title>SmartReading 適性閱讀</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navi-main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">展開選單</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html"><img src="Content/images/HeaderLogo.png" alt="SmartReading 適性閱讀" class="img-responsive"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <!--<li class="navTab-index"><a href="index.html">首頁</a></li>-->
+              <li class="navTab-about dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">關於SR&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li class="navTab-books dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">閱讀分級&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                  <li><a href="leveledBooks-subject.html">主題書單</a></li>    
+                </ul>
+              </li>
+              <li class="navTab-activity dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li class="navTab-article dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">專欄文章&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="article-list.html#teamShare">團隊分享</a></li>  
+                  <li><a href="article-list.html#recommend">推薦好書</a></li>
+                  <li><a href="article-list.html#subject">主題書單</a></li>
+                </ul>
+              </li>  
+              <li class="navTab-partner dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">合作夥伴&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li class="navTab-trial dropdown"><a href="TRIAL/index.html">線上體驗</a> </li>
+              <li class="navTab-products dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">相關產品&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://23.99.115.155/srkidshub/" target="_blank">漢字詞系列</a></li>
+                  <li><a href="http://140.122.118.58/SR-CFL/index.html" target="_blank">SR-CFL</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="login.html" class="btn navi-main__loginBtn">登入</a></li>
+              <li class="dropdown"><a href="#" class="navi-main__languageBtn" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu navi-main__languageMenu">
+                  <li><a href="" check="checked"><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;English(United States)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main> 
+  <!-- banner start -->
+  <div class="page-banner about-SR-banner">
+    <div class="container">
+      <div class="page-banner__text">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-6 col-lg-6">
+            <h1>SR值說明</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- banner end --> 
+  
+  <!-- about-SR-intro start -->
+  <div class="about-SR-intro">
+    <div class="container">
+      <div class="row about-SR-intro__whatIs">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+          <img src="Content/images/about/about-SR/intro-whatIs-img.png" class="img-responsive center-block">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+          <h2>什麼是SR值？</h2>
+          <p>在SmartReading適性閱讀系統中，SR值指的是書籍難度，<br>
+            是運用人工智慧中的機器學習所分析而來，<br>
+            明確量化出書籍的難度（數值），以打造華文書籍難度分級的標準。<br>
+            SR值也代表讀者的閱讀能力，<br>
+研發團隊運用計量等化技術將讀者的閱讀能力對應到書籍難度的SR值，<br>
+            幫助讀者依據自己閱讀能力的數值，選擇適當難度的書籍進行適性閱讀。<br>
+            因此，SR值可以達到較細緻適性閱讀的目標。</p>
+        </div>
+      </div>
+      <div class="row about-SR-intro__whyNeed">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-md-push-7 col-lg-5 col-lg-push-7 ">
+          <img src="Content/images/about/about-SR/intro-whyNeed-img.png" class="img-responsive center-block">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-md-pull-5 col-lg-7 col-lg-pull-5 ">
+          <h2>為什麼需要SR適性閱讀？</h2>
+          <p>SmartReading適性閱讀系統致力於將學生閱讀能力與書籍難度適配，<br>
+            主動提供適讀書單降低學生閱讀困難、減少挫折外，<br>
+            還提供書籍類別選取的功能，以提升學生閱讀興趣，<br>
+            增進學習動機。從閱讀能力測驗、選書、閱讀、讀後評量，<br>
+            完整記錄個人閱讀學習歷程，伴隨著學生學習成長，<br>
+            可有效提升其閱讀素養，並培養自律自主、終生學習的能力。<br>
+            更多SmartReading適性閱讀詳情，請參考：https://smartreading.net</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- about-SR-intro end --> 
+  
+  <!-- about-SR-contrast start -->
+  <div class="about-SR-contrast">
+    <div class="container">
+      <div class="text-center about-SR-contrast__text">
+        <h2>SR值與適讀年級對照</h2>
+        <p>在SmartReading中，我們提供DACC（中文閱讀能力適性診斷評量）檢測學生個別的閱讀能力，以求得更為精準的適性閱讀體驗。<br>
+DACC經過長年的施測，考量城鄉差距等因素，藉由大量分析實際受測資料，建置出穩定精確的閱讀能力的年級常模，<br>
+做為適性閱讀的對照指標，提供學校老師與家長選書新指南。因此SR值是比較精確的圖書和讀者適配指標。<br>
+而出版社在編輯圖書時，對於書籍內容亦有標示適讀年齡的範圍，可以說是較廣泛的「延伸適讀年齡」。<br>
+如果出版社標示的「延伸適讀年齡」比「SR適讀年級」低，意指書籍中的字詞或概念難度較難，<br>
+但如有成人陪讀或引導，也適合年齡較低的讀者閱讀及理解內容。<br>
+「延伸適讀年齡」比「SR適讀年級」高，意指書籍中的字詞雖然淺顯，<br>
+但可能寓意深刻，年齡較高的讀者，可能具有更豐富的知識與經驗，因此更能體會書籍言外之意。<br>
+</p>
+      </div>
+      <div class="text-center about-SR-contrast__text">
+        <h2>SR值適讀年級對照表</h2>
+        <p>我們根據多年來考量城鄉差距的情況下，各年級學生在閱讀理解能力測驗上的平均表現，<br>
+          以及對於大量書籍的難度分析，提供「SR適讀年級對照表」。<br>
+          尚未進行SR閱讀能力檢測者，也可依據學齡參考SR值與適讀年級對照表挑選書籍。</p>
+          <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+          <div class=" about-SR-contrast__text-table">
+          <table class="table table-bordered">
+          	<thead>
+            	<tr>
+                	<th>適讀年級</th>
+                    <th>SR值</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td>一年級以下</td>
+                    <td>~284</td>
+                </tr>
+                <tr>
+                	<td>二年級</td>
+                    <td>284~357</td>
+                </tr>
+                <tr>
+                	<td>三年級</td>
+                    <td>345~404</td>
+                </tr>
+                <tr>
+                	<td>四年級</td>
+                    <td>395~453</td>
+                </tr>
+                <tr>
+                	<td>五年級</td>
+                    <td>449~508</td>
+                </tr>
+                <tr>
+                	<td>六年級</td>
+                    <td>478~536</td>
+                </tr>
+                <tr>
+                	<td>七年級</td>
+                    <td>496~566</td>
+                </tr>
+                <tr>
+                	<td>八年級</td>
+                    <td>503~581</td>
+                </tr>
+                <tr>
+                	<td>九年級</td>
+                    <td>535~622</td>
+                </tr>
+                <tr>
+                	<td>十年級</td>
+                    <td>602~659</td>
+                </tr>
+                <tr>
+                	<td>十一年級</td>
+                    <td>646~708</td>
+                </tr>
+                <tr>
+                	<td>十二年級</td>
+                    <td>661~720</td>
+                </tr>
+                <tr>
+                	<td>高於十二年級</td>
+                    <td>720~</td>
+                </tr>
+            </tbody>
+          </table>
+          </div></div></div>
+      </div>
+    </div>
+  </div>
+  <!-- about-SR-contrast end --> 
+  
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> 
+  <!-- footer-info start -->
+  <div class="footer-info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-3 col-lg-offset-0">
+          <ul class="footer-info__info">
+            <li><img src="Content/images/HeaderLogo.png" width="249" height="116"></li>
+            <li><i class="far fa-envelope"></i>service@smartreading.net</li>
+            <li><i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<br>
+              國立臺灣師範大學</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-2">
+          <div class="footer-info__social">
+            <a class="footer-info__social-youtube hover-effect-dark" href="https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ" role="button" target="_blank"><i class="fab fa-youtube"></i></a> <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-7 col-lg-offset-0">
+          <nav class="footer-info__sitemap">
+            <ul class="nav-justified">
+              <li><span>關於SR</span>
+                <ul>
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li><span>閱讀分級</span>
+                <ul>
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                </ul>
+              </li>
+              <li><span>活動專區</span>
+                <ul>
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li><span>合作夥伴</span>
+                <ul>
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li><a href="TRIAL/index.html">線上體驗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-info end --> 
+  <!-- footer-products start -->
+  <div class="footer-products">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-12 col-lg-offset-0">
+          <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline footer-products__title">相關產品</span> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item  hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCS/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCL/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CVS/icon.png" class="img-responsive"> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-products end --> 
+</footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Script/jquery.min.js"></script> 
+<script src="Script/bootstrap-lg.min.js"></script> 
+<script src="Script/ie10-viewport-bug-workaround.js"></script> 
+<!-- widgets js --> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	$('.navTab-about').addClass('active');
+});
+</script>
+</body>
+</html>

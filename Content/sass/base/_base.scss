@@ -1,0 +1,51 @@
+$main-color:#43a047;
+$default-black:#2e3233;
+$default-gray:#5c6466;
+
+body{
+	font-size:20px;
+	letter-spacing:0.02em;
+	color: $default-black;
+	font-weight:400;
+}
+/**/
+a{
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+	color:#0249aa;
+}
+*,*:focus,*:hover{
+	outline:0px transparent !important;
+}
+
+.text-red{
+	color:#ff5151;
+}
+.text-indent-2{
+	text-indent:2em;
+}
+/**/
+.bg-gradient{
+	background-image: url(../images/bg-gradient.png);
+	background-repeat: repeat-x;
+}
+.bg-gradient-gray{
+	background-image: url(../images/bg-gradient-gray.png);
+	background-repeat: repeat-x;
+}
+.colorBg {
+    background-color: #f4f8fb;
+}
+/**/
+.noRadius{
+	border-radius:0 !important;
+}
+
+
+
+
+
+
+

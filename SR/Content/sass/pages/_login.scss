@@ -1,0 +1,203 @@
+.login{
+	background-color:#eed100;
+	@media screen and (min-width: 992px) {
+	background-image:url(../images/login/login-img.png);
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	background-size: auto 100%;
+	}
+	@media screen and (min-width: 1900px) {
+	background-size:auto 88%;
+	}
+	@media screen and (min-width: 1600px) {
+		padding-left:8.33333333%;
+		padding-right:8.33333333%;
+	}
+	.login-panel{
+		background-color:#FFF;
+		color:#5c6466;
+		position:relative;
+		margin:10% 0 20% 0;
+		@media screen and (min-width: 1200px) {
+		margin:4vw 0 10vw 0;	
+		}
+		@media screen and (min-width: 1900px) {
+		margin:8vw 0 10vw 0;	
+		}
+		@media screen and (min-width: 1400px) {
+			margin-right:9%;
+		}
+		.login-panel__header{
+			padding-top:35px;
+			> img {
+				width:33%;
+			}
+		}
+		.login-panel__body{
+			padding:20px 15px 30px 15px;
+			@media screen and (min-width: 768px) {
+			padding:20px 48px 30px 35px;
+			}
+		}
+		.login-panel__footer{
+			 position:absolute;
+			 width:100%;
+			 height:60px;
+			 line-height:60px;
+			 bottom:-60px;
+			 left:0;
+			 right:0;
+			 text-align:center;
+			 color:#FFF;
+		}
+	}
+	.login-block{
+		.login-block__nav{ 
+			margin-bottom:40px;
+			> li {
+				display: table-cell;
+    			width: 1%;
+				> a{
+					border-bottom:3px solid #e2e2e2;
+					color:#5c6466;
+					font-size:0.9em;
+					&:hover, &:focus, &:active{
+						background-color:transparent;
+						color:$main-color;
+					}
+				}
+			}
+			> li.active {
+				> a{
+					border-bottom:3px solid $main-color;
+					color:$main-color;
+					&:hover, &:focus, &:active{
+						background-color:transparent;
+					}
+				}
+			}
+		}
+		.login-block__content{
+			.form-horizontal{
+				.form-group{
+					margin-bottom: 30px;
+					.control-label{ 
+						font-size:0.8em;
+						@media screen and (min-width: 768px) {
+						padding-top: 10px;
+						padding-left:0;
+						}
+					}
+					.form-control{
+						border-radius:0;
+						font-size:0.8em;
+					}
+					.input-group{
+						> .form-control{
+							border-right:0;
+						}
+						>.input-group-addon{
+							border-radius:0;
+							background-color:transparent;
+							>a {
+								color:#595959;
+							}
+						}
+					}
+					.show_hide_password{
+						input[type="password"].hidePD{
+							font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+						}
+						input[type="password"].showPD{
+							font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'LiHei Pro', sans-serif !important;
+						}
+					}
+					.checkbox.icheck-success{
+						padding-left:15px; 
+						padding-right:15px;
+						.btn-forgotPD{
+							font-size:0.8em;
+							text-decoration:none;
+							&:hover, &:focus, &:active{
+								color:#fd4c4c;
+								text-decoration:none;
+								box-shadow: 0 1px #fd4c4c;
+							}
+						}
+					}
+					.login-panel__btn{
+						margin-top:-10px;
+						font-size:0.9em;
+					}
+				}
+			}
+		}
+	}
+}
+
+#modal-forgotPD{
+	text-align:center;
+	@media (min-width: 768px){
+	.modal-dialog {
+		width: 500px;
+	}
+	}
+	.modal-content{
+		border-radius:0;
+		@media (min-width: 768px){
+		padding-left:35px;
+		padding-right:55px;
+		}
+		.form-horizontal{
+			.form-group{
+				margin-bottom:30px;
+				.control-label{ 
+					font-size:0.8em;
+					@media screen and (min-width: 768px) {
+					padding-top: 10px;
+					padding-left:0;
+					}
+				}
+				.form-control{
+					border-radius:0;
+					font-size:0.8em;
+				}
+				.modal-forgotPD__text{
+					font-size:0.8em;
+					margin-top:40px;
+					text-align:center;
+				}
+				.modal-forgotPD__mark{
+					color:$main-color;
+					font-size:0.8em;
+					line-height:1.8em;
+					text-align:center;
+				}
+				.btn-main{
+					font-size:0.9em;
+				}
+			}
+		}
+	}
+}
+
+#modal-forgotPD-info{
+	font-size:0.8em;
+	line-height:1.5em;
+	@media (min-width: 768px){
+	.modal-dialog {
+		width: 500px;
+	}
+	}
+	.modal-body{
+		border-radius:0;
+		padding-top:100px;
+		padding-bottom:100px;
+		> img{
+			margin-bottom:30px;
+		}
+		.form-control{
+			font-size:0.8em;
+		}
+	}
+}

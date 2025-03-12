@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*說書頻道*/
+.modal.reading_task_modal { overflow-x: hidden; overflow-y: auto; width: 100%; height: 100%; right: auto; top: auto; padding: 0 !important; }
+
+.modal.reading_task_modal .modal-dialog { margin: 0 auto; width: 100%; max-width: 720px; padding: 0 25px 45px; }
+
+.modal.reading_task_modal .modal-dialog.modal-dialog-centered { display: flex; align-items: center; margin: 120px auto 80px; padding: 0 5px 45px; }
+
+.modal.reading_task_modal .modal-dialog .modal-content { width: 100%; border: 8px solid #b99b62; border-radius: 50px; background-color: #fef9cb; box-shadow: none; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-header { position: relative; top: 0; z-index: 1; transform: translate(0%, -50%); padding: 0; border: 0px; background-color: transparent; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-header .modal-header-cloud { width: 200px; margin: 0 auto; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-header .reading_task_close { position: absolute; top: 50%; transform: translate(15px, 15px); }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body { background-color: transparent; padding: 0 8px; transform: translate(0px, -30px); }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid { padding: 0; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text { display: flex; flex-direction: column; align-items: center; margin: 0 auto 35px; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 { font-size: 30px; font-weight: bold; color: #32406f; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p { font-size: 20px; color: #32406f; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value { margin: 0 auto; background-color: white; border-radius: 50px; padding: 45px 10px; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p { display: flex; justify-content: center; color: #32406f; font-size: 12px; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span { font-size: 12px; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p .value_green { color: #3a8b25; }
+
+.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p .value_red { color: #ff5d5d; }
+
+.modal-backdrop.hide { position: relative; display: none; }
+
+@media screen and (min-width: 499px) { .modal.reading_task_modal .modal-dialog .modal-content .modal-header .modal-header-cloud { width: 270px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body { padding: 0 5%; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 { font-size: 30px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p { font-size: 20px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p { font-size: 18px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span { font-size: 18px; } }
+
+@media screen and (min-width: 768px) { .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 { font-size: 48px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p { font-size: 29px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p { font-size: 29px; }
+  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span { font-size: 29px; } }

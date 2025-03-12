@@ -1,0 +1,32 @@
+.base-more{ 
+	color:#ff0000;
+	font-size:18px;
+	line-height:1em;
+	font-weight:300;
+	background-image:url(../images/index/more.png);
+	background-repeat:no-repeat;
+	background-position: right 0px bottom 1px;
+	padding-right:10px;
+	margin-top:4px;
+	text-decoration:none;
+	position:relative;
+	&::after{
+		content:"";
+		display:block;
+		width:calc(100% - 10px);
+		height:1px;
+		background-color: transparent;
+		position:absolute;
+		bottom:-2px;
+		left:0;
+	}
+}
+.base-more:hover, 
+.base-more:focus, 
+.base-more:focus{
+	color:#ff0000;
+	text-decoration:none;
+	&::after{
+		background-color: #ff0000;
+	}
+}

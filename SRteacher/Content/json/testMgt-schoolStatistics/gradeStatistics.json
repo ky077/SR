@@ -1,0 +1,55 @@
+{
+  "data": [ 
+    {
+      "grade":              "4",
+      "average":            "88",
+      "DACCall":            "500",
+      "DACCword":           "100",
+      "DACCsuperficial":    "100",
+      "DACCtextual":        "100",
+      "DACCinference":      "100",
+      "DACCanalysis":       "100"
+    },
+    {
+      "grade":              "5",
+      "average":            "88",
+      "DACCall":            "500",
+      "DACCword":           "100",
+      "DACCsuperficial":    "100",
+      "DACCtextual":        "100",
+      "DACCinference":      "100",
+      "DACCanalysis":       "100"
+    },
+    {
+      "grade":              "6",
+      "average":            "88",
+      "DACCall":            "500",
+      "DACCword":           "100",
+      "DACCsuperficial":    "100",
+      "DACCtextual":        "100",
+      "DACCinference":      "100",
+      "DACCanalysis":       "100"
+    },
+    {
+      "grade":              "7",
+      "average":            "88",
+      "DACCall":            "500",
+      "DACCword":           "100",
+      "DACCsuperficial":    "100",
+      "DACCtextual":        "100",
+      "DACCinference":      "100",
+      "DACCanalysis":       "100"
+    },
+    {
+      "grade":              "8",
+      "average":            "88",
+      "DACCall":            "500",
+      "DACCword":           "100",
+      "DACCsuperficial":    "100",
+      "DACCtextual":        "100",
+      "DACCinference":      "100",
+      "DACCanalysis":       "100"
+    }    
+      
+  ]
+}

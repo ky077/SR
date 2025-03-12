@@ -1,0 +1,21 @@
+{
+  "data": [ 
+    {
+      "grade":      "5",
+      "class":      "Test 01",
+      "Cname":      "張花花",
+      "Sid":        "20200153",
+      "account":    "srtt01@smartreading.com",
+      "state":      "0"
+    },
+    {
+      "grade":      "5",
+      "class":      "Test 01",
+      "Cname":      "張花花",
+      "Sid":        "20200154",
+      "account":    "srtt02@smartreading.com",
+      "state":      "1"
+    }    
+      
+  ]
+}

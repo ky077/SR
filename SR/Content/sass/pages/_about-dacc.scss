@@ -1,0 +1,188 @@
+.page-banner.about-dacc-banner{
+	background-image:url(../images/about/about-dacc/banner-bg.jpg); 
+	background-position:left center;
+	@media screen and (min-width: 768px) {
+	background-position:center center;	
+	}
+	.page-banner__text{
+		align-items: center; 
+		justify-content: left;
+	}
+	h1{ 
+		font-size:1.8em;
+		font-weight:400;
+		line-height:1em;
+		margin-top:0;
+		margin-bottom:0;
+		color:#000;
+		font-weight:bold;
+		text-align:center;
+	}
+}
+.about-dacc-intro{
+	padding-top:35px;
+	padding-bottom:50px;
+	text-align:center;
+	h2{
+		font-size:1.5em;
+		color:#5c6466;
+		font-weight:400;
+		margin-top:60px;
+		margin-bottom:20px;
+		small{
+			font-size: 60%;
+			display:block;
+			margin-top:15px;
+			font-weight:300;
+		}
+	}
+	p{
+		font-size:0.8em;
+		line-height:1.875em;
+		color:#5c6466;
+	}
+	h3{
+		font-size:1.0em;
+		color:#165382;
+		font-weight:400;
+		margin-top:50px;
+		margin-bottom:5px;
+	}
+}
+
+.about-dacc-chara{
+	background-color:#f4f8fb;
+	padding-top:100px;
+	padding-bottom:100px;
+	h2{
+		font-size:1.0em;
+		font-weight:400;
+		color:$default-black;
+		margin-bottom:20px;
+		text-align:left;
+	}
+	p{
+		font-size:0.8em;
+		line-height:1.875em;
+		font-weight:300;
+		color:#5c6466;
+		text-align:left;
+	}
+	p> br{
+		display:none;
+		@media screen and (min-width: 992px) {display:block;}
+	}
+	.about-dacc-chara__ai{
+		margin-bottom:40px;
+		@media screen and (min-width: 768px) {
+		@include flex-center;
+		}
+		@media screen and (min-width: 992px) {
+		h2, p{
+			margin-left:-8.33%;
+		}		
+		}
+		@media screen and (min-width: 1200px) {
+		h2, p{
+			margin-left:0;
+		}	
+		}
+	}
+	.about-dacc-chara__diagnosis{
+		margin-bottom:40px;
+		@media screen and (min-width: 768px) {
+		@include flex-center;
+		h2, p{
+			text-align:right;
+		}
+		}
+		@media screen and (min-width: 992px) {
+		h2, p{
+			margin-right:-8.33%;
+		}	
+		}
+		@media screen and (min-width: 1200px) {
+		h2, p{
+			margin-right:0;
+		}	
+		}
+	}
+}
+
+.about-dacc-report{
+	padding-top:100px;
+	padding-bottom:155px;
+	overflow:hidden;
+	.about-dacc-report__block{ 
+		position:relative;
+		@media screen and (min-width: 992px) {
+		@include flex-center; 
+		}
+		&::before{ 
+			display:block;
+			content:"";
+			width:328px;
+			height:231px;
+			background-image:url(../images/about/about-dacc/logo-DACC.png);
+			background-repeat:no-repeat;
+			background-position:right bottom;
+			-webkit-filter:grayscale(1) opacity(15%);
+			-moz-filter:grayscale(1) opacity(15%);
+			-sm-filter:grayscale(1) opacity(15%);
+			-o-filter:grayscale(1) opacity(15%);
+			filter:grayscale(1) opacity(15%);
+			position:absolute;
+			right:-180px;
+			bottom:70px;
+		}
+		
+		
+		.about-dacc-report__img-block{ 
+			display:inline-block;
+			margin:0 auto;
+			position:relative;
+			&::after{
+				content:"";
+				display:block;
+				width:198.17%;
+				height:134.62%;
+				position:absolute;
+				top:0;
+				right:0;
+				background-image:url(../images/about/about-dacc/report-img-withShadow.png);
+				background-size:100% 100%;
+				background-position: right top;
+			
+			}
+		}
+		h2{
+			font-size:1.5em;
+			color:#5c6466;
+			font-weight:400;
+			margin-top:35px;
+			margin-bottom:35px;
+			text-align:center;
+			small{
+				font-size: 60%;
+				display:block;
+				margin-top:10px;
+				font-weight:300;
+			}
+		}
+		p{
+			font-size:0.8em;
+			line-height:1.875em;
+			font-weight:300;
+			color:#5c6466;
+			text-align:justify;
+			margin-bottom:70px;
+		}
+	}
+	
+}
+
+.about-dacc-skills{
+	background-color:#f4f8fb;
+	padding-top:170px;
+	padding-bottom:170px;
+}

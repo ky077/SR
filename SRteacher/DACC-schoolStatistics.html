@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="smartreading-XXXX">
+<meta name="author" content="smartreading">
+<meta name="generator" content="smartreading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+	
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+    
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>檢視全校統計資訊</h2>
+      <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+        <!-- 年級統計資訊 start -->
+        <h3 class="h5 text-center mb-4">年級統計資訊</h3>
+        <!-- 搜尋 start -->
+        <div class="col-xl-12 mb-3" id="blockSearch">
+          <div class="row align-items-center justify-content-start">
+            <div class="col-auto">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto"> <label for="searchSessions" class="col-form-label fs-8">場次</label> </div>
+                <div class="col-auto">
+                  <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                    <option value="" disabled selected>請選擇...</option>
+                    <option value="2023/03/24,2023/06/30">2023 Demo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto"><label class="fs-8">時間：</label></div>
+                <div class="col-auto"><span class="fs-8"><label id="searchStartDate">----/--/--</label>至<label id="searchEndDate">----/--/--</label></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋  end  --> 
+        <!-- 表格 start -->
+        <div class="col-xl-12 mb-5">
+          <table class="table table-bordered SRtable table-gradeStatistics" id="gradeStatistics">
+            <thead>
+              <tr>
+                <th scope="col" class="td-no">序號</th>
+                <th scope="col" class="td-grade">年級</th>
+                <th scope="col" class="td-average">平均成績</th>
+                <th scope="col" class="td-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
+                <th scope="col" class="td-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
+                <th scope="col" class="td-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
+                <th scope="col" class="td-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
+                <th scope="col" class="td-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
+                <th scope="col" class="td-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-no">1</td>
+                <td class="td-grade">3</td>
+                <td class="td-average">88</td>
+                <td class="td-DACCall">500</td>
+                <td class="td-DACCword">100</td>
+                <td class="td-DACCsuperficial">100</td>
+                <td class="td-DACCtextual">100</td>
+                <td class="td-DACCinference">100</td>
+                <td class="td-DACCanalysis">100</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">全校平均</td>
+                <td class="td-average"></td>
+                <td class="td-DACCall"></td>
+                <td class="td-DACCword"></td>
+                <td class="td-DACCsuperficial"></td>
+                <td class="td-DACCtextual"></td>
+                <td class="td-DACCinference"></td>
+                <td class="td-DACCanalysis"></td>
+              </tr>
+            </tfoot>
+          </table>
+          <!-- 表格  end  --> 
+        </div>
+        <!-- 表格  end  --> 
+        <!-- 年級統計資訊  end  --> 
+        
+        <!-- 班級統計資訊 start -->
+        <h3 class="h5 text-center mb-4">班級統計資訊</h3>
+        <!-- 手風琴 start -->
+        <div class="col-xl-12 mb-5">
+          <div class="bg-gray-200 text-center border fs-8 fw-normal p-2" id="emptyClassStatistics">尚無資料</div>
+          <div class="accordion SRaccordion accordion-ClassStatistics" id="accordionClassStatistics"> 
+            <!-- *年級 start -->
+            <div class="accordion-item">
+              <h4 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4"> 4年級 </button>
+              </h4>
+              <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionClassStatistics">
+                <div class="accordion-body p-0"> 
+                  <!-- 表格 start -->
+                  <table class="table table-bordered SRtable mb-0 table-classStatistics" id="classStatistics">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="td-sn">序號</th>
+                        <th scope="col" class="td-class">班級</th>
+                        <th scope="col" class="td-average"><a href="#" role="button" data-bs-toggle="popover" class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a></th>
+                        <th scope="col" class="td-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
+                        <th scope="col" class="td-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
+                        <th scope="col" class="td-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
+                        <th scope="col" class="td-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
+                        <th scope="col" class="td-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
+                        <th scope="col" class="td-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="td-sn">1</td>
+                        <td class="td-class"><input type="text" class="form-control rounded-0 readonly" value="DEMO" disabled readonly></td>
+                        <td class="td-average">88</td>
+                        <td class="td-DACCall">500</td>
+                        <td class="td-DACCword">100</td>
+                        <td class="td-DACCsuperficial">100</td>
+                        <td class="td-DACCtextual">100</td>
+                        <td class="td-DACCinference">100</td>
+                        <td class="td-DACCanalysis">100</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="3"><a href="#" role="button" data-bs-toggle="popover" class="popover-peersInSchool">校內同年級者的平均分數<i class="fa-regular fa-circle-question"></i></a></td>
+                        <td class="td-DACCall">500</td>
+                        <td class="td-DACCword">100</td>
+                        <td class="td-DACCsuperficial">100</td>
+                        <td class="td-DACCtextual">100</td>
+                        <td class="td-DACCinference">100</td>
+                        <td class="td-DACCanalysis">100</td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"><a href="#" role="button" data-bs-toggle="popover"  data-bs-custom-class="popover-lg" class="popover-peers">同年級者的常模量尺分數<i class="fa-regular fa-circle-question"></i></a></td>
+                        <td class="td-DACCall">500</td>
+                        <td class="td-DACCword">100</td>
+                        <td class="td-DACCsuperficial">100</td>
+                        <td class="td-DACCtextual">100</td>
+                        <td class="td-DACCinference">100</td>
+                        <td class="td-DACCanalysis">100</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <!-- 表格  end  --> 
+                </div>
+              </div>
+            </div>
+            <!-- *年級  end  --> 
+          </div>
+        </div>
+        <!-- 手風琴  end  --> 
+        <!-- 班級統計資訊  end  --> 
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+    
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script>     
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+    $('footer').load('footer.html'); 
+    $('#sidebarMenu').load('sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="DACC-schoolStatistics"]').addClass('active');
+    });
+    
+    //清空html
+    $('#gradeStatistics').find('tbody').remove();
+    $('#accordionClassStatistics').hide();
+    
+    //年級統計資訊 datatables 
+	$('#gradeStatistics').DataTable({
+        //serverSide: true,
+        order: [],  //取消默認排序icon
+        ordering: false,
+        autoWidth: false,
+        responsive: false,
+		searching: false,
+		paging: false,
+        dom: '<r<"table-responsive"t>>',
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        //ajax: 'Content/json/testMgt-schoolStatistics/gradeStatistics.json',
+        columnDefs: [
+            {//序號
+                targets: 0,
+                title: '序號',
+                width: '4%',
+                className: 'td-no',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//年級
+                targets: 1, 
+                title: '年級',
+                data: 'grade',
+                width: '7%',
+                className: 'td-grade',
+                type: 'numeric',
+            },
+            {//平均成績 
+                targets: 2,
+                title: '平均成績',
+                data: 'average',
+                width: '7%',
+                className: 'td-average',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//整體閱讀理解能力
+                targets: 3, 
+                title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
+                data: 'DACCall',
+                width: '16%',
+                className: 'td-DACCall',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//字詞辨識
+                targets: 4, 
+                title: '<span class="DACCicon-word">字</span>字詞辨識',
+                data: 'DACCword',
+                width: '13%',
+                className: 'td-DACCword',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//表層文意理解
+                targets: 5, 
+                title: '<span class="DACCicon-superficial">表</span>表層文意理解',
+                data: 'DACCsuperficial',
+                width: '14%',
+                className: 'td-DACCsuperficial',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//文意統整
+                targets: 6, 
+                title: '<span class="DACCicon-textual">文</span>文意統整',
+                data: 'DACCtextual',
+                width: '13%',
+                className: 'td-DACCtextual',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//推論理解
+                targets: 7, 
+                title: '<span class="DACCicon-inference">推</span>推論理解',
+                data: 'DACCinference',
+                width: '13%',
+                className: 'td-DACCinference',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            },
+            {//分析評鑑
+                targets: 8, 
+                title: '<span class="DACCicon-analysis">分</span>分析評鑑',
+                data: 'DACCanalysis',
+                width: '13%',
+                className: 'td-DACCanalysis',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    if( !data ){
+                        return '-'
+                    }
+                    return data;
+                }
+            }
+            
+        ],
+        footerCallback: function ( row, data, start, end, display ) {
+            //僅demo 前端算出 (沒無成績則無法算平均)
+            //請工程師自行do something... (全校平均)
+            var api = this.api();  
+            
+            for (var i = 2; i < api.columns().count(); i++) {
+                // total column
+                var columnDataTotal = api.column(i).data(); 
+                
+                var theColumnTotal = columnDataTotal
+                                        .reduce(function(a, b) {
+                                            if (isNaN(a)) {
+                                                return '';
+                                            } else {
+                                                a = parseFloat(a);
+                                            }
+                                            if (isNaN(b)) {
+                                                return '';
+                                            } else {
+                                                b = parseFloat(b);
+                                            }
+                                            return a + b;
+                                        }, 0);
+                
+                // Update footer
+                $(api.column(0).footer()).html('全校平均');
+                $(api.column(i).footer()).html(theColumnTotal/data.length);
+            }
+
+        }  
+    });
+    
+    //demo選擇[場次]
+    $('#searchSessions').change(function(){
+        if( $(this).val() ){
+            //顯示時間
+            let SessionsArray = $('#searchSessions').val().split(',');
+            $('#searchStartDate').text(SessionsArray[0]);
+            $('#searchEndDate').text(SessionsArray[1]);
+
+            //顯示datatables資料
+            $('#gradeStatistics').DataTable().ajax.url('Content/json/testMgt-schoolStatistics/gradeStatistics.json').load();
+
+            //顯示班級統計資訊
+            $('#emptyClassStatistics').hide();
+            $('#accordionClassStatistics').slideDown(loadClassStatistics);
+        }    
+    });
+    
+    //demo班級統計資訊
+    function loadClassStatistics(){
+        let testGrade = [2, 3, 4, 5, 6, 9];
+        let html = '';
+
+        for (let i=0; i<testGrade.length; i++){
+            let grade = testGrade[i]; 
+            html += `<div class="accordion-item">
+                          <h4 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse`+grade+`" aria-expanded="false" aria-controls="collapse`+grade+`"> `+grade+`年級 </button>
+                          </h4>
+                          <div id="collapse`+grade+`" class="accordion-collapse collapse" data-bs-parent="">
+                            <div class="accordion-body p-0"> 
+                              <table class="table table-bordered SRtable mb-0 table-classStatistics" id="classStatistics`+grade+`">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" class="td-sn">序號</th>
+                                    <th scope="col" class="td-class">班級</th>
+                                    <th scope="col" class="td-average"><a href="#" role="button" data-bs-toggle="popover"  class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a></th>
+                                    <th scope="col" class="td-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
+                                    <th scope="col" class="td-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
+                                    <th scope="col" class="td-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
+                                    <th scope="col" class="td-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
+                                    <th scope="col" class="td-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
+                                    <th scope="col" class="td-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="td-sn">1</td>
+                                    <td class="td-class"><input type="text" class="form-control rounded-0 readonly" value="DEMO" disabled readonly></td>
+                                    <td class="td-average">88</td>
+                                    <td class="td-DACCall">500</td>
+                                    <td class="td-DACCword">100</td>
+                                    <td class="td-DACCsuperficial">100</td>
+                                    <td class="td-DACCtextual">100</td>
+                                    <td class="td-DACCinference">100</td>
+                                    <td class="td-DACCanalysis">100</td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                    <td colspan="3"><a href="#" role="button" data-bs-toggle="popover" class="popover-peersInSchool">校內同年級者的平均分數<i class="fa-regular fa-circle-question"></i></a></td>
+                                    <td class="td-DACCall">500</td>
+                                    <td class="td-DACCword">100</td>
+                                    <td class="td-DACCsuperficial">100</td>
+                                    <td class="td-DACCtextual">100</td>
+                                    <td class="td-DACCinference">100</td>
+                                    <td class="td-DACCanalysis">100</td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="3"><a href="#" role="button" data-bs-toggle="popover" data-bs-custom-class="popover-lg" class="popover-peers">同年級者的常模量尺分數<i class="fa-regular fa-circle-question"></i></a></td>
+                                    <td class="td-DACCall">500</td>
+                                    <td class="td-DACCword">100</td>
+                                    <td class="td-DACCsuperficial">100</td>
+                                    <td class="td-DACCtextual">100</td>
+                                    <td class="td-DACCinference">100</td>
+                                    <td class="td-DACCanalysis">100</td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </div>
+                          </div>
+                        </div>`;
+
+        }
+
+        $('#accordionClassStatistics').html(html);
+        
+        //Datatable
+        for (let i=0; i<testGrade.length; i++){
+            let grade = testGrade[i]; 
+            iniDatatable('#classStatistics'+grade, 'classStatistics'+grade); 
+        }
+        
+        //popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerList) {
+            return new bootstrap.Popover(popoverTriggerList, {
+                container: 'body',
+                html: true,
+                placement: 'right',
+                trigger: 'hover focus',
+                content: function (){
+                    let nowGrade = $(this).parents('.table').attr('id').substr(15);
+
+                    //平均成績
+                    if ( $(this) && $(this).hasClass('popover-average') ) { 
+                        return '<span class="text-primary">班級平均分數：</span>代表貴班此次測驗的整體平均分數。DACC總分為SR 1000，請參考校內平均與常模平均，評估貴班本次測驗的表現。「SR」是一個單位詞，並不代表能力等級。';
+                    }
+
+                    //校內平均分數
+                    if ( $(this) && $(this).hasClass('popover-peersInSchool') ) {
+                        return '<span class="text-primary">校內平均分數：</span>代表了貴校本次一同參與施測的' + nowGrade + '年級所有班級的平均成績。但由於此項數值受到學生人數與學校特性的影響，建議於評估學生表現時，還是以參考「常模平均」為主。';
+                    }
+
+                    //常模量尺分數
+                    if ( $(this) && $(this).hasClass('popover-peers') ) {
+                        return '<span class="text-primary">常模量尺分數：</span>透過蒐集大量學生測驗成績所統計出來的數值，代表全臺灣' + nowGrade + '年級學生的平均表現。' + nowGrade + '年級的常模平均為SR 477。若貴班的平均得分高於SR 477，代表貴班學生的能力優於一般同年級學生。若貴班成績低於此分數，請先留意施測的時間點是否為本學年上學期，若是上學期施測，平均成績略低於常模尚屬合理。建議可參照本報表的學生能力資訊制定閱讀教學方案，並於本學年末再次安排施測，以檢驗學生的能力進展。'; //*常模平均請工程師更換
+                    }
+                }
+            });
+        }); 
+
+        $(popoverTriggerList).click(function(e){
+            e.preventDefault();    
+        });
+    }
+    
+    //班級統計資訊 datatables 
+    function iniDatatable(table, json) {
+        $(table).DataTable({ 
+            //serverSide: true,
+            order: [],  //取消默認排序icon
+            ordering: false,
+            autoWidth: false,
+            responsive: false,
+            searching: false,
+            paging: false,
+            dom: '<r<"table-responsive"t>>',
+            language: {
+              url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+            },
+            ajax: 'Content/json/testMgt-schoolStatistics/' + json + '.json',
+            columnDefs: [
+                {//序號
+                    targets: 0,
+                    title: '序號',
+                    width: '4%',
+                    className: 'td-no',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        return meta.row + 1; 
+                    } 
+                },
+                {//班級
+                    targets: 1, 
+                    title: '班級',
+                    data: 'class',
+                    width: '7%',
+                    className: 'td-class',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
+                    }
+                },
+                {//平均成績 
+                    targets: 2,
+                    title: `<a href="#" role="button" data-bs-toggle="popover" class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a>`,
+                    data: 'average',
+                    width: '7%',
+                    className: 'td-average',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//整體閱讀理解能力
+                    targets: 3, 
+                    title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
+                    data: 'DACCall',
+                    width: '16%',
+                    className: 'td-DACCall',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//字詞辨識
+                    targets: 4, 
+                    title: '<span class="DACCicon-word">字</span>字詞辨識',
+                    data: 'DACCword',
+                    width: '13%',
+                    className: 'td-DACCword',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//表層文意理解
+                    targets: 5, 
+                    title: '<span class="DACCicon-superficial">表</span>表層文意理解',
+                    data: 'DACCsuperficial',
+                    width: '14%',
+                    className: 'td-DACCsuperficial',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//文意統整
+                    targets: 6, 
+                    title: '<span class="DACCicon-textual">文</span>文意統整',
+                    data: 'DACCtextual',
+                    width: '13%',
+                    className: 'td-DACCtextual',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//推論理解
+                    targets: 7, 
+                    title: '<span class="DACCicon-inference">推</span>推論理解',
+                    data: 'DACCinference',
+                    width: '13%',
+                    className: 'td-DACCinference',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                },
+                {//分析評鑑
+                    targets: 8, 
+                    title: '<span class="DACCicon-analysis">分</span>分析評鑑',
+                    data: 'DACCanalysis',
+                    width: '13%',
+                    className: 'td-DACCanalysis',
+                    type: 'numeric',
+                    render: function (data, type, row, meta) {
+                        if( !data ){
+                            return '-'
+                        }
+                        return data;
+                    } 
+                }
+
+            ],
+            footerCallback: function ( row, data, start, end, display ) {
+                //do something... (校內同年級者的平均分數)
+                
+                //do something... (同年級者的常模量尺分數)
+            }
+        });
+    }
+});    
+</script>
+</body>
+</html>

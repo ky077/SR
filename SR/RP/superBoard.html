@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀">
+<meta name="author" content="SmartReading 適性閱讀">
+<title>SmartReading 適性閱讀</title>
+<link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="../Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="../Content/css/promote-styles.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navi-main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">展開選單</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="../index-student.html"><img src="../Content/images/HeaderLogo.png" alt="SmartReading 適性閱讀" class="img-responsive"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="navTab-index"><a href="../index-student.html">首頁</a></li>
+              <li class="navTab-dacc dropdown"> <a href="../DACC/DACC.html">能力檢測</a> </li>
+              <li class="navTab-RecommendedBookList dropdown"> <a href="RecommendedBookList.html">推薦書單</a> </li>
+              <li class="navTab-RPList dropdown"><a href="RPList.html">閱讀計畫</a> </li>
+              <li class="navTab-RAList"><a href="tRAList.html">教師推薦文章</a> </li>  
+              <li class="navTab-superBoard dropdown"><a href="superBoard.html">SR金榜</a> </li>
+              <li class="navTab-CourseList dropdown"> <a href="Course.html">閱讀歷程檔案</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown"><a class="navi-main__loginedBtn" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你好，張花花！</a>
+              	<ul class="dropdown-menu navi-main__userMenu">
+                  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcvlWityd3GvuaFTmMc2ZM-TBVDQeMXUVrejDktGskw1Hzig/viewform" target="_blank"><i class="fas fa-bullhorn"></i>&nbsp;問題回報</a></li>
+                  <li><a href="../index.html" class="btn navi-main__logoutBtn">登出</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navi-main__languageBtn" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu navi-main__languageMenu">
+                  <li><a href="" check="checked"><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;English(United States)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main>
+  <div class="superBoard">
+    <!-- banner start -->
+    <div class="page-banner superBoard">
+      <div class="container">
+        <div class="page-banner__text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
+              <h1>我的SmartReader金榜<span class="h1-shadow">我的SmartReader金榜</span></h1>
+              <p>SmartReading根據你閱讀書單的讀後評量頒予SmartReader獎章，<br>
+                當你閱讀的書籍逐漸增加，累積的得分就越高！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner end --> 
+    
+    <!-- superBoard-medal start -->
+    <div class="superBoard-medal">
+      <div class="container">
+        <h2>我的獎章</h2>
+        <div class="superBoard-medal__content">
+          <div class="row">
+            <div class="col-sm-2_4 col-md-2_4">
+              <div class="medal-block">
+                <img src="../Content/images/superBoard/medal-SR.png" class="img-medal-circle">SR章：
+                <label>0</label>
+              </div>
+            </div>
+            <div class="col-sm-2_4 col-md-2_4">
+              <div class="medal-block">
+                <img src="../Content/images/superBoard/medal-star.png" class="img-medal-circle">SR星：
+                <label>0</label>
+              </div>
+            </div>
+            <div class="col-sm-2_4 col-md-2_4">
+              <div class="medal-block">
+                <img src="../Content/images/superBoard/medal-bronze.png">銅牌：
+                <label>0</label>
+              </div>
+            </div>
+            <div class="col-sm-2_4 col-md-2_4">
+              <div class="medal-block">
+                <img src="../Content/images/superBoard/medal-silver.png">銀牌：
+                <label>0</label>
+              </div>
+            </div>
+            <div class="col-sm-2_4 col-md-2_4">
+              <div class="medal-block">
+                <img src="../Content/images/superBoard/medal-gold.png">金牌：
+                <label>0</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- superBoard-medal end --> 
+    
+    <!-- superBoard-board start -->
+    <div class="superBoard-board">
+      <div class="container">
+        <div class="superBoard-board__header">
+          <h2>讀後評量</h2>
+        </div>
+        <div class="superBoard-board__content">
+          <div class="table-responsive">
+            <table class="table board-table">
+              <tbody>
+                <tr>
+                  <th>A+ 通過</th>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <th>A 通過</th>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <th>B 不通過</th>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>&nbsp;</th>
+                  <td colspan="5"><div class="board-table__bar">
+                      <span class="bar-easy">簡單</span><img src="../Content/images/superBoard/board-table-bar-left.png" class="bar-left"><span class="bar-topic">書籍難度</span><img src="../Content/images/superBoard/board-table-bar-right.png" class="bar-right"><span class="bar-hard">難</span>
+                    </div></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="superBoard-board__footer">
+          額外加分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>如期完成閱讀計畫獎勵<img src="../Content/images/superBoard/medal-SR.png" height="54"> + 0
+        </div>
+      </div>
+    </div>
+    <!-- superBoard-board end --> 
+    
+    <!-- superBoard-note start -->
+    <div class="superBoard-note">
+      <div class="container">
+        <h2>*SR金榜計分方式說明:</h2>
+        <div class="superBoard-note__content">
+          <div class="superBoard-note__content-text">
+            1.基本得分: 閱讀適合自己閱讀難度的書籍，且讀後評量A+ 得5個章；A 得3個章，B 得1個章。<br>
+            2.額外得分: 若在規劃閱讀期間內完成任務，每本書可多得1個章。
+          </div>
+          <div class="superBoard-note__content-rule">
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <img src="../Content/images/superBoard/medal-SR.png" height="54" class="img-medal-circle">
+                <span class="superBoard-note__content-rule__text">*20&nbsp;=</span>
+                <img src="../Content/images/superBoard/medal-star.png" height="54" class="img-medal-circle">
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <img src="../Content/images/superBoard/medal-star.png" height="54" class="img-medal-circle">
+                <span class="superBoard-note__content-rule__text">*10&nbsp;=</span>
+                <img src="../Content/images/superBoard/medal-bronze.png" height="76">
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <img src="../Content/images/superBoard/medal-bronze.png" height="76">
+                <span class="superBoard-note__content-rule__text">*3&nbsp;=</span>
+                <img src="../Content/images/superBoard/medal-silver.png" height="76">
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <img src="../Content/images/superBoard/medal-silver.png" height="76">
+                <span class="superBoard-note__content-rule__text">*3&nbsp;=</span>
+                <img src="../Content/images/superBoard/medal-gold.png" height="76">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- superBoard-note end -->
+  </div>
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> 
+  <!-- footer-info start -->
+  <div class="footer-info footer-info-simple">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-0">
+          <img src="../Content/images/HeaderLogo.png" width="249" height="116">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-2">
+          <div class="footer-info__social">
+            <a class="footer-info__social-youtube hover-effect-dark" href="https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ" role="button" target="_blank"><i class="fab fa-youtube"></i></a> <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-0">
+          <div class="footer-info__contact">
+            <div class="footer-info__contact-title">
+              聯繫我們
+            </div>
+            <div class="footer-info__contact-text row">
+              <div class="col-lg-5">
+                <div class="contact-email">
+                  <i class="far fa-envelope"></i>smartreadingcontest@gmail.com
+                </div>
+              </div>
+              <div class="col-lg-7 col-lg-pull-1">
+                <div class="contact-add">
+                  <i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<span class="contact-add__space">國立臺灣師範大學</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-info end --> 
+  <!-- footer-copyright start -->
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          © 2021 College of Education e-Learning Lab. NTNU, All rights reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-copyright end --> 
+</footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="../Script/jquery.min.js"></script> 
+<script src="../Script/bootstrap-lg.min.js"></script> 
+<script src="../Script/ie10-viewport-bug-workaround.js"></script>    
+<!-- widgets js --> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	$('.navTab-superBoard').addClass('active');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+html:lang(en-us), html:lang(en-US){
+    /*master*/
+    .navi-main{
+        @media screen and (min-width: 1200px) {
+        font-size:0.9em;
+        }    
+    }  
+    
+    /*index*/
+    .SRcanHelp .SRcanHelp__item .SRcanHelp__item__show .SRcanHelp__item__show-text h2 {
+        margin: 0 0 10px 0;
+    }
+    @media screen and (min-width: 520px){
+    .SRcanHelp .SRcanHelp__item .SRcanHelp__item__hoverShow h3 {
+        font-size: .9em;
+    }
+    }
+    .SRcanHelp .SRcanHelp__item .SRcanHelp__item__hoverShow h3 {
+        line-height: 1.4;
+    }
+    .index-reading3step .index-reading3step__step1 h3 {
+        white-space: normal;
+    }
+    
+}

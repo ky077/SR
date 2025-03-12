@@ -1,0 +1,67 @@
+.btn{
+	box-shadow:none !important;
+	font-weight:300;
+	text-decoration:none;
+}
+.btn, .btn:hover, .btn:focus ,.btn:active{
+	padding: 6px 12px;
+}
+.btn-main{
+	background-color:$main-color;
+	border:1px solid $main-color;
+	color:#FFF;
+	text-decoration:none;
+	&:hover:hover,  &:hover:focus , &:hover:active,
+	&:focus:hover,  &:focus:focus , &:focus:active,
+	&:active:hover, &:active:focus, &:active:active{
+		color:#FFF;
+		background-color:darken($main-color, 5%);
+		border:1px solid darken($main-color, 5%);
+		text-decoration:none;
+	}
+    &.disabled, &[disabled], &[disabled="disabled"]{
+        background-color:$main-color !important;
+	    border:1px solid $main-color !important;   
+    }
+}
+.btn-default {
+	background-color: #FFF;
+    border:1px solid #c6c6c6;
+	color: $default-gray;
+	text-decoration:none;
+	&:hover:hover,  &:hover:focus , &:hover:active,
+	&:focus:hover,  &:focus:focus , &:focus:active,
+	&:active:hover, &:active:focus ,&:active:active{
+		background-color: #f9f9f9;
+		border:1px solid darken(#c6c6c6, 5%);
+		color: $default-gray;
+		text-decoration:none;
+	}
+    &.disabled, &[disabled], &[disabled="disabled"]{
+        background-color: #FFF !important;
+        border:1px solid #c6c6c6 !important;  
+    }
+}
+.btn-default-main{
+	background-color:#f9f9f9;
+	border:1px solid #c6c6c6;
+	color:$main-color;
+	text-decoration:none;
+	&:hover:hover,  &:hover:focus , &:hover:active,
+	&:focus:hover,  &:focus:focus , &:focus:active,
+	&:active:hover, &:active:focus ,&:active:active,{
+		background-color:darken(#f9f9f9, 5%);
+		border:1px solid darken(#c6c6c6, 5%);
+		color:$main-color;
+		text-decoration:none;
+	}
+    &.disabled, &[disabled], &[disabled="disabled"]{
+        background-color:#f9f9f9 !important;
+	    border:1px solid #c6c6c6 !important;  
+    }
+}
+.SR-btn-empty{
+	border:none;
+	background-color:transparent;
+	padding:0;
+}

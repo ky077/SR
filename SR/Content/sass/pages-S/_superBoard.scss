@@ -1,0 +1,294 @@
+.superBoard{
+	background-color:#c5df7a;
+	background-image: url(../images/superBoard/bg.png);
+	background-repeat:no-repeat;
+	background-position: left top;
+	background-size:1920px auto;
+}
+
+.page-banner.superBoard{
+	background-image:none;
+	background-color: transparent !important;
+	margin-bottom:0;
+	.page-banner__text{
+		align-items: center; 
+		justify-content: left;
+		min-height: 390px;
+		@media screen and (min-width: 1200px) {
+			padding-left:calc(4% - 15px);
+		}
+	}
+	h1{ 
+		font-size:10vw;
+		font-weight:700;
+		line-height:1.2em;
+		margin-top:10px;
+		margin-bottom:35px;
+		text-align:left;
+		color:#86bba2;
+		position:relative;
+		text-shadow:1px 1px #86bba2,
+					2px 2px #86bba2, 
+					3px 3px #86bba2,
+					4px 4px #86bba2,
+					5px 5px #529ea3;
+		-webkit-filter:drop-shadow(-1px 0px 0px #529ea3);
+		@media screen and (min-width: 768px) {
+		font-size:2.5em;	
+		}
+		.h1-shadow{ 
+			color:#fffea1;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:1;
+			-webkit-filter:drop-shadow(0px -1px 0px #529ea3);
+		}
+	}
+	p{
+		font-size:0.9em;
+		line-height:1.8em;
+		font-weight:400;
+		color:$default-gray;
+		text-align:left !important;
+	}
+}
+
+
+.superBoard-medal{
+	h2{ 
+		font-size:1em;
+		color:$default-gray;
+		font-weight:400;
+		padding-left:4%;
+		margin-top:0;
+		margin-bottom:15px;
+	}
+	.superBoard-medal__content{
+		background-image:url(../images/superBoard/medal-bg.png);
+		background-repeat:no-repeat;
+		background-position:center top;
+		background-size:100% 100%;
+		border-radius:6px;
+		color:#FFF;
+		font-size:1em;
+		font-weight:400;
+		text-align:center;
+		vertical-align:middle;
+		padding: 0 15px;
+		.medal-block{ 
+			margin:20px 0;
+			img{ 
+				margin:0 10px 0 0;
+				@media screen and (min-width: 768px) {
+					display:block;
+					margin:20px auto 5px auto;
+					&.img-medal-circle{
+						margin:35px auto 18px auto;	
+					}
+				}
+				@media screen and (min-width: 1200px) {
+					display:inline-block;
+					margin:0 15px 0 0;
+					&.img-medal-circle{
+						margin:14px 15px 14px 0;	
+					}
+				}
+			}
+		}
+	}
+}
+.superBoard-board{ 
+	margin-bottom:40px;
+	.superBoard-board__header{
+		background-color:#FFF;
+		margin-left:4%;
+		margin-right:4%;
+		position:relative;
+		padding-top:40px;
+		padding-bottom:40px;
+		h2{
+			margin-top:0;
+			margin-bottom:0;
+			font-size:1em;
+			color:$default-gray;
+			text-align:center;
+		}
+		&::before{
+			content:"";
+			display:block;
+			width:calc(4% - 3px);
+			height:0;
+			padding-bottom:3%;
+			background-image:url(../images/superBoard/medal-bg-left.png);
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:100% 100%;
+			position:absolute;
+			top:0;
+			left:calc(-4% + 3px);
+		}
+		&::after{
+			content:"";
+			display:block;
+			width:calc(4% - 3px);
+			height:0;
+			padding-bottom:3%;
+			background-image:url(../images/superBoard/medal-bg-right.png);
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:100% 100%;
+			position:absolute;
+			top:0;
+			right:calc(-4% + 3px);
+		}
+	}
+	.superBoard-board__content{
+		background-color:#FFF;
+		margin-left:4%;
+		margin-right:4%;
+		.table-responsive{
+			border:none;
+			padding-bottom:30px;
+		}
+		.board-table{
+			margin-right:8.3333%;
+			width:calc(100% - 8.3333%);
+			margin-bottom:0;
+			min-width:calc(700px - 8.3333%);
+		}
+	}
+	.superBoard-board__footer{
+		background-color:#FFF;
+		margin-left:4%;
+		margin-right:4%;
+		border-top:1px dashed #c6c6c6;
+		padding:30px 40px;
+		font-size:0.8em;
+		line-height:1.875em;
+		color:$default-gray;
+		font-weight:400;
+		border-radius:0 0 6px 6px;
+		img{
+			margin:0 10px;
+		}
+		@media screen and (min-width: 420px) {
+		>br{
+			display:none;
+		}	
+		}
+	}
+}
+.superBoard-note{
+	color:$default-gray;
+	h2{
+		font-size:1em;
+		font-weight:400;
+		margin-left:4%;
+		margin-right:4%;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+	.superBoard-note__content{
+		background-color:#d8f094;
+		border-radius:6px;
+		padding:40px;
+		margin-bottom:100px;
+		margin-left:4%;
+		margin-right:4%;
+		.superBoard-note__content-text{
+			font-size:0.8em;
+			line-height:1.875em;
+			font-weight:300;
+		}
+		.superBoard-note__content-rule{ 
+			font-size:0.9em;
+			font-weight:400;
+			text-align:center;
+			vertical-align:top;
+			img{
+				vertical-align:top;
+				margin-top:20px;
+			}
+			.img-medal-circle{
+				margin-top:20px + 20px;
+			}
+			.superBoard-note__content-rule__text{ 
+				display:inline-block;
+				margin-top:35px + 20px;
+			}
+		}
+	}
+}
+
+
+.board-table{
+	background-image:url(../images/superBoard/board-table-bg.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-size: calc(100% - (100%/6)) calc(100% - 80px);
+	border-color: #FFF;
+	th, td{ 
+		border:1px solid #FFF !important;
+		width:calc(100%/6);
+		font-size:0.8em;
+		color:$default-gray;
+		font-weight:400;
+		height:90px;
+		vertical-align:middle !important;
+	}
+	
+	>tbody>tr{
+		>th{
+			text-align:right;
+			padding-right:30px;
+		}
+		>td{
+			text-align:center;
+		}
+	}
+	>tfoot>tr{ 
+		>th{
+			height:80px !important;
+			padding:0;
+		}
+		>td{ 
+			height:80px !important;
+			padding:0;
+			.board-table__bar{ 
+				.bar-easy{ 
+					display:inline-block;
+					width:40px;
+					text-align:center;
+					vertical-align:middle;
+				}
+				.bar-left{
+					display:inline-block;
+					width: calc(((100% - 40px - 80px - 40px)/2) - 15px);
+					height:auto;
+					vertical-align:middle;
+					margin-right:15px;
+				}
+				.bar-topic{
+					display:inline-block;
+					width:80px;
+					text-align:center;
+					vertical-align:middle;
+				}
+				.bar-right{
+					display:inline-block;
+					width: calc(((100% - 40px - 80px - 40px)/2) - 15px);
+					height:auto;
+					vertical-align:middle;
+					margin-left:15px;
+				}
+				.bar-hard{
+					display:inline-block;
+					width:40px;
+					text-align:center;
+					vertical-align:middle;
+				}
+			}
+		}
+	}
+}

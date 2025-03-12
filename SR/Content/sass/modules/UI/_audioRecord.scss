@@ -1,0 +1,131 @@
+.audioRecord{ 
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	@media screen and (min-width: 540px) {
+	width:400px;
+	}
+	.audioRecord-penal{
+		width:100%;
+		height:0;
+		padding-bottom:45%;
+		background-image:url(../images/myStudy/audioProgress/bg.png);
+		background-repeat:no-repeat;
+		background-position:ccenter center;
+		background-size:100% 100%;
+		position:relative;
+		margin:0 auto;
+		@media screen and (min-width: 540px) {
+		width:400px;
+		height:180px;	
+		padding-bottom:0;
+		}
+		.progress-progress{
+			width:33.25%;
+			position:absolute;
+			z-index:1;
+			top:50%;
+			left:50%;
+			margin-left:-16.625%;
+			margin-top:-16.625%;
+			>img{
+				width:100%;
+				height:auto;
+			}
+		}
+		.progress-effect{
+			width:100%;
+			height:100%;
+			position:absolute;
+			z-index:2;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			>img{
+				width:100%;
+				height:auto;
+			}
+		}
+		.progress-count{
+			width:100%;
+			height:100%;
+			position:absolute;
+			z-index:4;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			background-image:url(../images/myStudy/audioProgress/cover.png);
+			background-repeat:no-repeat;
+			background-position:ccenter center;
+			background-size:100% 100%;
+			color:#43a047;
+			font-size:30px;
+			display: flex;
+			align-items: center; 
+			justify-content: center;
+		}
+	}
+	.audioRecord-tools{
+		zoom:1;
+		&:before,&:after {
+			content:"";
+			display:table;
+		}
+		&:after {
+			clear:both;
+		}
+		.tools__btn{
+			border:none;
+			background-color:#FFF;
+			font-size:16px;
+			line-height:1.25em;
+			color: #8a9294;
+			padding:.85em 0.9em;
+			border-radius:30px;
+			box-shadow:0 0 10px rgba(66,101,175,.3);
+			@media screen and (min-width: 540px) {
+			padding:.85em 1.25em;
+			}
+			&.startRec, &.stopRec{
+				float:left;
+			}
+			&.playRec, &.stopPlayRec{
+				float:right;
+			}
+			&.startRec, &.playRec{
+				>i{ 
+					display:inline-block;
+					font-size:1.25em;
+					width:1.25em;
+					height:1.25em;
+					line-height:1.25em;
+					text-align:center;
+					vertical-align:middle;
+					color:#43a047;
+					margin-right:2px;
+					margin-top:-2px;
+				}
+			}
+			&.stopRec, &.stopPlayRec{
+				>i{ 
+					display:inline-block;
+					font-size:1.25em;
+					width:1.25em;
+					height:1.25em;
+					line-height:1.25em;
+					text-align:center;
+					vertical-align:middle;
+					color:#ff4e4e;
+					margin-right:2px;
+					margin-top:-2px;
+				}
+			}
+			&.disabled, &[disabled], &[disabled="disabled"]{
+				opacity: 0.65; 
+				filter: alpha(opacity=65);
+			}
+		}
+	}
+}

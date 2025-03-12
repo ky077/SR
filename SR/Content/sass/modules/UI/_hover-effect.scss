@@ -1,0 +1,18 @@
+.hover-effect-light{
+	&:hover, &:focus, &:active{
+		-webkit-filter:brightness(1.2);
+		-moz-filter:brightness(1.2);
+		-o-filter:brightness(1.2);
+		-ms-filter:brightness(1.2);
+		filter:brightness(1.2);
+	}
+}
+.hover-effect-dark{
+	&:hover, &:focus, &:active{
+		-webkit-filter:brightness(0.8);
+		-moz-filter:brightness(0.8);
+		-o-filter:brightness(0.8);
+		-ms-filter:brightness(0.8);
+		filter:brightness(0.8);
+	}
+}

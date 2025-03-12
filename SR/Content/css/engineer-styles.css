@@ -1,0 +1,38 @@
+/*若工程師需修改css，請寫在這*/
+/*載入於所有css之後，以覆蓋修改所有前面的css*/
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/Wait_Icon_.gif) center no-repeat #fff;
+}
+
+.se-pre-con2 {
+    position: relative;
+    left: -10px;
+    top: -800px;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/Wait_Icon_.gif) center no-repeat #fff;
+}
+
+/*** 教師命題 ***/
+/*繪畫版面*/
+.draw-panel .draw-panel-right {
+    width: 700px;
+    height: 550px;
+}
+
+/*fillAssessment-byTeacher.aspx 繪圖題型區*/
+.upload-pic .upload-pic__area {
+    position: relative;
+    width: 700px;
+    height: 550px;
+}

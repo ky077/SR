@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+*{
+    box-sizing: border-box;
+}
+.clearfix:before,.clearfix:after {
+        content:"";
+        display:table;
+}
+.clearfix:after {
+        clear:both; /* For IE 6/7 (trigger hasLayout) */
+}
+.clearfix {
+        zoom:1;
+}
+body{
+    padding: 0;
+    margin: 0;
+	font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'LiHei Pro',
+                 'Noto Sans SC', 'Microsoft YaHei',    'PingFang SC', 'Heiti SC', 'STXihei', 
+                 sans-serif;
+}
+.wrapper{
+    width: 1190px;
+    height: 1684px; 
+    margin: 0 auto;
+    display: flex;
+	align-items: center; 
+	justify-content: center;
+}
+.bg {
+    width: 1145px;
+    height: 1634px; 
+    background-image:url("../images/contest6-paper/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    position: relative;
+}
+.bg > div{  
+    position: absolute;
+    white-space:nowrap; 
+    overflow:hidden;
+    text-overflow:ellipsis;
+    line-height: 1.2;
+    letter-spacing: 0;
+}
+/*.bg > div > label{
+    letter-spacing: .1em; 
+}*/
+.bg>h1{ 
+    font-size: 72px;
+    text-align: center;
+    letter-spacing: 1.2em;
+    position: absolute;
+    top:333px;
+    left: 300px;
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+    color: #fff;
+	text-shadow: 2px  2px  5px rgba(102,175,225, 1.0),
+				-2px -2px  5px rgba(102,175,225, 1.0),
+				-2px  2px  5px rgba(102,175,225, 1.0),
+				 2px -2px  5px rgba(102,175,225, 1.0),	
+				 5px  5px 25px rgba(102,175,225, .5),
+				-5px -5px 25px rgba(102,175,225, .5),
+				-5px  5px 25px rgba(102,175,225, .5),
+				 5px -5px 25px rgba(102,175,225, .5);
+}
+.bg>h1>span{
+    display: none;
+}
+.paperDate {
+    font-size: 24px;
+    color: #fff;
+    text-align: right;
+    width: auto;
+    height: auto;
+    top: 55px;
+    right: 35px;
+}
+.name{
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    width: calc(50% - 60px);
+    left: 60px;
+    top: 425px;
+    letter-spacing: 0;
+}
+.school {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    width: calc(50% - 60px);
+    left: 60px;
+    top: 485px;
+    letter-spacing: 0;
+}
+.preDate {
+    font-size: 32px;
+    color: #fff;
+    width: calc(50% - 60px);
+    left: 60px;
+    top: 540px;
+    display: flex;
+}
+.backDate {
+    font-size: 32px;
+    color: #fff;
+    width: calc(50% - 60px);
+    left: 60px;
+    top: 590px;
+    display: flex;
+}
+.actDate { 
+    font-size: 32px;
+    color: #fff;
+    width: 55.5%;
+    left: 60px;
+    top: 640px;
+    display: flex;
+}
+/*.preDate> label,
+.backDate> label,
+.actDate> label,
+.overall-item> label,
+.doneBooks> label,
+.passBooks> label {
+    letter-spacing: 0; 
+    margin-left: calc(-.25em - .1em);
+}*/
+/*right*/
+.overall{
+    width: calc(50% - 60px - 25px);
+    top: 430px;
+    right: 60px;
+}
+.overall .overall-title{ 
+    float: left;
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 11px 14px 10px 16px;
+    white-space:normal !important;
+    color: #0060A7;
+    text-align: center;
+	margin-bottom: 5rem;
+}
+.overall .overall-item{ 
+    float: left;
+    font-size: 28px;
+    color: #fff;
+    width: calc(100% - 100px - 15px);
+    /*height: 50px;*/
+    margin-left: 15px;
+}
+.overall .overall-item.group {  
+    display: flex;
+	padding-bottom: 5px;
+	margin-top: -5px;
+}
+.overall .overall-item.task {  
+    border-bottom: 1px solid #fff;
+    display: flex;
+	flex-direction: column;
+	
+}
+.overall .overall-item.task .task-content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 8px 0;
+}
+.overall .overall-item.task .task-content .task-bar {
+	width: 52.5%;
+	flex: 1 1 52.5%; 
+	border: 2px solid #fff;
+	border-radius: 20px;
+	padding: 2px;
+}
+.overall .overall-item.task .task-content .task-bar-block{ 
+	border-radius: calc(20px - 2px);
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.overall .overall-item.task .task-content .task-bar .task-bar-width {
+	width: auto;
+	height: 18px;
+	background-image: linear-gradient(-45deg, 
+		#fff 0%, 
+		#fff 50%, 
+		transparent 50%, 
+		transparent calc(50% + 2px), 
+		#fff calc(50% + 2px), 
+		#fff 100%);
+	background-size: 20px 20px;
+}
+.overall .overall-item.task .task-content .task-bar .task-bar-text {
+	font-size: .8rem;	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #013A90; 
+	text-shadow: 1px 1px #fff, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff;
+}
+
+
+.overall .overall-item.task .task-content .task-label{ 
+	flex: 1 1 47.5%; 
+	font-size: .9rem;
+	padding-left: 5px;
+}
+
+
+
+
+
+.overall .overall-item.ranking { 
+    line-height: 50px;
+    border-top: 1px solid #fff;
+}
+.overall .overall-item.ranking > div{
+    display: flex;
+}
+.overall .overall-item.ranking > div > span{ 
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    white-space: nowrap; 
+}
+.overall .overall-item.ranking > div > label{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1; 
+    flex-shrink: 1; 
+}
+.doneBooks{
+    font-size: 28px;
+    color: #fff;
+    width: calc(50% - 65px - 140px);
+    top: 590px;
+    right: 65px;
+}
+.passBooks{
+    font-size: 28px;
+    color: #fff;
+    width: calc(50% - 65px - 140px);
+    top: 640px;
+    right: 65px;
+}
+/**/
+.score{
+    width: calc(100% - 60px - 60px);
+    top: 700px; 
+    left: 60px;
+    right: 60px;  
+}
+.score .score-item {  
+    width: 33.333333%;
+    text-align: center;
+    float: left;
+}
+.score-item .icon{
+    width: 96px;
+    height: 96px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    align-items: center; 
+	justify-content: center;
+	filter: drop-shadow(0 0 5px rgba(0,0,0, .5));
+}
+.score-item .title{
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 5px;  
+    letter-spacing: .18em;
+	color: #fff;
+	filter: drop-shadow(0 0 5px rgba(0,0,0, .5));
+}
+
+.score-item .num{
+    font-size: 68px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    overflow: hidden;
+	filter: drop-shadow(0 0 5px rgba(0,0,0, .5));
+}
+.score-item .text{ 
+    margin: 22px 10px 22px 10px;
+    height: 145px;
+    padding: 10px 20px 15px 20px;
+    font-size: 16.5px;
+    color: #FFF;
+    white-space:normal !important;
+    line-height: 1.4 !important;
+    text-align: justify;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**/
+.moreLink{
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+    top:1105px;
+    left: 740px;
+    font-size: 24px;
+    letter-spacing: 0 !important;
+    color: #3e3a39;
+    line-height: 1.8 !important;
+    overflow: visible !important;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));  
+    transition: all 0.5s ease-out;
+}
+.moreLink::after{
+    content: "";
+    display: block;
+    width: 68px;
+    height: 31px;
+    background-image: url("../images/contest6-paper/dialogue.png");
+    position: absolute;
+    top:  calc(100% - 10px);
+    left: -30px;
+    z-index: 10;
+    
+    
+}
+.moreLink a {
+    display: inline-block;
+    padding: 0px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    margin: 0 5px;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0, .2), inset 0 -5px 5px rgba(0,0,0, .2);
+}
+.moreLink-interest{ background-color: #4fbba9;}
+.moreLink-motive{ background-color: #ed6f11;}
+.moreLink a:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in;
+}
+/**/
+@media print{
+body{
+	font-family: '微軟正黑體', 'Microsoft YaHei', 
+                 'Noto Sans TC', 'Noto Sans SC', 
+                 'PingFang TC', 'PingFang SC',  
+                 'Heiti TC', 'Heiti SC',  
+                 'LiHei Pro','STXihei', 
+                 sans-serif !important;
+} 
+.moreLink{
+    display: none;
+}    
+}

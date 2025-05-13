@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀">
+<meta name="author" content="SmartReading 適性閱讀">
+<title>SmartReading 適性閱讀</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+<link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+<!-- this page widgets CSS -->
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navi-main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">展開選單</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html"><img src="Content/images/HeaderLogo.png" alt="SmartReading 適性閱讀" class="img-responsive"></a> </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <!--<li class="navTab-index"><a href="index.html">首頁</a></li>-->
+              <li class="navTab-about dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">關於SR&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li class="navTab-books dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">閱讀分級&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                  <li><a href="leveledBooks-subject.html">主題書單</a></li>    
+                </ul>
+              </li>
+              <li class="navTab-activity dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li class="navTab-article dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">專欄文章&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="article-list.html#teamShare">團隊分享</a></li>  
+                  <li><a href="article-list.html#recommend">推薦好書</a></li>
+                  <li><a href="article-list.html#subject">主題書單</a></li>
+                </ul>
+              </li>  
+              <li class="navTab-partner dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">合作夥伴&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li class="navTab-trial dropdown"><a href="TRIAL/index.html">線上體驗</a> </li>
+              <li class="navTab-products dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">相關產品&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://23.99.115.155/srkidshub/" target="_blank">漢字詞系列</a></li>
+                  <li><a href="http://140.122.118.58/SR-CFL/index.html" target="_blank">SR-CFL</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="login.html" class="btn navi-main__loginBtn">登入</a></li>
+              <li class="dropdown"><a href="#" class="navi-main__languageBtn" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu navi-main__languageMenu">
+                  <li><a href="" check="checked"><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                  <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>&nbsp;English(United States)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main> 
+  <!-- banner start -->
+  <div class="page-banner leveledBooks-banner leveledBooks">
+    <div class="container">
+      <div class="page-banner__text">
+        <div>
+          <h1>SmartReading 閱讀分級認證</h1>
+          <h2>優選書籍-我們選好書</h2>
+          <p>本書單根據文化部設立之「金鼎獎」、「中小學生讀物選介」；台北市立圖書館評選的「好書大家讀」；「OPEN BOOK好書獎」、「兒童文學牧笛獎」等多項得獎好書，<br>
+            以及與本團隊合作的專業教師共同推薦之優良讀物為基礎建立書目，並運用團隊開發AI讀本分級技術進行難度分析與評級，精確分析出文本的難度。<br>
+            優選書單的書目類別多元，涵蓋繪本、小說傳記、科學知識到哲學，經典權威名著和得獎作品皆有收錄，為教育結合科技的指標性書單。</p>
+          <h2>閱讀分級-大家好選書</h2>
+          <p>透過AI讀本分級技術大量分析不同領域以及不同難度的書籍，建立SR值(書籍文本的難度值)。當書籍的SR值愈大，表示這本書的難度愈高，所需要的閱讀能力也愈高。<br>
+            SR值提供了適性閱讀的參考指標，目前系統已累積分析近五萬筆優良繁體書目，您可以在這邊找到適合您的書籍。希望大朋友和小朋友們都能在SmartReading中找到有興趣且符合自己閱讀能力的書，以快樂的心情來獲取新知。</p>
+          <h2>閱讀分級推廣</h2>
+          <p>為推廣閱讀教育與適性閱讀，團隊在此公告所有優選書目與書籍難度值（SR值），免費提供各級教育單位、教師、學生與家長作為閱讀選書與教學參考，<br>
+            讓學生、老師和家長，可以更快速找到各閱讀程度者合適閱讀的書籍。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- banner end --> 
+  
+  <!-- leveledBooks-tabs start -->
+  <div class="leveledBooks-tabs active-bookquery">
+    <div class="container-fluid">
+      <div class="row"> 
+        <!-- 書庫查詢 start -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leveledBooks-tabs__item item-bookquery">
+          <div class="row">
+            <div class="col-xs-0 col-sm-0 col-md-0 col-lg-2 control-width-space"> </div>
+            <a href="leveledBooks-bookquery.html#tab-bookquery" class="active">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 control-width-content">
+              <div class="row">
+                <div class="col-xs-5 col-sm-5 col-sm-offset-1">
+                  <div class="leveledBooks-tabs__item-img table-align-center">
+                    <div class="table-align-middle"> <img src="Content/images/leveledBooks/h2-img-bookquery.png" class="img-responsive center-block"> </div>
+                  </div>
+                </div>
+                <div class="col-xs-7 col-sm-6">
+                  <div class="leveledBooks-tabs__item-text">
+                    <h2>書庫查詢</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </a> </div>
+        </div>
+        <!-- 書庫查詢 end --> 
+        <!-- 推薦書單查詢 start -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leveledBooks-tabs__item item-books">
+          <div class="row"> <a href="leveledBooks-books.html#tab-books">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 control-width-content">
+              <div class="row">
+                <div class="col-xs-5 col-sm-5 col-sm-offset-1">
+                  <div class="leveledBooks-tabs__item-img table-align-center">
+                    <div class="table-align-middle"> <img src="Content/images/leveledBooks/h2-img-books.png" class="img-responsive center-block"> </div>
+                  </div>
+                </div>
+                <div class="col-xs-7 col-sm-6">
+                  <div class="leveledBooks-tabs__item-text">
+                    <h2>推薦書單查詢</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-0 col-sm-0 col-md-0 col-lg-2 control-width-space"> </div>
+            </a> </div>
+        </div>
+        <!-- 推薦書單查詢 end --> 
+      </div>
+    </div>
+  </div>
+  <!-- leveledBooks-tab end--> 
+  
+  <!-- leveledBooks-search start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-horizontal leveledBooks-search">
+          <div class="form-group leveledBooks-search__book">
+            <label class="col-sm-4 control-label"><img src="Content/images/leveledBooks/slogan-bookquery.png" class="img-responsive"></label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" class="form-control input-lg" id="searchBook" placeholder="輸入書名..." value="">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-lg bookquery-search__btn-more dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">更多選項&nbsp;&nbsp;<img src="Content/images/dropdown-menu-arrow_hover.png" width="16" height="8"></button>
+                  <div class="dropdown-menu leveledBooks-search__dropdown-menu">
+                    <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="searchAuthor" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">出&nbsp;版&nbsp;社</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="searchPublishing" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">出&nbsp;版&nbsp;年</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="searchYear" placeholder="西元...">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">ISBN</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="searchISBN" placeholder="">
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <button type="button" class="btn btn-lg leveledBooks-search__dropdown-menu__btn-clear">清除</button>
+                      <button type="button" class="btn btn-lg btn-main leveledBooks-search__dropdown-menu__btn-ok">確定</button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-lg leveledBooks-search__btn-search">查詢</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group leveledBooks-search__grade">
+            <label for="" class="col-sm-1 control-label">適讀年級：</label>
+            <div class="col-sm-9 form-inline leveledBooks-search__extendWidth">
+              <div class="" data-toggle="buttons">
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  一年級以下</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  二年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  三年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  四年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  五年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  六年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  七年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  八年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  九年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  十年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  十一年級</label>
+                <label class="btn leveledBooks-search__btn-grade">
+                  <input type="checkbox">
+                  十二年級以上</label>
+              </div>
+            </div>
+            <div class="col-sm-2 form-inline text-right">
+              <button type="button" class="btn btn-lg btn-main leveledBooks-search__btn-button" id="">全選</button>
+              <button type="reset" class="btn btn-main leveledBooks-search__btn-reset">取消</button>
+            </div>
+          </div>
+          <div class="form-group leveledBooks-search__SR">
+            <label for="" class="col-sm-1 control-label">SR值：</label>
+            <div class="col-sm-11 form-inline">
+              <input type="text" class="form-control input-lg input-inline" id="SRmin" placeholder="">
+              -
+              <input type="text" class="form-control input-lg input-inline" id="SRmax" placeholder="">
+              &nbsp;
+              <button type="button" class="btn btn-lg btn-main leveledBooks-search__btn-button" id="">確定</button>
+              <button type="reset" class="btn btn-lg leveledBooks-search__btn-reset">清空</button>
+              <button type="button" class="leveledBooks-search__btn-tip" data-container="body" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="SR值為書籍文本的難度值，當書籍的SR值愈大，表示這本書的難度愈高，所需要的閱讀能力也愈高。本團隊透過特殊計量的技術，將讀者的閱讀程度與書籍難度進行整合，建立完整且客觀的閱讀能力與文本難度參照標準。讀者可運用「中文閱讀能力適性診斷評量（DACC）」精準診斷個人閱讀能力，並依據測驗的閱讀能力，選擇合適的SR值書籍進行適性閱讀，提升閱讀動機與學習興趣。團隊亦提供中文書籍難度分析服務，如有需求，歡迎與團隊洽詢。">了解SR值<i class="fas fa-question-circle"></i> </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- leveledBooks-search end--> 
+  
+  <!-- leveledBooks-table start -->
+  <div class="container">
+    <table id="" class="table leveledBooks-table books">
+      <thead>
+        <tr>
+          <th class="text-center"></th>
+          <th class="text-center">ISBN</th>
+          <th class="text-center">書名</th>
+          <th class="text-center">出版社</th>
+          <th class="text-center">SR值</th>
+          <th class="text-center">適讀年級</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">1</td>
+          <td>1234567890123</td>
+          <td>我會關心別人</td>
+          <td class="text-center">天下雜誌</td>
+          <td class="text-center">SR 999</td>
+          <td class="text-center"><span class="sorting-only">00</span>一年級以下</td>
+        </tr>
+        <tr>
+          <td class="text-center">2 </td>
+          <td>9867295110 </td>
+          <td>三隻餓狼想吃雞</td>
+          <td class="text-center">三之三文化</td>
+          <td class="text-center">SR 265</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">3 </td>
+          <td>9789867235572 </td>
+          <td>害怕的時候</td>
+          <td class="text-center">大穎文化</td>
+          <td class="text-center">SR 187</td>
+          <td class="text-center"><span class="sorting-only">03</span>三年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">4 </td>
+          <td>9867742338 </td>
+          <td>第一條魚</td>
+          <td class="text-center">小魯</td>
+          <td class="text-center">SR 187</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">5 </td>
+          <td>9789866215254 </td>
+          <td>走進生命花園</td>
+          <td class="text-center">米奇巴克</td>
+          <td class="text-center">SR 448</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">6 </td>
+          <td>9577624146 </td>
+          <td>10隻橡皮小鴨</td>
+          <td class="text-center">上誼</td>
+          <td class="text-center">SR 342</td>
+          <td class="text-center"><span class="sorting-only">06</span>六年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">7 </td>
+          <td>9789861612478 </td>
+          <td>團圓</td>
+          <td class="text-center">信誼</td>
+          <td class="text-center">SR 258</td>
+          <td class="text-center"><span class="sorting-only">07</span>七年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">8 </td>
+          <td>9789577515476 </td>
+          <td>影子和我</td>
+          <td class="text-center">國語日報社</td>
+          <td class="text-center">SR 279</td>
+          <td class="text-center"><span class="sorting-only">08</span>八年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">9 </td>
+          <td>9789577515414 </td>
+          <td>小琪的房間</td>
+          <td class="text-center">國語日報社</td>
+          <td class="text-center">SR 330</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">10 </td>
+          <td>9789868274563 </td>
+          <td>瘋狂愛上書</td>
+          <td class="text-center">阿布拉教育文化</td>
+          <td class="text-center">SR 338</td>
+          <td class="text-center"><span class="sorting-only">10</span>十年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">11 </td>
+          <td>9789577624888 </td>
+          <td>一吋蟲</td>
+          <td class="text-center">大穎</td>
+          <td class="text-center">SR 388</td>
+          <td class="text-center"><span class="sorting-only">11</span>十一年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">12 </td>
+          <td>9573235757 </td>
+          <td>我的媽媽真麻煩</td>
+          <td class="text-center">遠流</td>
+          <td class="text-center">SR 250</td>
+          <td class="text-center"><span class="sorting-only">13</span>十二年級以上</td>
+        </tr>
+        <tr>
+          <td class="text-center">13 </td>
+          <td>9789866608148 </td>
+          <td>一個人開門</td>
+          <td class="text-center">和英</td>
+          <td class="text-center">SR 259</td>
+          <td class="text-center"><span class="sorting-only">13</span>十二年級以上</td>
+        </tr>
+        <tr>
+          <td class="text-center">14 </td>
+          <td>9867517598 </td>
+          <td>不要放手喔！</td>
+          <td class="text-center">上人</td>
+          <td class="text-center">SR 276</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">15 </td>
+          <td>9789862114155 </td>
+          <td>石頭湯</td>
+          <td class="text-center">小魯</td>
+          <td class="text-center">SR 338</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">16 </td>
+          <td>9864177168 </td>
+          <td>有你，真好</td>
+          <td class="text-center">天下遠見</td>
+          <td class="text-center">SR 282</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">17 </td>
+          <td>9573256517 </td>
+          <td>帶不走的小蝸牛</td>
+          <td class="text-center">遠流</td>
+          <td class="text-center">SR 366</td>
+          <td class="text-center"><span class="sorting-only">03</span>三年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">18 </td>
+          <td>9789575708320 </td>
+          <td>爺爺的肉丸子湯</td>
+          <td class="text-center">東方</td>
+          <td class="text-center">SR 298</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">19 </td>
+          <td>9573255928 </td>
+          <td>1000把大提琴的合奏</td>
+          <td class="text-center">遠流</td>
+          <td class="text-center">SR 338</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">20 </td>
+          <td>9573257033 </td>
+          <td>五月木棉飛</td>
+          <td class="text-center">遠流</td>
+          <td class="text-center">SR 400</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">21 </td>
+          <td>9789867249708 </td>
+          <td>甘蔗的滋味</td>
+          <td class="text-center">青林國際</td>
+          <td class="text-center">SR 312</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">22 </td>
+          <td>9578208847 </td>
+          <td>伊索寓言II</td>
+          <td class="text-center">風車</td>
+          <td class="text-center">SR 454</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">23 </td>
+          <td>9789867942920 </td>
+          <td>那魯：勇士那魯和雲豹的故事</td>
+          <td class="text-center">和英</td>
+          <td class="text-center">SR 457</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">24 </td>
+          <td>9789577514578 </td>
+          <td>做個讓人激賞的少年生活家</td>
+          <td class="text-center">國語日報社</td>
+          <td class="text-center">SR 531</td>
+          <td class="text-center"><span class="sorting-only">07</span>七年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">25</td>
+          <td>9789866830259</td>
+          <td>編織的幸福</td>
+          <td class="text-center">青林國際</td>
+          <td class="text-center">SR 312</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">26</td>
+          <td>9789575709631</td>
+          <td>魔法小翅膀</td>
+          <td class="text-center">東方出版社</td>
+          <td class="text-center">SR 438</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">27</td>
+          <td>9789862740156</td>
+          <td>松鼠先生和月亮</td>
+          <td class="text-center">青林國際</td>
+          <td class="text-center">SR 271</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">28</td>
+          <td>9789861614243</td>
+          <td>花木村和盜賊們</td>
+          <td class="text-center">信誼基金</td>
+          <td class="text-center">SR 498</td>
+          <td class="text-center"><span class="sorting-only">06</span>六年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">29</td>
+          <td>9789861892467</td>
+          <td>最後一片葉子</td>
+          <td class="text-center">格林文化</td>
+          <td class="text-center">SR 459</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">30</td>
+          <td>9789577516176</td>
+          <td>大家說孔子</td>
+          <td class="text-center">國語日報</td>
+          <td class="text-center">SR 504</td>
+          <td class="text-center"><span class="sorting-only">05</span>六年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">31</td>
+          <td>9789866310188</td>
+          <td>愛看書的男孩：亞伯拉罕．林肯</td>
+          <td class="text-center">維京國際</td>
+          <td class="text-center">SR 423</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">32</td>
+          <td>9789867057617</td>
+          <td>走達爾文的路─加拉巴哥群島尋秘</td>
+          <td class="text-center">日月文化出版股份有限公司</td>
+          <td class="text-center">SR 542</td>
+          <td class="text-center"><span class="sorting-only">08</span>八年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">33</td>
+          <td>9789575704162</td>
+          <td>動物農莊</td>
+          <td class="text-center">東方出版社</td>
+          <td class="text-center">SR 472</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">34</td>
+          <td>9789575705435</td>
+          <td>環遊世界八十天</td>
+          <td class="text-center">東方出版社</td>
+          <td class="text-center">SR 481</td>
+          <td class="text-center"><span class="sorting-only">05</span>五年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">35</td>
+          <td>9789866310294</td>
+          <td>怪男孩：亞伯特．愛因斯坦</td>
+          <td class="text-center">維京國際</td>
+          <td class="text-center">SR 432</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">36</td>
+          <td>9789861244501</td>
+          <td>湯姆歷險記</td>
+          <td class="text-center">商周出版社</td>
+          <td class="text-center">SR 514</td>
+          <td class="text-center"><span class="sorting-only">06</span>六年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">37</td>
+          <td>9789571353258</td>
+          <td>千年一嘆</td>
+          <td class="text-center">時報文化</td>
+          <td class="text-center">SR 580</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">38</td>
+          <td>9789571444499</td>
+          <td>永遠的童話：琦君傳－世紀文庫傳記001</td>
+          <td class="text-center">三民</td>
+          <td class="text-center">SR 544</td>
+          <td class="text-center"><span class="sorting-only">08</span>八年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">39</td>
+          <td>9789574446605</td>
+          <td>席慕蓉精選集</td>
+          <td class="text-center">九歌</td>
+          <td class="text-center">SR 562</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">40</td>
+          <td>9789575100773</td>
+          <td>北京法源寺</td>
+          <td class="text-center">李敖</td>
+          <td class="text-center">SR 582</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">41</td>
+          <td>9789576391002</td>
+          <td>一把文學的梯子</td>
+          <td class="text-center">爾雅出版社</td>
+          <td class="text-center">SR 580</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">42</td>
+          <td>9789576391835</td>
+          <td>山居筆記</td>
+          <td class="text-center">爾雅出版社</td>
+          <td class="text-center">SR 598</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">43</td>
+          <td>9789576394034</td>
+          <td>關山奪路：王鼎鈞回憶錄四部曲之三</td>
+          <td class="text-center">爾雅出版社</td>
+          <td class="text-center">SR 589</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">44</td>
+          <td>9789576742811</td>
+          <td>讀中文系的人</td>
+          <td class="text-center">洪範</td>
+          <td class="text-center">SR 604</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">45</td>
+          <td>9789579525596</td>
+          <td>山風海雨</td>
+          <td class="text-center">洪範</td>
+          <td class="text-center">SR 545</td>
+          <td class="text-center"><span class="sorting-only">08</span>八年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">46</td>
+          <td>9789579525831</td>
+          <td>方向歸零</td>
+          <td class="text-center">洪範</td>
+          <td class="text-center">SR 552</td>
+          <td class="text-center"><span class="sorting-only">08</span>八年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">47</td>
+          <td>9789862133460</td>
+          <td>圖解時間簡史</td>
+          <td class="text-center">大塊文化</td>
+          <td class="text-center">SR 609</td>
+          <td class="text-center"><span class="sorting-only">10</span>十年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">48</td>
+          <td>9789862133477</td>
+          <td>新時間簡史</td>
+          <td class="text-center">大塊文化</td>
+          <td class="text-center">SR 611</td>
+          <td class="text-center"><span class="sorting-only">10</span>十年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">49</td>
+          <td>9789866281389</td>
+          <td>此時眾生</td>
+          <td class="text-center">有鹿文化</td>
+          <td class="text-center">SR 575</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">50</td>
+          <td>9789867480729</td>
+          <td>圍城</td>
+          <td class="text-center">大地出版社</td>
+          <td class="text-center">SR 568</td>
+          <td class="text-center"><span class="sorting-only">09</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">51</td>
+          <td>9789869029681</td>
+          <td>烈焰：閱讀札記I</td>
+          <td class="text-center">群星文化</td>
+          <td class="text-center">SR 583</td>
+          <td class="text-center"><span class="sorting-only">03</span>九年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">52</td>
+          <td>9789866310324</td>
+          <td>偉大的一步：尼爾．阿姆斯壯</td>
+          <td class="text-center">維京國際</td>
+          <td class="text-center">SR 420</td>
+          <td class="text-center"><span class="sorting-only">04</span>四年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">53</td>
+          <td>9789866310270</td>
+          <td>先左腳，再右腳</td>
+          <td class="text-center">維京國際</td>
+          <td class="text-center">SR 257</td>
+          <td class="text-center"><span class="sorting-only">02</span>二年級</td>
+        </tr>
+        <tr>
+          <td class="text-center">1000</td>
+          <td>9789866310355</td>
+          <td>雨蛙自然觀察團：池塘探險之旅</td>
+          <td class="text-center">維京國際</td>
+          <td class="text-center">SR 377</td>
+          <td class="text-center"><span class="sorting-only">03</span>三年級</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- leveledBooks-table end --> 
+  
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> 
+  <!-- footer-info start -->
+  <div class="footer-info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-3 col-lg-offset-0">
+          <ul class="footer-info__info">
+            <li><img src="Content/images/HeaderLogo.png" width="249" height="116"></li>
+            <li><i class="far fa-envelope"></i>service@smartreading.net</li>
+            <li><i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<br>
+              國立臺灣師範大學</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-2">
+          <div class="footer-info__social"><a class="footer-info__social-youtube hover-effect-dark" href="https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ" role="button" target="_blank"><i class="fab fa-youtube"></i></a> <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a> </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-7 col-lg-offset-0">
+          <nav class="footer-info__sitemap">
+            <ul class="nav-justified">
+              <li><span>關於SR</span>
+                <ul>
+                  <li><a href="about-us.html">關於我們</a></li>
+                  <li><a href="about-sys.html">SR系統介紹</a></li>
+                  <li><a href="about-dacc.html">中文閱讀能力診斷</a></li>
+                  <li><a href="about-leveledBooks.html">圖書難度分級</a></li>
+                  <li><a href="about-course.html">閱讀歷程檔案</a></li>
+                  <li><a href="about-SR.html">SR值說明</a></li>
+                </ul>
+              </li>
+              <li><span>閱讀分級</span>
+                <ul>
+                  <li><a href="leveledBooks-bookquery.html">分級查詢</a></li>
+                  <li><a href="leveledBooks-books.html">優選書單</a></li>
+                </ul>
+              </li>
+              <li><span>活動專區</span>
+                <ul>
+                  <li><a href="activity-list.html">最新消息</a></li>
+                  <li><a href="activity-list.html#lecture">講座資訊</a></li>
+                  <li><a href="activity-list.html#announce">官方公告</a></li>
+                  <li><a href="activity-list.html#report">活動報導</a></li>
+                </ul>
+              </li>
+              <li><span>合作夥伴</span>
+                <ul>
+                  <li><a href="partner.html">合作夥伴</a></li>
+                  <li><a href="partner.html#becomePartner">合作提案</a></li>
+                  <li><a href="partner-caseShare.html">案例分享</a></li>
+                </ul>
+              </li>
+              <li><a href="TRIAL/index.html">線上體驗</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-info end --> 
+  <!-- footer-products start -->
+  <div class="footer-products">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-12 col-lg-offset-0"> <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline footer-products__title">相關產品</span> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item  hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCS/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CCL/icon.png" class="img-responsive"> </a> <a href="http://23.99.115.155/srkidshub/" class="footer-products__item hover-effect-dark" target="_blank"> <img src="http://23.99.115.155/srkidshub/images/CVS/icon.png" class="img-responsive"> </a> </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-products end --> 
+</footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Script/jquery.min.js"></script> 
+<script src="Script/bootstrap-lg.min.js"></script> 
+<script src="Script/ie10-viewport-bug-workaround.js"></script> 
+<!-- widgets js --> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	$('.navTab-books').addClass('active');
+	
+	//datatables (demo，正式需工程師改寫~~)
+	$('.leveledBooks-table').DataTable({
+		responsive: true,
+		searching: true,
+		pageLength: 20,
+		pagingType: "simple_numbers",
+		columnDefs: [
+						{ "targets": 0 , "width": "20px",  orderable: false, searchable: false },
+						{ "targets": 1 , "width": "100px", orderable: false },
+						{ "targets": 2 , "width": "auto",  orderable: false },
+						{ "targets": 3 , "width": "150px", orderable: false },
+						{ "targets": 4 , "width": "100px", orderable: false },
+						{ "targets": 5 , "width": "100px", orderable: false },
+					 ],	 
+		dom:'<"leveledBooks-table__header clearfix"B<"pull-right"ip>>'+
+			'r'+
+			'<"table-responsive"<"leveledBooks-table-width"t>>'+
+			'<"leveledBooks-table__footer clearfix"pi>',
+		buttons:[	
+					{
+					  text: '書名<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+					  attr:  { id: 'sort_book'},
+					  action:  function ( ) { 
+					  	if( $('#sort_book').hasClass('asc')){ //原本asc↑，變desc↓
+							this.order( [ 2, 'desc' ] ).draw();
+							$('#sort_book').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_book').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down')
+						}else{//原本null or desc↓變asc↑
+							this.order( [ 2, 'asc' ] ).draw();
+							$('#sort_book').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_book').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up')
+						}
+					  }
+					},
+					{
+					  text: '出版社<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+					  attr:  { id: 'sort_Publishing'},
+					  action: function () { 
+						if( $('#sort_Publishing').hasClass('asc')){ //原本asc↑，變desc↓
+							this.order( [ 3, 'desc' ] ).draw();
+							$('#sort_Publishing').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_Publishing').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down')
+						}else{//原本null or desc↓變asc↑
+							this.order( [ 3, 'asc' ] ).draw();
+							$('#sort_Publishing').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_Publishing').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up')
+						}
+					  }
+					},
+					{
+					  text: 'SR值<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+					  attr:  { id: 'sort_SR'},
+					  action: function () {
+						if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
+							this.order( [ 4, 'desc' ] ).draw();
+							$('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down')
+						}else{//原本null or desc↓變asc↑
+							this.order( [ 4, 'asc' ] ).draw();
+							$('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up')
+						}//if there has "SR 1000", that will need to debug......
+					  }
+					},
+					{
+					  text: '適讀年級<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+					  attr:  { id: 'sort_grade'},
+					  action: function () { 
+					    if( $('#sort_grade').hasClass('asc')){ //原本asc↑，變desc↓
+							this.order( [ 5, 'desc' ] ).draw();
+							$('#sort_grade').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_grade').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down')
+						}else{//原本null or desc↓變asc↑
+							this.order( [ 5, 'asc' ] ).draw();
+							$('#sort_grade').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+							$('#sort_grade').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up')
+						}//因demo table沒按[SR值、適讀年級]排序，故用<span class="sorting-only">03</span>使之按一二三排序，若按資料庫排序，表格可刪除<span class="sorting-only">03</span>
+					  }
+					}
+				],
+		language: {
+			"processing":   "處理中...",
+			"loadingRecords": "載入中...",
+			"lengthMenu":   "顯示 _MENU_ 項結果",
+			"zeroRecords":  "沒有符合的結果",
+			"info":         "<span class='footer-hide'>共&nbsp;_TOTAL_&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;_PAGE_&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;_PAGES_&nbsp;<span class='header-hide'>頁</span>",
+			"infoEmpty":    "<span class='footer-hide'>共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;0&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;0&nbsp;<span class='header-hide'>頁</span>",
+			"infoFiltered": "(從 _MAX_ 本書中篩選的結果)",
+			"infoPostFix":  "",
+			"search":       "搜尋：",
+			"paginate": {
+				"first":    "第一頁",
+				"previous": "<i class='fa fa-angle-left' aria-hidden='true'></i><span>&nbsp;上一頁</span>",
+				"next":     "<span>下一頁&nbsp;</span><i class='fa fa-angle-right' aria-hidden='true'></i>",
+				"last":     "最後一頁"
+			},
+			"aria": {
+				"sortAscending":  ": 升冪排列",
+				"sortDescending": ": 降冪排列"
+			}
+		},
+    });
+
+	//demo 搜尋
+	$('.leveledBooks-search__btn-search').click(function(){
+		$('.leveledBooks-table').DataTable().column(1).search($('#searchISBN').val())
+											.column(2).search($('#searchBook').val())
+											.column(3).search($('#searchPublishing').val())
+											
+																							.draw();
+	});
+	//demo 適讀年級
+	$('.leveledBooks-search__grade .leveledBooks-search__btn-grade').click(function(){
+		$(this).button( ($(this).button() !="active") ? "active" : "" );
+		$('.leveledBooks-table').DataTable().column(5).search( $(this).text().trim() ).draw();
+  	})
+	$('.leveledBooks-search__grade .leveledBooks-search__btn-button').click(function(){
+		$('.leveledBooks-search__btn-grade').addClass('active');
+	});
+	$('.leveledBooks-search__grade .leveledBooks-search__btn-reset').click(function(){
+		$('.leveledBooks-search__btn-grade').removeClass('active');
+	});
+	
+	//到第X頁
+	var inputHTML =	'<div class="add_dataTables_input">'+
+						'到第&nbsp;'+
+						'<input type="text" class="form-control input-lg input-inline paginate_input" id="textGotoPage" data-prev="" value="">'+ 
+						'&nbsp;頁'+
+						'<a class="btn btn-lg paginate_button" id="btnGotoPage">確定</a>'+
+					'</div>';
+	$('.leveledBooks-table__footer').append(inputHTML);
+	$("#btnGotoPage").click(function(){
+		var textGotoPage = $("#textGotoPage").val();
+		var info = $('.leveledBooks-table').DataTable().page.info();
+		if(parseInt(textGotoPage) > 0 && parseInt(textGotoPage)<=info.pages){
+			$('.leveledBooks-table').DataTable().page(parseInt(textGotoPage)-1).draw(false);
+		}else{
+			alert('請輸入正確頁數。');
+		}
+	});
+	
+	//點擊table頁碼滑動至最表格上方
+	$('.leveledBooks-table').on('page.dt', function() {
+		$('html, body').animate({scrollTop: $(".leveledBooks-search").offset().top - 80}, 500);
+	});
+	
+	//(仿tab效果).leveledBooks-tabs 點擊後，不再看.page-banner而直接滑動至內容
+	$hash= document.location.hash;
+	if($hash == "" ){
+		$("html,body").animate({scrollTop:0}, 0);
+	}else{
+		$('html,body').animate({scrollTop:$('.leveledBooks-tabs').offset().top - 40}, 0);
+	}
+	
+	//了解SR值
+	$(".leveledBooks-search__btn-tip").popover().on('shown.bs.popover', function () {
+		$('.popover').addClass('leveledBooks-search__btn-tip__popover');
+	});
+});
+</script>
+</body>
+</html>

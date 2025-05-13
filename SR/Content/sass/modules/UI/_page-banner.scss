@@ -1,0 +1,36 @@
+.page-banner{
+	background-color:$main-color;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	margin-bottom:20px;
+	> .container{ 
+		position:relative;
+		.page-banner__text{
+			color:#FFF;
+			min-height:300px;
+			text-align:center;
+			display: table;
+			width:100%;
+			> div{ 
+				display: table-cell;
+				vertical-align:middle;
+			}
+			p {
+				text-align:left;
+				> br{
+					display:none;
+				}
+			}
+			@media screen and (min-width: 1200px) {
+			min-height:300px;
+			p {
+				text-align:center;
+				> br{
+					display:block;
+				}
+			}
+			}
+		}
+	}
+}

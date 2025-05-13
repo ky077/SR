@@ -1,0 +1,99 @@
+.daccPage-DACC__table{
+	min-width:1140px;
+	margin-bottom:0;
+	border:none;
+	td{
+		font-size:0.8em;
+		font-weight:300;
+		text-align:center;
+		vertical-align:middle;
+		padding: 0px;
+		border-color:#edf1f4;
+		&:nth-child(1) { width:4.6%;} 
+		&:nth-child(2) { width:7.0%;} 
+		&:nth-child(3) { width:7.0%;} 
+		&:nth-child(4) { } 
+		&:nth-child(5) { } 
+		&:nth-child(6) { } 
+		&:nth-child(7) { }
+		&:nth-child(8) { } 
+		&:nth-child(9) { width:10%;}
+		&:nth-child(10){ width:21%;} 
+	}
+	>thead{
+		tr>td{
+			background-color:#f9f9f9;
+			border-bottom:none;
+			color:#424546;
+		}
+		tr:nth-child(1)> td:nth-child(4){ 
+			border-bottom:none;
+			position:relative;
+			&::after{
+				content:"";
+				display:block;
+				width:90%;
+				height:1px;
+				background-color:#edf1f4;
+				position:absolute;
+				left:5%;
+				bottom:0;
+			}
+			&:nth-child(1) { height:110px;} 
+			&:nth-child(2) { height:110px;} 
+			&:nth-child(3) { height:110px;} 
+			&:nth-child(4) { height:55px;} 
+			&:nth-child(5) { height:110px;}
+			&:nth-child(6) { height:110px;} 
+		}
+		tr:nth-child(2)> td{
+			&:nth-child(1){ width: 9.85%; height:55px; border-top:none; border-right:none;} 
+			&:nth-child(2){ width:11.40%; height:55px; border-top:none; border-right:none; border-left:none;} 
+			&:nth-child(3){ width:9.85%; height:55px; border-top:none; border-right:none; border-left:none;} 
+			&:nth-child(4){ width:9.85%; height:55px; border-top:none; border-right:none; border-left:none;}
+			&:nth-child(5){ width:9.85%; height:55px; border-top:none;                    border-left:none;}
+		}
+	}
+	>tbody{
+		>tr>td{
+			color:#5c6466;
+			height:60px;
+			&:nth-child(4){ border-right:none;} 
+			&:nth-child(5){ border-left:none; border-right:none;} 
+			&:nth-child(6){ border-left:none; border-right:none;} 
+			&:nth-child(7){ border-left:none; border-right:none;}
+			&:nth-child(8){ border-left:none; }
+		}
+		.daccPage-DACC__table-btn{
+			color:#43a047;
+			font-size:16px;
+			background-color:#f9f9f9;
+			margin:0 4px;
+			padding: 6px 10px;
+		}
+		.daccPage-DACC__table-link{
+			color:#ff3636;
+			text-decoration:none;
+			margin:0 4px;
+			&:hover, &:focus, &:active{
+				box-shadow:0px 1px #ff3636;
+			}
+		}
+	}
+	.dacc-icon-readinSkills{
+		font-size:0.7em;
+		display:inline-block;
+		width:20px;
+		height:20px;
+		line-height:20px;
+		border-radius:50%;
+		color:#FFF;
+		vertical-align: text-bottom;
+		margin-right:2px;
+		&.skill-word{ 		  background-color:#f06f6f;}
+		&.skill-superficiall{ background-color:#ebc940;}
+		&.skill-textual{	  background-color:#ae87c2;}
+		&.skill-analysis{ 	  background-color:#6fd2db;}
+		&.skill-inference{ 	  background-color:#99dca1;}
+	}
+}

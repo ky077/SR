@@ -1,0 +1,24 @@
+.breadcrumb {
+	margin-top:20px;
+	padding: 8px 0px;
+	background-color: transparent;
+	border-radius:  transparent;
+	font-size:0.9em;
+	> li {
+		+ li:before {
+		  color: $default-black;
+		  content: "\003E"; 
+		}
+		> a{ 
+			color: $default-black;
+			text-decoration:none !important;
+			&:hover, &:focus, &:active{
+				text-decoration:none !important;
+				box-shadow:0 1px $default-black;
+			}
+		}
+	}
+	> .active {
+		color: $main-color;
+	}
+}

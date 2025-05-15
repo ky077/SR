@@ -382,11 +382,11 @@
           <div class="mb-5">SR leveled books</div>
         </div>
 		 <div class="col-md-3 wow animate__animated animate__fadeInUp">
-          <h3><label class="counter">2268,489</label></h3>
+          <h3><label class="counter">2268489</label></h3>
           <div class="mb-5">logins</div>
         </div>
 		  <div class="col-md-3 wow animate__animated animate__fadeInUp">
-          <h3><label class="counter">680,804</label></h3>
+          <h3><label class="counter">680804</label></h3>
           <div class="mb-5">number of participants in DACC test</div>
         </div>
       </div>
@@ -508,20 +508,28 @@ $(document).ready(function() {
 	
   //counter	數字轉換
   const lang = document.documentElement.lang; 
-	function formatNumberLocalized(num) {
+  function formatNumberLocalized(num) {
     if (lang === 'zh-TW') {
-		if (!isNaN(num) && num >= 10000)  return Math.floor(num / 10000) + '萬+';
-		return num + '+';
+		if (!isNaN(num) && num >= 10000)  
+			return Math.floor(num / 10000) + '萬+';
+		
+		return Math.floor(num / 10) * 10 + '+';
     } else if (lang === 'zh-CN') {
-		if (!isNaN(num) && num >= 10000)  return Math.floor(num / 10000) + '万+';
-		return num + '+';
+		if (!isNaN(num) && num >= 10000)  
+			return Math.floor(num / 10000) + '万+';
+		
+		return Math.floor(num / 10) * 10 + '+';
     } else  {
-	  if (num >= 1000 && num < 1000000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-	  if (num >= 1000000 && num < 1000000000) return (num / 1000000).toFixed(2).replace(/\.0$/, '') + 'M';
-      if (num >= 1000000000) return (num / 1000000000).toFixed(2).replace(/\.0$/, '') + 'B';
-      return num.toString();
+	  if (num >= 1000 && num < 1000000) 
+		  return Math.floor(num / 10000) * 10 + 'K+';
+		 
+	  if (num >= 1000000) 
+		  return Math.floor(num / 10000) / 100 + 'M+';
+		
+      return Math.floor(num / 10) * 10 + '+';
     } 
   }
+
 	
   $('.counter').each(function() {
     const rawText = $(this).text().replace(/,/g, '');

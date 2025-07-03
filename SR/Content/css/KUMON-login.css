@@ -1,0 +1,9 @@
+.login { background-color: #7dcdf4; }
+@media screen and (min-width: 992px) { .login { background-image: url(../images/KUMON/login/login-img.png), url(../images/KUMON/login/bg-circle.png); background-repeat: no-repeat, no-repeat; background-position: center bottom, right center; background-size: auto 100%, auto 100%; } }
+@media screen and (min-width: 1560px) { .login { background-size: auto 100%, 52.5% auto; } }
+@media screen and (min-width: 1600px) { .login { padding-left: 8.33333333%; padding-right: 8.33333333%; } }
+.login .login-panel .login-panel__header .logo-KUMONxSR { width: 66%; display: block; }
+@media screen and (min-width: 992px) { .login .login-panel .login-panel__header .logo-KUMONxSR { display: none; } }
+.login .login-panel .login-panel__header .logo-SR { width: 33%; display: none; }
+@media screen and (min-width: 992px) { .login .login-panel .login-panel__header .logo-SR { display: block; } }
+@media screen and (min-width: 992px) { .login .login-panel .login-panel__footer img { filter: invert(1) grayscale(1) brightness(0.6) opacity(0.5); } }

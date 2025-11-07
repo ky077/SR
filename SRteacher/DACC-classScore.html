@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+	
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+    
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>檢視班級成績</h2>
+      <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+        <!-- 搜尋 start -->
+        <div class="col-xl-12 mb-3" id="blockSearch">
+          <div class="row g-2 align-items-center justify-content-between">
+            <div class="col-auto">
+              <div class="row gy-1">
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto"> <label for="searchClassGrade" class="col-form-label fs-8">班年級</label> </div>
+                    <div class="col-auto">
+                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClassGrade">
+                        <option value="" disabled selected>請選擇...</option>
+                        <option value="0">全校班級</option>  
+                        <option value="4年級DEMO班">4年級DEMO班</option>  
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto"> <label for="searchSessions" class="col-form-label fs-8">場次</label> </div>
+                    <div class="col-auto">
+                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                        <option value="" disabled selected>請選擇...</option>
+                        <option value="2023/03/24,2023/06/30">2023 Demo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto px-xxl-5">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto"><label class="fs-8">時間：</label></div>
+                    <div class="col-auto"><span class="fs-8"><label id="searchStartDate">----/--/--</label>至<label id="searchEndDate">----/--/--</label></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row gy-2 align-items-center">
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto"> <label for="searchKeywords" class="col-form-label fs-7">搜尋</label> </div>
+                    <div class="col-auto">
+                      <div class="input-group">
+                        <div class="input-group-clear">
+                          <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                          <button class="btn btn-close" type="button"></button>
+                        </div>
+                        <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-primary bg-gradient">Excel 下載</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <!-- 搜尋  end  --> 
+        <!-- 表格 start -->
+        <div class="col-xl-12 mb-5">
+          <table class="table table-bordered table-classScore" id="classScore">
+            <thead>
+              <tr>
+                <th scope="col" class="td-no">序號</th>
+                <th scope="col" class="td-date">測驗日期</th>
+                <th scope="col" class="td-grade">年級</th>
+                <th scope="col" class="td-class">班級</th>
+                <th scope="col" class="td-Sid">學號</th>
+                <th scope="col" class="td-Sname">姓名</th>
+                <th scope="col" class="td-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
+                <th scope="col" class="td-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
+                <th scope="col" class="td-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
+                <th scope="col" class="td-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
+                <th scope="col" class="td-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
+                <th scope="col" class="td-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
+                <th scope="col" class="td-PR">PR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-no">1</td>
+                <td class="td-date">2022/11/28</td>
+                <td class="td-grade">3</td>
+                <td class="td-class"><input class="form-control rounded-0 readonly" type="text" value="Test 01" disabled readonly></td>
+                <td class="td-Sid"><input class="form-control rounded-0 readonly" type="text" value="2010123" disabled readonly></td>
+                <td class="td-Sname"><input class="form-control rounded-0 readonly" type="text" value="張花花" disabled readonly></td>
+                <td class="td-DACCall">500</td>
+                <td class="td-DACCword">100</td>
+                <td class="td-DACCsuperficial">100</td>
+                <td class="td-DACCtextual">100</td>
+                <td class="td-DACCinference">100</td>
+                <td class="td-DACCanalysis">100</td>
+                <td class="td-PR">60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 表格  end  --> 
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+    
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script>     
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+    
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="DACC-classScore"]').addClass('active');
+    }); 
+    
+    const list = $('#classScore');
+    
+    //清空html
+    list.find('tbody').remove();
+    $('#searchClassGrade, #searchSessions').html('<option value="" disabled selected>請選擇...</option>');
+
+    //班級成績 datatables 
+	list.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,  
+        order: [],  //取消默認排序icon
+        ordering: false,
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer"pi>',
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        //ajax: 'Content/json/testMgt-classScore/classScore.json',
+        columnDefs: [
+            {//序號
+                targets: 0,
+                title: '序號',
+                width: '4%',
+                className: 'td-no',
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//測驗日期
+                targets: 1, 
+                title: '測驗日期',
+                data: 'date',
+                width: '9%',
+                className: 'td-date',
+                type: 'date',
+            },
+            {//年級 
+                targets: 2,
+                title: '年級',
+                data: 'grade',
+                width: '4%',
+                className: 'td-grade',
+                type: 'numeric',
+            },
+            {//班級
+                targets: 3, 
+                title: '班級',
+                data: 'class',
+                width: '8%',
+                className: 'td-class',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
+                }
+            },
+            {//學號
+                targets: 4, 
+                title: '學號',
+                data: 'Sid',
+                width: '7%',
+                className: 'td-Sid',
+                orderDataType: 'dom-text',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
+                } 
+            },
+            {//姓名
+                targets: 5, 
+                title: '姓名',
+                data: 'Cname',
+                width: '8%',
+                className: 'td-Cname',
+                orderDataType: 'dom-text',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
+                } 
+            },
+            {//整體閱讀理解能力
+                targets: 6, 
+                title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
+                data: 'DACCall',
+                width: '12.5%',
+                className: 'td-DACCall',
+                type: 'numeric',
+            },
+            {//字詞辨識
+                targets: 7, 
+                title: '<span class="DACCicon-word">字</span>字詞辨識',
+                data: 'DACCword',
+                width: '8%',
+                className: 'td-DACCword',
+                type: 'numeric',
+            },
+            {//表層文意理解
+                targets: 8, 
+                title: '<span class="DACCicon-superficial">表</span>表層文意理解',
+                data: 'DACCsuperficial',
+                width: '10.5%',
+                className: 'td-DACCsuperficial',
+                type: 'numeric',
+            },
+            {//文意統整
+                targets: 9, 
+                title: '<span class="DACCicon-textual">文</span>文意統整',
+                data: 'DACCtextual',
+                width: '8%',
+                className: 'td-DACCtextual',
+                type: 'numeric',
+            },
+            {//推論理解
+                targets: 10, 
+                title: '<span class="DACCicon-inference">推</span>推論理解',
+                data: 'DACCinference',
+                width: '8%',
+                className: 'td-DACCinference',
+                type: 'numeric',
+            },
+            {//分析評鑑
+                targets: 11, 
+                title: '<span class="DACCicon-analysis">分</span>分析評鑑',
+                data: 'DACCanalysis',
+                width: '8%',
+                className: 'td-DACCanalysis',
+                type: 'numeric',
+            },
+            {//PR
+                targets: 12, 
+                title: 'PR',
+                data: 'PR',
+                width: '5%',
+                className: 'td-PR',
+                type: 'numeric',
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);    
+        }
+    });
+    
+    //demo
+    let searchData = null; //當前要搜尋的json資料
+    $.getJSON('Content/json/testMgt-classScore/classScore.json', function (data) {
+        searchData = data; 
+        
+        //寫入[班年級]下拉選項
+        let selectArrayCG = [];
+        $.each(data.data, function(index, item) { 
+            selectArrayCG.push(item.grade+','+item.class);
+        }); 
+        var uniqueSelectArrayCG = [...new Set(selectArrayCG)];
+
+        let selectHtmlCG = '';
+        for(let i=0; i<uniqueSelectArrayCG.length; i++){
+            selectHtmlCG += '<option value="' + uniqueSelectArrayCG[i] + '">'+ uniqueSelectArrayCG[i].split(',')[0] +'年'+ uniqueSelectArrayCG[i].split(',')[1] +'班</option>';   
+        }
+
+        $('#searchClassGrade').html(`<option value="" disabled selected>請選擇...</option>
+                                     <option value="0">全校班級</option>` + 
+                                     selectHtmlCG);
+        
+        //選擇[班年級]
+        $('#searchClassGrade').change(function(){
+            //取得符合選擇的[班年級]json資料
+            let filterClassGrade;
+            
+            if( $(this).val() == '0' ){//全校班級
+                filterClassGrade = data.data;
+            }else{
+                let classGradeArray = $(this).val().split(',');
+                let gradeVal = classGradeArray[0], 
+                    classVal = classGradeArray[1]; 
+
+                filterClassGrade = $.grep(data.data, function(item) {
+                    return item.grade === gradeVal && item.class === classVal;
+                }); 
+            }
+            
+            searchData = filterClassGrade;
+            
+            //寫入[場次]下拉選項
+            let selectArrayS = [];
+            $.each(filterClassGrade, function(index, item) { 
+                selectArrayS.push(item.session);
+            }); 
+            var uniqueSelectArrayS = [...new Set(selectArrayS)];
+
+            let optionHtmlS = '';
+            for(let i=0; i<uniqueSelectArrayS.length; i++){ 
+                //取得、寫入各場次下拉選項的時間value 
+                $.getJSON('Content/json/testMgt-classScore/sessions.json', function (data) {
+                    let filterSession = $.grep(data.data, function(item) {
+                        return item.session === uniqueSelectArrayS[i];
+                    }); 
+
+                    optionHtmlS += '<option value="' + filterSession[0].startDate + ','+ filterSession[0].endDate + '">' + uniqueSelectArrayS[i] + '</option>'; 
+
+                    $('#searchSessions').html(`<option value="" disabled selected>請選擇...</option>` + 
+                                               optionHtmlS);
+                }); 
+            }
+            
+            //選擇[場次]
+            $('#searchSessions').change(function(){
+                //顯示時間
+                let SessionsArray = $('#searchSessions').val().split(',');
+                $('#searchStartDate').text(SessionsArray[0]);
+                $('#searchEndDate').text(SessionsArray[1]); 
+
+                //取得符合選擇的[場次]json資料
+                let sessionVal = $(this).find('option:selected').text(); 
+                
+                let matchSession = $.grep(filterClassGrade, function(item) {
+                    return item.session === sessionVal;
+                }); 
+                
+                //datatable
+                list.DataTable().clear();
+                list.DataTable().rows.add( matchSession ).draw(); 
+                
+                searchData = matchSession;
+            });
+        });
+
+        //[搜尋]關鍵字
+        $('#btnSearch').click(function(){
+            let classGradeVal = $('#searchClassGrade option:selected').val(),
+                sessionsVal   = $('#searchSessions option:selected').val(),
+                keywordsVal   = $('#searchKeywords').val().trim();
+            
+            list.DataTable().clear();
+
+            if( !classGradeVal && !sessionsVal && !keywordsVal){
+                alertModal('<div class="text-red">請選擇班年級、場次<br>或輸入關鍵字。</div>');
+            }else if( !classGradeVal && !sessionsVal && keywordsVal){
+                list.DataTable().rows.add(searchData.data)
+                                .search( $('#searchKeywords').val() ).draw();
+            }else{
+                list.DataTable().rows.add(searchData)
+                                .search( $('#searchKeywords').val() ).draw();
+            }
+        });
+        
+        //[搜尋][X]重置
+        $('#searchKeywords + .btn-close').click(function(){ 
+            let classGradeVal = $('#searchClassGrade option:selected').val(),
+                sessionsVal   = $('#searchSessions option:selected').val(),
+                keywordsVal   = $('#searchKeywords').val().trim();
+            
+            if( !classGradeVal && !sessionsVal && !keywordsVal){
+                list.DataTable().clear().draw();
+            }else{
+                $('#btnSearch').trigger('click');     
+            }
+        }); 
+    });   
+});  
+</script>
+</body>
+</html>

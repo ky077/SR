@@ -1,0 +1,124 @@
+{
+  "data": [
+	{
+      "id": "1",
+      "good": 0,
+      "cover": "27278.jpg",
+      "bookTitle": "能量七密碼：療癒身心靈，喚醒你本有的創造力、直覺和內在力量【附24張圖例】（The Energy Codes： The 7-Step System to Awaken Your Spirit，Heal Your Body，and Live Your Best Life）",
+      "added": "黃老師",
+      "SR": "768",
+      "sort": "成長/生命教育",
+      "topic": "摘要題",
+      "ebook": 0,
+      "bookplanet": 1
+    },
+    {
+      "id": "2",
+      "good": 0,
+      "cover": "002.jpg",
+      "bookTitle": "三隻餓狼想吃雞",
+      "added": "黃老師",
+      "SR": "265",
+      "sort": "童話/寓言",
+      "topic": "選擇題",
+      "ebook": 1,
+      "bookplanet": 0
+    },
+    {
+      "id": "3",
+      "good": 0,
+      "cover": "005.jpg",
+      "bookTitle": "害怕的時候",
+      "added": "黃老師",
+      "SR": "187",
+      "sort": "成長/生命教育",
+      "topic": "摘要題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "4",
+      "good": 0,
+      "cover": "006.jpg",
+      "bookTitle": "第一條魚",
+      "added": "黃老師",
+      "SR": "363",
+      "sort": "成長/生命教育",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "5",
+      "good": 1,
+      "cover": "010.jpg",
+      "bookTitle": "走進生命花園",
+      "added": "黃老師",
+      "SR": "448",
+      "sort": "童話/寓言",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "6",
+      "good": 0,
+      "cover": "012.jpg",
+      "bookTitle": "10隻橡皮小鴨",
+      "added": "黃老師",
+      "SR": "342",
+      "sort": "懸疑推理/冒險/科幻",
+      "topic": "摘要題",
+      "ebook": 1,
+      "bookplanet": 1
+    },
+    {
+      "id": "7",
+      "good": 0,
+      "cover": "025.jpg",
+      "bookTitle": "團圓",
+      "added": "黃老師",
+      "SR": "258",
+      "sort": "親情/友誼/愛情",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "8",
+      "good": 0,
+      "cover": "027.jpg",
+      "bookTitle": "影子和我",
+      "added": "黃老師",
+      "SR": "279",
+      "sort": "童話/寓言",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "9",
+      "good": 0,
+      "cover": "028.jpg",
+      "bookTitle": "小琪的房間",
+      "added": "黃老師",
+      "SR": "330",
+      "sort": "成長/生命教育成長",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    },
+    {
+      "id": "10",
+      "good": 0,
+      "cover": "029.jpg",
+      "bookTitle": "瘋狂愛上書",
+      "added": "黃老師",
+      "SR": "338",
+      "sort": "童話/寓言",
+      "topic": "選擇題",
+      "ebook": 0,
+      "bookplanet": 0
+    }
+  ]
+}

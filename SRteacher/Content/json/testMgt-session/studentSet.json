@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "grade": 5,
+      "table": [
+          {
+            "class": "TEST 01",
+            "students": [{
+              "Cname": "張花花1",
+              "Sid": "2020153",
+              "account": "srtt01@smartreading.com"
+            }]
+          },
+          {
+            "class": "TEST 02",
+            "students": [{
+              "Cname": "張花花",
+              "Sid": "2020153",
+              "account": "srtt01@smartreading.com"
+            },{
+              "Cname": "張花花0",
+              "Sid": "2020153",
+              "account": "srtt01@smartreading.com"
+            }]
+          }
+      ]
+    },
+    {
+      "grade": 4,
+      "table": [
+          {
+            "class": "TEST 05",
+            "students": [{
+              "Cname": "張花花",
+              "Sid": "2020153",
+              "account": "srtt01@smartreading.com"
+            }]
+          }
+      ]
+    } 
+
+  ]
+}

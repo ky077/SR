@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+	
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>教師命題管理</h2>
+      <div class="row py-3 py-xl-5 px-1 px-xl-4">
+        <!-- 按鈕 start -->
+        <div class="col-xxl-5 mb-3" id="blockBtns">
+          <button type="button" class="btn btn-primary my-1" id="edit"><i class="fa-solid fa-pen-to-square me-1"></i>編輯設定</button>
+          <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="insert"><i class="fa-solid fa-plus me-1"></i>發表新題本及題目</button>
+        </div>
+        <!-- 按鈕  end  --> 
+        <!-- 搜尋 start -->
+        <div class="col-xxl-7 mb-3" id="blockSearch">
+          <div class="row g-2 align-items-center justify-content-end">
+            <div class="col-auto d-none d-lg-inline ms-3">
+              <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
+            </div>
+            <div class="col-auto">
+              <div class="input-group">
+                <div class="input-group-clear">
+                  <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                  <button class="btn btn-close" type="button"></button>
+                </div>
+                <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋  end  --> 
+        <!-- 表格 start -->
+        <div class="col-xl-12 mb-5">
+          <table class="table table-bordered table-classLists" id="classLists">
+            <thead>
+              <tr>
+                <th scope="col" class="td-delete">刪除</th>
+                <th scope="col" class="td-name">書名</th>
+                <th scope="col" class="td-isbn">ISBN</th>
+                <th scope="col" class="td-author">作者</th>
+                <th scope="col" class="td-num">題本數</th>
+                <th scope="col" class="td-detail">題本詳情</th>
+                <th scope="col" class="td-add">新增本書本題</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-delete"><div class="SRform-check-red">
+                    <input class="form-check-input" type="checkbox" name="delete">
+                  </div></td>
+                <td class="td-name">老樹之歌</td>
+                <td class="td-isbn">9889573269670</td>
+                <td class="td-author"> 劉克襄 作； 阿桂 繪</td>
+                <td class="td-num">2</td>
+                <td class="td-detail"><a href="#" role="button">顯示詳情</a></td>
+                <td class="td-add"><button type="button" class="btn btn-primary">新增</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 表格  end  --> 
+      </div>
+      
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="RP-proposition"]').addClass('active');   
+    }); 
+
+}); 
+</script>
+
+</body>
+</html>

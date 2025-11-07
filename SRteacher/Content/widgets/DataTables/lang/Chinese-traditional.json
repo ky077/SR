@@ -1,0 +1,22 @@
+{
+			"processing": "<span class='visually-hidden'>處理中...</span>",
+			"loadingRecords": "載入中...",
+			"lengthMenu":   "顯示 _MENU_ 項結果",
+			"zeroRecords":  "沒有符合的結果",
+            "info":         "<span class='d-inline d-sm-none'>第&nbsp;_PAGE_&nbsp;頁&nbsp;/&nbsp;</span><span>共&nbsp;_PAGES_&nbsp;頁</span>",
+			"infoEmpty":    "<span>共&nbsp;_PAGES_&nbsp;頁</span>",
+			"infoFiltered": "<span class='d-none'>(從 _MAX_ 項目中篩選的結果)</span>",
+			"infoPostFix":  "",
+			"search":       "搜尋：",
+			"paginate": {
+				"first":    "<span>第一頁</span>",
+				"previous": "<span>上一頁</span>",
+				"next":     "<span>下一頁</span>",
+				"last":     "<span>最後一頁</span>"
+			},
+			"aria": {
+				"sortAscending":  ": 升冪排列",
+				"sortDescending": ": 降冪排列"
+			},
+            "emptyTable": "尚無資料"
+}

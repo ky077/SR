@@ -435,6 +435,11 @@ function format(rowIndex) {
 function loadclassDetialTable(rowIndex) {
 	const list2 = $(`#classDetialTable_${rowIndex}`);
 	
+	if ($.fn.DataTable.isDataTable(list2)) { 
+        list2.DataTable().clear().destroy();
+        list2.find('tbody').empty();
+    }
+	
 	//班級學生 datatables 
 	list2.DataTable({
 		//serverSide: true,     // 開啟伺服端模式
@@ -530,6 +535,11 @@ function loadclassDetialTable(rowIndex) {
 //閱讀計畫 datatables
 function loadStudentReadingPlanTable() {
 	const RPlist = $('#RPList');
+	
+	if ($.fn.DataTable.isDataTable(RPlist)) { 
+        RPlist.DataTable().clear().destroy();
+        RPlist.find('tbody').empty();
+    }
 
 	RPlist.DataTable({
         //serverSide: true,     // 開啟伺服端模式

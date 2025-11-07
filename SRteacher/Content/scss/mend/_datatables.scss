@@ -49,6 +49,9 @@
 				&.hover:not(.disabled){
 					border-color: $primary;
 					color: $primary;
+					.glyphicon::before  {
+						filter: invert(51%) sepia(21%) saturate(1233%) hue-rotate(73deg) brightness(100%) contrast(88%);
+					}
 				}
 			}
 			.dt-button-checkbox{

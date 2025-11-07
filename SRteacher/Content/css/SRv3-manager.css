@@ -93,6 +93,7 @@ a.disabled, a[disabled], a[disabled="disabled"] { pointer-events: none; opacity:
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button { padding: .325rem .75rem; margin: .125rem .125rem .125rem 0; border: 1px solid #C6C6C6; border-radius: 0; font-size: .8rem; color: #2E3233; background-color: #FFF; background-image: none; vertical-align: middle; }
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button > span { display: flex; align-items: center; justify-content: center; }
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button:hover, .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button.hover, .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button:hover:not(.disabled), .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button.hover:not(.disabled) { border-color: #43a047; color: #43a047; }
+.dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button:hover .glyphicon::before, .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button.hover .glyphicon::before, .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button:hover:not(.disabled) .glyphicon::before, .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button.hover:not(.disabled) .glyphicon::before { filter: invert(51%) sepia(21%) saturate(1233%) hue-rotate(73deg) brightness(100%) contrast(88%); }
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button-checkbox img { vertical-align: middle; }
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button-checkbox .form-check { min-height: auto; }
 .dataTables_wrapper .datatables-custom-header .dt-buttons .dt-button-checkbox .form-check .form-check-input { margin-right: 0; }
@@ -384,11 +385,6 @@ button .userScore.byTeacher.failed:hover { background-color: #ff2b2b; border: 1p
 .recommendedBook-list .dataTables_wrapper .datatables-custom-footer .dataTables_info .info-total { display: none; }
 .recommendedBook-list .dataTables_wrapper .datatables-custom-footer .dataTables_info .info-page { display: none; }
 
-.glyphicon { position: relative; display: inline-block; width: 1em; height: 1em; }
-.glyphicon::before { content: ""; display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-position: center; background-size: contain; }
-.glyphicon.glyphicon-arrow-up::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,16.005 L7.395,8.088 L10.501,8.088 L5.500,0.002 L0.500,8.088 L3.605,8.088 L3.605,16.005 L7.395,16.005 Z'/%3E %3C/svg%3E"); }
-.glyphicon.glyphicon-arrow-down::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,-0.005 L7.395,7.912 L10.501,7.912 L5.500,15.998 L0.500,7.912 L3.605,7.912 L3.605,-0.005 L7.395,-0.005 Z'/%3E %3C/svg%3E"); }
-
 .table-RPList { margin-bottom: 0; }
 .table-RPList > thead { display: none; }
 .table-RPList > tbody { /*set width&height*/ }
@@ -441,6 +437,11 @@ height:95px;
   .table-RPList > tbody tr td.book-front { height: 211px; } }
 .table-RPList > tbody > tr.ungradedBook { background-color: #f9f9f9 !important; }
 .table-RPList > tbody > tr.ungradedBook > td.book-SR::before { opacity: 0; }
+
+.glyphicon { position: relative; display: inline-block; width: 1em; height: 1em; }
+.glyphicon::before { content: ""; display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-position: center; background-size: contain; }
+.glyphicon.glyphicon-arrow-up::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,16.005 L7.395,8.088 L10.501,8.088 L5.500,0.002 L0.500,8.088 L3.605,8.088 L3.605,16.005 L7.395,16.005 Z'/%3E %3C/svg%3E"); }
+.glyphicon.glyphicon-arrow-down::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,-0.005 L7.395,7.912 L10.501,7.912 L5.500,15.998 L0.500,7.912 L3.605,7.912 L3.605,-0.005 L7.395,-0.005 Z'/%3E %3C/svg%3E"); }
 
 .tobeGradedBlock { background-color: #F9F9F9; padding: 1.5rem 2rem; font-size: .8rem; }
 .tobeGradedBlock h3 { position: relative; }

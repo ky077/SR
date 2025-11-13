@@ -2,15 +2,15 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-delete{     	 width:  4%; display: none;}
+                &.row-delete{     	 width:  4%; }
                 &.row-index{         width:  4%; }
                 &.row-school{     	 width: 16%; } 
                 &.row-year{       	 width: 10%; }
                 &.row-grade{      	 width: 10%; } 
                 &.row-class{      	 width: 14%; }
                 &.row-teacher{    	 width: 12%; } 
-                &.row-studentCount{ width: 14%; }
-                &.row-studentList{  width: 10%; } 
+                &.row-studentCount{  width: 14%; }
+                &.row-studentList{   width: 10%; } 
                 &.row-status{        width: 10%; }      
             }   
         }

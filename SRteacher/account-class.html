@@ -460,8 +460,6 @@
 <!-- widgets JS --> 
 <script src="Content/js/bootstrap.bundle.min.js"></script> 
 <script src="Content/widgets/DataTables/datatables.min.js"></script> 
-<script src="Content/js/doubleScorollbar.js"></script> 
-
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
@@ -651,40 +649,46 @@ $(document).ready(function() {
     
     //[修改資料]
     $('#edit').click(function(){
-        //功能按鈕、搜尋 區域不可按
+        //功能按鈕區、搜尋區 不可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
+		
+		//頁碼隱藏(僅可編輯目前畫面的資料)
+        $('.datatables-custom-footer').hide(); 
+		
+		//[修改資料]-按鈕 顯示
+        $('#blockEditBtns').show(); 
         
-        //表格排序關閉
+        //表格排序 關閉
         list.find('thead th, thead td')
                 .removeClass('sorting sorting sorting_asc sorting_desc')
                 .unbind('click');
-        
-        //表格欄位 刪除顯示 序號隱藏
-        list.DataTable().column('.row-delete').visible(true); 
-        list.DataTable().column('.row-index').visible(false); 
-        
-        //表格欄位可編輯
+		
+		//表格欄位 可編輯
         list.find('td:not(.row-school)')
             .find('input, select').attr('disabled', false).removeClass('readonly'); 
-        
+		
         //表格欄位 學生名單-[查看] 不可按
         list.find('button').attr('disabled', true); 
         
-        //頁碼隱藏(因僅可編輯目前畫面的資料)
-        $('.datatables-custom-footer').hide(); 
-        
-        //[修改資料]-按鈕 區域顯示
-        $('#blockEditBtns').show(); 
+        //表格欄位 顯示刪除、隱藏序號
+        list.DataTable().column('.row-delete').visible(true); 
+        list.DataTable().column('.row-index').visible(false); 
     });
     
     //[修改資料]>[取消]
     $('#editCancel').click(function(){
-        //do something... (若有修改資料，則還原為原資料)
+        //do something... (若有修改資料，按取消需還原為原資料)
         
-        //功能按鈕、搜尋 區域可按
+        //功能按鈕區、搜尋區 可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+		
+		//頁碼顯示
+        $('.datatables-custom-footer').show(); 
+		
+		//[修改資料]-按鈕 隱藏
+        $('#blockEditBtns').hide(); 
         
-        //表格排序開啟
+        //表格排序 開啟
         list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
                 .addClass('sorting')
                 .each(function(){
@@ -693,24 +697,20 @@ $(document).ready(function() {
                     list.DataTable().order.listener('.' + c, i);
                 });
         
-        //表格欄位 刪除隱藏 序號顯示
-        list.DataTable().column('.row-delete').visible(false); 
-        list.DataTable().column('.row-index').visible(true); 
-        
-        //表格欄位不可編輯
+        //表格欄位 不可編輯
         list.find('input, select').attr('disabled', true).addClass('readonly');
         
-        //表格欄位 學生名單-[查看] 可按
-        list.find('button').attr('disabled', false); 
+        //若有錯誤紅框，則清除紅框
+		if (list.find('.invalid').length) {
+		  list.find('.invalid').removeClass('invalid');
+		};
 
-        //頁碼顯示
-        $('.datatables-custom-footer').show(); 
-        
-        //[修改資料]-訊息 清空錯誤
-        list.find('.invalid').removeClass('invalid');
-        
-        //[修改資料]-按鈕 區域隱藏
-        $('#blockEditBtns').hide(); 
+		//表格欄位 學生名單-[查看] 可按
+        list.find('button').attr('disabled', false); 
+		
+		//表格欄位 隱藏刪除、顯示序號
+        list.DataTable().column('.row-delete').visible(false); 
+        list.DataTable().column('.row-index').visible(true); 
     });
     
     //[修改資料]>[確定修改]

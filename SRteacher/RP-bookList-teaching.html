@@ -113,14 +113,14 @@
             </table>
           </div>
           <!-- 表格  end  --> 
-          <!-- [修改資料]-按鈕 start -->
+          <!-- [書單設定]-按鈕 start -->
           <div class="col-xl-12 text-center mb-5" id="blockSettingBtns" style="display: none;">
             <div>
               <button type="button" class="btn btn-outline-primary m-1" id="settingCancel">取消</button>
               <button type="button" class="btn btn-primary m-1" id="settingConfirm">確定設定</button>
             </div>
           </div>
-          <!-- [修改資料]-按鈕  end  --> 
+          <!-- [書單設定]-按鈕  end  --> 
         </div>
         <!-- 教學指定書單  end  --> 
         <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -245,7 +245,7 @@
               <div class="col-sm-6">
                 <div class="input-group">
                   <div class="input-group-clear">
-                    <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="inputSearchBook">
+                    <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" >
                     <button class="btn btn-close" type="button"></button>
                   </div>
                   <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id=""><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
@@ -311,10 +311,9 @@
                         <th class="row-good">優選書單</th>
                         <th class="row-cover">書封面</th>
                         <th class="row-bookTitle">書名</th>
-                        <th class="row-added">新增者</th>
                         <th class="row-SR">圖書難度</th>
-                        <th class="row-sort">分類</th>
-                        <th class="row-topic">題本類別</th>
+                        <th class="row-category">分類</th>
+                        <th class="row-topicType">題本類別</th>
                         <th class="row-ebook">電子書</th>
                         <th class="row-checkbox">加入書單</th>
                         <th class="row-bookplanet">布可星球</th>
@@ -326,10 +325,9 @@
                         <td class="row-good"><img src="Content/images/recommendedBook/goodBook.png" width="66" height="65" alt=""></td>
                         <td class="row-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
                         <td class="row-bookTitle">能量七密碼：療癒身心靈，喚醒你本有的創造力、直覺和內在力量【附24張圖例】（The Energy Codes： The 7-Step System to Awaken Your Spirit，Heal Your Body，and Live Your Best Life）</td>
-                        <td class="row-added" data-th="新增者">黃老師</td>
                         <td class="row-SR" data-th="圖書難度">SR 999</td>
-                        <td class="row-sort" data-th="分類">成長/生命教育成長/生命教</td>
-                        <td class="row-topic" data-th="題本類別">摘要題成長/生命教</td>
+                        <td class="row-category" data-th="分類">成長/生命教育成長/生命教</td>
+                        <td class="row-topicType" data-th="題本類別">摘要題成長/生命教</td>
                         <td class="row-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"  alt="">&nbsp;電子書</td>
                         <td class="row-checkbox"><div class="form-check form-check-inline">
                             <input class="form-check-input border-primary" type="checkbox" value="" id="checkbox8">
@@ -441,8 +439,6 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/js/doubleScorollbar.js"></script> 
-
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
@@ -583,49 +579,57 @@ $(document).ready(function() {
     
     //[書單設定]
     $('#setting').click(function(){
-        //功能按鈕、搜尋 區域不可按
+        //功能按鈕區、搜尋區 不可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
-        
-        //表格欄位 刪除顯示 序號隱藏
+		
+		//頁碼隱藏(僅可編輯目前畫面的資料)
+        $('.datatables-custom-footer').hide(); 
+
+        //[書單設定]-按鈕 顯示
+        $('#blockSettingBtns').show(); 
+		
+		//表格欄位 可編輯
+        list.find('input, select').attr('disabled', false).removeClass('readonly'); 
+		
+		//表格欄位 顯示刪除、隱藏序號
         list.DataTable().column('.row-delete').visible(true); 
         list.DataTable().column('.row-index').visible(false); 
-        
-        //表格欄位可編輯
-        list.find('td')
-            .find('input, select').attr('disabled', false).removeClass('readonly');
-        
-        //頁碼隱藏(因僅可編輯目前畫面的資料)
-        $('.datatables-custom-footer').hide(); 
-        
-        //[書單設定]-按鈕 區域顯示
-        $('#blockSettingBtns').show(); 
+		
+		//表格按鈕 不可按
+        if (list.find('button').length) {
+		  list.find('button').attr('disabled', true);
+		}
     });
     
     //[書單設定]>[取消]
     $('#settingCancel').click(function(){
-        //do something... (若有修改資料，則還原為原資料)
+        //do something... (若有修改資料，按取消需還原為原資料)
         
-        //功能按鈕、搜尋 區域可按
+        //功能按鈕區、搜尋區 可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+		
+		//頁碼顯示
+        $('.datatables-custom-footer').show(); 
+		
+		//[書單設定]-按鈕 隱藏
+        $('#blockSettingBtns').hide(); 
+		
+		//表格欄位 不可編輯
+        list.find('td:not(.row-delete)').find('input, select').attr('disabled', true).addClass('readonly');
         
-        //表格欄位 刪除隱藏 序號顯示
+        //表格欄位 隱藏刪除、顯示序號
         list.DataTable().column('.row-delete').visible(false); 
         list.DataTable().column('.row-index').visible(true); 
         
-        //表格欄位不可編輯
-        list.find('input, select').attr('disabled', true).addClass('readonly');
-        
-        //表格欄位內的按鈕 可按
-        list.find('button').attr('disabled', false); 
+        //表格按鈕 可按
+		if (list.find('button').length) {
+		  list.find('button').attr('disabled', false);
+		}
 
-        //頁碼顯示
-        $('.datatables-custom-footer').show(); 
-        
-        //[書單設定]-訊息 清空錯誤
-        list.find('.invalid').removeClass('invalid');
-        
-        //[書單設定]-按鈕 區域隱藏
-        $('#blockSettingBtns').hide(); 
+		//若有錯誤紅框，則清除紅框
+		if (list.find('.invalid').length) {
+		  list.find('.invalid').removeClass('invalid');
+		}
     });
     
     //[書單設定]>[確定修改]
@@ -660,27 +664,31 @@ $(document).ready(function() {
                 alertModal('<div class="text-red">修改成功！</div>');
             
                 $('#alertModal').on('hidden.bs.modal', function () {
-                    //功能按鈕、搜尋 區域可按
+                    //功能按鈕區、搜尋區 可按
                     $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+					
+					//頁碼顯示
+                    $('.datatables-custom-footer').show(); 
+					
+					//[書單設定]-按鈕 隱藏
+                    $('#blockSettingBtns').hide();
+					
+					//表格欄位 不可編輯
+                    list.find('input, select').attr('disabled', true).addClass('readonly');
 
-                    //表格欄位 刪除隱藏 序號顯示
+                    //表格欄位 隱藏刪除、顯示序號
                     list.DataTable().column('.row-delete').visible(false); 
                     list.DataTable().column('.row-index').visible(true); 
 
-                    //表格欄位不可編輯
-                    list.find('input, select').attr('disabled', true).addClass('readonly');
-                    
-                    //表格欄位內的按鈕 可按
-                    list.find('button').attr('disabled', false); 
+                    //表格按鈕 可按
+                    if (list.find('button').length) {
+					  list.find('button').attr('disabled', false);
+					}
 
-                    //頁碼顯示
-                    $('.datatables-custom-footer').show(); 
-
-                    //[修改資料]-訊息 清空錯誤
-                    list.find('.invalid').removeClass('invalid');
-
-                    //[修改資料]-按鈕 區域隱藏
-                    $('#blockSettingBtns').hide();     
+                    //若有錯誤紅框，則清除紅框
+					if (list.find('.invalid').length) {
+					  list.find('.invalid').removeClass('invalid');
+					}    
                 });    
             }
         }else{//修改失敗 demo
@@ -1006,19 +1014,8 @@ function loadRecommendedBook(json) {
                 className: 'row-bookTitle',
                 orderable: false,
             },
-            {//新增者
-                targets: 4, 
-                title: '新增者',
-                data: 'added',
-                className: 'row-added',
-				visible: false,
-                orderable: false,
-				createdCell: function (td, cellData, rowData, row, col) {
-					$(td).attr('data-th', '新增者');
-				}
-            },
             {//圖書難度
-                targets: 5, 
+                targets: 4, 
                 title: '圖書難度',
                 data: 'SR',
                 className: 'row-SR',
@@ -1031,27 +1028,27 @@ function loadRecommendedBook(json) {
 				}
             },
             {//分類
-                targets: 6, 
+                targets: 5, 
                 title: '分類',
-                data: 'sort',
-                className: 'row-sort',
+                data: 'category',
+                className: 'row-category',
                 orderable: false,
 				createdCell: function (td, cellData, rowData, row, col) {
 					$(td).attr('data-th', '分類');
 				}
             },
             {//題本類別
-                targets: 7, 
+                targets: 6, 
                 title: '題本類別',
-                data: 'topic',
-                className: 'row-topic',
+                data: 'topicType',
+                className: 'row-topicType',
                 orderable: false,
 				createdCell: function (td, cellData, rowData, row, col) {
 					$(td).attr('data-th', '題本類別');
 				}
             },
 			{//電子書
-                targets: 8, 
+                targets: 7, 
                 title: '電子書',
                 data: 'ebook',
                 width: '10%',
@@ -1074,7 +1071,7 @@ function loadRecommendedBook(json) {
                 } 
             },
 			{//加入書單
-                targets: 9, 
+                targets: 8, 
                 title: '加入書單',
                 className: 'row-checkbox',
                 orderable: false,
@@ -1086,7 +1083,7 @@ function loadRecommendedBook(json) {
                 }
             },
 			{//布可星球
-                targets: 10, 
+                targets: 9, 
                 title: '布可星球',
                 data: 'bookplanet',
                 width: '10%',

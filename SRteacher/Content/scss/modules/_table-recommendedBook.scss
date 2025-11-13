@@ -72,13 +72,13 @@ $default-black: $body-color;
 						height: auto;
 					}
 				}
-				&.row-book-title{
+				&.row-bookTitle{
 					font-size: 1rem;
 					font-weight: 500;
 					color: $default-black;
 					padding-bottom: .5rem;
 				}
-				&.row-added, &.row-SR, &.row-sort, &.row-topic{
+				&.row-addedBy, &.row-SR, &.row-category, &.row-topicType, &.row-topicStatus{
 					font-size: .8rem;
 					color: $default-black;
 					&:before {
@@ -89,7 +89,7 @@ $default-black: $body-color;
 					font-size: .8rem;
 					width: auto;
 				}
-				&.row-checkbox{
+				&.row-checkbox, &.row-tool{
 					width: auto;
 				}
                 &.row-bookplanet{
@@ -109,6 +109,8 @@ $default-black: $body-color;
 						left: .25rem*3;
                     }
 				}
+				
+				
 			}
 			
 		}
@@ -121,14 +123,6 @@ $default-black: $body-color;
 		.recommendedBook-table-header{ 
 			.dt-buttons{ 
 				.dt-button-SRsort{
-					&:hover,
-					&.hover,
-					&:hover:not(.disabled),
-					&.hover:not(.disabled){
-						.glyphicon::before  {
-							filter: invert(51%) sepia(21%) saturate(1233%) hue-rotate(73deg) brightness(100%) contrast(88%);
-						}
-					}
 					&:focus, &:active,
 					&.focus, &.active,
 					&:focus:not(.disabled), &:active:not(.disabled),

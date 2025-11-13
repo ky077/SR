@@ -1,0 +1,67 @@
+.table-quiz{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.row-delete{	  width:   4%; }
+                &.row-index{	  width:   4%; }
+                &.row-bookTitle{  width:  16%; }
+                &.row-ISBN{       width:  16%; }
+                &.row-author{     width:  16%; }
+                &.row-quizCount{  width:  16%; }
+                &.row-quizDetail{ width:  16%; }
+                &.row-quizInsert{ width:  16%; }
+            }   
+        }
+    }
+}
+
+.table-quiz-detial{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+				&.row-index{	  		width:    4%; }
+				&.row-quizTitle{	 	width:   29%; }
+				&.row-quizCount{	  	width:   15.5%; }
+				&.row-assignStatus{	  	width:   10%; }
+				&.row-assignClassCount{ width:   15.5%; }
+				&.row-editDate{			width:   13%; }
+				&.row-tool{	  			width:   13%; }
+            }   
+        }
+    }	
+}
+
+.modal-quiz{
+	//預設
+	.modal-quiz-block{
+		position: relative;
+		.btn-close{ 
+			display: none;
+			position: absolute;
+			top: .5rem;
+			left: .5rem;
+		}
+		.modal-quiz-gradingWeight{ display: none;}
+		.multiple, .picture, .QandA, .video { display: none;}	
+	}
+	.modal-quiz-sortableTip{ display: none;}
+	.modal-quiz-assign{ display: none;}
+	.modal-quiz-checkbox{ 
+		display: none;
+		.d-grid{
+			gap: 0; 
+    		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+			 align-items: stretch;
+		}
+	}
+	
+	
+}
+
+.bg-primary-dashed{
+	background-color: $primary;
+	background-color: rgba(var(--bs-primary-rgb), 0.1);
+	border: 2px dashed var(--bs-border-color);
+	padding-top: map-get($spacers, 3);
+	padding-bottom: map-get($spacers, 3);
+}

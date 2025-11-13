@@ -300,6 +300,11 @@
 							border-bottom-color: $btn-link-hover-color;
 						}
 					}
+					.btn-toggle-child:disabled, .btn-toggle-child.disabled{
+						&::after{ 
+							border-color: $btn-link-disabled-color;
+						}
+					}
 				}
 				
 			}
@@ -334,10 +339,9 @@
 	
 	.table-child-scroller{
 		//max-width: 100%;
-		height: 50vh;
 		max-height: 50ch;
 		overflow-x: auto;
-		overflow-y: scroll;
+		overflow-y: auto;
 		.table{
 			//min-width: 960px;
 		}

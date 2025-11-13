@@ -1,6 +1,5 @@
 {
-  "data": [
-	{
+  "data": [{
       "id": "1",
       "good": 0,
       "cover": "27278.jpg",
@@ -8,6 +7,7 @@
       "SR": "768",
       "category": "成長/生命教育",
       "topicType": "摘要題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 1
     },
@@ -19,6 +19,7 @@
       "SR": "265",
       "category": "童話/寓言",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 1,
       "bookplanet": 0
     },
@@ -30,6 +31,7 @@
       "SR": "187",
       "category": "成長/生命教育",
       "topicType": "摘要題",
+      "topicStatus": "未發佈",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -41,6 +43,7 @@
       "SR": "363",
       "category": "成長/生命教育",
       "topicType": "選擇題",
+      "topicStatus": "已發佈",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -52,6 +55,7 @@
       "SR": "448",
       "category": "童話/寓言",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -63,6 +67,7 @@
       "SR": "342",
       "category": "懸疑推理/冒險/科幻",
       "topicType": "摘要題",
+      "topicStatus": "未命題",
       "ebook": 1,
       "bookplanet": 1
     },
@@ -74,6 +79,7 @@
       "SR": "258",
       "category": "親情/友誼/愛情",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -85,6 +91,7 @@
       "SR": "279",
       "category": "童話/寓言",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -96,6 +103,7 @@
       "SR": "330",
       "category": "成長/生命教育成長",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 0
     },
@@ -107,6 +115,7 @@
       "SR": "338",
       "category": "童話/寓言",
       "topicType": "選擇題",
+      "topicStatus": "未命題",
       "ebook": 0,
       "bookplanet": 0
     }

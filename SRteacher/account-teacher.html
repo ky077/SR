@@ -258,8 +258,6 @@
 <!-- widgets JS --> 
 <script src="Content/js/bootstrap.bundle.min.js"></script> 
 <script src="Content/widgets/DataTables/datatables.min.js"></script> 
-<script src="Content/js/doubleScorollbar.js"></script> 
-
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
@@ -446,39 +444,42 @@ $(document).ready(function() {
 
     //[修改資料]
     $('#edit').click(function(){
-        //功能按鈕、搜尋 區域不可按
+        //功能按鈕區、搜尋區 不可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
-        
-        //[依帳號新增時間排序] 區域顯示
-        $('#blockSortTime').show(); 
-        
-        //表格排序關閉
+		
+		//頁碼隱藏(僅可編輯目前畫面的資料)
+        $('.datatables-custom-footer').hide(); 
+
+        //[修改資料]-按鈕 顯示
+        $('#blockEditBtns').show(); 
+
+		//表格排序 關閉
         list.find('thead th, thead td')
                 .removeClass('sorting sorting sorting_asc sorting_desc')
                 .unbind('click');
-
-        //表格欄位可編輯
+		
+		//表格欄位 可編輯
         list.find('td:not(.row-account)')
             .find('input, select').attr('disabled', false).removeClass('readonly'); 
-        
-        //頁碼隱藏(因僅可編輯目前畫面的資料)
-        $('.datatables-custom-footer').hide(); 
 
-        //[修改資料]-按鈕 區域顯示
-        $('#blockEditBtns').show(); 
+        //[依帳號新增時間排序] 顯示
+        $('#blockSortTime').show(); 
     });
     
     //[修改資料]>[取消]
     $('#editCancel').click(function(){
-        //do something... (若有修改資料，則還原為原資料)
+        //do something... (若有修改資料，按取消需還原為原資料)
         
-        //功能按鈕、搜尋 區域可按
+        //功能按鈕區、搜尋區 可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
         
-        //[依帳號新增時間排序] 區域隱藏
-        $('#blockSortTime').hide(); 
+		//頁碼顯示
+        $('.datatables-custom-footer').show(); 
         
-        //表格排序開啟
+        //[修改資料]-按鈕 隱藏
+        $('#blockEditBtns').hide(); 
+		
+        //表格排序 開啟
         list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
             .addClass('sorting')
             .each(function(){
@@ -487,37 +488,37 @@ $(document).ready(function() {
                 list.DataTable().order.listener('.' + c, i);
             });
         
-        //表格欄位不可編輯
+        //表格欄位 不可編輯
         list.find('input, select').attr('disabled', true).addClass('readonly');
-        
-        //頁碼顯示
-        $('.datatables-custom-footer').show(); 
-        
-        //[修改資料]-訊息 清空錯誤
-        list.find('.invalid').removeClass('invalid');
-        
-        //[修改資料]-按鈕 區域隱藏
-        $('#blockEditBtns').hide(); 
+
+		//[依帳號新增時間排序] 隱藏
+        $('#blockSortTime').hide(); 
+		
+		//若有錯誤紅框，則清除紅框
+		if (list.find('.invalid').length) {
+		  list.find('.invalid').removeClass('invalid');
+		}
     });
     
     //[修改資料]>[確定修改]
     $('#editOk').click(function(){
-		//do something... (修改)
+		//do something... (驗證)
         let editOk = true; //[true | false] [修改成功 | 修改失敗]
 
-        if(editOk == true){//修改成功
-            //do something... (修改)
-            
+        if(editOk == true){//修改成功            
             alertModal('<div class="text-red">修改成功！</div>');
             
             $('#alertModal').on('hidden.bs.modal', function () {
-                //功能按鈕、搜尋 區域可按
+                //功能按鈕區、搜尋區 可按
                 $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+				
+				//頁碼顯示
+                $('.datatables-custom-footer').show(); 
+				
+				//[修改資料]-按鈕 隱藏
+                $('#blockEditBtns').hide();
 
-                //[依帳號新增時間排序] 區域隱藏
-                $('#blockSortTime').hide(); 
-                
-                //表格排序開啟
+                //表格排序 開啟
                 list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
                         .addClass('sorting')
                         .each(function(){
@@ -526,24 +527,24 @@ $(document).ready(function() {
                             list.DataTable().order.listener('.' + c, i);
                         });
 
-                //表格欄位不可編輯
+                //表格欄位 不可編輯
                 list.find('input, select').attr('disabled', true).addClass('readonly');
+				
+				//[依帳號新增時間排序] 區域隱藏
+                $('#blockSortTime').hide(); 
 
-                //頁碼顯示
-                $('.datatables-custom-footer').show(); 
-
-                //[修改資料]-訊息 清空錯誤
-                list.find('.invalid').removeClass('invalid');
-
-                //[修改資料]-按鈕 區域隱藏
-                $('#blockEditBtns').hide();     
+                //若有錯誤紅框，則清除紅框
+				if (list.find('.invalid').length) {
+				  list.find('.invalid').removeClass('invalid');
+				}				
             });  
         }else{//修改失敗 demo
 			alertModal('<div class="text-red">密碼請勿小於4碼！</div>', function () {
+				//demo填寫錯誤的地方
     			const invalidInputs = list.find(`tbody tr:nth-child(1) .row-password input,
 												 tbody tr:nth-child(3) .row-password input`).addClass('invalid');
 
-				// 如有錯誤欄位 → 捲動至第一個
+				//如有錯誤欄位，則捲動至第一個
 				if (invalidInputs.length > 0) {
 					const firstInvalid = invalidInputs.first();
 

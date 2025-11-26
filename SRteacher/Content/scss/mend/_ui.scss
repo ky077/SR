@@ -1,0 +1,40 @@
+.border-dashed {
+	border-style: dashed !important;
+}
+.w-min-auto{
+	min-width: auto !important;
+}
+.w-max-auto{
+	max-width: auto !important;
+	$popover-max-width: auto;
+	--bs-popover-max-width: auto;
+}
+
+.table-responsive{
+	.table{
+		min-width: 1140px;
+	}
+}
+
+.modal-lg{
+	.table-responsive{
+		.table{
+			min-width: 720px;
+		}
+	}		
+}
+
+.modal-xl{
+	.table-responsive{
+		.table{
+			min-width: 720px;
+		}
+	}	
+}
+.modal-approxfull{
+	.table-responsive{
+		.table{
+			min-width: 720px;
+		}
+	}		
+}

@@ -1,0 +1,272 @@
+//202501 修改SmartReading  _RPList-books__table 給 SR教師端用
+$main-color: $primary;
+$default-gray: $gray-800;
+
+.table-RPList{
+	$left-bolck-width: 40%;
+	$right-bolck-width: calc(100% - #{$left-bolck-width} - .5rem*2 - 2px);
+	margin-bottom: 0;
+	>thead{
+		display:none;
+	}
+	>tbody{ 
+		>tr{  
+			position: relative;
+			margin-top: .5rem;
+			margin-bottom: .5rem;
+			display: inline-block;
+			background-color: $white !important;  
+			vertical-align: middle;
+			border: 1px solid $border-color;
+			>td{ 
+				display: inline-block;
+				float: left;
+				table-layout: fixed;
+				white-space: nowrap; 
+				text-overflow: ellipsis;
+				overflow: hidden;
+				position: relative;
+				min-height: auto;
+				height: auto;
+				&.row-id{ 
+					display:none;
+				}
+				&.row-index{ 
+					position: absolute;
+					top: 0;
+					right: 0;
+					overflow: visible;
+					width: 2.5rem;
+					height: 2.5rem;
+					text-align: right;
+					padding: 0;
+					background-color: transparent;
+					&::before, &::after{
+						content: "";
+						display: block;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 2.5rem 0 0 2.5rem;
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: 1;
+					}
+					&::before{
+						border-color: $border-color transparent transparent;  
+					}
+					&::after{
+						border-color: $body-bg transparent transparent;
+						transform: translate(1px, -1px);
+					}
+					.index-text{  
+						position: relative;
+						z-index: 2;
+						min-width: 1rem;
+						display: inline-block;
+						text-align: center;
+					}
+				}
+				&.row-good{
+					background-color: transparent;
+					position: absolute;
+					z-index: 5;
+					top: .5rem;
+					left: calc(40% + 2px);
+					transform: translate( calc(-100% + .5rem + 7px), -6px);
+					padding: 0;
+				}
+				&.row-cover{ 
+					width: $left-bolck-width;
+					height: 0;
+					margin: .5rem;
+					padding: 0;
+					padding-bottom: calc(40% * (222/212));
+					text-align: center;
+					border: 1px solid $border-color;
+					>a{ 
+						display:block;
+					}
+					img{ 
+						width:100%;
+						height:auto;
+					}
+				}
+				&.row-bookTitle{
+					max-width: calc(#{$right-bolck-width} - .5rem*2 - 30px - 2.5rem/2);
+					font-size: 1rem;
+					font-weight: 500;
+					padding: 1rem .5rem .5rem .5rem;
+				}
+				&.row-ebook{ 
+					width: 30px;
+					max-width: 30px;
+					height: calc(1rem*1.5);
+					padding: 1rem 0 .5rem 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+				&.row-SR, &.row-sort{  
+					width: calc(#{$right-bolck-width} - .5rem*2);
+					font-size: .8rem;
+					color: $default-gray;
+					text-align: left;
+					padding: .125rem .5rem;
+					&::before {
+						content: attr(data-th) " : ";
+					}
+				}
+				&.row-readingDate{ 
+					width: calc(#{$right-bolck-width} - .5rem - .5rem*2);
+					background-color: $gray-100;
+					padding: .5rem .5rem;
+					margin-top: .5rem;
+					margin-right: .5rem;
+					.readingDate-start, .readingDate-end{
+						display: inline-block;
+						float: left;
+						font-size: .8rem;
+						color: $default-gray;
+						border: 1px solid $main-color;
+						border-radius: .25rem;
+						overflow: hidden;
+						text-align: center;
+						width: calc(50% - 5px);
+						.readingDate-title{
+							background-color: $main-color;
+							border-bottom: 1px solid $main-color;
+							text-align: center;
+							color: $white;
+							padding: .25rem 0;
+							//border-radius: .25rem .25rem 0 0;
+						}
+						.readingDate-content{
+							background-color: $white;
+							text-align: center;
+							padding: .5rem;
+							//border-radius:0 0 .25rem  .25rem ;
+						}
+					}
+					.readingDate-start{
+						margin-right: .25rem;
+					}
+					.readingDate-end{
+						margin-left: .25rem;
+					}
+				}
+				&.row-tool{ 
+					width: 100%;
+					overflow: visible;
+					vertical-align: middle;
+					text-align: center;
+					padding: 0;
+					border-top: 1px dashed $border-color;
+					/*@media screen and (min-width: 576px) {
+					height:95px;	
+					}*/
+					.tool-add{
+						.RPbookList-table__btn-add{
+							font-size:16px;
+							min-width:55%;
+							padding:7px 12px;
+							margin:28px 0;
+						}
+					}
+					.popover{
+						min-width: 184px;
+						.popover-content{
+							@extend .text-red;
+							font-weight:400;
+							font-size:16px;
+							text-align:center;
+						}
+					}
+					.tool-evaluation{
+						color: $gray-800;
+						text-align:center;
+						>.row{
+							margin-right: 0px;
+    						margin-left: 0px;
+							>div{
+								padding-left:0;
+								padding-right:0;
+								@media screen and (min-width: 576px) {
+								width:25%;
+								}
+							}
+						}
+						.tool-title{
+							font-size: .8rem;
+							padding: 6px 0;
+							background-color:#f3f3f3;
+                            min-height: calc(1em*1.42857143 + 6px*2); 
+						}
+						.tool-content{
+							height:59px;
+							display: flex;
+							align-items: center; 
+							justify-content: center;
+							.userScore{
+								margin:12px auto;
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		/*set width&height*/
+		tr{ 
+			width:calc(100vw - 17px - 30px);
+			height:auto;		
+			td.book-front{ height:calc((100vw - 17px - 30px)/2); }
+		}
+		@media screen and (min-width: 576px) {
+		tr{ 
+			width:100%;
+			/*height:211px + 10px + 95px + 1px; /*54+24+5+24+5+99*/	
+            height:auto;
+			td.book-front{ height:211px; }
+		}	
+		}
+		@media screen and (min-width: 768px) {
+		tr{ 
+			width:100%;
+			/*height:211px + 10px + 95px + 1px;	 /*54+24+5+24+5+99*/
+            height:auto;
+			td.book-front{ height:211px; }
+		}	
+		}
+		@media screen and (min-width: 992px) {
+		tr{ 
+			width:calc(50% - 10px);
+			/*height:201px + 10px + 95px + 1px; /*54+24+5+24+5+89*/
+            height:auto;
+			td.book-front{ height:201px; }
+			&:nth-child(odd){margin-right:10px;}
+			&:nth-child(even){margin-left:10px;}
+		}	
+		}
+		@media screen and (min-width: 1200px) {
+		tr{ 
+			width:calc(50% - 10px);
+			/*height:211px + 10px + 95px + 1px ;	 /*54+24+5+24+5+99*/
+            height:auto;
+			td.book-front{ height:211px; }
+		}	
+		}
+        
+        >tr.ungradedBook{ 
+			background-color: #f9f9f9 !important;
+            >td{
+                &.book-SR{
+					&::before {
+						opacity: 0;
+					}
+				}
+            }
+        }
+	}	
+}

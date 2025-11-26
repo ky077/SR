@@ -1,0 +1,57 @@
+{
+  "data": 
+  [
+	{
+      "sn": "00001",
+      "grade": 3,
+      "class": "2",
+      "Cname": "李秋秋",
+      "book": "單車迷魂記",
+      "topic": "sysTopic",
+      "scroe": "A+",
+      "Comp": [],
+      "like": 1,
+      "Cmt": 0,
+	  "dade": "2024/03/12"
+    },
+	{
+      "sn": "00002",
+      "grade": 3,
+      "class": "2",
+      "Cname": "李秋秋",
+      "book": "單車迷魂記",
+      "topic": "sysTopic",
+      "scroe": "A+",
+      "Comp": [],
+      "like": 1,
+      "Cmt": 0,
+	  "dade": "2022/04/01"
+    },  
+    {
+      "sn": "00003",
+      "grade": "3",
+      "class": "2",
+      "Cname": "李秋秋",
+      "book": "單車迷魂記",
+      "topic": "myStudy",
+      "scroe": "",
+      "Comp": [1, 1, 1, 1],
+      "like": 1,
+      "Cmt": 0,
+	  "dade": "2025/05/02"
+    },
+    {
+      "sn": "00004",
+      "grade": "3",
+      "class": "2",
+      "Cname": "郭夏夏",
+      "book": "單車迷魂記",
+      "topic": "myStudy",
+      "scroe": "",
+      "Comp": [0, 0, 0, 0],
+      "like": 0,
+      "Cmt": 0,
+	  "dade": "2025/05/02"
+    }
+  ]
+}

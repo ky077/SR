@@ -1,0 +1,18 @@
+.table-account-teacher{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.row-index{        width:  4%; }
+                &.row-identity{  	width:  8%; } 
+                &.row-account{   	width: 15%; }
+                &.row-password{  	width: 13%; } 
+                &.row-chineseName{  width: 12%; }
+                &.row-englishName{  width: 12%; } 
+                &.row-nationalId{   width: 12%; }
+                &.row-language{		width:  6%; } 
+                &.row-gender{    	width:  6%; }
+                &.row-status{     	width:  6%; } 
+            }   
+        }
+    }
+}

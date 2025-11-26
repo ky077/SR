@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+
+<body>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main class="border-0 px-3"> 
+  <!-- fillAssessment-header START/... -->
+  <div class="fillAssessment-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-7 col-lg-7">
+          <div class="fillAssessment-title">
+            <div class="row">
+              <div class="col-4 col-md-3">
+                <div class="fillAssessment-title__img"> <img src="Content/images/fillAssessment/fillAssessment-bySystem-img.png" class="img-responsive center-block"> </div>
+              </div>
+              <div class="col-8 col-md-9">
+                <div class="fillAssessment-title__text">
+                  <h1>系統評量
+                   <span class="pull-right" id="demo-score"><span class="userScore passed byTeacher">A+</span></span>
+                    <small>3年2班 李秋秋</small></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">
+          <div class="fillAssessment-book">
+            <div class="row">
+              <div class="col-4">
+                <div class="fillAssessment-book__front"> <img src="https://smartreading.net/RP/BookContent/BookFront/006.jpg" class="img-responsive center-block"> </div>
+              </div>
+              <div class="col-8">
+                <div class="fillAssessment-book__intro">
+                  <h2>
+                    <label>第一條魚</label>
+                  </h2>
+                  <p>ISBN：
+                    <label>9789862117354</label>
+                  </p>
+                  <p>圖書難度：SR
+                    <label>187</label>
+                  </p>
+                  <p>分類：
+                    <label>成長/生命教育</label>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .../fillAssessment-header END --> 
+  
+  <!-- fillAssessment-body START/... -->
+  <div class="fillAssessment-body">
+    <div class="container"> 
+      <!-- 區塊版型 START -->
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="fillAssessment-section">
+            <h3 class="fillAssessment-section__header">摘要</h3>
+            <div class="fillAssessment-section__body"> 
+              <!-- 摘要題-學生填寫 start -->
+              <div class="questionType summary">
+                <div class="questionType__stem"> </div>
+                <div class="questionType__area">
+                  <textarea id="" class="form-control rounded-0" placeholder="這本書的重點內容是什麼呢？......" readonly>他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王，他們打敗了大魔王他們打敗了大魔王。</textarea>
+                  <div class="questionType__area-remark grayscale mt-2">
+                    <div class="d-inline mx-1"><img src="Content/images/icon-thumbs.png" alt="" class="me-1"/>1</div>
+                    <div class="d-inline mx-1"><img src="Content/images/icon-comment.png" alt="" class="me-1"/>0</div>
+                  </div>
+                </div>
+              </div>
+              <!-- 摘要題-學生填寫 end --> 
+            </div>
+          </div>
+        </div>
+        
+        <!-- 區塊版型 END --> 
+        
+        <!-- 區塊版型 START -->
+        
+        <div class="col-xl-6">
+          <div class="fillAssessment-section">
+            <h3 class="fillAssessment-section__header">心得</h3>
+            <div class="fillAssessment-section__body"> 
+              <!-- 心得題-學生填寫 start -->
+              <div class="questionType reflection">
+                <div class="questionType__stem"> </div>
+                <div class="questionType__area">
+                  <textarea id="" class="form-control rounded-0" placeholder="將你對這本書的感受、收穫、評論，化為文字記錄下來吧！......" readonly>真是太有趣了真是太有趣了真是太有趣了，真是太有趣了真是太有趣了真是太有趣了，真是太有趣了真是太有趣了真是太有趣了，真是太有趣了真是太有趣了真是太有趣了。</textarea>
+                  <div class="questionType__area-remark"> </div>
+                </div>
+              </div>
+              <!-- 心得題-學生填寫 end --> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 區塊版型 END --> 
+    </div>
+  </div>
+  <!-- .../fillAssessment-body END --> 
+  
+  <!-- fillAssessment-footer START/... -->
+  <div class="fillAssessment-footer">
+    <div class="container">
+      <div class="fillAssessment-btns text-center"> 
+        <!---->
+        <div class="form-check form-check-inline form-check-thumb mx-2">
+          <input class="form-check-input" type="checkbox" value="" id="checkThumb" checked>
+          <label class="form-check-label" for="checkThumb">讚</label>
+        </div>
+        <!---->
+        <div class="form-check form-check-inline form-check-feedback mx-2">
+          <input class="form-check-input" type="checkbox" value="" id="checkfeedback" checked>
+          <label class="form-check-label" for="checkfeedback">回饋</label>
+        </div>
+        <!---->
+        <div class="form-check form-switch form-check-inline form-check-reverse mx-2">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchRelease2">
+          <label class="form-check-label" for="switchRelease2">發布</label>
+        </div>
+        <!----> 
+      </div>
+    </div>
+  </div>
+  <!-- .../fillAssessment-footer END --> 
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+	//nowPage
+  	//$('.navTab-?').addClass('active');
+	
+	//for demo
+	$('.fillAssessment-footer .btn').click(function(){
+		if( $(this).text()=="送出" ){
+			$("html,body").animate({scrollTop:0},0);
+			$('#demo-score').html('<span class="userScore passed bySystem">A</span>');
+			$('.summary textarea').text("demo已作答並送出").attr('disabled','disabled');;
+			$('.reflection textarea').text("demo已作答並送出").attr('disabled','disabled');
+			$(this).hide();
+			$(this).prev('.btn').hide();
+			$(this).next('.btn').show();
+		}
+		if( $(this).text()=="重寫" ){
+			window.location='fillAssessment-bySystem.html?write=1';
+		}
+	});
+	$_search= document.location.search;
+	if($_search == "?view"){
+		$('.summary textarea').text("學生已作答學生已作答").attr('disabled','disabled');
+		$('.reflection textarea').text("學生已作答學生已作答").attr('disabled','disabled');
+		$('#demo-score').html('<span class="userScore failed bySystem">B</span>');
+		$('.fillAssessment-footer .btn').each(function(){
+			if( $(this).text()=="暫存" ){ 
+				$(this).hide();
+			}
+			if( $(this).text()=="送出" ){
+				$(this).hide();
+			}
+			if( $(this).text()=="重寫" ){
+				$(this).show();
+			}
+		});
+	}
+	if($_search == "?write=1"){
+		$('.summary textarea').text("學生已作答學生已作答");
+		$('.reflection textarea').text("學生已作答學生已作答");
+	}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.upload-pic{
+	width:100%;//
+	height: 100%;//
+	.upload-pic__area{
+		position:relative;
+		width:100%;
+		height: 100%;//
+		overflow:hidden;
+		border:1px solid #c6c6c6;
+		font-size:0.8em;
+		color:#8a9294;
+		.upload-pic__area-default{
+			position:relative;
+			width:100%;
+			height:100%;
+			background-color:#f9f9f9;
+			background-image:url(../images/myStudy/default-block-img.png);
+			background-repeat:no-repeat;
+			background-size:100% 100%;
+			text-align:center;
+			@extend .flex-center;
+			.upload-pic__area-default__text{
+				background-color:#f9f9f9;
+				padding:10px;
+				>img{ margin-top:10px; margin-bottom:10px;}
+			}
+		}
+		.upload-pic__area-answer{
+			position:absolute;
+			width:100%;
+			height:100%;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background-color:#FFF;
+			@extend .flex-center;
+			>img{
+				max-height:100%;
+			}
+		}
+	}
+	.upload-pic__btns{
+		>.btn{
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+	}
+}

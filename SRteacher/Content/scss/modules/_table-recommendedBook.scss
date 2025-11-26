@@ -1,0 +1,207 @@
+//202501 修改SmartReading  _recommendedBook-table.scss 為flex 給 SR教師端用
+$main-color: $primary;
+$default-gray: $gray-500;
+$default-black: $body-color;
+
+.table-recommendedBook{
+	display: flex;
+	thead{
+		display:none;
+	}
+	tbody{ 
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		tr{ 
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			width: calc(100% - .25rem*2);
+			margin: .25rem;
+			background-color: #FFF !important;
+			position: relative;
+			@media screen and (min-width: 576px) {
+			width: calc(50% - .25rem*2);	
+			}
+			@media screen and (min-width: 768px) {
+			width: calc(50% - .25rem*2);	
+			}
+			@media screen and (min-width: 992px) {
+			width: calc(25% - .25rem*2);	
+			}
+			@media screen and (min-width: 1200px) {
+			width: calc(25% - .25rem*2);	
+			}
+			td{
+				width: 100%;
+				height: auto;
+				min-height: auto;
+				line-height: 1;
+				white-space: nowrap; 
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: left;
+				border-color: transparent;
+				padding-left: .5rem;
+				padding-right: .5rem;
+				&.row-index{ 
+					display: none;
+				}
+				&.row-good{
+					width: auto;
+					position: absolute;
+					top: -1px;
+					right: -2px;
+					z-index:5;
+					background-color: transparent;
+				}
+				&.row-cover{  
+					display: block;
+					width: calc(100% - .5rem);
+					height: 0;
+					padding: 0;
+					padding-bottom: calc((100% - .5rem) * (222/212));
+					margin: .5rem;
+					border: 1px solid $border-color;
+					>a{  
+						display: block;
+					}
+					img{  
+						width: 100%;
+						height: auto;
+					}
+				}
+				&.row-bookTitle{
+					font-size: 1rem;
+					font-weight: 500;
+					color: $default-black;
+					padding-bottom: .5rem;
+				}
+				&.row-addedBy, &.row-SR, &.row-category, &.row-topicType, &.row-propStatus{
+					font-size: .8rem;
+					color: $default-black;
+					&:before {
+						content: attr(data-th) " : ";
+					}
+				}
+				&.row-ebook{ 
+					font-size: .8rem;
+					width: auto;
+				}
+				&.row-checkbox, &.row-tool{
+					width: auto;
+				}
+                &.row-bookplanet{
+					width: 100%;
+					height: 0;
+					padding-bottom: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 5;
+					background-color: transparent;
+                    > img{
+                        width: 50%;
+                        filter:drop-shadow(0 0 2px rgba(0,0,0, .1));
+						position: absolute;
+						bottom: .25rem*1.5;
+						left: .25rem*3;
+                    }
+				}
+				
+				
+			}
+			
+		}
+	}		
+}
+
+.recommendedBook-list{
+	padding-bottom: .5rem;
+	.dataTables_wrapper {
+		.recommendedBook-table-header{ 
+			.dt-buttons{ 
+				.dt-button-SRsort{
+					&:focus, &:active,
+					&.focus, &.active,
+					&:focus:not(.disabled), &:active:not(.disabled),
+					&.focus:not(.disabled), &.active:not(.disabled){
+						border-color: $main-color;
+						background-color: $main-color;
+						color:#FFF;
+						.glyphicon::before  {
+							filter: brightness(5);
+						}
+					}
+				}
+			}
+			.dataTables_info{
+				margin-left: auto;
+				margin-right: 1rem;
+				.info-total{
+					margin-right: 1rem;	
+				}
+				.info-page{
+					> span{
+						display: none;
+					}
+				}
+				.info-pages{
+					> span{
+						display: none;
+					}
+				}
+			}
+			.dataTables_paginate{
+				.paginate_button{
+					display: none;
+					&:not(.disabled){
+						.page-link{
+							background-color: $white;	
+						}
+					}
+				}	
+				.paginate_button.previous,
+				.paginate_button.next{
+					display: inline-block;
+					> .page-link {
+						min-width: 1.5rem;
+						padding: 0;
+						> span{
+							display: none;	
+						}
+						&::before, &::after{
+							margin-top: -0.125em;
+						}
+					}
+				}
+				.paginate_button.previous{
+					> .page-link {
+						padding-left: .3rem;
+					}
+				}
+				.paginate_button.next{
+					> .page-link {
+						padding-right: .3rem;
+						
+					}
+				}
+			}
+		}
+    	.datatables-custom-footer{ 
+			.dataTables_info{
+				.info-total{
+					display: none;	
+				}
+				.info-page{
+					display: none;
+				}
+			}
+		}
+	}		
+}
+
+
+
+

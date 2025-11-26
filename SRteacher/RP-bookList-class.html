@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<form>
+  <header> </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <h2>教學書單管理</h2>
+        <!-- 學生資訊/班級資訊-頁籤 start -->
+        <div class="row">
+          <ul class="nav nav-viewinfo-school">
+            <li class="nav-item"> <a class="nav-link" href="RP-bookList-teaching.html">教學指定書單</a> </li>
+            <li class="nav-item"> <a class="nav-link active" aria-current="page" href="RP-bookList-class.html">班級學生書單</a> </li>
+          </ul>
+        </div>
+        <!-- 學生資訊/班級資訊-頁籤 end  --> 
+        
+        <!--  start -->
+        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+          <!-- 搜尋 start -->
+          <div class="col-xxl-12 mb-3" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-end">
+              <div class="col-auto d-none d-lg-inline ms-3">
+                <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
+              </div>
+              <div class="col-auto">
+                <div class="input-group">
+                  <div class="input-group-clear">
+                    <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                    <button class="btn btn-close" type="button"></button>
+                  </div>
+                  <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="col-xl-12 mb-5">
+            <table class="table table-bordered table-class-overview" id="classOverviewTable">
+              <thead>
+                <tr>
+                  <th scope="col" class="row-index">序號</th>
+                  <th scope="col" class="row-year">年度</th>
+                  <th scope="col" class="row-grade">年級</th>
+                  <th scope="col" class="row-class">班級</th>
+                  <th scope="col" class="row-studentCount">人數</th>
+                  <th scope="col" class="row-tool">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-index">1</td>
+                  <td class="row-year">2022</td>
+                  <td class="row-grade">3</td>
+                  <td class="row-class">2</td>
+                  <td class="row-studentCount">30</td>
+                  <td class="row-tool"><button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
+        </div>
+        <!--   end  --> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
+  </div>
+  
+  <!-- Modal#readingPlanModal 學生閱讀計畫 start -->
+  <div class="modal fade" id="readingPlanModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="readingPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> 
+          <!-- ↓ 跟10重複的地方↓ -->
+          <div class="row mb-3">
+            <h3 class="text-center h6">
+              <label>3年2班</label>
+              <label class="mx-1">張花花</label>
+              閱讀計畫</h3>
+          </div>
+          <!-- 資訊 start -->
+          <div class="row g-2 align-items-center justify-content-center mb-3 px-5 fs-7 fw-gray-800">
+            <div class="col-auto me-auto"> 書籍總數：
+              <label>9</label>
+            </div>
+            <div class="col-auto me-auto"> 最近修改時間：
+              <label>2022/08/11</label>
+            </div>
+            <div class="col-auto me-auto"> 最低難度：
+              <label>SR 86</label>
+            </div>
+            <div class="col-auto me-auto"> 最高難度：
+              <label>SR 515</label>
+            </div>
+          </div>
+          <!-- 資訊  end  --> 
+          <!-- 搜尋 start -->
+          <div class="row g-2 align-items-center justify-content-between mb-3">
+            <div class="col-auto me-3">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label for="searchClassGrade" class="col-form-label fs-8">作答類別</label>
+                </div>
+                <div class="col-auto">
+                  <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClassGrade">
+                    <option value="" disabled="" selected="">請選擇...</option>
+                    <option value="">所有題本</option>
+                    <option value="">系統題本</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto me-3">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label for="searchSessions" class="col-form-label fs-8">作答情況</label>
+                </div>
+                <div class="col-auto">
+                  <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                    <option value="" disabled="" selected="">請選擇...</option>
+                    <option value="">已作答</option>
+                    <option value="">未作答</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto me-3">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label class="fs-8">圖標說明：</label>
+                </div>
+                <div class="col-auto">
+                  <button type="button" data-bs-toggle="popover" class="btn btn-link p-0"><i class="fa-solid fa-circle-question"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto ms-auto">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label for="searchKeywords2" class="col-form-label fs-7">搜尋</label>
+                </div>
+                <div class="col-auto">
+                  <div class="input-group">
+                    <div class="input-group-clear">
+                      <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearchRP" id="searchKeywords2">
+                      <button class="btn btn-close" type="button"></button>
+                    </div>
+                    <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearchRP"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="bg-body mx-n3 mb-n3 px-3">
+            <table class="table table-borderless table-RPList" id="RPList">
+              <thead>
+                <tr>
+                  <th class="row-id">ID</th>
+                  <th class="row-index">序號</th>
+                  <th class="row-good">優選書</th>
+                  <th class="row-cover">書封面</th>
+                  <th class="row-bookTitle">書名</th>
+                  <th class="row-ebook">電子書</th>
+                  <th class="row-SR">圖書難度</th>
+                  <th class="row-sort">分類</th>
+                  <th class="row-readingDate">開始閱讀~結束閱讀</th>
+                  <th class="row-tool">功能</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-id">35845-52253</td>
+                  <td class="row-index"><span class="index-text">999</span></td>
+                  <td class="row-good"><img src="Content/images/recommendedBook/goodBook.png" alt=""/></td>
+                  <td class="row-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#frameModal" data-href="bookIntro.html"><img src="https://smartreading.net/RP/BookContent/BookFront/010.jpg"></a></td>
+                  <td class="row-bookTitle">走進生命花園</td>
+                  <td class="row-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"></td>
+                  <td class="row-SR" data-th="圖書難度">SR 448</td>
+                  <td class="row-sort" data-th="分類">成長/生命教育</td>
+                  <td class="row-readingDate"><div class="readingDate-start">
+                      <div class="readingDate-title"> 開始閱讀 </div>
+                      <div class="readingDate-content"> 2021/7/29 </div>
+                    </div>
+                    <div class="readingDate-end">
+                      <div class="readingDate-title"> 結束閱讀 </div>
+                      <div class="readingDate-content"> 2021/8/29 </div>
+                    </div></td>
+                  <td class="row-tool"><div class="tool-evaluation">
+                      <div class="row">
+                        <div class="col">
+                          <div class="tool-title"> 系統題本 </div>
+                          <div class="tool-content">
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#frameModal" data-href="fillAssessment-bySystem.html?view"> <span class="userScore failed bySystem">B</span> </button>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="tool-title"> 教師命題 </div>
+                          <div class="tool-content">
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#frameModal" data-href="fillAssessment-byTeacher-teacherRating.html?view=0"> <span class="userScore failed byTeacher">待</span> </button>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="tool-title"> 我的書房 </div>
+                          <div class="tool-content">
+                            <button class="btn btn-outline-light" type="button" onclick="window.location='myStudy.html'"><img src="Content/images/RPList/myStudy-note-done.png">&nbsp;<img src="Content/images/RPList/myStudy-paint-done.png">&nbsp;<img src="Content/images/RPList/myStudy-audio.png">&nbsp;<img src="Content/images/RPList/myStudy-video-done.png"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
+          <!-- ↑跟10重複的地方↑ --> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal#readingPlanModal 指派班級  end  -->
+  
+  <footer> </footer>
+</form>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    });  
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');  
+    }); 
+
+	const list = $('#classOverviewTable');
+	
+    //班級 datatables 
+	list.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer"pi>',		
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-bookList/class-overview.json',
+        columnDefs: [
+            {//序號
+                targets: 0, 
+                title: '序號',
+                className: 'row-index',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//年度
+                targets: 1, 
+                title: '年度',
+                data: 'year',
+                className: 'row-year',
+                orderable: false, 
+            },
+            {//年級 
+                targets: 2,
+                title: '年級',
+                data: 'grade',
+                className: 'row-grade',
+                orderable: false,
+            },
+            {//班級
+                targets: 3, 
+                title: '班級',
+                data: 'class',
+                className: 'row-class',
+                orderable: false,
+            },
+            {//人數
+                targets: 4, 
+                title: '人數',
+                data: 'studentCount',
+                className: 'row-studentCount',
+                orderable: false,
+            },
+            {//操作
+                targets: 5, 
+                title: '操作',
+                className: 'row-tool',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return `<button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button>`;
+                }
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    }); 
+
+	//[顯示班級資訊]
+	list.on('click', '.btn-toggle-child', function (){ 
+		var tr = $(this).parents('tr');
+		var row = list.DataTable().row( tr );
+
+		//toggle 自己
+		if (row.child.isShown()) {//當前打開=>關閉自己child及銷毀childTable
+			const childTable = $(tr.next()).find('table.dataTable').DataTable();
+			
+			if (childTable) childTable.destroy();
+			row.child.hide();
+			$(this).parents('td').removeClass('showChild');
+		}else { //當前關閉=>關閉其他child及銷毀childTable
+			list.DataTable().rows().every(function () {
+				if (this.child.isShown()) {
+					const childTable = $(this.child()).find('table.dataTable').DataTable();
+					if (childTable) childTable.destroy();
+									this.child.hide();
+				}
+			});
+			
+			const rowIndex = tr.index();
+			
+			row.child(format(rowIndex)).show();
+			$(this).parents('td').addClass('showChild');
+			
+			loadclassDetialTable(rowIndex);
+		}
+	});
+	
+	
+	//圖標說明 popovers
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+	var popoverList = popoverTriggerList.map(function (popoverTriggerList) {
+		return new bootstrap.Popover(popoverTriggerList, {
+			container: 'body',
+			html: true,
+			placement: 'bottom',
+			trigger: 'click',
+			customClass: 'w-max-auto px-2',
+			content: `<div class="mb-1 text-dark">系統評量分數</div>
+					  <div class="mb-2">
+						<span>通過：</span>
+						<span class="userScore passed bySystem ">A+</span>&nbsp;&nbsp;<span class="userScore passed bySystem">A</span>
+						<span class="ms-4">不通過：</span>
+						<span class="userScore failed bySystem">B</span>
+					  </div>
+					  <hr>
+					  <div class="mb-1 text-dark">教師評量分數</div>
+					  <div class="mb-2">
+						<span>通過：</span>
+						<span class="userScore passed byTeacher">A+</span>&nbsp;&nbsp;<span class="userScore passed byTeacher">A</span>
+						<span class="ms-4">不通過：</span>
+						</span><span class="userScore failed byTeacher">B</span>
+					  </div>`
+		});
+	}); 
+
+	$('.popover-description').click(function(e){
+		e.preventDefault();    
+	});
+});
+	
+function format(rowIndex) {
+	return `<table class="table table-bordered table-class-detial" id="classDetialTable_${rowIndex}">
+				<thead>
+				  <tr>
+					<th scope="col" class="row-checkbox">選擇</th>
+					<th scope="col" class="row-studentName">學生姓名</th>
+					<th scope="col" class="row-DACC">最新DACC分數</th>
+					<th scope="col" class="row-SRrange">適合的書籍難度範圍</th>
+					<th scope="col" class="row-RPCount">計畫書籍數</th>
+					<th scope="col" class="row-tool">學生閱讀計畫</th>
+				  </tr>
+				</thead>
+			</table>`;
+}	
+//[顯示班級資訊] datatables
+function loadclassDetialTable(rowIndex) {
+	const list2 = $(`#classDetialTable_${rowIndex}`);
+	
+	if ($.fn.DataTable.isDataTable(list2)) { 
+        list2.DataTable().clear().destroy();
+        list2.find('tbody').empty();
+    }
+	
+	//班級學生 datatables 
+	list2.DataTable({
+		//serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+		order: [],  //取消默認排序icon
+		autoWidth: false,
+		responsive: false,
+		searching: false,
+		paging: false,
+        dom: '<"table-child-scroller"rt>'+
+			 '<"table-child-footer"B>',	
+		language: {
+		  url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+		},
+		ajax: 'Content/json/RP-bookList/class-detial.json',
+		buttons:[	
+			{
+			  text: '列印所有學生計畫書單',
+			  attr:  { id: '', class: 'dt-button btn btn-primary'},
+			  action: function () {
+				// do something...
+			  }
+			}
+		],
+		columnDefs: [
+			{//選擇
+				targets: 0, 
+				title: `選擇`,
+				className: 'row-check',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return `<div class="SRform-check-red">
+							  <input class="form-check-input" type="checkbox" name="check">
+							</div>`; 
+				} 
+			},
+			{//學生姓名
+				targets: 1, 
+				title: '學生姓名',
+				data: 'studentName',
+				className: 'row-studentName',
+				orderable: false, 
+				type: 'string',
+			},
+			{//最新DACC分數
+				targets: 2,
+				title: '最新DACC分數',
+				data: 'DACC',
+				className: 'row-DACC',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return `SR `+ data;
+				}
+			},
+			{//適合的書籍難度範圍
+				targets: 3, 
+				title: '適合的書籍難度範圍',
+				data: 'SRrange',
+				className: 'row-SRrange',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return `SR `+ data[0] + `~` + data[1];
+				}
+			},
+			{//計畫書籍數
+				targets: 4, 
+				title: '計畫書籍數',
+				data: 'RPCount',
+				className: 'row-RPCount',
+				orderable: false,
+			},
+			{//學生閱讀計畫
+				targets: 5, 
+				title: '學生閱讀計畫',
+				className: 'row-tool',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return `<button type="button" class="btn btn-outline-primary bg-gradient">檢視</button>`;
+				}
+			}
+
+		]
+	}); 
+	
+	//[檢視]學生閱讀計畫
+	list2.on('click', '.row-tool button', function (){
+		$('#readingPlanModal').modal('show');  
+
+		loadStudentReadingPlanTable();
+	});
+}
+
+//閱讀計畫 datatables
+function loadStudentReadingPlanTable() {
+	const RPlist = $('#RPList');
+	
+	if ($.fn.DataTable.isDataTable(RPlist)) { 
+        RPlist.DataTable().clear().destroy();
+        RPlist.find('tbody').empty();
+    }
+
+	RPlist.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 6,
+		pagingType: "simple_numbers",
+        dom: '<"datatables-custom-header"B>'+
+		     '<rt>'+
+			 '<"datatables-custom-footer"pi>',				
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-bookList/RPlist.json',
+		buttons:[	
+			{
+			  text: '依加入時間排序&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+			  attr:  { id: 'sort_time', class: 'dt-button'},
+			  action: function () {
+				if( $('#sort_time').hasClass('asc')){ //原本asc↑，變desc↓
+					this.order( row.startTime ).draw();
+					$('#sort_time').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+					$('#sort_time').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+				}else{//原本null or desc↓變asc↑
+					this.order( row.startTime ).draw();
+					$('#sort_time').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+					$('#sort_time').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+				}
+			  }
+			},
+			{
+			  text: '依書籍難度值排序&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+			  attr:  { id: '', class: 'dt-button'},
+			  action: function () {
+				// do something...
+			  }
+			},
+		],
+        columnDefs: [
+            {//ID
+                targets: 0, 
+                title: 'ID',
+				data: 'id',
+                className: 'row-id',
+                orderable: false,
+				visible: false
+            },
+			{//排序
+                targets: 1, 
+                title: '排序',
+                className: 'row-index',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+					const index = meta.row + 1; 
+					return '<div class="index-text">' + index + '</div>'; 
+				} 
+            },
+            {//優選書
+                targets: 2, 
+                title: '優選書',
+                data: 'good',
+                className: 'row-good',
+                orderable: false, 
+                render: function (data, type, row, meta) {
+                    let good;
+                    switch (data) {
+                        case 1:
+                            good = `<img src="Content/images/recommendedBook/goodBook.png" width="66" height="65">`;
+                            break
+                        case 0:
+                            good = ``;
+                            break    
+                        default:
+                            good = ``;
+                            break 
+                    }
+                    return good;
+                } 
+            },
+            {//書封面
+                targets: 3,
+                title: '書封面',
+                data: 'cover',
+                className: 'row-cover',
+                orderable: false,
+				render: function (data, type, row, meta) {
+                    return `<img src="https://smartreading.net/RP/BookContent/BookFront/`+ data +`">`;
+                } 
+            },
+            {//書名
+                targets: 4, 
+                title: '書名',
+                data: 'bookTitle',
+                className: 'row-bookTitle',
+                orderable: false,
+            },
+			{//電子書
+                targets: 5, 
+                title: '電子書',
+                data: 'ebook',
+                className: 'row-ebook',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    let ebook;
+                    switch (data) {
+                        case 1:
+                            ebook = `<img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">`;
+                            break
+                        case 0:
+                            ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">`;
+                            break    
+                        default:
+                            ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">`;
+                            break 
+                    }
+                    return ebook;
+                } 
+            },
+			{//圖書難度
+                targets: 6, 
+                title: '圖書難度',
+                data: 'SR',
+                className: 'row-SR',
+                orderable: true,
+                render: function (data, type, row, meta) {
+                    return `SR `+ data;
+                },
+				createdCell: function (td, cellData, rowData, row, col) {
+					$(td).attr('data-th', '圖書難度');
+				}
+            },
+            {//分類
+                targets: 7, 
+                title: '分類',
+                data: 'sort',
+                className: 'row-sort',
+                orderable: false,
+				createdCell: function (td, cellData, rowData, row, col) {
+					$(td).attr('data-th', '分類');
+				}
+            },
+            {//開始閱讀~結束閱讀
+                targets: 8, 
+                title: '開始閱讀~結束閱讀',
+				data: null,
+                className: 'row-readingDate',
+                orderable: false,
+				render: function (data, type, row, meta) {
+					return `<div class="readingDate-start">
+                    <div class="readingDate-title"> 開始閱讀 </div>
+                    <div class="readingDate-content">` + row.startTime+ `</div>
+                  </div>
+                  <div class="readingDate-end">
+                    <div class="readingDate-title"> 結束閱讀 </div>
+                    <div class="readingDate-content">` + row.endTime+ `</div>
+                  </div>`;
+				} 
+            },
+			{//工具
+                targets: 9, 
+                title: '工具',
+                className: 'row-tool',
+                orderable: false,
+                render: function (data, type, row, meta) {
+					const sys = row.systemQuiz?.[0] || {};
+					const tea = row.teacherQuiz?.[0] || {};
+					const study = row.myStudy || [];
+
+					// systemQuiz 狀態判斷
+					const sysLabel = !sys.done
+					? '未作答'
+					: (sys.score 
+					   ? (() => {
+							 // 根據分數等級決定額外 class
+							 let extraClass = '';
+							 if (sys.score === 'A' || sys.score === 'A+') {
+							   extraClass = ' passed';
+							 } else if (sys.score === 'B') {
+							   extraClass = ' failed';
+							 }
+							 return `
+							   <button type="button" class="btn btn-link">
+								 <span class="userScore ${sys.reviewType}${extraClass}">
+								   ${sys.score}
+								 </span>
+							   </button>
+							 `;
+						   })() 
+					   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary">批閱</button>');
+
+					// teacherQuiz 狀態判斷
+					const teaLabel = !tea.done
+					? '未作答'
+					: (tea.score 
+					   ? (() => {
+							 // 根據分數等級決定額外 class
+							 let extraClass = '';
+							 if (tea.score === 'A' || tea.score === 'A+') {
+							   extraClass = ' passed';
+							 } else if (tea.score === 'B') {
+							   extraClass = ' failed';
+							 }
+							 return `
+							   <button type="button" class="btn btn-link">
+								 <span class="userScore ${tea.reviewType}${extraClass}">
+								   ${tea.score}
+								 </span>
+							   </button>
+							 `;
+						   })() 
+					   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary">批閱</button>');
+
+					// myStudy 狀態判斷
+					const doneCount = study.filter(i => i.done).length;
+					const scoredCount = study.filter(i => i.score).length;
+
+					let studyLabel = '';
+					if (doneCount > 0 && scoredCount < 4) studyLabel = '批閱';
+					if (scoredCount === 4) studyLabel = '';//不用顯示分數
+
+					// 生成圖片顯示（依 done 狀態）
+					const imgHTML = study.map(i =>
+					`<img src="Content/images/RPList/myStudy-${i.type}${i.done ? '-done' : ''}.png">`
+					).join('&nbsp;');
+
+					return `
+					<div class="tool-evaluation">
+					<div class="row">
+					  <div class="col">
+						<div class="tool-title">系統題本</div>
+						<div class="tool-content">
+						  ${sysLabel}
+						</div>
+					  </div>
+					  <div class="col">
+						<div class="tool-title">教師命題</div>
+						<div class="tool-content">
+						  ${teaLabel}
+						</div>
+					  </div>
+					  <div class="col">
+						<div class="tool-title">我的書房</div>
+						<div class="tool-content">
+						  <button class="btn btn-outline-light btn-sm border-gray-400 text-primary" type="button">
+							${studyLabel}
+							${imgHTML}
+						  </button>
+						</div>
+					  </div>
+					</div>
+					</div>`;
+					}
+            }
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(RPlist);
+        }
+    }); 
+}	
+</script>
+</body>
+</html>

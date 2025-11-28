@@ -1,0 +1,226 @@
+$superBoard-bg-color: #c5df7a;
+.modal-superBoard{
+	.modal-content{
+		background-color: $superBoard-bg-color;	
+	}
+}
+
+.superBoard{
+	background-color: $superBoard-bg-color;
+	color: $gray-800;
+}
+
+.superBoard-medal{
+	h2{ 
+		font-size: 1rem;
+		font-weight: 500;
+		margin-top: 0;
+		margin-bottom: map-get($spacers, 3);
+	}
+	.superBoard-medal__content{
+		background-image: url(../images/superBoard/medal-bg.png);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% 100%;
+		border-radius: $border-radius;
+		color: $white;
+		font-size: 1rem;
+		text-align: center;
+		vertical-align: middle;
+		padding: 1.25rem map-get($spacers, 3);
+		img{
+			margin-right: .5rem;
+		}
+	}
+}
+
+
+.superBoard-board{ 
+	margin-bottom: 3rem;
+	.superBoard-board__header{
+		background-color:#FFF;
+		margin-left: 4%;
+		margin-right: 4%;
+		position: relative;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		h2{
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 1em;
+			font-weight: 500;
+			text-align: center;
+		}
+		&::before, &::after{
+			content:"";
+			display:block;
+			width:calc(4% - 3px);
+			height:0;
+			padding-bottom: 3%;
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:100% 100%;
+			position:absolute;
+			top:0;
+		}
+		&::before{
+			background-image:url(../images/superBoard/medal-bg-left.png);
+			left: calc(-4% + 3px);
+		}
+		&::after{
+			background-image:url(../images/superBoard/medal-bg-right.png);
+			right: calc(-4% + 3px);
+		}
+	}
+	.superBoard-board__content{ 
+		background-color: #FFF;
+		margin-left: 4%;
+		margin-right: 4%;
+		.table-responsive{
+			border: none;
+			padding-bottom: 1.5rem;
+		}
+		.superBoard-board-table{
+			margin-right: 8.3333%;
+			width: calc(100% - 8.3333%);
+			margin-bottom: 0;
+			min-width: calc(700px - 8.3333%);
+		}
+	}
+	.superBoard-board__footer{
+		background-color:#FFF;
+		margin-left:4%;
+		margin-right:4%;
+		border-top: 1px dashed $gray-400;
+		font-size: .8rem;
+		line-height: $line-height-lg;
+		border-radius: 0 0 $border-radius $border-radius;
+		padding: 1.5rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.superBoard-board__footer-title{ 
+			width: 100%;
+			text-align: left;
+		}
+		@media screen and (min-width: 992px) {
+		padding: 1.5rem 0;	
+		flex-direction: row;
+		align-items: center;
+		.superBoard-board__footer-title{ 
+			width: calc((100% - 8.3333%)/6);
+			text-align: right;
+			padding-right: 1.5rem;
+		}	
+		}
+	}
+}
+.superBoard-board-table{
+	background-image: url("../images/superBoard/board-table-bg.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: calc(100% - (100%/6)) calc(100% - 80px);
+	border-color: #FFF;
+	> tbody > tr{
+		> th, > td{ 
+			border: 1px solid #FFF;
+			width: calc(100%/6);
+			font-size: .8rem;
+			height: 4.5rem; 
+			background-color: transparent;
+		}
+		>th{
+			text-align: right;
+			padding-right: 1.5rem;
+		}
+	}
+	>tfoot >tr{ 
+		>th { 
+			height: 4rem !important;
+			padding: 0;
+		}
+		>td { 
+			height: 4rem !important;
+			padding: 0;
+			.board-table__bar{ 
+				.bar-easy{ 
+					display: inline-block;
+					width: 2rem;
+					text-align:center;
+					vertical-align:middle;
+				}
+				.bar-left{
+					display:inline-block;
+					width: calc(((100% - 40px - 80px - 40px)/2) - 15px);
+					height:auto;
+					vertical-align:middle;
+					margin-right:15px;
+				}
+				.bar-topic{
+					display:inline-block;
+					width:80px;
+					text-align:center;
+					vertical-align:middle;
+				}
+				.bar-right{
+					display:inline-block;
+					width: calc(((100% - 40px - 80px - 40px)/2) - 15px);
+					height:auto;
+					vertical-align:middle;
+					margin-left:15px;
+				}
+				.bar-hard{
+					display:inline-block;
+					width:40px;
+					text-align:center;
+					vertical-align:middle;
+				}
+			}
+		}
+	}
+}
+
+.superBoard-note{
+	padding-bottom: 2rem;
+	h2{
+		font-size: 1rem;
+		font-weight: 500;
+		margin-left: 4%;
+		margin-right: 4%;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.superBoard-note__content{
+		background-color: #d8f094;
+		border-radius: $border-radius;
+		padding: map-get($spacers, 4) 4%; 
+		margin-left: 4%;
+		margin-right: 4%;
+		.superBoard-note__content-text{
+			font-size: .8rem;
+			line-height: $line-height-lg;
+		}
+		.superBoard-note__content-rule{ 
+			font-size: .9rem;
+			text-align: center;
+			vertical-align: top;
+			img{
+				vertical-align: top;
+				margin-top: 1rem;
+			}
+			.img-medal-circle{
+				margin-top:20px + 20px;
+			}
+			.superBoard-note__content-rule__text{ 
+				display:inline-block;
+				margin-top:35px + 20px;
+			}
+		}
+	}
+}
+
+
+
+
+
+

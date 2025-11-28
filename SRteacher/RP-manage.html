@@ -9,10 +9,10 @@
 <meta name="generator" content="SmartReading">
 <title>SmartReading 教師端</title>
 <link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
-<!-- google fonts -->	
+<!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
 <!-- widgets CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -23,98 +23,244 @@
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
-<header> </header>
-	
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
-    <main class="col-xl-10"> 
-      <!-- ------- ------- ------- ------- ------- ------- ------- -->
-      <h2>閱讀計畫管理</h2>
-      <div class="row py-3 py-xl-5 px-1 px-xl-4">
-        <!-- 搜尋 start -->
-        <div class="col-xl-12 mb-3" id="blockSearch">
-          <div class="row g-2 align-items-center justify-content-between">
-            <div class="col-auto">
-              <div class="row gy-1">
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchYear" class="col-form-label fs-8">年度</label> </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2024">2024</option>  
-                        <option value="2023">2023</option> 
-						<option value="2022">2022</option> 
-                      </select>
+<form>
+  <header> </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- -------  ------- -->
+        <h2>閱讀計畫管理</h2>
+        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+          <!-- 搜尋 start -->
+          <div class="col-xl-12 mb-3" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="row gy-1">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchYear" class="col-form-label fs-8">年度</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchGrade" class="col-form-label fs-8">年級</label> </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2024">2024</option>  
-                        <option value="2023">2023</option> 
-						<option value="2022">2022</option> 
-                      </select>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchGrade" class="col-form-label fs-8">年級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchClass" class="col-form-label fs-8">班級</label> </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2024">2024</option>  
-                        <option value="2023">2023</option> 
-						<option value="2022">2022</option> 
-                      </select>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchClass" class="col-form-label fs-8">班級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="CLASS 1">Test 01</option>
+                          <option value="CLASS 2">Test 02</option>
+                          <option value="CLASS 3">Test 03</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>  
-        <!-- 搜尋  end  --> 
-        <!-- 表格 start -->
-        <div class="col-xl-12 mb-5">
-          <table class="table table-bordered table-" id="RPLists">
-            <thead>
-              <tr>
-                <th scope="col" class="td-no">序號</th>
-                <th scope="col" class="td-year">年度</th>
-                <th scope="col" class="td-grade">年級</th>
-                <th scope="col" class="td-class">班級</th>
-                <th scope="col" class="td-num">人數</th>
-                <th scope="col" class="td-RP">班級閱讀計畫</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="td-no">1</td>
-                <td class="td-year">2022</td>
-                <td class="td-grade">3</td>
-                <td class="td-class">2</td>
-                <td class="td-num">30</td>
-                <td class="td-RP"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="col-xl-12 mb-5">
+            <table class="table table-bordered table-RPmanage-overview" id="RPmanageOverviewTable">
+              <thead>
+                <tr>
+                  <th scope="col" class="row-index">序號</th>
+                  <th scope="col" class="row-year">年度</th>
+                  <th scope="col" class="row-grade">年級</th>
+                  <th scope="col" class="row-class">班級</th>
+                  <th scope="col" class="row-studentCount">人數</th>
+                  <th scope="col" class="row-classRP">班級閱讀計畫</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-index">1</td>
+                  <td class="row-year">2022</td>
+                  <td class="row-grade">3</td>
+                  <td class="row-class">Test 02</td>
+                  <td class="row-studentCount">22</td>
+                  <td class="row-classRP"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
         </div>
-        <!-- 表格  end  --> 
-      </div>
-      
-      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
-    </main>
+        
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
   </div>
-</div>
-
-<footer> </footer>
+  
+  <!-- Modal#classRPModal 班級閱讀計畫[查看] start -->
+  <div class="modal fade" id="classRPModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="classRPModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xxl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-3">
+            <h3 class="text-center h6">
+              <label>2022</label>
+              年度
+              <label>3年TEST 02班</label>
+              閱讀計畫</h3>
+          </div>
+          <!-- 搜尋 start -->
+          <div class="row g-2 align-items-center mb-3">
+            <div class="col-auto me-3">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label for="searchStartDate" class="col-form-label fs-8">開始日期</label>
+                </div>
+                <div class="col-auto">
+                  <input type="date" class="form-control form-control-sm rounded-0" id="searchStartDate">
+                </div>
+              </div>
+            </div>
+            <div class="col-auto me-3">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label for="searchEndDate" class="col-form-label fs-8">結束日期</label>
+                </div>
+                <div class="col-auto">
+                  <input type="date" class="form-control form-control-sm rounded-0" id="searchEndDate">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="">
+            <table class="table table-bordered table-classRP" id="classRPTable">
+              <thead>
+                <tr>
+                  <th scope="col" class="row-index" rowspan="2">序號</th>
+                  <th scope="col" class="row-studentName" rowspan="2">姓名</th>
+                  <th scope="col" class="row-DACC" rowspan="2">最新DACC分數</th>
+                  <th scope="col" class="row-RPcount" rowspan="2">計畫書籍數</th>
+                  <th scope="col" class="row-quiz" colspan="5">系統題本與教師命題</th>
+                  <th scope="col" class="row-myStudy" colspan="2">我的書房(不評分)</th>
+                  <th scope="col" class="row-superBoard" rowspan="2">金榜星星數
+                    <div>
+                      <button type="button" class="btn btn-link btn-sm">計分方式&gt;&gt;</button>
+                    </div></th>
+                  <th scope="col" class="row-studentRP" rowspan="2">閱讀計畫</th>
+                </tr>
+                <tr>
+                  <th scope="col" class="row-quizPassed">已通過書籍數</th>
+                  <th scope="col" class="row-quizReview">待批閱數</th>
+                  <th scope="col" class="row-quizB">B次數</th>
+                  <th scope="col" class="row-quizA">A次數</th>
+                  <th scope="col" class="row-quizAplus">A+次數</th>
+                  <th scope="col" class="row-myStudyBookCount">完成書籍數</th>
+                  <th scope="col" class="row-myStudyItemCount">項目完成數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-index">1</td>
+                  <td class="row-studentName">張花花</td>
+                  <td class="row-DACC">SR 254</td>
+                  <td class="row-RPcount">2</td>
+                  <td class="row-quizPassed">3</td>
+                  <td class="row-quizReview">0</td>
+                  <td class="row-quizB">1</td>
+                  <td class="row-quizA">1</td>
+                  <td class="row-quizAplus">1</td>
+                  <td class="row-myStudyBookCount">0</td>
+                  <td class="row-myStudyItemCount"><div><img src="Content/images/RPList/myStudy-note.png" width="15" height="20" alt="" class="me-1"/><span class="itemCount-space">筆記本</span>：
+                      <label>0</label>
+                    </div>
+                    <div><img src="Content/images/RPList/myStudy-paint.png" width="15" height="20" alt="" class="me-1"/><span class="itemCount-space">繪畫</span>：
+                      <label>0</label>
+                    </div>
+                    <div><img src="Content/images/RPList/myStudy-audio.png" width="15" height="20" alt="" class="me-1"/><span class="itemCount-space">錄音</span>：
+                      <label>0</label>
+                    </div>
+                    <div><img src="Content/images/RPList/myStudy-video.png" width="15" height="20" alt="" class="me-1"/><span class="itemCount-space">影音</span>：
+                      <label>0</label>
+                    </div></td>
+                  <td class="row-studentCount"><label>4</label>
+                    <div>
+                      <button type="button" class="btn btn-link btn-sm">詳情&gt;&gt;</button>
+                    </div></td>
+                  <td class="row-classRP"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal#classRPModal 班級閱讀計畫[查看]  end  --> 
+  
+  <!-- Modal#studentRPModal 學生閱讀計畫[查看] start -->
+  <div class="modal fade modal-studentRP" id="studentRPModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="studentRPModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="bg-primary bg-opacity-10 border border-2 border-dashed mx-3 px-3">
+            <div class="py-2 small"> <a href="" role="button"  data-bs-dismiss="modal"><i class="fa-solid fa-chevron-left me-1"></i>返回班級閱讀計畫</a> </div>
+            <div class="load-body">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal#studentRPModal 學生閱讀計畫[查看]  end  -->
+	
+  <!-- Modal#superBoardModal 金榜星星數[計分方式>>][詳情>>] start -->
+  <div class="modal fade modal-superBoard" id="superBoardModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="superBoardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="load-body">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal#superBoardModal 金榜星星數[計分方式>>][詳情>>]   end  -->	
+  
+  <footer> </footer>
+</form>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -122,7 +268,12 @@
 
 <!-- widgets JS --> 
 <script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
 <script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
+
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
@@ -138,8 +289,260 @@ $(document).ready(function() {
         $('#sidebarMenu .nav-link[href*="RP-manage"]').addClass('active');   
     }); 
 
-}); 
-</script>
+	
+	const list = $('#RPmanageOverviewTable');
+	
+    //班級 datatables 
+	list.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer"pi>',		
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-manage/RPmanage.json',
+        columnDefs: [
+            {//序號
+                targets: 0, 
+                title: '序號',
+                className: 'row-index',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//年度
+                targets: 1, 
+                title: '年度',
+                data: 'year',
+                className: 'row-year',
+                orderable: false, 
+            },
+            {//年級 
+                targets: 2,
+                title: '年級',
+                data: 'grade',
+                className: 'row-grade',
+                orderable: false,
+            },
+            {//班級
+                targets: 3, 
+                title: '班級',
+                data: 'class',
+                className: 'row-class',
+                orderable: false,
+            },
+            {//人數
+                targets: 4, 
+                title: '人數',
+                data: 'studentCount',
+                className: 'row-studentCount',
+                orderable: false,
+            },
+            {//班級閱讀計畫
+                targets: 5, 
+                title: '班級閱讀計畫',
+                className: 'row-classRP',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
+                }
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    }); 
+	
+	//班級閱讀計畫[查看]
+	list.on('click', '.row-classRP button', function (){ 
+		$('#classRPModal').modal('show'); 
+		
+		loadClassRPTable();
+	});
+}); 	
+</script> 
+	
+<!-- 班級閱讀計畫 --> 
+<script>
+function loadClassRPTable() { 
+	const list2 = $('#classRPTable');
+	
+	if ($.fn.DataTable.isDataTable(list2)) { 
+        list2.DataTable().clear().destroy();
+        list2.find('tbody').empty();
+    }
 
+	list2.DataTable({
+        //serverSide: true,
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer clearfix"pi>',
+        language: {
+          	url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-manage/classRP.json',
+        columnDefs: [
+			{//序號
+				targets: 0,
+				title: '序號',
+				className: 'row-index',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return meta.row + 1;
+				}
+			},
+			{//姓名
+				targets: 1,
+				title: '姓名',
+				data: 'studentName',
+				className: 'row-studentName',
+				orderable: false
+			},
+			{//最新DACC分數
+				targets: 2,
+				title: '最新DACC分數',
+				data: 'DACC',
+				className: 'row-DACC',
+				orderable: false,
+				render: function (data, type, row, meta) {
+					return 'SR ' + data;
+				}
+			},
+			{//計畫書籍數
+				targets: 3,
+				title: '計畫書籍數',
+				data: 'rpCount',
+				className: 'row-RPcount',
+				orderable: false
+			},
+			{//已通過書籍數
+				targets: 4,
+				title: '已通過書籍數',
+				data: 'quizPassed',
+				className: 'row-quizPassed',
+				orderable: false
+			},
+			{//待批閱數
+				targets: 5,
+				title: '待批閱數',
+				data: 'quizReview',
+				className: 'row-quizReview',
+				orderable: false
+			},
+			{//B次數
+				targets: 6,
+				title: 'B次數',
+				data: 'quizB',
+				className: 'row-quizB',
+				orderable: false
+			},
+			{//A次數
+				targets: 7,
+				title: 'A次數',
+				data: 'quizA',
+				className: 'row-quizA',
+				orderable: false
+			},
+			{//A+次數
+				targets: 8,
+				title: 'A+次數',
+				data: 'quizAplus',
+				className: 'row-quizAplus',
+				orderable: false
+			},
+			{//完成書籍數
+				targets: 9,
+				title: '完成書籍數',
+				data: 'myStudyBookCount',
+				className: 'row-myStudyBookCount',
+				orderable: false
+			},
+			{//項目完成數
+				targets: 10,
+				title: '項目完成數',
+				className: 'row-myStudyItemCount',
+				data: 'myStudyItems',
+				orderable: false,
+				render: function (data) {
+					return `<div><img src="Content/images/RPList/myStudy-note.png" width="15" height="20" alt="" class="me-1"/>
+							  <span class="itemCount-space">筆記本</span>：<label>${data.note}</label>
+							</div>
+							<div><img src="Content/images/RPList/myStudy-paint.png" width="15" height="20" alt="" class="me-1"/>
+							  <span class="itemCount-space">繪畫</span>：<label>${data.paint}</label>
+							</div>
+							<div><img src="Content/images/RPList/myStudy-audio.png" width="15" height="20" alt="" class="me-1"/>
+							  <span class="itemCount-space">錄音</span>：<label>${data.record}</label>
+							</div>
+							<div><img src="Content/images/RPList/myStudy-video.png" width="15" height="20" alt="" class="me-1"/>
+							  <span class="itemCount-space">影音</span>：<label>${data.video}</label>
+							</div>`;
+				}
+			},
+			{//金榜星星數
+				targets: 11,
+				title: '金榜星星數<br><button type="button" class="btn btn-link btn-sm">計分方式&gt;&gt;</button>',
+				data: 'superBoard',
+				className: 'row-superBoard',
+				orderable: false,
+				render: function (data) {
+					return `<label>${data}</label><div><button type="button" class="btn btn-link btn-sm">詳情&gt;&gt;</button></div>`;
+				}
+			},
+			{// 閱讀計畫
+				targets: 12,
+				title: '閱讀計畫',
+				className: 'row-studentRP',
+				orderable: false,
+				render: function () {
+					return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
+				}
+			}
+    	],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list2);
+        }
+    });
+	
+	//金榜星星數[計分方式>>]
+	list2.on('click', 'th.row-superBoard button', function (){ 
+		$('#superBoardModal').modal('show')
+							 .find('.modal-body .load-body')
+							 .load('superBoard.html');
+	});
+	//金榜星星數[計分方式>>]
+	list2.on('click', 'td.row-superBoard button', function (){ 
+		$('#superBoardModal').modal('show')
+							 .find('.modal-body .load-body')
+							 .load('superBoard.html', function () {
+								//do something... (寫入學生金榜星星數)
+							 });
+	});
+
+	//學生閱讀計畫[查看]
+	list2.on('click', '.row-studentRP button', function () {
+		$('#studentRPModal').modal('show')
+							.find('.modal-body .load-body')
+							.load('studentRP.html', function () {
+								initStudentRP();
+							});
+	});
+}
+</script>
 </body>
 </html>

@@ -445,6 +445,48 @@ height:95px;
 .glyphicon.glyphicon-arrow-up::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,16.005 L7.395,8.088 L10.501,8.088 L5.500,0.002 L0.500,8.088 L3.605,8.088 L3.605,16.005 L7.395,16.005 Z'/%3E %3C/svg%3E"); }
 .glyphicon.glyphicon-arrow-down::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='16px'%3E %3Cpath fill-rule='evenodd' fill='rgb(92, 100, 102)' d='M7.395,-0.005 L7.395,7.912 L10.501,7.912 L5.500,15.998 L0.500,7.912 L3.605,7.912 L3.605,-0.005 L7.395,-0.005 Z'/%3E %3C/svg%3E"); }
 
+.modal-superBoard .modal-content { background-color: #c5df7a; }
+
+.superBoard { background-color: #c5df7a; color: #5C6466; }
+
+.superBoard-medal h2 { font-size: 1rem; font-weight: 500; margin-top: 0; margin-bottom: 1rem; }
+.superBoard-medal .superBoard-medal__content { background-image: url(../images/superBoard/medal-bg.png); background-repeat: no-repeat; background-position: center top; background-size: 100% 100%; border-radius: 0.25rem; color: #fff; font-size: 1rem; text-align: center; vertical-align: middle; padding: 1.25rem 1rem; }
+.superBoard-medal .superBoard-medal__content img { margin-right: .5rem; }
+
+.superBoard-board { margin-bottom: 3rem; }
+.superBoard-board .superBoard-board__header { background-color: #FFF; margin-left: 4%; margin-right: 4%; position: relative; padding-top: 2rem; padding-bottom: 2rem; }
+.superBoard-board .superBoard-board__header h2 { margin-top: 0; margin-bottom: 0; font-size: 1em; font-weight: 500; text-align: center; }
+.superBoard-board .superBoard-board__header::before, .superBoard-board .superBoard-board__header::after { content: ""; display: block; width: calc(4% - 3px); height: 0; padding-bottom: 3%; background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; position: absolute; top: 0; }
+.superBoard-board .superBoard-board__header::before { background-image: url(../images/superBoard/medal-bg-left.png); left: calc(-4% + 3px); }
+.superBoard-board .superBoard-board__header::after { background-image: url(../images/superBoard/medal-bg-right.png); right: calc(-4% + 3px); }
+.superBoard-board .superBoard-board__content { background-color: #FFF; margin-left: 4%; margin-right: 4%; }
+.superBoard-board .superBoard-board__content .table-responsive { border: none; padding-bottom: 1.5rem; }
+.superBoard-board .superBoard-board__content .superBoard-board-table { margin-right: 8.3333%; width: calc(100% - 8.3333%); margin-bottom: 0; min-width: calc(700px - 8.3333%); }
+.superBoard-board .superBoard-board__footer { background-color: #FFF; margin-left: 4%; margin-right: 4%; border-top: 1px dashed #C6C6C6; font-size: .8rem; line-height: 2; border-radius: 0 0 0.25rem 0.25rem; padding: 1.5rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; }
+.superBoard-board .superBoard-board__footer .superBoard-board__footer-title { width: 100%; text-align: left; }
+@media screen and (min-width: 992px) { .superBoard-board .superBoard-board__footer { padding: 1.5rem 0; flex-direction: row; align-items: center; }
+  .superBoard-board .superBoard-board__footer .superBoard-board__footer-title { width: calc((100% - 8.3333%)/6); text-align: right; padding-right: 1.5rem; } }
+
+.superBoard-board-table { background-image: url("../images/superBoard/board-table-bg.png"); background-repeat: no-repeat; background-position: right top; background-size: calc(100% - (100%/6)) calc(100% - 80px); border-color: #FFF; }
+.superBoard-board-table > tbody > tr > th, .superBoard-board-table > tbody > tr > td { border: 1px solid #FFF; width: calc(100%/6); font-size: .8rem; height: 4.5rem; background-color: transparent; }
+.superBoard-board-table > tbody > tr > th { text-align: right; padding-right: 1.5rem; }
+.superBoard-board-table > tfoot > tr > th { height: 4rem !important; padding: 0; }
+.superBoard-board-table > tfoot > tr > td { height: 4rem !important; padding: 0; }
+.superBoard-board-table > tfoot > tr > td .board-table__bar .bar-easy { display: inline-block; width: 2rem; text-align: center; vertical-align: middle; }
+.superBoard-board-table > tfoot > tr > td .board-table__bar .bar-left { display: inline-block; width: calc(((100% - 40px - 80px - 40px)/2) - 15px); height: auto; vertical-align: middle; margin-right: 15px; }
+.superBoard-board-table > tfoot > tr > td .board-table__bar .bar-topic { display: inline-block; width: 80px; text-align: center; vertical-align: middle; }
+.superBoard-board-table > tfoot > tr > td .board-table__bar .bar-right { display: inline-block; width: calc(((100% - 40px - 80px - 40px)/2) - 15px); height: auto; vertical-align: middle; margin-left: 15px; }
+.superBoard-board-table > tfoot > tr > td .board-table__bar .bar-hard { display: inline-block; width: 40px; text-align: center; vertical-align: middle; }
+
+.superBoard-note { padding-bottom: 2rem; }
+.superBoard-note h2 { font-size: 1rem; font-weight: 500; margin-left: 4%; margin-right: 4%; margin-top: 1rem; margin-bottom: 1rem; }
+.superBoard-note .superBoard-note__content { background-color: #d8f094; border-radius: 0.25rem; padding: 1.5rem 4%; margin-left: 4%; margin-right: 4%; }
+.superBoard-note .superBoard-note__content .superBoard-note__content-text { font-size: .8rem; line-height: 2; }
+.superBoard-note .superBoard-note__content .superBoard-note__content-rule { font-size: .9rem; text-align: center; vertical-align: top; }
+.superBoard-note .superBoard-note__content .superBoard-note__content-rule img { vertical-align: top; margin-top: 1rem; }
+.superBoard-note .superBoard-note__content .superBoard-note__content-rule .img-medal-circle { margin-top: 40px; }
+.superBoard-note .superBoard-note__content .superBoard-note__content-rule .superBoard-note__content-rule__text { display: inline-block; margin-top: 55px; }
+
 .tobeGradedBlock { background-color: #F9F9F9; padding: 1.5rem 2rem; font-size: .8rem; }
 .tobeGradedBlock h3 { position: relative; }
 .tobeGradedBlock h3::before { content: ""; display: block; width: 8px; height: 8px; border-radius: 100%; background-color: #ff3f3f; position: absolute; left: -.75rem; top: 50%; transform: translateY(-50%); }
@@ -714,3 +756,28 @@ height:95px;
 .modal-quiz .modal-quiz-checkbox .d-grid { gap: 0; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); align-items: stretch; }
 
 .bg-primary-dashed { background-color: #43a047; background-color: rgba(var(--bs-primary-rgb), 0.1); border: 2px dashed var(--bs-border-color); padding-top: 1rem; padding-bottom: 1rem; }
+
+.table-RPmanage-overview > thead > tr > th.row-index, .table-RPmanage-overview > thead > tr > td.row-index, .table-RPmanage-overview > tbody > tr > th.row-index, .table-RPmanage-overview > tbody > tr > td.row-index { width: 5%; }
+.table-RPmanage-overview > thead > tr > th.row-year, .table-RPmanage-overview > thead > tr > td.row-year, .table-RPmanage-overview > tbody > tr > th.row-year, .table-RPmanage-overview > tbody > tr > td.row-year { width: 19%; }
+.table-RPmanage-overview > thead > tr > th.row-grade, .table-RPmanage-overview > thead > tr > td.row-grade, .table-RPmanage-overview > tbody > tr > th.row-grade, .table-RPmanage-overview > tbody > tr > td.row-grade { width: 19%; }
+.table-RPmanage-overview > thead > tr > th.row-class, .table-RPmanage-overview > thead > tr > td.row-class, .table-RPmanage-overview > tbody > tr > th.row-class, .table-RPmanage-overview > tbody > tr > td.row-class { width: 19%; }
+.table-RPmanage-overview > thead > tr > th.row-studentCount, .table-RPmanage-overview > thead > tr > td.row-studentCount, .table-RPmanage-overview > tbody > tr > th.row-studentCount, .table-RPmanage-overview > tbody > tr > td.row-studentCount { width: 19%; }
+.table-RPmanage-overview > thead > tr > th.row-RP, .table-RPmanage-overview > thead > tr > td.row-RP, .table-RPmanage-overview > tbody > tr > th.row-RP, .table-RPmanage-overview > tbody > tr > td.row-RP { width: 19%; }
+
+.table-classRP > thead > tr > th.row-index, .table-classRP > thead > tr > td.row-index, .table-classRP > tbody > tr > th.row-index, .table-classRP > tbody > tr > td.row-index { width: 4%; }
+.table-classRP > thead > tr > th.row-studentName, .table-classRP > thead > tr > td.row-studentName, .table-classRP > tbody > tr > th.row-studentName, .table-classRP > tbody > tr > td.row-studentName { width: 11%; }
+.table-classRP > thead > tr > th.row-DACC, .table-classRP > thead > tr > td.row-DACC, .table-classRP > tbody > tr > th.row-DACC, .table-classRP > tbody > tr > td.row-DACC { width: 11%; }
+.table-classRP > thead > tr > th.row-RPcount, .table-classRP > thead > tr > td.row-RPcount, .table-classRP > tbody > tr > th.row-RPcount, .table-classRP > tbody > tr > td.row-RPcount { width: 9%; }
+.table-classRP > thead > tr > th.row-quiz, .table-classRP > thead > tr > td.row-quiz, .table-classRP > tbody > tr > th.row-quiz, .table-classRP > tbody > tr > td.row-quiz { width: auto; }
+.table-classRP > thead > tr > th.row-myStudy, .table-classRP > thead > tr > td.row-myStudy, .table-classRP > tbody > tr > th.row-myStudy, .table-classRP > tbody > tr > td.row-myStudy { width: auto; }
+.table-classRP > thead > tr > th.row-superBoard, .table-classRP > thead > tr > td.row-superBoard, .table-classRP > tbody > tr > th.row-superBoard, .table-classRP > tbody > tr > td.row-superBoard { width: 9%; }
+.table-classRP > thead > tr > th.row-studentRP, .table-classRP > thead > tr > td.row-studentRP, .table-classRP > tbody > tr > th.row-studentRP, .table-classRP > tbody > tr > td.row-studentRP { width: 9%; }
+.table-classRP > thead > tr > th.row-quizPassed, .table-classRP > thead > tr > td.row-quizPassed, .table-classRP > tbody > tr > th.row-quizPassed, .table-classRP > tbody > tr > td.row-quizPassed { width: 9%; }
+.table-classRP > thead > tr > th.row-quizReview, .table-classRP > thead > tr > td.row-quizReview, .table-classRP > tbody > tr > th.row-quizReview, .table-classRP > tbody > tr > td.row-quizReview { width: 6%; }
+.table-classRP > thead > tr > th.row-quizB, .table-classRP > thead > tr > td.row-quizB, .table-classRP > tbody > tr > th.row-quizB, .table-classRP > tbody > tr > td.row-quizB { width: 5%; }
+.table-classRP > thead > tr > th.row-quizA, .table-classRP > thead > tr > td.row-quizA, .table-classRP > tbody > tr > th.row-quizA, .table-classRP > tbody > tr > td.row-quizA { width: 5%; }
+.table-classRP > thead > tr > th.row-quizAplus, .table-classRP > thead > tr > td.row-quizAplus, .table-classRP > tbody > tr > th.row-quizAplus, .table-classRP > tbody > tr > td.row-quizAplus { width: 5%; }
+.table-classRP > thead > tr > th.row-myStudyBookCount, .table-classRP > thead > tr > td.row-myStudyBookCount, .table-classRP > tbody > tr > th.row-myStudyBookCount, .table-classRP > tbody > tr > td.row-myStudyBookCount { width: 8%; }
+.table-classRP > thead > tr > th.row-myStudyItemCount, .table-classRP > thead > tr > td.row-myStudyItemCount, .table-classRP > tbody > tr > th.row-myStudyItemCount, .table-classRP > tbody > tr > td.row-myStudyItemCount { width: 9%; }
+.table-classRP > tbody > tr > th.row-myStudyItemCount .itemCount-space, .table-classRP > tbody > tr > td.row-myStudyItemCount .itemCount-space { width: calc((1em + .05rem)*3); display: inline-block; text-align: justify; text-align-last: justify; vertical-align: top; height: 1.5em; }
+.table-classRP > tbody > tr > th.row-myStudyItemCount .itemCount-space::after, .table-classRP > tbody > tr > td.row-myStudyItemCount .itemCount-space::after { content: ''; display: inline-block; width: 100%; }

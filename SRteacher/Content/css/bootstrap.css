@@ -1421,6 +1421,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
   .modal-sm { --bs-modal-width: 300px; } }
 @media (min-width: 992px) { .modal-lg, .modal-xl { --bs-modal-width: 800px; } }
 @media (min-width: 1200px) { .modal-xl { --bs-modal-width: 1140px; } }
+@media (min-width: 1400px) { .modal-xxl { --bs-modal-width: 1400px; } }
 .modal-fullscreen { width: 100vw; max-width: none; height: 100%; margin: 0; }
 .modal-fullscreen .modal-content { height: 100%; border: 0; border-radius: 0; }
 .modal-fullscreen .modal-header, .modal-fullscreen .modal-footer { border-radius: 0; }

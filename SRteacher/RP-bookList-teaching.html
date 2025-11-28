@@ -432,13 +432,14 @@
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <script src="Content/js/jquery-3.6.0.min.js"></script> 
-
 <!-- widgets JS --> 
-<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 	
+<script src="Content/js/doubleScorollbar.js"></script> 	
 <script src="Content/widgets/DataTables/datatables.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
+	
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
@@ -464,7 +465,7 @@ $(document).ready(function() {
 		searching: true,
 		pageLength: 10,
 		pagingType: "simple_numbers",
-        dom: '<r<"table-responsive"t>>'+
+        dom: '<"table-responsive"rt>'+
 			 '<"datatables-custom-footer clearfix"pi>',
         language: {
           url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
@@ -760,7 +761,7 @@ function loadteachingDetialTable(json) {
 		searching: true,
 		pageLength: 10,
 		pagingType: "simple_numbers",
-        dom: '<r<"table-responsive"t>>'+
+        dom: '<"table-responsive"rt>'+
 			 '<"datatables-custom-footer clearfix"pi>',
         language: {
           	url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'

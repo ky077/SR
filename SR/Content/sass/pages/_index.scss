@@ -60,21 +60,13 @@
 			text-align: center;
 			list-style: none;
 			bottom:0px;
-			@media screen and (min-width: 768px) {
-			bottom:0px;	
-			}
-			@media screen and (min-width: 992px) {
-			bottom:0px;	
-			}
-			@media screen and (min-width: 1200px) {
-			bottom:20px;	
-			}
+			margin-bottom: 0;
 			li{
-				width: 20px;
-				height: 20px;
+				width: 12px;
+				height: 12px;
 				border-radius:50%;
-				margin:1px 5px;
-				background-color:#908f89;
+				margin: 1px 2px;
+				background-color: rgba(#908f89, .65);
 				border:none;
 				box-shadow:inset 1px 1px rgba(0,0,0,.25);
 			}
@@ -84,9 +76,33 @@
 			li.active{
 				background-color:#FFF;
 				position:relative;
-				margin:1px 5px;
 				box-shadow:none;
 			}
+			@media screen and (min-width: 768px) {
+			bottom:0px;	
+			li{
+				width: 14px;
+				height: 14px;
+				margin:1px 3px;
+			}	
+			}
+			@media screen and (min-width: 992px) {
+			bottom:0px;	
+			li{
+				width: 16px;
+				height: 16px;
+				margin:1px 4px;
+			}	
+			}
+			@media screen and (min-width: 1200px) {
+			bottom:20px;
+			li{
+				width: 20px;
+				height: 20px;
+				margin:1px 5px;
+			}	
+			}
+			
 		}
 		.carousel-control{ 
 			> img{
@@ -664,7 +680,10 @@
 	padding-bottom: 60px;
     text-align: center;
     color: $main-color;
-    font-size: 1.1em;
+    font-size: .8em;
+	@media screen and (min-width: 576px) {font-size: .9em;}
+	@media screen and (min-width: 768px) {font-size: 1em;}
+	@media screen and (min-width: 1200px) {font-size: 1.1em;}
     h2{
         color: $main-color;
         margin-bottom: 40px;
@@ -681,7 +700,7 @@
         }
     }
     h3{
-        font-size: 2em;
+        font-size: 200%;
         label{
             font-weight: bold;    
         }
@@ -690,9 +709,17 @@
 		min-height: 1em*1.42857143*2;
 	}
     .index-counter-mark{
-        font-size: .8em;
+        font-size: 78%;
         color: rgba($main-color, .9);
     }
+	
+	@media screen and (max-width: 767px) {
+	> .container > .row > [class*="col"]{
+		padding-left: 0;
+		padding-right: 0;
+		flex: 1;
+	}
+	}
 }
 
 .index-trial{ 

@@ -1055,13 +1055,16 @@ button .userScore.byTeacher.failed:hover { background-color: #ff2b2b; border: 1p
 .index-base-more:hover::after, .index-base-more:focus::after, .index-base-more:focus::after { background-color: #ff0000; }
 
 /* ******* ******* ******* ******* ******* ******* ******* */
-.index-banner .carousel .carousel-indicators { position: absolute; left: 50%; z-index: 15; width: 60%; padding-left: 0; margin-left: -30%; text-align: center; list-style: none; bottom: 0px; }
-@media screen and (min-width: 768px) { .index-banner .carousel .carousel-indicators { bottom: 0px; } }
-@media screen and (min-width: 992px) { .index-banner .carousel .carousel-indicators { bottom: 0px; } }
-@media screen and (min-width: 1200px) { .index-banner .carousel .carousel-indicators { bottom: 20px; } }
-.index-banner .carousel .carousel-indicators li { width: 20px; height: 20px; border-radius: 50%; margin: 1px 5px; background-color: #908f89; border: none; box-shadow: inset 1px 1px rgba(0, 0, 0, 0.25); }
+.index-banner .carousel .carousel-indicators { position: absolute; left: 50%; z-index: 15; width: 60%; padding-left: 0; margin-left: -30%; text-align: center; list-style: none; bottom: 0px; margin-bottom: 0; }
+.index-banner .carousel .carousel-indicators li { width: 12px; height: 12px; border-radius: 50%; margin: 1px 2px; background-color: rgba(144, 143, 137, 0.65); border: none; box-shadow: inset 1px 1px rgba(0, 0, 0, 0.25); }
 .index-banner .carousel .carousel-indicators li:hover { background-color: #b2b2b2; }
-.index-banner .carousel .carousel-indicators li.active { background-color: #FFF; position: relative; margin: 1px 5px; box-shadow: none; }
+.index-banner .carousel .carousel-indicators li.active { background-color: #FFF; position: relative; box-shadow: none; }
+@media screen and (min-width: 768px) { .index-banner .carousel .carousel-indicators { bottom: 0px; }
+  .index-banner .carousel .carousel-indicators li { width: 14px; height: 14px; margin: 1px 3px; } }
+@media screen and (min-width: 992px) { .index-banner .carousel .carousel-indicators { bottom: 0px; }
+  .index-banner .carousel .carousel-indicators li { width: 16px; height: 16px; margin: 1px 4px; } }
+@media screen and (min-width: 1200px) { .index-banner .carousel .carousel-indicators { bottom: 20px; }
+  .index-banner .carousel .carousel-indicators li { width: 20px; height: 20px; margin: 1px 5px; } }
 .index-banner .carousel .carousel-control > img { position: absolute; top: 50%; margin-top: -52px; }
 @media screen and (min-width: 768px) { .index-banner .carousel .carousel-control > img { margin-top: -72px; } }
 @media screen and (min-width: 992px) { .index-banner .carousel .carousel-control > img { margin-top: -84.5px; } }
@@ -1187,13 +1190,17 @@ button .userScore.byTeacher.failed:hover { background-color: #ff2b2b; border: 1p
   .index-reading3step .index-reading3step__step2 img { max-width: calc(100% + 30px); margin-left: 0px; margin-right: 30px; margin-top: 15px; }
   .index-reading3step .index-reading3step__step2 { padding-top: 30px; }
   .index-reading3step .index-reading3step__step3 { padding-top: 60px; } }
-.index-counter { background-image: url(../images/index/reading3step-bg.png); background-repeat: repeat-x; padding-top: 60px; padding-bottom: 60px; text-align: center; color: #43a047; font-size: 1.1em; }
+.index-counter { background-image: url(../images/index/reading3step-bg.png); background-repeat: repeat-x; padding-top: 60px; padding-bottom: 60px; text-align: center; color: #43a047; font-size: .8em; }
+@media screen and (min-width: 576px) { .index-counter { font-size: .9em; } }
+@media screen and (min-width: 768px) { .index-counter { font-size: 1em; } }
+@media screen and (min-width: 1200px) { .index-counter { font-size: 1.1em; } }
 .index-counter h2 { color: #43a047; margin-bottom: 40px; position: relative; }
 .index-counter h2::after { content: ""; display: block; width: 100%; height: 1px; background-color: rgba(67, 160, 71, 0.5); position: absolute; left: 0; bottom: -15px; }
-.index-counter h3 { font-size: 2em; }
+.index-counter h3 { font-size: 200%; }
 .index-counter h3 label { font-weight: bold; }
 .index-counter h3 + div { min-height: 2.85714286em; }
-.index-counter .index-counter-mark { font-size: .8em; color: rgba(67, 160, 71, 0.9); }
+.index-counter .index-counter-mark { font-size: 78%; color: rgba(67, 160, 71, 0.9); }
+@media screen and (max-width: 767px) { .index-counter > .container > .row > [class*="col"] { padding-left: 0; padding-right: 0; flex: 1; } }
 
 .index-trial h2 { font-size: 1.1em; line-height: 1.8em; color: #5c6466; margin-top: 40px; margin-bottom: 50px; }
 .index-trial .index-trial__btn { font-size: 0.9em; border: 1px solid #5c6466; color: #5c6466; background-color: #FFF; border-radius: 30px; padding: 9px 20px; position: relative; margin-bottom: 30px; z-index: 5; }

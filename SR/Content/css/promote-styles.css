@@ -1055,15 +1055,15 @@ button .userScore.byTeacher.failed:hover { background-color: #ff2b2b; border: 1p
 .index-base-more:hover::after, .index-base-more:focus::after, .index-base-more:focus::after { background-color: #ff0000; }
 
 /* ******* ******* ******* ******* ******* ******* ******* */
-.index-banner .carousel .carousel-indicators { position: absolute; left: 50%; z-index: 15; width: 60%; padding-left: 0; margin-left: -30%; text-align: center; list-style: none; bottom: 0px; margin-bottom: 0; }
+.index-banner .carousel .carousel-indicators { position: absolute; left: 50%; z-index: 15; width: 60%; padding-left: 0; margin-left: -30%; text-align: center; list-style: none; bottom: -30px; margin-bottom: 0; }
 .index-banner .carousel .carousel-indicators li { width: 12px; height: 12px; border-radius: 50%; margin: 1px 2px; background-color: rgba(144, 143, 137, 0.65); border: none; box-shadow: inset 1px 1px rgba(0, 0, 0, 0.25); }
 .index-banner .carousel .carousel-indicators li:hover { background-color: #b2b2b2; }
 .index-banner .carousel .carousel-indicators li.active { background-color: #FFF; position: relative; box-shadow: none; }
-@media screen and (min-width: 768px) { .index-banner .carousel .carousel-indicators { bottom: 0px; }
+@media screen and (min-width: 768px) { .index-banner .carousel .carousel-indicators { bottom: -30px; }
   .index-banner .carousel .carousel-indicators li { width: 14px; height: 14px; margin: 1px 3px; } }
 @media screen and (min-width: 992px) { .index-banner .carousel .carousel-indicators { bottom: 0px; }
   .index-banner .carousel .carousel-indicators li { width: 16px; height: 16px; margin: 1px 4px; } }
-@media screen and (min-width: 1200px) { .index-banner .carousel .carousel-indicators { bottom: 20px; }
+@media screen and (min-width: 1200px) { .index-banner .carousel .carousel-indicators { bottom: 5px; }
   .index-banner .carousel .carousel-indicators li { width: 20px; height: 20px; margin: 1px 5px; } }
 .index-banner .carousel .carousel-control > img { position: absolute; top: 50%; margin-top: -52px; }
 @media screen and (min-width: 768px) { .index-banner .carousel .carousel-control > img { margin-top: -72px; } }

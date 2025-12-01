@@ -1190,8 +1190,8 @@ button .userScore.byTeacher.failed:hover { background-color: #ff2b2b; border: 1p
   .index-reading3step .index-reading3step__step2 img { max-width: calc(100% + 30px); margin-left: 0px; margin-right: 30px; margin-top: 15px; }
   .index-reading3step .index-reading3step__step2 { padding-top: 30px; }
   .index-reading3step .index-reading3step__step3 { padding-top: 60px; } }
-.index-counter { background-image: url(../images/index/reading3step-bg.png); background-repeat: repeat-x; padding-top: 60px; padding-bottom: 60px; text-align: center; color: #43a047; font-size: .8em; }
-@media screen and (min-width: 576px) { .index-counter { font-size: .9em; } }
+.index-counter { background-image: url(../images/index/reading3step-bg.png); background-repeat: repeat-x; padding-top: 60px; padding-bottom: 60px; text-align: center; color: #43a047; font-size: .7em; }
+@media screen and (min-width: 576px) { .index-counter { font-size: .8em; } }
 @media screen and (min-width: 768px) { .index-counter { font-size: 1em; } }
 @media screen and (min-width: 1200px) { .index-counter { font-size: 1.1em; } }
 .index-counter h2 { color: #43a047; margin-bottom: 40px; position: relative; }

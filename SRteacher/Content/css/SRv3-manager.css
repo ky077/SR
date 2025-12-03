@@ -504,8 +504,7 @@ height:95px;
 .fillAssessment-section .fillAssessment-section__header { background-color: #F1F1F1; font-size: .9em; font-weight: 400; color: #5C6466; padding: .75rem; }
 
 .questionType { font-size: .8rem; color: #5C6466; padding-left: .75rem; padding-right: .75rem; }
-.questionType .questionType__stem { background-color: rgba(255, 0, 4, 0.1); padding-top: calc(.25rem + 1px); padding-bottom: calc(.25rem + 1px); margin-bottom: .5rem; }
-.questionType .questionType__area { background-color: rgba(255, 125, 4, 0.1); }
+.questionType .questionType__stem { padding-top: calc(.25rem + 1px); padding-bottom: calc(.25rem + 1px); margin-bottom: .5rem; }
 .questionType textarea[readonly] { background-color: #fff !important; border-color: #fff !important; box-shadow: none !important; resize: none !important; }
 .questionType input[readonly] { opacity: 1.0 !important; }
 .questionType input[readonly] ~ label { opacity: 1.0 !important; }
@@ -529,9 +528,9 @@ height:95px;
 .questionType.video .questionType__area p { margin-top: .125rem; margin-bottom: .125rem; }
 
 .teacherEvaluation { font-size: .8rem; color: #5C6466; padding-left: .75rem; }
-.teacherEvaluation .teacherEvaluation__score { background-color: rgba(255, 0, 4, 0.1); margin-bottom: .5rem; }
+.teacherEvaluation .teacherEvaluation__score { margin-bottom: .5rem; }
 .teacherEvaluation .teacherEvaluation__score input { color: #43a047; text-align: center; }
-.teacherEvaluation .teacherEvaluation__comments { background-color: rgba(255, 125, 4, 0.1); display: flex; }
+.teacherEvaluation .teacherEvaluation__comments { display: flex; }
 .teacherEvaluation .teacherEvaluation__comments .teacherEvaluation__comments-title { white-space: nowrap; }
 .teacherEvaluation .teacherEvaluation__comments textarea { flex: 1; font-size: .8rem; resize: none; padding: .375rem; color: #43a047; margin-left: calc(.25em + 1px); min-height: calc(250px - (0.8rem*1.5 + .25rem*2 + 2px) - .5rem); }
 .teacherEvaluation input[readonly] { background-color: #fff; border-color: #fff; box-shadow: none; }

@@ -1,8 +1,4 @@
 //202501 修改SmartReading  _recommendedBook-table.scss 為flex 給 SR教師端用
-$main-color: $primary;
-$default-gray: $gray-500;
-$default-black: $body-color;
-
 .table-recommendedBook{
 	display: flex;
 	thead{
@@ -75,12 +71,12 @@ $default-black: $body-color;
 				&.row-bookTitle{
 					font-size: 1rem;
 					font-weight: 500;
-					color: $default-black;
+					color: $body-color;
 					padding-bottom: .5rem;
 				}
 				&.row-addedBy, &.row-SR, &.row-category, &.row-topicType, &.row-propStatus{
 					font-size: .8rem;
-					color: $default-black;
+					color: $body-color;
 					&:before {
 						content: attr(data-th) " : ";
 					}
@@ -127,8 +123,8 @@ $default-black: $body-color;
 					&.focus, &.active,
 					&:focus:not(.disabled), &:active:not(.disabled),
 					&.focus:not(.disabled), &.active:not(.disabled){
-						border-color: $main-color;
-						background-color: $main-color;
+						border-color: $primary;
+						background-color: $primary;
 						color:#FFF;
 						.glyphicon::before  {
 							filter: brightness(5);

@@ -49,7 +49,7 @@
 	  "startTime": "2022/07/29",
 	  "endTime": "2022/07/30",
 	  "systemQuiz":  [{"done": true, "reviewType": "bySystem", "score": "B"}],
-	  "teacherQuiz": [{"done": true, "reviewType": "bySystem", "score": "B"}],
+	  "teacherQuiz": [{"done": true, "reviewType": "byTeacher", "score": "B"}],
 	  "myStudy": [
         { "type": "note",  "done": true,  "score": "" },
         { "type": "paint", "done": true,  "score": "" },

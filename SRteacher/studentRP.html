@@ -1,4 +1,4 @@
-<main class="border-0 bg-transparent">
+<div>
   <div class="row">
     <h3 class="text-center h6">
       <label>3年2班</label>
@@ -141,9 +141,37 @@
     </table>
   </div>
   <!-- 表格  end  --> 
-</main>
+</div>
 <script>
 (function () {
+	//圖標說明 popovers
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+	var popoverList = popoverTriggerList.map(function (popoverTriggerList) {
+		return new bootstrap.Popover(popoverTriggerList, {
+			container: 'body',
+			html: true,
+			placement: 'bottom',
+			trigger: 'hover focus',
+			customClass: 'w-max-auto px-2',
+			content: `<div class="mb-1 text-dark">系統評量分數</div>
+					  <div class="mb-2">
+						<span>通過：</span>
+						<span class="userScore passed bySystem ">A+</span>&nbsp;&nbsp;<span class="userScore passed bySystem">A</span>
+						<span class="ms-4">不通過：</span>
+						<span class="userScore failed bySystem">B</span>
+					  </div>
+					  <hr>
+					  <div class="mb-1 text-dark">教師評量分數</div>
+					  <div class="mb-2">
+						<span>通過：</span>
+						<span class="userScore passed byTeacher">A+</span>&nbsp;&nbsp;<span class="userScore passed byTeacher">A</span>
+						<span class="ms-4">不通過：</span>
+						</span><span class="userScore failed byTeacher">B</span>
+					  </div>`
+		});
+	}); 
+	
+	
     // 防止 studentRP.html 被 .load() 多次時重複執行
     if (window._studentRP_inited) return;
     window._studentRP_inited = true;
@@ -299,7 +327,6 @@
 					{//開始閱讀~結束閱讀
 						targets: 8, 
 						title: '開始閱讀~結束閱讀',
-						data: null,
 						className: 'row-readingDate',
 						orderable: false,
 						render: function (data, type, row, meta) {
@@ -336,14 +363,14 @@
 									   extraClass = ' failed';
 									 }
 									 return `
-									   <button type="button" class="btn btn-link">
+									   <button type="button" class="btn btn-link btn-systemQuiz" data-review-type="${sys.reviewType}">
 										 <span class="userScore ${sys.reviewType}${extraClass}">
 										   ${sys.score}
 										 </span>
 									   </button>
 									 `;
 								   })() 
-							   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary">批閱</button>');
+							   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary btn-systemQuiz">批閱</button>');
 
 							// teacherQuiz 狀態判斷
 							const teaLabel = !tea.done
@@ -358,14 +385,14 @@
 									   extraClass = ' failed';
 									 }
 									 return `
-									   <button type="button" class="btn btn-link">
+									   <button type="button" class="btn btn-link btn-teacherQuiz" data-review-type="${sys.reviewType}">
 										 <span class="userScore ${tea.reviewType}${extraClass}">
 										   ${tea.score}
 										 </span>
 									   </button>
 									 `;
 								   })() 
-							   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary">批閱</button>');
+							   : '<button type="button" class="btn btn-outline-light btn-sm px-4 border-gray-400 text-primary btn-teacherQuiz">批閱</button>');
 
 							// myStudy 狀態判斷
 							const doneCount = study.filter(i => i.done).length;
@@ -398,7 +425,7 @@
 							  <div class="col">
 								<div class="tool-title">我的書房</div>
 								<div class="tool-content">
-								  <button class="btn btn-outline-light btn-sm border-gray-400 text-primary" type="button">
+								  <button class="btn btn-outline-light btn-sm border-gray-400 text-primary btn-myStudy" type="button">
 									${studyLabel}
 									${imgHTML}
 								  </button>
@@ -416,5 +443,39 @@
 			}); 
         }
     };
+		
+	//系統題本[批閱]
+	$(document).on('click', '.btn-systemQuiz', function (){ 
+		$('#reviewModal').modal('show')
+						 .find('.modal-body .load-body')
+						 .load('fillAssessment-bySystem-teacherRating.html', function () {
+								//do something... (載入學生作答
+								//                 若有系統評分須出現系統分數
+								//                 若老師評分過，載入老師評分)
+							 });
+	});
+	
+	//教師命題[批閱]	
+	$(document).on('click', '.btn-teacherQuiz', function () {
+		$('#reviewModal').modal('show')
+							 .find('.modal-body .load-body')
+							 .load('fillAssessment-byTeacher-teacherRating.html', function () {
+								//do something... (載入學生作答
+								//                 若有系統評分須出現系統分數
+								//                 若老師評分過，載入老師評分)
+							 });
+	});	
+	
+	//我的書房[批閱]	
+	$(document).on('click', '.btn-myStudy', function () {
+		$('#reviewModal').modal('show')
+						 .find('.modal-body .load-body')
+						 .load('myStudy-teacherRating.html', function () {
+								//do something... (載入學生作答
+								//                 若有系統評分須出現系統分數
+								//                 若老師評分過，載入老師評分)
+							 });
+	});	
+
 })();
 </script>

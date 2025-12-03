@@ -1,6 +1,4 @@
 //202501 修改SmartReading  _RPList-books__table 給 SR教師端用
-$main-color: $primary;
-$default-gray: $gray-800;
 
 .table-RPList{
 	$left-bolck-width: 40%;
@@ -111,7 +109,7 @@ $default-gray: $gray-800;
 				&.row-SR, &.row-sort{  
 					width: calc(#{$right-bolck-width} - .5rem*2);
 					font-size: .8rem;
-					color: $default-gray;
+					color:  $gray-800;
 					text-align: left;
 					padding: .125rem .5rem;
 					&::before {
@@ -128,15 +126,15 @@ $default-gray: $gray-800;
 						display: inline-block;
 						float: left;
 						font-size: .8rem;
-						color: $default-gray;
-						border: 1px solid $main-color;
+						color: $gray-800;
+						border: 1px solid $primary;
 						border-radius: .25rem;
 						overflow: hidden;
 						text-align: center;
 						width: calc(50% - 5px);
 						.readingDate-title{
-							background-color: $main-color;
-							border-bottom: 1px solid $main-color;
+							background-color: $primary;
+							border-bottom: 1px solid $primary;
 							text-align: center;
 							color: $white;
 							padding: .25rem 0;

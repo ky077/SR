@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-tw">
+<html lang="zh-hant-TW">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,54 +8,48 @@
 <meta name="author" content="SmartReading">
 <meta name="generator" content="SmartReading">
 <title>SmartReading 教師端</title>
-<link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
-<link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css">
-<link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css">
-<link rel="stylesheet" type="text/css" href="../Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
-<!-- this page widgets CSS -->
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
-<!-- SR core CSS -->
-<link rel="stylesheet" type="text/css" href="../Content/css/promote-styles.css">
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 
 <body>
-
-<!-- ------- ------- ------- ------- ------- ------- ------- -->
-<main> 
+<div class="fillAssessment"> 
   <!-- fillAssessment-header START/... -->
   <div class="fillAssessment-header">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 col-xl-7">
           <div class="fillAssessment-title">
             <div class="row">
-              <div class="col-xs-4 col-md-3">
-                <div class="fillAssessment-title__img">
-                  <img src="../Content/images/fillAssessment/fillAssessment-byTeacher-img.png" class="img-responsive center-block">
-                </div>
+              <div class="col-4 col-md-auto">
+                <div class="fillAssessment-title__img"> <img src="Content/images/fillAssessment/fillAssessment-byTeacher-img.png" alt=""> </div>
               </div>
-              <div class="col-xs-8 col-md-9">
+              <div class="col-8">
                 <div class="fillAssessment-title__text">
-                  <h1>教師評量
-                    <label id="demo-score" class="pull-right">
-                      <!--<span class="userScore failed bySystem">待</span>-->
-                    </label>
-                    <small>你已閱讀完此書，請填寫下方測驗。</small></h1>
+                  <h1>教師命題<!--<span class="userScore passed byTeacher">A+</span><small></small>--></h1>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">
+        <div class="col-12 col-lg-6 col-xl-5">
           <div class="fillAssessment-book">
             <div class="row">
-              <div class="col-xs-4">
-                <div class="fillAssessment-book__front">
-                  <img src="https://smartreading.net/RP/BookContent/BookFront/006.jpg" class="img-responsive center-block">
-                </div>
+              <div class="col-4">
+                <div class="fillAssessment-book__front"> <img src="https://smartreading.net/RP/BookContent/BookFront/006.jpg" alt=""> </div>
               </div>
-              <div class="col-xs-8">
+              <div class="col-8">
                 <div class="fillAssessment-book__intro">
                   <h2>
                     <label>第一條魚</label>
@@ -78,50 +72,50 @@
   
   <!-- fillAssessment-body START/... -->
   <div class="fillAssessment-body">
-    <div class="container">
+    <div class="container"> 
       <!-- 區塊版型 START -->
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">學生填寫評量</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 選擇題-學生填寫 start -->
               <div class="questionType choice">
                 <label class="questionType__stem">1、「忙碌的爸爸很容易心情不好」中，「忙碌」是什麼意思？</label>
                 <div class="questionType__area">
-                  <div class="SRradioRound-green">
-                    <input type="radio" id="A" name="Q1" checked />
-                    <label for="A">繁忙</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Q1" id="A" disabled readonly checked>
+                    <label class="form-check-label" for="A"> 繁忙 </label>
                   </div>
-                  <div class="SRradioRound-green">
-                    <input type="radio" id="B" name="Q1" />
-                    <label for="B">匆忙</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Q1" id="B" disabled readonly>
+                    <label class="form-check-label" for="B"> 匆忙 </label>
                   </div>
-                  <div class="SRradioRound-green">
-                    <input type="radio" id="C" name="Q1" />
-                    <label for="C">勞碌</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Q1" id="C" disabled readonly>
+                    <label class="form-check-label" for="C"> 勞碌 </label>
                   </div>
                 </div>
               </div>
-              <!-- 選擇題-學生填寫 end -->
+              <!-- 選擇題-學生填寫 end --> 
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">教師評量批閱</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 選擇題-教師批閱 start -->
               <div class="teacherEvaluation choice">
                 <div class="teacherEvaluation__score">1、分數：
-                  <input type="text" class="form-control noRadius input-inline" id="" placeholder="" style="width:68px;" value="20" disabled>
+                  <input type="text" class="form-control form-control-sm rounded-0 d-inline" id="" placeholder="" style="width:68px;" value="20">
                   /25分</div>
                 <div class="teacherEvaluation__comments">
-                    <div class="teacherEvaluation__comments-title">評語：</div>
-                    <textarea id="" class="form-control noRadius" placeholder="" disabled>老師評語很短</textarea>
+                  <div class="teacherEvaluation__comments-title">評語：</div>
+                  <textarea id="" class="form-control rounded-0 d-inline" placeholder="">老師評語很短</textarea>
                 </div>
               </div>
-              <!-- 選擇題-教師批閱 end -->
+              <!-- 選擇題-教師批閱 end --> 
             </div>
           </div>
         </div>
@@ -130,36 +124,36 @@
       
       <!-- 區塊版型 START -->
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">學生填寫評量</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 問答題-學生填寫 start -->
               <div class="questionType QandA">
                 <label class="questionType__stem">2、主角不喜歡怎樣的爸爸？</label>
                 <div class="questionType__area">
-                  <textarea id="" class="form-control noRadius" rows="3" style="" placeholder="">殘暴的</textarea>
+                  <textarea id="" class="form-control rounded-0" rows="3" style="" placeholder="" disabled readonly>殘暴的</textarea>
                 </div>
               </div>
-              <!-- 問答題-學生填寫 end -->
+              <!-- 問答題-學生填寫 end --> 
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">教師評量批閱</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 問答題-教師批閱 start -->
               <div class="teacherEvaluation QandA">
                 <div class="teacherEvaluation__score">2、分數：
-                  <input type="text" class="form-control noRadius input-inline" id="" placeholder="" style="width:68px;" value="20" disabled>
+                  <input type="text" class="form-control form-control-sm rounded-0 d-inline" id="" placeholder="" style="width:68px;" value="20">
                   /25分</div>
                 <div class="teacherEvaluation__comments">
                   <div class="teacherEvaluation__comments-title">評語：</div>
-                  <textarea id="" class="form-control noRadius" rows="3" style="" placeholder="" disabled>老師評語很短</textarea>
+                  <textarea id="" class="form-control rounded-0 d-inline" rows="3" style="" placeholder="">老師評語很短</textarea>
                 </div>
               </div>
-              <!-- 問答題-教師批閱 end -->
+              <!-- 問答題-教師批閱 end --> 
             </div>
           </div>
         </div>
@@ -168,10 +162,10 @@
       
       <!-- 區塊版型 START -->
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">學生填寫評量</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 圖片題-學生填寫 start -->
               <div class="questionType picture">
                 <label class="questionType__stem">3、一起去散步</label>
@@ -180,40 +174,36 @@
                   <div class="upload-pic">
                     <div class="upload-pic__area">
                       <div class="upload-pic__area-default">
-                        <div class="upload-pic__area-default__text">
-                          <img src="../Content/images/myStudy/paint-default-img.png" class="img-responsive center-block">
-                        </div>
+                        <div class="upload-pic__area-default__text"> <img src="Content/images/myStudy/paint-default-img.png" class="img-responsive center-block"> </div>
                       </div>
-                      <div class="upload-pic__area-answer" style="display:block;">
-                        <img src="../Content/images/news/1.jpg" class="img-responsive center-block">
-                      </div>
+                      <div class="upload-pic__area-answer" style="display:block;"> <img src="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg" class="img-responsive center-block"> </div>
                     </div>
-                    <div class="upload-pic__btns">
-                      <!--<button class="btn btn-main noRadius" type="button" onclick="window.location='fillAssessment-draw-palette.html'">繪製</button>
-                      <button class="btn btn-default-main noRadius" type="submit">上傳圖檔</button>-->
+                    <div class="upload-pic__btns"> 
+                      <!--<button class="btn btn-main rounded-0" type="button" onclick="window.location='fillAssessment-draw-palette.html'">繪製</button>
+                      <button class="btn btn-default-main rounded-0" type="submit">上傳圖檔</button>--> 
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- 圖片題-學生填寫 end -->
+              <!-- 圖片題-學生填寫 end --> 
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">教師評量批閱</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 圖片題-教師批閱 start -->
               <div class="teacherEvaluation picture">
                 <div class="teacherEvaluation__score">3、分數：
-                  <input type="text" class="form-control noRadius input-inline" id="" placeholder="" style="width:68px;" value="20" disabled>
+                  <input type="text" class="form-control form-control-sm rounded-0 d-inline" id="" placeholder="" style="width:68px;" value="20">
                   /25分</div>
                 <div class="teacherEvaluation__comments">
                   <div class="teacherEvaluation__comments-title">評語：</div>
-                  <textarea id="" class="form-control noRadius" rows="3" style="" placeholder="" disabled>老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆</textarea>
+                  <textarea id="" class="form-control rounded-0 d-inline" rows="3" style="" placeholder="">老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆</textarea>
                 </div>
               </div>
-              <!-- 圖片題-教師批閱 end -->
+              <!-- 圖片題-教師批閱 end --> 
             </div>
           </div>
         </div>
@@ -222,10 +212,10 @@
       
       <!-- 區塊版型 START -->
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">學生填寫評量</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 影片題-學生填寫 start -->
               <div class="questionType video">
                 <label class="questionType__stem">4、表白</label>
@@ -234,9 +224,7 @@
                   <div class="upload-video">
                     <div class="upload-video__area">
                       <div class="upload-video__area-default">
-                        <div class="upload-video__area-default__text">
-                          <img src="../Content/images/myStudy/video-default-img.png" class="img-responsive center-block">
-                        </div>
+                        <div class="upload-video__area-default__text"> <img src="Content/images/myStudy/video-default-img.png" class="img-responsive center-block"> </div>
                       </div>
                       <div class="upload-video__area-answer" style="">
                         <div class="upload-video__area-answer__videoWidth">
@@ -246,41 +234,69 @@
                         </div>
                       </div>
                     </div>
-                    <div class="upload-video__btns">
+                    <div class="upload-video__btns"> 
                       <!--<div class="input-group">
-                        <input type="text" class="form-control noRadius" placeholder="http://" value="https://youtu.be/KD_1Z8iUDho">
+                        <input type="text" class="form-control rounded-0" placeholder="http://" value="https://youtu.be/KD_1Z8iUDho">
                         <span class="input-group-btn">
-                        <button class="btn btn-default noRadius" type="button" id="">預覽</button>
+                        <button class="btn btn-default rounded-0" type="button" id="">預覽</button>
                         </span>
-                      </div>-->
+                      </div>--> 
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- 影片題-學生填寫 end -->
+              <!-- 影片題-學生填寫 end --> 
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <div class="fillAssessment-section">
             <h3 class="fillAssessment-section__header">教師評量批閱</h3>
-            <div class="fillAssessment-section__body">
+            <div class="fillAssessment-section__body"> 
               <!-- 影片題-教師批閱 start -->
               <div class="teacherEvaluation video">
                 <div class="teacherEvaluation__score">4、分數：
-                  <input type="text" class="form-control noRadius input-inline" id="" placeholder="" style="width:68px;" value="20" disabled>
+                  <input type="text" class="form-control form-control-sm rounded-0 d-inline" id="" placeholder="" style="width:68px;" value="20">
                   /25分</div>
                 <div class="teacherEvaluation__comments">
                   <div class="teacherEvaluation__comments-title">評語：</div>
-                  <textarea id="" class="form-control noRadius" rows="3" style="" placeholder="">老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆</textarea>
+                  <textarea id="" class="form-control rounded-0 d-inline" rows="3" style="" placeholder="">老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆老師評語長到爆</textarea>
                 </div>
               </div>
-              <!-- 影片題-教師批閱 end -->
+              <!-- 影片題-教師批閱 end --> 
             </div>
           </div>
         </div>
       </div>
-      <!-- 區塊版型 END -->
+      <!-- 區塊版型 END --> 
+		
+      <!-- 區塊版型 START -->
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="fillAssessment-section">
+            <div class="fillAssessment-section__body"> </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="fillAssessment-section">
+            <div class="fillAssessment-section__body"> 
+              <!-- 教師評量-教師批閱 start -->
+              <div class="teacherEvaluation total">
+                <div class="teacherEvaluation__score">教師評量：
+                  <select class="form-select rounded-0 form-select-arrow-sm d-inline-block w-auto">
+                    <option selected disabled>請選擇</option>
+                    <option value="A">A</option>
+                    <option value="A+">A+</option>
+                    <option value="B">B</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 教師評量-教師批閱 end --> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 區塊版型 END --> 		
     </div>
   </div>
   <!-- .../fillAssessment-body END --> 
@@ -289,24 +305,26 @@
   <div class="fillAssessment-footer">
     <div class="container">
       <div class="fillAssessment-btns text-center">
-        <button class="btn btn-lg btn-default" type="button" onclick="window.location='RPList.html'">回閱讀計畫</button>
-        <button class="btn btn-lg btn-default-main" type="submit">暫存</button>
-        <button class="btn btn-lg btn-main" type="submit">送出</button>
-        <button class="btn btn-lg btn-main" type="button" style="display:none;" onclick="window.location='fillAssessment-byTeacher.html?write=1'">重寫</button>
+        <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
+        <button type="button" class="btn btn-primary m-1" id="editOk">確定</button>
       </div>
     </div>
   </div>
   <!-- .../fillAssessment-footer END --> 
-</main>
+</div>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<script src="../Script/jquery.min.js"></script> 
-<script src="../Script/bootstrap-lg.min.js"></script> 
-<script src="../Script/ie10-viewport-bug-workaround.js"></script> 
-<!-- widgets js --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
 <script>
 $(document).ready(function() {
 	//nowPage

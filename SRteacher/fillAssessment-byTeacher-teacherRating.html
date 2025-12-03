@@ -81,7 +81,7 @@
             <div class="fillAssessment-section__body"> 
               <!-- 選擇題-學生填寫 start -->
               <div class="questionType choice">
-                <label class="questionType__stem">1、「忙碌的爸爸很容易心情不好」中，「忙碌」是什麼意思？</label>
+                <div class="questionType__stem">1、「忙碌的爸爸很容易心情不好」中，「忙碌」是什麼意思？</div>
                 <div class="questionType__area">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="Q1" id="A" disabled readonly checked>
@@ -130,7 +130,7 @@
             <div class="fillAssessment-section__body"> 
               <!-- 問答題-學生填寫 start -->
               <div class="questionType QandA">
-                <label class="questionType__stem">2、主角不喜歡怎樣的爸爸？</label>
+                <div class="questionType__stem">2、主角不喜歡怎樣的爸爸？</div>
                 <div class="questionType__area">
                   <textarea id="" class="form-control rounded-0" rows="3" style="" placeholder="" disabled readonly>殘暴的</textarea>
                 </div>
@@ -168,20 +168,20 @@
             <div class="fillAssessment-section__body"> 
               <!-- 圖片題-學生填寫 start -->
               <div class="questionType picture">
-                <label class="questionType__stem">3、一起去散步</label>
+                <div class="questionType__stem">3、一起去散步</div>
                 <div class="questionType__area">
                   <p>上傳/繪製你跟爸爸一起散步的圖片。</p>
                   <div class="upload-pic">
                     <div class="upload-pic__area">
                       <div class="upload-pic__area-default">
-                        <div class="upload-pic__area-default__text"> <img src="Content/images/myStudy/paint-default-img.png" class="img-responsive center-block"> </div>
+                        <div class="upload-pic__area-default__text"> <img src="Content/images/myStudy/paint-default-img.png"></div>
                       </div>
-                      <div class="upload-pic__area-answer" style="display:block;"> <img src="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg" class="img-responsive center-block"> </div>
+                      <div class="upload-pic__area-answer" style="display: block;"><a href="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg" target="_blank"><img src="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg"></a></div>
                     </div>
-                    <div class="upload-pic__btns"> 
-                      <!--<button class="btn btn-main rounded-0" type="button" onclick="window.location='fillAssessment-draw-palette.html'">繪製</button>
-                      <button class="btn btn-default-main rounded-0" type="submit">上傳圖檔</button>--> 
-                    </div>
+                    <!--<div class="upload-pic__btns"> 
+                      <button class="btn btn-primary btn-sm rounded-0" type="button" onclick="'">繪製</button>
+                      <button class="btn btn-outline-primary btn-sm rounded-0" type="submit">上傳圖檔</button> 
+                    </div>-->
                   </div>
                 </div>
               </div>
@@ -218,7 +218,7 @@
             <div class="fillAssessment-section__body"> 
               <!-- 影片題-學生填寫 start -->
               <div class="questionType video">
-                <label class="questionType__stem">4、表白</label>
+                <div class="questionType__stem">4、表白</div>
                 <div class="questionType__area">
                   <p>將你想跟爸爸說的話錄成影片傳上來！</p>
                   <div class="upload-video">
@@ -226,10 +226,10 @@
                       <div class="upload-video__area-default">
                         <div class="upload-video__area-default__text"> <img src="Content/images/myStudy/video-default-img.png" class="img-responsive center-block"> </div>
                       </div>
-                      <div class="upload-video__area-answer" style="">
+                      <div class="upload-video__area-answer" style="display: block;">
                         <div class="upload-video__area-answer__videoWidth">
-                          <div class="embed-responsive embed-responsive-56pre">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rp-FAlPNQIA"></iframe>
+                          <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA"></iframe>
                           </div>
                         </div>
                       </div>

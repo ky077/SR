@@ -107,9 +107,13 @@
 	color: $gray-800;
 	padding-left: .75rem;
 	padding-right: .75rem;
-	.questionType__stem{
-		display: block;
+	.questionType__stem{ background-color: rgba(255,0,4, .1);
+		padding-top: calc(.25rem + 1px);
+		padding-bottom: calc(.25rem + 1px);
 		margin-bottom: .5rem;
+	}
+	.questionType__area{background-color: rgba(255,125,4, .1);
+		
 	}
 	textarea{
 		&[readonly]{
@@ -125,19 +129,11 @@
 			opacity: 1.0 !important;	
 		}
 	}
-//	.form-check{
-//		.form-check-input[readonly]{
-//			opacity: 1.0;
-//			~ .form-check-label{
-//				opacity: 1.0;	
-//			}
-//		}
-//	}
 }
 .questionType.summary{
 	padding-left: 0;
 	padding-right: 0;
-	.questionType__area{
+	.questionType__area{ 
 		>textarea{
 			font-size: .8rem;
 			min-height: 250px;
@@ -155,7 +151,6 @@
 	}
 }
 .questionType.choice{
-	.questionType__stem{}
 	.questionType__area{
 		padding-left:0.8*2em;
 		.SRradioRound-green{
@@ -164,7 +159,6 @@
 	}
 }
 .questionType.QandA{
-	.questionType__stem{}
 	.questionType__area{
 		padding-left:0.8*2em;
 		>textarea{
@@ -175,15 +169,21 @@
 	}
 }
 .questionType.picture{
-	.questionType__stem{}
 	.questionType__area{ 
-		padding-left:0.8*2em;
+		padding-left: 1em*2;
+		p{
+			margin-top: .125rem;
+			margin-bottom: .125rem;
+		}
 	}
 }
 .questionType.video{
-	.questionType__stem{}
 	.questionType__area{
-		padding-left:0.8*2em;
+		padding-left: 1em*2;
+		p{
+			margin-top: .125rem;
+			margin-bottom: .125rem;
+		}
 	}
 }
 //*teacherEvaluation 教師批閱*/
@@ -191,14 +191,14 @@
 	font-size: .8rem;
 	color: $gray-800;
 	padding-left: .75rem;
-	.teacherEvaluation__score{ 
+	.teacherEvaluation__score{ background-color: rgba(255,0,4, .1);
 		margin-bottom: .5rem;
 		input{
 			color: $primary;
 			text-align: center;
 		}
 	}
-	.teacherEvaluation__comments{ 
+	.teacherEvaluation__comments{ background-color: rgba(255,125,4, .1);
 		display: flex;
 		.teacherEvaluation__comments-title{ 
 			white-space: nowrap;

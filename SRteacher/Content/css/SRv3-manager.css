@@ -504,7 +504,8 @@ height:95px;
 .fillAssessment-section .fillAssessment-section__header { background-color: #F1F1F1; font-size: .9em; font-weight: 400; color: #5C6466; padding: .75rem; }
 
 .questionType { font-size: .8rem; color: #5C6466; padding-left: .75rem; padding-right: .75rem; }
-.questionType .questionType__stem { display: block; margin-bottom: .5rem; }
+.questionType .questionType__stem { background-color: rgba(255, 0, 4, 0.1); padding-top: calc(.25rem + 1px); padding-bottom: calc(.25rem + 1px); margin-bottom: .5rem; }
+.questionType .questionType__area { background-color: rgba(255, 125, 4, 0.1); }
 .questionType textarea[readonly] { background-color: #fff !important; border-color: #fff !important; box-shadow: none !important; resize: none !important; }
 .questionType input[readonly] { opacity: 1.0 !important; }
 .questionType input[readonly] ~ label { opacity: 1.0 !important; }
@@ -521,14 +522,16 @@ height:95px;
 .questionType.QandA .questionType__area { padding-left: 1.6em; }
 .questionType.QandA .questionType__area > textarea { font-size: 16px; min-height: 220px; padding: 4px 6px; }
 
-.questionType.picture .questionType__area { padding-left: 1.6em; }
+.questionType.picture .questionType__area { padding-left: 2em; }
+.questionType.picture .questionType__area p { margin-top: .125rem; margin-bottom: .125rem; }
 
-.questionType.video .questionType__area { padding-left: 1.6em; }
+.questionType.video .questionType__area { padding-left: 2em; }
+.questionType.video .questionType__area p { margin-top: .125rem; margin-bottom: .125rem; }
 
 .teacherEvaluation { font-size: .8rem; color: #5C6466; padding-left: .75rem; }
-.teacherEvaluation .teacherEvaluation__score { margin-bottom: .5rem; }
+.teacherEvaluation .teacherEvaluation__score { background-color: rgba(255, 0, 4, 0.1); margin-bottom: .5rem; }
 .teacherEvaluation .teacherEvaluation__score input { color: #43a047; text-align: center; }
-.teacherEvaluation .teacherEvaluation__comments { display: flex; }
+.teacherEvaluation .teacherEvaluation__comments { background-color: rgba(255, 125, 4, 0.1); display: flex; }
 .teacherEvaluation .teacherEvaluation__comments .teacherEvaluation__comments-title { white-space: nowrap; }
 .teacherEvaluation .teacherEvaluation__comments textarea { flex: 1; font-size: .8rem; resize: none; padding: .375rem; color: #43a047; margin-left: calc(.25em + 1px); min-height: calc(250px - (0.8rem*1.5 + .25rem*2 + 2px) - .5rem); }
 .teacherEvaluation input[readonly] { background-color: #fff; border-color: #fff; box-shadow: none; }
@@ -544,25 +547,23 @@ height:95px;
 .evaluate-block .evaluate-content { flex-grow: 1; width: 100%; }
 
 .upload-pic { width: 100%; height: 100%; }
-.upload-pic .upload-pic__area { position: relative; width: 100%; height: 100%; overflow: hidden; border: 1px solid #c6c6c6; font-size: 0.8em; color: #8a9294; }
-.upload-pic .upload-pic__area .upload-pic__area-default { position: relative; width: 100%; height: 100%; background-color: #f9f9f9; background-image: url(../images/myStudy/default-block-img.png); background-repeat: no-repeat; background-size: 100% 100%; text-align: center; /*@extend .flex-center;*/ }
-.upload-pic .upload-pic__area .upload-pic__area-default .upload-pic__area-default__text { background-color: #f9f9f9; padding: 10px; }
-.upload-pic .upload-pic__area .upload-pic__area-default .upload-pic__area-default__text > img { margin-top: 10px; margin-bottom: 10px; }
-.upload-pic .upload-pic__area .upload-pic__area-answer { position: absolute; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: #FFF; /*@extend .flex-center;*/ }
-.upload-pic .upload-pic__area .upload-pic__area-answer > img { max-height: 100%; }
+.upload-pic .upload-pic__area { position: relative; width: 100%; height: calc( (250px - (0.8rem*1.5 + .25rem*2 + 2px) - .5rem) - ( .8rem*1.2 + .125rem*2 + 1px*2) ); overflow: hidden; border: 1px solid #C6C6C6; font-size: .8rem; color: #5C6466; }
+.upload-pic .upload-pic__area .upload-pic__area-default { position: relative; width: 100%; height: 100%; background-color: #F9F9F9; background-image: url(../images/myStudy/default-block-img.png); background-repeat: no-repeat; background-size: 100% 100%; text-align: center; display: flex; justify-content: center; align-items: center; }
+.upload-pic .upload-pic__area .upload-pic__area-default .upload-pic__area-default__text { background-color: #F9F9F9; padding: .5rem; }
+.upload-pic .upload-pic__area .upload-pic__area-default .upload-pic__area-default__text img { display: block; width: auto; height: auto; margin: auto; }
+.upload-pic .upload-pic__area .upload-pic__area-answer { position: absolute; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: #FFF; }
+.upload-pic .upload-pic__area .upload-pic__area-answer a { display: inline-block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; }
+.upload-pic .upload-pic__area .upload-pic__area-answer img { display: block; width: auto; height: 100%; max-width: none; max-height: 100%; margin: auto; }
 .upload-pic .upload-pic__btns > .btn { margin-top: 10px; margin-bottom: 10px; }
 
 .upload-video { width: 100%; height: 100%; }
-.upload-video .upload-video__area { position: relative; width: 100%; height: 280px; overflow: hidden; border: 1px solid #c6c6c6; font-size: 0.8em; color: #8a9294; }
-.upload-video .upload-video__area .upload-video__area-default { position: relative; width: 100%; height: 100%; background-color: #f9f9f9; background-image: url(../images/myStudy/default-block-img.png); background-repeat: no-repeat; background-size: 100% 100%; text-align: center; /*@extend .flex-center;*/ }
-.upload-video .upload-video__area .upload-video__area-default .upload-video__area-default__text { background-color: #f9f9f9; padding: 10px; }
-.upload-video .upload-video__area .upload-video__area-default .upload-video__area-default__text > img { margin-top: 10px; margin-bottom: 10px; }
+.upload-video .upload-video__area { position: relative; width: 100%; height: calc( (250px - (0.8rem*1.5 + .25rem*2 + 2px) - .5rem) - ( .8rem*1.2 + .125rem*2 + 1px*2) ); overflow: hidden; border: 1px solid #C6C6C6; font-size: .8rem; color: #5C6466; }
+.upload-video .upload-video__area .upload-video__area-default { position: relative; width: 100%; height: 100%; background-color: #F9F9F9; background-image: url(../images/myStudy/default-block-img.png); background-repeat: no-repeat; background-size: 100% 100%; text-align: center; display: flex; justify-content: center; align-items: center; }
+.upload-video .upload-video__area .upload-video__area-default .upload-video__area-default__text { background-color: #F9F9F9; padding: .5rem; }
+.upload-video .upload-video__area .upload-video__area-default .upload-video__area-default__text img { display: block; width: auto; height: auto; margin: auto; }
 .upload-video .upload-video__area .upload-video__area-answer { position: absolute; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: #000; }
-.upload-video .upload-video__area .upload-video__area-answer .upload-video__area-answer__videoWidth { max-width: 500px; height: 100%; margin: 0 auto; }
+.upload-video .upload-video__area .upload-video__area-answer .upload-video__area-answer__videoWidth { max-width: 100%; height: 100%; margin: 0 auto; }
 .upload-video .upload-video__area .upload-video__area-answer .upload-video__area-answer__videoWidth > * { width: 100%; height: 100%; }
-.upload-video .upload-video__area .upload-video__area-answer .ratio { position: relative; width: 0; height: 100%; }
-.upload-video .upload-video__area .upload-video__area-answer .ratio-4x3 { padding-left: calc((3/4) * 100% ); }
-.upload-video .upload-video__area .upload-video__area-answer .ratio-16x9 { padding-left: calc((9/16) * 100% ); }
 .upload-video .upload-video__btns > .input-group { margin-top: 10px; margin-bottom: 10px; }
 
 .tobeGradedBlock { background-color: #F9F9F9; padding: 1.5rem 2rem; font-size: .8rem; }

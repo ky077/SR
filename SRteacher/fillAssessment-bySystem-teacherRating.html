@@ -11,7 +11,7 @@
               </div>
               <div class="col-8">
                 <div class="fillAssessment-title__text">
-                  <h1>系統題本<!--<span class="userScore passed byTeacher">A+</span><small></small>--></h1>
+                  <h1>系統題本</h1>
                 </div>
               </div>
             </div>
@@ -158,10 +158,22 @@
   <div class="fillAssessment-footer">
     <div class="container">
       <div class="fillAssessment-btns text-center">
-        <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
-        <button type="button" class="btn btn-primary m-1" id="editOk">確定</button>
+        <button type="button" class="btn btn-outline-primary m-1" id="modalCancel">取消</button>
+        <button type="button" class="btn btn-primary m-1" id="modalConfirm">確定</button>
       </div>
     </div>
   </div>
   <!-- .../fillAssessment-footer END --> 
 </div>
+
+<script>
+$('#modalCancel').click(function(){ 
+	$('#reviewModal').modal('hide');
+});
+
+$('#modalConfirm').click(function(){
+	//do something ...
+	
+	$('#reviewModal').modal('hide');
+});
+</script>

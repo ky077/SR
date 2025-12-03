@@ -1,29 +1,3 @@
-<!doctype html>
-<html lang="zh-hant-TW">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="SmartReading 適性閱讀 教師端">
-<meta name="author" content="SmartReading">
-<meta name="generator" content="SmartReading">
-<title>SmartReading 教師端</title>
-<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
-<!-- google fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-
-<!-- widgets CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
-
-<!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
-</head>
-
-<body>
 <div class="fillAssessment"> 
   <!-- fillAssessment-header START/... -->
   <div class="fillAssessment-header">
@@ -37,7 +11,7 @@
               </div>
               <div class="col-8">
                 <div class="fillAssessment-title__text">
-                  <h1>教師命題<!--<span class="userScore passed byTeacher">A+</span><small></small>--></h1>
+                  <h1>教師命題</h1>
                 </div>
               </div>
             </div>
@@ -181,7 +155,7 @@
                     <!--<div class="upload-pic__btns"> 
                       <button class="btn btn-primary btn-sm rounded-0" type="button" onclick="'">繪製</button>
                       <button class="btn btn-outline-primary btn-sm rounded-0" type="submit">上傳圖檔</button> 
-                    </div>-->
+                    </div>--> 
                   </div>
                 </div>
               </div>
@@ -229,19 +203,17 @@
                       <div class="upload-video__area-answer" style="display: block;">
                         <div class="upload-video__area-answer__videoWidth">
                           <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA"></iframe>
+                            <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA" title="臺師大SmartReading適性閱讀-親子篇" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="upload-video__btns"> 
-                      <!--<div class="input-group">
-                        <input type="text" class="form-control rounded-0" placeholder="http://" value="https://youtu.be/KD_1Z8iUDho">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default rounded-0" type="button" id="">預覽</button>
-                        </span>
-                      </div>--> 
-                    </div>
+                    <!--<div class="upload-video__btns">
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-0" placeholder="https://www.youtube.com/embed/rp-FAlPNQIA">
+                        <button class="btn btn-light rounded-0 text-primary border-gray-400" type="button" id="">預覽</button>
+                      </div>
+                    </div>-->
                   </div>
                 </div>
               </div>
@@ -269,7 +241,7 @@
         </div>
       </div>
       <!-- 區塊版型 END --> 
-		
+      
       <!-- 區塊版型 START -->
       <div class="row">
         <div class="col-lg-6">
@@ -296,7 +268,7 @@
           </div>
         </div>
       </div>
-      <!-- 區塊版型 END --> 		
+      <!-- 區塊版型 END --> 
     </div>
   </div>
   <!-- .../fillAssessment-body END --> 
@@ -305,128 +277,22 @@
   <div class="fillAssessment-footer">
     <div class="container">
       <div class="fillAssessment-btns text-center">
-        <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
-        <button type="button" class="btn btn-primary m-1" id="editOk">確定</button>
+        <button type="button" class="btn btn-outline-primary m-1" id="modalCancel">取消</button>
+        <button type="button" class="btn btn-primary m-1" id="modalConfirm">確定</button>
       </div>
     </div>
   </div>
   <!-- .../fillAssessment-footer END --> 
 </div>
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
 
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<script src="Content/js/jquery-3.6.0.min.js"></script> 
-
-<!-- widgets JS --> 
-<script src="Content/js/bootstrap.bundle.min.js"></script> 
-<script src="Content/widgets/DataTables/datatables.min.js"></script> 
-
-<!-- my JS --> 
-<script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-	//nowPage
-  	//$('.navTab-?').addClass('active');
-	
-	//學生填寫評量/教師評量批閱 標題 RWD隱藏
-	$('.fillAssessment-body>.container>.row:not(:first-child) .fillAssessment-section>.fillAssessment-section__header').addClass('visible-xs hidden-sm hidden-md hidden-lg');
-	
-	//for demo
-	$_search= document.location.search;
-	if($_search == "?view=0"){//觀看老師評量 無分數，等待中
-		$('#demo-score').html('<span class="userScore failed byTeacher">待</span>');
-		//其實我一直覺得很奇怪，(待)為何是圓形？ 圓形是系統、方形是教師，只有要教師批閱才會等待，不是應該是方形？
-		//紅色方形(待)：等待教師批閱的意思
-		//紅色圓形(待)：等待系統批閱的意思，但基本上不存在，因為系統即時評分
-		//若反應系統題分數不對，改為老師批閱，也應該在系統題本那出現 紅色方形(待)：等待教師批閱
-		//以上參考看看~
-		
-		//左邊學生區塊
-		$('.questionType textarea, .questionType input, .questionType .btn').attr('disabled','disabled');
-		$('.choice .SRradioRound-green input[id="A"]').attr('checked','checked');
-		$('.QandA textarea').text("學生已作答");
-		$('.picture .upload-pic .upload-pic__area-answer').show();
-		$('.video .upload-video .upload-video__area-answer').show();
-		
-		//右邊教師區塊
-		$('.teacherEvaluation textarea, .teacherEvaluation input').attr('disabled','disabled');
-		$('.teacherEvaluation__score input').val("");
-		$('.teacherEvaluation__comments textarea').text("");
-		
-		//footer按鈕 (回閱讀計畫、重寫)
-		$('.fillAssessment-footer .btn').each(function(){
-			if( $(this).text()=="暫存" ){ 
-				$(this).hide();
-			}
-			if( $(this).text()=="送出" ){
-				$(this).hide();
-			}
-			if( $(this).text()=="重寫" ){
-				$(this).show();
-			}
-		});
-	}
-	if($_search == "?view=1"){//觀看老師評量 有分數
-		$('#demo-score').html('<span class="userScore passed byTeacher">A</span>');
-		
-		//左邊學生區塊
-		$('.questionType textarea, .questionType input, .questionType .btn').attr('disabled','disabled');
-		$('.choice .SRradioRound-green input[id="A"]').attr('checked','checked');
-		$('.QandA textarea').text("學生已作答");
-		$('.picture .upload-pic .upload-pic__area-answer').show();
-		$('.video .upload-video .upload-video__area-answer').show();
-		
-		//右邊教師區塊
-		$('.teacherEvaluation textarea, .teacherEvaluation input').attr('disabled','disabled');
-		
-		//footer按鈕 (回閱讀計畫)
-		$('.fillAssessment-footer .btn').each(function(){
-			if( $(this).text()=="暫存" ){ 
-				$(this).hide();
-			}
-			if( $(this).text()=="送出" ){
-				$(this).hide();
-			}
-			if( $(this).text()=="重寫" ){
-				$(this).hide();
-			}
-		});
-	}
-	
-	//額外demo 老師帳號批閱時的版型//以後老師端要修改時用...
-	if($_search == "?teacher"){
-		$('#demo-score').html('');
+$('#modalCancel').click(function(){ 
+	$('#reviewModal').modal('hide');
+});
 
-		//左邊學生區塊
-		$('.questionType textarea, .questionType input, .questionType .btn').attr('disabled','disabled');
-		$('.choice .SRradioRound-green input[id="A"]').attr('checked','checked');
-		$('.QandA textarea').text("學生已作答");
-		$('.picture .upload-pic .upload-pic__area-answer').show();
-		$('.video .upload-video .upload-video__area-answer').show();
-		
-		//右邊教師區塊
-		$('.teacherEvaluation__score input').val("").removeAttr('disabled');
-		$('.teacherEvaluation__comments textarea').text("").removeAttr('disabled');
-		
-		//footer按鈕 (回列表?尚不確定...)
-		$('.fillAssessment-footer .btn').each(function(){
-			if( $(this).text()=="回閱讀計畫" ){ 
-				$(this).show().text("回列表");
-			}
-			if( $(this).text()=="暫存" ){ 
-				$(this).hide();
-			}
-			if( $(this).text()=="送出" ){
-				$(this).show();
-			}
-			if( $(this).text()=="重寫" ){
-				$(this).hide();
-			}
-		});
-	}
+$('#modalConfirm').click(function(){
+	//do something ...
+	
+	$('#reviewModal').modal('hide');
 });
 </script>
-</body>
-</html>

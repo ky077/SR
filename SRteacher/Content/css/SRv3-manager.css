@@ -510,16 +510,17 @@ height:95px;
 .questionType input[readonly] ~ label { opacity: 1.0 !important; }
 
 .questionType.summary { padding-left: 0; padding-right: 0; }
+.questionType.summary .questionType__stem { padding-top: 0; padding-bottom: 0; margin-bottom: 0; }
 .questionType.summary .questionType__area > textarea { font-size: .8rem; min-height: 250px; }
 
 .questionType.reflection { padding-left: 0; padding-right: 0; }
+.questionType.reflection .questionType__stem { padding-top: 0; padding-bottom: 0; margin-bottom: 0; }
 .questionType.reflection .questionType__area > textarea { font-size: .8rem; min-height: 250px; }
 
-.questionType.choice .questionType__area { padding-left: 1.6em; }
-.questionType.choice .questionType__area .SRradioRound-green { margin-bottom: 5px; }
+.questionType.choice .questionType__area { padding-left: 2em; }
 
-.questionType.QandA .questionType__area { padding-left: 1.6em; }
-.questionType.QandA .questionType__area > textarea { font-size: 16px; min-height: 220px; padding: 4px 6px; }
+.questionType.QandA .questionType__area { padding-left: 2em; }
+.questionType.QandA .questionType__area > textarea { font-size: .8rem; min-height: 220px; padding: .375rem; }
 
 .questionType.picture .questionType__area { padding-left: 2em; }
 .questionType.picture .questionType__area p { margin-top: .125rem; margin-bottom: .125rem; }

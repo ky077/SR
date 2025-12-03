@@ -1,6 +1,5 @@
 .fillAssessment{
 	background-color: $white;
-
 }
 
 ///*fillAssessment page template*/
@@ -133,6 +132,11 @@
 .questionType.summary{
 	padding-left: 0;
 	padding-right: 0;
+	.questionType__stem{
+		padding-top: 0;
+    	padding-bottom: 0;
+    	margin-bottom: 0;
+	}
 	.questionType__area{ 
 		>textarea{
 			font-size: .8rem;
@@ -143,6 +147,11 @@
 .questionType.reflection{
 	padding-left: 0;
 	padding-right: 0;	
+	.questionType__stem{
+		padding-top: 0;
+    	padding-bottom: 0;
+    	margin-bottom: 0;
+	}
 	.questionType__area{
 		>textarea{
 			font-size: .8rem;
@@ -152,19 +161,16 @@
 }
 .questionType.choice{
 	.questionType__area{
-		padding-left:0.8*2em;
-		.SRradioRound-green{
-			margin-bottom:5px;
-		}
+		padding-left: 1em*2;
 	}
 }
 .questionType.QandA{
 	.questionType__area{
-		padding-left:0.8*2em;
+		padding-left: 1em*2;
 		>textarea{
-			font-size:16px;
+			font-size: .8rem;
 			min-height:220px;
-			padding: 4px 6px;
+			padding: .375rem;
 		}
 	}
 }

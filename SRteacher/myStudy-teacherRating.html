@@ -60,7 +60,7 @@
                   <div class="upload-pic__area-default">
                     <div class="upload-pic__area-default__text">快將你的感動或觀察化為圖畫記錄下來吧<img src="Content/images/myStudy/paint-default-img.png"> </div>
                   </div>
-                  <div class="upload-pic__area-answer" style="display:none;"> <img src="Content/images/news/1.jpg"> </div>
+                  <div class="upload-pic__area-answer" style="display:none;"> <img src="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg"> </div>
                 </div>
               </div>
               <!-- --> 
@@ -102,10 +102,10 @@
                   </div>
                 </div>
                 <div class="audioRecord-tools">
-                  <button id="btn_startRec" class="tools__btn startRec" type="button" onclick="" disabled><i class="fa-solid fa-microphone" aria-hidden="true"></i>開始錄音</button>
-                  <button id="btn_stopRec" class="tools__btn stopRec" type="button" onclick="" disabled style="display:none;"><i class="fa-solid fa-stop" aria-hidden="true"></i>停止錄音</button>
-                  <button id="btn_play" class="tools__btn playRec" type="button" onclick="playRec()"><i class="fa-solid fa-play" aria-hidden="true"></i>播放錄音</button>
-                  <button id="btn_stopPlay" class="tools__btn stopPlayRec" type="button" onclick="" style="display:none;"><i class="fa-solid fa-stop" aria-hidden="true"></i>停止播放</button>
+				  <button id="btn_startRec" class="tools__btn startRec" type="button"><i class="fa-solid fa-microphone" aria-hidden="true"></i>開始錄音</button>
+                  <button id="btn_stopRec" class="tools__btn stopRec" type="button" style="display:none;"><i class="fa-solid fa-circle-stop" aria-hidden="true"></i>停止錄音</button>
+                  <button id="btn_startPlay" class="tools__btn playRec" type="button" ><i class="fa-solid fa-play" aria-hidden="true"></i>播放錄音</button>
+                  <button id="btn_stopPlay" class="tools__btn stopPlayRec" type="button" style="display:none;"><i class="fa-solid fa-stop" aria-hidden="true"></i>停止播放</button>	
                 </div>
               </div>
               <!-- --> 
@@ -143,13 +143,13 @@
                   <div class="upload-video__area-default">
                     <div class="upload-video__area-default__text">快將你的感動或觀察，化為影像記錄下來吧！<img src="Content/images/myStudy/video-default-img.png"> </div>
                   </div>
-                  <div class="upload-video__area-answer" style="display:none;">
-                    <div class="upload-video__area-answer__videoWidth">
-                      <div class="embed-responsive embed-responsive-56pre">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rp-FAlPNQIA"></iframe>
+                  <div class="upload-video__area-answer" style="display: block;">
+                        <div class="upload-video__area-answer__videoWidth">
+                          <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA" title="臺師大SmartReading適性閱讀-親子篇" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="upload-video__btns">
                   <div class="input-group">
@@ -202,4 +202,141 @@ $('#modalConfirm').click(function(){
 	
 	$('#reviewModal').modal('hide');
 });
+	
+//audio 錄音
+var t = 0;          
+var tTimer = null;  
+var n = 0;          
+var nTimer = null;
+
+var recordedSeconds = 0; 
+
+//計時器數字
+function updateTimeUI(sec) {
+    let ss = sec < 10 ? "0" + sec : sec;
+    $('#label_time').text("00:" + ss);
+}
+
+//圓餅圖
+function updateCircleImage(sec) {
+    $('.progress-progress > img').attr('src',
+        'Content/images/myStudy/audioProgress/sec-60/' + sec + '.png'
+    );
+}
+	
+//聲音效果動畫
+function listenTime() {
+    n++;
+    $('.progress-effect > img').attr('src',
+        'Content/images/myStudy/audioProgress/effect' + n + '.png'
+    );
+
+    nTimer = setTimeout(listenTime, 500);
+
+    if (n === 2) n = 0;
+}	
+
+//正向—錄音計時
+function countTimeForward() {
+    if (t < 60) {
+        updateTimeUI(t);
+        updateCircleImage(t);
+
+        t++;
+        tTimer = setTimeout(countTimeForward, 1000);
+    } else {
+        stopRecordAction(); 
+    }
+}
+
+//倒數—播放計時
+function countTimeBackward() {
+    if (t > 0) {
+        updateTimeUI(t);
+        updateCircleImage(t);
+
+        t--;
+        tTimer = setTimeout(countTimeBackward, 1000);
+    } else {
+        stopPlayAction(); 
+    }
+}
+
+//停止所有 timer
+function clearAllTimers() {
+    clearTimeout(tTimer);
+    clearTimeout(nTimer);
+}
+
+//停止錄音
+function stopRecordAction() {
+    clearAllTimers();
+
+    //記錄實際錄到的秒數（t 已經在該秒停止了）
+    recordedSeconds = t > 60 ? 60 : t;
+
+    $('#btn_stopRec').hide();
+    $('#btn_startRec').show();
+}
+
+// 停止播放
+function stopPlayAction() {
+    clearAllTimers();
+
+    $('#btn_stopPlay').hide();
+    $('#btn_startPlay').show();
+}
+
+//[開始錄音]
+$('#btn_startRec').click(function () {
+    t = 0;
+    n = 0;
+
+    countTimeForward();
+    listenTime();
+
+    $(this).hide();
+    $('#btn_stopRec').show();
+});
+
+//[停止錄音]
+$('#btn_stopRec').click(function () {
+    stopRecordAction();
+});
+
+//[開始播放]（倒數）
+$('#btn_startPlay').click(function () {
+    //從「錄到的秒數」開始播放
+    if (recordedSeconds === 0) {
+        // 若沒有錄（或還沒按過錄音）
+        recordedSeconds = 60; 
+    }
+
+    t = recordedSeconds;
+    n = 0;
+
+    updateTimeUI(t);
+    updateCircleImage(t);
+
+    countTimeBackward();
+    listenTime();
+
+    $(this).hide();
+    $('#btn_stopPlay').show();
+});
+
+// [停止播放]
+$('#btn_stopPlay').click(function () {
+    stopPlayAction();
+});
+	
+//demo
+let demoSec = 37;
+updateTimeUI(demoSec);
+updateCircleImage(demoSec);
+	
+recordedSeconds = demoSec;
+	
+$('#btn_startRec').prop("disabled", true);
+$('#btn_stopRec').prop("disabled", true);	
 </script> 

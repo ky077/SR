@@ -630,7 +630,7 @@ height:95px;
 .audioRecord .audioRecord-penal .progress-progress > img { width: 100%; height: auto; }
 .audioRecord .audioRecord-penal .progress-effect { width: 100%; height: 100%; position: absolute; z-index: 2; top: 0; left: 0; bottom: 0; right: 0; }
 .audioRecord .audioRecord-penal .progress-effect > img { width: 100%; height: auto; }
-.audioRecord .audioRecord-penal .progress-count { width: 100%; height: 100%; position: absolute; z-index: 4; top: 0; left: 0; bottom: 0; right: 0; background-image: url(../images/myStudy/audioProgress/cover.png); background-repeat: no-repeat; background-position: ccenter center; background-size: 100% 100%; color: #43a047; font-size: 30px; display: flex; align-items: center; justify-content: center; }
+.audioRecord .audioRecord-penal .progress-count { width: 100%; height: 100%; position: absolute; z-index: 4; top: 0; left: 0; bottom: 0; right: 0; background-image: url(../images/myStudy/audioProgress/cover.png); background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; color: #43a047; font-size: 30px; display: flex; align-items: center; justify-content: center; }
 .audioRecord .audioRecord-tools { zoom: 1; }
 .audioRecord .audioRecord-tools:before, .audioRecord .audioRecord-tools:after { content: ""; display: table; }
 .audioRecord .audioRecord-tools:after { clear: both; }

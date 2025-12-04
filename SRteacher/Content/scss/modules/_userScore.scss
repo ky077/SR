@@ -1,35 +1,38 @@
+$userScore-passed: #43a047;
+$userScore-failed: #ff5e5e;
+
 .userScore {
-	font-size:16px;
+	font-size: .8rem;
 	font-weight: 400;
 	display: inline-block;
-	width:32px;
-	height:32px;
+	width: 1.6rem;
+	height: 1.6rem;
 	line-height: 1.9;
 	text-align:center;
 	&.bySystem{
-		border-radius:50%;
+		border-radius: 50%;
 		&.passed{
 			color:#fff;
-			background-color:#43a047;
+			background-color: $userScore-passed;
 		}
 		&.failed{
 			color:#fff;
-			background-color:#ff5e5e;
+			background-color: $userScore-failed;
 		}
 	}
 	&.byTeacher{
-		border-radius:3px;
-		color:#FFF;
-		vertical-align:middle;
+		border-radius: 3px;
+		color: #FFF;
+		vertical-align: middle;
 		&.passed{
 			color:#fff;
-			background-color: #43a047;
-			border:1px solid #43a047;
+			background-color: $userScore-passed;
+			border:1px solid $userScore-passed;
 		}
 		&.failed{
 			color:#fff;
-			background-color: #ff5e5e;
-			border:1px solid #ff5e5e;
+			background-color: $userScore-failed;
+			border:1px solid $userScore-failed;
 		}
 	}
 }
@@ -39,26 +42,26 @@ button {
 		&.bySystem{
 			&.passed{
 				&:hover{
-					background-color:darken(#43a047, 5%);
+					background-color: darken($userScore-passed, 5%);
 				}
 			}
 			&.failed{
 				&:hover{
-					background-color:darken(#ff5e5e, 10%);
+					background-color: darken($userScore-failed, 10%);
 				}
 			}
 		}
 		&.byTeacher{
 			&.passed{
 				&:hover{
-					background-color: darken(#43a047, 5%);
-					border:1px solid darken(#43a047, 5%);
+					background-color: darken($userScore-passed, 5%);
+					border:1px solid darken($userScore-passed, 5%);
 				}
 			}
 			&.failed{
 				&:hover{
-					background-color: darken(#ff5e5e, 10%);
-					border:1px solid darken(#ff5e5e, 10%);
+					background-color: darken($userScore-failed, 10%);
+					border:1px solid darken($userScore-failed, 10%);
 				}
 			}
 		}

@@ -450,7 +450,10 @@
 						 .find('.modal-body .load-body')
 						 .load('fillAssessment-bySystem-teacherRating.html', function () {
 								//do something... (載入學生作答。
-								//                 若老師評分過，載入老師評分資料)
+								//                 若老師評分過，載入老師評分)
+			
+								//分數select
+								$('.assessment-select').selectpicker();
 							 });
 	});
 	
@@ -461,6 +464,9 @@
 							 .load('fillAssessment-byTeacher-teacherRating.html', function () {
 								//do something... (載入學生作答。
 								//                 若老師評分過，載入老師評分)
+			
+								//分數select
+								$('.assessment-select').selectpicker();
 							 });
 	});	
 	
@@ -469,11 +475,12 @@
 		$('#reviewModal').modal('show')
 						 .find('.modal-body .load-body')
 						 .load('myStudy-teacherRating.html', function () {
-								//do something... (載入學生作答
-								//                 若有系統評分須出現系統分數
+								//do something... (載入學生作答。
 								//                 若老師評分過，載入老師評分)
+			
+								//分數select
+								$('.assessment-select').selectpicker();
 							 });
 	});	
-
 })();
 </script>

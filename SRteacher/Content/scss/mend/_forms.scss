@@ -76,6 +76,11 @@ input:-internal-autofill-selected {
     }
 }
 
+.form-select option:hover{
+	color: #fff; 
+  	background-color: $green-200;
+}
+
 .form-check-input{
     //margin-top: ($line-height-base - $form-check-input-width) * .5;    
 }

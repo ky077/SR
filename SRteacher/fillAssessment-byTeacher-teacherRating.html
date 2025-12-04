@@ -152,10 +152,6 @@
                       </div>
                       <div class="upload-pic__area-answer" style="display: block;"><a href="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg" target="_blank"><img src="https://smartreading.net/v3/Content/images/news/announce_20250909.jpg"></a></div>
                     </div>
-                    <!--<div class="upload-pic__btns"> 
-                      <button class="btn btn-primary btn-sm rounded-0" type="button" onclick="'">繪製</button>
-                      <button class="btn btn-outline-primary btn-sm rounded-0" type="submit">上傳圖檔</button> 
-                    </div>--> 
                   </div>
                 </div>
               </div>
@@ -208,12 +204,12 @@
                         </div>
                       </div>
                     </div>
-                    <!--<div class="upload-video__btns">
-                      <div class="input-group mb-3">
+                    <div class="upload-video__btns">
+                      <div class="input-group">
                         <input type="text" class="form-control rounded-0" placeholder="https://www.youtube.com/embed/rp-FAlPNQIA">
-                        <button class="btn btn-light rounded-0 text-primary border-gray-400" type="button" id="">預覽</button>
+                        <button class="btn btn-light rounded-0 text-primary border-gray-400" type="button" id="">複製</button>
                       </div>
-                    </div>-->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -255,11 +251,11 @@
               <!-- 教師評量-教師批閱 start -->
               <div class="teacherEvaluation total">
                 <div class="teacherEvaluation__score">教師評量：
-                  <select class="form-select rounded-0 form-select-arrow-sm d-inline-block w-auto">
+                  <select class="assessment-select">
                     <option selected disabled>請選擇</option>
-                    <option value="A">A</option>
-                    <option value="A+">A+</option>
-                    <option value="B">B</option>
+                    <option value="A"  data-content="<span class='userScore byTeacher passed'>A</span>">A</option>
+                    <option value="A+" data-content="<span class='userScore byTeacher passed'>A+</span>">A+</option>
+                    <option value="B"  data-content="<span class='userScore byTeacher failed'>B</span>">B</option>
                   </select>
                 </div>
               </div>
@@ -284,7 +280,6 @@
   </div>
   <!-- .../fillAssessment-footer END --> 
 </div>
-
 <script>
 $('#modalCancel').click(function(){ 
 	$('#reviewModal').modal('hide');

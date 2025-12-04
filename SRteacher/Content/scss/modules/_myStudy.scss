@@ -1,5 +1,5 @@
-//copy frome 新版-SmartReading，change on 202505 for BS5.2.3 flex
-.myStudy-h1{//
+/////// 教師管理端 /////// /////// /////// /////// /////// ///////
+.myStudy-h1{
 	font-size: 1rem;
 	text-align: center;
 	margin-bottom: 1rem;
@@ -12,12 +12,8 @@
 	margin-bottom: 0;
 	> .container{ 
 		.page-banner__text{
-			min-height: 210px; //
-			text-align: center; //
-			//> div{ 
-			//	display: table-cell;
-			//	vertical-align:top;
-			//}
+			min-height: 210px; 
+			text-align: center;
 			h1{ 
 				font-size: 1.2rem;
 				font-weight: 500;
@@ -37,21 +33,20 @@
 			}
 		}
 	}
-	
-	
 }
 .myStudy{
-	background-color:#edf1f4;
+	font-size: .8rem;
+	color: $gray-800;
+	background-color: $body-bg;
 	padding: .5rem 0;
-	.myStudy-block{
-		background-color:#FFF;
+	.myStudy-block{ 
+		background-color: #FFF;
 		padding: 1rem;
 		margin: .5rem 0;
-		height:auto;
+		height: auto;
 		overflow: visible;
 		@media screen and (min-width: 992px) {
-		//min-height:370px;	
-		overflow:hidden;
+		overflow: hidden;
 		}
 	}
 	
@@ -60,20 +55,20 @@
 		font-weight: 500;
 		width: 100%;
 		height: 100px;
-		margin-bottom: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		@media screen and (min-width: 992px) {
 		height: 100%;	
-		min-height: 340px;
-		margin-bottom: .75rem;
+		//min-height: 340px;
 		}
 		>h2{
 			margin: 0;
 			font-size: 1rem;
 			font-weight: 500;
-			color:#FFF;
-			padding-top: 2rem;
+			color: #FFF;
 			@media screen and (min-width: 992px) {
-			padding-top: 30%;
+			margin-bottom: 75%;
 			}
 		}
 	}
@@ -82,7 +77,7 @@
 		width: 100%;
 		height: 100%;
 	}
-	.myStudy-btns{
+	.myStudy-btns{ //教師端尚未使用 20251203
 		margin-left: 0;
 		margin-right: 0;
 		@media screen and (min-width: 992px) {
@@ -95,49 +90,41 @@
 	}
 	.myStudy-remark{
 		font-size: .8rem;
-		color: lighten($default-gray, 10%);
+		color: lighten($gray-800, 10%);
 		margin-top: 1rem;
 	}
 	
 	.myStudy-teacher-title{
-		background-color: #f1f1f1;
+		background-color: $gray-200;
 		font-size: .8rem;
-		color :#8a9294;
-		text-align:center;
+		color: $gray-900;
+		text-align: center;
 		padding: .25rem;
 		margin-bottom: .5rem;
-		margin-top: .75rem;
-		@media screen and (min-width: 992px) {
-		margin-top: 0;	
-		}
 	}
 	.myStudy-teacher-score{ 
 		font-size: .8rem;
-		//margin-bottom: .5rem;
-		//height:32px;
-		//line-height:32px;
+		margin-bottom: .5rem;
 	}
-	.myStudy-teacher-comments{//待修
-		font-size: .8em;
-		position: relative;
-		padding-left:3em; 
+	.myStudy-teacher-comments{
+		display: flex;
 		.myStudy-teacher-comments__title{
-			position:absolute;
-			top:2px;
-			left:0;
+			white-space: nowrap;	
 		}
-		>textarea{
-			resize:none; 
-			height:250px;
-			font-size:16px;
+		textarea{
+			flex: 1;
+			font-size: .8rem;
+			resize: none; 
 			padding: .375rem;
 			color: $primary;
+			margin-left: calc(.25em + 1px);
+			min-height: 226px;
 			&.disabled, &[disabled], &[disabled="disabled"]{
 				border-color: transparent;
 				background-color:transparent;
 				box-shadow:none;
 				padding:0 2px;
-				color:$main-color;
+				color:$primary;
 				opacity: 1.0; 
     			filter: alpha(opacity=100);
 			}
@@ -146,78 +133,78 @@
 	
 	.note{
 		.myStudy-title{
-			background-image:url(../images/myStudy/title-note-img.png), url(../images/myStudy/title-note-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:left 10% center, center center;
+			background-image: url(../images/myStudy/title-note-img.png), url(../images/myStudy/title-note-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: left 10% center, center center;
 			background-size: auto 90%, 100% 100%;
 			@media screen and (min-width: 992px) {
-			background-image:url(../images/myStudy/title-note-img.png), url(../images/myStudy/title-note-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:center bottom 45px, center center;
+			background-image: url(../images/myStudy/title-note-img.png), url(../images/myStudy/title-note-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: center bottom 45px, center center;
 			background-size: auto auto, 100% 100%;	
 			}
 		}
 		.myStudy-content{
 			textarea{
 				width: 100%;
-				resize:none; 
-				height: 100%;//
-				font-size: 16px;
-				color: $default-black;
-				padding: 6px 10px;
-				&.disabled, &[disabled], &[disabled="disabled"]{
-					background-color:transparent;
+				height: 100%;
+				min-height: 226px;
+				resize: none; 
+				font-size: .8rem;
+				color: $gray-800;
+				&[readonly]{
+					background-color: transparent;
 				}
 			}
 		}
 	}
 	.paint{
 		.myStudy-title{
-			background-image:url(../images/myStudy/title-paint-img.png), url(../images/myStudy/title-paint-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:left 10% center, center center;
+			background-image: url(../images/myStudy/title-paint-img.png), url(../images/myStudy/title-paint-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: left 10% center, center center;
 			background-size: auto 90%, 100% 100%;
 			@media screen and (min-width: 992px) {
-			background-image:url(../images/myStudy/title-paint-img.png), url(../images/myStudy/title-paint-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:center bottom 60px, center center;
+			background-image: url(../images/myStudy/title-paint-img.png), url(../images/myStudy/title-paint-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: center bottom 60px, center center;
 			background-size: auto auto, 100% 100%;	
 			}
 		}
 		.myStudy-content{
 			.upload-pic{
-				margin:-1px;
+				
 			}
 		}
 	}
 	.audio{
 		.myStudy-title{
-			background-image:url(../images/myStudy/title-audio-img.png), url(../images/myStudy/title-audio-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:left 10% center, center center;
+			background-image: url(../images/myStudy/title-audio-img.png), url(../images/myStudy/title-audio-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: left 10% center, center center;
 			background-size: auto 90%, 100% 100%;
 			@media screen and (min-width: 992px) {
-			background-image:url(../images/myStudy/title-audio-img.png), url(../images/myStudy/title-audio-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:center bottom 60px, center center;
+			background-image: url(../images/myStudy/title-audio-img.png), url(../images/myStudy/title-audio-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: center bottom 60px, center center;
 			background-size: auto auto, 100% 100%;	
 			}
 		}
 		.myStudy-content{
-			border:1px solid #c6c6c6;
+			border:1px solid $gray-400;
 			align-items: center;
 		}
 	}
 	.video{
 		.myStudy-title{
-			background-image:url(../images/myStudy/title-video-img.png), url(../images/myStudy/title-video-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:left 10% center, center center;
+			background-image: url(../images/myStudy/title-video-img.png), url(../images/myStudy/title-video-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: left 10% center, center center;
 			background-size: auto auto, 100% 100%;
 			@media screen and (min-width: 992px) {
-			background-image:url(../images/myStudy/title-video-img.png), url(../images/myStudy/title-video-bg.png);
-			background-repeat:no-repeat, no-repeat;
-			background-position:left -10px bottom 45px, center center;
+			background-image: url(../images/myStudy/title-video-img.png), url(../images/myStudy/title-video-bg.png);
+			background-repeat: no-repeat, no-repeat;
+			background-position: left -10px bottom 45px, center center;
 			background-size: auto auto, 100% 100%;	
 			}
 		}
@@ -227,14 +214,13 @@
     			flex-direction: column;
 				.upload-video__area{
 					flex: 1;
-					
 				}
 			}
 		}
-		.myStudy-btns{
+		.myStudy-btns{ //教師端尚未使用 20251203
 			.video-httpInput{ 
 				>input{
-					margin-top:10px;
+					margin-top: .5rem;
 				}
 				>.input-group-btn > .btn{
 					margin-top:10px;
@@ -243,8 +229,8 @@
 					&:hover:hover,  &:hover:focus,  &:hover:active,
 					&:focus:hover,  &:focus:focus,  &:focus:active,
 					&:active:hover, &:active:focus, &:active:active{
-						color: $main-color;
-						border-color:$main-color;
+						color: $primary;
+						border-color:$primary;
 						background-color:darken(#f9f9f9, 5%);
 					}
 				}
@@ -253,8 +239,8 @@
 	}
 }
 .myStudy-footer{
-	background-color:#edf1f4;
-	padding-top:30px;
-	padding-bottom:40px;
-	text-align:center;
+	background-color: $body-bg;
+	padding-top: 1.5rem;
+	padding-bottom: 2rem;
+	text-align: center;
 }

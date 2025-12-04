@@ -12,12 +12,14 @@
 @import "master/footer";
 
 @import "mend/a";
+@import "mend/bootstrap-select";
 @import "mend/btn";
 @import "mend/datatables";
 @import "mend/forms";
 @import "mend/modal";
 @import "mend/popover";
 @import "mend/ui";
+
 
 @import "modules/DACCicon";
 @import "modules/scrollbar";
@@ -35,6 +37,8 @@
 @import "modules/evaluate";
 @import "modules/upload-pic";
 @import "modules/upload-video";
+@import "modules/myStudy";
+@import "modules/audioRecord";
 
 @import "pages/index";//done
 @import "pages/account-teacher";//done

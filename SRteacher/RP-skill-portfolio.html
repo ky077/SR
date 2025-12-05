@@ -156,7 +156,7 @@
           <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="d-flex justify-content-center align-items-center"><span class="text-red fs-7">尚未填寫教師回饋！</span>
+          <div class="d-flex justify-content-center align-items-center mb-4"><span class="text-red fs-7">尚未填寫教師回饋！</span>
             <button type="button" class="btn btn-link" id="fillFeedback">立即填寫&gt;&gt;</button>
           </div>
           <div class="load-body"></div>
@@ -386,10 +386,18 @@ $(document).ready(function() {
 
 			// ② 填入 textarea + 送出按鈕
 			$block.append(`
-				<textarea class="form-control teacher_feedback_input" rows="4" placeholder="請輸入教師回饋"></textarea>
+				<textarea class="form-control rounded-0 m-n3" rows="4" placeholder="請輸入教師回饋"></textarea>
 			`);
 			
 			$('#feedbackConfirm').show();
+			
+			let textarea = $inside.find('.teacher_feedback')[0];
+			if (textarea) {
+				textarea.scrollIntoView({
+					behavior: "smooth",
+					block: "center"
+				});
+			}
 		}
 	});
 

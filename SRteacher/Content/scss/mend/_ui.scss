@@ -45,9 +45,9 @@
     background-color: transparent;
     border: none;
     text-align: center;
-    z-index: 1000;
+    z-index: $zindex-modal + 1;
     text-decoration: none;
-	position: fixed; 
+	position:sticky;
 	top: 25%;
 	left: 100%;
     opacity: .65;

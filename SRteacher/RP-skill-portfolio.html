@@ -156,14 +156,14 @@
           <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="d-flex justify-content-center align-items-center mb-4"><span class="text-red fs-7">尚未填寫教師回饋！</span>
-            <button type="button" class="btn btn-link">立即填寫&gt;&gt;</button>
+          <div class="d-flex justify-content-center align-items-center"><span class="text-red fs-7">尚未填寫教師回饋！</span>
+            <button type="button" class="btn btn-link" id="fillFeedback">立即填寫&gt;&gt;</button>
           </div>
-		  <a class="btn btn-link btn-float-download" type="button"><span class="btn-float-img"></span>下載PDF</a>
           <div class="load-body"></div>
           <div class="text-center mb-3">
-            <button type="button" class="btn btn-primary rounded-0">送出回饋</button>
+            <button type="button" class="btn btn-primary rounded-0" id="feedbackConfirm" style="display: none;">送出回饋</button>
           </div>
+		  <a class="btn btn-link btn-float-download" type="button"><span class="btn-float-img"></span>下載PDF</a>	
         </div>
       </div>
     </div>
@@ -367,6 +367,32 @@ $(document).ready(function() {
 				console.error("載入 jquery.autoheight.js 失敗");
 			});
 	});
+	
+	//[立即填寫>>]
+	$('#fillFeedback').on('click', function () {
+		// 抓到 iframe
+		let iframe = $('#portfolioModal .load-body iframe')[0];
+		if (!iframe) return;
+
+		// 抓 iframe 內的 document
+		let $inside = $(iframe).contents();
+
+		// 找到 teacher_feedback block
+		let $block = $inside.find('.teacher_feedback');
+
+		if ($block.length) {
+			// ① 清空原本內容
+			$block.empty();
+
+			// ② 填入 textarea + 送出按鈕
+			$block.append(`
+				<textarea class="form-control teacher_feedback_input" rows="4" placeholder="請輸入教師回饋"></textarea>
+			`);
+			
+			$('#feedbackConfirm').show();
+		}
+	});
+
 }); 
 </script>
 </body>

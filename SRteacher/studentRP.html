@@ -447,7 +447,7 @@
 	//系統題本[批閱]
 	$(document).on('click', '.btn-systemQuiz', function (){ 
 		$('#reviewModal').modal('show')
-						 .find('.modal-body .load-body')
+						 .find('.load-body')
 						 .load('fillAssessment-bySystem-teacherRating.html', function () {
 								//do something... (載入學生作答。
 								//                 若老師評分過，載入老師評分)
@@ -460,7 +460,7 @@
 	//教師命題[批閱]	
 	$(document).on('click', '.btn-teacherQuiz', function () {
 		$('#reviewModal').modal('show')
-							 .find('.modal-body .load-body')
+							 .find('.load-body')
 							 .load('fillAssessment-byTeacher-teacherRating.html', function () {
 								//do something... (載入學生作答。
 								//                 若老師評分過，載入老師評分)
@@ -473,7 +473,7 @@
 	//我的書房[批閱]	
 	$(document).on('click', '.btn-myStudy', function () {
 		$('#reviewModal').modal('show')
-						 .find('.modal-body .load-body')
+						 .find('.load-body')
 						 .load('myStudy-teacherRating.html', function () {
 								//do something... (載入學生作答。
 								//                 若老師評分過，載入老師評分)

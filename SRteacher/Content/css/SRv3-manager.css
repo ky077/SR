@@ -936,3 +936,16 @@ height:95px;
 .table-classRP > thead > tr > th.row-myStudyItemCount, .table-classRP > thead > tr > td.row-myStudyItemCount, .table-classRP > tbody > tr > th.row-myStudyItemCount, .table-classRP > tbody > tr > td.row-myStudyItemCount { width: 9%; }
 .table-classRP > tbody > tr > th.row-myStudyItemCount .itemCount-space, .table-classRP > tbody > tr > td.row-myStudyItemCount .itemCount-space { width: calc((1em + .05rem)*3); display: inline-block; text-align: justify; text-align-last: justify; vertical-align: top; height: 1.5em; }
 .table-classRP > tbody > tr > th.row-myStudyItemCount .itemCount-space::after, .table-classRP > tbody > tr > td.row-myStudyItemCount .itemCount-space::after { content: ''; display: inline-block; width: 100%; }
+
+.table-portfolio > thead > tr > th.row-index, .table-portfolio > thead > tr > td.row-index, .table-portfolio > tbody > tr > th.row-index, .table-portfolio > tbody > tr > td.row-index { width: 4%; }
+.table-portfolio > thead > tr > th.row-studentName, .table-portfolio > thead > tr > td.row-studentName, .table-portfolio > tbody > tr > th.row-studentName, .table-portfolio > tbody > tr > td.row-studentName { width: 12%; }
+.table-portfolio > thead > tr > th.row-skillTotal, .table-portfolio > thead > tr > td.row-skillTotal, .table-portfolio > tbody > tr > th.row-skillTotal, .table-portfolio > tbody > tr > td.row-skillTotal { width: 11%; }
+.table-portfolio > thead > tr > th.row-skillItem, .table-portfolio > thead > tr > td.row-skillItem, .table-portfolio > tbody > tr > th.row-skillItem, .table-portfolio > tbody > tr > td.row-skillItem { width: auto; }
+.table-portfolio > thead > tr > th.row-studentAssessment, .table-portfolio > thead > tr > td.row-studentAssessment, .table-portfolio > tbody > tr > th.row-studentAssessment, .table-portfolio > tbody > tr > td.row-studentAssessment { width: 11%; }
+.table-portfolio > thead > tr > th.row-teacherFeedback, .table-portfolio > thead > tr > td.row-teacherFeedback, .table-portfolio > tbody > tr > th.row-teacherFeedback, .table-portfolio > tbody > tr > td.row-teacherFeedback { width: 11%; }
+.table-portfolio > thead > tr > th.row-portfolio, .table-portfolio > thead > tr > td.row-portfolio, .table-portfolio > tbody > tr > th.row-portfolio, .table-portfolio > tbody > tr > td.row-portfolio { width: 11%; }
+.table-portfolio > thead > tr > th.row-skillRP, .table-portfolio > thead > tr > td.row-skillRP, .table-portfolio > tbody > tr > th.row-skillRP, .table-portfolio > tbody > tr > td.row-skillRP { width: 8%; }
+.table-portfolio > thead > tr > th.row-skillRE, .table-portfolio > thead > tr > td.row-skillRE, .table-portfolio > tbody > tr > th.row-skillRE, .table-portfolio > tbody > tr > td.row-skillRE { width: 8%; }
+.table-portfolio > thead > tr > th.row-skillAR, .table-portfolio > thead > tr > td.row-skillAR, .table-portfolio > tbody > tr > th.row-skillAR, .table-portfolio > tbody > tr > td.row-skillAR { width: 8%; }
+.table-portfolio > thead > tr > th.row-skillRG, .table-portfolio > thead > tr > td.row-skillRG, .table-portfolio > tbody > tr > th.row-skillRG, .table-portfolio > tbody > tr > td.row-skillRG { width: 8%; }
+.table-portfolio > thead > tr > th.row-skillPR, .table-portfolio > thead > tr > td.row-skillPR, .table-portfolio > tbody > tr > th.row-skillPR, .table-portfolio > tbody > tr > td.row-skillPR { width: 8%; }

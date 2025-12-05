@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<form>
+  <header> </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <h2>閱讀力管理</h2>
+        <h2>學習歷程檔案管理</h2>
+        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+          <!-- 搜尋 start -->
+          <div class="col-xl-12 mb-3" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="row gy-1">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchYear" class="col-form-label fs-8">年度</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchGrade" class="col-form-label fs-8">年級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchClass" class="col-form-label fs-8">班級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="row g-2 align-items-center">
+                  <div class="col-auto">
+                    <label class="fs-8">時間：</label>
+                  </div>
+                  <div class="col-auto"><span class="fs-8">
+                    <label id="searchStartDate">----/--/--</label>
+                    至
+                    <label id="searchEndDate">----/--/--</label>
+                    </span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="col-xl-12 mb-5">
+            <table class="table table-bordered table-portfolio" id="portfolioTable">
+              <thead>
+                <tr>
+                  <th scope="col" class="row-index" rowspan="2">序號</th>
+                  <th scope="col" class="row-studentName" rowspan="2">姓名</th>
+                  <th scope="col" class="row-skillTotal" rowspan="2">閱讀力累積總合</th>
+                  <th scope="col" class="row-skillItem" colspan="5">累積分數</th>
+                  <th scope="col" class="row-studentAssessment" rowspan="2">學生自評<br>
+                    完成進度</th>
+                  <th scope="col" class="row-teacherFeedback" rowspan="2">教師回饋<br>
+                    填寫狀況</th>
+                  <th scope="col" class="row-course" rowspan="2">學習歷程檔案</th>
+                </tr>
+                <tr>
+                  <th scope="col" class="row-skillRP">閱讀規劃力</th>
+                  <th scope="col" class="row-skillRE">閱讀執行力</th>
+                  <th scope="col" class="row-skillAR">閱讀精進力</th>
+                  <th scope="col" class="row-skillRG">閱讀博學力</th>
+                  <th scope="col" class="row-skillPR">閱讀成長力</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-index">1</td>
+                  <td class="row-studentName">張花花</td>
+                  <td class="row-skillTotal">8.3</td>
+                  <td class="row-skillRP">0</td>
+                  <td class="row-skillRE">7.3</td>
+                  <td class="row-skillAR">0</td>
+                  <td class="row-skillRG">0.5</td>
+                  <td class="row-skillPR">無</td>
+                  <td class="row-studentAssessment">未填寫</td>
+                  <td class="row-teacherFeedback">未填寫</td>
+                  <td class="row-portfolio"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
+        </div>
+        
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
+  </div>
+  
+  <!-- Modal#portfolioModal (班級)學生名單 start -->
+  <div class="modal fade" id="portfolioModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="portfolioModal" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center align-items-center mb-4"><span class="text-red fs-7">尚未填寫教師回饋！</span>
+            <button type="button" class="btn btn-link">立即填寫&gt;&gt;</button>
+          </div>
+		  <a class="course-paper__float-download fixed" type="button"><span class="float-download__img"></span>下載PDF</a>
+          <div class="load-body"></div>
+          <div class="text-center mb-3">
+            <button type="button" class="btn btn-primary rounded-0">送出回饋</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal#portfolioModal (班級)學生名單  end  -->
+  
+  <footer> </footer>
+</form>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href$="RP-skill"]').addClass('active');   
+    }); 
+	
+
+	const list = $('#portfolioTable');
+    //班級 datatables 
+	list.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer"pi>',
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-skill/portfolio.json',
+        columnDefs: [
+            {//序號
+                targets: 0, 
+                title: '序號',
+                className: 'row-index',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//姓名
+                targets: 1, 
+                title: '學校',
+                data: 'studentName',
+                className: 'row-studentName',
+                orderable: false, 
+            },
+            {//閱讀力累積總合 
+                targets: 2,
+                title: '閱讀力累積總合',
+                data: 'skillItem',
+                className: 'row-skillTotal',
+                orderable: false,
+				render: function (data, type, row, meta) {
+                    const RP = data.RP || 0;
+					const RE = data.RE || 0;
+					const AR = data.AR || 0;
+					const RG = data.RG || 0;
+					const PR = data.PR || 0;
+					return RP + RE + AR + RG + PR;
+                } 
+            },
+            {//閱讀規劃力
+                targets: 3, 
+                title: '閱讀規劃力',
+                data: 'skillItem',
+                className: 'row-skillRP',
+                orderable: false,
+				render: data => data.RP || 0
+            },
+            {//閱讀執行力
+                targets: 4, 
+                title: '閱讀執行力',
+                data: 'skillItem',
+                className: 'row-skillRE',
+                orderable: false,
+				render: data => data.RE || 0
+            },
+            {//閱讀精進力
+                targets: 5, 
+                title: '閱讀精進力',
+                data: 'skillItem',
+                className: 'row-skillAR',
+                orderable: false,
+				render: data => data.AR || 0
+            },
+            {//閱讀博學力
+                targets: 6, 
+                title: '閱讀博學力',
+                data: 'skillItem',
+                className: 'row-skillRG',
+                orderable: false,
+				render: data => data.RG || 0
+            },
+            {//閱讀成長力
+                targets: 7, 
+                title: '閱讀成長力',
+				data: 'skillItem',
+                className: 'row-skillPR',
+                orderable: false,
+				render: data => data.PR || 0
+            },
+            {//學生自評完成進度
+                targets: 8, 
+                title: '學生自評完成進度',
+                data: 'studentAssessment',
+                className: 'row-studentAssessment',
+                orderable: false,
+                render: function (data) {
+					return data === 1 ? '已填寫' : '未填寫';
+				}
+            },
+			{//教師回饋填寫狀況
+                targets: 9, 
+                title: '教師回饋填寫狀況',
+                data: 'teacherFeedback',
+                className: 'row-teacherFeedback',
+                orderable: false,
+                render: function (data) {
+					return data === 1 ? '已填寫' : '未填寫';
+				}
+            },
+			{//學習歷程檔案
+                targets: 10, 
+                title: '學習歷程檔案',
+                className: 'row-portfolio',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
+                } 
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    });
+	
+	//[查看](學習歷程檔案)
+    list.on('click', '.row-portfolio button', function () {
+		$('#portfolioModal').modal('show');
+
+		//先清空舊 iframe
+		let modalBody = $('#portfolioModal .load-body').empty();
+
+		//動態載入 autoheight.js
+		$.getScript("Content/js/jquery.autoheight.js")
+			.done(function () {
+				//載入完 JS 後再建立 iframe
+				let iframe = $('<iframe>', {
+					src: 'Course-paper-v3.2.html',
+					scrolling: 'no',
+					width: '100%',
+					frameborder: '0',
+					class: 'autoHeight'
+				});
+
+				//iframe 完成讀取，再執行自動高度
+				iframe.on('load', function () {
+					if (typeof doIframe === 'function') {
+						doIframe();
+					}
+					
+					// 移除 iframe 內 button
+					let $inside = $(this).contents();
+					let btnBlock = $inside.find('.course-paper__btn-Submit');
+					if (btnBlock.length) {
+						btnBlock.remove(); 
+					}
+				});
+
+				modalBody.append(iframe);
+			})
+			.fail(function () {
+				console.error("載入 jquery.autoheight.js 失敗");
+			});
+	});
+}); 
+</script>
+</body>
+</html>

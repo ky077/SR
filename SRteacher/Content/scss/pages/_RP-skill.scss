@@ -1,0 +1,21 @@
+.table-portfolio{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.row-index{	  		 width:  4%;  }
+                &.row-studentName{  	 width: 12%;  }
+                &.row-skillTotal{        width: 11%;  }
+                &.row-skillItem{     	 width: auto; }
+                &.row-studentAssessment{ width: 11%;  }
+                &.row-teacherFeedback{   width: 11%;  }
+                &.row-portfolio{ 		 width: 11%;  }
+				
+				&.row-skillRP{ width: 8%; }
+				&.row-skillRE{ width: 8%; }
+				&.row-skillAR{ width: 8%; }
+				&.row-skillRG{ width: 8%; }
+				&.row-skillPR{ width: 8%; }
+            }   
+        }
+    }
+}

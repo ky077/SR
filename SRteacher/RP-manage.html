@@ -539,13 +539,13 @@ function loadClassRPTable() {
 	//金榜星星數[計分方式>>]
 	list2.on('click', 'th.row-superBoard button', function (){ 
 		$('#superBoardModal').modal('show')
-							 .find('.modal-body .load-body')
+							 .find('.load-body')
 							 .load('superBoard.html');
 	});
 	//金榜星星數[計分方式>>]
 	list2.on('click', 'td.row-superBoard button', function (){ 
 		$('#superBoardModal').modal('show')
-							 .find('.modal-body .load-body')
+							 .find('.load-body')
 							 .load('superBoard.html', function () {
 								//do something... (寫入學生金榜星星數)
 							 });
@@ -554,7 +554,7 @@ function loadClassRPTable() {
 	//學生閱讀計畫[查看]
 	list2.on('click', '.row-studentRP button', function () {
 		$('#studentRPModal').modal('show')
-							.find('.modal-body .load-body')
+							.find('.load-body')
 							.load('studentRP.html', function () {
 								initStudentRP();
 							});

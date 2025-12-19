@@ -156,13 +156,10 @@
           <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="d-flex justify-content-center align-items-center mb-4"><span class="text-red fs-7">尚未填寫教師回饋！</span>
+          <div class="d-flex justify-content-center align-items-center mb-4"><span class="text-red fs-7">尚未填寫教師回饋！/教師已填寫回饋，想要修改？</span>
             <button type="button" class="btn btn-link" id="fillFeedback">立即填寫&gt;&gt;</button>
           </div>
           <div class="load-body"></div>
-          <div class="text-center mb-3">
-            <button type="button" class="btn btn-primary rounded-0" id="feedbackConfirm" style="display: none;">送出回饋</button>
-          </div>
 		  <a class="btn btn-link btn-float-download" type="button"><span class="btn-float-img"></span>下載PDF</a>	
         </div>
       </div>
@@ -338,7 +335,6 @@ $(document).ready(function() {
 		//動態載入 autoheight.js
 		$.getScript("Content/js/jquery.autoheight.js")
 			.done(function () {
-				//載入完 JS 後再建立 iframe
 				let iframe = $('<iframe>', {
 					src: 'Course-paper-v3.2.html',
 					scrolling: 'no',
@@ -353,12 +349,38 @@ $(document).ready(function() {
 						doIframe();
 					}
 					
-					// 移除 iframe 內 button
 					let $inside = $(this).contents();
+					
+					// 移除 iframe 內 button
 					let btnBlock = $inside.find('.course-paper__btn-Submit');
 					if (btnBlock.length) {
 						btnBlock.remove(); 
 					}
+					
+					// disabled iframe 內 學生textarea
+					$inside.find('.course-individual-question textarea').each(function () {
+						$(this).prop('disabled', true);
+					});
+					
+					// 教師回饋 textarea 可填寫
+					let feedbackBlock = $inside.find('.teacher_feedback');
+					if (feedbackBlock.length) {
+						let feedbackVal = $.trim(feedbackBlock.text());
+						
+						feedbackBlock.empty();
+						
+						feedbackBlock.append(`
+							<textarea class="form-control noRadius" rows="4" placeholder="請輸入教師回饋">${feedbackVal}</textarea>
+							<div class="text-center mt-3"><button class="btn btn-success" type="button" id="feedbackSubmit">送出回饋</button></div>
+						`);
+
+						$('#feedbackConfirm').show();
+					}
+					
+					//[送出回饋]
+					$inside.on('click', '#feedbackSubmit', function () {
+						 alertModal('<div class="text-red">成功送出回饋！</div>');
+					});
 				});
 
 				modalBody.append(iframe);
@@ -374,33 +396,18 @@ $(document).ready(function() {
 		let iframe = $('#portfolioModal .load-body iframe')[0];
 		if (!iframe) return;
 
-		// 抓 iframe 內的 document
 		let $inside = $(iframe).contents();
+		let textareaEl = $inside.find('.teacher_feedback textarea')[0];
 
-		// 找到 teacher_feedback block
-		let $block = $inside.find('.teacher_feedback');
-
-		if ($block.length) {
-			// ① 清空原本內容
-			$block.empty();
-
-			// ② 填入 textarea + 送出按鈕
-			$block.append(`
-				<textarea class="form-control" rows="4" placeholder="請輸入教師回饋"></textarea>
-			`);
+		if (textareaEl) {
+			textareaEl.scrollIntoView({
+				behavior: "smooth",
+				block: "center"
+			});
 			
-			$('#feedbackConfirm').show();
-			
-			let textarea = $inside.find('.teacher_feedback')[0];
-			if (textarea) {
-				textarea.scrollIntoView({
-					behavior: "smooth",
-					block: "center"
-				});
-			}
+			textareaEl.focus();
 		}
 	});
-
 }); 
 </script>
 </body>

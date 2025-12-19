@@ -47,10 +47,29 @@
     text-align: center;
     z-index: $zindex-modal + 1;
     text-decoration: none;
-	position:sticky;
-	top: 25%;
+	position: fixed;
+	bottom: 10%;
 	left: 100%;
+	transform: translateX( -100% );
     opacity: .65;
+	white-space: nowrap;
+	@media screen and (min-width: 576px) {
+		transform: translateX( calc((100vw - #{$modal-sm})*-1) );
+	}
+	@media screen and (min-width: 768px) {
+		transform: translateX( calc((100vw - #{$modal-md})*-1) );
+	}
+	@media screen and (min-width: 992px) {
+		transform: translateX( calc((100vw - #{$modal-lg})*-1) );
+	}
+	@media screen and (min-width: 1200px) {
+		transform: translateX( calc((100vw - #{$modal-xl})*-1) );
+	}
+	@media screen and (min-width: 1400px) {
+		transform: translateX( calc((100vw - #{$modal-xxl})*-1) );
+	}
+
+	
     .btn-float-img{
         display: block;
         width: 2.2rem;

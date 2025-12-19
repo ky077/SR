@@ -255,7 +255,12 @@ option[value=""]{ color: $secondary;
 
 .modal-approxfull .table-responsive .table { min-width: 720px; }
 
-.btn-float-download { font-size: .8rem; color: #43a047; background-color: transparent; border: none; text-align: center; z-index: 1056; text-decoration: none; position: sticky; top: 25%; left: 100%; opacity: .65; }
+.btn-float-download { font-size: .8rem; color: #43a047; background-color: transparent; border: none; text-align: center; z-index: 1056; text-decoration: none; position: fixed; bottom: 10%; left: 100%; transform: translateX(-100%); opacity: .65; white-space: nowrap; }
+@media screen and (min-width: 576px) { .btn-float-download { transform: translateX(calc((100vw - 300px)*-1)); } }
+@media screen and (min-width: 768px) { .btn-float-download { transform: translateX(calc((100vw - 500px)*-1)); } }
+@media screen and (min-width: 992px) { .btn-float-download { transform: translateX(calc((100vw - 800px)*-1)); } }
+@media screen and (min-width: 1200px) { .btn-float-download { transform: translateX(calc((100vw - 1140px)*-1)); } }
+@media screen and (min-width: 1400px) { .btn-float-download { transform: translateX(calc((100vw - 1400px)*-1)); } }
 .btn-float-download .btn-float-img { display: block; width: 2.2rem; height: 2.2rem; border-radius: 100%; background-color: #43a047; background-image: url("../images/icon-download.png"); background-position: center center; background-repeat: no-repeat; background-size: 65%; margin: auto; }
 .btn-float-download:hover { color: shade(#43a047, 15%); text-decoration: none; opacity: 1; }
 .btn-float-download:hover .float-download__img { background-color: shade(#43a047, 15%); }

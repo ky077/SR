@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -30,15 +30,15 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>教學書單管理</h2>
-        <!-- 學生資訊/班級資訊-頁籤 start -->
+        <h2>班級學生書單</h2>
+        <!-- 教學指定書單/班級學生書單-頁籤 start -->
         <div class="row">
-          <ul class="nav nav-viewinfo-school">
+          <ul class="nav nav-tabs">
             <li class="nav-item"> <a class="nav-link" href="RP-bookList-teaching.html">教學指定書單</a> </li>
             <li class="nav-item"> <a class="nav-link active" aria-current="page" href="RP-bookList-class.html">班級學生書單</a> </li>
           </ul>
         </div>
-        <!-- 學生資訊/班級資訊-頁籤 end  --> 
+        <!-- 教學指定書單/班級學生書單-頁籤 end  --> 
         
         <!--  start -->
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
@@ -312,8 +312,8 @@ function loadclassDetialTable(rowIndex) {
 				className: 'row-check',
 				orderable: false,
 				render: function (data, type, row, meta) {
-					return `<div class="SRform-check-red">
-							  <input class="form-check-input" type="checkbox" name="check">
+					return `<div class="form-check form-check-inline">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
 							</div>`; 
 				} 
 			},

@@ -90,19 +90,18 @@ input:-internal-autofill-selected {
     }
 }
 .form-check-inline{
+	float: left;
     margin-right: 0;
-    vertical-align: middle;
-    float: left;  //for index Gender
+	min-height: auto;
     .form-check-label{
         margin-right: 1rem;   
     } 
 }
 .form-check-input[type="radio"] {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%23c6c6c6'/></svg>");
     background-size: 140% 140%;
 }
-.form-check-input:checked[type="checkbox"]{
-	
+.form-check-input[type="radio"]:not(:checked) {
+	background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$border-color}'/></svg>"));
 }
 
 .form-switch .form-check-input {

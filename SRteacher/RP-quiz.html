@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -73,9 +73,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-delete"><div class="SRform-check-red">
-                      <input class="form-check-input" type="checkbox" name="delete">
-                    </div></td>
+                  <td class="row-delete"><div class="form-check form-check-inline">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
+							</div></td>
                   <td class="row-index">1</td>
                   <td class="row-bookTitle">老樹之歌</td>
                   <td class="row-ISBN">9889573269670</td>
@@ -512,9 +512,9 @@ $(document).ready(function() {
                 orderable: false,
                 visible: false,
                 render: function (data, type, row, meta) {
-                    return `<div class="SRform-check-red">
-                              <input class="form-check-input" type="checkbox" name="delete">
-                            </div>`; 
+                    return `<div class="form-check form-check-inline">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
+							</div>`; 
                 } 
             },
             {//序號

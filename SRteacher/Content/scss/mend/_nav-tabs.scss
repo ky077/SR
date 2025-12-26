@@ -1,0 +1,26 @@
+.nav-tabs{
+    background-color: $view-body-color;
+	--bs-nav-tabs-border-color: transparent;
+    .nav-item{
+        .nav-link{
+            background-color: #dfe3e6;
+            border: 1px solid $gray-400;  
+            border-bottom: none;
+            color: $gray-800; 
+            @media screen and (min-width: 576px) {
+            padding: $nav-link-padding-y*.5 $nav-link-padding-x*2.5;    
+            }
+			&:hover{
+				color: $primary; 	
+			}
+        }
+        .nav-link.active{
+            background-color: $white;
+            border-color: $white;
+            color: $gray-800; 
+        }
+    }
+    .nav-item + .nav-item{
+        margin-left: .25rem;    
+    }
+}

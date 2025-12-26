@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -109,8 +109,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="td-check"><div class="SRform-check-red">
-                      <input class="form-check-input" type="checkbox" name="check">
+                  <td class="td-check"><div class="form-check form-check-inline SRform-check-red">
+                      <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
                     </div></td>
                   <td class="td-year">2022</td>
                   <td class="td-grade">3</td>
@@ -187,10 +187,10 @@ $(document).ready(function() {
                 orderable: false,
                 visible: false,
                 render: function (data, type, row, meta) {
-                    return `<div class="SRform-check-red">
-							  <input class="form-check-input" type="checkbox" name="check">
-						    </div>`; 
-                } 
+                    return `<div class="form-check form-check-inline SRform-check-red">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
+							</div>`; 
+                }
             },
             {//年度
                 targets: 1, 
@@ -252,61 +252,78 @@ $(document).ready(function() {
 	
 	//學生選單[顯示詳情]
 	list.on('click', '.btn-toggle-child', function (){ 
-		//表格欄位 顯示選擇
-        list.DataTable().column('.row-check').visible(true); 
-		$('td.row-check').attr('rowspan', 2);
+	    var tr = $(this).parents('tr');
+		var row = list.DataTable().row(tr);
 		
-		var tr = $(this).parents('tr');
-		var row = list.DataTable().row( tr );
+		var rowData = row.data();
+		var rowIndex = row.index();
 
-		//toggle 自己
-		if (row.child.isShown()) {//當前打開=>關閉自己child及銷毀childTable
-			const childTable = $(tr.next()).find('table.dataTable').DataTable();
-			
-			if (childTable) childTable.destroy();
+		if (row.child.isShown()) {
+			// This row is already open - close it
 			row.child.hide();
-			$(this).parents('td').removeClass('showChild');
-		}else { //當前關閉=>關閉其他child及銷毀childTable
-			list.DataTable().rows().every(function () {
-				if (this.child.isShown()) {
-					const childTable = $(this.child()).find('table.dataTable').DataTable();
-					if (childTable) childTable.destroy();
-									this.child.hide();
-				}
-			});
+			tr.removeClass('shown');
 			
-			const rowData = row.data(); 
+			list.DataTable().column('.row-check').visible(false); 
 			
-			row.child(format(rowData)).show();
-			$(this).parents('td').addClass('showChild');
+			//tr.find('.row-check').removeAttr('rowspan');
 		}
+		else {
+			// Open this row (the format() function would return the data to be shown)
+			row.child( format(rowData, rowIndex) ).show();
+			tr.addClass('shown');
+			
+			list.DataTable().column('.row-check').visible(true); 
+			
+			//tr.find('.row-check').attr('rowspan', 2);
+			//tr.next('tr').find('td').attr('colspan',  tr.find('td').length - 1);
+		}	
 	});
 }); 
 
-function format(rowData) {
+function format(rowData, tableIndex) {
+
     const students = rowData.students || [];
-    const perRow = 6; // 每列 5 人
-	
+    const perRow = 5; // 每列 5 人
+
     let html = `
-        <table class="table table-bordered table-performance-students">
+        <table class="table table-bordered table-performance-students"
+               id="table-performance-students-${tableIndex}">
             <tbody>
     `;
 
-    for (let i = 0; i < students.length; i += perRow) {
-        html += '<tr>';
+    students.forEach((name, studentIndex) => {
 
-        students.slice(i, i + perRow).forEach(name => {
-            html += `<td>
-						<div class="form-check form-check-inline">
-						  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-						  <label class="form-check-label" for="checkDefault">
-						   ${name}
-						  </label>
-						</div>
-					</td>`;
-        });
+        // 每 perRow 個學生換一列
+        if (studentIndex % perRow === 0) {
+            html += '<tr>';
+        }
 
-        html += '</tr>';
+        const inputId = `student-${tableIndex}-${studentIndex}`;
+
+        html += `
+            <td>
+                <div class="form-check form-check-inline SRform-check-red">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           id="${inputId}"
+                           data-table-index="${tableIndex}"
+                           data-student-index="${studentIndex}">
+                    <label class="form-check-label" for="${inputId}">
+                        ${name}
+                    </label>
+                </div>
+            </td>
+        `;
+
+        if (studentIndex % perRow === perRow - 1) {
+            html += '</tr>';
+        }
+    });
+
+    // 補齊最後一列（避免 td 數不一致）
+    const remain = students.length % perRow;
+    if (remain !== 0) {
+        html += '<td></td>'.repeat(perRow - remain) + '</tr>';
     }
 
     html += `
@@ -316,8 +333,6 @@ function format(rowData) {
 
     return html;
 }
-	
-
 </script>
 </body>
 </html>

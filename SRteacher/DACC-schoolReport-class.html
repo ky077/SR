@@ -9,17 +9,17 @@
 <meta name="generator" content="SmartReading">
 <title>SmartReading 教師端</title>
 <link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
-<!-- google fonts -->	
+<!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
-	
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
 <!-- widgets CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -32,9 +32,9 @@
       <h2>檢視學校報表</h2>
       <!-- 學生資訊/班級資訊-頁籤 start -->
       <div class="row">
-        <ul class="nav nav-viewinfo-school">
-          <li class="nav-item"> <a class="nav-link" href="DACC-schoolReport-student.html">學生資訊</a> </li>
-          <li class="nav-item"> <a class="nav-link active" aria-current="page" href="DACC-schoolReport-class.html">班級資訊</a> </li>
+        <ul class="nav nav-tabs">
+          <li class="nav-item"> <a class="nav-link active" aria-current="page" href="DACC-schoolReport-student.html">學生資訊</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="DACC-schoolReport-class.html">班級資訊</a> </li>
         </ul>
       </div>
       <!-- 學生資訊/班級資訊-頁籤 end  --> 
@@ -49,7 +49,9 @@
               <div class="row gy-1">
                 <div class="col-auto">
                   <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchSessions" class="col-form-label fs-8">測驗場次</label> </div>
+                    <div class="col-auto">
+                      <label for="searchSessions" class="col-form-label fs-8">測驗場次</label>
+                    </div>
                     <div class="col-auto">
                       <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
                         <option value="" disabled selected>請選擇...</option>
@@ -61,7 +63,9 @@
                 </div>
                 <div class="col-auto">
                   <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchGrade" class="col-form-label fs-8">年級</label> </div>
+                    <div class="col-auto">
+                      <label for="searchGrade" class="col-form-label fs-8">年級</label>
+                    </div>
                     <div class="col-auto">
                       <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
                         <option value="" disabled selected>請選擇...</option>
@@ -82,7 +86,9 @@
                 </div>
                 <div class="col-auto">
                   <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchDimension" class="col-form-label fs-8">向度選擇</label> </div>
+                    <div class="col-auto">
+                      <label for="searchDimension" class="col-form-label fs-8">向度選擇</label>
+                    </div>
                     <div class="col-auto">
                       <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchDimension">
                         <option value="" disabled selected>請選擇...</option>
@@ -98,8 +104,14 @@
                 </div>
                 <div class="col-auto">
                   <div class="row g-2 align-items-center">
-                    <div class="col-auto"><label class="fs-8">時間：</label></div>
-                    <div class="col-auto"><span class="fs-8"><label id="searchStartDate">----/--/--</label>至<label id="searchEndDate">----/--/--</label></span></div>
+                    <div class="col-auto">
+                      <label class="fs-8">時間：</label>
+                    </div>
+                    <div class="col-auto"><span class="fs-8">
+                      <label id="searchStartDate">----/--/--</label>
+                      至
+                      <label id="searchEndDate">----/--/--</label>
+                      </span></div>
                   </div>
                 </div>
               </div>
@@ -154,7 +166,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 

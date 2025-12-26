@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/bootstrap-select-1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -86,8 +86,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-delete"><div class="SRform-check-red">
-                      <input class="form-check-input" type="checkbox" name="delete">
+                  <td class="row-delete"><div class="form-check form-check-inline SRform-check-red">
+                      <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
                     </div></td>
                   <td class="row-index">1</td>
                   <td class="row-school"><input type="text" class="form-control rounded-0 readonly" value="師大附中" disabled readonly></td>
@@ -326,9 +326,10 @@
                   <table class="table table-bordered table-waitingList" id="waitingListTable">
                     <thead>
                       <tr>
-                        <th scope="col" class="row-check"><div class="SRform-check-red">
-                          <input class="form-check-input" type="checkbox" name="checkAll">
-                        </div></th>
+                        <th scope="col" class="row-check"> <div class="form-check form-check-inline SRform-check-red">
+                            <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
+                          </div>
+                        </th>
                         <th scope="col" class="row-index">序號</th>
                         <th scope="col" class="row-account">帳號/信箱</th>
                         <th scope="col" class="row-password">密碼</th>
@@ -341,8 +342,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="row-check"><div class="SRform-check-red">
-                            <input class="form-check-input" type="checkbox" name="check">
+                        <td class="row-check"><div class="form-check form-check-inline SRform-check-red">
+                            <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
                           </div></td>
                         <td class="row-no">1</td>
                         <td class="row-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
@@ -399,9 +400,10 @@
                   <table class="table table-bordered table-studentList" id="studentListTable">
                     <thead>
                       <tr>
-                        <th scope="col" class="row-check"><div class="SRform-check-red">
-                          <input class="form-check-input" type="checkbox" name="checkAll">
-                        </div></th>
+                        <th scope="col" class="row-check"> <div class="form-check form-check-inline SRform-check-red">
+                            <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
+                          </div>
+                        </th>
                         <th scope="col" class="row-index">序號</th>
                         <th scope="col" class="row-account">帳號/信箱</th>
                         <th scope="col" class="row-password">密碼</th>
@@ -414,8 +416,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="row-check"><div class="SRform-check-red">
-                            <input class="form-check-input" type="checkbox" name="check">
+                        <td class="row-check"><div class="form-check form-check-inline SRform-check-red">
+                            <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
                           </div></td>
                         <td class="row-index">1</td>
                         <td class="row-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
@@ -465,7 +467,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
@@ -507,9 +509,9 @@ $(document).ready(function() {
                 orderable: false,
                 visible: false,
                 render: function (data, type, row, meta) {
-                    return `<div class="SRform-check-red">
-                              <input class="form-check-input" type="checkbox" name="delete">
-                            </div>`; 
+                    return `<div class="form-check form-check-inline SRform-check-red">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
+							</div>`; 
                 } 
             },
             {//序號
@@ -972,16 +974,16 @@ function iniDatatable(table, json) {
 		columnDefs: [
 			{//選擇
 				targets: 0, 
-				title: `<div class="SRform-check-red">
-                          <input class="form-check-input" type="checkbox" name="checkAll">
-                        </div>`,
+				title: `<div class="form-check form-check-inline SRform-check-red">
+						  <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
+						</div>`,
 				className: 'row-check',
 				orderable: false,
 				visible: false,
 				render: function (data, type, row, meta) {
-					return `<div class="SRform-check-red">
-							  <input class="form-check-input" type="checkbox" name="check">
-							</div>`; 
+					return `<div class="form-check form-check-inline SRform-check-red">
+						      <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
+						    </div>`; 
 				} 
 			},
 			{ //序號

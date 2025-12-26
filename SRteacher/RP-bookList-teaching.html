@@ -20,7 +20,7 @@
 <!--<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/buttons-2.4.2/css/buttons.dataTables.min.css">	--> 
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -34,9 +34,9 @@
         <h2>教學書單管理</h2>
         <!-- 教學指定書單/班級學生書單-頁籤 start -->
         <div class="row">
-          <ul class="nav nav-viewinfo-school">
-            <li class="nav-item"> <a class="nav-link active" href="RP-bookList-teaching.html">教學指定書單</a> </li>
-            <li class="nav-item"> <a class="nav-link" aria-current="page" href="RP-bookList-class.html">班級學生書單</a> </li>
+          <ul class="nav nav-tabs">
+            <li class="nav-item"> <a class="nav-link active" aria-current="page" href="RP-bookList-teaching.html">教學指定書單</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="RP-bookList-class.html">班級學生書單</a> </li>
           </ul>
         </div>
         <!-- 教學指定書單/班級學生書單-頁籤 end  --> 
@@ -95,8 +95,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-delete"><div class="SRform-check-red">
-                      <input class="form-check-input" type="checkbox" name="delete">
+                  <td class="row-delete"><div class="form-check form-check-inline">
+                      <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
                     </div></td>
                   <td class="row-index">1</td>
                   <td class="row-bookList"><input type="text" class="form-control rounded-0 readonly" value="香蕉小組書單1" disabled></td>
@@ -440,7 +440,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 

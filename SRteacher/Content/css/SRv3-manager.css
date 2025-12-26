@@ -959,3 +959,11 @@ height:95px;
 .table-portfolio > thead > tr > th.row-skillAR, .table-portfolio > thead > tr > td.row-skillAR, .table-portfolio > tbody > tr > th.row-skillAR, .table-portfolio > tbody > tr > td.row-skillAR { width: 8%; }
 .table-portfolio > thead > tr > th.row-skillRG, .table-portfolio > thead > tr > td.row-skillRG, .table-portfolio > tbody > tr > th.row-skillRG, .table-portfolio > tbody > tr > td.row-skillRG { width: 8%; }
 .table-portfolio > thead > tr > th.row-skillPR, .table-portfolio > thead > tr > td.row-skillPR, .table-portfolio > tbody > tr > th.row-skillPR, .table-portfolio > tbody > tr > td.row-skillPR { width: 8%; }
+
+.table-performance > thead > tr > th.row-check, .table-performance > thead > tr > td.row-check, .table-performance > tbody > tr > th.row-check, .table-performance > tbody > tr > td.row-check { width: 4%; }
+.table-performance > thead > tr > th.row-year, .table-performance > thead > tr > td.row-year, .table-performance > tbody > tr > th.row-year, .table-performance > tbody > tr > td.row-year { width: 16%; }
+.table-performance > thead > tr > th.row-grade, .table-performance > thead > tr > td.row-grade, .table-performance > tbody > tr > th.row-grade, .table-performance > tbody > tr > td.row-grade { width: 16%; }
+.table-performance > thead > tr > th.row-class, .table-performance > thead > tr > td.row-class, .table-performance > tbody > tr > th.row-class, .table-performance > tbody > tr > td.row-class { width: 16%; }
+.table-performance > thead > tr > th.row-teacher, .table-performance > thead > tr > td.row-teacher, .table-performance > tbody > tr > th.row-teacher, .table-performance > tbody > tr > td.row-teacher { width: 16%; }
+.table-performance > thead > tr > th.row-studentCount, .table-performance > thead > tr > td.row-studentCount, .table-performance > tbody > tr > th.row-studentCount, .table-performance > tbody > tr > td.row-studentCount { width: 16%; }
+.table-performance > thead > tr > th.row-studentMenu, .table-performance > thead > tr > td.row-studentMenu, .table-performance > tbody > tr > th.row-studentMenu, .table-performance > tbody > tr > td.row-studentMenu { width: 16%; }

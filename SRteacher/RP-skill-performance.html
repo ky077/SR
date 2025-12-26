@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<form>
+  <header> </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <h2>閱讀力管理</h2>
+        <h2>閱讀力表現</h2>
+        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+          <!-- 搜尋 start -->
+          <div class="col-xl-12 mb-3" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="row gy-1">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchYear" class="col-form-label fs-8">開始時間</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchGrade" class="col-form-label fs-8">結束時間</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2024">2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="row gy-2 align-items-center">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
+                      </div>
+                      <div class="col-auto">
+                        <div class="input-group">
+                          <div class="input-group-clear">
+                            <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                            <button class="btn btn-close" type="button"></button>
+                          </div>
+                          <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="col-xl-12 mb-5">
+            <table class="table table-bordered table-performance" id="performanceTable">
+              <thead>
+                <tr>
+                  <th scope="col" class="td-check">選擇</th>
+                  <th scope="col" class="td-year">年度</th>
+                  <th scope="col" class="td-grade">年級</th>
+                  <th scope="col" class="td-class">班級</th>
+                  <th scope="col" class="td-teacher">負責老師</th>
+                  <th scope="col" class="td-studentCount">人數</th>
+                  <th scope="col" class="td-studentMenu">學生選單</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-check"><div class="SRform-check-red">
+                      <input class="form-check-input" type="checkbox" name="check">
+                    </div></td>
+                  <td class="td-year">2022</td>
+                  <td class="td-grade">3</td>
+                  <td class="td-class">2</td>
+                  <td class="td-teacher">李夏夏</td>
+                  <td class="td-studentCount">30</td>
+                  <td class="td-studentMenu"><button type="button" class="btn btn-link">顯示詳情</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
+        </div>
+        
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
+  </div>
+  <footer> </footer>
+</form>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="RP-skill"]').addClass('active');   
+    }); 
+	
+	
+	const list = $('#performanceTable');
+	
+    //閱讀力表現 datatables 
+	list.DataTable({
+        //serverSide: true,     // 開啟伺服端模式
+		processing: true,   
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<"table-responsive"rt>'+
+			 '<"datatables-custom-footer"pi>',		
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/RP-skill/performance.json',
+        columnDefs: [
+			{//選擇
+                targets: 0, 
+                title: '選擇',
+                className: 'row-check',
+                orderable: false,
+                visible: false,
+                render: function (data, type, row, meta) {
+                    return `<div class="SRform-check-red">
+							  <input class="form-check-input" type="checkbox" name="check">
+						    </div>`; 
+                } 
+            },
+            {//年度
+                targets: 1, 
+                title: '年度',
+				data: 'year',
+                className: 'row-year',
+                orderable: false,
+            },
+            {//年級
+                targets: 2, 
+                title: '年級',
+                data: 'grade',
+                className: 'row-grade',
+                orderable: false, 
+            },
+            {//班級
+                targets: 3,
+                title: '班級',
+                data: 'class',
+                className: 'row-class',
+                orderable: false,
+            },
+            {//負責老師
+                targets: 4, 
+                title: '負責老師',
+                data: 'teacher',
+                className: 'row-teacher',
+                orderable: false,
+            },
+            {//人數
+                targets: 5, 
+                title: '人數',
+                data: 'students',
+                className: 'row-studentCount',
+                orderable: false,
+				render: function (data, type, row, meta) {
+					if (Array.isArray(data)) {
+						return data.length;
+					}
+					return 0;
+				}
+            },
+			{//學生選單
+                targets: 6, 
+                title: '學生選單',
+                className: 'row-studentMenu',
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return `<button type="button" class="btn btn-link btn-toggle-child">顯示詳情</button>`;
+                }
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    }); 	
+	
+	//學生選單[顯示詳情]
+	list.on('click', '.btn-toggle-child', function (){ 
+		//表格欄位 顯示選擇
+        list.DataTable().column('.row-check').visible(true); 
+		$('td.row-check').attr('rowspan', 2);
+		
+		var tr = $(this).parents('tr');
+		var row = list.DataTable().row( tr );
+
+		//toggle 自己
+		if (row.child.isShown()) {//當前打開=>關閉自己child及銷毀childTable
+			const childTable = $(tr.next()).find('table.dataTable').DataTable();
+			
+			if (childTable) childTable.destroy();
+			row.child.hide();
+			$(this).parents('td').removeClass('showChild');
+		}else { //當前關閉=>關閉其他child及銷毀childTable
+			list.DataTable().rows().every(function () {
+				if (this.child.isShown()) {
+					const childTable = $(this.child()).find('table.dataTable').DataTable();
+					if (childTable) childTable.destroy();
+									this.child.hide();
+				}
+			});
+			
+			const rowData = row.data(); 
+			
+			row.child(format(rowData)).show();
+			$(this).parents('td').addClass('showChild');
+		}
+	});
+}); 
+
+function format(rowData) {
+    const students = rowData.students || [];
+    const perRow = 6; // 每列 5 人
+	
+    let html = `
+        <table class="table table-bordered table-performance-students">
+            <tbody>
+    `;
+
+    for (let i = 0; i < students.length; i += perRow) {
+        html += '<tr>';
+
+        students.slice(i, i + perRow).forEach(name => {
+            html += `<td>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+						  <label class="form-check-label" for="checkDefault">
+						   ${name}
+						  </label>
+						</div>
+					</td>`;
+        });
+
+        html += '</tr>';
+    }
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    return html;
+}
+	
+
+</script>
+</body>
+</html>

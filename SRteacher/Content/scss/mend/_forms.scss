@@ -81,9 +81,6 @@ input:-internal-autofill-selected {
   	background-color: $green-200;
 }
 
-.form-check-input{
-    //margin-top: ($line-height-base - $form-check-input-width) * .5;    
-}
 .form-check {
     padding-left: 0;
     margin-bottom: 0;
@@ -91,9 +88,6 @@ input:-internal-autofill-selected {
         margin-left: 0;
         margin-right: .5rem;
     }
-	.form-check-label{
-		
-	}
 }
 .form-check-inline{
     margin-right: 0;
@@ -106,6 +100,9 @@ input:-internal-autofill-selected {
 .form-check-input[type="radio"] {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%23c6c6c6'/></svg>");
     background-size: 140% 140%;
+}
+.form-check-input:checked[type="checkbox"]{
+	
 }
 
 .form-switch .form-check-input {

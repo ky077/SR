@@ -19,3 +19,18 @@
         }
     }
 }
+.table-performance{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.row-check{	  	width:  4%; }
+                &.row-year{  	 	width: 16%; }
+                &.row-grade{        width: 16%; }
+                &.row-class{     	width: 16%; }
+                &.row-teacher{ 		width: 16%; }
+                &.row-studentCount{ width: 16%; }
+                &.row-studentMenu{  width: 16%; }
+            }   
+        }
+    }
+}

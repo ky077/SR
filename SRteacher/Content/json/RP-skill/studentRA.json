@@ -1,0 +1,143 @@
+{
+  "data": [
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "許冬冬",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "黃秋秋",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "萬晴晴",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "陳小小",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "王寶寶",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "萬晴晴",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "許冬冬",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "黃秋秋",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "萬晴晴",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "陳小小",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "王寶寶",
+      "DACC": 163,
+      "RAplanning": 12,
+			"RAexecution": 33,
+			"RAproficiency": 8,
+			"RAerudition": 1
+    },
+		{
+      "sn": "7654111",
+      "grade": "3",
+      "class": "2",
+      "studentName": "萬晴晴",
+      "DACC": 648,
+      "RAplanning": 0,
+			"RAexecution": 30,
+			"RAproficiency": 4,
+			"RAerudition": 2,
+			"RAtotal": 36
+    }
+
+  ]
+}

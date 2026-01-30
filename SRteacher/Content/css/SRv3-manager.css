@@ -318,10 +318,8 @@ option[value=""]{ color: $secondary;
 
 .SRform-check-red .form-check-input[type="checkbox"] { border-color: #ff3f3f; }
 .SRform-check-red .form-check-input[type="checkbox"]:focus { box-shadow: 0 0 0 0.25rem rgba(255, 63, 63, 0.25); }
-.SRform-check-red .form-check-input:checked[type="checkbox"] { /*
-&:indeterminate { background-color: $white; border-color: $red; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E %3Cg id='Group_13' data-name='Group 13' transform='translate(-2240 -1095)'%3E %3Crect id='Rectangle_19' data-name='Rectangle 19' width='500' height='500' transform='translate(2240 1095)' fill='none'/%3E %3Cpath id='square-solid' d='M0,82A50.046,50.046,0,0,1,50,32H300a50.046,50.046,0,0,1,50,50V332a50.046,50.046,0,0,1-50,50H50A50.046,50.046,0,0,1,0,332Z' transform='translate(2315 1138)' fill='%23ff3f3f'/%3E %3C/g%3E %3C/svg%3E ");
-}*/ }
 .SRform-check-red .form-check-input:checked[type="checkbox"]::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff3f3f' class='bi bi-check-lg' viewBox='0 0 16 16'%3E %3Cpath d='M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z'/%3E %3C/svg%3E"); }
+.SRform-check-red .form-check-input:checked[type="checkbox"]:indeterminate { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E %3Cg id='Group_13' data-name='Group 13' transform='translate%28-2240 -1095%29'%3E %3Crect id='Rectangle_19' data-name='Rectangle 19' width='500' height='500' transform='translate%282240 1095%29' fill='none'/%3E %3Cpath id='square-solid' d='M0,82A50.046,50.046,0,0,1,50,32H300a50.046,50.046,0,0,1,50,50V332a50.046,50.046,0,0,1-50,50H50A50.046,50.046,0,0,1,0,332Z' transform='translate%282315 1138%29' fill='%23ff3f3f'/%3E %3C/g%3E %3C/svg%3E "); }
 
 [class*="SRicon-"] { display: inline-flex; align-items: center; line-height: 1; min-width: 1em; min-height: 1em; font-size: 1em; vertical-align: middle; }
 
@@ -660,6 +658,17 @@ height:95px;
 .audioRecord .audioRecord-tools .tools__btn.stopRec > i, .audioRecord .audioRecord-tools .tools__btn.stopPlayRec > i { display: inline-block; font-size: 1.25em; width: 1.25em; height: 1.25em; line-height: 1.25em; text-align: center; vertical-align: middle; color: #ff4e4e; margin-right: 2px; margin-top: -2px; }
 .audioRecord .audioRecord-tools .tools__btn.disabled, .audioRecord .audioRecord-tools .tools__btn[disabled], .audioRecord .audioRecord-tools .tools__btn[disabled="disabled"] { opacity: 0.65; filter: alpha(opacity=65); }
 
+.table > thead > tr > th.row-RAplanning, .table > thead > tr > td.row-RAplanning { color: #fff; background-color: #f16f6f; }
+.table > thead > tr > th.row-RAexecution, .table > thead > tr > td.row-RAexecution { color: #fff; background-color: #ae86c2; }
+.table > thead > tr > th.row-RAproficiency, .table > thead > tr > td.row-RAproficiency { color: #fff; background-color: #6fd1da; }
+.table > thead > tr > th.row-RAerudition, .table > thead > tr > td.row-RAerudition { color: #fff; background-color: #98dca1; }
+.table > thead > tr > th.row-RAtotal, .table > thead > tr > td.row-RAtotal { color: #fff; background-color: #ebc941; }
+.table > tbody > tr > th.row-RAplanning, .table > tbody > tr > td.row-RAplanning { background-color: rgba(241, 111, 111, 0.15); }
+.table > tbody > tr > th.row-RAexecution, .table > tbody > tr > td.row-RAexecution { background-color: rgba(174, 134, 194, 0.15); }
+.table > tbody > tr > th.row-RAproficiency, .table > tbody > tr > td.row-RAproficiency { background-color: rgba(111, 209, 218, 0.15); }
+.table > tbody > tr > th.row-RAerudition, .table > tbody > tr > td.row-RAerudition { background-color: rgba(152, 220, 161, 0.15); }
+.table > tbody > tr > th.row-RAtotal, .table > tbody > tr > td.row-RAtotal { background-color: rgba(235, 201, 65, 0.15); }
+
 .tobeGradedBlock { background-color: #F9F9F9; padding: 1.5rem 2rem; font-size: .8rem; }
 .tobeGradedBlock h3 { position: relative; }
 .tobeGradedBlock h3::before { content: ""; display: block; width: 8px; height: 8px; border-radius: 100%; background-color: #ff3f3f; position: absolute; left: -.75rem; top: 50%; transform: translateY(-50%); }
@@ -960,6 +969,7 @@ height:95px;
 .table-portfolio > thead > tr > th.row-skillAR, .table-portfolio > thead > tr > td.row-skillAR, .table-portfolio > tbody > tr > th.row-skillAR, .table-portfolio > tbody > tr > td.row-skillAR { width: 8%; }
 .table-portfolio > thead > tr > th.row-skillRG, .table-portfolio > thead > tr > td.row-skillRG, .table-portfolio > tbody > tr > th.row-skillRG, .table-portfolio > tbody > tr > td.row-skillRG { width: 8%; }
 .table-portfolio > thead > tr > th.row-skillPR, .table-portfolio > thead > tr > td.row-skillPR, .table-portfolio > tbody > tr > th.row-skillPR, .table-portfolio > tbody > tr > td.row-skillPR { width: 8%; }
+.table-portfolio > thead > tr > th.row-skillRP { border-left-color: transparent; }
 
 .table-performance > thead > tr > th.row-check, .table-performance > thead > tr > td.row-check, .table-performance > tbody > tr > th.row-check, .table-performance > tbody > tr > td.row-check { width: 4%; }
 .table-performance > thead > tr > th.row-year, .table-performance > thead > tr > td.row-year, .table-performance > tbody > tr > th.row-year, .table-performance > tbody > tr > td.row-year { width: 16%; }
@@ -968,3 +978,34 @@ height:95px;
 .table-performance > thead > tr > th.row-teacher, .table-performance > thead > tr > td.row-teacher, .table-performance > tbody > tr > th.row-teacher, .table-performance > tbody > tr > td.row-teacher { width: 16%; }
 .table-performance > thead > tr > th.row-studentCount, .table-performance > thead > tr > td.row-studentCount, .table-performance > tbody > tr > th.row-studentCount, .table-performance > tbody > tr > td.row-studentCount { width: 16%; }
 .table-performance > thead > tr > th.row-studentMenu, .table-performance > thead > tr > td.row-studentMenu, .table-performance > tbody > tr > th.row-studentMenu, .table-performance > tbody > tr > td.row-studentMenu { width: 16%; }
+.table-performance > tbody > tr.dt-hasChild + tr > td { border-left-color: transparent; }
+.table-performance > tbody > tr.dt-hasChild + tr > td .table-responsive { max-height: calc((2em + .75rem*2 + 1px)*5 + 1px); overflow-y: scroll; }
+
+.table-performance-students > tbody > tr > th, .table-performance-students > tbody > tr > td { height: 2em; min-height: 2em; }
+
+.table-studentRA > thead > tr > th.row-index, .table-studentRA > thead > tr > td.row-index, .table-studentRA > tbody > tr > th.row-index, .table-studentRA > tbody > tr > td.row-index { width: 5%; }
+.table-studentRA > thead > tr > th.row-grade, .table-studentRA > thead > tr > td.row-grade, .table-studentRA > tbody > tr > th.row-grade, .table-studentRA > tbody > tr > td.row-grade { width: 6%; }
+.table-studentRA > thead > tr > th.row-class, .table-studentRA > thead > tr > td.row-class, .table-studentRA > tbody > tr > th.row-class, .table-studentRA > tbody > tr > td.row-class { width: 6%; }
+.table-studentRA > thead > tr > th.row-studentName, .table-studentRA > thead > tr > td.row-studentName, .table-studentRA > tbody > tr > th.row-studentName, .table-studentRA > tbody > tr > td.row-studentName { width: 10%; }
+.table-studentRA > thead > tr > th.row-DACC, .table-studentRA > thead > tr > td.row-DACC, .table-studentRA > tbody > tr > th.row-DACC, .table-studentRA > tbody > tr > td.row-DACC { width: 12%; }
+.table-studentRA > thead > tr > th.row-RAplanning, .table-studentRA > thead > tr > td.row-RAplanning, .table-studentRA > tbody > tr > th.row-RAplanning, .table-studentRA > tbody > tr > td.row-RAplanning { width: 10%; }
+.table-studentRA > thead > tr > th.row-RAexecution, .table-studentRA > thead > tr > td.row-RAexecution, .table-studentRA > tbody > tr > th.row-RAexecution, .table-studentRA > tbody > tr > td.row-RAexecution { width: 10%; }
+.table-studentRA > thead > tr > th.row-RAproficiency, .table-studentRA > thead > tr > td.row-RAproficiency, .table-studentRA > tbody > tr > th.row-RAproficiency, .table-studentRA > tbody > tr > td.row-RAproficiency { width: 10%; }
+.table-studentRA > thead > tr > th.row-RARAerudition, .table-studentRA > thead > tr > td.row-RARAerudition, .table-studentRA > tbody > tr > th.row-RARAerudition, .table-studentRA > tbody > tr > td.row-RARAerudition { width: 10%; }
+.table-studentRA > thead > tr > th.row-total, .table-studentRA > thead > tr > td.row-total, .table-studentRA > tbody > tr > th.row-total, .table-studentRA > tbody > tr > td.row-total { width: 10%; }
+.table-studentRA > thead > tr > th.row-portfolio, .table-studentRA > thead > tr > td.row-portfolio, .table-studentRA > tbody > tr > th.row-portfolio, .table-studentRA > tbody > tr > td.row-portfolio { width: 10%; }
+
+.studentRAportfolio-chart { margin-bottom: 3rem; }
+.studentRAportfolio-chart .studentRAportfolio-chart-legend { display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; gap: 20px; margin-top: 1rem; margin-bottom: 1.5rem; }
+.studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item { display: flex; flex-direction: row; justify-content: center; align-items: center; border: 1px solid #C6C6C6; padding: 7px 5px; border-radius: 2rem; }
+.studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item .legend-dot { display: inline-block; width: 24px; height: 24px; border-radius: 100%; margin-right: 5px; }
+.studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item .legend-text { font-size: 14px; margin-right: 2px; }
+
+.table-studentRAportfolio > thead > tr > th.row-index, .table-studentRAportfolio > thead > tr > td.row-index, .table-studentRAportfolio > tbody > tr > th.row-index, .table-studentRAportfolio > tbody > tr > td.row-index { width: 5%; }
+.table-studentRAportfolio > thead > tr > th.row-dateRange, .table-studentRAportfolio > thead > tr > td.row-dateRange, .table-studentRAportfolio > tbody > tr > th.row-dateRange, .table-studentRAportfolio > tbody > tr > td.row-dateRange { width: 33%; }
+.table-studentRAportfolio > thead > tr > th.row-RAplanning, .table-studentRAportfolio > thead > tr > td.row-RAplanning, .table-studentRAportfolio > tbody > tr > th.row-RAplanning, .table-studentRAportfolio > tbody > tr > td.row-RAplanning { width: 12%; }
+.table-studentRAportfolio > thead > tr > th.row-RAexecution, .table-studentRAportfolio > thead > tr > td.row-RAexecution, .table-studentRAportfolio > tbody > tr > th.row-RAexecution, .table-studentRAportfolio > tbody > tr > td.row-RAexecution { width: 12%; }
+.table-studentRAportfolio > thead > tr > th.row-RAproficiency, .table-studentRAportfolio > thead > tr > td.row-RAproficiency, .table-studentRAportfolio > tbody > tr > th.row-RAproficiency, .table-studentRAportfolio > tbody > tr > td.row-RAproficiency { width: 12%; }
+.table-studentRAportfolio > thead > tr > th.row-RARAerudition, .table-studentRAportfolio > thead > tr > td.row-RARAerudition, .table-studentRAportfolio > tbody > tr > th.row-RARAerudition, .table-studentRAportfolio > tbody > tr > td.row-RARAerudition { width: 12%; }
+.table-studentRAportfolio > thead > tr > th.row-total, .table-studentRAportfolio > thead > tr > td.row-total, .table-studentRAportfolio > tbody > tr > th.row-total, .table-studentRAportfolio > tbody > tr > td.row-total { width: 12%; }
+.table-studentRAportfolio > thead > tr > th.row-portfolio, .table-studentRAportfolio > thead > tr > td.row-portfolio, .table-studentRAportfolio > tbody > tr > th.row-portfolio, .table-studentRAportfolio > tbody > tr > td.row-portfolio { width: 12%; }

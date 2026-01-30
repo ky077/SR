@@ -18,7 +18,9 @@
             }   
         }
     }
+	> thead > tr >th.row-skillRP { border-left-color: transparent; }
 }
+
 .table-performance{
     > thead, > tbody{
         > tr{
@@ -33,4 +35,99 @@
             }   
         }
     }
+	  > tbody{
+        > tr.dt-hasChild{
+					+ tr > td {
+						border-left-color: transparent;
+						.table-responsive{
+							max-height: calc((2em + .75rem*2 + 1px)*5 + 1px);
+							overflow-y: scroll;
+						}
+					}
+        }
+    }
 }
+.table-performance-students{
+	> tbody{
+        > tr{
+            >th, > td {
+							height: 2em;
+    					min-height: 2em;
+            }   
+        }
+    }
+
+}
+
+.table-studentRA{
+	> thead, > tbody{
+		> tr{
+			>th, > td {
+				&.row-index{	  	 	 width:  5%; }
+				&.row-grade{  	 	 	 width:  6%; }
+				&.row-class{       	 width:  6%; }
+				&.row-studentName{ 	 width: 10%; }
+				&.row-DACC{ 			 	 width: 12%; }
+				&.row-RAplanning{ 	 width: 10%; }
+				&.row-RAexecution{   width: 10%; }
+				&.row-RAproficiency{ width: 10%; }
+				&.row-RARAerudition{ width: 10%; }
+				&.row-total{  			 width: 10%; }
+				&.row-portfolio{  	 width: 10%; }
+			}   
+		}
+	}
+}
+
+.studentRAportfolio-chart{
+	margin-bottom: map-get($spacers, 5);
+	.studentRAportfolio-chart-legend{ 
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+		.legend-item{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid $border-color;
+			padding: 7px 5px;
+			border-radius: 2rem;
+			.legend-dot{
+				display:inline-block;
+				width: 24px;
+				height: 24px;
+				border-radius: 100%;
+				margin-right: 5px;
+			}
+			.legend-text{
+				font-size: 14px;
+				margin-right: 2px;
+			}
+		}
+	}
+}
+
+.table-studentRAportfolio{
+	> thead, > tbody{
+		> tr{
+			>th, > td {
+				&.row-index{	  	 	 width:  5%; }
+				&.row-dateRange{	 	 width: 33%; }
+				&.row-RAplanning{ 	 width: 12%; }
+				&.row-RAexecution{   width: 12%; }
+				&.row-RAproficiency{ width: 12%; }
+				&.row-RARAerudition{ width: 12%; }
+				&.row-total{  			 width: 12%; }
+				&.row-portfolio{  	 width: 12%; }
+			}   
+		}
+	}	
+}
+
+
+

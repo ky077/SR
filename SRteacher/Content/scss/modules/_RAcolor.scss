@@ -1,0 +1,30 @@
+$RAplanning: 		#f16f6f;
+$RAexecution:		#ae86c2;
+$RAproficiency: #6fd1da;
+$RAerudition:   #98dca1;
+$RAtotal:				#ebc941;
+
+.table{
+	> thead{
+		> tr{
+			>th, > td {
+				&.row-RAplanning{ 	 color: $white; background-color: $RAplanning;  }
+				&.row-RAexecution{   color: $white; background-color: $RAexecution; }
+				&.row-RAproficiency{ color: $white; background-color: $RAproficiency; }
+				&.row-RAerudition{   color: $white; background-color: $RAerudition; }
+				&.row-RAtotal{  		 color: $white; background-color: $RAtotal; }
+			}   
+		}
+	}
+	 > tbody{
+		> tr{
+			>th, > td {
+				&.row-RAplanning{ 	 background-color: rgba($RAplanning, .15); }
+				&.row-RAexecution{   background-color: rgba($RAexecution, .15); }
+				&.row-RAproficiency{ background-color: rgba($RAproficiency, .15); }
+				&.row-RAerudition{   background-color: rgba($RAerudition, .15); }
+				&.row-RAtotal{  		 background-color: rgba($RAtotal, .15); }
+			}   
+		}
+	}	
+}

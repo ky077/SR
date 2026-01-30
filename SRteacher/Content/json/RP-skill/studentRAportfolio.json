@@ -1,0 +1,77 @@
+{
+  "data": [
+		{
+      "sn": "7654111",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 1,
+      "RAexecution": 1,
+      "RAproficiency": 1,
+      "RAerudition": 1
+    },
+		{
+      "sn": "7654112",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 3,
+      "RAexecution": 0,
+      "RAproficiency": 0,
+      "RAerudition": 1
+    },
+		{
+      "sn": "7654113",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 5,
+      "RAexecution": 5,
+      "RAproficiency": 1,
+      "RAerudition": 2
+    },
+		{
+      "sn": "7654114",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 8,
+      "RAexecution": 5,
+      "RAproficiency": 1,
+      "RAerudition": 3
+    },
+		{
+      "sn": "7654115",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 11,
+      "RAexecution": 5,
+      "RAproficiency": 1,
+      "RAerudition": 4
+    },
+		{
+      "sn": "7654116",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 12,
+      "RAexecution": 5,
+      "RAproficiency": 1,
+      "RAerudition": 6
+    },
+		{
+      "sn": "7654117",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 12,
+      "RAexecution": 33,
+      "RAproficiency": 8,
+      "RAerudition": 12
+    },
+		{
+      "sn": "7654118",
+      "startDate": "2022/11/01",
+      "endDate": "2022/11/06",
+      "RAplanning": 12,
+      "RAexecution": 33,
+      "RAproficiency": 8,
+      "RAerudition": 17
+    }
+
+  ]
+}

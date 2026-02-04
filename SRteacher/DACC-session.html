@@ -311,7 +311,7 @@
             <!-- 表格 start -->
             <div class="col-xl-12">
               <div class="table-responsive">
-                <table class="table table-bordered table-sessionStudentLists" id="sessionStudentLists">
+                <table class="table table-bordered table-sessionStudentList" id="sessionStudentList">
                   <thead>
                     <tr>
                       <th scope="col" class="col-no">序號</th>
@@ -673,7 +673,7 @@ $(document).ready(function () {
   });
   //[設定學生]DOM
   function loadStudentSetDOM() {
-    $.getJSON('Content/json/testMgt-session/studentSet.json', function (data) {
+    $.getJSON('Content/json/DACC-session/studentSet.json', function (data) {
       let gradeArray = data.data;
       let accordionHTML = '';
 
@@ -795,7 +795,7 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
 
   //[學生名單]datatables 
-  $('#sessionStudentLists').DataTable({
+  $('#sessionStudentList').DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     ordering: false,
@@ -809,7 +809,7 @@ $(document).ready(function () {
     language: {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
-    //ajax: 'Content/json/testMgt-session/sessionStudentLists.json',
+    //ajax: 'Content/json/DACC-session/sessionStudentList.json',
     columnDefs: [{ //序號
         targets: 0,
         title: '序號',
@@ -900,7 +900,7 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage($('#sessionStudentLists'));
+      datatableInputPage($('#sessionStudentList'));
     }
   });
   //[學生名單]
@@ -910,16 +910,16 @@ $(document).ready(function () {
     //do something... (取得sessionLists行列項目資料)
 
     $('#studentListsModal').on('shown.bs.modal', function () {
-      $('#sessionStudentLists').DataTable().ajax.url('Content/json/testMgt-session/sessionStudentLists.json').load();
+      $('#sessionStudentList').DataTable().ajax.url('Content/json/DACC-session/sessionStudentList.json').load();
     });
   });
   //[學生名單] > [搜尋]
   $('#btnSearch_studentLists').click(function () {
-    $('#sessionStudentLists').DataTable().search($('#searchKeywords_studentLists').val()).draw();
+    $('#sessionStudentList').DataTable().search($('#searchKeywords_studentLists').val()).draw();
   });
   //[學生名單] > [搜尋][X]重置
   $('#searchKeywords_studentLists + .btn-close').click(function () {
-    $('#sessionStudentLists').DataTable().search('').draw();
+    $('#sessionStudentList').DataTable().search('').draw();
   });
   //[學生名單] - checkbox只能擇一 - 搜尋
   $('input[name="showList"]').click(function () {
@@ -927,7 +927,7 @@ $(document).ready(function () {
       $('.SRform-check input:checkbox').prop('checked', false);
       $(this).prop('checked', true);
 
-      //$('#sessionStudentLists').DataTable().column('.col-state').search('<span class="text-red">未完成</span>', true, true).draw();
+      //$('#sessionStudentList').DataTable().column('.col-state').search('<span class="text-red">未完成</span>', true, true).draw();
     }
   });
 

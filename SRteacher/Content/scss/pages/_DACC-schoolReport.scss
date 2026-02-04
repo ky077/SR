@@ -1,0 +1,179 @@
+.bg-advanced{
+    color: #FFF !important;
+    text-shadow: 0 0 5px rgba(0,0,0, .15) !important;
+    background-color: #00d587 !important; 
+}
+.bg-proficient{ 
+    color: #FFF !important;
+    text-shadow: 0 0 5px rgba(0,0,0, .15) !important;
+    background-color: #f4da00 !important;
+}
+.bg-basic{      
+    color: #FFF !important;
+    text-shadow: 0 0 5px rgba(0,0,0, .15) !important;
+    background-color: #ff912f !important; 
+}
+.bg-belowBasic{ 
+    color: #FFF !important;
+    text-shadow: 0 0 5px rgba(0,0,0, .15) !important;
+    background-color: #ff5252 !important; 
+}
+
+[class*="AssessmentBlock"]{
+    h4{
+        min-height: 1.75em;
+    }
+    h4 > a{
+        display: none;
+        > .icon{
+            display: inline-block;
+            width: 1.75em;
+            height: 1.75em;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            margin-right: .25rem;
+            vertical-align: middle;
+            margin-top: -.25rem;
+            background-color: transparent;
+        }
+        >i {
+            padding-left: .25em;     
+            font-size: .8em;
+        }
+    }
+    h4 > a:hover{
+        > .icon{
+            filter:brightness(.8);
+        }
+    }
+}
+#DACCall[class*="AssessmentBlock"]{ 
+    h4 > a {
+        display: inline; 
+        > .icon{ 
+            background-image: url("../images/icon-all.png");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+#DACCword[class*="AssessmentBlock"]{
+    h4 > a {
+        display: inline; 
+        > .icon{ 
+            background-image: url("../images/icon-word.svg");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+#DACCsuperficial[class*="AssessmentBlock"]{
+    h4 > a {
+        display: inline; 
+        > .icon{ 
+            background-image: url("../images/icon-superficial.png");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+#DACCtextual[class*="AssessmentBlock"]{
+    h4 > a {
+        display: inline;
+        > .icon{ 
+            background-image: url("../images/icon-textual.png");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }    
+    }
+}
+#DACCinference[class*="AssessmentBlock"]{
+    h4 > a {
+        display: inline;
+        > .icon{ 
+            background-image: url("../images/icon-inference.svg");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+#DACCanalysis[class*="AssessmentBlock"]{
+    h4 > a {
+        display: inline;
+        > .icon{ 
+            background-image: url("../images/icon-analysis.png");
+            background-color: transparent !important;
+            border-radius: 0 !important;
+        }     
+    }
+}
+
+.table-studentAssessment{
+    table-layout: fixed;
+    > tbody{
+        > tr{
+            >th, >td {
+                &.col-name { 
+                    >small{
+                        font-size: 1em;
+                        margin-left: .25em; 
+                    }
+                }
+                &.bg-belowBasic{
+                    >small{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    > tfoot{
+        > tr{
+            >th, > td {
+                height: 2.4em;
+                min-height: 2.4em; 
+                padding: .5rem 1.5rem;
+                text-align: left;
+            }
+        }
+    }
+}
+.studentListBlock{ 
+    h5{
+        padding: .75rem;
+        text-align: center;
+        font-size: .8rem;
+        margin-bottom: .75rem;
+        >small{
+            font-size: 1em;
+            margin-left: .25rem;
+        }
+    }
+}
+.table-studentList{
+    table-layout: fixed; 
+}
+
+.chartBg-label{
+    font-size: .8rem;
+    color: $gray-800;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    &:last-child{
+    margin-bottom: 30px;    
+    }
+    small{
+        font-size: 1em;
+        margin-left: .25rem;
+    }
+    [class*="label-"]{
+        display: inline-block;
+        width: 3rem;
+        height: 1.6rem;
+        opacity: .2;
+        border: 1px solid darken($gray-400, 100%);
+        margin-right: .5rem;
+    }
+}

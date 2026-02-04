@@ -23,137 +23,141 @@
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
-<header> </header>
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
-    <main class="col-xl-10"> 
-      <!-- ------- ------- ------- ------- ------- ------- ------- -->
-      <h2>檢視學校報表</h2>
-      <!-- 學生資訊/班級資訊-頁籤 start -->
-      <div class="row">
-        <ul class="nav nav-tabs">
-          <li class="nav-item"> <a class="nav-link" aria-current="page" href="DACC-schoolReport-student.html">學生資訊</a> </li>
-          <li class="nav-item"> <a class="nav-link active" href="DACC-schoolReport-class.html">班級資訊</a> </li>
-        </ul>
-      </div>
-      <!-- 學生資訊/班級資訊-頁籤 end  --> 
-      
-      <!-- 班級中文閱讀能力適性診斷評量報表 start -->
-      <div class="row py-3 py-xl-5 px-1 px-xl-4">
-        <h3 class="h5 text-center mb-4">班級中文閱讀能力適性診斷評量報表</h3>
-        <!-- 搜尋 start -->
-        <div class="col-xl-12 mb-5 mt-1" id="blockSearch">
-          <div class="row g-2 align-items-center justify-content-center">
-            <div class="col-auto">
-              <div class="row gy-1">
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto">
-                      <label for="searchSessions" class="col-form-label fs-8">測驗場次</label>
-                    </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2023/03/24,2023/06/30">111 Demo</option>
-                        <option value="2023/03/24,2023/06/30">2023 Demo</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto">
-                      <label for="searchGrade" class="col-form-label fs-8">年級</label>
-                    </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                      </select>
+<form>
+  <header> </header>
+	
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <h2>檢視學校報表</h2>
+        <!-- 學生資訊/班級資訊-頁籤 start -->
+        <div class="row">
+          <ul class="nav nav-tabs">
+            <li class="nav-item"> <a class="nav-link" aria-current="page" href="DACC-schoolReport-student.html">學生資訊</a> </li>
+            <li class="nav-item"> <a class="nav-link active" href="DACC-schoolReport-class.html">班級資訊</a> </li>
+          </ul>
+        </div>
+        <!-- 學生資訊/班級資訊-頁籤 end  --> 
+        
+        <!-- 班級中文閱讀能力適性診斷評量報表 start -->
+        <div class="row py-3 py-xl-5 px-1 px-xl-4">
+          <h3 class="h5 text-center mb-4">班級中文閱讀能力適性診斷評量報表</h3>
+          <!-- 搜尋 start -->
+          <div class="col-xl-12 mb-5 mt-1" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-center">
+              <div class="col-auto">
+                <div class="row gy-1">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchSessions" class="col-form-label fs-8">測驗場次</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2023/03/24,2023/06/30">111 Demo</option>
+                          <option value="2023/03/24,2023/06/30">2023 Demo</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto">
-                      <label for="searchDimension" class="col-form-label fs-8">向度選擇</label>
-                    </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchDimension">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="DACCall">整體閱讀理解能力</option>
-                        <option value="DACCword">字詞辨識</option>
-                        <option value="DACCsuperficial">表層文意理解</option>
-                        <option value="DACCtextual">文意統整</option>
-                        <option value="DACCinference">推論理解</option>
-                        <option value="DACCanalysis">分析評鑑</option>
-                      </select>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchGrade" class="col-form-label fs-8">年級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto">
-                      <label class="fs-8">時間：</label>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchDimension" class="col-form-label fs-8">向度選擇</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchDimension">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="DACCall">整體閱讀理解能力</option>
+                          <option value="DACCword">字詞辨識</option>
+                          <option value="DACCsuperficial">表層文意理解</option>
+                          <option value="DACCtextual">文意統整</option>
+                          <option value="DACCinference">推論理解</option>
+                          <option value="DACCanalysis">分析評鑑</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="col-auto"><span class="fs-8">
-                      <label id="searchStartDate">----/--/--</label>
-                      至
-                      <label id="searchEndDate">----/--/--</label>
-                      </span></div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label class="fs-8">時間：</label>
+                      </div>
+                      <div class="col-auto"><span class="fs-8">
+                        <label id="searchStartDate">----/--/--</label>
+                        至
+                        <label id="searchEndDate">----/--/--</label>
+                        </span></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- 搜尋  end  --> 
-        <!-- *評量區域 start -->
-        <div class="col-xl-12 mb-5 classAssessmentBlock" id="">
-          <div class="row align-items-end justify-content-center justify-content-xxl-start">
-            <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-3 order-last order-xl-first mt-5 d-flex justify-content-center">
-              <div>
-                <div class="chartBg-label">
-                  <div class="label-advanced bg-advanced"></div>
-                  <span>進階<small>Advanced</small></span></div>
-                <div class="chartBg-label">
-                  <div class="label-proficient bg-proficient"></div>
-                  <span>熟練<small>Proficient</small></span></div>
-                <div class="chartBg-label">
-                  <div class="label-basic bg-basic"></div>
-                  <span>基礎<small>Basic</small></span></div>
-                <div class="chartBg-label">
-                  <div class="label-belowBasic bg-belowBasic"></div>
-                  <span>基礎之下<small>Below Basic</small></span></div>
+          <!-- 搜尋  end  --> 
+          <!-- *評量區域 start -->
+          <div class="col-xl-12 mb-5 classAssessmentBlock" id="">
+            <div class="row align-items-end justify-content-center justify-content-xxl-start">
+              <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-3 order-last order-xl-first mt-5 d-flex justify-content-center">
+                <div>
+                  <div class="chartBg-label">
+                    <div class="label-advanced bg-advanced"></div>
+                    <span>進階<small>Advanced</small></span></div>
+                  <div class="chartBg-label">
+                    <div class="label-proficient bg-proficient"></div>
+                    <span>熟練<small>Proficient</small></span></div>
+                  <div class="chartBg-label">
+                    <div class="label-basic bg-basic"></div>
+                    <span>基礎<small>Basic</small></span></div>
+                  <div class="chartBg-label">
+                    <div class="label-belowBasic bg-belowBasic"></div>
+                    <span>基礎之下<small>Below Basic</small></span></div>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-11 col-md-10 col-lg-9 col-xl-9 col-xxl-7 order-first order-xl-last">
-              <h4 class="h6 mb-3"><a href="#" role="button" data-bs-toggle="popover"><span class="icon"></span><span id="dimensionTitle">向度</span><i class="fa-regular fa-circle-question"></i></a></h4>
-              <div>
-                <canvas id="chart-schoolAssessment"></canvas>
+              <div class="col-sm-11 col-md-10 col-lg-9 col-xl-9 col-xxl-7 order-first order-xl-last">
+                <h4 class="h6 mb-3"><a href="#" role="button" data-bs-toggle="popover"><span class="icon"></span><span id="dimensionTitle">向度</span><i class="fa-regular fa-circle-question"></i></a></h4>
+                <div>
+                  <canvas id="chart-schoolAssessment"></canvas>
+                </div>
               </div>
             </div>
           </div>
+          <!-- *評量區域  end  --> 
         </div>
-        <!-- *評量區域  end  --> 
-      </div>
-      <!-- 班級中文閱讀能力適性診斷評量報表  end  --> 
-      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
-    </main>
+        <!-- 班級中文閱讀能力適性診斷評量報表  end  --> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
   </div>
-</div>
-<footer> </footer>
+	
+  <footer> </footer>
+</form>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -169,319 +173,351 @@
 <script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- chart.js --> 
-<script src="Content/widgets/Chart.js-master/chart.js"></script>
-<script src="Content/widgets/Chart.js-master/chart.umd.min.js"></script>
-<script src="Content/widgets/Chart.js-master/index.umd.min.js"></script>
+<script src="Content/widgets/Chart.js-master/chart.js"></script> 
+<script src="Content/widgets/Chart.js-master/chart.umd.min.js"></script> 
+<script src="Content/widgets/Chart.js-master/index.umd.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    }); 
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href*="DACC-schoolReport"]').addClass('active');  
-    }); 
-    
-    //chart plugins [customAxisTitle]
-    const customAxisTitle = {
-        id: 'customAxisTitle',
-        afterDraw: (chart, args, options) => { 
-            const {ctx, 
-                   chartArea: {top, bottom, left, right},
-                   scales: {x, y}
-                  } = chart;
-            
-            ctx.save();
-            
-            ctx.font = '15px';
-            ctx.fillStyle = Chart.defaults.color;
-            ctx.fillText(options.xText, right + 40, bottom + 5);
-            ctx.fillText(options.yText, left - 15, top - 25);
-            
-            ctx.restore();
-        }    
-    }
-    
-    //chart plugins [canvasAxislonger]
-    const canvasAxislonger = {
-        id: 'canvasAxislonger',
-        afterDraw: (chart, args, options) => { 
-            const {ctx, 
-                   chartArea: {top, bottom, left, right, height},
-                   scales: {x, y}
-                  } = chart;
-            
-            ctx.save();
-            
-            ctx.fillStyle = Chart.defaults.borderColor;
-            
-            //y上方線
-            ctx.fillRect(left - options.pixel, top - 15, 1, 15);
-            
-            //x軸右方線
-            let yLebelLength = chart.data.labels.length;
-            let yLebelHeight = height/yLebelLength;
-            for(let i=0; i<=yLebelLength; i++){
-                ctx.fillRect(right, Math.floor(bottom - yLebelHeight*i), 30, 1);    
-            }
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href*="DACC-schoolReport"]').addClass('active');
+  });
 
-            ctx.restore();
+  //chart plugins [customAxisTitle]
+  const customAxisTitle = {
+    id: 'customAxisTitle',
+    afterDraw: (chart, args, options) => {
+      const {
+        ctx,
+        chartArea: {
+          top,
+          bottom,
+          left,
+          right
+        },
+        scales: {
+          x,
+          y
         }
-    }
-    
-    //chart plugins [canvasBackgroundColor]
-    const canvasBackgroundColor = {
-        id: 'canvasBackgroundColor',
-        beforeDraw: (chart, args, options) => {
-            const {ctx, 
-                   chartArea: {top, bottom, left, right, width, height},
-                   scales: {x, y}
-                  } = chart;
-            
-            ctx.save();
-            
-            bgColors(         0,   options.Q1, 'rgba(255,  82,  82, .2)');
-            bgColors(options.Q1,   options.Q2, 'rgba(255, 145,  47, .2)');
-            bgColors(options.Q2,   options.Q3, 'rgba(218, 218,   0, .2)');
-            bgColors(options.Q3,         1000, 'rgba(  0, 213, 135, .2)');
-            
-            function bgColors(bgLow, bgHeigh, color){
-                ctx.fillStyle = color;
-                ctx.fillRect(x.getPixelForValue(bgLow), top - 15, 
-                             x.getPixelForValue(bgHeigh) - x.getPixelForValue(bgLow), height + 15);
+      } = chart;
 
-                ctx.restore();
-            }        
-        }
+      ctx.save();
+
+      ctx.font = '15px';
+      ctx.fillStyle = Chart.defaults.color;
+      ctx.fillText(options.xText, right + 40, bottom + 5);
+      ctx.fillText(options.yText, left - 15, top - 25);
+
+      ctx.restore();
     }
-    
-    //chart.js
-    const ctx = document.getElementById('chart-schoolAssessment');
-    
-    Chart.defaults.backgroundColor = '#ffffff';
-    Chart.defaults.borderColor     = '#c6c6c6';
-    Chart.defaults.color           = '#5c6466';
-    Chart.defaults.font.size       = 14;
-    
-    const myChart = new Chart(ctx, {
-        type: 'boxplot',
-        data: {
-            labels: [''],
-            datasets: [{
-                backgroundColor: '#ffffff', 
-                borderColor: '#000000',  
-                borderWidth: 1,  
-                padding: 0,
-                itemRadius: 0, 
-                outlierRadius: 0,
-                outlierBorderWidth: 0,
-                meanRadius: 0,
-                meanBorderWidth: 0,
-                data:[
-                    //最小值, 第1四分位數, 中位數, 第3四分位數, 最大值 (無論順序，會自動排小~大)
-                    /*[ 340,   390,       490,   540,        590],
-                    [ 280,   510,       610,   650,        700],
-                    [ 220,   260,       380,   410,        550],
-                    [ 320,   390,       490,   540,        700],
-                    [ 430,   500,       600,   650,        700]*/
-                ]
-            }]
+  }
+
+  //chart plugins [canvasAxislonger]
+  const canvasAxislonger = {
+    id: 'canvasAxislonger',
+    afterDraw: (chart, args, options) => {
+      const {
+        ctx,
+        chartArea: {
+          top,
+          bottom,
+          left,
+          right,
+          height
         },
-        options: {
-            indexAxis: 'y',
-            layout: {
-                padding: {
-                    top: 40,
-                    right: 80,
-                }
-            },
-            scales: {
-                x: {
-                    title: {
-                        display: false, 
-                    },  
-                    grid: {
-                        display: false
-                    },
-                    min: 0,
-                    max: 1000, 
-                    ticks: {
-                        stepSize: 100,
-                        callback: function(value, index, array) { 
-                            if( value == 0){
-                                return '';   
-                            }else{
-                                return value;    
-                            }  
-                        }
-                    }  
-                },
-                y: {
-                    title: {
-                        display: false,
-                    },
-                    grid: {
-                        tickColor: 'white'
-                    }
-                }  
-            },
-            plugins: {
-                legend: false,
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return[' 最 小 值 : ' + context.parsed.min, 
-                                   ' 上四分位: ' + context.parsed.q1, 
-                                   ' 中 位 數 : ' + context.parsed.median,
-                                   ' 下四分位: ' + context.parsed.q3,
-                                   ' 最 大 值 : ' + context.parsed.max];
-                        }
-                    }
-                },
-                customAxisTitle: {
-                    xText: 'SR值',
-                    yText: '班級',
-                },
-                canvasAxislonger: {
-                    pixel: 0
-                },
-                canvasBackgroundColor: {
-                    Q1: 251,
-                    Q2: 322,
-                    Q3: 384
-                }
-            }, 
+        scales: {
+          x,
+          y
+        }
+      } = chart;
+
+      ctx.save();
+
+      ctx.fillStyle = Chart.defaults.borderColor;
+
+      //y上方線
+      ctx.fillRect(left - options.pixel, top - 15, 1, 15);
+
+      //x軸右方線
+      let yLebelLength = chart.data.labels.length;
+      let yLebelHeight = height / yLebelLength;
+      for (let i = 0; i <= yLebelLength; i++) {
+        ctx.fillRect(right, Math.floor(bottom - yLebelHeight * i), 30, 1);
+      }
+
+      ctx.restore();
+    }
+  }
+
+  //chart plugins [canvasBackgroundColor]
+  const canvasBackgroundColor = {
+    id: 'canvasBackgroundColor',
+    beforeDraw: (chart, args, options) => {
+      const {
+        ctx,
+        chartArea: {
+          top,
+          bottom,
+          left,
+          right,
+          width,
+          height
         },
-        plugins: [customAxisTitle, canvasAxislonger, canvasBackgroundColor]
-    }); 
-   
-    //popovers
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    var popoverList = popoverTriggerList.map(function (popoverTriggerList) {
-        return new bootstrap.Popover(popoverTriggerList, {
-            container: 'body',
-            html: true,
-            placement: 'right',
-            trigger: 'hover focus',
-            content: function (){
-                switch ( $(this).parents('.classAssessmentBlock').attr('id') ){
-                        //整體閱讀理解能力
-                        case 'DACCall':
-                            return '是指讀者不僅能正確瞭解文章裡字、詞、句的意思，理解作者在文章裡所明白敘述的訊息，而且還能運用已有的生活經驗或知識，解讀作者在文章裡沒有直接敘述的訊息、觀點，並能掌握文章的大意主旨。';
-                            break;
-                            
-                        //字詞辨識    
-                        case 'DACCword': 
-                            return '理解一個字或詞在文句裡的意思。';
-                            break;
-                            
-                        //表層文意理解    
-                        case 'DACCsuperficial': 
-                            return '理解文章裡某一個句子所要表達的表層意思；或是理解文意，並能在文章裡找到特定的訊息。';
-                            break;
-                            
-                        //文意統整    
-                        case 'DACCtextual': 
-                            return '統整文章中整體的訊息，瞭解文章的大意及所要傳達的主旨。';
-                            break;
-                            
-                        //推論理解
-                        case 'DACCinference': 
-                            return '運用已有的生活經驗或知識，理解、推敲作者在文章裡沒有直接敘述的訊息或觀點。';
-                            break;
-                            
-                        //分析評鑑    
-                        case 'DACCanalysis': 
-                            return '建構對文章深層的理解，評斷文章的品質，掌握文章觀點及寫作手法，客觀地評估文章適當的標題和類別。';
-                            break;  
-                            
-                        default:
-                            break;   
-                    }
+        scales: {
+          x,
+          y
+        }
+      } = chart;
+
+      ctx.save();
+
+      bgColors(0, options.Q1, 'rgba(255,  82,  82, .2)');
+      bgColors(options.Q1, options.Q2, 'rgba(255, 145,  47, .2)');
+      bgColors(options.Q2, options.Q3, 'rgba(218, 218,   0, .2)');
+      bgColors(options.Q3, 1000, 'rgba(  0, 213, 135, .2)');
+
+      function bgColors(bgLow, bgHeigh, color) {
+        ctx.fillStyle = color;
+        ctx.fillRect(x.getPixelForValue(bgLow), top - 15,
+          x.getPixelForValue(bgHeigh) - x.getPixelForValue(bgLow), height + 15);
+
+        ctx.restore();
+      }
+    }
+  }
+
+  //chart.js
+  const ctx = document.getElementById('chart-schoolAssessment');
+
+  Chart.defaults.backgroundColor = '#ffffff';
+  Chart.defaults.borderColor = '#c6c6c6';
+  Chart.defaults.color = '#5c6466';
+  Chart.defaults.font.size = 14;
+
+  const myChart = new Chart(ctx, {
+    type: 'boxplot',
+    data: {
+      labels: [''],
+      datasets: [{
+        backgroundColor: '#ffffff',
+        borderColor: '#000000',
+        borderWidth: 1,
+        padding: 0,
+        itemRadius: 0,
+        outlierRadius: 0,
+        outlierBorderWidth: 0,
+        meanRadius: 0,
+        meanBorderWidth: 0,
+        data: [
+          //最小值, 第1四分位數, 中位數, 第3四分位數, 最大值 (無論順序，會自動排小~大)
+          /*[ 340,   390,       490,   540,        590],
+          [ 280,   510,       610,   650,        700],
+          [ 220,   260,       380,   410,        550],
+          [ 320,   390,       490,   540,        700],
+          [ 430,   500,       600,   650,        700]*/
+        ]
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      layout: {
+        padding: {
+          top: 40,
+          right: 80,
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: false,
+          },
+          grid: {
+            display: false
+          },
+          min: 0,
+          max: 1000,
+          ticks: {
+            stepSize: 100,
+            callback: function (value, index, array) {
+              if (value == 0) {
+                return '';
+              } else {
+                return value;
+              }
             }
+          }
+        },
+        y: {
+          title: {
+            display: false,
+          },
+          grid: {
+            tickColor: 'white'
+          }
+        }
+      },
+      plugins: {
+        legend: false,
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              return [' 最 小 值 : ' + context.parsed.min,
+                ' 上四分位: ' + context.parsed.q1,
+                ' 中 位 數 : ' + context.parsed.median,
+                ' 下四分位: ' + context.parsed.q3,
+                ' 最 大 值 : ' + context.parsed.max
+              ];
+            }
+          }
+        },
+        customAxisTitle: {
+          xText: 'SR值',
+          yText: '班級',
+        },
+        canvasAxislonger: {
+          pixel: 0
+        },
+        canvasBackgroundColor: {
+          Q1: 251,
+          Q2: 322,
+          Q3: 384
+        }
+      },
+    },
+    plugins: [customAxisTitle, canvasAxislonger, canvasBackgroundColor]
+  });
+
+  //popovers
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerList) {
+    return new bootstrap.Popover(popoverTriggerList, {
+      container: 'body',
+      html: true,
+      placement: 'right',
+      trigger: 'hover focus',
+      content: function () {
+        switch ($(this).parents('.classAssessmentBlock').attr('id')) {
+          //整體閱讀理解能力
+          case 'DACCall':
+            return '是指讀者不僅能正確瞭解文章裡字、詞、句的意思，理解作者在文章裡所明白敘述的訊息，而且還能運用已有的生活經驗或知識，解讀作者在文章裡沒有直接敘述的訊息、觀點，並能掌握文章的大意主旨。';
+            break;
+
+            //字詞辨識    
+          case 'DACCword':
+            return '理解一個字或詞在文句裡的意思。';
+            break;
+
+            //表層文意理解    
+          case 'DACCsuperficial':
+            return '理解文章裡某一個句子所要表達的表層意思；或是理解文意，並能在文章裡找到特定的訊息。';
+            break;
+
+            //文意統整    
+          case 'DACCtextual':
+            return '統整文章中整體的訊息，瞭解文章的大意及所要傳達的主旨。';
+            break;
+
+            //推論理解
+          case 'DACCinference':
+            return '運用已有的生活經驗或知識，理解、推敲作者在文章裡沒有直接敘述的訊息或觀點。';
+            break;
+
+            //分析評鑑    
+          case 'DACCanalysis':
+            return '建構對文章深層的理解，評斷文章的品質，掌握文章觀點及寫作手法，客觀地評估文章適當的標題和類別。';
+            break;
+
+          default:
+            break;
+        }
+      }
+    });
+  });
+
+  $(popoverTriggerList).click(function (e) {
+    e.preventDefault();
+  });
+
+
+  //demo下拉搜尋
+  $('#blockSearch select').each(function () {
+    $(this).change(function () {
+      let dimensionVal = $('#searchDimension option:selected').val(),
+        dimensionText = $('#searchDimension option:selected').text(),
+        gradeVal = $('#searchGrade option:selected').val(),
+        sessionVal = $('#searchSessions option:selected').val(),
+        sessionText = $('#searchSessions option:selected').text().replace(/\s/g, '');
+
+      //選擇[測驗場次]後，顯示時間
+      if ($(this).attr('id') == 'searchSessions') {
+        let sessionArray = sessionVal.split(',');
+        $('#searchStartDate').text(sessionArray[0]);
+        $('#searchEndDate').text(sessionArray[1]);
+      }
+
+      //選擇[測驗場次]後，是否有要更新[年級]的選單，使之僅顯示有參與的年級？請工程師判定後處理。
+      /*原因：怕無資料，使用者看無畫面更動會以為壞掉... 
+             或可解決辦法：跳出訊息alertModal(html)告知無資料*/
+
+      //選擇[向度選擇][年級][測驗場次]後，更新圖表
+      if (dimensionVal && gradeVal && sessionVal) {
+        //顯示圖表標題
+        $('.classAssessmentBlock').attr('id', dimensionVal);
+        $('#dimensionTitle').text(dimensionText);
+
+        //圖表背景
+        $.getJSON('Content/json/DACC-schoolReport/boxplotQ.json', function (data) {
+          var cutPoint = [];
+
+          $.each(data.data, function (index, item) {
+            if (item.dimension === dimensionVal) {
+              $.each(item.content, function (i, contentItem) {
+                if (contentItem.grade === parseInt(gradeVal)) {
+                  cutPoint = contentItem.cut;
+                  return false;
+                }
+              });
+            }
+          });
+
+          myChart.options.plugins.canvasBackgroundColor.Q1 = cutPoint[0];
+          myChart.options.plugins.canvasBackgroundColor.Q2 = cutPoint[1];
+          myChart.options.plugins.canvasBackgroundColor.Q3 = cutPoint[2];
+          myChart.update();
         });
-    }); 
-    
-    $(popoverTriggerList).click(function(e){
-        e.preventDefault();    
-    });
-    
-    
-    //demo下拉搜尋
-    $('#blockSearch select').each(function(){
-        $(this).change(function(){
-            let dimensionVal = $('#searchDimension option:selected').val(),
-                dimensionText = $('#searchDimension option:selected').text(),
-                gradeVal = $('#searchGrade option:selected').val(),
-                sessionVal = $('#searchSessions option:selected').val(),
-                sessionText = $('#searchSessions option:selected').text().replace(/\s/g,''); 
-            
-            //選擇[測驗場次]後，顯示時間
-            if( $(this).attr('id') == 'searchSessions' ){
-                let sessionArray = sessionVal.split(',');  
-                $('#searchStartDate').text(sessionArray[0]);
-                $('#searchEndDate').text(sessionArray[1]);
-            }
-            
-            //選擇[測驗場次]後，是否有要更新[年級]的選單，使之僅顯示有參與的年級？請工程師判定後處理。
-            /*原因：怕無資料，使用者看無畫面更動會以為壞掉... 
-                   或可解決辦法：跳出訊息alertModal(html)告知無資料*/
-            
-            //選擇[向度選擇][年級][測驗場次]後，更新圖表
-            if( dimensionVal && gradeVal && sessionVal ){
-                //顯示圖表標題
-                $('.classAssessmentBlock').attr('id', dimensionVal);
-                $('#dimensionTitle').text(dimensionText); 
-                
-                //圖表背景
-                $.getJSON('Content/json/testMgt-schoolReport/boxplotQ.json', function (data) {
-                    var cutPoint = [];
 
-                    $.each(data.data, function(index, item) {
-                      if (item.dimension === dimensionVal) {
-                        $.each(item.content, function(i, contentItem) {
-                          if (contentItem.grade === parseInt(gradeVal)) {
-                            cutPoint = contentItem.cut;
-                            return false;
-                          }
-                        });
-                      }
-                    });
-                    
-                    myChart.options.plugins.canvasBackgroundColor.Q1 = cutPoint[0];
-                    myChart.options.plugins.canvasBackgroundColor.Q2 = cutPoint[1];
-                    myChart.options.plugins.canvasBackgroundColor.Q3 = cutPoint[2];
-                    myChart.update();
-                });
-                
-                //demo 圖表數據 
-                $.getJSON('Content/json/testMgt-schoolReport/schoolClass-'+sessionText+'.json', function (data) {
-                    let classArray = [],
-                        scoreArray = [];
-                    
-                    $.each(data.data, function(index, item) {
-                        classArray.push(item.class);
-                        scoreArray.push(item.score);
-                    }); 
-                    
-                    myChart.data.labels = classArray; 
-                    myChart.data.datasets[0].data = scoreArray;
-                    myChart.options.plugins.canvasAxislonger.pixel = 0.5;
-                    myChart.options.maintainAspectRatio = false,
-                    myChart.canvas.parentNode.style.height = 70*classArray.length + 25+15+30 + 'px';
+        //demo 圖表數據 
+        $.getJSON('Content/json/DACC-schoolReport/schoolClass-' + sessionText + '.json', function (data) {
+          let classArray = [],
+            scoreArray = [];
 
-                    myChart.update();
-                });
-            }
-        });    
+          $.each(data.data, function (index, item) {
+            classArray.push(item.class);
+            scoreArray.push(item.score);
+          });
+
+          myChart.data.labels = classArray;
+          myChart.data.datasets[0].data = scoreArray;
+          myChart.options.plugins.canvasAxislonger.pixel = 0.5;
+          myChart.options.maintainAspectRatio = false,
+            myChart.canvas.parentNode.style.height = 70 * classArray.length + 25 + 15 + 30 + 'px';
+
+          myChart.update();
+        });
+      }
     });
-}); 
+  });
+});
+
 </script>
 </body>
 </html>

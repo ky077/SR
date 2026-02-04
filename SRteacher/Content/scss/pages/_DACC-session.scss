@@ -1,0 +1,106 @@
+.table-sessionLists{  
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.col-no				{ width:  4%; }
+                &.col-session		{ width: 12%; }
+                &.col-remark		{ width: 12%; }
+                &.col-startTime { width: 16%; }
+                &.col-endTime		{ width: 16%; }
+                &.col-testNum		{ width:  8%; }
+                &.col-doneNum		{ width:  8%; }
+                &.col-tools			{ width: 14%; }
+                &.col-state			{ width: 10%; }
+            }   
+        }
+    } 
+    > tbody{
+        > tr{
+            > td {
+            }   
+        }
+    }
+}
+
+[class*="btn-session"]{
+    line-height: 1;
+}
+
+.table-sessionStudentLists{
+    min-width: 730px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                  &.col-no			{ width:   8%; }
+                  &.col-grade		{ width:  10%; }
+                  &.col-class		{ width:  12%; }
+                  &.col-Cname		{ width:  13%; }
+                  &.col-Sid			{ width:  13%; }
+                  &.col-account	{	width:  34%; }  
+                  &.col-state		{ width:  10%; } 
+            }
+        }
+    }
+
+}
+
+.table-studentSet{
+    min-width: 730px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                  &.col-classCheck	{	width:  25%; }
+                  &.col-Cname				{ width:  17%; }
+                  &.col-Sid					{ width:  15%; }
+                  &.col-account			{ width:  43%; }  
+            }
+        }
+    }
+}
+
+.accordion-StudentSet{
+    .accordion-body{
+       /* border-color: transparent;*/
+        .table-responsive:not(:first-child){
+            /*margin-top: -1px;*/        
+        }
+        //.table:not(:first-child){
+            //margin-top: -1px;
+        //}
+    }
+}
+
+.table-collapse {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: $primary;
+    margin: -0.5rem -0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after{ 
+        content: "";
+        display: inline-block;
+        flex-shrink: 0; 
+        width: 1em;
+        height: 1em;
+        margin-left: 0.2em; 
+        background-image: var(--bs-accordion-btn-icon);
+        background-repeat: no-repeat;
+        background-size: var(--bs-accordion-btn-icon-width);
+        transition: var(--bs-accordion-btn-icon-transition);
+    }
+    &:hover{
+        color: shade-color($primary, 15%); 
+        &::after{ 
+            filter: brightness(0.85); 
+        }
+    }
+    
+}
+.table-collapse:not(.collapsed){
+    &::after{ 
+        transform: var(--bs-accordion-btn-icon-transform);
+    }
+}

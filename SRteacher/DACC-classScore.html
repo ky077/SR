@@ -9,136 +9,148 @@
 <meta name="generator" content="SmartReading">
 <title>SmartReading 教師端</title>
 <link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
-<!-- google fonts -->	
+<!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
-	
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
 <!-- widgets CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
-<header> </header>
-    
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
-    <main class="col-xl-10"> 
-      <!-- ------- ------- ------- ------- ------- ------- ------- -->
-      <h2>檢視班級成績</h2>
-      <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
-        <!-- 搜尋 start -->
-        <div class="col-xl-12 mb-3" id="blockSearch">
-          <div class="row g-2 align-items-center justify-content-between">
-            <div class="col-auto">
-              <div class="row gy-1">
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchClassGrade" class="col-form-label fs-8">班年級</label> </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClassGrade">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="0">全校班級</option>  
-                        <option value="4年級DEMO班">4年級DEMO班</option>  
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchSessions" class="col-form-label fs-8">場次</label> </div>
-                    <div class="col-auto">
-                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
-                        <option value="" disabled selected>請選擇...</option>
-                        <option value="2023/03/24,2023/06/30">2023 Demo</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-auto px-xxl-5">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"><label class="fs-8">時間：</label></div>
-                    <div class="col-auto"><span class="fs-8"><label id="searchStartDate">----/--/--</label>至<label id="searchEndDate">----/--/--</label></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <div class="row gy-2 align-items-center">
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto"> <label for="searchKeywords" class="col-form-label fs-7">搜尋</label> </div>
-                    <div class="col-auto">
-                      <div class="input-group">
-                        <div class="input-group-clear">
-                          <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
-                          <button class="btn btn-close" type="button"></button>
-                        </div>
-                        <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+<form>
+  <header> </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
+      <main class="col-xl-10"> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <h2>檢視班級成績</h2>
+        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+          <!-- 搜尋 start -->
+          <div class="col-xl-12 mb-3" id="blockSearch">
+            <div class="row g-2 align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="row gy-1">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchClassGrade" class="col-form-label fs-8">班年級</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClassGrade">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="0">全校班級</option>
+                          <option value="4年級DEMO班">4年級DEMO班</option>
+                        </select>
                       </div>
                     </div>
                   </div>
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchSessions" class="col-form-label fs-8">場次</label>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                          <option value="" disabled selected>請選擇...</option>
+                          <option value="2023/03/24,2023/06/30">2023 Demo</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto px-xxl-5">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label class="fs-8">時間：</label>
+                      </div>
+                      <div class="col-auto"><span class="fs-8">
+                        <label id="searchStartDate">----/--/--</label>
+                        至
+                        <label id="searchEndDate">----/--/--</label>
+                        </span></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-auto">
-                  <button type="button" class="btn btn-outline-primary bg-gradient">Excel 下載</button>
+              </div>
+              <div class="col-auto">
+                <div class="row gy-2 align-items-center">
+                  <div class="col-auto">
+                    <div class="row g-2 align-items-center">
+                      <div class="col-auto">
+                        <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
+                      </div>
+                      <div class="col-auto">
+                        <div class="input-group">
+                          <div class="input-group-clear">
+                            <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                            <button class="btn btn-close" type="button"></button>
+                          </div>
+                          <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-outline-primary bg-gradient">Excel 下載</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>  
-        <!-- 搜尋  end  --> 
-        <!-- 表格 start -->
-        <div class="col-xl-12 mb-5">
-          <table class="table table-bordered table-classScore" id="classScore">
-            <thead>
-              <tr>
-                <th scope="col" class="td-no">序號</th>
-                <th scope="col" class="td-date">測驗日期</th>
-                <th scope="col" class="td-grade">年級</th>
-                <th scope="col" class="td-class">班級</th>
-                <th scope="col" class="td-Sid">學號</th>
-                <th scope="col" class="td-Sname">姓名</th>
-                <th scope="col" class="td-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
-                <th scope="col" class="td-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
-                <th scope="col" class="td-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
-                <th scope="col" class="td-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
-                <th scope="col" class="td-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
-                <th scope="col" class="td-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
-                <th scope="col" class="td-PR">PR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="td-no">1</td>
-                <td class="td-date">2022/11/28</td>
-                <td class="td-grade">3</td>
-                <td class="td-class"><input class="form-control rounded-0 readonly" type="text" value="Test 01" disabled readonly></td>
-                <td class="td-Sid"><input class="form-control rounded-0 readonly" type="text" value="2010123" disabled readonly></td>
-                <td class="td-Sname"><input class="form-control rounded-0 readonly" type="text" value="張花花" disabled readonly></td>
-                <td class="td-DACCall">500</td>
-                <td class="td-DACCword">100</td>
-                <td class="td-DACCsuperficial">100</td>
-                <td class="td-DACCtextual">100</td>
-                <td class="td-DACCinference">100</td>
-                <td class="td-DACCanalysis">100</td>
-                <td class="td-PR">60</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- 搜尋  end  --> 
+          <!-- 表格 start -->
+          <div class="col-xl-12 mb-5">
+            <table class="table table-bordered table-classScore" id="classScore">
+              <thead>
+                <tr>
+                  <th scope="col" class="col-no">序號</th>
+                  <th scope="col" class="col-date">測驗日期</th>
+                  <th scope="col" class="col-grade">年級</th>
+                  <th scope="col" class="col-class">班級</th>
+                  <th scope="col" class="col-Sid">學號</th>
+                  <th scope="col" class="col-Sname">姓名</th>
+                  <th scope="col" class="col-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
+                  <th scope="col" class="col-DACCword"><span class="DACCicon-word">字</span>字詞辨識</th>
+                  <th scope="col" class="col-DACCsuperficial"><span class="DACCicon-superficial">表</span>表層文意理解</th>
+                  <th scope="col" class="col-DACCtextual"><span class="DACCicon-textual">文</span>文意統整</th>
+                  <th scope="col" class="col-DACCinference"><span class="DACCicon-inference">推</span>推論理解</th>
+                  <th scope="col" class="col-DACCanalysis"><span class="DACCicon-analysis">分</span>分析評鑑</th>
+                  <th scope="col" class="col-PR">PR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-no">1</td>
+                  <td class="col-date">2022/11/28</td>
+                  <td class="col-grade">3</td>
+                  <td class="col-class"><input class="form-control rounded-0 readonly" type="text" value="Test 01" disabled readonly></td>
+                  <td class="col-Sid"><input class="form-control rounded-0 readonly" type="text" value="2010123" disabled readonly></td>
+                  <td class="col-Sname"><input class="form-control rounded-0 readonly" type="text" value="張花花" disabled readonly></td>
+                  <td class="col-DACCall">500</td>
+                  <td class="col-DACCword">100</td>
+                  <td class="col-DACCsuperficial">100</td>
+                  <td class="col-DACCtextual">100</td>
+                  <td class="col-DACCinference">100</td>
+                  <td class="col-DACCanalysis">100</td>
+                  <td class="col-PR">60</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 表格  end  --> 
         </div>
-        <!-- 表格  end  --> 
-      </div>
-      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
-    </main>
+        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+      </main>
+    </div>
   </div>
-</div>
-    
-<footer> </footer>
+  <footer> </footer>
+</form>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -151,7 +163,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
@@ -190,13 +202,13 @@ $(document).ready(function() {
         language: {
           url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
         },
-        //ajax: 'Content/json/testMgt-classScore/classScore.json',
+        //ajax: 'Content/json/DACC-classScore/classScore.json',
         columnDefs: [
             {//序號
                 targets: 0,
                 title: '序號',
                 width: '4%',
-                className: 'td-no',
+                className: 'col-no',
                 type: 'numeric',
                 render: function (data, type, row, meta) {
                     return meta.row + 1; 
@@ -207,7 +219,7 @@ $(document).ready(function() {
                 title: '測驗日期',
                 data: 'date',
                 width: '9%',
-                className: 'td-date',
+                className: 'col-date',
                 type: 'date',
             },
             {//年級 
@@ -215,7 +227,7 @@ $(document).ready(function() {
                 title: '年級',
                 data: 'grade',
                 width: '4%',
-                className: 'td-grade',
+                className: 'col-grade',
                 type: 'numeric',
             },
             {//班級
@@ -223,7 +235,7 @@ $(document).ready(function() {
                 title: '班級',
                 data: 'class',
                 width: '8%',
-                className: 'td-class',
+                className: 'col-class',
                 type: 'string',
                 render: function (data, type, row, meta) {
                     return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
@@ -234,7 +246,7 @@ $(document).ready(function() {
                 title: '學號',
                 data: 'Sid',
                 width: '7%',
-                className: 'td-Sid',
+                className: 'col-Sid',
                 orderDataType: 'dom-text',
                 type: 'string',
                 render: function (data, type, row, meta) {
@@ -246,7 +258,7 @@ $(document).ready(function() {
                 title: '姓名',
                 data: 'Cname',
                 width: '8%',
-                className: 'td-Cname',
+                className: 'col-Cname',
                 orderDataType: 'dom-text',
                 type: 'string',
                 render: function (data, type, row, meta) {
@@ -258,7 +270,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
                 data: 'DACCall',
                 width: '12.5%',
-                className: 'td-DACCall',
+                className: 'col-DACCall',
                 type: 'numeric',
             },
             {//字詞辨識
@@ -266,7 +278,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-word">字</span>字詞辨識',
                 data: 'DACCword',
                 width: '8%',
-                className: 'td-DACCword',
+                className: 'col-DACCword',
                 type: 'numeric',
             },
             {//表層文意理解
@@ -274,7 +286,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-superficial">表</span>表層文意理解',
                 data: 'DACCsuperficial',
                 width: '10.5%',
-                className: 'td-DACCsuperficial',
+                className: 'col-DACCsuperficial',
                 type: 'numeric',
             },
             {//文意統整
@@ -282,7 +294,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-textual">文</span>文意統整',
                 data: 'DACCtextual',
                 width: '8%',
-                className: 'td-DACCtextual',
+                className: 'col-DACCtextual',
                 type: 'numeric',
             },
             {//推論理解
@@ -290,7 +302,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-inference">推</span>推論理解',
                 data: 'DACCinference',
                 width: '8%',
-                className: 'td-DACCinference',
+                className: 'col-DACCinference',
                 type: 'numeric',
             },
             {//分析評鑑
@@ -298,7 +310,7 @@ $(document).ready(function() {
                 title: '<span class="DACCicon-analysis">分</span>分析評鑑',
                 data: 'DACCanalysis',
                 width: '8%',
-                className: 'td-DACCanalysis',
+                className: 'col-DACCanalysis',
                 type: 'numeric',
             },
             {//PR
@@ -306,7 +318,7 @@ $(document).ready(function() {
                 title: 'PR',
                 data: 'PR',
                 width: '5%',
-                className: 'td-PR',
+                className: 'col-PR',
                 type: 'numeric',
             }
             
@@ -319,7 +331,7 @@ $(document).ready(function() {
     
     //demo
     let searchData = null; //當前要搜尋的json資料
-    $.getJSON('Content/json/testMgt-classScore/classScore.json', function (data) {
+    $.getJSON('Content/json/DACC-classScore/classScore.json', function (data) {
         searchData = data; 
         
         //寫入[班年級]下拉選項
@@ -367,7 +379,7 @@ $(document).ready(function() {
             let optionHtmlS = '';
             for(let i=0; i<uniqueSelectArrayS.length; i++){ 
                 //取得、寫入各場次下拉選項的時間value 
-                $.getJSON('Content/json/testMgt-classScore/sessions.json', function (data) {
+                $.getJSON('Content/json/DACC-classScore/sessions.json', function (data) {
                     let filterSession = $.grep(data.data, function(item) {
                         return item.session === uniqueSelectArrayS[i];
                     }); 
@@ -433,7 +445,7 @@ $(document).ready(function() {
             }
         }); 
     });   
-});  
+});  <!---->
 </script>
 </body>
 </html>

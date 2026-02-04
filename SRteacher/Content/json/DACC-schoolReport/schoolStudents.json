@@ -1,0 +1,67 @@
+{
+  "data": [ 
+    {
+      "standard" :  "Below Basic",
+      "class":      "2",
+      "Cname":      "張花一",
+      "SR":         "336",
+      "DACClevel":  "4"
+    },
+    {
+      "standard" :  "Basic",
+      "class":      "2",
+      "Cname":      "張花一",
+      "SR":         "336",
+      "DACClevel":  "4"
+    },
+    {
+      "standard" :  "Proficient",
+      "class":      "2",
+      "Cname":      "張花一",
+      "SR":         "336",
+      "DACClevel":  "4"
+    },
+    {
+      "standard" :  "Proficient",
+      "class":      "2",
+      "Cname":      "張花一",
+      "SR":         "336",
+      "DACClevel":  "4"
+    },
+    {
+      "standard" :  "Advanced",
+      "class":      "2",
+      "Cname":      "張花一",
+      "SR":         "336",
+      "DACClevel":  "4"
+    }, 
+    {
+      "standard" :  "Advanced",
+      "class":      "2",
+      "Cname":      "張花二",
+      "SR":         "336",
+      "DACClevel":  "4"
+    }, 
+    {
+      "standard" :  "Advanced",
+      "class":      "2",
+      "Cname":      "張花三",
+      "SR":         "336",
+      "DACClevel":  "4"
+    }, 
+    {
+      "standard" :  "Advanced",
+      "class":      "2",
+      "Cname":      "張花四",
+      "SR":         "336",
+      "DACClevel":  "4"
+    }, 
+    {
+      "standard" :  "Advanced",
+      "class":      "2",
+      "Cname":      "張花五",
+      "SR":         "336",
+      "DACClevel":  "4"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+.table-gradeStatistics{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.col-no							{  width:  4%; }
+                &.col-grade						{  width:  7%; }
+                &.col-average					{  width:  7%; }
+                &.col-DACCall					{  width: 16%; }
+                &.col-DACCword				{  width: 13%; }
+                &.col-DACCsuperficial	{  width: 14%; }
+                &.col-DACCtextual			{  width: 13%; }
+                &.col-DACCinference		{  width: 13%; }
+                &.col-DACCanalysis		{  width: 13%; } 
+            }   
+        }
+    }
+    > tfoot{
+        > tr{
+            > td{
+                background-color: #e8f8ff;    
+            }
+        }
+    }
+}
+
+.table-classStatistics{
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.col-no							{  width:  4%; }
+                &.col-class						{  width:  7%; }
+                &.col-average					{  width:  7%; }
+                &.col-DACCall					{  width: 16%; }
+                &.col-DACCword				{  width: 13%; }
+                &.col-DACCsuperficial	{  width: 14%; }
+                &.col-DACCtextual			{  width: 13%; }
+                &.col-DACCinference		{  width: 13%; }
+                &.col-DACCanalysis		{  width: 13%; }  
+            }   
+        }
+    }
+    > tfoot{
+        > tr{
+            &:nth-child(1)> td{  
+                background-color: #f6ffe8;   
+            } 
+            &:nth-child(2)> td{
+                background-color: #fffae8;  
+            } 
+        }
+    }
+}

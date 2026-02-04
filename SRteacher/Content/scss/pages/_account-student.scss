@@ -2,19 +2,19 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-index{  		width:  4%; }
-                &.row-account{  	width: 15%; }
-                &.row-password{  	width:  9%; } 
-                &.row-chineseName{  width:  9%; }
-                &.row-englishName{  width:  9%; } 
-                &.row-nationalId{   width:  9%; }
-                &.row-grade{  		width:  7%; }
-                &.row-class{ 		width:  7%; }
-                &.row-studentId{  	width:  7%; }
-                &.row-entryYear{  	width:  6%; }
-                &.row-language{    	width:  6%; } 
-                &.row-gender{  		width:  6%; }
-                &.row-status{  		width:  6%; }      
+                &.col-index				{  width:  4%; }
+                &.col-account			{  width: 15%; }
+                &.col-password		{  width:  9%; } 
+                &.col-chineseName	{  width:  9%; }
+                &.col-englishName	{  width:  9%; } 
+                &.col-nationalId	{  width:  9%; }
+                &.col-grade				{  width:  7%; }
+                &.col-class				{  width:  7%; }
+                &.col-studentId		{  width:  7%; }
+                &.col-entryYear		{  width:  6%; }
+                &.col-language		{  width:  6%; } 
+                &.col-gender			{  width:  6%; }
+                &.col-status			{  width:  6%; }      
             }   
         }
     }

@@ -2,23 +2,23 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-delete{     	 width:  4%; }
-                &.row-index{         width:  4%; }
-                &.row-school{     	 width: 16%; } 
-                &.row-year{       	 width: 10%; }
-                &.row-grade{      	 width: 10%; } 
-                &.row-class{      	 width: 14%; }
-                &.row-teacher{    	 width: 12%; } 
-                &.row-studentCount{  width: 14%; }
-                &.row-studentList{   width: 10%; } 
-                &.row-status{        width: 10%; }      
+                &.col-delete				{ width:  4%; }
+                &.col-index					{ width:  4%; }
+                &.col-school				{ width: 16%; } 
+                &.col-year					{ width: 10%; }
+                &.col-grade					{ width: 10%; } 
+                &.col-class					{ width: 14%; }
+                &.col-teacher				{	width: 12%; } 
+                &.col-studentCount	{ width: 14%; }
+                &.col-studentList		{	width: 10%; } 
+                &.col-status				{ width: 10%; }      
             }   
         }
     }
     > tbody{
         > tr{
             > td {
-                &.row-student-list{ 
+                &.col-studentList{ 
                     padding-left: .5rem;
                     padding-right: .5rem;
                 }      
@@ -97,15 +97,15 @@
    > thead, > tbody{
         > tr{
             >th, > td {
-                 &.row-check{     	width:  7%; }
-                 &.row-index{       width:  7%; }  
-                 &.row-account{    	width: 30%; }  
-                 &.row-password{   	width: 11%; }  
-                 &.row-chineseName{	width: 12%; }  
-                 &.row-grade{      	width: 10%; }  
-                 &.row-class{      	width: 10%; }  
-                 &.row-studentId{   width: 10%; }  
-                 &.row-entryYear{ 	width: 10%; }       
+                 &.col-check				{ width:  7%; }
+                 &.col-index				{ width:  7%; }  
+                 &.col-account			{ width: 30%; }  
+                 &.col-password			{ width: 11%; }  
+                 &.col-chineseName	{	width: 12%; }  
+                 &.col-grade				{ width: 10%; }  
+                 &.col-class				{ width: 10%; }  
+                 &.col-studentId		{ width: 10%; }  
+                 &.col-entryYear		{ width: 10%; }       
             }   
         }
     } 

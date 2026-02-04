@@ -129,9 +129,9 @@ function datatableInputPage(table){
     table.on('page.dt', function() {
         textGoPage.removeClass('invalid').val('');//清空頁碼輸入欄位 
         
-        if( table.parents('.modal').length > 0 ){ 
+        if( table.parents('.modal').length > 0 ){  console.log('modal');
             $('.modal').animate({scrollTop:0}, 0);   
-        }else{
+        }else{ console.log('html, body');
             $('html, body').animate({scrollTop: 0}, 0);    
         }
     });

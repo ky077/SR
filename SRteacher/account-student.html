@@ -19,12 +19,13 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -71,30 +72,30 @@
             <table class="table table-bordered table-account-student" id="accountStudentTable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-index">序號</th>
-                  <th scope="col" class="row-account">帳號/信箱</th>
-                  <th scope="col" class="row-password">密碼</th>
-                  <th scope="col" class="row-chineseName">中文姓名</th>
-                  <th scope="col" class="row-englishName">英文姓名</th>
-                  <th scope="col" class="row-nationalId">身份證號</th>
-                  <th scope="col" class="row-grade">預設年級</th>
-                  <th scope="col" class="row-class">預設班級</th>
-                  <th scope="col" class="row-studentId">學號</th>
-                  <th scope="col" class="row-entryYear">入學年</th>
-                  <th scope="col" class="row-language">語系</th>
-                  <th scope="col" class="row-gender">性別</th>
-                  <th scope="col" class="row-status">狀態</th>
+                  <th scope="col" class="col-index">序號</th>
+                  <th scope="col" class="col-account">帳號/信箱</th>
+                  <th scope="col" class="col-password">密碼</th>
+                  <th scope="col" class="col-chineseName">中文姓名</th>
+                  <th scope="col" class="col-englishName">英文姓名</th>
+                  <th scope="col" class="col-nationalId">身份證號</th>
+                  <th scope="col" class="col-grade">預設年級</th>
+                  <th scope="col" class="col-class">預設班級</th>
+                  <th scope="col" class="col-studentId">學號</th>
+                  <th scope="col" class="col-entryYear">入學年</th>
+                  <th scope="col" class="col-language">語系</th>
+                  <th scope="col" class="col-gender">性別</th>
+                  <th scope="col" class="col-status">狀態</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-index">1</td>
-                  <td class="row-account"><input type="text" class="form-control rounded-0" value="srtt01@smartreading.com"></td>
-                  <td class="row-password"><input type="text" class="form-control rounded-0" value="1234" autocomplete="off"></td>
-                  <td class="row-chineseName"><input type="text" class="form-control rounded-0" value="張花花"></td>
-                  <td class="row-englishName"><input type="text" class="form-control rounded-0" value=""></td>
-                  <td class="row-nationalId"><input type="text" class="form-control rounded-0" value="A123456789"></td>
-                  <td class="row-grade"><select class="form-select form-select-arrow-sm rounded-0">
+                  <td class="col-index">1</td>
+                  <td class="col-account"><input type="text" class="form-control rounded-0" value="srtt01@smartreading.com"></td>
+                  <td class="col-password"><input type="text" class="form-control rounded-0" value="1234" autocomplete="off"></td>
+                  <td class="col-chineseName"><input type="text" class="form-control rounded-0" value="張花花"></td>
+                  <td class="col-englishName"><input type="text" class="form-control rounded-0" value=""></td>
+                  <td class="col-nationalId"><input type="text" class="form-control rounded-0" value="A123456789"></td>
+                  <td class="col-grade"><select class="form-select form-select-arrow-sm rounded-0">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -108,19 +109,19 @@
                       <option value="11">11</option>
                       <option value="12">12</option>
                     </select></td>
-                  <td class="row-class"><input type="text" class="form-control rounded-0" value="Test 01"></td>
-                  <td class="row-studentId"><input type="text" class="form-control rounded-0" value="2020153"></td>
-                  <td class="row-entryYear"><input type="text" class="form-control rounded-0" value="2022-1"></td>
-                  <td class="row-language"><select class="form-select form-select-arrow-sm rounded-0">
+                  <td class="col-class"><input type="text" class="form-control rounded-0" value="Test 01"></td>
+                  <td class="col-studentId"><input type="text" class="form-control rounded-0" value="2020153"></td>
+                  <td class="col-entryYear"><input type="text" class="form-control rounded-0" value="2022-1"></td>
+                  <td class="col-language"><select class="form-select form-select-arrow-sm rounded-0">
                       <option value="TW">TW</option>
                       <option value="CN">CN</option>
                       <option value="EN">EN</option>
                     </select></td>
-                  <td class="row-gender"><select class="form-select form-select-arrow-sm rounded-0">
+                  <td class="col-gender"><select class="form-select form-select-arrow-sm rounded-0">
                       <option value="1">男</option>
                       <option value="2">女</option>
                     </select></td>
-                  <td class="row-status"><div class="form-check form-switch form-check-inline m-0">
+                  <td class="col-status"><div class="form-check form-switch form-check-inline m-0">
                       <input class="form-check-input" type="checkbox" role="switch">
                     </div></td>
                 </tr>
@@ -314,116 +315,115 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {    
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    });  
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href*="account-student"]').addClass('active'); 
-    }); 
-    
-	const list = $('#accountStudentTable');
-    //學生 datatables 
-	list.DataTable({
-        //serverSide: true,     // 開啟伺服端模式
-		processing: true,  
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer"pi>',
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: 'Content/json/account-student/account-student.json',
-        columnDefs: [
-            { //序號
-                targets: 0, 
-                title: '序號',
-                className: 'row-index',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//帳號/信箱 
-                targets: 1,
-                title: '帳號/信箱',
-                data: 'account',
-                className: 'row-account',
-                orderable: true,
-                orderDataType: 'dom-text',
-                type: 'string',
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                }
-            },
-            {//密碼
-                targets: 2, 
-                title: '密碼',
-                data: 'password',
-                className: 'row-password',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled  autocomplete="off">`;
-                }
-            },
-            {//中文姓名
-                targets: 3, 
-                title: '中文姓名',
-                data: 'chineseName',
-                className: 'row-chineseName',
-                orderable: true,
-                orderDataType: 'dom-text',
-                type: 'string',
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                } 
-            },
-            {//英文姓名
-                targets: 4, 
-                title: '英文姓名',
-                data: 'englishName',
-                className: 'row-englishName',
-                orderable: true,
-                orderDataType: 'dom-text',
-                type: 'string',
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                } 
-            },
-            {//身分證號
-                targets: 5, 
-                title: '身分證號',
-                data: 'nationalId',
-                className: 'row-nationalId',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                } 
-            },
-            {//預設年級
-                targets: 6, 
-                title: '預設年級',
-                data: 'grade',
-                className: 'row-grade',
-                orderable: true,
-                orderDataType: 'dom-select',
-                type: 'numeric',
-                render: function (data, type, row, meta) {
-                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href*="account-student"]').addClass('active');
+  });
+
+  const list = $('#accountStudentTable');
+  //學生 datatables 
+  list.DataTable({
+    //serverSide: true,     // 開啟伺服端模式
+    processing: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer"pi>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: 'Content/json/account-student/accountStudent.json',
+    columnDefs: [{ //序號
+        targets: 0,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
+        }
+      },
+      { //帳號/信箱 
+        targets: 1,
+        title: '帳號/信箱',
+        data: 'account',
+        className: 'col-account',
+        orderable: true,
+        orderDataType: 'dom-text',
+        type: 'string',
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //密碼
+        targets: 2,
+        title: '密碼',
+        data: 'password',
+        className: 'col-password',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled  autocomplete="off">`;
+        }
+      },
+      { //中文姓名
+        targets: 3,
+        title: '中文姓名',
+        data: 'chineseName',
+        className: 'col-chineseName',
+        orderable: true,
+        orderDataType: 'dom-text',
+        type: 'string',
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //英文姓名
+        targets: 4,
+        title: '英文姓名',
+        data: 'englishName',
+        className: 'col-englishName',
+        orderable: true,
+        orderDataType: 'dom-text',
+        type: 'string',
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //身分證號
+        targets: 5,
+        title: '身分證號',
+        data: 'nationalId',
+        className: 'col-nationalId',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //預設年級
+        targets: 6,
+        title: '預設年級',
+        data: 'grade',
+        className: 'col-grade',
+        orderable: true,
+        orderDataType: 'dom-select',
+        type: 'numeric',
+        render: function (data, type, row, meta) {
+          var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
@@ -437,298 +437,298 @@ $(document).ready(function() {
                                         <option value="12">12</option>
                                       </select>`);
 
-                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+          $select.find('option[value="' + data + '"]').attr('selected', 'selected');
 
-                    return $select[0].outerHTML;
-                }
-            },
-            {//預設班級
-                targets: 7, 
-                title: '預設班級',
-                data: 'class',
-                className: 'row-class',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                }
-            },
-            {//學號
-                targets: 8, 
-                title: '學號',
-                data: 'studentId',
-                className: 'row-studentId',
-                orderable: true,
-                orderDataType: 'dom-text',
-                type: 'string',
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                }
-            },
-            {//入學年
-                targets: 9, 
-                title: '入學年',
-                data: 'entryYear',
-                className: 'row-entryYear',
-                orderable: true,
-                orderDataType: 'dom-text',
-                type: 'string',
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                }
-            },
-            {//語系
-                targets: 10, 
-                title: '語系',
-                data: 'language',
-                className: 'row-language',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+          return $select[0].outerHTML;
+        }
+      },
+      { //預設班級
+        targets: 7,
+        title: '預設班級',
+        data: 'class',
+        className: 'col-class',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //學號
+        targets: 8,
+        title: '學號',
+        data: 'studentId',
+        className: 'col-studentId',
+        orderable: true,
+        orderDataType: 'dom-text',
+        type: 'string',
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //入學年
+        targets: 9,
+        title: '入學年',
+        data: 'entryYear',
+        className: 'col-entryYear',
+        orderable: true,
+        orderDataType: 'dom-text',
+        type: 'string',
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //語系
+        targets: 10,
+        title: '語系',
+        data: 'language',
+        className: 'col-language',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="TW">TW</option>
                                       <option value="CN">CN</option>
                                       <option value="EN">EN</option>
                                     </select>`);
 
-                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+          $select.find('option[value="' + data + '"]').attr('selected', 'selected');
 
-                    return $select[0].outerHTML;
-                }
-            },
-            {//性別
-                targets: 11, 
-                title: '性別',
-                data: 'gender',
-                className: 'row-gender',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+          return $select[0].outerHTML;
+        }
+      },
+      { //性別
+        targets: 11,
+        title: '性別',
+        data: 'gender',
+        className: 'col-gender',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="1">男</option>
                                       <option value="2">女</option>
                                     </select>`);
 
-                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+          $select.find('option[value="' + data + '"]').attr('selected', 'selected');
 
-                    return $select[0].outerHTML;
-                } 
-            },
-            {//狀態
-                targets: 12, 
-                title: '狀態',
-                data: 'status',
-                className: 'row-status',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    let status;
-                    switch (data) {
-						case 0:
-                            status = `<div class="form-check form-switch form-check-inline m-0">
+          return $select[0].outerHTML;
+        }
+      },
+      { //狀態
+        targets: 12,
+        title: '狀態',
+        data: 'status',
+        className: 'col-status',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          let status;
+          switch (data) {
+            case 0:
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
                                       </div>`;
-                            break 	
-                        case 1:
-                            status = `<div class="form-check form-switch form-check-inline m-0">
+              break
+            case 1:
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
                                       </div>`;
-                            break
-                        default:
-                            status = '';
-                            break 
-                    }
-                    return status;
-                } 
-            }         
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list);
+              break
+            default:
+              status = '';
+              break
+          }
+          return status;
         }
-    });
-    
-    //[修改資料]
-    $('#edit').click(function(){
-        //功能按鈕區、搜尋區 不可按
-        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true); 
-		
-		//頁碼隱藏(僅可編輯目前畫面的資料)
-        $('.datatables-custom-footer').hide(); 
-        
-        //[修改資料]-按鈕 顯示
-        $('#blockEditBtns').show(); 
-        
-        //表格排序 關閉
-        list.find('thead th, thead td')
-                .removeClass('sorting sorting sorting_asc sorting_desc')
-                .unbind('click');
-        
-        //表格欄位 可編輯
-        list.find('input, select').attr('disabled', false).removeClass('readonly'); 
-    });
-    
-    //[修改資料]>[取消]
-    $('#editCancel').click(function(){
-        //do something... (若有修改資料，按取消需還原為原資料)
-        
+      }
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list);
+    }
+  });
+
+  //[修改資料]
+  $('#edit').click(function () {
+    //功能按鈕區、搜尋區 不可按
+    $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
+
+    //頁碼隱藏(僅可編輯目前畫面的資料)
+    $('.datatables-custom-footer').hide();
+
+    //[修改資料]-按鈕 顯示
+    $('#blockEditBtns').show();
+
+    //表格排序 關閉
+    list.find('thead th, thead td')
+      .removeClass('sorting sorting sorting_asc sorting_desc')
+      .unbind('click');
+
+    //表格欄位 可編輯
+    list.find('input, select').attr('disabled', false).removeClass('readonly');
+  });
+
+  //[修改資料]>[取消]
+  $('#editCancel').click(function () {
+    //do something... (若有修改資料，按取消需還原為原資料)
+
+    //功能按鈕區、搜尋區 可按
+    $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+
+    //頁碼顯示
+    $('.datatables-custom-footer').show();
+
+    //[修改資料]-按鈕 隱藏
+    $('#blockEditBtns').hide();
+
+    //表格排序 開啟
+    list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+      .addClass('sorting')
+      .each(function () {
+        let i = $(this).index(),
+          c = $(this).attr('class').replace(' sorting', '');
+        list.DataTable().order.listener('.' + c, i);
+      });
+
+    //表格欄位 不可編輯
+    list.find('input, select').attr('disabled', true).addClass('readonly');
+
+    //若有錯誤紅框，則清除紅框
+    if (list.find('.invalid').length) {
+      list.find('.invalid').removeClass('invalid');
+    }
+  });
+
+  //[修改資料]>[確定修改]
+  $('#editOk').click(function () {
+    //do something... (驗證)
+    let editOk = true; //[true | false] [修改成功 | 修改失敗]
+
+    if (editOk == true) { //成功修改
+      alertModal('<div class="text-red">修改成功！</div>');
+
+      $('#alertModal').on('hidden.bs.modal', function () {
         //功能按鈕區、搜尋區 可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-		
-		//頁碼顯示
-        $('.datatables-custom-footer').show(); 
-		
-		//[修改資料]-按鈕 隱藏
-        $('#blockEditBtns').hide(); 
-        
+
+        //頁碼顯示
+        $('.datatables-custom-footer').show();
+
+        //[修改資料]-按鈕 隱藏
+        $('#blockEditBtns').hide();
+
         //表格排序 開啟
         list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
-                .addClass('sorting')
-                .each(function(){
-                    let i = $(this).index(),
-                        c = $(this).attr('class').replace(' sorting','');
-                    list.DataTable().order.listener('.' + c, i);
-                });
-        
+          .addClass('sorting')
+          .each(function () {
+            let i = $(this).index(),
+              c = $(this).attr('class').replace(' sorting', '');
+            list.DataTable().order.listener('.' + c, i);
+          });
+
         //表格欄位 不可編輯
         list.find('input, select').attr('disabled', true).addClass('readonly');
-        
+
         //若有錯誤紅框，則清除紅框
-		if (list.find('.invalid').length) {
-		  list.find('.invalid').removeClass('invalid');
-		}
-    });
-    
-    //[修改資料]>[確定修改]
-    $('#editOk').click(function(){
-		//do something... (驗證)
-        let editOk = true; //[true | false] [修改成功 | 修改失敗]
-  
-        if(editOk == true){//成功修改
-            alertModal('<div class="text-red">修改成功！</div>');
-            
-            $('#alertModal').on('hidden.bs.modal', function () {
-                //功能按鈕區、搜尋區 可按
-                $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-				
-                //頁碼顯示
-                $('.datatables-custom-footer').show(); 
-				
-				//[修改資料]-按鈕 隱藏
-                $('#blockEditBtns').hide();  
-                
-                //表格排序 開啟
-                list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
-                        .addClass('sorting')
-                        .each(function(){
-                            let i = $(this).index(),
-                                c = $(this).attr('class').replace(' sorting','');
-                            list.DataTable().order.listener('.' + c, i);
-                        });
-
-                //表格欄位 不可編輯
-                list.find('input, select').attr('disabled', true).addClass('readonly');
-
-                //若有錯誤紅框，則清除紅框
-				if (list.find('.invalid').length) {
-				  list.find('.invalid').removeClass('invalid');
-				}	  
-            });  
-        }else{//修改失敗 demo
-			alertModal('<div class="text-red">密碼請勿小於4碼！</div>', function () {
-    			const invalidInputs = list.find(`tbody tr:nth-child(1) .row-password input,
-												 tbody tr:nth-child(3) .row-password input`).addClass('invalid');
-
-				//如有錯誤欄位，則捲動至第一個
-				if (invalidInputs.length > 0) {
-					const firstInvalid = invalidInputs.first();
-
-					$('html, body').animate({
-						scrollTop: firstInvalid.offset().top - 120  
-					}, 500);
-				}
-			});
+        if (list.find('.invalid').length) {
+          list.find('.invalid').removeClass('invalid');
         }
-    });
-    
-    //[新增學生]
-    $('#insert').click(function(){
-        $('#insertModal').modal('show');
-    });
-    
-    //[新增學生]-批次新增[新增]disabled狀態
-    $('#inputCSV').change(function(){
-        if( $('#inputCSV').val() ){
-            $('#insertBat').attr('disabled', false);   
-        }    
-    });
-    
-    //[新增學生]-單筆新增、批次新增[新增]
-    $('#insertSin, #insertBat').click(function(){
-        let insertOk = true; //[true | false] [成功 | 失敗]
-        
-        //demo驗證
-        let errorText = '';
-        let validationField = '';
-        if($(this).attr('id') == 'insertSin'){
-            validationField = '#insertAccount, #insertPassword, #insertCname, #insertLang';
-        }else if($(this).attr('id') == 'insertBat'){
-            validationField = '#inputCSV'; 
-        } 
-        
-        //demo偵測欄位是否為空值、密碼#inputPassword是否小於4碼
-        $(validationField).each(function(){
-            if( $(this).val().trim() == '' ){
-                $(this).addClass('empty invalid');
-            }else if ($(this).attr('id') == 'insertPassword' && $(this).val().trim().length < 4){
-                $(this).removeClass('empty invalid').addClass('short invalid'); 
-            }else {
-                $(this).removeClass('empty short invalid');
-            }
-        });
-        
-        //demo錯誤訊息內容
-        if( $(validationField).hasClass('empty') ){
-             errorText += '*號為必填欄位<br>';    
+      });
+    } else { //修改失敗 demo
+      alertModal('<div class="text-red">密碼請勿小於4碼！</div>', function () {
+        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-password input,
+												 tbody tr:nth-child(3) .col-password input`).addClass('invalid');
+
+        //如有錯誤欄位，則捲動至第一個
+        if (invalidInputs.length > 0) {
+          const firstInvalid = invalidInputs.first();
+
+          $('html, body').animate({
+            scrollTop: firstInvalid.offset().top - 120
+          }, 500);
         }
-        if( $(validationField).hasClass('short') ){
-            errorText += '密碼不得小於4碼<br>'; 
-        }
-        
-        //demo是否有錯誤訊息、驗證是否成功
-        if (errorText != ''){
-            insertOk = false;  
-        }else{
-            insertOk = true;    
-        }
-        
-        if(insertOk == true){ //新增成功
-            $('#insertSinMsg, #insertBatMsg').html(''); 
-            $('#insertModal').find('input, select').removeClass('empty short invalid');
-            
-            alertModal('<div class="text-red">新增成功！</div>');
-            
-            $('#alertModal').on('hidden.bs.modal', function(){
-                //清空表單
-                $('#insertModal').find('input, select').val('');
-                $('#insertModal').find('input[type="radio"]').prop('checked', false);
-                
-                $('#insertBat').attr('disabled', true);    
-            });    
-        }else{//新增失敗
-            if($(this).attr('id') == 'insertSin'){
-                $('#insertSinMsg').html(errorText); 
-            }else if($(this).attr('id') == 'insertBat'){
-                $('#insertBatMsg').html('請檢查上傳表格內容是否有誤！');//demo訊息內容(前端無法檢查)
-            } 
-        }   
-    });   
-    
-    //[搜尋]
-    $('#btnSearch').click(function(){ 
-        list.DataTable().search( $('#searchKeywords').val() ).draw();    
+      });
+    }
+  });
+
+  //[新增學生]
+  $('#insert').click(function () {
+    $('#insertModal').modal('show');
+  });
+
+  //[新增學生]-批次新增[新增]disabled狀態
+  $('#inputCSV').change(function () {
+    if ($('#inputCSV').val()) {
+      $('#insertBat').attr('disabled', false);
+    }
+  });
+
+  //[新增學生]-單筆新增、批次新增[新增]
+  $('#insertSin, #insertBat').click(function () {
+    let insertOk = true; //[true | false] [成功 | 失敗]
+
+    //demo驗證
+    let errorText = '';
+    let validationField = '';
+    if ($(this).attr('id') == 'insertSin') {
+      validationField = '#insertAccount, #insertPassword, #insertCname, #insertLang';
+    } else if ($(this).attr('id') == 'insertBat') {
+      validationField = '#inputCSV';
+    }
+
+    //demo偵測欄位是否為空值、密碼#inputPassword是否小於4碼
+    $(validationField).each(function () {
+      if ($(this).val().trim() == '') {
+        $(this).addClass('empty invalid');
+      } else if ($(this).attr('id') == 'insertPassword' && $(this).val().trim().length < 4) {
+        $(this).removeClass('empty invalid').addClass('short invalid');
+      } else {
+        $(this).removeClass('empty short invalid');
+      }
     });
-    //[搜尋][X]重置
-    $('#searchKeywords + .btn-close').click(function(){ 
-        list.DataTable().search('').draw();                                    
-    }); 
-});    
+
+    //demo錯誤訊息內容
+    if ($(validationField).hasClass('empty')) {
+      errorText += '*號為必填欄位<br>';
+    }
+    if ($(validationField).hasClass('short')) {
+      errorText += '密碼不得小於4碼<br>';
+    }
+
+    //demo是否有錯誤訊息、驗證是否成功
+    if (errorText != '') {
+      insertOk = false;
+    } else {
+      insertOk = true;
+    }
+
+    if (insertOk == true) { //新增成功
+      $('#insertSinMsg, #insertBatMsg').html('');
+      $('#insertModal').find('input, select').removeClass('empty short invalid');
+
+      alertModal('<div class="text-red">新增成功！</div>');
+
+      $('#alertModal').on('hidden.bs.modal', function () {
+        //清空表單
+        $('#insertModal').find('input, select').val('');
+        $('#insertModal').find('input[type="radio"]').prop('checked', false);
+
+        $('#insertBat').attr('disabled', true);
+      });
+    } else { //新增失敗
+      if ($(this).attr('id') == 'insertSin') {
+        $('#insertSinMsg').html(errorText);
+      } else if ($(this).attr('id') == 'insertBat') {
+        $('#insertBatMsg').html('請檢查上傳表格內容是否有誤！'); //demo訊息內容(前端無法檢查)
+      }
+    }
+  });
+
+  //[搜尋]
+  $('#btnSearch').click(function () {
+    list.DataTable().search($('#searchKeywords').val()).draw();
+  });
+  //[搜尋][X]重置
+  $('#searchKeywords + .btn-close').click(function () {
+    list.DataTable().search('').draw();
+  });
+});
 </script>
 </body>
 </html>

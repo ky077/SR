@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 
@@ -117,9 +117,12 @@
                 <td class="td-book">單車迷魂記</td>
                 <td class="td-topic">系統題本</td>
                 <td class="td-scroeComp"><span class="userScore passed byTeacher">A+</span></td>
-                <td class="td-likeCmt"><div class="d-inline mx-1"><img src="Content/images/icon-thumbs.png" alt="" class="me-1"/>1</div>
-                  <div class="d-inline mx-1"><img src="Content/images/icon-comment.png" alt="" class="me-1"/>0</div></td>
-                <td class="td-tools"><button type="button" class="btn btn-outline-primary bg-gradient px-2" data-view="sysTopic"><img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看</button>
+                <td class="td-likeCmt">
+									<div class="d-inline mx-1"><img src="Content/images/icon-thumbs.png" alt="" class="me-1"/>1</div>
+                  <div class="d-inline mx-1"><img src="Content/images/icon-comment.png" alt="" class="me-1"/>0</div>
+								</td>
+                <td class="td-tools">
+									<button type="button" class="btn btn-outline-primary bg-gradient px-2" data-review="sysTopic"><img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看</button>
                   <div class="form-check form-check-inline form-check-thumb mx-3">
                     <input class="form-check-input" type="checkbox" value="" id="checkThumb1" checked>
                     <label class="form-check-label" for="checkThumb1">讚</label>
@@ -139,7 +142,7 @@
                 <td class="td-scroeComp"><div><img src="Content/images/RPList/myStudy-note-done.png" alt="">&nbsp;<img src="Content/images/RPList/myStudy-paint-done.png" alt="">&nbsp;<img src="Content/images/RPList/myStudy-audio.png" alt="">&nbsp;<img src="Content/images/RPList/myStudy-video.png" alt=""></div></td>
                 <td class="td-likeCmt"><div class="d-inline mx-1"><img src="Content/images/icon-thumbs.png" alt="" class="me-1"/>0</div>
                   <div class="d-inline mx-1"><img src="Content/images/icon-comment.png" alt="" class="me-1"/>0</div></td>
-                <td class="td-tools"><button type="button" class="btn btn-outline-primary bg-gradient px-2" data-view="myStudy"><img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看</button>
+                <td class="td-tools"><button type="button" class="btn btn-outline-primary bg-gradient px-2" data-review="myStudy"><img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看</button>
                   <div class="form-check form-check-inline form-check-thumb mx-3">
                     <input class="form-check-input" type="checkbox" value="" id="checkThumb2" checked>
                     <label class="form-check-label" for="checkThumb2">讚</label>
@@ -159,18 +162,20 @@
   </div>
 </div>
 
-<!-- Modal#viewModal [查看] start -->
-<div class="modal fade" id="viewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="viewModal" aria-hidden="true">
-  <div class="modal-dialog modal-approxfull modal-xl modal-dialog-centered">
-    <div class="modal-content rounded-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!-- Modal#reviewModal 我的操作[查看]  系統題本/教師命題/我的書房 start -->
+  <div class="modal fade modal-review" id="reviewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="load-body">...</div>
+        </div>
       </div>
-      <div class="modal-body"> ... </div>
     </div>
   </div>
-</div>
-<!-- Modal#viewModal [查看]  end  -->
+  <!-- Modal#reviewModal 我的操作[查看]  系統題本/教師命題/我的書房  end  -->
 
 <footer> </footer>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -185,7 +190,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
@@ -205,56 +210,56 @@ $(document).ready(function() {
     const list = $('#courseActivity');
     //datatables 
 	list.DataTable({
-        //serverSide: true,
-        order: [],  //取消默認排序icon
-        ordering: false,
-        autoWidth: false,
-        responsive: false,
+		//serverSide: true,
+		order: [],  //取消默認排序icon
+		ordering: false,
+		autoWidth: false,
+		responsive: false,
 		searching: true,
 		pageLength: 10,
 		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer clearfix"pi>',
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: 'Content/json/RP-courseActivity/courseActivity.json',
-        columnDefs: [
-            {//序號
-                targets: 0,
-                title: '序號',
-                width: '4%',
-                className: 'td-no',
-                type: 'numeric',
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//年級 
-                targets: 1,
-                title: '年級',
-                data: 'grade',
-                width: '6%',
-                className: 'td-grade',
-                type: 'numeric',
-            },
-            {//班級
-                targets: 2, 
-                title: '班級',
-                data: 'class',
-                width: '6%',
-                className: 'td-class',
-                type: 'string',
-            },
-            {//姓名
-                targets: 3, 
-                title: '姓名',
-                data: 'Cname',
-                width: '12%',
-                className: 'td-Cname',
-                orderDataType: 'dom-text',
-                type: 'string',
-            },
+		dom: '<"table-responsive"rt>'+
+		'<"datatables-custom-footer clearfix"pi>',
+		language: {
+			url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+		},
+		ajax: 'Content/json/RP-courseActivity/courseActivity.json',
+		columnDefs: [
+				{//序號
+						targets: 0,
+						title: '序號',
+						width: '4%',
+						className: 'td-no',
+						type: 'numeric',
+						render: function (data, type, row, meta) {
+								return meta.row + 1; 
+						} 
+				},
+				{//年級 
+						targets: 1,
+						title: '年級',
+						data: 'grade',
+						width: '6%',
+						className: 'td-grade',
+						type: 'numeric',
+				},
+				{//班級
+						targets: 2, 
+						title: '班級',
+						data: 'class',
+						width: '6%',
+						className: 'td-class',
+						type: 'string',
+				},
+				{//姓名
+						targets: 3, 
+						title: '姓名',
+						data: 'Cname',
+						width: '12%',
+						className: 'td-Cname',
+						orderDataType: 'dom-text',
+						type: 'string',
+				},
 			{//書名
                 targets: 4, 
                 title: '書名',
@@ -329,7 +334,7 @@ $(document).ready(function() {
                 className: 'td-tools',
                 type: 'string',
                 render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-primary bg-gradient px-2" data-view="${row.topic}">
+                    return `<button type="button" class="btn btn-outline-primary bg-gradient px-2" data-review="${row.topic}">
 							  <img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看
 							</button>
 							<div class="form-check form-check-inline form-check-thumb mx-3">
@@ -351,142 +356,29 @@ $(document).ready(function() {
     });
 	
 	//[查看]
-	list.on('click', '[data-view]', function (){
-        var _target = $(this).attr('data-view');
+	list.on('click', '[data-review]', function (){
+        var _target = $(this).attr('data-review');
 		
-		$('#viewModal').on('shown.bs.modal', function (e) {
+		$('#reviewModal').on('shown.bs.modal', function (e) {
 			switch (_target) {
 					case "sysTopic":
-						$(this).find('.modal-body').load('fillAssessment-bySystem.html');
+						$(this).find('.load-body').load('fillAssessment-bySystem.html');
 					break;
 						
 					case "myStudy":
-						$(this).find('.modal-body').load('myStudy.html');
+						$(this).find('.load-body').load('myStudy.html');
 					break;
 					
 					default:
 					break;
 			}
 		}).modal('show');
-    });
-	
-    
-    //demo
-    /*let searchData = null; //當前要搜尋的json資料
-    $.getJSON('Content/json/testMgt-classScore/classScore.json', function (data) {
-        searchData = data; 
-        
-        //寫入[班年級]下拉選項
-        let selectArrayCG = [];
-        $.each(data.data, function(index, item) { 
-            selectArrayCG.push(item.grade+','+item.class);
-        }); 
-        var uniqueSelectArrayCG = [...new Set(selectArrayCG)];
-
-        let selectHtmlCG = '';
-        for(let i=0; i<uniqueSelectArrayCG.length; i++){
-            selectHtmlCG += '<option value="' + uniqueSelectArrayCG[i] + '">'+ uniqueSelectArrayCG[i].split(',')[0] +'年'+ uniqueSelectArrayCG[i].split(',')[1] +'班</option>';   
-        }
-
-        $('#searchClassGrade').html(`<option value="" disabled selected>請選擇...</option>
-                                     <option value="0">全校班級</option>` + 
-                                     selectHtmlCG);
-        
-        //選擇[班年級]
-        $('#searchClassGrade').change(function(){
-            //取得符合選擇的[班年級]json資料
-            let filterClassGrade;
-            
-            if( $(this).val() == '0' ){//全校班級
-                filterClassGrade = data.data;
-            }else{
-                let classGradeArray = $(this).val().split(',');
-                let gradeVal = classGradeArray[0], 
-                    classVal = classGradeArray[1]; 
-
-                filterClassGrade = $.grep(data.data, function(item) {
-                    return item.grade === gradeVal && item.class === classVal;
-                }); 
-            }
-            
-            searchData = filterClassGrade;
-            
-            //寫入[場次]下拉選項
-            let selectArrayS = [];
-            $.each(filterClassGrade, function(index, item) { 
-                selectArrayS.push(item.session);
-            }); 
-            var uniqueSelectArrayS = [...new Set(selectArrayS)];
-
-            let optionHtmlS = '';
-            for(let i=0; i<uniqueSelectArrayS.length; i++){ 
-                //取得、寫入各場次下拉選項的時間value 
-                $.getJSON('Content/json/testMgt-classScore/sessions.json', function (data) {
-                    let filterSession = $.grep(data.data, function(item) {
-                        return item.session === uniqueSelectArrayS[i];
-                    }); 
-
-                    optionHtmlS += '<option value="' + filterSession[0].startDate + ','+ filterSession[0].endDate + '">' + uniqueSelectArrayS[i] + '</option>'; 
-
-                    $('#searchSessions').html(`<option value="" disabled selected>請選擇...</option>` + 
-                                               optionHtmlS);
-                }); 
-            }
-            
-            //選擇[場次]
-            $('#searchSessions').change(function(){
-                //顯示時間
-                let SessionsArray = $('#searchSessions').val().split(',');
-                $('#searchStartDate').text(SessionsArray[0]);
-                $('#searchEndDate').text(SessionsArray[1]); 
-
-                //取得符合選擇的[場次]json資料
-                let sessionVal = $(this).find('option:selected').text(); 
-                
-                let matchSession = $.grep(filterClassGrade, function(item) {
-                    return item.session === sessionVal;
-                }); 
-                
-                //datatable
-                list.DataTable().clear();
-                list.DataTable().rows.add( matchSession ).draw(); 
-                
-                searchData = matchSession;
-            });
-        });
-
-        //[搜尋]關鍵字
-        $('#btnSearch').click(function(){
-            let classGradeVal = $('#searchClassGrade option:selected').val(),
-                sessionsVal   = $('#searchSessions option:selected').val(),
-                keywordsVal   = $('#searchKeywords').val().trim();
-            
-            list.DataTable().clear();
-
-            if( !classGradeVal && !sessionsVal && !keywordsVal){
-                alertModal('<div class="text-red">請選擇班年級、場次<br>或輸入關鍵字。</div>');
-            }else if( !classGradeVal && !sessionsVal && keywordsVal){
-                list.DataTable().rows.add(searchData.data)
-                                .search( $('#searchKeywords').val() ).draw();
-            }else{
-                list.DataTable().rows.add(searchData)
-                                .search( $('#searchKeywords').val() ).draw();
-            }
-        });
-        
-        //[搜尋][X]重置
-        $('#searchKeywords + .btn-close').click(function(){ 
-            let classGradeVal = $('#searchClassGrade option:selected').val(),
-                sessionsVal   = $('#searchSessions option:selected').val(),
-                keywordsVal   = $('#searchKeywords').val().trim();
-            
-            if( !classGradeVal && !sessionsVal && !keywordsVal){
-                list.DataTable().clear().draw();
-            }else{
-                $('#btnSearch').trigger('click');     
-            }
-        }); 
-    });  */ 
+		
+		//#reviewModal 關閉時清空
+		$('#reviewModal').on('hidden.bs.modal', function () {
+			$(this).find('.load-body').html('');
+		});
+  });
 });  
 </script>
 </body>

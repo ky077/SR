@@ -25,7 +25,7 @@
 			h2{
 				font-size: 1rem;
 				display: inline-block;
-				margin: 1rem auto;
+				//margin: 1rem auto;
 				background-color: rgba($black, .5);
 				border-radius: 5em;	
 				color: #FFF;
@@ -37,7 +37,7 @@
 .myStudy{
 	font-size: .8rem;
 	color: $gray-800;
-	background-color: $body-bg;
+	background-color: $view-body-color;
 	padding: .5rem 0;
 	.myStudy-block{ 
 		background-color: #FFF;
@@ -48,6 +48,9 @@
 		@media screen and (min-width: 992px) {
 		overflow: hidden;
 		}
+	}
+	.myStudy-remark{
+		filter: grayscale(1);
 	}
 	
 	.myStudy-title{

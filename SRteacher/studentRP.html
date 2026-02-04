@@ -482,5 +482,10 @@
 								$('.assessment-select').selectpicker();
 							 });
 	});	
+	
+	//#reviewModal 關閉時清空
+	$('#reviewModal').on('hidden.bs.modal', function () {
+		$(this).find('.load-body').html('');
+	});
 })();
 </script>

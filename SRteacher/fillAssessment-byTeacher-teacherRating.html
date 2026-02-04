@@ -1,3 +1,30 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="SmartReading">
+<meta name="generator" content="SmartReading">
+<title>SmartReading 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+
+<body>
+
 <div class="fillAssessment"> 
   <!-- fillAssessment-header START/... -->
   <div class="fillAssessment-header">
@@ -11,7 +38,7 @@
               </div>
               <div class="col-8">
                 <div class="fillAssessment-title__text">
-                  <h1>教師命題</h1>
+                  <h1 class="fillAssessment-title__text-title">教師命題</h1>
                 </div>
               </div>
             </div>
@@ -272,7 +299,7 @@
   <!-- fillAssessment-footer START/... -->
   <div class="fillAssessment-footer">
     <div class="container">
-      <div class="fillAssessment-btns text-center">
+      <div class="fillAssessment-btns">
         <button type="button" class="btn btn-outline-primary m-1" id="modalCancel">取消</button>
         <button type="button" class="btn btn-primary m-1" id="modalConfirm">確定</button>
       </div>
@@ -291,3 +318,6 @@ $('#modalConfirm').click(function(){
 	$('#reviewModal').modal('hide');
 });
 </script>
+	
+	</body>
+</html>

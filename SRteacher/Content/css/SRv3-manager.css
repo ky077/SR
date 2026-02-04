@@ -514,9 +514,10 @@ height:95px;
 .fillAssessment-header .fillAssessment-title { padding-top: 1rem; padding-bottom: 1rem; }
 .fillAssessment-header .fillAssessment-title > .row { align-items: center; }
 .fillAssessment-header .fillAssessment-title .fillAssessment-title__img img { width: auto; height: auto; display: block; margin: auto; }
-.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1 { font-size: 1rem; font-weight: 500; margin-bottom: 0; display: flex; align-items: center; }
-.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1 .userScore { margin-left: 0.25rem; }
-.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1 > small { display: block; font-size: .8rem; color: #2E3233; margin-top: 1rem; }
+.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1, .fillAssessment-header .fillAssessment-title .fillAssessment-title__text .fillAssessment-title__text-title { font-size: 1rem; font-weight: 500; margin-bottom: 0; display: flex; align-items: center; }
+.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1 .userScore, .fillAssessment-header .fillAssessment-title .fillAssessment-title__text .fillAssessment-title__text-title .userScore { margin-left: 0.25rem; }
+.fillAssessment-header .fillAssessment-title .fillAssessment-title__text > h1 > small, .fillAssessment-header .fillAssessment-title .fillAssessment-title__text .fillAssessment-title__text-title > small { display: block; font-size: .8rem; color: #2E3233; margin-top: 1rem; }
+.fillAssessment-header .fillAssessment-title .fillAssessment-title__text .fillAssessment-title__text-name { font-size: 1rem; font-weight: 500; margin-top: .25rem; }
 .fillAssessment-header .fillAssessment-book { background-color: #F9F9F9; padding: 1rem; }
 .fillAssessment-header .fillAssessment-book .fillAssessment-book__front { overflow: hidden; border: 1px solid #C6C6C6; width: 100%; height: 0; padding-bottom: calc(100%*(222/212)); }
 .fillAssessment-header .fillAssessment-book .fillAssessment-book__front img { width: 100%; height: auto; }
@@ -525,6 +526,7 @@ height:95px;
 .fillAssessment-header .fillAssessment-book .fillAssessment-book__intro > p { font-size: .8rem; width: 100%; color: #5C6466; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; margin-bottom: .25rem; }
 
 .fillAssessment-footer { margin-top: 2rem; margin-bottom: 2rem; }
+.fillAssessment-footer .fillAssessment-btns { display: flex; align-items: center; justify-content: center; }
 
 .fillAssessment-section { margin-bottom: 2rem; }
 .fillAssessment-section .fillAssessment-section__header { background-color: #F1F1F1; font-size: .9em; font-weight: 400; color: #5C6466; padding: .75rem; }
@@ -538,6 +540,7 @@ height:95px;
 .questionType.summary { padding-left: 0; padding-right: 0; }
 .questionType.summary .questionType__stem { padding-top: 0; padding-bottom: 0; margin-bottom: 0; }
 .questionType.summary .questionType__area > textarea { font-size: .8rem; min-height: 250px; }
+.questionType.summary .questionType__remark { filter: grayscale(1); }
 
 .questionType.reflection { padding-left: 0; padding-right: 0; }
 .questionType.reflection .questionType__stem { padding-top: 0; padding-bottom: 0; margin-bottom: 0; }
@@ -599,11 +602,12 @@ height:95px;
 .page-banner.myStudy { background-image: url(../images/myStudy/banner-bg.jpg); background-position: center top; background-size: 100% 120%; margin-bottom: 0; }
 .page-banner.myStudy > .container .page-banner__text { min-height: 210px; text-align: center; }
 .page-banner.myStudy > .container .page-banner__text h1 { font-size: 1.2rem; font-weight: 500; margin-top: 0; padding-top: 1rem; color: #FFF; text-align: center; }
-.page-banner.myStudy > .container .page-banner__text h2 { font-size: 1rem; display: inline-block; margin: 1rem auto; background-color: rgba(0, 0, 0, 0.5); border-radius: 5em; color: #FFF; padding: .5rem .75rem; }
+.page-banner.myStudy > .container .page-banner__text h2 { font-size: 1rem; display: inline-block; background-color: rgba(0, 0, 0, 0.5); border-radius: 5em; color: #FFF; padding: .5rem .75rem; }
 
-.myStudy { font-size: .8rem; color: #5C6466; background-color: #fff; padding: .5rem 0; }
+.myStudy { font-size: .8rem; color: #5C6466; background-color: #edf1f4; padding: .5rem 0; }
 .myStudy .myStudy-block { background-color: #FFF; padding: 1rem; margin: .5rem 0; height: auto; overflow: visible; }
 @media screen and (min-width: 992px) { .myStudy .myStudy-block { overflow: hidden; } }
+.myStudy .myStudy-remark { filter: grayscale(1); }
 .myStudy .myStudy-title { text-align: center; font-weight: 500; width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; }
 @media screen and (min-width: 992px) { .myStudy .myStudy-title { height: 100%; } }
 .myStudy .myStudy-title > h2 { margin: 0; font-size: 1rem; font-weight: 500; color: #FFF; }

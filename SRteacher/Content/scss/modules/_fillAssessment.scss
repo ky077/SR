@@ -22,7 +22,7 @@
 			}
 		}
 		.fillAssessment-title__text{
-			>h1{
+			>h1, .fillAssessment-title__text-title{
 				font-size: 1rem;
 				font-weight: 500;
 				margin-bottom: 0;
@@ -37,6 +37,11 @@
 					color: $body-color;
 					margin-top: 1rem;
 				}
+			}
+			.fillAssessment-title__text-name{
+				font-size: 1rem;
+				font-weight: 500;
+				margin-top: .25rem;
 			}
 		}
 	}
@@ -83,6 +88,9 @@
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	.fillAssessment-btns{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
 //*fillAssessment section template*/
@@ -136,6 +144,10 @@
 			font-size: .8rem;
 			min-height: 250px;
 		}
+	}
+	.questionType__remark{
+		filter: grayscale(1);
+		
 	}
 }
 .questionType.reflection{

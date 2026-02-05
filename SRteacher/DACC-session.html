@@ -41,10 +41,10 @@
           <div class="col-xxl-7 mb-3" id="blockSearch">
             <div class="row g-2 align-items-center justify-content-end">
               <div class="col-auto">
-                <label for="searchState" class="col-form-label fs-7">狀態</label>
+                <label for="searchStatus" class="col-form-label fs-7">狀態</label>
               </div>
               <div class="col-auto">
-                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchState">
+                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus">
                   <option value="" selected>全部</option>
                   <option value="ON">ON</option>
                   <option value="OFF">OFF</option>
@@ -70,30 +70,30 @@
             <table class="table table-bordered table-session" id="sessionTable">
               <thead>
                 <tr>
-                  <th scope="col" class="col-no">序號</th>
+                  <th scope="col" class="col-index">序號</th>
                   <th scope="col" class="col-session">場次</th>
                   <th scope="col" class="col-remark">備註</th>
-                  <th scope="col" class="col-startTime">開始時間</th>
-                  <th scope="col" class="col-endTime">結束時間</th>
-                  <th scope="col" class="col-testNum">測驗人數</th>
-                  <th scope="col" class="col-doneNum">完成人數</th>
-                  <th scope="col" class="col-tools">功能操作</th>
-                  <th scope="col" class="col-state">狀態</th>
+                  <th scope="col" class="col-startDatetime">開始時間</th>
+                  <th scope="col" class="col-endDatetime">結束時間</th>
+                  <th scope="col" class="col-testCount">測驗人數</th>
+                  <th scope="col" class="col-completedCount">完成人數</th>
+                  <th scope="col" class="col-tool">功能操作</th>
+                  <th scope="col" class="col-status">狀態</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-no">1</td>
+                  <td class="col-index">1</td>
                   <td class="col-sessio"><input type="text" class="form-control rounded-0 readonly" value="2020-21" disabled readonly></td>
                   <td class="col-remark"><input type="text" class="form-control rounded-0 readonly" value="淡水國小" disabled readonly></td>
-                  <td class="col-startTime">2020/09/01 08:00</td>
-                  <td class="col-endTime">2020/12/31 17:30</td>
-                  <td class="col-testNum">22</td>
-                  <td class="col-doneNum">22</td>
-                  <td class="col-tools"><button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentSet" data-bs-toggle="tooltip"><img src="Content/images/icon-user-add.svg" alt="button studentSet image"/></button>
+                  <td class="col-startDatetime">2020/09/01 08:00</td>
+                  <td class="col-endDatetime">2020/12/31 17:30</td>
+                  <td class="col-testCount">22</td>
+                  <td class="col-completedCount">22</td>
+                  <td class="col-tool"><button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentSet" data-bs-toggle="tooltip"><img src="Content/images/icon-user-add.svg" alt="button studentSet image"/></button>
                     <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentLists" data-bs-toggle="tooltip"><img src="Content/images/icon-paper.svg" alt="button studentLists image"/></button>
                     <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-sessionSet" data-bs-toggle="tooltip"><img src="Content/images/icon-tool.svg" alt="button sessionSet image"/></button></td>
-                  <td class="col-state"><div class="form-check form-switch">
+                  <td class="col-status"><div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" role="switch">
                     </div></td>
                 </tr>
@@ -146,19 +146,19 @@
               </div>
             </div>
             <div class="mb-3 row align-items-center">
-              <label for="insertStartTime" class="col-sm-4 col-form-label text-sm-end">開始時間<span class="text-red">*</span></label>
+              <label for="insertStartDatetime" class="col-sm-4 col-form-label text-sm-end">開始時間<span class="text-red">*</span></label>
               <div class="col-sm-6">
-                <input type="datetime-local" class="form-control rounded-0" id="insertStartTime">
+                <input type="datetime-local" class="form-control rounded-0" id="insertStartDatetime">
               </div>
             </div>
             <div class="mb-3 row align-items-center">
-              <label for="insertEndTime" class="col-sm-4 col-form-label text-sm-end">結束時間<span class="text-red">*</span></label>
+              <label for="insertEndDatetime" class="col-sm-4 col-form-label text-sm-end">結束時間<span class="text-red">*</span></label>
               <div class="col-sm-6">
-                <input type="datetime-local" class="form-control rounded-0" id="insertEndTime">
+                <input type="datetime-local" class="form-control rounded-0" id="insertEndDatetime">
               </div>
             </div>
             <div class="mb-3 row align-items-center">
-              <label for="insertState" class="col-sm-4 col-form-label text-sm-end">狀態</label>
+              <label for="insertStatus" class="col-sm-4 col-form-label text-sm-end">狀態</label>
               <div class="col-sm-6">
                 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" role="switch">
@@ -221,8 +221,8 @@
                                 </span>
                                 <button class="table-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#studentSet4-1-tbody" aria-expanded="false" aria-controls="studentSet4-1-tbody">TEST 01班 </button>
                               </th>
-                              <th scope="col" class="col-Cname">姓名</th>
-                              <th scope="col" class="col-Sid">學號</th>
+                              <th scope="col" class="col-studentName">姓名</th>
+                              <th scope="col" class="col-studentId">學號</th>
                               <th scope="col" class="col-account">帳號/信箱</th>
                             </tr>
                           </thead>
@@ -231,8 +231,8 @@
                               <td class="col-classCheck"><div class="SRform-check-red">
                                   <input class="form-check-input" type="checkbox" name="check">
                                 </div></td>
-                              <td class="col-Cname"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
-                              <td class="col-Sid"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
+                              <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
+                              <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
                               <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
                             </tr>
                           </tbody>
@@ -314,33 +314,33 @@
                 <table class="table table-bordered table-sessionStudentList" id="sessionStudentList">
                   <thead>
                     <tr>
-                      <th scope="col" class="col-no">序號</th>
+                      <th scope="col" class="col-index">序號</th>
                       <th scope="col" class="col-grade">年級</th>
                       <th scope="col" class="col-class">班級</th>
-                      <th scope="col" class="col-Cname">姓名</th>
-                      <th scope="col" class="col-Sid">學號</th>
+                      <th scope="col" class="col-studentName">姓名</th>
+                      <th scope="col" class="col-studentId">學號</th>
                       <th scope="col" class="col-account">帳號/信箱</th>
-                      <th scope="col" class="col-state">狀態</th>
+                      <th scope="col" class="col-status">狀態</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="col-no">1</td>
+                      <td class="col-index">1</td>
                       <td class="col-grade"><input type="text" class="form-control rounded-0 readonly" value="5" disabled readonly></td>
                       <td class="col-class"><input type="text" class="form-control rounded-0 readonly" value="Test 01" disabled readonly></td>
-                      <td class="col-Cname"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
-                      <td class="col-Sid"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
+                      <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
+                      <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
                       <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
-                      <td class="col-state"><span class="text-red">未完成</span></td>
+                      <td class="col-status"><span class="text-red">未完成</span></td>
                     </tr>
                     <tr>
-                      <td class="col-no">2</td>
+                      <td class="col-index">2</td>
                       <td class="col-grade"><input type="text" class="form-control rounded-0 readonly" value="5" disabled readonly></td>
                       <td class="col-class"><input type="text" class="form-control rounded-0 readonly" value="Test 01" disabled readonly></td>
-                      <td class="col-Cname"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
-                      <td class="col-Sid"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
+                      <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
+                      <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
                       <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
-                      <td class="col-state"><span>完成</span></td>
+                      <td class="col-status"><span>完成</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -382,22 +382,22 @@
                 </div>
               </div>
               <div class="mb-3 row align-items-center">
-                <label for="updateStartTime" class="col-sm-4 col-form-label text-sm-end">開始時間<span class="text-red">*</span></label>
+                <label for="updateStartDatetime" class="col-sm-4 col-form-label text-sm-end">開始時間<span class="text-red">*</span></label>
                 <div class="col-sm-6">
-                  <input type="datetime-local" class="form-control rounded-0" id="updateStartTime" value="2012-09-01T08:00">
+                  <input type="datetime-local" class="form-control rounded-0" id="updateStartDatetime" value="2012-09-01T08:00">
                 </div>
               </div>
               <div class="mb-3 row align-items-center">
-                <label for="updateEndTime" class="col-sm-4 col-form-label text-sm-end">結束時間<span class="text-red">*</span></label>
+                <label for="updateEndDatetime" class="col-sm-4 col-form-label text-sm-end">結束時間<span class="text-red">*</span></label>
                 <div class="col-sm-6">
-                  <input type="datetime-local" class="form-control rounded-0" id="updateEndTime" value="2012-09-02T17:30">
+                  <input type="datetime-local" class="form-control rounded-0" id="updateEndDatetime" value="2012-09-02T17:30">
                 </div>
               </div>
               <div class="mb-3 row align-items-center">
-                <label for="updateState" class="col-sm-4 col-form-label text-sm-end">狀態</label>
+                <label for="updateStatus" class="col-sm-4 col-form-label text-sm-end">狀態</label>
                 <div class="col-sm-6">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="updateState">
+                    <input class="form-check-input" type="checkbox" role="switch" id="updateStatus">
                   </div>
                 </div>
               </div>
@@ -448,12 +448,15 @@ $(document).ready(function () {
     //當前頁名稱顯示
     $('#currentPage').text($('main h2').text()).addClass('active');
   });
+	
   $('footer').load('master_footer.html');
+	
   $('#sidebarMenu').load('master_sidebar.html', function () {
     //當前頁actvie
     $('#sidebarMenu .nav-link[href*="DACC-session"]').addClass('active');
   });
 
+	
   const list = $('#sessionTable');
 
   //測驗場次 datatables 
@@ -477,7 +480,7 @@ $(document).ready(function () {
         targets: 0,
         title: '序號',
         width: '4%',
-        className: 'col-no',
+        className: 'col-index',
         type: 'numeric',
         render: function (data, type, row, meta) {
           return meta.row + 1;
@@ -508,40 +511,40 @@ $(document).ready(function () {
       { //開始時間 
         targets: 3,
         title: '開始時間',
-        data: 'startTime',
+        data: 'startDatetime',
         width: '16%',
-        className: 'col-startTime',
+        className: 'col-startDatetime',
         type: 'date',
       },
       { //結束時間
         targets: 4,
         title: '結束時間',
-        data: 'endTime',
+        data: 'endDatetime',
         width: '16%',
-        className: 'col-endTime',
+        className: 'col-endDatetime',
         type: 'date',
       },
       { //測驗人數
         targets: 5,
         title: '測驗人數',
-        data: 'testNum',
+        data: 'testCount',
         width: '8%',
-        className: 'col-testNum',
+        className: 'col-testCount',
         type: 'numeric',
       },
       { //完成人數
         targets: 6,
         title: '完成人數',
-        data: 'doneNum',
+        data: 'completedCount',
         width: '8%',
-        className: 'col-doneNum',
+        className: 'col-completedCount',
         type: 'numeric',
       },
       { //功能操作
         targets: 7,
         title: '功能操作',
         width: '14%',
-        className: 'col-tools',
+        className: 'col-tool',
         type: 'html',
         render: function (data, type, row, meta) {
           return `<button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentSet" data-bs-toggle="tooltip"><img src="Content/images/icon-user-add.svg" alt="button studentSet image"/></button>
@@ -552,28 +555,28 @@ $(document).ready(function () {
       { //狀態
         targets: 8,
         title: '狀態',
-        data: 'state',
+        data: 'status',
         width: '10%',
-        className: 'col-state',
+        className: 'col-status',
         type: 'html',
         render: function (data, type, row, meta) {
-          let state;
+          let status;
           switch (data) {
             case 'ON':
-              state = `<div class="form-check form-switch form-check-inline m-0">
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
                                       </div>`;
               break
             case 'OFF':
-              state = `<div class="form-check form-switch form-check-inline m-0">
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
                                       </div>`;
               break
             default:
-              state = '';
+              status = '';
               break
           }
-          return state;
+          return status;
         }
       }
     ],
@@ -618,7 +621,7 @@ $(document).ready(function () {
 
     //demo驗證
     let errorText = '';
-    let validationField = '#insertSessionName, #insertStartTime, #insertEndTime';
+    let validationField = '#insertSessionName, #insertStartDatetime, #insertEndDatetime';
 
     //demo偵測欄位是否為空值
     $(validationField).each(function () {
@@ -690,8 +693,8 @@ $(document).ready(function () {
                                           <td class="col-classCheck"><div class="SRform-check-red">
                                               <input class="form-check-input" type="checkbox" name="check">
                                             </div></td>
-                                          <td class="col-Cname"><input type="text" class="form-control rounded-0 readonly" value="` + stuArray[k].Cname + `" disabled readonly></td>
-                                          <td class="col-Sid"><input type="text" class="form-control rounded-0 readonly" value="` + stuArray[k].Sid + `" disabled readonly></td>
+                                          <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="` + stuArray[k].studentName + `" disabled readonly></td>
+                                          <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="` + stuArray[k].studentid + `" disabled readonly></td>
                                           <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="` + stuArray[k].account + `" disabled readonly></td>
                                         </tr>`;
           }
@@ -706,8 +709,8 @@ $(document).ready(function () {
                                             </span>` + classArray[j].class + `班
                                             </button>
                                           </th>
-                                          <th scope="col" class="col-Cname">姓名</th>
-                                          <th scope="col" class="col-Sid">學號</th>
+                                          <th scope="col" class="col-studentName">姓名</th>
+                                          <th scope="col" class="col-studentId">學號</th>
                                           <th scope="col" class="col-account">帳號/信箱</th>
                                         </tr>
                                       </thead>
@@ -814,7 +817,7 @@ $(document).ready(function () {
         targets: 0,
         title: '序號',
         width: '8%',
-        className: 'col-no',
+        className: 'col-index',
         type: 'numeric',
         render: function (data, type, row, meta) {
           return meta.row + 1;
@@ -842,9 +845,9 @@ $(document).ready(function () {
       { //姓名 
         targets: 3,
         title: '姓名',
-        data: 'Cname',
+        data: 'studentName',
         width: '13%',
-        className: 'col-Cname',
+        className: 'col-studentName',
         type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
@@ -853,9 +856,9 @@ $(document).ready(function () {
       { //學號
         targets: 4,
         title: '學號',
-        data: 'Sid',
+        data: 'studentId',
         width: '13%',
-        className: 'col-Sid',
+        className: 'col-studentId',
         type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
@@ -875,25 +878,25 @@ $(document).ready(function () {
       { //狀態
         targets: 6,
         title: '狀態',
-        data: 'state',
+        data: 'status',
         width: '10%',
-        className: 'col-state',
+        className: 'col-status',
         type: 'html',
         orderDataType: 'dom-text',
         render: function (data, type, row, meta) {
-          let state;
+          let status;
           switch (data) {
-            case '0':
-              state = `<span class="text-red">未完成</span>`;
+            case 0:
+              status = `<span class="text-red">未完成</span>`;
               break
-            case '1':
-              state = `<span>完成</span>`;
+            case 1:
+              status = `<span>完成</span>`;
               break
             default:
-              state = '';
+              status = '';
               break
           }
-          return state;
+          return status;
         }
       }
 
@@ -927,7 +930,7 @@ $(document).ready(function () {
       $('.SRform-check input:checkbox').prop('checked', false);
       $(this).prop('checked', true);
 
-      //$('#sessionStudentList').DataTable().column('.col-state').search('<span class="text-red">未完成</span>', true, true).draw();
+      //$('#sessionStudentList').DataTable().column('.col-status').search('<span class="text-red">未完成</span>', true, true).draw();
     }
   });
 
@@ -945,7 +948,7 @@ $(document).ready(function () {
 
     //demo驗證
     let errorText = '';
-    let validationField = '#updateSessionName, #updateStartTime, #updateEndTime';
+    let validationField = '#updateSessionName, #updateStartDatetime, #updateEndDatetime';
 
     //demo偵測欄位是否為空值
     $(validationField).each(function () {

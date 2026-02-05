@@ -71,7 +71,7 @@
             <table class="table table-bordered table-gradeStatistics" id="gradeStatistics">
               <thead>
                 <tr>
-                  <th scope="col" class="col-no">序號</th>
+                  <th scope="col" class="col-index">序號</th>
                   <th scope="col" class="col-grade">年級</th>
                   <th scope="col" class="col-average">平均成績</th>
                   <th scope="col" class="col-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
@@ -84,7 +84,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-no">1</td>
+                  <td class="col-index">1</td>
                   <td class="col-grade">3</td>
                   <td class="col-average">88</td>
                   <td class="col-DACCall">500</td>
@@ -130,7 +130,7 @@
                     <table class="table table-bordered mb-0 table-classStatistics" id="classStatistics">
                       <thead>
                         <tr>
-                          <th scope="col" class="col-sn">序號</th>
+                          <th scope="col" class="col-index">序號</th>
                           <th scope="col" class="col-class">班級</th>
                           <th scope="col" class="col-average"><a href="#" role="button" data-bs-toggle="popover" class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a></th>
                           <th scope="col" class="col-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
@@ -143,7 +143,7 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="col-sn">1</td>
+                          <td class="col-index">1</td>
                           <td class="col-class"><input type="text" class="form-control rounded-0 readonly" value="DEMO" disabled readonly></td>
                           <td class="col-average">88</td>
                           <td class="col-DACCall">500</td>
@@ -242,8 +242,7 @@ $(document).ready(function () {
     columnDefs: [{ //序號
         targets: 0,
         title: '序號',
-        width: '4%',
-        className: 'col-no',
+        className: 'col-index',
         type: 'numeric',
         render: function (data, type, row, meta) {
           return meta.row + 1;
@@ -253,7 +252,6 @@ $(document).ready(function () {
         targets: 1,
         title: '年級',
         data: 'grade',
-        width: '7%',
         className: 'col-grade',
         type: 'numeric',
       },
@@ -261,7 +259,6 @@ $(document).ready(function () {
         targets: 2,
         title: '平均成績',
         data: 'average',
-        width: '7%',
         className: 'col-average',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -275,7 +272,6 @@ $(document).ready(function () {
         targets: 3,
         title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
         data: 'DACCall',
-        width: '16%',
         className: 'col-DACCall',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -289,7 +285,6 @@ $(document).ready(function () {
         targets: 4,
         title: '<span class="DACCicon-word">字</span>字詞辨識',
         data: 'DACCword',
-        width: '13%',
         className: 'col-DACCword',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -303,7 +298,6 @@ $(document).ready(function () {
         targets: 5,
         title: '<span class="DACCicon-superficial">表</span>表層文意理解',
         data: 'DACCsuperficial',
-        width: '14%',
         className: 'col-DACCsuperficial',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -317,7 +311,6 @@ $(document).ready(function () {
         targets: 6,
         title: '<span class="DACCicon-textual">文</span>文意統整',
         data: 'DACCtextual',
-        width: '13%',
         className: 'col-DACCtextual',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -331,7 +324,6 @@ $(document).ready(function () {
         targets: 7,
         title: '<span class="DACCicon-inference">推</span>推論理解',
         data: 'DACCinference',
-        width: '13%',
         className: 'col-DACCinference',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -345,7 +337,6 @@ $(document).ready(function () {
         targets: 8,
         title: '<span class="DACCicon-analysis">分</span>分析評鑑',
         data: 'DACCanalysis',
-        width: '13%',
         className: 'col-DACCanalysis',
         type: 'numeric',
         render: function (data, type, row, meta) {
@@ -422,7 +413,7 @@ $(document).ready(function () {
                               <table class="table table-bordered mb-0 table-classStatistics" id="classStatistics` + grade + `">
                                 <thead>
                                   <tr>
-                                    <th scope="col" class="col-sn">序號</th>
+                                    <th scope="col" class="col-index">序號</th>
                                     <th scope="col" class="col-class">班級</th>
                                     <th scope="col" class="col-average"><a href="#" role="button" data-bs-toggle="popover"  class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a></th>
                                     <th scope="col" class="col-DACCall"><span class="DACCicon-all">整</span>整體閱讀理解能力</th>
@@ -435,7 +426,7 @@ $(document).ready(function () {
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td class="col-sn">1</td>
+                                    <td class="col-index">1</td>
                                     <td class="col-class"><input type="text" class="form-control rounded-0 readonly" value="DEMO" disabled readonly></td>
                                     <td class="col-average">88</td>
                                     <td class="col-DACCall">500</td>
@@ -533,8 +524,7 @@ $(document).ready(function () {
       columnDefs: [{ //序號
           targets: 0,
           title: '序號',
-          width: '4%',
-          className: 'col-no',
+          className: 'col-index',
           type: 'numeric',
           render: function (data, type, row, meta) {
             return meta.row + 1;
@@ -544,7 +534,6 @@ $(document).ready(function () {
           targets: 1,
           title: '班級',
           data: 'class',
-          width: '7%',
           className: 'col-class',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -555,7 +544,6 @@ $(document).ready(function () {
           targets: 2,
           title: `<a href="#" role="button" data-bs-toggle="popover" class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a>`,
           data: 'average',
-          width: '7%',
           className: 'col-average',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -569,7 +557,6 @@ $(document).ready(function () {
           targets: 3,
           title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
           data: 'DACCall',
-          width: '16%',
           className: 'col-DACCall',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -583,7 +570,6 @@ $(document).ready(function () {
           targets: 4,
           title: '<span class="DACCicon-word">字</span>字詞辨識',
           data: 'DACCword',
-          width: '13%',
           className: 'col-DACCword',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -597,7 +583,6 @@ $(document).ready(function () {
           targets: 5,
           title: '<span class="DACCicon-superficial">表</span>表層文意理解',
           data: 'DACCsuperficial',
-          width: '14%',
           className: 'col-DACCsuperficial',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -611,7 +596,6 @@ $(document).ready(function () {
           targets: 6,
           title: '<span class="DACCicon-textual">文</span>文意統整',
           data: 'DACCtextual',
-          width: '13%',
           className: 'col-DACCtextual',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -625,7 +609,6 @@ $(document).ready(function () {
           targets: 7,
           title: '<span class="DACCicon-inference">推</span>推論理解',
           data: 'DACCinference',
-          width: '13%',
           className: 'col-DACCinference',
           type: 'numeric',
           render: function (data, type, row, meta) {
@@ -639,7 +622,6 @@ $(document).ready(function () {
           targets: 8,
           title: '<span class="DACCicon-analysis">分</span>分析評鑑',
           data: 'DACCanalysis',
-          width: '13%',
           className: 'col-DACCanalysis',
           type: 'numeric',
           render: function (data, type, row, meta) {

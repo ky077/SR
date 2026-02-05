@@ -2,12 +2,12 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.col-no							{ width:  4%  ; }
+                &.col-index						{ width:  4%  ; }
                 &.col-date						{ width:  9%  ; }
                 &.col-grade						{ width:  4%  ; }
                 &.col-class						{ width:  8%  ; }
-                &.col-Sid							{ width:  7%  ; }
-                &.col-Sname						{ width:  8%  ; }
+                &.col-studentId				{ width:  7%  ; }
+                &.col-studentName			{ width:  8%  ; }
                 &.col-DACCall					{ width: 12.5%; }
                 &.col-DACCword				{ width:  8%  ; }
                 &.col-DACCsuperficial	{	width: 10.5%; }

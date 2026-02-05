@@ -2,7 +2,7 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.col-no							{  width:  4%; }
+                &.col-index						{  width:  4%; }
                 &.col-grade						{  width:  7%; }
                 &.col-average					{  width:  7%; }
                 &.col-DACCall					{  width: 16%; }
@@ -27,7 +27,7 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.col-no							{  width:  4%; }
+                &.col-index						{  width:  4%; }
                 &.col-class						{  width:  7%; }
                 &.col-average					{  width:  7%; }
                 &.col-DACCall					{  width: 16%; }

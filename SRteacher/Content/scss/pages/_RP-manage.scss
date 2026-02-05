@@ -2,12 +2,12 @@
     > thead, > tbody{
         > tr{
             >th, > td {	
-				&.row-index{ 		 width:  5%;}
-                &.row-year{ 		 width: 19%;}
-                &.row-grade{		 width: 19%;}
-                &.row-class{ 		 width: 19%;}
-                &.row-studentCount{  width: 19%;}
-                &.row-RP{			 width: 19%;}
+				&.col-index{ 		 width:  5%;}
+                &.col-year					{ width: 19%; }
+                &.col-grade					{ width: 19%; }
+                &.col-class					{ width: 19%; }
+                &.col-studentCount	{ width: 19%; }
+                &.col-RP						{	width: 19%; }
             }   
         }
     }	
@@ -17,22 +17,22 @@
     > thead, > tbody{
         > tr{
             >th, > td {	
-				&.row-index{ 	   width:  4%;}
-                &.row-studentName{ width: 11%;}
-                &.row-DACC{		   width: 11%;}
-                &.row-RPcount{ 	   width:  9%;}
-                &.row-quiz{  	   width: auto;}
-                &.row-myStudy{	   width: auto;}
-				&.row-superBoard{  width:  9%;}
-				&.row-studentRP{   width:  9%;}
-				
-				&.row-quizPassed{    	width: 9%;}
-				&.row-quizReview{    	width: 6%;}
-				&.row-quizB{    		width: 5%;}
-				&.row-quizA{    		width: 5%;}
-				&.row-quizAplus{    	width: 5%;}
-				&.row-myStudyBookCount{ width: 8%;}
-				&.row-myStudyItemCount{ width: 9%;}
+								&.col-index							{ width:  4%; }
+                &.col-studentName				{ width: 11%; }
+                &.col-DACC							{	width: 11%; }
+                &.col-RPcount						{ width:  9%; }
+                &.col-quiz							{ width: auto;}
+                &.col-myStudy						{	width: auto;}
+								&.col-superBoard				{ width:  9%; }
+								&.col-studentRP					{ width:  9%; }
+
+								&.col-quizPassed				{ width: 9%; }
+								&.col-quizReview				{ width: 6%; }
+								&.col-quizB							{ width: 5%; }
+								&.col-quizA							{ width: 5%; }
+								&.col-quizAplus					{ width: 5%; }
+								&.col-myStudyBookCount	{ width: 8%; }
+								&.col-myStudyItemCount	{ width: 9%; }
             }   
 			
         }
@@ -40,7 +40,7 @@
 	> tbody{
         > tr{
             >th, > td {	
-				&.row-myStudyItemCount{ 
+				&.col-myStudyItemCount{ 
 					.itemCount-space{  
 						width: calc((1em + .05rem)*3);
 						display: inline-block;

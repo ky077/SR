@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
@@ -105,37 +105,37 @@
             <table class="table table-bordered table-portfolio" id="portfolioTable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-index" rowspan="2">序號</th>
-                  <th scope="col" class="row-studentName" rowspan="2">姓名</th>
-                  <th scope="col" class="row-skillTotal" rowspan="2">閱讀力累積總合</th>
-                  <th scope="col" class="row-skillItem" colspan="5">累積分數</th>
-                  <th scope="col" class="row-studentAssessment" rowspan="2">學生自評<br>
+                  <th scope="col" class="col-index" rowspan="2">序號</th>
+                  <th scope="col" class="col-studentName" rowspan="2">姓名</th>
+                  <th scope="col" class="col-skillTotal" rowspan="2">閱讀力累積總合</th>
+                  <th scope="col" class="col-skillItem" colspan="5">累積分數</th>
+                  <th scope="col" class="col-studentAssessment" rowspan="2">學生自評<br>
                     完成進度</th>
-                  <th scope="col" class="row-teacherFeedback" rowspan="2">教師回饋<br>
+                  <th scope="col" class="col-teacherFeedback" rowspan="2">教師回饋<br>
                     填寫狀況</th>
-                  <th scope="col" class="row-course" rowspan="2">學習歷程檔案</th>
+                  <th scope="col" class="col-course" rowspan="2">學習歷程檔案</th>
                 </tr>
                 <tr>
-                  <th scope="col" class="row-skillRP">閱讀規劃力</th>
-                  <th scope="col" class="row-skillRE">閱讀執行力</th>
-                  <th scope="col" class="row-skillAR">閱讀精進力</th>
-                  <th scope="col" class="row-skillRG">閱讀博學力</th>
-                  <th scope="col" class="row-skillPR">閱讀成長力</th>
+                  <th scope="col" class="col-skillRP">閱讀規劃力</th>
+                  <th scope="col" class="col-skillRE">閱讀執行力</th>
+                  <th scope="col" class="col-skillAR">閱讀精進力</th>
+                  <th scope="col" class="col-skillRG">閱讀博學力</th>
+                  <th scope="col" class="col-skillPR">閱讀成長力</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-index">1</td>
-                  <td class="row-studentName">張花花</td>
-                  <td class="row-skillTotal">8.3</td>
-                  <td class="row-skillRP">0</td>
-                  <td class="row-skillRE">7.3</td>
-                  <td class="row-skillAR">0</td>
-                  <td class="row-skillRG">0.5</td>
-                  <td class="row-skillPR">無</td>
-                  <td class="row-studentAssessment">未填寫</td>
-                  <td class="row-teacherFeedback">未填寫</td>
-                  <td class="row-portfolio"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
+                  <td class="col-index">1</td>
+                  <td class="col-studentName">張花花</td>
+                  <td class="col-skillTotal">8.3</td>
+                  <td class="col-skillRP">0</td>
+                  <td class="col-skillRE">7.3</td>
+                  <td class="col-skillAR">0</td>
+                  <td class="col-skillRG">0.5</td>
+                  <td class="col-skillPR">無</td>
+                  <td class="col-studentAssessment">未填寫</td>
+                  <td class="col-teacherFeedback">未填寫</td>
+                  <td class="col-portfolio"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
                 </tr>
               </tbody>
             </table>
@@ -160,8 +160,7 @@
             <button type="button" class="btn btn-link" id="fillFeedback">立即填寫&gt;&gt;</button>
           </div>
           <div class="load-body"></div>
-		  <a class="btn btn-link btn-float-download" type="button"><span class="btn-float-img"></span>下載PDF</a>	
-        </div>
+          <a class="btn btn-link btn-float-download" type="button"><span class="btn-float-img"></span>下載PDF</a> </div>
       </div>
     </div>
   </div>
@@ -186,229 +185,228 @@
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    }); 
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href$="RP-skill"]').addClass('active');   
-    }); 
-	
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href$="RP-skill"]').addClass('active');
+  });
 
-	const list = $('#portfolioTable');
-    //班級 datatables 
-	list.DataTable({
-        //serverSide: true,     // 開啟伺服端模式
-		processing: true,   
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer"pi>',
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: 'Content/json/RP-skill/portfolio.json',
-        columnDefs: [
-            {//序號
-                targets: 0, 
-                title: '序號',
-                className: 'row-index',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//姓名
-                targets: 1, 
-                title: '學校',
-                data: 'studentName',
-                className: 'row-studentName',
-                orderable: false, 
-            },
-            {//閱讀力累積總合 
-                targets: 2,
-                title: '閱讀力累積總合',
-                data: 'skillItem',
-                className: 'row-skillTotal',
-                orderable: false,
-				render: function (data, type, row, meta) {
-                    const RP = data.RP || 0;
-					const RE = data.RE || 0;
-					const AR = data.AR || 0;
-					const RG = data.RG || 0;
-					const PR = data.PR || 0;
-					return RP + RE + AR + RG + PR;
-                } 
-            },
-            {//閱讀規劃力
-                targets: 3, 
-                title: '閱讀規劃力',
-                data: 'skillItem',
-                className: 'row-skillRP',
-                orderable: false,
-				render: data => data.RP || 0
-            },
-            {//閱讀執行力
-                targets: 4, 
-                title: '閱讀執行力',
-                data: 'skillItem',
-                className: 'row-skillRE',
-                orderable: false,
-				render: data => data.RE || 0
-            },
-            {//閱讀精進力
-                targets: 5, 
-                title: '閱讀精進力',
-                data: 'skillItem',
-                className: 'row-skillAR',
-                orderable: false,
-				render: data => data.AR || 0
-            },
-            {//閱讀博學力
-                targets: 6, 
-                title: '閱讀博學力',
-                data: 'skillItem',
-                className: 'row-skillRG',
-                orderable: false,
-				render: data => data.RG || 0
-            },
-            {//閱讀成長力
-                targets: 7, 
-                title: '閱讀成長力',
-				data: 'skillItem',
-                className: 'row-skillPR',
-                orderable: false,
-				render: data => data.PR || 0
-            },
-            {//學生自評完成進度
-                targets: 8, 
-                title: '學生自評完成進度',
-                data: 'studentAssessment',
-                className: 'row-studentAssessment',
-                orderable: false,
-                render: function (data) {
-					return data === 1 ? '已填寫' : '未填寫';
-				}
-            },
-			{//教師回饋填寫狀況
-                targets: 9, 
-                title: '教師回饋填寫狀況',
-                data: 'teacherFeedback',
-                className: 'row-teacherFeedback',
-                orderable: false,
-                render: function (data) {
-					return data === 1 ? '已填寫' : '未填寫';
-				}
-            },
-			{//學習歷程檔案
-                targets: 10, 
-                title: '學習歷程檔案',
-                className: 'row-portfolio',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
-                } 
-            }
-            
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list);
+
+  const list = $('#portfolioTable');
+  //班級 datatables 
+  list.DataTable({
+    //serverSide: true,     // 開啟伺服端模式
+    processing: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer"pi>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: 'Content/json/RP-skill/portfolio.json',
+    columnDefs: [{ //序號
+        targets: 0,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
         }
-    });
-	
-	//[查看](學習歷程檔案)
-    list.on('click', '.row-portfolio button', function () {
-		$('#portfolioModal').modal('show');
+      },
+      { //姓名
+        targets: 1,
+        title: '學校',
+        data: 'studentName',
+        className: 'col-studentName',
+        orderable: false,
+      },
+      { //閱讀力累積總合 
+        targets: 2,
+        title: '閱讀力累積總合',
+        data: 'skillItem',
+        className: 'col-skillTotal',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          const RP = data.RP || 0;
+          const RE = data.RE || 0;
+          const AR = data.AR || 0;
+          const RG = data.RG || 0;
+          const PR = data.PR || 0;
+          return RP + RE + AR + RG + PR;
+        }
+      },
+      { //閱讀規劃力
+        targets: 3,
+        title: '閱讀規劃力',
+        data: 'skillItem',
+        className: 'col-skillRP',
+        orderable: false,
+        render: data => data.RP || 0
+      },
+      { //閱讀執行力
+        targets: 4,
+        title: '閱讀執行力',
+        data: 'skillItem',
+        className: 'col-skillRE',
+        orderable: false,
+        render: data => data.RE || 0
+      },
+      { //閱讀精進力
+        targets: 5,
+        title: '閱讀精進力',
+        data: 'skillItem',
+        className: 'col-skillAR',
+        orderable: false,
+        render: data => data.AR || 0
+      },
+      { //閱讀博學力
+        targets: 6,
+        title: '閱讀博學力',
+        data: 'skillItem',
+        className: 'col-skillRG',
+        orderable: false,
+        render: data => data.RG || 0
+      },
+      { //閱讀成長力
+        targets: 7,
+        title: '閱讀成長力',
+        data: 'skillItem',
+        className: 'col-skillPR',
+        orderable: false,
+        render: data => data.PR || 0
+      },
+      { //學生自評完成進度
+        targets: 8,
+        title: '學生自評完成進度',
+        data: 'studentAssessment',
+        className: 'col-studentAssessment',
+        orderable: false,
+        render: function (data) {
+          return data === 1 ? '已填寫' : '未填寫';
+        }
+      },
+      { //教師回饋填寫狀況
+        targets: 9,
+        title: '教師回饋填寫狀況',
+        data: 'teacherFeedback',
+        className: 'col-teacherFeedback',
+        orderable: false,
+        render: function (data) {
+          return data === 1 ? '已填寫' : '未填寫';
+        }
+      },
+      { //學習歷程檔案
+        targets: 10,
+        title: '學習歷程檔案',
+        className: 'col-portfolio',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
+        }
+      }
 
-		//先清空舊 iframe
-		let modalBody = $('#portfolioModal .load-body').empty();
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list);
+    }
+  });
 
-		//動態載入 autoheight.js
-		$.getScript("Content/js/jquery.autoheight.js")
-			.done(function () {
-				let iframe = $('<iframe>', {
-					src: 'Course-paper-v3.2.html',
-					scrolling: 'no',
-					width: '100%',
-					frameborder: '0',
-					class: 'autoHeight'
-				});
+  //[查看](學習歷程檔案)
+  list.on('click', '.col-portfolio button', function () {
+    $('#portfolioModal').modal('show');
 
-				//iframe 完成讀取，再執行自動高度
-				iframe.on('load', function () {
-					if (typeof doIframe === 'function') {
-						doIframe();
-					}
-					
-					let $inside = $(this).contents();
-					
-					// 移除 iframe 內 button
-					let btnBlock = $inside.find('.course-paper__btn-Submit');
-					if (btnBlock.length) {
-						btnBlock.remove(); 
-					}
-					
-					// disabled iframe 內 學生textarea
-					$inside.find('.course-individual-question textarea').each(function () {
-						$(this).prop('disabled', true);
-					});
-					
-					// 教師回饋 textarea 可填寫
-					let feedbackBlock = $inside.find('.teacher_feedback');
-					if (feedbackBlock.length) {
-						let feedbackVal = $.trim(feedbackBlock.text());
-						
-						feedbackBlock.empty();
-						
-						feedbackBlock.append(`
+    //先清空舊 iframe
+    let modalBody = $('#portfolioModal .load-body').empty();
+
+    //動態載入 autoheight.js
+    $.getScript("Content/js/jquery.autoheight.js")
+      .done(function () {
+        let iframe = $('<iframe>', {
+          src: 'Course-paper-v3.2.html',
+          scrolling: 'no',
+          width: '100%',
+          frameborder: '0',
+          class: 'autoHeight'
+        });
+
+        //iframe 完成讀取，再執行自動高度
+        iframe.on('load', function () {
+          if (typeof doIframe === 'function') {
+            doIframe();
+          }
+
+          let $inside = $(this).contents();
+
+          // 移除 iframe 內 button
+          let btnBlock = $inside.find('.course-paper__btn-Submit');
+          if (btnBlock.length) {
+            btnBlock.remove();
+          }
+
+          // disabled iframe 內 學生textarea
+          $inside.find('.course-individual-question textarea').each(function () {
+            $(this).prop('disabled', true);
+          });
+
+          // 教師回饋 textarea 可填寫
+          let feedbackBlock = $inside.find('.teacher_feedback');
+          if (feedbackBlock.length) {
+            let feedbackVal = $.trim(feedbackBlock.text());
+
+            feedbackBlock.empty();
+
+            feedbackBlock.append(`
 							<textarea class="form-control noRadius" rows="4" placeholder="請輸入教師回饋">${feedbackVal}</textarea>
 							<div class="text-center mt-3"><button class="btn btn-success" type="button" id="feedbackSubmit">送出回饋</button></div>
 						`);
 
-						$('#feedbackConfirm').show();
-					}
-					
-					//[送出回饋]
-					$inside.on('click', '#feedbackSubmit', function () {
-						 alertModal('<div class="text-red">成功送出回饋！</div>');
-					});
-				});
+            $('#feedbackConfirm').show();
+          }
 
-				modalBody.append(iframe);
-			})
-			.fail(function () {
-				console.error("載入 jquery.autoheight.js 失敗");
-			});
-	});
-	
-	//[立即填寫>>]
-	$('#fillFeedback').on('click', function () {
-		// 抓到 iframe
-		let iframe = $('#portfolioModal .load-body iframe')[0];
-		if (!iframe) return;
+          //[送出回饋]
+          $inside.on('click', '#feedbackSubmit', function () {
+            alertModal('<div class="text-red">成功送出回饋！</div>');
+          });
+        });
 
-		let $inside = $(iframe).contents();
-		let textareaEl = $inside.find('.teacher_feedback textarea')[0];
+        modalBody.append(iframe);
+      })
+      .fail(function () {
+        console.error("載入 jquery.autoheight.js 失敗");
+      });
+  });
 
-		if (textareaEl) {
-			textareaEl.scrollIntoView({
-				behavior: "smooth",
-				block: "center"
-			});
-			
-			textareaEl.focus();
-		}
-	});
-}); 
+  //[立即填寫>>]
+  $('#fillFeedback').on('click', function () {
+    // 抓到 iframe
+    let iframe = $('#portfolioModal .load-body iframe')[0];
+    if (!iframe) return;
+
+    let $inside = $(iframe).contents();
+    let textareaEl = $inside.find('.teacher_feedback textarea')[0];
+
+    if (textareaEl) {
+      textareaEl.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      textareaEl.focus();
+    }
+  });
+});
 </script>
 </body>
 </html>

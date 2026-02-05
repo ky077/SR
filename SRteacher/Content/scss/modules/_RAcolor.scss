@@ -8,22 +8,22 @@ $RAtotal:				#ebc941;
 	> thead{
 		> tr{
 			>th, > td {
-				&.row-RAplanning{ 	 color: $white; background-color: $RAplanning;  }
-				&.row-RAexecution{   color: $white; background-color: $RAexecution; }
-				&.row-RAproficiency{ color: $white; background-color: $RAproficiency; }
-				&.row-RAerudition{   color: $white; background-color: $RAerudition; }
-				&.row-RAtotal{  		 color: $white; background-color: $RAtotal; }
+				&.col-RAplanning{ 	 color: $white; background-color: $RAplanning;  }
+				&.col-RAexecution{   color: $white; background-color: $RAexecution; }
+				&.col-RAproficiency{ color: $white; background-color: $RAproficiency; }
+				&.col-RAerudition{   color: $white; background-color: $RAerudition; }
+				&.col-RAtotal{  		 color: $white; background-color: $RAtotal; }
 			}   
 		}
 	}
 	 > tbody{
 		> tr{
 			>th, > td {
-				&.row-RAplanning{ 	 background-color: rgba($RAplanning, .15); }
-				&.row-RAexecution{   background-color: rgba($RAexecution, .15); }
-				&.row-RAproficiency{ background-color: rgba($RAproficiency, .15); }
-				&.row-RAerudition{   background-color: rgba($RAerudition, .15); }
-				&.row-RAtotal{  		 background-color: rgba($RAtotal, .15); }
+				&.col-RAplanning{ 	 background-color: rgba($RAplanning, 		.15); }
+				&.col-RAexecution{   background-color: rgba($RAexecution, 	.15); }
+				&.col-RAproficiency{ background-color: rgba($RAproficiency, .15); }
+				&.col-RAerudition{   background-color: rgba($RAerudition,   .15); }
+				&.col-RAtotal{  		 background-color: rgba($RAtotal, 		  .15); }
 			}   
 		}
 	}	

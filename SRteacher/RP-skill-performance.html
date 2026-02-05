@@ -25,6 +25,7 @@
 <body>
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -88,26 +89,26 @@
             <table class="table table-bordered table-performance" id="performanceTable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-check">選擇</th>
-                  <th scope="col" class="row-year">年度</th>
-                  <th scope="col" class="row-grade">年級</th>
-                  <th scope="col" class="row-class">班級</th>
-                  <th scope="col" class="row-teacher">負責老師</th>
-                  <th scope="col" class="row-studentCount">人數</th>
-                  <th scope="col" class="row-studentMenu">學生選單</th>
+                  <th scope="col" class="col-check">選擇</th>
+                  <th scope="col" class="col-year">年度</th>
+                  <th scope="col" class="col-grade">年級</th>
+                  <th scope="col" class="col-class">班級</th>
+                  <th scope="col" class="col-teacher">負責老師</th>
+                  <th scope="col" class="col-studentCount">人數</th>
+                  <th scope="col" class="col-studentMenu">學生選單</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-check"><div class="form-check form-check-inline SRform-check-red">
+                  <td class="col-check"><div class="form-check form-check-inline SRform-check-red">
                       <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
                     </div></td>
-                  <td class="row-year">2022</td>
-                  <td class="row-grade">3</td>
-                  <td class="row-class">2</td>
-                  <td class="row-teacher">李夏夏</td>
-                  <td class="row-studentCount">30</td>
-                  <td class="row-studentMenu"><button type="button" class="btn btn-link">顯示詳情</button></td>
+                  <td class="col-year">2022</td>
+                  <td class="col-grade">3</td>
+                  <td class="col-class">2</td>
+                  <td class="col-teacher">李夏夏</td>
+                  <td class="col-studentCount">30</td>
+                  <td class="col-studentMenu"><button type="button" class="btn btn-link">顯示詳情</button></td>
                 </tr>
               </tbody>
             </table>
@@ -195,32 +196,32 @@
             <table class="table table-bordered table-studentRA" id="studentRATable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-index">序號</th>
-                  <th scope="col" class="row-grade">年級</th>
-                  <th scope="col" class="row-class">班級</th>
-                  <th scope="col" class="row-studentName">姓名</th>
-                  <th scope="col" class="row-DACC">參照DACC分數</th>
-                  <th scope="col" class="row-RAplanning">閱讀規劃力</th>
-                  <th scope="col" class="row-RAexecution">閱讀執行力</th>
-                  <th scope="col" class="row-RAproficiency">閱讀精進力</th>
-                  <th scope="col" class="row-RAerudition">閱讀博學力</th>
-                  <th scope="col" class="row-RAtotal">閱讀力總和</th>
-                  <th scope="col" class="row-portfolio">成長歷程</th>
+                  <th scope="col" class="col-index">序號</th>
+                  <th scope="col" class="col-grade">年級</th>
+                  <th scope="col" class="col-class">班級</th>
+                  <th scope="col" class="col-studentName">姓名</th>
+                  <th scope="col" class="col-DACC">參照DACC分數</th>
+                  <th scope="col" class="col-RAplanning">閱讀規劃力</th>
+                  <th scope="col" class="col-RAexecution">閱讀執行力</th>
+                  <th scope="col" class="col-RAproficiency">閱讀精進力</th>
+                  <th scope="col" class="col-RAerudition">閱讀博學力</th>
+                  <th scope="col" class="col-RAtotal">閱讀力總和</th>
+                  <th scope="col" class="col-portfolio">成長歷程</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-index">1</td>
-                  <td class="row-grade">3</td>
-                  <td class="row-class">2</td>
-                  <td class="row-studentName">李夏夏</td>
-                  <td class="row-DACC">SR 522</td>
-                  <td class="row-RAplanning">1</td>
-                  <td class="row-RAexecution">1</td>
-                  <td class="row-RAproficiency">0</td>
-                  <td class="row-RAerudition">1</td>
-                  <td class="row-RAtotal">1</td>
-                  <td class="row-portfolio"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
+                  <td class="col-index">1</td>
+                  <td class="col-grade">3</td>
+                  <td class="col-class">2</td>
+                  <td class="col-studentName">李夏夏</td>
+                  <td class="col-DACC">SR 522</td>
+                  <td class="col-RAplanning">1</td>
+                  <td class="col-RAexecution">1</td>
+                  <td class="col-RAproficiency">0</td>
+                  <td class="col-RAerudition">1</td>
+                  <td class="col-RAtotal">1</td>
+                  <td class="col-portfolio"><button type="button" class="btn btn-outline-primary bg-gradient">查看</button></td>
                 </tr>
               </tbody>
             </table>
@@ -250,7 +251,7 @@
           <div class="studentRAportfolio-chart">
             <div class="row">
               <div class="col-11">
-								<div id="chartLegend" class="studentRAportfolio-chart-legend"></div>
+                <div id="chartLegend" class="studentRAportfolio-chart-legend"></div>
                 <canvas id="myLine-single"></canvas>
               </div>
             </div>
@@ -263,26 +264,26 @@
                 <table class="table table-bordered table-studentRAportfolio" id="studentRAportfolioTable">
                   <thead>
                     <tr>
-                      <th class="row-index">序號</th>
-                      <th class="row-dateRange">時間</th>
-                      <th class="row-RAplanning">閱讀規劃力</th>
-                      <th class="row-RAexecution">閱讀執行力</th>
-                      <th class="row-RAproficiency">閱讀精進力</th>
-                      <th class="row-RAerudition">閱讀博學力</th>
-                      <th class="row-RAtotal">閱讀力總分</th>
+                      <th class="col-index">序號</th>
+                      <th class="col-dateRange">時間</th>
+                      <th class="col-RAplanning">閱讀規劃力</th>
+                      <th class="col-RAexecution">閱讀執行力</th>
+                      <th class="col-RAproficiency">閱讀精進力</th>
+                      <th class="col-RAerudition">閱讀博學力</th>
+                      <th class="col-RAtotal">閱讀力總分</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="row-index">1</td>
-                      <td class="row-dateRange"><label>2022/11/01</label>
+                      <td class="col-index">1</td>
+                      <td class="col-dateRange"><label>2022/11/01</label>
                         -
                         <label>2022/11/06</label></td>
-                      <td class="row-RAplanning">1</td>
-                      <td class="row-RAexecution">1</td>
-                      <td class="row-RAproficiency">0</td>
-                      <td class="row-RAerudition">1</td>
-                      <td class="row-RAtotal">1</td>
+                      <td class="col-RAplanning">1</td>
+                      <td class="col-RAexecution">1</td>
+                      <td class="col-RAproficiency">0</td>
+                      <td class="col-RAerudition">1</td>
+                      <td class="col-RAtotal">1</td>
                     </tr>
                   </tbody>
                 </table>
@@ -313,189 +314,191 @@
 <script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- chart.js --> 
-<script src="Content/widgets/Chart.js-master/chart.js"></script>	
+<script src="Content/widgets/Chart.js-master/chart.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    }); 
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href*="RP-skill"]').addClass('active');   
-    }); 
-	
-	
-	const list = $('#performanceTable');
-	
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href*="RP-skill"]').addClass('active');
+  });
+
+
+  const list = $('#performanceTable');
+
   //閱讀力表現 datatables 
-	list.DataTable({
-        //serverSide: true,     // 開啟伺服端模式
-		processing: true,   
-    order: [],  //取消默認排序icon
+  list.DataTable({
+    //serverSide: true,     // 開啟伺服端模式
+    processing: true,
+    order: [], //取消默認排序icon
     autoWidth: false,
     responsive: false,
-		searching: true,
-		pageLength: 5,
-		pagingType: "simple_numbers",
-    dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer"pi>',		
+    searching: true,
+    pageLength: 5,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer"pi>',
     language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
     ajax: 'Content/json/RP-skill/performance.json',
-    columnDefs: [
-			{//選擇
-					targets: 0, 
-					title: '選擇',
-					className: 'row-check',
-					orderable: false,
-					render: function (data, type, row, meta) {
-							return `<div class="form-check form-check-inline SRform-check-red">
+    columnDefs: [{ //選擇
+        targets: 0,
+        title: '選擇',
+        className: 'col-check',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<div class="form-check form-check-inline SRform-check-red">
 					<input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
-				</div>`; 
-					}
-			},
-			{//年度
-					targets: 1, 
-					title: '年度',
-	data: 'year',
-					className: 'row-year',
-					orderable: false,
-			},
-			{//年級
-					targets: 2, 
-					title: '年級',
-					data: 'grade',
-					className: 'row-grade',
-					orderable: false, 
-			},
-			{//班級
-					targets: 3,
-					title: '班級',
-					data: 'class',
-					className: 'row-class',
-					orderable: false,
-			},
-			{//負責老師
-					targets: 4, 
-					title: '負責老師',
-					data: 'teacher',
-					className: 'row-teacher',
-					orderable: false,
-			},
-			{//人數
-					targets: 5, 
-					title: '人數',
-					data: 'students',
-					className: 'row-studentCount',
-					orderable: false,
-	render: function (data, type, row, meta) {
-		if (Array.isArray(data)) {
-			return data.length;
-		}
-		return 0;
-	}
-			},
-			{//學生選單
-					targets: 6, 
-					title: '學生選單',
-					className: 'row-studentMenu',
-					orderable: false,
-					render: function (data, type, row, meta) {
-							return `<button type="button" class="btn btn-link btn-toggle-child">顯示詳情</button>`;
-					}
-			}
-		],
-		initComplete: function() {
-				//datatable footer input page
-				datatableInputPage(list);
-		}
-	}); 	
+				</div>`;
+        }
+      },
+      { //年度
+        targets: 1,
+        title: '年度',
+        data: 'year',
+        className: 'col-year',
+        orderable: false,
+      },
+      { //年級
+        targets: 2,
+        title: '年級',
+        data: 'grade',
+        className: 'col-grade',
+        orderable: false,
+      },
+      { //班級
+        targets: 3,
+        title: '班級',
+        data: 'class',
+        className: 'col-class',
+        orderable: false,
+      },
+      { //負責老師
+        targets: 4,
+        title: '負責老師',
+        data: 'teacher',
+        className: 'col-teacher',
+        orderable: false,
+      },
+      { //人數
+        targets: 5,
+        title: '人數',
+        data: 'students',
+        className: 'col-studentCount',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          if (Array.isArray(data)) {
+            return data.length;
+          }
+          return 0;
+        }
+      },
+      { //學生選單
+        targets: 6,
+        title: '學生選單',
+        className: 'col-studentMenu',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-link btn-toggle-child">顯示詳情</button>`;
+        }
+      }
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list);
+    }
+  });
+
+  //學生選單[顯示詳情]
+  list.on('click', '.btn-toggle-child', function () {
+    var tr = $(this).parents('tr');
+    var row = list.DataTable().row(tr);
+
+    var rowData = row.data();
+    var rowIndex = row.index();
+
+    if (row.child.isShown()) {
+      // This row is already open - close it
+      row.child.hide();
+      tr.removeClass('shown');
+
+      tr.find('.col-check').removeAttr('rowspan');
+    } else {
+      // Open this row (the format() function would return the data to be shown)
+      row.child(format(rowData, rowIndex)).show();
+      tr.addClass('shown');
+
+      tr.find('.col-check').attr('rowspan', 2);
+      tr.next('tr').find('td').attr('colspan', tr.find('td').length - 1);
+
+      //同步選擇
+      syncChildChecksFromCheckAll(tr);
+    }
+  });
+
+  //選擇 - [全選]
+  list.on('change', '.col-check input[name="checkAll"]', function () {
+    var tr = $(this).closest('tr'); // 當前主列
+    if (!tr.hasClass('dt-hasChild')) return;
+
+    var checkboxes = tr.next('tr').find('.table-performance-students input[name="check"]');
+    $(this).is(':checked') ? checkboxes.prop('checked', true) : checkboxes.prop('checked', false);
+  });
+  //選擇 - 反向選取
+  list.on('change', '.table-performance-students input[name="check"]', function () {
+    var $table = $(this).closest('.table-performance-students'); // 當前表格
+
+    var $all = $table.find('input[name="check"]');
+    var total = $all.length;
+    var checkedCount = $all.filter(':checked').length;
+
+    var $childTr = $table.closest('tr'); // DataTables 的 child row tr
+    var $mainTr = $childTr.prev('tr'); // 主列 tr
+
+    //全勾才勾上checkAll，否則取消
+    var $checkAll = $mainTr.find('input[name="checkAll"]').first();
+
+    $checkAll.prop('checked', total > 0 && checkedCount === total);
+
+    //半選狀態
+    var el = $checkAll.get(0);
+    if (el) el.indeterminate = (checkedCount > 0 && checkedCount < total);
+  });
+
+  //[查看閱讀力表現]
+  $('#viewOk').click(function () {
+    var checkedCount = $('#performanceTable').find('input:checked').length;
+
+    if (checkedCount > 0) {  //有選擇 → 開 modal + 載入資料
+      $('#studentRAModal').modal('show');
+      loadStudentRATable();
+      return;
+    } else {
+      alertModal('<div class="text-red">請確實選擇班級資料！</div>');
+    }
+  });
 	
-	//學生選單[顯示詳情]
-	list.on('click', '.btn-toggle-child', function (){ 
-	  var tr = $(this).parents('tr');
-		var row = list.DataTable().row(tr);
-		
-		var rowData = row.data();
-		var rowIndex = row.index();
-
-		if (row.child.isShown()) {
-			// This row is already open - close it
-			row.child.hide();
-			tr.removeClass('shown');
-			
-			tr.find('.row-check').removeAttr('rowspan');
-		}
-		else {
-			// Open this row (the format() function would return the data to be shown)
-			row.child( format(rowData, rowIndex) ).show();
-			tr.addClass('shown');
-			
-			tr.find('.row-check').attr('rowspan', 2);
-			tr.next('tr').find('td').attr('colspan',  tr.find('td').length - 1);
-			
-			//同步選擇
-			syncChildChecksFromCheckAll(tr);
-		}	
-	});
-	
-	//選擇 - [全選]
-	list.on('change', '.row-check input[name="checkAll"]', function (){
-		var tr = $(this).closest('tr'); // 當前主列
-		if (!tr.hasClass('dt-hasChild')) return;
-		
-		var checkboxes = tr.next('tr').find('.table-performance-students input[name="check"]');
-		$(this).is(':checked') ? checkboxes.prop('checked', true) : checkboxes.prop('checked', false) ; 
-	});
-	//選擇 - 反向選取
-	list.on('change', '.table-performance-students input[name="check"]', function (){  
-		var $table = $(this).closest('.table-performance-students'); // 當前表格
-
-		var $all = $table.find('input[name="check"]');
-		var total = $all.length;
-		var checkedCount = $all.filter(':checked').length;
-
-		var $childTr = $table.closest('tr');      // DataTables 的 child row tr
-		var $mainTr  = $childTr.prev('tr');       // 主列 tr
-
-		//全勾才勾上checkAll，否則取消
-		var $checkAll = $mainTr.find('input[name="checkAll"]').first();
-
-		$checkAll.prop('checked', total > 0 && checkedCount === total);
-
-		//半選狀態
-		var el = $checkAll.get(0);
-		if (el) el.indeterminate = (checkedCount > 0 && checkedCount < total);
-	});  
-	
-	//[查看閱讀力表現]
-	$('#viewOk').click(function(){
-		var checkedCount = $('#performanceTable').find('input:checked').length;
-
-		// 2) 有選擇 → 開 modal + 載入資料
-		if (checkedCount > 0) {
-			$('#studentRAModal').modal('show');
-			loadStudentRATable();
-			return;
-		} else{
-			alertModal('<div class="text-red">請確實選擇班級資料！</div>');
-		}
-	});
-}); 
+	//[查看閱讀力表現]取消
+	$('#viewCancel').click(function () {
+		$('#performanceTable').find('input').prop('checked', false);
+  });
+});
 
 // $('#performanceTable') datatable row.child format
 function format(rowData, tableIndex) {
-    const students = rowData.students || [];
-    const perRow = 5; // 每列 5 人
+  const students = rowData.students || [];
+  const perRow = 5; // 每列 5 人
 
-    let html = `
+  let html = `
 			<div class="table-responsive">	
         <table class="table table-bordered table-performance-students"
                id="table-performance-students-${tableIndex}">
@@ -503,16 +506,16 @@ function format(rowData, tableIndex) {
 			</div>
     `;
 
-    students.forEach((name, studentIndex) => {
+  students.forEach((name, studentIndex) => {
 
-        // 每 perRow 個學生換一列
-        if (studentIndex % perRow === 0) {
-            html += '<tr>';
-        }
+    // 每 perRow 個學生換一列
+    if (studentIndex % perRow === 0) {
+      html += '<tr>';
+    }
 
-        const inputId = `student-${tableIndex}-${studentIndex}`;
+    const inputId = `student-${tableIndex}-${studentIndex}`;
 
-        html += `
+    html += `
             <td>
                 <div class="form-check form-check-inline SRform-check-red">
                     <input class="form-check-input"
@@ -528,28 +531,28 @@ function format(rowData, tableIndex) {
             </td>
         `;
 
-        if (studentIndex % perRow === perRow - 1) {
-            html += '</tr>';
-        }
-    });
-
-    // 補齊最後一列（避免 td 數不一致）
-    const remain = students.length % perRow;
-    if (remain !== 0) {
-        html += '<td></td>'.repeat(perRow - remain) + '</tr>';
+    if (studentIndex % perRow === perRow - 1) {
+      html += '</tr>';
     }
+  });
 
-    html += `
+  // 補齊最後一列（避免 td 數不一致）
+  const remain = students.length % perRow;
+  if (remain !== 0) {
+    html += '<td></td>'.repeat(perRow - remain) + '</tr>';
+  }
+
+  html += `
             </tbody>
         </table>
     `;
 
-    return html;
+  return html;
 }
 
 function syncChildChecksFromCheckAll($mainTr) {
   // 主列 checkAll 狀態
-  var isChecked = $mainTr.find('.row-check input[name="checkAll"]').is(':checked');
+  var isChecked = $mainTr.find('.col-check input[name="checkAll"]').is(':checked');
 
   // child 的學生 checkbox（只有展開才會存在）
   var $childChecks = $mainTr.next('tr').find('.table-performance-students input[name="check"]');
@@ -560,147 +563,146 @@ function syncChildChecksFromCheckAll($mainTr) {
   $childChecks.prop('checked', isChecked);
 
   // 同步 indeterminate（避免主列之前半選狀態殘留）
-  var el = $mainTr.find('.row-check input[name="checkAll"]').get(0);
+  var el = $mainTr.find('.col-check input[name="checkAll"]').get(0);
   if (el) el.indeterminate = false;
-}	
-	
-//學生閱讀歷程之閱讀力表現
-function loadStudentRATable() { 
-	const list2 = $('#studentRATable');
-	
-	if ($.fn.DataTable.isDataTable(list2)) { 
-        list2.DataTable().clear().destroy();
-        list2.find('tbody').empty();
-    }
+}
 
-	list2.DataTable({
+//學生閱讀歷程之閱讀力表現
+function loadStudentRATable() {
+  const list2 = $('#studentRATable');
+
+  if ($.fn.DataTable.isDataTable(list2)) {
+    list2.DataTable().clear().destroy();
+    list2.find('tbody').empty();
+  }
+
+  list2.DataTable({
     //serverSide: true,
-    order: [],  //取消默認排序icon
+    order: [], //取消默認排序icon
     autoWidth: false,
     responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-    dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer clearfix"pi>',
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer clearfix"pi>',
     language: {
-          	url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
     ajax: 'Content/json/RP-skill/studentRA.json',
-    columnDefs: [
-			{//序號
-				targets: 0,
-				title: '序號',
-				className: 'row-index',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return meta.row + 1;
-				}
-			},
-			{//年級
-				targets: 1,
-				title: '年級',
-				data: 'grade',
-				className: 'row-grade',
-				orderable: false
-			},
-			{//班級
-				targets: 2,
-				title: '班級',
-				data: 'class',
-				className: 'row-class',
-				orderable: false
-			},
-			{//姓名
-				targets: 3,
-				title: '姓名',
-				data: 'studentName',
-				className: 'row-studentName',
-				orderable: false
-			},
-			{//參照DACC分數
-				targets: 4,
-				title: '參照DACC分數',
-				data: 'DACC',
-				className: 'row-DACC',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return 'SR ' + data;
-				}
-			},
-			{//閱讀規劃力
-				targets: 5,
-				title: '閱讀規劃力',
-				data: 'RAplanning',
-				className: 'row-RAplanning',
-				orderable: false
-			},
-			{//閱讀執行力
-				targets: 6,
-				title: '閱讀執行力',
-				data: 'RAexecution',
-				className: 'row-RAexecution',
-				orderable: false
-			},
-			{//閱讀精進力
-				targets: 7,
-				title: '閱讀精進力',
-				data: 'RAproficiency',
-				className: 'row-RAproficiency',
-				orderable: false
-			},
-			{//閱讀博學力
-				targets: 8,
-				title: '閱讀博學力',
-				data: 'RAerudition',
-				className: 'row-RAerudition',
-				orderable: false
-			},
-			{//閱讀力總和
-				targets: 9,
-				title: '閱讀力總和',
-				className: 'row-RAtotal',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return row.RAplanning + row.RAexecution + row.RAproficiency + row.RAerudition;
-				}
-			},
-			{//成長歷程
-				targets: 10,
-				title: '成長歷程',
-				className: 'row-portfolio',
-				orderable: false,
-				render: function () {
-					return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
-				}
-			}
-    	],
-		initComplete: function() {
-			//datatable footer input page
-			datatableInputPage(list2);
-		}
-   });
-	
-	//學生閱讀計畫[查看]
-	list2.on('click', '.row-portfolio button', function () {
-		$('#studentRAportfolioModal').modal('show');
+    columnDefs: [{ //序號
+        targets: 0,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
+        }
+      },
+      { //年級
+        targets: 1,
+        title: '年級',
+        data: 'grade',
+        className: 'col-grade',
+        orderable: false
+      },
+      { //班級
+        targets: 2,
+        title: '班級',
+        data: 'class',
+        className: 'col-class',
+        orderable: false
+      },
+      { //姓名
+        targets: 3,
+        title: '姓名',
+        data: 'studentName',
+        className: 'col-studentName',
+        orderable: false
+      },
+      { //參照DACC分數
+        targets: 4,
+        title: '參照DACC分數',
+        data: 'DACC',
+        className: 'col-DACC',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return 'SR ' + data;
+        }
+      },
+      { //閱讀規劃力
+        targets: 5,
+        title: '閱讀規劃力',
+        data: 'RAplanning',
+        className: 'col-RAplanning',
+        orderable: false
+      },
+      { //閱讀執行力
+        targets: 6,
+        title: '閱讀執行力',
+        data: 'RAexecution',
+        className: 'col-RAexecution',
+        orderable: false
+      },
+      { //閱讀精進力
+        targets: 7,
+        title: '閱讀精進力',
+        data: 'RAproficiency',
+        className: 'col-RAproficiency',
+        orderable: false
+      },
+      { //閱讀博學力
+        targets: 8,
+        title: '閱讀博學力',
+        data: 'RAerudition',
+        className: 'col-RAerudition',
+        orderable: false
+      },
+      { //閱讀力總和
+        targets: 9,
+        title: '閱讀力總和',
+        className: 'col-RAtotal',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return row.RAplanning + row.RAexecution + row.RAproficiency + row.RAerudition;
+        }
+      },
+      { //成長歷程
+        targets: 10,
+        title: '成長歷程',
+        className: 'col-portfolio',
+        orderable: false,
+        render: function () {
+          return `<button type="button" class="btn btn-outline-primary bg-gradient">查看</button>`;
+        }
+      }
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list2);
+    }
+  });
 
-		loadStudentRAportfolioTable();
-	});
+  //學生閱讀計畫[查看]
+  list2.on('click', '.col-portfolio button', function () {
+    $('#studentRAportfolioModal').modal('show');
+
+    loadStudentRAportfolioTable();
+  });
 }
-	
+
 //學生閱讀力成長歷程	
 let studentRAportfolioChart = null;
+
 function loadStudentRAportfolioTable() {
   $.getJSON('Content/json/RP-skill/studentRAportfolio.json', function (res) {
     const data = res.data || [];
-    if (data.length === 0) return;																										
+    if (data.length === 0) return;
 
     /* ========= Chart ========= */
-    const labels = data.map(d => `${d.startDate} ~ ${d.endDate}`); 
+    const labels = data.map(d => `${d.startDate} ~ ${d.endDate}`);
 
-    const chartDatasets = [
-      {
+    const chartDatasets = [{
         label: '閱讀規劃力',
         data: data.map(d => d.RAplanning),
         borderColor: '#f16f6f',
@@ -730,7 +732,7 @@ function loadStudentRAportfolioTable() {
       },
       {
         label: '閱讀力總分',
-        data: data.map(d =>  d.RAplanning +  d.RAexecution +  d.RAproficiency +  d.RAerudition),
+        data: data.map(d => d.RAplanning + d.RAexecution + d.RAproficiency + d.RAerudition),
         borderColor: '#ebc941',
         backgroundColor: '#ebc941',
         pointBackgroundColor: '#ebc941',
@@ -738,59 +740,59 @@ function loadStudentRAportfolioTable() {
     ];
 
     const ctx = document.getElementById('myLine-single').getContext('2d');
-		
-		Chart.defaults.backgroundColor = '#ffffff';
-    Chart.defaults.borderColor     = '#c6c6c6';
-    Chart.defaults.color           = '#5c6466';
-    Chart.defaults.font.size       = 14;
-		Chart.defaults.font.family     = "'Noto Sans', 'Noto Sans SC', 'Microsoft JhengHei', 'Noto Sans TC', 'Microsoft YaHei', 'PingFang TC', 'PingFang SC', 'Heiti TC', 'Heiti SC', 'LiHei Pro','STXihei', sans-serif";
+
+    Chart.defaults.backgroundColor = '#ffffff';
+    Chart.defaults.borderColor = '#c6c6c6';
+    Chart.defaults.color = '#5c6466';
+    Chart.defaults.font.size = 14;
+    Chart.defaults.font.family = "'Noto Sans', 'Noto Sans SC', 'Microsoft JhengHei', 'Noto Sans TC', 'Microsoft YaHei', 'PingFang TC', 'PingFang SC', 'Heiti TC', 'Heiti SC', 'LiHei Pro','STXihei', sans-serif";
 
     // 防止重複產生 Chart
     if (studentRAportfolioChart) {
       studentRAportfolioChart.destroy();
     }
-		
+
     studentRAportfolioChart = new Chart(ctx, {
       type: 'line',
       data: {
-				labels: labels,
-				datasets: chartDatasets, 
-			},
+        labels: labels,
+        datasets: chartDatasets,
+      },
       options: {
         responsive: true,
-				elements: {
-					line: { 
-						borderWidth: 1, 
-						tension: 0 
-					},
-					point: {
-						radius: 5,
-						hoverRadius: 8,
-						borderWidth: 1
-					}
-				},
-				scales: {
-					x: {
-						offset: true,
-						grid: {
-							display: false
-						},
-						ticks: {
-							maxRotation: 38,
-							minRotation: 20,
-						},
-					}
-				},
-				plugins: {
-					legend: {
-						display: false,
-					}
-				}
+        elements: {
+          line: {
+            borderWidth: 1,
+            tension: 0
+          },
+          point: {
+            radius: 5,
+            hoverRadius: 8,
+            borderWidth: 1
+          }
+        },
+        scales: {
+          x: {
+            offset: true,
+            grid: {
+              display: false
+            },
+            ticks: {
+              maxRotation: 38,
+              minRotation: 20,
+            },
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
+        }
       }
     });
-		
-		// 產生客製化Legend
-		renderLegend(studentRAportfolioChart);
+
+    // 產生客製化Legend
+    renderLegend(studentRAportfolioChart);
 
     /* ========= Table ========= */
     const list3 = $('#studentRAportfolioTable');
@@ -800,75 +802,74 @@ function loadStudentRAportfolioTable() {
     }
 
     list3.DataTable({
-			//serverSide: true,     // 開啟伺服端模式
-			processing: true,   
-			order: [],  //取消默認排序icon
-			autoWidth: false,
-			responsive: false,
-			searching: true,
-			paging: false,
-			dom: '<"table-responsive"rt>',		
-			language: {
-						url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-			},
-			data: data,
-      columnDefs: [
-				{//序號
-					targets: 0,
-					title: '序號',
-					className: 'row-index',
-					orderable: false,
-					render: function (data, type, row, meta) {
-						return meta.row + 1;
-					}
-				},
-        {//時間
-					targets: 1,
-					title: '時間',
-          className: 'row-dateRange',
-					orderable: false,
-					render: function (data, type, row, meta) {
-						return `<label>${row.startDate}</label> - <label>${row.endDate}</label>`;
-					}
+      //serverSide: true,     // 開啟伺服端模式
+      processing: true,
+      order: [], //取消默認排序icon
+      autoWidth: false,
+      responsive: false,
+      searching: true,
+      paging: false,
+      dom: '<"table-responsive"rt>',
+      language: {
+        url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+      },
+      data: data,
+      columnDefs: [{ //序號
+          targets: 0,
+          title: '序號',
+          className: 'col-index',
+          orderable: false,
+          render: function (data, type, row, meta) {
+            return meta.row + 1;
+          }
         },
-        {//閱讀規劃力
-					targets: 2,
-					title: '閱讀規劃力',
-					data: 'RAplanning', 
-					className: 'row-RAplanning',
-				  orderable: false
-				},
-        {//閱讀執行力
-					targets: 3,
-					title: '閱讀執行力',
-					data: 'RAexecution', 
-					className: 'row-RAexecution',
-					orderable: false
-				},
-        {//閱讀精進力
-					targets: 4,
-					title: '閱讀精進力',
-					data: 'RAproficiency', 
-					className: 'row-RAproficiency',
-					orderable: false
-				},
-        {//閱讀博學力
-					targets: 5,
-					title: '閱讀博學力',
-					data: 'RAerudition', 
-					className: 'row-RAerudition',
-					orderable: false
-				},
-        {//閱讀力總和
-					targets: 6,
-					title: '閱讀力總和',
-					data: 'RAtotal', 
-					className: 'row-RAtotal',
-					orderable: false,
-					render: function (data, type, row, meta) {
-						return row.RAplanning + row.RAexecution + row.RAproficiency + row.RAerudition;
-					}
-				}
+        { //時間
+          targets: 1,
+          title: '時間',
+          className: 'col-dateRange',
+          orderable: false,
+          render: function (data, type, row, meta) {
+            return `<label>${row.startDate}</label> - <label>${row.endDate}</label>`;
+          }
+        },
+        { //閱讀規劃力
+          targets: 2,
+          title: '閱讀規劃力',
+          data: 'RAplanning',
+          className: 'col-RAplanning',
+          orderable: false
+        },
+        { //閱讀執行力
+          targets: 3,
+          title: '閱讀執行力',
+          data: 'RAexecution',
+          className: 'col-RAexecution',
+          orderable: false
+        },
+        { //閱讀精進力
+          targets: 4,
+          title: '閱讀精進力',
+          data: 'RAproficiency',
+          className: 'col-RAproficiency',
+          orderable: false
+        },
+        { //閱讀博學力
+          targets: 5,
+          title: '閱讀博學力',
+          data: 'RAerudition',
+          className: 'col-RAerudition',
+          orderable: false
+        },
+        { //閱讀力總和
+          targets: 6,
+          title: '閱讀力總和',
+          data: 'RAtotal',
+          className: 'col-RAtotal',
+          orderable: false,
+          render: function (data, type, row, meta) {
+            return row.RAplanning + row.RAexecution + row.RAproficiency + row.RAerudition;
+          }
+        }
       ]
     });
   });
@@ -898,8 +899,6 @@ function renderLegend(chart) {
     container.appendChild(item);
   });
 }
-
-
-</script> 
+</script>
 </body>
 </html>

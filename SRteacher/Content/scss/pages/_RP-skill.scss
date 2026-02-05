@@ -2,36 +2,36 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-index{	  		 width:  4%;  }
-                &.row-studentName{  	 width: 12%;  }
-                &.row-skillTotal{        width: 11%;  }
-                &.row-skillItem{     	 width: auto; }
-                &.row-studentAssessment{ width: 11%;  }
-                &.row-teacherFeedback{   width: 11%;  }
-                &.row-portfolio{ 		 width: 11%;  }
+                &.col-index							{	width:  4%; }
+                &.col-studentName				{ width: 12%; }
+                &.col-skillTotal				{ width: 11%; }
+                &.col-skillItem					{ width: auto;}
+                &.col-studentAssessment { width: 11%; }
+                &.col-teacherFeedback		{ width: 11%; }
+                &.col-portfolio					{ width: 11%; }
 				
-				&.row-skillRP{ width: 8%; }
-				&.row-skillRE{ width: 8%; }
-				&.row-skillAR{ width: 8%; }
-				&.row-skillRG{ width: 8%; }
-				&.row-skillPR{ width: 8%; }
+								&.col-skillRP						{ width: 8%; }
+								&.col-skillRE						{ width: 8%; }
+								&.col-skillAR						{ width: 8%; }
+								&.col-skillRG						{ width: 8%; }
+								&.col-skillPR						{ width: 8%; }
             }   
         }
     }
-	> thead > tr >th.row-skillRP { border-left-color: transparent; }
+	> thead > tr >th.col-skillRP { border-left-color: transparent; }
 }
 
 .table-performance{
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-check{	  	width:  4%; }
-                &.row-year{  	 	width: 16%; }
-                &.row-grade{        width: 16%; }
-                &.row-class{     	width: 16%; }
-                &.row-teacher{ 		width: 16%; }
-                &.row-studentCount{ width: 16%; }
-                &.row-studentMenu{  width: 16%; }
+                &.col-check					{	width:  4%; }
+                &.col-year					{ width: 16%; }
+                &.col-grade					{ width: 16%; }
+                &.col-class					{ width: 16%; }
+                &.col-teacher				{ width: 16%; }
+                &.col-studentCount	{ width: 16%; }
+                &.col-studentMenu		{ width: 16%; }
             }   
         }
     }
@@ -63,17 +63,17 @@
 	> thead, > tbody{
 		> tr{
 			>th, > td {
-				&.row-index{	  	 	 width:  5%; }
-				&.row-grade{  	 	 	 width:  6%; }
-				&.row-class{       	 width:  6%; }
-				&.row-studentName{ 	 width: 10%; }
-				&.row-DACC{ 			 	 width: 12%; }
-				&.row-RAplanning{ 	 width: 10%; }
-				&.row-RAexecution{   width: 10%; }
-				&.row-RAproficiency{ width: 10%; }
-				&.row-RARAerudition{ width: 10%; }
-				&.row-total{  			 width: 10%; }
-				&.row-portfolio{  	 width: 10%; }
+				&.col-index					{	width:  5%; }
+				&.col-grade					{ width:  6%; }
+				&.col-class					{ width:  6%; }
+				&.col-studentName		{ width: 10%; }
+				&.col-DACC					{ width: 12%; }
+				&.col-RAplanning		{ width: 10%; }
+				&.col-RAexecution		{ width: 10%; }
+				&.col-RAproficiency	{ width: 10%; }
+				&.col-RARAerudition	{ width: 10%; }
+				&.col-total					{ width: 10%; }
+				&.col-portfolio			{ width: 10%; }
 			}   
 		}
 	}
@@ -116,14 +116,14 @@
 	> thead, > tbody{
 		> tr{
 			>th, > td {
-				&.row-index{	  	 	 width:  5%; }
-				&.row-dateRange{	 	 width: 33%; }
-				&.row-RAplanning{ 	 width: 12%; }
-				&.row-RAexecution{   width: 12%; }
-				&.row-RAproficiency{ width: 12%; }
-				&.row-RARAerudition{ width: 12%; }
-				&.row-total{  			 width: 12%; }
-				&.row-portfolio{  	 width: 12%; }
+				&.col-index					{	width:  5%; }
+				&.col-dateRange			{	width: 33%; }
+				&.col-RAplanning		{ width: 12%; }
+				&.col-RAexecution		{ width: 12%; }
+				&.col-RAproficiency	{ width: 12%; }
+				&.col-RARAerudition	{ width: 12%; }
+				&.col-total					{ width: 12%; }
+				&.col-portfolio			{ width: 12%; }
 			}   
 		}
 	}	

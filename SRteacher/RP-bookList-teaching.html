@@ -26,6 +26,7 @@
 <body>
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -82,30 +83,30 @@
             <table class="table table-bordered table-teaching-overview" id="teachingOverviewTable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-delete">刪除</th>
-                  <th scope="col" class="row-index">序號</th>
-                  <th scope="col" class="row-bookList">已建置書單</th>
-                  <th scope="col" class="row-year">建立年度</th>
-                  <th scope="col" class="row-bookCount">當前書籍數</th>
-                  <th scope="col" class="row-classCount">使用班級數</th>
-                  <th scope="col" class="row-assignClass">指派班級</th>
-                  <th scope="col" class="row-editList">編輯書單</th>
-                  <th scope="col" class="row-status">狀態</th>
+                  <th scope="col" class="col-delete">刪除</th>
+                  <th scope="col" class="col-index">序號</th>
+                  <th scope="col" class="col-bookList">已建置書單</th>
+                  <th scope="col" class="col-year">建立年度</th>
+                  <th scope="col" class="col-bookCount">當前書籍數</th>
+                  <th scope="col" class="col-classCount">使用班級數</th>
+                  <th scope="col" class="col-assignClass">指派班級</th>
+                  <th scope="col" class="col-editList">編輯書單</th>
+                  <th scope="col" class="col-status">狀態</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-delete"><div class="form-check form-check-inline">
+                  <td class="col-delete"><div class="form-check form-check-inline">
                       <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
                     </div></td>
-                  <td class="row-index">1</td>
-                  <td class="row-bookList"><input type="text" class="form-control rounded-0 readonly" value="香蕉小組書單1" disabled></td>
-                  <td class="row-year">2022</td>
-                  <td class="row-bookCount">20</td>
-                  <td class="row-classCount">3</td>
-                  <td class="row-assignClass"><button type="button" class="btn btn-outline-primary bg-gradient w-100">指派</button></td>
-                  <td class="row-editList"><button type="button" class="btn btn-outline-primary bg-gradient w-100">編輯</button></td>
-                  <td class="row-status"><div class="form-check form-switch form-check-inline m-0">
+                  <td class="col-index">1</td>
+                  <td class="col-bookList"><input type="text" class="form-control rounded-0 readonly" value="香蕉小組書單1" disabled></td>
+                  <td class="col-year">2022</td>
+                  <td class="col-bookCount">20</td>
+                  <td class="col-classCount">3</td>
+                  <td class="col-assignClass"><button type="button" class="btn btn-outline-primary bg-gradient w-100">指派</button></td>
+                  <td class="col-editList"><button type="button" class="btn btn-outline-primary bg-gradient w-100">編輯</button></td>
+                  <td class="col-status"><div class="form-check form-switch form-check-inline m-0">
                       <input class="form-check-input" type="checkbox" role="switch">
                     </div></td>
                 </tr>
@@ -190,22 +191,22 @@
                 <table class="table table-bordered table-teaching-detial" id="teachingDetialTable">
                   <thead>
                     <tr>
-                      <th scope="col" class="row-index">序號</th>
-                      <th scope="col" class="row-bookTitle">書名</th>
-                      <th scope="col" class="row-author">作者</th>
-                      <th scope="col" class="row-publisher">出版社</th>
-                      <th scope="col" class="row-publicationYear">出版年</th>
-                      <th scope="col" class="row-SR">難度</th>
+                      <th scope="col" class="col-index">序號</th>
+                      <th scope="col" class="col-bookTitle">書名</th>
+                      <th scope="col" class="col-author">作者</th>
+                      <th scope="col" class="col-publisher">出版社</th>
+                      <th scope="col" class="col-publicationYear">出版年</th>
+                      <th scope="col" class="col-SR">難度</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="row-index">1</td>
-                      <td class="row-bookTitle">戀愛動物圖鑑</td>
-                      <td class="row-author">蔣詩綺</td>
-                      <td class="row-publisher">漢宇國際</td>
-                      <td class="row-publicationYear">2012</td>
-                      <td class="row-SR">SR 513</td>
+                      <td class="col-index">1</td>
+                      <td class="col-bookTitle">戀愛動物圖鑑</td>
+                      <td class="col-author">蔣詩綺</td>
+                      <td class="col-publisher">漢宇國際</td>
+                      <td class="col-publicationYear">2012</td>
+                      <td class="col-SR">SR 513</td>
                     </tr>
                   </tbody>
                 </table>
@@ -307,33 +308,33 @@
                   <table class="table table-borderless table-recommendedBook" id="recommendedBook">
                     <thead>
                       <tr>
-                        <th class="row-id">ID</th>
-                        <th class="row-good">優選書單</th>
-                        <th class="row-cover">書封面</th>
-                        <th class="row-bookTitle">書名</th>
-                        <th class="row-SR">圖書難度</th>
-                        <th class="row-category">分類</th>
-                        <th class="row-topicType">題本類別</th>
-                        <th class="row-ebook">電子書</th>
-                        <th class="row-checkbox">加入書單</th>
-                        <th class="row-bookplanet">布可星球</th>
+                        <th class="col-id">ID</th>
+                        <th class="col-good">優選書單</th>
+                        <th class="col-cover">書封面</th>
+                        <th class="col-bookTitle">書名</th>
+                        <th class="col-SR">圖書難度</th>
+                        <th class="col-category">分類</th>
+                        <th class="col-topicType">題本類別</th>
+                        <th class="col-ebook">電子書</th>
+                        <th class="col-checkbox">加入書單</th>
+                        <th class="col-bookplanet">布可星球</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="row-id">052c8e4a-e0e4-4074-85b1-848f9f3b4313</td>
-                        <td class="row-good"><img src="Content/images/recommendedBook/goodBook.png" width="66" height="65" alt=""></td>
-                        <td class="row-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
-                        <td class="row-bookTitle">能量七密碼：療癒身心靈，喚醒你本有的創造力、直覺和內在力量【附24張圖例】（The Energy Codes： The 7-Step System to Awaken Your Spirit，Heal Your Body，and Live Your Best Life）</td>
-                        <td class="row-SR" data-th="圖書難度">SR 999</td>
-                        <td class="row-category" data-th="分類">成長/生命教育成長/生命教</td>
-                        <td class="row-topicType" data-th="題本類別">摘要題成長/生命教</td>
-                        <td class="row-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"  alt="">&nbsp;電子書</td>
-                        <td class="row-checkbox"><div class="form-check form-check-inline">
+                        <td class="col-id">052c8e4a-e0e4-4074-85b1-848f9f3b4313</td>
+                        <td class="col-good"><img src="Content/images/recommendedBook/goodBook.png" width="66" height="65" alt=""></td>
+                        <td class="col-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
+                        <td class="col-bookTitle">能量七密碼：療癒身心靈，喚醒你本有的創造力、直覺和內在力量【附24張圖例】（The Energy Codes： The 7-Step System to Awaken Your Spirit，Heal Your Body，and Live Your Best Life）</td>
+                        <td class="col-SR" data-th="圖書難度">SR 999</td>
+                        <td class="col-category" data-th="分類">成長/生命教育成長/生命教</td>
+                        <td class="col-topicType" data-th="題本類別">摘要題成長/生命教</td>
+                        <td class="col-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"  alt="">&nbsp;電子書</td>
+                        <td class="col-checkbox"><div class="form-check form-check-inline">
                             <input class="form-check-input border-primary" type="checkbox" value="" id="checkbox8">
                             <label class="form-check-label visually-hidden" for="checkbox8">加入書單</label>
                           </div></td>
-                        <td class="row-bookplanet"><img src="Content/images/recommendedBook/borrowLink/bookplanet.png" alt="布可星球"></td>
+                        <td class="col-bookplanet"><img src="Content/images/recommendedBook/borrowLink/bookplanet.png" alt="布可星球"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -445,389 +446,389 @@
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    });  
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');  
-    }); 
-    
-    const list = $('#teachingOverviewTable');
-    //教學指定書單 datatables 
-	list.DataTable({
-        //serverSide: true,
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer clearfix"pi>',
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: 'Content/json/RP-bookList/teaching-overview.json',
-        columnDefs: [
-            {//刪除
-                targets: 0, 
-                title: '刪除',
-                className: 'row-delete',
-                orderable: false,
-                visible: false,
-                render: function (data, type, row, meta) {
-                    return `<div class="SRform-check-red">
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');
+  });
+
+  const list = $('#teachingOverviewTable');
+  //教學指定書單 datatables 
+  list.DataTable({
+    //serverSide: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer clearfix"pi>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: 'Content/json/RP-bookList/teachingOverview.json',
+    columnDefs: [{ //刪除
+        targets: 0,
+        title: '刪除',
+        className: 'col-delete',
+        orderable: false,
+        visible: false,
+        render: function (data, type, row, meta) {
+          return `<div class="SRform-check-red">
                               <input class="form-check-input" type="checkbox" name="delete">
-                            </div>`; 
-                } 
-            },
-            {//序號
-                targets: 1, 
-                title: '序號',
-                className: 'row-index',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//已建置書單
-                targets: 2, 
-                title: '已建置書單',
-                data: 'bookList',
-                className: 'row-bookList',
-                orderable: false, 
-                render: function (data, type, row, meta) {
-                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
-                } 
-            },
-            {//建立年度 
-                targets: 3,
-                title: '建立年度',
-                data: 'year',
-                className: 'row-year',
-                orderable: false,
-            },
-            {//當前書籍數
-                targets: 4, 
-                title: '當前書籍數',
-                data: 'bookCount',
-                className: 'row-bookCount',
-                orderable: false,
-            },
-            {//使用班級數
-                targets: 5, 
-                title: '使用班級數',
-                data: 'classCount',
-                className: 'row-classCount',
-                orderable: false,
-            },
-            {//指派班級
-                targets: 6, 
-                title: '指派班級',
-                data: 'assignClass',
-                className: 'row-assignClass',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-primary bg-gradient w-100">指派</button>`;
-                }
-            },
-            {//編輯書單
-                targets: 7, 
-                title: '編輯書單',
-                data: 'editList',
-                className: 'row-editList',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-primary bg-gradient w-100">編輯</button>`;
-                }
-            },
-            {//狀態
-                targets: 8, 
-                title: '狀態',
-                data: 'status',
-                className: 'row-status',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    let status;
-                    switch (data) {
-						case 0:
-                            status = `<div class="form-check form-switch form-check-inline m-0">
+                            </div>`;
+        }
+      },
+      { //序號
+        targets: 1,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
+        }
+      },
+      { //已建置書單
+        targets: 2,
+        title: '已建置書單',
+        data: 'bookList',
+        className: 'col-bookList',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+        }
+      },
+      { //建立年度 
+        targets: 3,
+        title: '建立年度',
+        data: 'year',
+        className: 'col-year',
+        orderable: false,
+      },
+      { //當前書籍數
+        targets: 4,
+        title: '當前書籍數',
+        data: 'bookCount',
+        className: 'col-bookCount',
+        orderable: false,
+      },
+      { //使用班級數
+        targets: 5,
+        title: '使用班級數',
+        data: 'classCount',
+        className: 'col-classCount',
+        orderable: false,
+      },
+      { //指派班級
+        targets: 6,
+        title: '指派班級',
+        data: 'assignClass',
+        className: 'col-assignClass',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-outline-primary bg-gradient w-100">指派</button>`;
+        }
+      },
+      { //編輯書單
+        targets: 7,
+        title: '編輯書單',
+        data: 'editList',
+        className: 'col-editList',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-outline-primary bg-gradient w-100">編輯</button>`;
+        }
+      },
+      { //狀態
+        targets: 8,
+        title: '狀態',
+        data: 'status',
+        className: 'col-status',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          let status;
+          switch (data) {
+            case 0:
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
                                       </div>`;
-                            break 	
-                        case 1:
-                            status = `<div class="form-check form-switch form-check-inline m-0">
+              break
+            case 1:
+              status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
                                       </div>`;
-                            break
-                        default:
-                            status = '';
-                            break 
-                    }
-                    return status;
-                } 
-            }
-            
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list);
+              break
+            default:
+              status = '';
+              break
+          }
+          return status;
         }
-    });
-    
-    //[書單設定]
-    $('#setting').click(function(){
-        //功能按鈕區、搜尋區 不可按
-        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
-		
-		//頁碼隱藏(僅可編輯目前畫面的資料)
-        $('.datatables-custom-footer').hide(); 
+      }
 
-        //[書單設定]-按鈕 顯示
-        $('#blockSettingBtns').show(); 
-		
-		//表格欄位 可編輯
-        list.find('input, select').attr('disabled', false).removeClass('readonly'); 
-		
-		//表格欄位 顯示刪除、隱藏序號
-        list.DataTable().column('.row-delete').visible(true); 
-        list.DataTable().column('.row-index').visible(false); 
-		
-		//表格按鈕 不可按
-        if (list.find('button').length) {
-		  list.find('button').attr('disabled', true);
-		}
-    });
-    
-    //[書單設定]>[取消]
-    $('#settingCancel').click(function(){
-        //do something... (若有修改資料，按取消需還原為原資料)
-        
-        //功能按鈕區、搜尋區 可按
-        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-		
-		//頁碼顯示
-        $('.datatables-custom-footer').show(); 
-		
-		//[書單設定]-按鈕 隱藏
-        $('#blockSettingBtns').hide(); 
-		
-		//表格欄位 不可編輯
-        list.find('td:not(.row-delete)').find('input, select').attr('disabled', true).addClass('readonly');
-        
-        //表格欄位 隱藏刪除、顯示序號
-        list.DataTable().column('.row-delete').visible(false); 
-        list.DataTable().column('.row-index').visible(true); 
-        
-        //表格按鈕 可按
-		if (list.find('button').length) {
-		  list.find('button').attr('disabled', false);
-		}
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list);
+    }
+  });
 
-		//若有錯誤紅框，則清除紅框
-		if (list.find('.invalid').length) {
-		  list.find('.invalid').removeClass('invalid');
-		}
-    });
-    
-    //[書單設定]>[確定修改]
-    $('#settingConfirm').click(function(){
-		//do something... (修改)
-        let editOk = true; //[true | false] [修改成功 | 修改失敗]
-        
-        if(editOk == true){//修改成功
-            let selectedCheckboxes = $('input[type="checkbox"][name="delete"]:checked');
-            let selectedCount = selectedCheckboxes.length;
-            let selectedClass = selectedCheckboxes.map(function() {
-                const tr = $(this).closest('tr');
-                const Class = tr.find('td.row-bookList input').val();
-                return Class;
-            }).get();
-        
-            if( selectedCount > 0){ //有刪除則跳出確認視窗
-                confirmModal('是否確定要刪除書單：<b class="text-red">' + selectedClass.join('、') +'</b>？');
-                
-                $('#confirmOk').click(function(){
-                    //do something... (修改)
-                    
-                    editOkAlert();    
-                });
-            }else{
-                //do something... (修改)
-                
-                editOkAlert();
-            }
-            
-            function editOkAlert(){
-                alertModal('<div class="text-red">修改成功！</div>');
-            
-                $('#alertModal').on('hidden.bs.modal', function () {
-                    //功能按鈕區、搜尋區 可按
-                    $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-					
-					//頁碼顯示
-                    $('.datatables-custom-footer').show(); 
-					
-					//[書單設定]-按鈕 隱藏
-                    $('#blockSettingBtns').hide();
-					
-					//表格欄位 不可編輯
-                    list.find('input, select').attr('disabled', true).addClass('readonly');
+  //[書單設定]
+  $('#setting').click(function () {
+    //功能按鈕區、搜尋區 不可按
+    $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
 
-                    //表格欄位 隱藏刪除、顯示序號
-                    list.DataTable().column('.row-delete').visible(false); 
-                    list.DataTable().column('.row-index').visible(true); 
+    //頁碼隱藏(僅可編輯目前畫面的資料)
+    $('.datatables-custom-footer').hide();
 
-                    //表格按鈕 可按
-                    if (list.find('button').length) {
-					  list.find('button').attr('disabled', false);
-					}
+    //[書單設定]-按鈕 顯示
+    $('#blockSettingBtns').show();
 
-                    //若有錯誤紅框，則清除紅框
-					if (list.find('.invalid').length) {
-					  list.find('.invalid').removeClass('invalid');
-					}    
-                });    
-            }
-        }else{//修改失敗 demo
-			alertModal('<div class="text-red">書單名稱不可空白</div>', function () {
-    			const invalidInputs = list.find(`tbody tr:nth-child(1) .row-bookList input,
-												 tbody tr:nth-child(3) .row-bookList input`).addClass('invalid');
+    //表格欄位 可編輯
+    list.find('input, select').attr('disabled', false).removeClass('readonly');
 
-				// 如有錯誤欄位 → 捲動至第一個
-				if (invalidInputs.length > 0) {
-					const firstInvalid = invalidInputs.first();
+    //表格欄位 顯示刪除、隱藏序號
+    list.DataTable().column('.col-delete').visible(true);
+    list.DataTable().column('.col-index').visible(false);
 
-					$('html, body').animate({
-						scrollTop: firstInvalid.offset().top - 120  
-					}, 500);
-				}
-			});
+    //表格按鈕 不可按
+    if (list.find('button').length) {
+      list.find('button').attr('disabled', true);
+    }
+  });
+
+  //[書單設定]>[取消]
+  $('#settingCancel').click(function () {
+    //do something... (若有修改資料，按取消需還原為原資料)
+
+    //功能按鈕區、搜尋區 可按
+    $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+
+    //頁碼顯示
+    $('.datatables-custom-footer').show();
+
+    //[書單設定]-按鈕 隱藏
+    $('#blockSettingBtns').hide();
+
+    //表格欄位 不可編輯
+    list.find('td:not(.col-delete)').find('input, select').attr('disabled', true).addClass('readonly');
+
+    //表格欄位 隱藏刪除、顯示序號
+    list.DataTable().column('.col-delete').visible(false);
+    list.DataTable().column('.col-index').visible(true);
+
+    //表格按鈕 可按
+    if (list.find('button').length) {
+      list.find('button').attr('disabled', false);
+    }
+
+    //若有錯誤紅框，則清除紅框
+    if (list.find('.invalid').length) {
+      list.find('.invalid').removeClass('invalid');
+    }
+  });
+
+  //[書單設定]>[確定修改]
+  $('#settingConfirm').click(function () {
+    //do something... (修改)
+    let editOk = true; //[true | false] [修改成功 | 修改失敗]
+
+    if (editOk == true) { //修改成功
+      let selectedCheckboxes = $('input[type="checkbox"][name="delete"]:checked');
+      let selectedCount = selectedCheckboxes.length;
+      let selectedClass = selectedCheckboxes.map(function () {
+        const tr = $(this).closest('tr');
+        const Class = tr.find('td.col-bookList input').val();
+        return Class;
+      }).get();
+
+      if (selectedCount > 0) { //有刪除則跳出確認視窗
+        confirmModal('是否確定要刪除書單：<b class="text-red">' + selectedClass.join('、') + '</b>？');
+
+        $('#confirmOk').click(function () {
+          //do something... (修改)
+
+          editOkAlert();
+        });
+      } else {
+        //do something... (修改)
+
+        editOkAlert();
+      }
+
+      function editOkAlert() {
+        alertModal('<div class="text-red">修改成功！</div>');
+
+        $('#alertModal').on('hidden.bs.modal', function () {
+          //功能按鈕區、搜尋區 可按
+          $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+
+          //頁碼顯示
+          $('.datatables-custom-footer').show();
+
+          //[書單設定]-按鈕 隱藏
+          $('#blockSettingBtns').hide();
+
+          //表格欄位 不可編輯
+          list.find('input, select').attr('disabled', true).addClass('readonly');
+
+          //表格欄位 隱藏刪除、顯示序號
+          list.DataTable().column('.col-delete').visible(false);
+          list.DataTable().column('.col-index').visible(true);
+
+          //表格按鈕 可按
+          if (list.find('button').length) {
+            list.find('button').attr('disabled', false);
+          }
+
+          //若有錯誤紅框，則清除紅框
+          if (list.find('.invalid').length) {
+            list.find('.invalid').removeClass('invalid');
+          }
+        });
+      }
+    } else { //修改失敗 demo
+      alertModal('<div class="text-red">書單名稱不可空白</div>', function () {
+        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-bookList input,
+												 tbody tr:nth-child(3) .col-bookList input`).addClass('invalid');
+
+        // 如有錯誤欄位 → 捲動至第一個
+        if (invalidInputs.length > 0) {
+          const firstInvalid = invalidInputs.first();
+
+          $('html, body').animate({
+            scrollTop: firstInvalid.offset().top - 120
+          }, 500);
         }
-    });
-    
-    //[新增書單]
-    $('#insert').click(function(){ 
-		 $('#bookListModal').attr('data-modal-type', 'insert').modal('show');
-		
-		$('#bookListModal h3').text('新增書單');
-		$('#bookListConfirm').text('確定新增');
+      });
+    }
+  });
 
-        loadteachingDetialTable(null);
-    });
-    
-    //表格-編輯書單 > [編輯]
-    list.on('click', '.row-editList button', function (){ 
-		$('#bookListModal').attr('data-modal-type', 'edit').modal('show'); 
-		
-		$('#bookListModal h3').text('編輯書單');
-		$('#bookListConfirm').text('確定');
-		
-        loadteachingDetialTable('Content/json/RP-bookList/teaching-detial.json');
-    });
-		
-	//[增/減書籍]
-    $('#adjustBook').click(function(){
-        $('#adjustBookModal').modal('show');
-		
-		loadRecommendedBook();
-    });
-    
-    //表格-指派班級 > [指派]
-    list.on('click', '.row-assignClass button', function (){
-        $('#assignModal').modal('show');    
-    });
-}); 
+  //[新增書單]
+  $('#insert').click(function () {
+    $('#bookListModal').attr('data-modal-type', 'insert').modal('show');
+
+    $('#bookListModal h3').text('新增書單');
+    $('#bookListConfirm').text('確定新增');
+
+    loadteachingDetialTable(null);
+  });
+
+  //表格-編輯書單 > [編輯]
+  list.on('click', '.col-editList button', function () {
+    $('#bookListModal').attr('data-modal-type', 'edit').modal('show');
+
+    $('#bookListModal h3').text('編輯書單');
+    $('#bookListConfirm').text('確定');
+
+    loadteachingDetialTable('Content/json/RP-bookList/teachingDetial.json');
+  });
+
+  //[增/減書籍]
+  $('#adjustBook').click(function () {
+    $('#adjustBookModal').modal('show');
+
+    loadRecommendedBook();
+  });
+
+  //表格-指派班級 > [指派]
+  list.on('click', '.col-assignClass button', function () {
+    $('#assignModal').modal('show');
+  });
+});
 </script> 
 
 <!-- 新增/編輯書單 --> 
 <script>
-function loadteachingDetialTable(json) { 
-	const list2 = $('#teachingDetialTable');
-	
-	if ($.fn.DataTable.isDataTable(list2)) { 
-        list2.DataTable().clear().destroy();
-        list2.find('tbody').empty();
-    }
+function loadteachingDetialTable(json) {
+  const list2 = $('#teachingDetialTable');
 
-	list2.DataTable({
-        //serverSide: true,
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer clearfix"pi>',
-        language: {
-          	url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: function(data, callback, settings) {
-			if (json) {
-                $.getJSON(json, function(res){
-                    callback(res);
-                });
-            } else {
-                callback({ data: [] });
-            }
-		},
-        columnDefs: [
-            {//序號
-                targets: 0, 
-                title: '序號',
-                className: 'row-index',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//書名
-                targets: 1, 
-                title: '書名',
-                data: 'bookTitle',
-                className: 'row-bookTitle',
-                orderable: false, 
-            },
-            {//作者 
-                targets: 2,
-                title: '作者',
-                data: 'author',
-                className: 'row-author',
-                orderable: false,
-            },
-            {//出版社
-                targets: 3, 
-                title: '出版社',
-                data: 'publisher',
-                className: 'row-publisher',
-                orderable: false,
-            },
-            {//出版年
-                targets: 4, 
-                title: '出版年',
-                data: 'publicationYear',
-                className: 'row-publicationYear',
-                orderable: false,
-            },
-            {//難度
-                targets: 5, 
-                title: '難度',
-                data: 'SR',
-                className: 'row-SR',
-                orderable: false,
-            }
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list2);
+  if ($.fn.DataTable.isDataTable(list2)) {
+    list2.DataTable().clear().destroy();
+    list2.find('tbody').empty();
+  }
+
+  list2.DataTable({
+    //serverSide: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer clearfix"pi>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: function (data, callback, settings) {
+      if (json) {
+        $.getJSON(json, function (res) {
+          callback(res);
+        });
+      } else {
+        callback({
+          data: []
+        });
+      }
+    },
+    columnDefs: [{ //序號
+        targets: 0,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
         }
-    });	
+      },
+      { //書名
+        targets: 1,
+        title: '書名',
+        data: 'bookTitle',
+        className: 'col-bookTitle',
+        orderable: false,
+      },
+      { //作者 
+        targets: 2,
+        title: '作者',
+        data: 'author',
+        className: 'col-author',
+        orderable: false,
+      },
+      { //出版社
+        targets: 3,
+        title: '出版社',
+        data: 'publisher',
+        className: 'col-publisher',
+        orderable: false,
+      },
+      { //出版年
+        targets: 4,
+        title: '出版年',
+        data: 'publicationYear',
+        className: 'col-publicationYear',
+        orderable: false,
+      },
+      { //難度
+        targets: 5,
+        title: '難度',
+        data: 'SR',
+        className: 'col-SR',
+        orderable: false,
+      }
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list2);
+    }
+  });
 }
 </script> 
 
@@ -836,284 +837,294 @@ function loadteachingDetialTable(json) {
 <script src="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> 
 <script src="Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script> 
 <script>
-$(function() {
-	$( '#SRrangeBar-s-range' ).slider({
-		range: true,
-      	min: 40,
-      	max: 1000,
-      	values: [ 310, 520 ],
-		disabled: true,
-    }).find('.ui-widget-header').append('<span class="slider-min"></span><span class="slider-max"></span>');;
-	$('.ui-widget-header .slider-min').text('SR '+$( "#SRrangeBar-s-range" ).slider( "values", 0 ));
-	$('.ui-widget-header .slider-max').text('SR '+$( "#SRrangeBar-s-range" ).slider( "values", 1 ));
-    
-    if( $('.ui-widget-header').width() <= 50 ){
-        $('.ui-widget-header').addClass('smallWidth');   
-    } 
-	
-	$( '#SRrangeBar-s-control' ).slider({
-		range: true,
-      	min: 40,
-      	max: 1000,
-      	values: [ 350, 650 ],
-      	slide: function( event, ui ) {
-			$('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR '+ui.values[ 0 ]);
-			$('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR '+ui.values[ 1 ]);
-		}
-    }).find('.ui-slider-handle').append('<span class="slider-tooltip"></span>');
-	$('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR '+$( "#SRrangeBar-s-control" ).slider( "values", 0 ));
-	$('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR '+$( "#SRrangeBar-s-control" ).slider( "values", 1 ));
- });
+$(function () {
+  $('#SRrangeBar-s-range').slider({
+    range: true,
+    min: 40,
+    max: 1000,
+    values: [310, 520],
+    disabled: true,
+  }).find('.ui-widget-header').append('<span class="slider-min"></span><span class="slider-max"></span>');;
+  $('.ui-widget-header .slider-min').text('SR ' + $("#SRrangeBar-s-range").slider("values", 0));
+  $('.ui-widget-header .slider-max').text('SR ' + $("#SRrangeBar-s-range").slider("values", 1));
+
+  if ($('.ui-widget-header').width() <= 50) {
+    $('.ui-widget-header').addClass('smallWidth');
+  }
+
+  $('#SRrangeBar-s-control').slider({
+    range: true,
+    min: 40,
+    max: 1000,
+    values: [350, 650],
+    slide: function (event, ui) {
+      $('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR ' + ui.values[0]);
+      $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + ui.values[1]);
+    }
+  }).find('.ui-slider-handle').append('<span class="slider-tooltip"></span>');
+  $('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR ' + $("#SRrangeBar-s-control").slider("values", 0));
+  $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + $("#SRrangeBar-s-control").slider("values", 1));
+});
 </script> 
 
 <!-- 增/減書籍(推薦書單) datatables  --> 
 <script>
-function loadRecommendedBook(json) { 
-    const list3 = $('#recommendedBook');
-	
-	if ($.fn.DataTable.isDataTable(list3)) { 
-        list3.DataTable().clear().destroy();
-        list3.find('tbody').empty();
-    }
-	
-	list3.DataTable({
-        //serverSide: true,
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 8,
-		pagingType: "simple_numbers",
-		dom: '<"datatables-custom-header recommendedBook-table-header"Bip>'+
-			 '<rt>'+
-			 '<"datatables-custom-footer clearfix"pi>',
-		buttons:[	
-			{
-			  text: '圖書難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-			  attr:  { id: 'sort_SR', class: 'dt-button dt-button-SRsort'},
-			  action: function () {
-				if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
-					this.order( [ 4, 'desc' ] ).draw();
-					$('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
-					$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-				}else{//原本null or desc↓變asc↑
-					this.order( [ 4, 'asc' ] ).draw();
-					$('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
-					$('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-				}//if there has "SR 1000", that will need to debug......
-			  }
-			},
-			{
-			  text:`<img src="Content/images/recommendedBook/icon-goodBook.png" width="18" height="18">&nbsp;優選書優先&nbsp;
+function loadRecommendedBook(json) {
+  const list3 = $('#recommendedBook');
+
+  if ($.fn.DataTable.isDataTable(list3)) {
+    list3.DataTable().clear().destroy();
+    list3.find('tbody').empty();
+  }
+
+  list3.DataTable({
+    //serverSide: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 8,
+    pagingType: "simple_numbers",
+    dom: '<"datatables-custom-header recommendedBook-table-header"Bip>'
+      + '<rt>'
+      + '<"datatables-custom-footer clearfix"pi>',
+    buttons: [{
+        text: '圖書難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+        attr: {
+          id: 'sort_SR',
+          class: 'dt-button dt-button-SRsort'
+        },
+        action: function () {
+          if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
+            this.order([4, 'desc']).draw();
+            $('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+            $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+          } else { //原本null or desc↓變asc↑
+            this.order([4, 'asc']).draw();
+            $('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+            $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+          } //if there has "SR 1000", that will need to debug......
+        }
+      },
+      {
+        text: `<img src="Content/images/recommendedBook/icon-goodBook.png" width="18" height="18">&nbsp;優選書優先&nbsp;
 					<div class="form-check">
 						<input type="checkbox" id="goodBook" class="form-check-input border-primary">
 						<label for="goodBook" class="form-check-label"></label>
 					</div>`,
-			  attr:  { id: 'sort_good', class: 'dt-button dt-button-checkbox'},
-			  action: function () {
-				if( $('#sort_good').hasClass('desc')){ //原本asc↑，變desc↓
-					this.order( [ 0, 'asc' ] ).draw();
-					$('#sort_good').removeClass('active asc desc').siblings('.dt-button').removeClass('active asc desc');
-					$('#sort_good').find('input[type="checkbox"]').removeAttr('checked');
-				}else{//原本null 變desc↑
-					this.order( [ 1, 'desc' ] ).draw();
-					$('#sort_good').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
-					$('#sort_good').find('input[type="checkbox"]').attr('checked', 'checked');
-				}
-			  }//請改寫，暫以checked="checked"：#sort_good有內容desc排序優選書； checked=""：按原本#sort_id排序
-			},
-			{
-			  text: `<img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書&nbsp;
+        attr: {
+          id: 'sort_good',
+          class: 'dt-button dt-button-checkbox'
+        },
+        action: function () {
+          if ($('#sort_good').hasClass('desc')) { //原本asc↑，變desc↓
+            this.order([0, 'asc']).draw();
+            $('#sort_good').removeClass('active asc desc').siblings('.dt-button').removeClass('active asc desc');
+            $('#sort_good').find('input[type="checkbox"]').removeAttr('checked');
+          } else { //原本null 變desc↑
+            this.order([1, 'desc']).draw();
+            $('#sort_good').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+            $('#sort_good').find('input[type="checkbox"]').attr('checked', 'checked');
+          }
+        } //請改寫，暫以checked="checked"：#sort_good有內容desc排序優選書； checked=""：按原本#sort_id排序
+      },
+      {
+        text: `<img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書&nbsp;
 					 <div class="form-check">
 						<input type="checkbox" id="ebook" class="form-check-input border-primary">
 						<label for="ebook" class="form-check-label"></label>
 					 </div>`,
-			  attr:  { id: 'sort_ebook', class: 'dt-button dt-button-checkbox'},
-			  action: function () {
-				  if( $('#sort_ebook').find('input[type="checkbox"]').prop('checked')){
-					  $('#sort_ebook').find('input[type="checkbox"]').removeAttr('checked');
-					  this.search('').draw(); 
-				  }else{
-					  $('#sort_ebook').find('input[type="checkbox"]').attr('checked', 'checked');
-					  //do something...  
-				  }
-			  }
-			},
-			{
-			  text: `<img src="Content/images/recommendedBook/borrowLink/bookplanet.png" height="24" alt="布可星球">
+        attr: {
+          id: 'sort_ebook',
+          class: 'dt-button dt-button-checkbox'
+        },
+        action: function () {
+          if ($('#sort_ebook').find('input[type="checkbox"]').prop('checked')) {
+            $('#sort_ebook').find('input[type="checkbox"]').removeAttr('checked');
+            this.search('').draw();
+          } else {
+            $('#sort_ebook').find('input[type="checkbox"]').attr('checked', 'checked');
+            //do something...  
+          }
+        }
+      },
+      {
+        text: `<img src="Content/images/recommendedBook/borrowLink/bookplanet.png" height="24" alt="布可星球">
 					 <div class="form-check">
 						<input type="checkbox" id="bookplanet" class="form-check-input border-primary">
 						<label for="bookplanet" class="form-check-label"></label>
 					 </div>`,
-			  attr:  { id: 'sort_bookplanet', class: 'dt-button dt-button-checkbox'},
-			  action: function () {
-				  let keywords = '<img src="Content/images/recommendedBook/borrowLink/bookplanet.png">';
+        attr: {
+          id: 'sort_bookplanet',
+          class: 'dt-button dt-button-checkbox'
+        },
+        action: function () {
+          let keywords = '<img src="Content/images/recommendedBook/borrowLink/bookplanet.png">';
 
-				  if( $('#sort_bookplanet').find('input[type="checkbox"]').prop('checked')){
-					  $('#sort_bookplanet').find('input[type="checkbox"]').removeAttr('checked');
-					  this.search('').draw(); 
-				  }else{
-					  $('#sort_bookplanet').find('input[type="checkbox"]').attr('checked', 'checked');
-					  //do something...
-				  }
-			  }
-			},
+          if ($('#sort_bookplanet').find('input[type="checkbox"]').prop('checked')) {
+            $('#sort_bookplanet').find('input[type="checkbox"]').removeAttr('checked');
+            this.search('').draw();
+          } else {
+            $('#sort_bookplanet').find('input[type="checkbox"]').attr('checked', 'checked');
+            //do something...
+          }
+        }
+      },
 
-		],
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json',
-		  info: `<span class="info-total"><span>共&nbsp;</span>_TOTAL_<span>&nbsp;本書</span></span>
+    ],
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json',
+      info: `<span class="info-total"><span>共&nbsp;</span>_TOTAL_<span>&nbsp;本書</span></span>
 				 <span class="info-page" ><span>第&nbsp;</span><strong class="text-red">_PAGE_</strong><span>&nbsp;頁</span>&nbsp;/</span>
 				 <span class="info-pages"><span>共&nbsp;</span>_PAGES_<span>&nbsp;頁</span></span>`
+    },
+    ajax: 'Content/json/RP-bookList/recommendedBook.json',
+    columnDefs: [{ //ID
+        targets: 0,
+        title: 'ID',
+        className: 'col-id',
+        orderable: false,
+        visible: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
+        }
+      },
+      { //優選書單
+        targets: 1,
+        title: '優選書單',
+        data: 'good',
+        className: 'col-good',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          let good;
+          switch (data) {
+            case 1:
+              good = `<img src="Content/images/recommendedBook/goodBook.png" width="66" height="65">`;
+              break
+            case 0:
+              good = ``;
+              break
+            default:
+              good = ``;
+              break
+          }
+          return good;
+        }
+      },
+      { //書封面
+        targets: 2,
+        title: '書封面',
+        data: 'cover',
+        className: 'col-cover',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<img src="https://smartreading.net/RP/BookContent/BookFront/` + data + `">`;
+        }
+      },
+      { //書名
+        targets: 3,
+        title: '書名',
+        data: 'bookTitle',
+        className: 'col-bookTitle',
+        orderable: false,
+      },
+      { //圖書難度
+        targets: 4,
+        title: '圖書難度',
+        data: 'SR',
+        className: 'col-SR',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `SR ` + data;
         },
-        ajax: 'Content/json/RP-bookList/recommendedBook.json',
-        columnDefs: [
-            {//ID
-                targets: 0, 
-                title: 'ID',
-                className: 'row-id',
-                orderable: false,
-				visible: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//優選書單
-                targets: 1, 
-                title: '優選書單',
-                data: 'good',
-                className: 'row-good',
-                orderable: false, 
-                render: function (data, type, row, meta) {
-                    let good;
-                    switch (data) {
-                        case 1:
-                            good = `<img src="Content/images/recommendedBook/goodBook.png" width="66" height="65">`;
-                            break
-                        case 0:
-                            good = ``;
-                            break    
-                        default:
-                            good = ``;
-                            break 
-                    }
-                    return good;
-                } 
-            },
-            {//書封面
-                targets: 2,
-                title: '書封面',
-                data: 'cover',
-                className: 'row-cover',
-                orderable: false,
-				render: function (data, type, row, meta) {
-                    return `<img src="https://smartreading.net/RP/BookContent/BookFront/`+ data +`">`;
-                } 
-            },
-            {//書名
-                targets: 3, 
-                title: '書名',
-                data: 'bookTitle',
-                className: 'row-bookTitle',
-                orderable: false,
-            },
-            {//圖書難度
-                targets: 4, 
-                title: '圖書難度',
-                data: 'SR',
-                className: 'row-SR',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `SR `+ data;
-                },
-				createdCell: function (td, cellData, rowData, row, col) {
-					$(td).attr('data-th', '圖書難度');
-				}
-            },
-            {//分類
-                targets: 5, 
-                title: '分類',
-                data: 'category',
-                className: 'row-category',
-                orderable: false,
-				createdCell: function (td, cellData, rowData, row, col) {
-					$(td).attr('data-th', '分類');
-				}
-            },
-            {//題本類別
-                targets: 6, 
-                title: '題本類別',
-                data: 'topicType',
-                className: 'row-topicType',
-                orderable: false,
-				createdCell: function (td, cellData, rowData, row, col) {
-					$(td).attr('data-th', '題本類別');
-				}
-            },
-			{//電子書
-                targets: 7, 
-                title: '電子書',
-                data: 'ebook',
-                width: '10%',
-                className: 'row-ebook',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    let ebook;
-                    switch (data) {
-                        case 1:
-                            ebook = `<img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書`;
-                            break
-                        case 0:
-                            ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書`;
-                            break    
-                        default:
-                            ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書`;
-                            break 
-                    }
-                    return ebook;
-                } 
-            },
-			{//加入書單
-                targets: 8, 
-                title: '加入書單',
-                className: 'row-checkbox',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<div class="form-check form-check-inline">
+        createdCell: function (td, cellData, rowData, row, col) {
+          $(td).attr('data-th', '圖書難度');
+        }
+      },
+      { //分類
+        targets: 5,
+        title: '分類',
+        data: 'category',
+        className: 'col-category',
+        orderable: false,
+        createdCell: function (td, cellData, rowData, row, col) {
+          $(td).attr('data-th', '分類');
+        }
+      },
+      { //題本類別
+        targets: 6,
+        title: '題本類別',
+        data: 'topicType',
+        className: 'col-topicType',
+        orderable: false,
+        createdCell: function (td, cellData, rowData, row, col) {
+          $(td).attr('data-th', '題本類別');
+        }
+      },
+      { //電子書
+        targets: 7,
+        title: '電子書',
+        data: 'ebook',
+        width: '10%',
+        className: 'col-ebook',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          let ebook;
+          switch (data) {
+            case 1:
+              ebook = `<img src="Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書`;
+              break
+            case 0:
+              ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書`;
+              break
+            default:
+              ebook = `<img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書`;
+              break
+          }
+          return ebook;
+        }
+      },
+      { //加入書單
+        targets: 8,
+        title: '加入書單',
+        className: 'col-checkbox',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<div class="form-check form-check-inline">
                           <input class="form-check-input border-primary" type="checkbox" value="" id="checkbox8">
                           <label class="form-check-label visually-hidden" for="checkbox` + data + `">加入書單</label>
                         </div>`;
-                }
-            },
-			{//布可星球
-                targets: 9, 
-                title: '布可星球',
-                data: 'bookplanet',
-                width: '10%',
-                className: 'row-bookplanet',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    let bookplanet;
-                    switch (data) {
-                        case 1:
-                            bookplanet = `<img src="Content/images/recommendedBook/borrowLink/bookplanet.png">`;
-                            break
-                        case 0:
-                            bookplanet = ``;
-                            break    
-                        default:
-                            bookplanet = ``;
-                            break 
-                    }
-                    return bookplanet;
-                } 
-            },   
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list3);
         }
-    });
+      },
+      { //布可星球
+        targets: 9,
+        title: '布可星球',
+        data: 'bookplanet',
+        width: '10%',
+        className: 'col-bookplanet',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          let bookplanet;
+          switch (data) {
+            case 1:
+              bookplanet = `<img src="Content/images/recommendedBook/borrowLink/bookplanet.png">`;
+              break
+            case 0:
+              bookplanet = ``;
+              break
+            default:
+              bookplanet = ``;
+              break
+          }
+          return bookplanet;
+        }
+      },
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list3);
+    }
+  });
 }
 </script>
 </body>

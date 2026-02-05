@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "sn": "1",
+      "year": "2023",
+      "grade": "3",
+      "class": "Test 02",
+      "studentCount": "22"
+    },
+    {
+      "sn": "2",
+      "year": "2022-1",
+      "grade": "2",
+      "class": "Test 01",
+      "studentCount": "20"
+    },
+    {
+      "sn": "3",
+      "year": "2022-2",
+      "grade": "2",
+      "class": "Test 01",
+      "studentCount": "20"
+
+    },
+    {
+      "sn": "4",
+      "year": "2022-1",
+      "grade": "2",
+      "class": "Test 03",
+      "studentCount": "20"
+    }       
+
+  ]
+}

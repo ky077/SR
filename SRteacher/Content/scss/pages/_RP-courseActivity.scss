@@ -1,32 +1,23 @@
 .table-courseActivity{
 	> thead, > tbody{
-        > tr{
+    > tr{
 			>th, > td {
-				&.td-no{	width: 4%;}
-				&.td-grade{	width: 6%;}
-				&.td-class{	width: 6%;}
-				&.td-Cname{	width: 12%;}
-				&.td-book{width: 17.5%;}
-				&.td-topic{width: 9.5%;}
-				&.td-scroeComp{width: 10%;}
-				&.td-likeCmt{width: 10%;}
-				&.td-tools{width: 25%;}	
+				&.col-index				{	width:  4%;		}
+				&.col-grade				{	width:  6%;		}
+				&.col-class				{	width:  6%;		}
+				&.col-studentName	{	width: 12%;		}
+				&.col-bookTitle		{ width: 17.5%; }
+				&.col-topicType		{ width: 9.5%;  }
+				&.col-scroeComp		{ width: 10%;		}
+				&.col-likeCmt			{ width: 10%;		}
+				&.col-tools				{ width: 25%;		}	
 			}
 		}
 	}
-	 > tbody{
-        > tr{
-            > td {
-				&.td-no{
-				}
-				&.td-grade{	}
-				&.td-class{	}
-				&.td-Cname{	}
-				&.td-book{}
-				&.td-topic{}
-				&.td-scroeComp{}
-				&.td-likeCmt{filter: grayscale(1) saturate(50%);}
-				&.td-tools{}	
+	> tbody{
+    > tr{
+			>th, > td {
+				&.col-likeCmt			{ filter: grayscale(1);	}
 			}
 		}
 	}

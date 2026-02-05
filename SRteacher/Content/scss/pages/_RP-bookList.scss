@@ -1,107 +1,107 @@
 //RP-bookList-teaching.html 教學指定書單
 .table-teaching-overview{
-    > thead, > tbody{
-        > tr{
-            >th, > td {
-                &.row-delete{       width:  4%;}
-                &.row-index{        width:  4%;}
-                &.row-bookList{     width: 21%;}
-                &.row-year{         width: 15%;}
-                &.row-bookCount{    width: 15%;}
-                &.row-classCount{	width: 15%;}
-                &.row-assignClass{  width: 10%;}
-                &.row-editList{     width: 10%;}
-                &.row-status{ 		width: 10%;}
-            }   
-        }
-    }
+		> thead, > tbody{
+				> tr{
+						>th, > td {
+								&.col-delete			{ width:  4%; }
+								&.col-index				{ width:  4%; }
+								&.col-bookList		{ width: 21%; }
+								&.col-year				{ width: 15%; }
+								&.col-bookCount		{ width: 15%; }
+								&.col-classCount	{	width: 15%; }
+								&.col-assignClass	{ width: 10%; }
+								&.col-editList		{ width: 10%; }
+								&.col-status			{ width: 10%; }
+						}   
+				}
+		}
 }
 
 .table-table-teaching-detial{
-	> thead, > tbody{
-        > tr{
-            >th, > td {
-				&.row-index{ 			width:  8%;}
-				&.row-bookTitle{ 		width: 35%;}
-				&.row-author{ 			width: 20%;}
-				&.row-publisher{ 		width: 15%;}
-				&.row-publicationYear{  width: 11%;}
-				&.row-SR{				width: 11%;}
-			}   
-        }
-    }
+		> thead, > tbody{
+				> tr{
+						>th, > td {
+								&.col-index						{ width:  8%; }
+								&.col-bookTitle				{ width: 35%; }
+								&.col-author					{ width: 20%; }
+								&.col-publisher				{ width: 15%; }
+								&.col-publicationYear	{	width: 11%; }
+								&.col-SR							{	width: 11%; }
+						}   
+				}
+		}
 }
 
 .adjustBook-block{
-    border: 2px dashed $gray-400;
-    background-color: lighten($primary, 52%);
-	margin-left: 1rem;
-	margin-right: 1rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+		border: 2px dashed $gray-400;
+		background-color: lighten($primary, 52%);
+		margin-left: 1rem;
+		margin-right: 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 }
 
 .adjustBook-checkbox-grid{
-	grid-template-columns: repeat(2, 1fr);
-	@media screen and (min-width: 768px) {
-	grid-template-columns: repeat(3, 1fr);	
-	}
-	@media screen and (min-width: 1200px) {
-	grid-template-columns: repeat(6, 1fr);	
-	}
-	.btn-check:checked + .btn, 
-	:not(.btn-check) + .btn:active, 
-	.btn:first-child:active, 
-	.btn.active, .btn.show {
-		color: $primary;
-		background-color: $white;
-		border-color: $primary;
-		position: relative;
-		&::after{
-			content: "";
-			display: block;
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 0 0 .9em .9em;
-			border-color: transparent transparent #43a047 transparent;
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			z-index: 1;
+		grid-template-columns: repeat(2, 1fr);
+		@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);	
 		}
-	}
+		@media screen and (min-width: 1200px) {
+		grid-template-columns: repeat(6, 1fr);	
+		}
+		.btn-check:checked + .btn, 
+		:not(.btn-check) + .btn:active, 
+		.btn:first-child:active, 
+		.btn.active, .btn.show {
+				color: $primary;
+				background-color: $white;
+				border-color: $primary;
+				position: relative;
+				&::after{
+						content: "";
+						display: block;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 0 .9em .9em;
+						border-color: transparent transparent #43a047 transparent;
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						z-index: 1;
+				}
+		}
 }
 
 
 //RP-bookList-class.html 班級學生書單 
 .table-class-overview{
-    > thead, > tbody{
-        > tr{
-            >th, > td {	
-				&.row-index{ 		 width:  4%;}
-                &.row-year{ 		 width: 20%;}
-                &.row-grade{		 width: 20%;}
-                &.row-class{ 		 width: 20%;}
-                &.row-studentCount{  width: 20%;}
-                &.row-tool{			 width: 16%;}
-            }   
-        }
-    }
+		> thead, > tbody{
+				> tr{
+						>th, > td {	
+								&.row-index					{ width:  4%; }
+								&.col-year					{ width: 20%; }
+								&.col-grade					{	width: 20%; }
+								&.col-class					{ width: 20%; }
+								&.col-studentCount	{	width: 20%; }
+								&.col-tool					{	width: 16%; }
+						}   
+				}
+		}
 }	
 .table-class-detial{
-    > thead, > tbody{
-        > tr{
-            >th, > td {	
-				&.row-checkbox{		width:  4%;}
-				&.row-studentName{  width: 18%;}
-				&.row-DACC{			width: 23.5%;}
-				&.row-SRrange{		width: 23.5%;}
-				&.row-RPCount{		width: 15%;}
-				&.row-tool{			width: 16%;}
-            }   
-        }
-    }	
+		> thead, > tbody{
+				> tr{
+						>th, > td {	
+								&.col-checkbox		{	width:  4%;   }
+								&.col-studentName	{ width: 18%;   }
+								&.col-DACC				{	width: 23.5%; }
+								&.col-SRrange			{	width: 23.5%; }
+								&.col-RPCount			{	width: 15%;   }
+								&.col-tool				{	width: 16%;   }
+						}   
+				}
+		}	
 }
 
 

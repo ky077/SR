@@ -2,14 +2,14 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.row-delete{	  width:   4%; }
-                &.row-index{	  width:   4%; }
-                &.row-bookTitle{  width:  16%; }
-                &.row-ISBN{       width:  16%; }
-                &.row-author{     width:  16%; }
-                &.row-quizCount{  width:  16%; }
-                &.row-quizDetail{ width:  16%; }
-                &.row-quizInsert{ width:  16%; }
+                &.col-delete			{	width:   4%; }
+                &.col-index				{	width:   4%; }
+                &.col-bookTitle		{ width:  16%; }
+                &.col-ISBN				{ width:  16%; }
+                &.col-author			{ width:  16%; }
+                &.col-quizCount		{ width:  16%; }
+                &.col-quizDetail	{ width:  16%; }
+                &.col-quizInsert	{ width:  16%; }
             }   
         }
     }
@@ -19,13 +19,13 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-				&.row-index{	  		width:    4%; }
-				&.row-quizTitle{	 	width:   29%; }
-				&.row-quizCount{	  	width:   15.5%; }
-				&.row-propStatus{	  	width:   10%; }
-				&.row-assignClassCount{ width:   15.5%; }
-				&.row-editDate{			width:   13%; }
-				&.row-tool{	  			width:   13%; }
+							&.col-index							{	width:    4%;   }
+							&.col-quizTitle					{	width:   29%;   }
+							&.col-quizCount					{	width:   15.5%; }
+							&.col-propStatus				{	width:   10%;   }
+							&.col-assignClassCount	{ width:   15.5%; }
+							&.col-editDate					{	width:   13%;   }
+							&.col-tool							{	width:   13%;   }
             }   
         }
     }	

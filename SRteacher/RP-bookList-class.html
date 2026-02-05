@@ -19,12 +19,13 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -65,22 +66,22 @@
             <table class="table table-bordered table-class-overview" id="classOverviewTable">
               <thead>
                 <tr>
-                  <th scope="col" class="row-index">序號</th>
-                  <th scope="col" class="row-year">年度</th>
-                  <th scope="col" class="row-grade">年級</th>
-                  <th scope="col" class="row-class">班級</th>
-                  <th scope="col" class="row-studentCount">人數</th>
-                  <th scope="col" class="row-tool">操作</th>
+                  <th scope="col" class="col-index">序號</th>
+                  <th scope="col" class="col-year">年度</th>
+                  <th scope="col" class="col-grade">年級</th>
+                  <th scope="col" class="col-class">班級</th>
+                  <th scope="col" class="col-studentCount">人數</th>
+                  <th scope="col" class="col-tool">操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="row-index">1</td>
-                  <td class="row-year">2022</td>
-                  <td class="row-grade">3</td>
-                  <td class="row-class">2</td>
-                  <td class="row-studentCount">30</td>
-                  <td class="row-tool"><button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button></td>
+                  <td class="col-index">1</td>
+                  <td class="col-year">2022</td>
+                  <td class="col-grade">3</td>
+                  <td class="col-class">2</td>
+                  <td class="col-studentCount">30</td>
+                  <td class="col-tool"><button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button></td>
                 </tr>
               </tbody>
             </table>
@@ -137,243 +138,244 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-        //當前頁名稱顯示
-        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
-    });  
-    $('footer').load('master_footer.html'); 
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-        //當前頁actvie
-        $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');  
-    }); 
+$(document).ready(function () {
+  //call header、footer、 sidebar  
+  $('header').load('master_header.html', function () {
+    //當前頁名稱顯示
+    $('#currentPage').text($('main h2').text()).addClass('active');
+  });
+  $('footer').load('master_footer.html');
+  $('#sidebarMenu').load('master_sidebar.html', function () {
+    //當前頁actvie
+    $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');
+  });
 
-	const list = $('#classOverviewTable');
-	
-    //班級 datatables 
-	list.DataTable({
-        //serverSide: true,     // 開啟伺服端模式
-		processing: true,   
-        order: [],  //取消默認排序icon
-        autoWidth: false,
-        responsive: false,
-		searching: true,
-		pageLength: 10,
-		pagingType: "simple_numbers",
-        dom: '<"table-responsive"rt>'+
-			 '<"datatables-custom-footer"pi>',		
-        language: {
-          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-        },
-        ajax: 'Content/json/RP-bookList/class-overview.json',
-        columnDefs: [
-            {//序號
-                targets: 0, 
-                title: '序號',
-                className: 'row-index',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return meta.row + 1; 
-                } 
-            },
-            {//年度
-                targets: 1, 
-                title: '年度',
-                data: 'year',
-                className: 'row-year',
-                orderable: false, 
-            },
-            {//年級 
-                targets: 2,
-                title: '年級',
-                data: 'grade',
-                className: 'row-grade',
-                orderable: false,
-            },
-            {//班級
-                targets: 3, 
-                title: '班級',
-                data: 'class',
-                className: 'row-class',
-                orderable: false,
-            },
-            {//人數
-                targets: 4, 
-                title: '人數',
-                data: 'studentCount',
-                className: 'row-studentCount',
-                orderable: false,
-            },
-            {//操作
-                targets: 5, 
-                title: '操作',
-                className: 'row-tool',
-                orderable: false,
-                render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button>`;
-                }
-            }
-            
-        ],
-        initComplete: function() {
-            //datatable footer input page
-            datatableInputPage(list);
+  const list = $('#classOverviewTable');
+
+  //班級 datatables 
+  list.DataTable({
+    //serverSide: true,     // 開啟伺服端模式
+    processing: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: true,
+    pageLength: 10,
+    pagingType: "simple_numbers",
+    dom: '<"table-responsive"rt>'
+      + '<"datatables-custom-footer"pi>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: 'Content/json/RP-bookList/classOverview.json',
+    columnDefs: [{ //序號
+        targets: 0,
+        title: '序號',
+        className: 'col-index',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return meta.row + 1;
         }
-    }); 
+      },
+      { //年度
+        targets: 1,
+        title: '年度',
+        data: 'year',
+        className: 'col-year',
+        orderable: false,
+      },
+      { //年級 
+        targets: 2,
+        title: '年級',
+        data: 'grade',
+        className: 'col-grade',
+        orderable: false,
+      },
+      { //班級
+        targets: 3,
+        title: '班級',
+        data: 'class',
+        className: 'col-class',
+        orderable: false,
+      },
+      { //人數
+        targets: 4,
+        title: '人數',
+        data: 'studentCount',
+        className: 'col-studentCount',
+        orderable: false,
+      },
+      { //操作
+        targets: 5,
+        title: '操作',
+        className: 'col-tool',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-link btn-toggle-child">顯示班級資訊</button>`;
+        }
+      }
 
-	//[顯示班級資訊]
-	list.on('click', '.btn-toggle-child', function (){ 
-		var tr = $(this).parents('tr');
-		var row = list.DataTable().row( tr );
+    ],
+    initComplete: function () {
+      //datatable footer input page
+      datatableInputPage(list);
+    }
+  });
 
-		//toggle 自己
-		if (row.child.isShown()) {//當前打開=>關閉自己child及銷毀childTable
-			const childTable = $(tr.next()).find('table.dataTable').DataTable();
-			
-			if (childTable) childTable.destroy();
-			row.child.hide();
-			$(this).parents('td').removeClass('showChild');
-		}else { //當前關閉=>關閉其他child及銷毀childTable
-			list.DataTable().rows().every(function () {
-				if (this.child.isShown()) {
-					const childTable = $(this.child()).find('table.dataTable').DataTable();
-					if (childTable) childTable.destroy();
-									this.child.hide();
-				}
-			});
-			
-			const rowIndex = tr.index();
-			
-			row.child(format(rowIndex)).show();
-			$(this).parents('td').addClass('showChild');
-			
-			loadclassDetialTable(rowIndex);
-		}
-	});
+  //[顯示班級資訊]
+  list.on('click', '.btn-toggle-child', function () {
+    var tr = $(this).parents('tr');
+    var row = list.DataTable().row(tr);
+
+    //toggle 自己
+    if (row.child.isShown()) { //當前打開=>關閉自己child及銷毀childTable
+      const childTable = $(tr.next()).find('table.dataTable').DataTable();
+
+      if (childTable) childTable.destroy();
+      row.child.hide();
+      $(this).parents('td').removeClass('showChild');
+    } else { //當前關閉=>關閉其他child及銷毀childTable
+      list.DataTable().rows().every(function () {
+        if (this.child.isShown()) {
+          const childTable = $(this.child()).find('table.dataTable').DataTable();
+          if (childTable) childTable.destroy();
+          this.child.hide();
+        }
+      });
+
+      const rowIndex = tr.index();
+
+      row.child(format(rowIndex)).show();
+      $(this).parents('td').addClass('showChild');
+
+      loadclassDetialTable(rowIndex);
+    }
+  });
 });
-	
+
 function format(rowIndex) {
-	return `<table class="table table-bordered table-class-detial" id="classDetialTable_${rowIndex}">
+  return `<table class="table table-bordered table-class-detial" id="classDetialTable_${rowIndex}">
 				<thead>
 				  <tr>
-					<th scope="col" class="row-checkbox">選擇</th>
-					<th scope="col" class="row-studentName">學生姓名</th>
-					<th scope="col" class="row-DACC">最新DACC分數</th>
-					<th scope="col" class="row-SRrange">適合的書籍難度範圍</th>
-					<th scope="col" class="row-RPCount">計畫書籍數</th>
-					<th scope="col" class="row-tool">學生閱讀計畫</th>
+					<th scope="col" class="col-checkbox">選擇</th>
+					<th scope="col" class="col-studentName">學生姓名</th>
+					<th scope="col" class="col-DACC">最新DACC分數</th>
+					<th scope="col" class="col-SRrange">適合的書籍難度範圍</th>
+					<th scope="col" class="col-RPCount">計畫書籍數</th>
+					<th scope="col" class="col-tool">學生閱讀計畫</th>
 				  </tr>
 				</thead>
 			</table>`;
-}	
+}
+
 //[顯示班級資訊] datatables
 function loadclassDetialTable(rowIndex) {
-	const list2 = $(`#classDetialTable_${rowIndex}`);
-	
-	if ($.fn.DataTable.isDataTable(list2)) { 
-        list2.DataTable().clear().destroy();
-        list2.find('tbody').empty();
-    }
-	
-	//班級學生 datatables 
-	list2.DataTable({
-		//serverSide: true,     // 開啟伺服端模式
-		processing: true,   
-		order: [],  //取消默認排序icon
-		autoWidth: false,
-		responsive: false,
-		searching: false,
-		paging: false,
-        dom: '<"table-child-scroller"rt>'+
-			 '<"table-child-footer"B>',	
-		language: {
-		  url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
-		},
-		ajax: 'Content/json/RP-bookList/class-detial.json',
-		buttons:[	
-			{
-			  text: '列印所有學生計畫書單',
-			  attr:  { id: '', class: 'dt-button btn btn-primary'},
-			  action: function () {
-				// do something...
-			  }
-			}
-		],
-		columnDefs: [
-			{//選擇
-				targets: 0, 
-				title: `選擇`,
-				className: 'row-check',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return `<div class="form-check form-check-inline">
-							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
-							</div>`; 
-				} 
-			},
-			{//學生姓名
-				targets: 1, 
-				title: '學生姓名',
-				data: 'studentName',
-				className: 'row-studentName',
-				orderable: false, 
-				type: 'string',
-			},
-			{//最新DACC分數
-				targets: 2,
-				title: '最新DACC分數',
-				data: 'DACC',
-				className: 'row-DACC',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return `SR `+ data;
-				}
-			},
-			{//適合的書籍難度範圍
-				targets: 3, 
-				title: '適合的書籍難度範圍',
-				data: 'SRrange',
-				className: 'row-SRrange',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return `SR `+ data[0] + `~` + data[1];
-				}
-			},
-			{//計畫書籍數
-				targets: 4, 
-				title: '計畫書籍數',
-				data: 'RPCount',
-				className: 'row-RPCount',
-				orderable: false,
-			},
-			{//學生閱讀計畫
-				targets: 5, 
-				title: '學生閱讀計畫',
-				className: 'row-tool',
-				orderable: false,
-				render: function (data, type, row, meta) {
-					return `<button type="button" class="btn btn-outline-primary bg-gradient">檢視</button>`;
-				}
-			}
+  const list2 = $(`#classDetialTable_${rowIndex}`);
 
-		]
-	}); 
-	
-	//學生閱讀計畫[檢視]
-	list2.on('click', '.row-tool button', function () {
-		$('#studentRPModal').modal('show')
-							.find('.modal-body .load-body')
-							.load('studentRP.html', function () {
-								initStudentRP(); 
-							});
-	});
+  if ($.fn.DataTable.isDataTable(list2)) {
+    list2.DataTable().clear().destroy();
+    list2.find('tbody').empty();
+  }
+
+  //班級學生 datatables 
+  list2.DataTable({
+    //serverSide: true,     // 開啟伺服端模式
+    processing: true,
+    order: [], //取消默認排序icon
+    autoWidth: false,
+    responsive: false,
+    searching: false,
+    paging: false,
+    dom: '<"table-child-scroller"rt>'
+      + '<"table-child-footer"B>',
+    language: {
+      url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+    },
+    ajax: 'Content/json/RP-bookList/classDetial.json',
+    buttons: [{
+      text: '列印所有學生計畫書單',
+      attr: {
+        id: '',
+        class: 'dt-button btn btn-primary'
+      },
+      action: function () {
+        // do something...
+      }
+    }],
+    columnDefs: [{ //選擇
+        targets: 0,
+        title: `選擇`,
+        className: 'col-check',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<div class="form-check form-check-inline">
+							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
+							</div>`;
+        }
+      },
+      { //學生姓名
+        targets: 1,
+        title: '學生姓名',
+        data: 'studentName',
+        className: 'col-studentName',
+        orderable: false,
+        type: 'string',
+      },
+      { //最新DACC分數
+        targets: 2,
+        title: '最新DACC分數',
+        data: 'DACC',
+        className: 'col-DACC',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `SR ` + data;
+        }
+      },
+      { //適合的書籍難度範圍
+        targets: 3,
+        title: '適合的書籍難度範圍',
+        data: 'SRrange',
+        className: 'col-SRrange',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `SR ` + data[0] + `~` + data[1];
+        }
+      },
+      { //計畫書籍數
+        targets: 4,
+        title: '計畫書籍數',
+        data: 'RPCount',
+        className: 'col-RPCount',
+        orderable: false,
+      },
+      { //學生閱讀計畫
+        targets: 5,
+        title: '學生閱讀計畫',
+        className: 'col-tool',
+        orderable: false,
+        render: function (data, type, row, meta) {
+          return `<button type="button" class="btn btn-outline-primary bg-gradient">檢視</button>`;
+        }
+      }
+
+    ]
+  });
+
+  //學生閱讀計畫[檢視]
+  list2.on('click', '.col-tool button', function () {
+    $('#studentRPModal').modal('show')
+      .find('.modal-body .load-body')
+      .load('studentRP.html', function () {
+        initStudentRP();
+      });
+  });
 }
+
 </script>
 </body>
 </html>

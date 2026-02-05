@@ -888,6 +888,9 @@ height:95px;
 .adjustBook-checkbox-grid .btn-check:checked + .btn, .adjustBook-checkbox-grid :not(.btn-check) + .btn:active, .adjustBook-checkbox-grid .btn:first-child:active, .adjustBook-checkbox-grid .btn.active, .adjustBook-checkbox-grid .btn.show { color: #43a047; background-color: #fff; border-color: #43a047; position: relative; }
 .adjustBook-checkbox-grid .btn-check:checked + .btn::after, .adjustBook-checkbox-grid :not(.btn-check) + .btn:active::after, .adjustBook-checkbox-grid .btn:first-child:active::after, .adjustBook-checkbox-grid .btn.active::after, .adjustBook-checkbox-grid .btn.show::after { content: ""; display: block; width: 0; height: 0; border-style: solid; border-width: 0 0 .9em .9em; border-color: transparent transparent #43a047 transparent; position: absolute; bottom: 0; right: 0; z-index: 1; }
 
+.table-assign-class { box-shadow: inset -1px 0 #C6C6C6; table-layout: fixed; }
+.table-assign-class > tbody > tr > th, .table-assign-class > tbody > tr > td { padding: 0.5rem 0.25rem; height: auto; min-height: auto; }
+
 .table-class-overview > thead > tr > th.row-index, .table-class-overview > thead > tr > td.row-index, .table-class-overview > tbody > tr > th.row-index, .table-class-overview > tbody > tr > td.row-index { width: 4%; }
 .table-class-overview > thead > tr > th.col-year, .table-class-overview > thead > tr > td.col-year, .table-class-overview > tbody > tr > th.col-year, .table-class-overview > tbody > tr > td.col-year { width: 20%; }
 .table-class-overview > thead > tr > th.col-grade, .table-class-overview > thead > tr > td.col-grade, .table-class-overview > tbody > tr > th.col-grade, .table-class-overview > tbody > tr > td.col-grade { width: 20%; }

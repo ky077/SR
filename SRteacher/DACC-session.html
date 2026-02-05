@@ -197,21 +197,21 @@
           <div class="row px-2 justify-content-center"> 
             <!-- 設定學生 start -->
             <div class="mb-3 row">
-              <h3 class="text-center h6">設定學生<small class="text-red">(待修樹狀選單JS)</small></h3>
+              <h3 class="text-center h6">設定學生</h3>
             </div>
             <!-- 手風琴 start -->
             <div class="col-xl-12  mb-5">
-              <div class="accordion SRaccordion accordion-StudentSet" id="accordionStudentSet"> 
-                <!-- *年級 start -->
-                <div class="accordion-item">
-                  <h4 class="accordion-header"> <!--<div class="form-check form-check-inline">
-							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
-							</div>-->
-                    <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">4年級 </button>
-                  </h4>
-                  <div id="collapse4" class="accordion-collapse collapse">
-                    <div class="accordion-body"> 
-                      <!-- 表格 start -->
+							<div class="accordion SRaccordion accordion-StudentSet" id="accordionStudentSet">
+								<!-- *年級 start -->
+								<div class="accordion-item">
+									<h4 class="accordion-header">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											5年級
+										</button>
+									</h4>
+									<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+										<div class="accordion-body p-0">
+											 <!-- 表格 start -->
                       <div class="table-responsive">
                         <table class="table table-bordered mb-0 table-studentSet" id="studentSet4-1">
                           <thead>
@@ -235,15 +235,31 @@
                               <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
                               <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
                             </tr>
+														<tr>
+                              <td class="col-classCheck"><div class="SRform-check-red">
+                                  <input class="form-check-input" type="checkbox" name="check">
+                                </div></td>
+                              <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
+                              <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
+                              <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
+                            </tr>
+														<tr>
+                              <td class="col-classCheck"><div class="SRform-check-red">
+                                  <input class="form-check-input" type="checkbox" name="check">
+                                </div></td>
+                              <td class="col-studentName"><input type="text" class="form-control rounded-0 readonly" value="張花花" disabled readonly></td>
+                              <td class="col-studentId"><input type="text" class="form-control rounded-0 readonly" value="2020153" disabled readonly></td>
+                              <td class="col-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
                       <!-- 表格  end  --> 
-                    </div>
-                  </div>
-                </div>
-                <!-- *年級  end  --> 
-              </div>
+										</div>
+									</div>
+								</div>
+								<!-- *年級  end  --> 
+							</div>
             </div>
             <!-- 手風琴  end  --> 
             <!-- 設定學生  end  --> 

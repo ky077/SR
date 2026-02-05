@@ -26,7 +26,6 @@
 <body>
 <form>
   <header> </header>
-	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -367,50 +366,190 @@
           <div class="row px-2 justify-content-center"> 
             <!-- 指派班級 start -->
             <div class="mb-3 row">
-              <h3 class="text-center h6">指派班級<small class="text-red">(待修樹狀選單JS)</small></h3>
+              <h3 class="text-center h6">指派班級</h3>
             </div>
             <!-- (沒有)手風琴 start -->
-            <div class="col-xl-12 mb-5">
-              <div class="accordion SRaccordion accordion-StudentSet" id="accordionStudentSet"> 
-                <!-- *年級 start -->
-                <div class="accordion-item">
-                  <h4 class="accordion-header">
-                    <button class="accordion-button collapsed bg-white" type="button">
-                    <span class="form-check-inline SRform-check-red me-2">
-                    <input class="form-check-input my-0" type="checkbox" name="checkAll">
-                    </span>4年級
-                    </button>
-                  </h4>
-                  <div id="collapse4" class="accordion-collapse ">
-                    <div class="accordion-body p-0"> 
-                      <!-- 表格 start -->
-                      <table class="table table-bordered mb-0 table-studentSet" id="studentSet4-1">
-                        <tbody class="" id="studentSet4-1-tbody">
-                          <tr>
-                            <td class=""><div class="SRform-check-red">
-                                <input class="form-check-input" type="checkbox" name="check">
-                                1班 </div></td>
-                            <td class=""><div class="SRform-check-red">
-                                <input class="form-check-input" type="checkbox" name="check">
-                                1班 </div></td>
-                            <td class=""><div class="SRform-check-red">
-                                <input class="form-check-input" type="checkbox" name="check">
-                                1班 </div></td>
-                            <td class=""><div class="SRform-check-red">
-                                <input class="form-check-input" type="checkbox" name="check">
-                                1班 </div></td>
-                            <td class=""><div class="SRform-check-red">
-                                <input class="form-check-input" type="checkbox" name="check">
-                                1班 </div></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <!-- 表格  end  --> 
-                    </div>
-                  </div>
-                </div>
-                <!-- *年級  end  --> 
-              </div>
+            <div class="col-xl-12 mb-3">
+              <table class="table table-bordered table-assign-class" id="assignClassTable-4">
+                <thead>
+                  <tr>
+                    <th colspan="5"><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="checkAll" id="grade4">
+                        <label class="form-check-label" for="grade4">4年級</label></div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class1">
+                        <label class="form-check-label" for="grade4-class1">1班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class2">
+                        <label class="form-check-label" for="grade4-class2">2班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class3">
+                        <label class="form-check-label" for="grade4-class3">3班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class4">
+                        <label class="form-check-label" for="grade4-class4">4班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class5">
+                        <label class="form-check-label" for="grade4-class5">5班</label></div></td>
+                  </tr>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class6">
+                        <label class="form-check-label" for="grade4-class6">6班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class7">
+                        <label class="form-check-label" for="grade4-class7">7班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class8">
+                        <label class="form-check-label" for="grade4-class8">8班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class9">
+                        <label class="form-check-label" for="grade4-class9">9班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade4-class10">
+                        <label class="form-check-label" for="grade4-class10">10班</label></div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-assign-class" id="assignClassTable-5">
+                <thead>
+                  <tr>
+                    <th colspan="5"><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="checkAll" id="grade5">
+                        <label class="form-check-label" for="grade5">5年級</label></div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class1">
+                        <label class="form-check-label" for="grade5-class1">1班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class2">
+                        <label class="form-check-label" for="grade5-class2">2班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class3">
+                        <label class="form-check-label" for="grade5-class3">3班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class4">
+                        <label class="form-check-label" for="grade5-class4">4班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class5">
+                        <label class="form-check-label" for="grade5-class5">5班</label></div></td>
+                  </tr>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class6">
+                        <label class="form-check-label" for="grade5-class6">6班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class7">
+                        <label class="form-check-label" for="grade5-class7">7班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class8">
+                        <label class="form-check-label" for="grade5-class8">8班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class9">
+                        <label class="form-check-label" for="grade5-class9">9班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade5-class10">
+                        <label class="form-check-label" for="grade5-class10">10班</label></div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-assign-class" id="assignClassTable-6">
+                <thead>
+                  <tr>
+                    <th colspan="5"><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="checkAll" id="grade6">
+                        <label class="form-check-label" for="grade6">6年級</label></div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class1">
+                        <label class="form-check-label" for="grade6-class1">1班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class2">
+                        <label class="form-check-label" for="grade6-class2">2班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class3">
+                        <label class="form-check-label" for="grade6-class3">3班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class4">
+                        <label class="form-check-label" for="grade6-class4">4班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class5">
+                        <label class="form-check-label" for="grade6-class5">5班</label></div></td>
+                  </tr>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class6">
+                        <label class="form-check-label" for="grade6-class6">6班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class7">
+                        <label class="form-check-label" for="grade6-class7">7班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class8">
+                        <label class="form-check-label" for="grade6-class8">8班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class9">
+                        <label class="form-check-label" for="grade6-class9">9班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade6-class10">
+                        <label class="form-check-label" for="grade6-class10">10班</label></div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-assign-class" id="assignClassTable-7">
+                <thead>
+                  <tr>
+                    <th colspan="5"><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="checkAll" id="grade7">
+                        <label class="form-check-label" for="grade7">7年級</label></div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class1">
+                        <label class="form-check-label" for="grade7-class1">1班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class2">
+                        <label class="form-check-label" for="grade7-class2">2班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class3">
+                        <label class="form-check-label" for="grade7-class3">3班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class4">
+                        <label class="form-check-label" for="grade7-class4">4班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class5">
+                        <label class="form-check-label" for="grade7-class5">5班</label></div></td>
+                  </tr>
+                  <tr>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class6">
+                        <label class="form-check-label" for="grade7-class6">6班</label></div></td>
+                     <!--<td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class7">
+                        <label class="form-check-label" for="grade7-class7">7班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class8">
+                        <label class="form-check-label" for="grade7-class8">8班</label></div></td>
+                    <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class9">
+                        <label class="form-check-label" for="grade7-class9">9班</label></div></td>
+                   <td class=""><div class="SRform-check-red">
+                        <input class="form-check-input" type="checkbox" name="check" id="grade7-class10">
+                        <label class="form-check-label" for="grade7-class10">10班</label></div></td>-->
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <!-- (沒有)手風琴  end  -->
             <div class="mb-3 row align-items-center">
@@ -742,6 +881,42 @@ $(document).ready(function () {
   list.on('click', '.col-assignClass button', function () {
     $('#assignModal').modal('show');
   });
+	
+	 //全選
+	$('.table-assign-class').on('change', 'input[name="checkAll"]', function () {
+		var $table = $(this).closest('.table-assign-class');
+		var checkAll = this;
+		var $checks = $table.find('input[name="check"]:checkbox');
+
+		if (checkAll.checked) {
+			$checks.prop('checked', true);
+			checkAll.indeterminate = false;
+		} else {
+			$checks.prop('checked', false);
+			checkAll.indeterminate = false;
+		}
+	});
+	//反向選取
+	$('.table-assign-class').on('change', 'input[name="check"]', function () {
+		const $table = $(this).closest('.table-assign-class');
+		const checkAll = $table.find('input[name="checkAll"]')[0];
+		const total = $table.find('input[name="check"]:checkbox').length;
+		const checked = $table.find('input[name="check"]:checked').length;
+
+		if (!checkAll) return;
+
+		if (checked === 0) {
+			checkAll.checked = false;
+			checkAll.indeterminate = false;
+		} else if (checked === total) {
+			checkAll.checked = true;
+			checkAll.indeterminate = false;
+		} else {
+			checkAll.checked = false;
+			checkAll.indeterminate = true;
+		}
+	});
+	
 });
 </script> 
 

@@ -971,7 +971,8 @@ function iniDatatable(table, json) {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     ajax: 'Content/json/account-class/' + json + '.json',
-    columnDefs: [{ //選擇
+    columnDefs: [
+			{ //選擇
         targets: 0,
         title: `<div class="form-check form-check-inline SRform-check-red">
 						  <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
@@ -1090,20 +1091,38 @@ function iniDatatable(table, json) {
       //datatable footer input page
       datatableInputPage($(table));
 
-      //全選
-      $(table).on('change', '.col-check input[name="checkAll"]', function () {
-        var checkboxes = $(table).find('input[name="check"]:checkbox');
-        $(this).is(':checked') ? checkboxes.prop('checked', true) : checkboxes.prop('checked', false);
-      });
-      //反向選取
-      $(table).on('change', '.col-check input[name="check"]', function () {
-        if ($(table).find('input[name="check"]:checked').length
-          == $(table).find('input[name="check"]:checkbox').length) {
-          $(table).find('input[name="checkAll"]').prop("checked", true);
-        } else {
-          $(table).find('input[name="checkAll"]').prop("checked", false);
-        }
-      });
+      // 全選
+			$(table).on('change', '.col-check input[name="checkAll"]', function () {
+				var checkAll = this;
+				var checkboxes = $(table).find('input[name="check"]:checkbox');
+
+				if ($(this).is(':checked')) {
+					checkboxes.prop('checked', true);
+					checkAll.indeterminate = false;
+				} else {
+					checkboxes.prop('checked', false);
+					checkAll.indeterminate = false;
+				}
+			});
+
+			// 單筆勾選 → 控制全選狀態（含 indeterminate）
+			$(table).on('change', '.col-check input[name="check"]', function () {
+				var checkAll = $(table).find('input[name="checkAll"]')[0];
+				var total = $(table).find('input[name="check"]:checkbox').length;
+				var checked = $(table).find('input[name="check"]:checked').length;
+
+				if (checked === 0) {
+					checkAll.checked = false;
+					checkAll.indeterminate = false;
+				} else if (checked === total) {
+					checkAll.checked = true;
+					checkAll.indeterminate = false;
+				} else {
+					checkAll.checked = false;
+					checkAll.indeterminate = true;
+				}
+			});
+
     }
   });
 }

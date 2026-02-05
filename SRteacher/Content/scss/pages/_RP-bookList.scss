@@ -40,7 +40,6 @@
 		padding-left: 1rem;
 		padding-right: 1rem;
 }
-
 .adjustBook-checkbox-grid{
 		grid-template-columns: repeat(2, 1fr);
 		@media screen and (min-width: 768px) {
@@ -72,6 +71,23 @@
 				}
 		}
 }
+
+
+.table-assign-class{
+	box-shadow: inset -1px 0 $border-color;
+	table-layout: fixed;
+	> tbody{
+		> tr{
+			> th, > td{
+				padding: 0.5rem 0.25rem;
+				height: auto;
+    		min-height: auto;
+			}
+		}
+	}
+}
+
+
 
 
 //RP-bookList-class.html 班級學生書單 

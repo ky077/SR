@@ -2,7 +2,7 @@
     > thead, > tbody{
         > tr{
             >th, > td {
-                &.col-index				{ width:  4%; }
+                &.col-index			{ width:  4%; }
                 &.col-session		{ width: 12%; }
                 &.col-remark		{ width: 12%; }
                 &.col-startTime { width: 16%; }
@@ -45,62 +45,45 @@
 }
 
 .table-studentSet{
-    min-width: 730px;
+		min-width: 730px;
     > thead, > tbody{
         > tr{
             >th, > td {
-                  &.col-classCheck	{	width:  25%; }
-                  &.col-studentName	{ width:  17%; }
-                  &.col-studentId		{ width:  15%; }
-                  &.col-account			{ width:  43%; }  
+                  &.col-classCheck	{ width:  24%; }
+                  &.col-studentName	{ width:  18%; }
+                  &.col-studentId		{ width:  18%; }
+                  &.col-account			{ width:  40%; }  
             }
         }
     }
-}
-
-.accordion-StudentSet{
-    .accordion-body{
-       /* border-color: transparent;*/
-        .table-responsive:not(:first-child){
-            /*margin-top: -1px;*/        
+	 	> thead{
+        > tr{
+            >th, > td {
+            	&.col-classCheck	{ 
+								.form-check{
+									vertical-align: middle;
+									.form-check-input{
+										margin-right: 0;
+									}
+									+ .btn::after {
+										display: inline-block;
+										vertical-align: middle;
+										flex-shrink: 0;
+										width: var(--bs-accordion-btn-icon-width);
+										height: var(--bs-accordion-btn-icon-width);
+										margin-left: auto;
+										content: "";
+										background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$primary}' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>")); 
+										background-repeat: no-repeat;
+										background-size: var(--bs-accordion-btn-icon-width);
+										transition: var(--bs-accordion-btn-icon-transition);
+									}
+									+ .btn:not(.collapsed)::after {
+											transform: var(--bs-accordion-btn-icon-transform);
+									}
+								}
+							}
+           }
         }
-        //.table:not(:first-child){
-            //margin-top: -1px;
-        //}
-    }
-}
-
-.table-collapse {
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    color: $primary;
-    margin: -0.5rem -0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &::after{ 
-        content: "";
-        display: inline-block;
-        flex-shrink: 0; 
-        width: 1em;
-        height: 1em;
-        margin-left: 0.2em; 
-        background-image: var(--bs-accordion-btn-icon);
-        background-repeat: no-repeat;
-        background-size: var(--bs-accordion-btn-icon-width);
-        transition: var(--bs-accordion-btn-icon-transition);
-    }
-    &:hover{
-        color: shade-color($primary, 15%); 
-        &::after{ 
-            filter: brightness(0.85); 
-        }
-    }
-    
-}
-.table-collapse:not(.collapsed){
-    &::after{ 
-        transform: var(--bs-accordion-btn-icon-transform);
     }
 }

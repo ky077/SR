@@ -294,12 +294,14 @@ option[value=""]{ color: $secondary;
 } 
 *::-webkit-scrollbar-corner { background-color: #d4d4d4;
 }*/
-.SRaccordion { --bs-accordion-border-radius: 0; --bs-accordion-inner-border-radius: 0; --bs-accordion-btn-focus-border-color: transparent; --bs-accordion-btn-focus-box-shadow: none; }
+.SRaccordion { --bs-accordion-color: var(--bs-primary); --bs-accordion-border-width: 0; --bs-accordion-border-radius: 0; --bs-accordion-inner-border-radius: 0; --bs-accordion-btn-focus-box-shadow: none; }
+.SRaccordion .accordion-item .accordion-header .accordion-button { border: var(--bs-border-width) solid var(--bs-border-color); }
 .SRaccordion .accordion-item .accordion-header .accordion-button, .SRaccordion .accordion-item .accordion-header .accordion-button:not(.collapsed) { font-size: .9rem; color: #43a047; justify-content: center; box-shadow: none; }
-.SRaccordion .accordion-item .accordion-header .accordion-button::after, .SRaccordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after { margin-left: .2em; }
+.SRaccordion .accordion-item .accordion-header .accordion-button::after, .SRaccordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after { margin-left: .2em; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2343a047' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); }
 .SRaccordion .accordion-item .accordion-header .accordion-button:hover, .SRaccordion .accordion-item .accordion-header .accordion-button:not(.collapsed):hover { color: #39883c; }
 .SRaccordion .accordion-item .accordion-header .accordion-button:hover::after, .SRaccordion .accordion-item .accordion-header .accordion-button:not(.collapsed):hover::after { filter: brightness(0.85); }
-.SRaccordion .accordion-body .table { margin: 0 -1px !important; width: calc(100% + 1px*2); }
+.SRaccordion .accordion-item .accordion-body .table { margin-top: -1px !important; }
+.SRaccordion .accordion-item + .accordion-item { margin-top: -1px; }
 
 .SRform { font-size: .9rem; font-weight: normal; }
 .SRform [class*="form-label"] { font-size: .8rem; }
@@ -758,20 +760,14 @@ height:95px;
 .table-sessionStudentLists > thead > tr > th.col-state, .table-sessionStudentLists > thead > tr > td.col-state, .table-sessionStudentLists > tbody > tr > th.col-state, .table-sessionStudentLists > tbody > tr > td.col-state { width: 10%; }
 
 .table-studentSet { min-width: 730px; }
-.table-studentSet > thead > tr > th.col-classCheck, .table-studentSet > thead > tr > td.col-classCheck, .table-studentSet > tbody > tr > th.col-classCheck, .table-studentSet > tbody > tr > td.col-classCheck { width: 25%; }
-.table-studentSet > thead > tr > th.col-studentName, .table-studentSet > thead > tr > td.col-studentName, .table-studentSet > tbody > tr > th.col-studentName, .table-studentSet > tbody > tr > td.col-studentName { width: 17%; }
-.table-studentSet > thead > tr > th.col-studentId, .table-studentSet > thead > tr > td.col-studentId, .table-studentSet > tbody > tr > th.col-studentId, .table-studentSet > tbody > tr > td.col-studentId { width: 15%; }
-.table-studentSet > thead > tr > th.col-account, .table-studentSet > thead > tr > td.col-account, .table-studentSet > tbody > tr > th.col-account, .table-studentSet > tbody > tr > td.col-account { width: 43%; }
-
-.accordion-StudentSet .accordion-body { /* border-color: transparent;*/ }
-.accordion-StudentSet .accordion-body .table-responsive:not(:first-child) { /*margin-top: -1px;*/ }
-
-.table-collapse { width: 100%; border: none; background-color: transparent; color: #43a047; margin: -0.5rem -0.25rem; display: flex; justify-content: center; align-items: center; }
-.table-collapse::after { content: ""; display: inline-block; flex-shrink: 0; width: 1em; height: 1em; margin-left: 0.2em; background-image: var(--bs-accordion-btn-icon); background-repeat: no-repeat; background-size: var(--bs-accordion-btn-icon-width); transition: var(--bs-accordion-btn-icon-transition); }
-.table-collapse:hover { color: #39883c; }
-.table-collapse:hover::after { filter: brightness(0.85); }
-
-.table-collapse:not(.collapsed)::after { transform: var(--bs-accordion-btn-icon-transform); }
+.table-studentSet > thead > tr > th.col-classCheck, .table-studentSet > thead > tr > td.col-classCheck, .table-studentSet > tbody > tr > th.col-classCheck, .table-studentSet > tbody > tr > td.col-classCheck { width: 24%; }
+.table-studentSet > thead > tr > th.col-studentName, .table-studentSet > thead > tr > td.col-studentName, .table-studentSet > tbody > tr > th.col-studentName, .table-studentSet > tbody > tr > td.col-studentName { width: 18%; }
+.table-studentSet > thead > tr > th.col-studentId, .table-studentSet > thead > tr > td.col-studentId, .table-studentSet > tbody > tr > th.col-studentId, .table-studentSet > tbody > tr > td.col-studentId { width: 18%; }
+.table-studentSet > thead > tr > th.col-account, .table-studentSet > thead > tr > td.col-account, .table-studentSet > tbody > tr > th.col-account, .table-studentSet > tbody > tr > td.col-account { width: 40%; }
+.table-studentSet > thead > tr > th.col-classCheck .form-check, .table-studentSet > thead > tr > td.col-classCheck .form-check { vertical-align: middle; }
+.table-studentSet > thead > tr > th.col-classCheck .form-check .form-check-input, .table-studentSet > thead > tr > td.col-classCheck .form-check .form-check-input { margin-right: 0; }
+.table-studentSet > thead > tr > th.col-classCheck .form-check + .btn::after, .table-studentSet > thead > tr > td.col-classCheck .form-check + .btn::after { display: inline-block; vertical-align: middle; flex-shrink: 0; width: var(--bs-accordion-btn-icon-width); height: var(--bs-accordion-btn-icon-width); margin-left: auto; content: ""; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2343a047' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-size: var(--bs-accordion-btn-icon-width); transition: var(--bs-accordion-btn-icon-transition); }
+.table-studentSet > thead > tr > th.col-classCheck .form-check + .btn:not(.collapsed)::after, .table-studentSet > thead > tr > td.col-classCheck .form-check + .btn:not(.collapsed)::after { transform: var(--bs-accordion-btn-icon-transform); }
 
 .table-classScore > thead > tr > th.col-index, .table-classScore > thead > tr > td.col-index, .table-classScore > tbody > tr > th.col-index, .table-classScore > tbody > tr > td.col-index { width: 4%; }
 .table-classScore > thead > tr > th.col-date, .table-classScore > thead > tr > td.col-date, .table-classScore > tbody > tr > th.col-date, .table-classScore > tbody > tr > td.col-date { width: 9%; }

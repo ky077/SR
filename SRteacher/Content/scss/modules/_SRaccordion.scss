@@ -1,10 +1,14 @@
 .SRaccordion{
+    --bs-accordion-color: var(--bs-primary);
+    --bs-accordion-border-width: 0; 
     --bs-accordion-border-radius: 0;
-    --bs-accordion-inner-border-radius: 0;
-    --bs-accordion-btn-focus-border-color: transparent;
-    --bs-accordion-btn-focus-box-shadow: none;
+		--bs-accordion-inner-border-radius: 0;
+    --bs-accordion-btn-focus-box-shadow:  none;
     .accordion-item{
         .accordion-header{
+						.accordion-button{
+							border: $accordion-border-width $border-style $accordion-border-color;
+						}
             .accordion-button,
             .accordion-button:not(.collapsed) {
                 font-size: .9rem;
@@ -12,7 +16,8 @@
                 justify-content: center;
                 box-shadow: none;
                 &::after{
-                    margin-left: .2em;
+                  margin-left: .2em;
+									background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$primary}' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>"));
                 }
                 &:hover{
                     color: shade-color($primary, 15%); 
@@ -22,14 +27,15 @@
                 }
             }
         }
-    }
-    .accordion-body{ 
-        .table-responsive{
+		.accordion-body{
+			.table{
+				margin-top: -1px !important;
+			}
 		}
-        .table{ 
-            margin: 0 -1px !important;
-			width: calc(100% + 1px*2);
-        }
     }
+	.accordion-item+ .accordion-item{
+		margin-top: -1px;
+	}
 }
+
 

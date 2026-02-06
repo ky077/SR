@@ -87,7 +87,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-delete"><div class="form-check form-check-inline SRform-check-red">
+                  <td class="col-delete"><div class="form-check form-check-inline form-check-red">
                       <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
                     </div></td>
                   <td class="col-index">1</td>
@@ -327,7 +327,7 @@
                   <table class="table table-bordered table-waitingList" id="waitingListTable">
                     <thead>
                       <tr>
-                        <th scope="col" class="col-check"> <div class="form-check form-check-inline SRform-check-red">
+                        <th scope="col" class="col-check"> <div class="form-check form-check-inline form-check-red">
                             <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
                           </div>
                         </th>
@@ -343,7 +343,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="col-check"><div class="form-check form-check-inline SRform-check-red">
+                        <td class="col-check"><div class="form-check form-check-inline form-check-red">
                             <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
                           </div></td>
                         <td class="col-index">1</td>
@@ -401,7 +401,7 @@
                   <table class="table table-bordered table-studentList" id="studentListTable">
                     <thead>
                       <tr>
-                        <th scope="col" class="col-check"> <div class="form-check form-check-inline SRform-check-red">
+                        <th scope="col" class="col-check"> <div class="form-check form-check-inline form-check-red">
                             <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
                           </div>
                         </th>
@@ -417,7 +417,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="col-check"><div class="form-check form-check-inline SRform-check-red">
+                        <td class="col-check"><div class="form-check form-check-inline form-check-red">
                             <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
                           </div></td>
                         <td class="col-index">1</td>
@@ -509,7 +509,7 @@ $(document).ready(function () {
         orderable: false,
         visible: false,
         render: function (data, type, row, meta) {
-          return `<div class="form-check form-check-inline SRform-check-red">
+          return `<div class="form-check form-check-inline form-check-red">
 							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
 							</div>`;
         }
@@ -974,14 +974,14 @@ function iniDatatable(table, json) {
     columnDefs: [
 			{ //選擇
         targets: 0,
-        title: `<div class="form-check form-check-inline SRform-check-red">
+        title: `<div class="form-check form-check-inline form-check-red">
 						  <input class="form-check-input m-0" type="checkbox" value="" id="" name="checkAll">
 						</div>`,
         className: 'col-check',
         orderable: false,
         visible: false,
         render: function (data, type, row, meta) {
-          return `<div class="form-check form-check-inline SRform-check-red">
+          return `<div class="form-check form-check-inline form-check-red">
 						      <input class="form-check-input m-0" type="checkbox" value="" id="" name="check">
 						    </div>`;
         }

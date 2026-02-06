@@ -19,13 +19,12 @@
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
 
 <!-- template CSS -->
-<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
 <body>
 <form>
   <header> </header>
-	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -74,9 +73,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-delete"><div class="form-check form-check-inline">
-							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
-							</div></td>
+                  <td class="col-delete"><div class="form-check form-check-inline form-check-red">
+                      <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
+                    </div></td>
                   <td class="col-index">1</td>
                   <td class="col-bookTitle">老樹之歌</td>
                   <td class="col-ISBN">9889573269670</td>
@@ -178,7 +177,7 @@
           </div>
           <!-- 搜尋  end  --> 
           <!-- 表格 start -->
-          <div class="bg-body mx-n3 mb-n3 px-3"> 
+          <div class="bg-body mx-n3 mb-n3"> 
             <!-- recommendedBook-list start -->
             <div class="recommendedBook-list">
               <div class="container">
@@ -246,131 +245,131 @@
               </div>
             </div>
             <!-- -->
-			  <div id="sortable">
-            <div class="mb-3 row align-items-start modal-quiz-block">
-              <button type="button" class="btn-close" aria-label="Close"></button>
-              <label for="modalQuizTopic" class="col-sm-3 col-form-label text-sm-end modal-quiz-topic">題目<span class="text-red">*</span></label>
-              <div class="col-sm-8">
-                <div class="row justify-content-between">
-                  <div class="col-auto">
-                    <select class="form-select rounded-0 form-select-arrow-sm" id="modalQuizTopic">
-                      <option selected disabled>請選擇題型</option>
-                      <option value="multiple">選擇題</option>
-                      <option value="picture">圖片題</option>
-                      <option value="QandA">問答題</option>
-                      <option value="video">影片題</option>
-                    </select>
-                  </div>
-                  <div class="col-auto fs-8 modal-quiz-gradingWeight"> 配分
-                    <input type="email" class="form-control rounded-0 d-inline me-1" id="" style="width: 50px;">
-                    /100分 </div>
-                </div>
-                <!-- 選擇題 -->
-                <div class="multiple">
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
-                    <div class="col">
-                      <input type="text" class="form-control rounded-0" id="">
+            <div id="sortable">
+              <div class="mb-3 row align-items-start modal-quiz-block">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <label for="modalQuizTopic" class="col-sm-3 col-form-label text-sm-end modal-quiz-topic">題目<span class="text-red">*</span></label>
+                <div class="col-sm-8">
+                  <div class="row justify-content-between">
+                    <div class="col-auto">
+                      <select class="form-select rounded-0 form-select-arrow-sm" id="modalQuizTopic">
+                        <option selected disabled>請選擇題型</option>
+                        <option value="multiple">選擇題</option>
+                        <option value="picture">圖片題</option>
+                        <option value="QandA">問答題</option>
+                        <option value="video">影片題</option>
+                      </select>
                     </div>
+                    <div class="col-auto fs-8 modal-quiz-gradingWeight"> 配分
+                      <input type="text" class="form-control rounded-0 d-inline me-1" id="" style="width: 65px;">
+                      /100分 </div>
                   </div>
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">答案</label>
-                    <div class="col">
-                      <div class="row gx-2 mb-1 align-items-center">
-                        <div class="col-auto">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="">
-                            <label class="form-check-label" for=""> A. </label>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control rounded-0" id="">
-                        </div>
-                      </div>
-                      <div class="row gx-2 mb-1 align-items-center">
-                        <div class="col-auto">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="">
-                            <label class="form-check-label" for=""> B. </label>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control rounded-0" id="">
-                        </div>
-                      </div>
-                      <div class="row gx-2 mb-1 align-items-center">
-                        <div class="col-auto">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="">
-                            <label class="form-check-label" for=""> C. </label>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control rounded-0" id="">
-                        </div>
-                      </div>
-                      <div class="row gx-2 mb-1 align-items-center">
-                        <div class="col-auto">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="">
-                            <label class="form-check-label" for=""> D. </label>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control rounded-0" id="">
-                        </div>
+                  <!-- 選擇題 -->
+                  <div class="multiple">
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
+                      <div class="col">
+                        <input type="text" class="form-control rounded-0" id="">
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- 圖片題 -->
-                <div class="picture">
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
-                    <div class="col">
-                      <input type="text" class="form-control rounded-0" id="">
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">答案</label>
+                      <div class="col">
+                        <div class="row gx-2 mb-1 align-items-center">
+                          <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="radioDefault" id="">
+                              <label class="form-check-label" for=""> A. </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control rounded-0" id="">
+                          </div>
+                        </div>
+                        <div class="row gx-2 mb-1 align-items-center">
+                          <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="radioDefault" id="">
+                              <label class="form-check-label" for=""> B. </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control rounded-0" id="">
+                          </div>
+                        </div>
+                        <div class="row gx-2 mb-1 align-items-center">
+                          <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="radioDefault" id="">
+                              <label class="form-check-label" for=""> C. </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control rounded-0" id="">
+                          </div>
+                        </div>
+                        <div class="row gx-2 mb-1 align-items-center">
+                          <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="radioDefault" id="">
+                              <label class="form-check-label" for=""> D. </label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control rounded-0" id="">
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">說明</label>
-                    <div class="col">
-                      <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                  <!-- 圖片題 -->
+                  <div class="picture">
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
+                      <div class="col">
+                        <input type="text" class="form-control rounded-0" id="">
+                      </div>
+                    </div>
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">說明</label>
+                      <div class="col">
+                        <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- 問答題 -->
-                <div class="QandA">
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
-                    <div class="col">
-                      <input type="text" class="form-control rounded-0" id="">
+                  <!-- 問答題 -->
+                  <div class="QandA">
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">題目</label>
+                      <div class="col">
+                        <input type="text" class="form-control rounded-0" id="">
+                      </div>
+                    </div>
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-sm-auto col-form-label text-sm-end">說明</label>
+                      <div class="col">
+                        <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                      </div>
                     </div>
                   </div>
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-sm-auto col-form-label text-sm-end">說明</label>
-                    <div class="col">
-                      <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                  <!-- 影片題 -->
+                  <div class="video">
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-auto col-form-label text-sm-end">題目</label>
+                      <div class="col">
+                        <input type="text" class="form-control rounded-0" id="">
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <!-- 影片題 -->
-                <div class="video">
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-auto col-form-label text-sm-end">題目</label>
-                    <div class="col">
-                      <input type="text" class="form-control rounded-0" id="">
-                    </div>
-                  </div>
-                  <div class="row mt-3 gx-2">
-                    <label for="" class="col-auto col-form-label text-sm-end">說明</label>
-                    <div class="col">
-                      <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                    <div class="row mt-3 gx-2">
+                      <label for="" class="col-auto col-form-label text-sm-end">說明</label>
+                      <div class="col">
+                        <textarea class="form-control rounded-0" id="" rows="3"></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-			</div>	  
             <!-- -->
             <div class="mb-5 row align-items-center">
               <div class="col-sm-3 text-sm-end"></div>
@@ -470,7 +469,7 @@
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
 <script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>	
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
 
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
@@ -512,7 +511,7 @@ $(document).ready(function () {
         orderable: false,
         visible: false,
         render: function (data, type, row, meta) {
-          return `<div class="form-check form-check-inline">
+          return `<div class="form-check form-check-inline form-check-red">
 							  <input class="form-check-input m-0" type="checkbox" value="" id="" name="delete">
 							</div>`;
         }
@@ -746,6 +745,28 @@ $(document).ready(function () {
 
     iniQuizModal();
   });
+	
+	$('#quizModal').on('hidden.bs.modal', function () {
+		const $modal = $(this);
+
+		//清空輸入欄位
+		$modal.find('input[type="text"], textarea').val('');
+		$modal.find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
+
+		//select 還原
+		$modal.find('select').prop('selectedIndex', 0);
+
+		//動態新增的題目 block 還原成只剩第一個
+		$modal.find('#sortable .modal-quiz-block').removeClass('bg-primary-dashed').not(':first').remove();
+
+		//刪除圖示、配分、題型區塊隱藏（避免殘留）
+		$modal.find('.btn-close, .modal-quiz-gradingWeight, .multiple, .picture, .QandA, .video').hide();
+
+		//移除data-modal-type模式標記
+		$modal.removeAttr('data-modal-type');
+	});
+
+
 });
 
 function format(rowIndex) {
@@ -1340,10 +1361,10 @@ function resetQuizNumber() {
   });
 }
 
-</script>
-	
+</script> 
+
 <!-- 題本排序 Sortable  --> 
-<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script> 
 <script> 
 $(function () {
   $('#sortable').sortable({
@@ -1352,6 +1373,6 @@ $(function () {
     }
   });
 });
-</script> 	
+</script>
 </body>
 </html>

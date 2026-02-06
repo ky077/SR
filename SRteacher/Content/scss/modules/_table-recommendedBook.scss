@@ -41,10 +41,10 @@
 				border-color: transparent;
 				padding-left: .5rem;
 				padding-right: .5rem;
-				&.row-index{ 
+				&.col-index{ 
 					display: none;
 				}
-				&.row-good{
+				&.col-good{
 					width: auto;
 					position: absolute;
 					top: -1px;
@@ -52,7 +52,7 @@
 					z-index:5;
 					background-color: transparent;
 				}
-				&.row-cover{  
+				&.col-cover{  
 					display: block;
 					width: calc(100% - .5rem);
 					height: 0;
@@ -68,27 +68,27 @@
 						height: auto;
 					}
 				}
-				&.row-bookTitle{
+				&.col-bookTitle{
 					font-size: 1rem;
 					font-weight: 500;
 					color: $body-color;
 					padding-bottom: .5rem;
 				}
-				&.row-addedBy, &.row-SR, &.row-category, &.row-topicType, &.row-propStatus{
+				&.col-addedBy, &.col-SR, &.col-category, &.col-topicType, &.col-propStatus{
 					font-size: .8rem;
 					color: $body-color;
 					&:before {
 						content: attr(data-th) " : ";
 					}
 				}
-				&.row-ebook{ 
+				&.col-ebook{ 
 					font-size: .8rem;
 					width: auto;
 				}
-				&.row-checkbox, &.row-tool{
+				&.col-checkbox, &.col-tool{
 					width: auto;
 				}
-                &.row-bookplanet{
+        &.col-bookplanet{
 					width: 100%;
 					height: 0;
 					padding-bottom: 100%;
@@ -105,15 +105,13 @@
 						left: .25rem*3;
                     }
 				}
-				
-				
 			}
-			
 		}
 	}		
 }
 
 .recommendedBook-list{
+	background-color: $body-bg;
 	padding-bottom: .5rem;
 	.dataTables_wrapper {
 		.recommendedBook-table-header{ 

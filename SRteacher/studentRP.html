@@ -84,29 +84,29 @@
     <table class="table table-borderless table-RPList" id="RPList">
       <thead>
         <tr>
-          <th class="row-id">ID</th>
-          <th class="row-index">序號</th>
-          <th class="row-good">優選書</th>
-          <th class="row-cover">書封面</th>
-          <th class="row-bookTitle">書名</th>
-          <th class="row-ebook">電子書</th>
-          <th class="row-SR">圖書難度</th>
-          <th class="row-sort">分類</th>
-          <th class="row-readingDate">開始閱讀~結束閱讀</th>
-          <th class="row-tool">功能</th>
+          <th class="col-id">ID</th>
+          <th class="col-index">序號</th>
+          <th class="col-good">優選書</th>
+          <th class="col-cover">書封面</th>
+          <th class="col-bookTitle">書名</th>
+          <th class="col-ebook">電子書</th>
+          <th class="col-SR">圖書難度</th>
+          <th class="col-sort">分類</th>
+          <th class="col-readingDate">開始閱讀~結束閱讀</th>
+          <th class="col-tool">功能</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="row-id">35845-52253</td>
-          <td class="row-index"><span class="index-text">999</span></td>
-          <td class="row-good"><img src="Content/images/recommendedBook/goodBook.png" alt=""/></td>
-          <td class="row-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#frameModal" data-href="bookIntro.html"><img src="https://smartreading.net/RP/BookContent/BookFront/010.jpg"></a></td>
-          <td class="row-bookTitle">走進生命花園</td>
-          <td class="row-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"></td>
-          <td class="row-SR" data-th="圖書難度">SR 448</td>
-          <td class="row-sort" data-th="分類">成長/生命教育</td>
-          <td class="row-readingDate"><div class="readingDate-start">
+          <td class="col-id">35845-52253</td>
+          <td class="col-index"><span class="index-text">999</span></td>
+          <td class="col-good"><img src="Content/images/recommendedBook/goodBook.png" alt=""/></td>
+          <td class="col-cover"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#frameModal" data-href="bookIntro.html"><img src="https://smartreading.net/RP/BookContent/BookFront/010.jpg"></a></td>
+          <td class="col-bookTitle">走進生命花園</td>
+          <td class="col-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"></td>
+          <td class="col-SR" data-th="圖書難度">SR 448</td>
+          <td class="col-sort" data-th="分類">成長/生命教育</td>
+          <td class="col-readingDate"><div class="readingDate-start">
               <div class="readingDate-title"> 開始閱讀 </div>
               <div class="readingDate-content"> 2021/7/29 </div>
             </div>
@@ -114,7 +114,7 @@
               <div class="readingDate-title"> 結束閱讀 </div>
               <div class="readingDate-content"> 2021/8/29 </div>
             </div></td>
-          <td class="row-tool"><div class="tool-evaluation">
+          <td class="col-tool"><div class="tool-evaluation">
               <div class="row">
                 <div class="col">
                   <div class="tool-title"> 系統題本 </div>
@@ -225,14 +225,14 @@
 						targets: 0, 
 						title: 'ID',
 						data: 'id',
-						className: 'row-id',
+						className: 'col-id',
 						orderable: false,
 						visible: false
 					},
 					{//排序
 						targets: 1, 
 						title: '排序',
-						className: 'row-index',
+						className: 'col-index',
 						orderable: false,
 						type: 'string',
 						render: function (data, type, row, meta) {
@@ -244,7 +244,7 @@
 						targets: 2, 
 						title: '優選書',
 						data: 'good',
-						className: 'row-good',
+						className: 'col-good',
 						orderable: false, 
 						render: function (data, type, row, meta) {
 							let good;
@@ -266,7 +266,7 @@
 						targets: 3,
 						title: '書封面',
 						data: 'cover',
-						className: 'row-cover',
+						className: 'col-cover',
 						orderable: false,
 						render: function (data, type, row, meta) {
 							return `<img src="https://smartreading.net/RP/BookContent/BookFront/`+ data +`">`;
@@ -276,14 +276,14 @@
 						targets: 4, 
 						title: '書名',
 						data: 'bookTitle',
-						className: 'row-bookTitle',
+						className: 'col-bookTitle',
 						orderable: false,
 					},
 					{//電子書
 						targets: 5, 
 						title: '電子書',
 						data: 'ebook',
-						className: 'row-ebook',
+						className: 'col-ebook',
 						orderable: false,
 						render: function (data, type, row, meta) {
 							let ebook;
@@ -305,7 +305,7 @@
 						targets: 6, 
 						title: '圖書難度',
 						data: 'SR',
-						className: 'row-SR',
+						className: 'col-SR',
 						orderable: true,
 						render: function (data, type, row, meta) {
 							return `SR `+ data;
@@ -318,7 +318,7 @@
 						targets: 7, 
 						title: '分類',
 						data: 'sort',
-						className: 'row-sort',
+						className: 'col-sort',
 						orderable: false,
 						createdCell: function (td, cellData, rowData, row, col) {
 							$(td).attr('data-th', '分類');
@@ -327,7 +327,7 @@
 					{//開始閱讀~結束閱讀
 						targets: 8, 
 						title: '開始閱讀~結束閱讀',
-						className: 'row-readingDate',
+						className: 'col-readingDate',
 						orderable: false,
 						render: function (data, type, row, meta) {
 							return `<div class="readingDate-start">
@@ -343,7 +343,7 @@
 					{//工具
 						targets: 9, 
 						title: '工具',
-						className: 'row-tool',
+						className: 'col-tool',
 						orderable: false,
 						render: function (data, type, row, meta) {
 							const sys = row.systemQuiz?.[0] || {};

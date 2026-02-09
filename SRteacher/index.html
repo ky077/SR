@@ -165,7 +165,7 @@
             <!-- 按鈕 start -->
             <div class="mb-3 text-center" id="editBtns">
               <button type="reset" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
-              <button type="submit" class="btn btn-primary m-1" id="editOk">確定修改</button>
+              <button type="button" class="btn btn-primary m-1" id="editConfirm">確定修改</button>
             </div>
             <!-- 按鈕  end  --> 
           </div>
@@ -236,8 +236,8 @@ $(document).ready(function() {
     }); 
     
     //[編輯資料] > [確定修改]
-    $('#editOk').click(function(){
-        let editOk = true; //[true | false] [成功 | 錯誤]
+    $('#editConfirm').click(function(){
+        let confirm = true; //[true | false] [成功 | 錯誤]
         
         //demo驗證
         let errorText = '';
@@ -264,12 +264,12 @@ $(document).ready(function() {
         
         //demo是否有錯誤訊息、驗證是否成功
         if (errorText != ''){
-            editOk = false;  
+            confirm = false;  
         }else{
-            editOk = true;    
+            confirm = true;    
         }
         
-        if(editOk == true){ //修改成功
+        if(confirm == true){ //修改成功
             $('#blockEditMsg').html(''); 
             
             alertModal('<div class="text-red">修改成功！</div>'); 

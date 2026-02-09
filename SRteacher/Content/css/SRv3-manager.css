@@ -254,6 +254,16 @@ option[value=""]{ color: $secondary;
 
 .popover-lg { max-width: 600px; }
 
+.table { font-size: .8rem !important; }
+.table > thead > tr > th, .table > thead > tr td { background-color: #F9F9F9; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.5rem 0.25rem; color: #5C6466; }
+.table > tbody > tr > th, .table > tbody > tr td { background-color: #fff; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.25rem; height: 4.5em; min-height: 4.5em; }
+.table > tfoot > tr > th, .table > tfoot > tr td { background-color: inherit; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.25rem; height: 4.7em; min-height: 4.7em; color: #5C6466; }
+.table [class*="form-control"] { text-align: center; padding: .375rem 0.25rem; }
+.table .form-select, .table .bootstrap-select > .dropdown-toggle { text-align: center; padding: 0.375rem calc(1.15rem + 0.25rem) 0.375rem 0.25rem; }
+.table .form-switch .form-check-input { margin-right: 0; }
+.table .form-check-inline { float: none; }
+.table input, .table select { font-size: .8rem !important; }
+
 .border-dashed { border-style: dashed !important; }
 
 .w-min-auto { min-width: auto !important; }
@@ -342,16 +352,6 @@ option[value=""]{ color: $secondary;
 .SRrangeBar .tooltip.top { padding: 6px 0; }
 .SRrangeBar .tooltip .tooltip-arrow { bottom: 0px; left: 50%; margin-left: -8px; border-width: 6px 8px 0; border-top-color: #43a047; }
 .SRrangeBar .tooltip .tooltip-inner { background-color: #43a047; font-size: 16px; padding: 5px 12px; border-radius: 2px; }
-
-.table { font-size: .8rem !important; }
-.table > thead > tr > th, .table > thead > tr td { background-color: #F9F9F9; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.5rem 0.25rem; color: #5C6466; }
-.table > tbody > tr > th, .table > tbody > tr td { background-color: #fff; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.25rem; height: 4.5em; min-height: 4.5em; }
-.table > tfoot > tr > th, .table > tfoot > tr td { background-color: inherit; font-weight: normal; text-align: center; vertical-align: middle; padding: 0.25rem; height: 4.7em; min-height: 4.7em; color: #5C6466; }
-.table [class*="form-control"] { text-align: center; padding: .375rem 0.25rem; }
-.table .form-select, .table .bootstrap-select > .dropdown-toggle { text-align: center; padding: 0.375rem calc(1.15rem + 0.25rem) 0.375rem 0.25rem; }
-.table .form-switch .form-check-input { margin-right: 0; }
-.table .form-check-inline { float: none; }
-.table input, .table select { font-size: .8rem !important; }
 
 .userScore { font-size: .8rem; font-weight: 400; display: inline-block; width: 1.6rem; height: 1.6rem; line-height: 1.9; text-align: center; }
 .userScore.bySystem { border-radius: 50%; }

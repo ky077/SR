@@ -123,7 +123,7 @@
           <div class="col-xl-12 text-center mb-5" id="blockEditBtns" style="display: none;">
             <div>
               <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
-              <button type="button" class="btn btn-primary m-1" id="editOk">確定修改</button>
+              <button type="button" class="btn btn-primary m-1" id="editConfirm">確定修改</button>
             </div>
           </div>
           <!-- [修改資料]-按鈕  end  --> 
@@ -510,11 +510,11 @@ $(document).ready(function () {
   });
 
   //[修改資料]>[確定修改]
-  $('#editOk').click(function () {
+  $('#editConfirm').click(function () {
     //do something... (驗證)
-    let editOk = true; //[true | false] [修改成功 | 修改失敗]
+    let confirm = true; //[true | false] [修改成功 | 修改失敗]
 
-    if (editOk == true) { //修改成功            
+    if (confirm == true) { //修改成功            
       alertModal('<div class="text-red">修改成功！</div>');
 
       $('#alertModal').on('hidden.bs.modal', function () {

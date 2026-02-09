@@ -110,7 +110,7 @@
           <div class="col-xl-12 text-center mb-5" id="blockEditBtns" style="display: none;">
             <div>
               <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
-              <button type="button" class="btn btn-primary m-1" id="editOk">確定修改</button>
+              <button type="button" class="btn btn-primary m-1" id="editConfirm">確定修改</button>
             </div>
           </div>
           <!-- [修改資料]-按鈕  end  --> 
@@ -200,7 +200,7 @@
               <h3 class="text-center h6">設定學生</h3>
             </div>
             <!-- 手風琴 start -->
-            <div class="col-xl-12  mb-5">
+            <div class="col-xl-12 mb-4">
               <div class="accordion SRaccordion accordion-StudentSet" id="accordionStudentSet">
                 <div class="accordion-item">
                   <h4 class="accordion-header">
@@ -391,6 +391,14 @@
               </div>
             </div>
             <!-- 手風琴  end  --> 
+						<!-- [修改資料]-按鈕 start -->
+						<div class="col-xl-12 text-center mb-5">
+							<div>
+								<button type="button" class="btn btn-outline-primary m-1" data-bs-dismiss="modal" id="studentSetCancel">取消</button>
+								<button type="button" class="btn btn-primary m-1" id="studentSetConfirm">確定儲存</button>
+							</div>
+						</div>
+           <!-- [修改資料]-按鈕  end  --> 
             <!-- 設定學生  end  --> 
           </div>
         </div>
@@ -707,14 +715,14 @@ $(document).ready(function () {
         render: function (data, type, row, meta) {
           let status;
           switch (data) {
-            case 'ON':
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
-                                      </div>`;
-              break
-            case 'OFF':
+						case 0:
               status = `<div class="form-check form-switch form-check-inline m-0">
                                         <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+                                      </div>`;
+              break	
+            case 1:
+              status = `<div class="form-check form-switch form-check-inline m-0">
+                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
                                       </div>`;
               break
             default:

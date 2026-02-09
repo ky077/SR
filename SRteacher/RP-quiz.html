@@ -30,7 +30,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>教師命題管理</h2>
+        <h2 class="SR-h2"><span>教師命題管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 按鈕 start -->
           <div class="col-xxl-5 mb-3" id="blockBtns">
@@ -478,7 +478,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -486,10 +486,10 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="RP-quiz"]').addClass('active');
   });
 
-  const list = $('#quizTable');
+  const $table = $('#quizTable');
 
   //教師命題 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -575,7 +575,7 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
@@ -591,12 +591,12 @@ $(document).ready(function () {
     $('#blockSettingBtns').show();
 
     //表格欄位 顯示刪除、隱藏序號
-    list.DataTable().column('.col-delete').visible(true);
-    list.DataTable().column('.col-index').visible(false);
+    $table.DataTable().column('.col-delete').visible(true);
+    $table.DataTable().column('.col-index').visible(false);
 
     //表格按鈕 不可按
-    if (list.find('button').length) {
-      list.find('button').attr('disabled', true);
+    if ($table.find('button').length) {
+      $table.find('button').attr('disabled', true);
     }
   });
 
@@ -614,12 +614,12 @@ $(document).ready(function () {
     $('#blockSettingBtns').hide();
 
     //表格欄位 隱藏刪除、顯示序號
-    list.DataTable().column('.col-delete').visible(false);
-    list.DataTable().column('.col-index').visible(true);
+    $table.DataTable().column('.col-delete').visible(false);
+    $table.DataTable().column('.col-index').visible(true);
 
     //表格按鈕 可按
-    if (list.find('button').length) {
-      list.find('button').attr('disabled', false);
+    if ($table.find('button').length) {
+      $table.find('button').attr('disabled', false);
     }
   });
 
@@ -665,26 +665,26 @@ $(document).ready(function () {
           $('#blockSettingBtns').hide();
 
           //表格欄位 不可編輯
-          list.find('input, select').attr('disabled', true).addClass('readonly');
+          $table.find('input, select').attr('disabled', true).addClass('readonly');
 
           //表格欄位 隱藏刪除、顯示序號
-          list.DataTable().column('.col-delete').visible(false);
-          list.DataTable().column('.col-index').visible(true);
+          $table.DataTable().column('.col-delete').visible(false);
+          $table.DataTable().column('.col-index').visible(true);
 
           //表格按鈕 可按
-          if (list.find('button').length) {
-            list.find('button').attr('disabled', false);
+          if ($table.find('button').length) {
+            $table.find('button').attr('disabled', false);
           }
 
           //若有錯誤紅框，則清除紅框
-          if (list.find('.invalid').length) {
-            list.find('.invalid').removeClass('invalid');
+          if ($table.find('.invalid').length) {
+            $table.find('.invalid').removeClass('invalid');
           }
         });
       }
     } else { //修改失敗 demo
       alertModal('<div class="text-red">書單名稱不可空白</div>', function () {
-        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-bookList input,
+        const invalidInputs = $table.find(`tbody tr:nth-child(1) .col-bookList input,
 												 tbody tr:nth-child(3) .col-bookList input`).addClass('invalid');
 
         // 如有錯誤欄位 → 捲動至第一個
@@ -707,9 +707,9 @@ $(document).ready(function () {
   });
 
   //題本詳情[顯示詳情]
-  list.on('click', '.btn-toggle-child', function () {
+  $table.on('click', '.btn-toggle-child', function () {
     var tr = $(this).parents('tr');
-    var row = list.DataTable().row(tr);
+    var row = $table.DataTable().row(tr);
 
     //toggle 自己
     if (row.child.isShown()) { //當前打開=>關閉自己child及銷毀childTable
@@ -719,7 +719,7 @@ $(document).ready(function () {
       row.child.hide();
       $(this).parents('td').removeClass('showChild');
     } else { //當前關閉=>關閉其他child及銷毀childTable
-      list.DataTable().rows().every(function () {
+      $table.DataTable().rows().every(function () {
         if (this.child.isShown()) {
           const childTable = $(this.child()).find('table.dataTable').DataTable();
           if (childTable) childTable.destroy();
@@ -737,7 +737,7 @@ $(document).ready(function () {
   });
 
   //新增本書題本[新增]
-  list.on('click', '.col-quizInsert button', function () {
+  $table.on('click', '.col-quizInsert button', function () {
     $('#quizModal').attr('data-modal-type', 'insert').modal('show');
 
     $('#quizModal h3').text('新增本書題本');
@@ -787,15 +787,15 @@ function format(rowIndex) {
 
 //[顯示詳情] datatables
 function loadQuizDetialTable(rowIndex) {
-  const list2 = $(`#quizDetialTable_${rowIndex}`);
+  const $table2 = $(`#quizDetialTable_${rowIndex}`);
 
-  if ($.fn.DataTable.isDataTable(list2)) {
-    list2.DataTable().clear().destroy();
-    list2.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($table2)) {
+    $table2.DataTable().clear().destroy();
+    $table2.find('tbody').empty();
   }
 
   //班級學生 datatables 
-  list2.DataTable({
+  $table2.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -866,7 +866,7 @@ function loadQuizDetialTable(rowIndex) {
   });
 
   //[查看/編輯]
-  list2.on('click', '.col-tool button', function () {
+  $table2.on('click', '.col-tool button', function () {
     $('#quizModal').attr('data-modal-type', 'edit').modal('show');
 
     $('#quizModal h3').text('查看/編輯題本');
@@ -917,14 +917,14 @@ $(function () {
 <!-- 發表新題本及題目 datatables  --> 
 <script>
 function loadRecommendedBook(json) {
-  const list3 = $('#recommendedBook');
+  const $recommendedBook= $('#recommendedBook');
 
-  if ($.fn.DataTable.isDataTable(list3)) {
-    list3.DataTable().clear().destroy();
-    list3.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($recommendedBook)) {
+    $recommendedBook.DataTable().clear().destroy();
+    $recommendedBook.find('tbody').empty();
   }
 
-  list3.DataTable({
+  $recommendedBook.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -1195,12 +1195,12 @@ function loadRecommendedBook(json) {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list3);
+      datatableInputPage($recommendedBook);
     }
   });
 
   //[立即命題][查看命題]	
-  list3.on('click', '.col-tool button', function () {
+  $recommendedBook.on('click', '.col-tool button', function () {
     const action = $(this).data('action'); // insert / edit
 
     $('#insertModal').modal('hide');

@@ -32,7 +32,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>班級管理</h2>
+        <h2 class="SR-h2"><span>班級管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 按鈕 start -->
           <div class="col-xxl-5 mb-3" id="blockBtns">
@@ -477,7 +477,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -485,9 +485,9 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="account-class"]').addClass('active');
   });
 
-  const list = $('#accountClassTable');
+  const $table = $('#accountClassTable');
   //班級 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -652,7 +652,7 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
@@ -668,20 +668,20 @@ $(document).ready(function () {
     $('#blockEditBtns').show();
 
     //表格排序 關閉
-    list.find('thead th, thead td')
+    $table.find('thead th, thead td')
       .removeClass('sorting sorting sorting_asc sorting_desc')
       .unbind('click');
 
     //表格欄位 可編輯
-    list.find('td:not(.col-school)')
+    $table.find('td:not(.col-school)')
       .find('input, select').attr('disabled', false).removeClass('readonly');
 
     //表格欄位 學生名單-[查看] 不可按
-    list.find('button').attr('disabled', true);
+    $table.find('button').attr('disabled', true);
 
     //表格欄位 顯示刪除、隱藏序號
-    list.DataTable().column('.col-delete').visible(true);
-    list.DataTable().column('.col-index').visible(false);
+    $table.DataTable().column('.col-delete').visible(true);
+    $table.DataTable().column('.col-index').visible(false);
   });
 
   //[修改資料]>[取消]
@@ -698,28 +698,28 @@ $(document).ready(function () {
     $('#blockEditBtns').hide();
 
     //表格排序 開啟
-    list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+    $table.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
       .addClass('sorting')
       .each(function () {
         let i = $(this).index(),
           c = $(this).attr('class').replace(' sorting', '');
-        list.DataTable().order.listener('.' + c, i);
+        $table.DataTable().order.listener('.' + c, i);
       });
 
     //表格欄位 不可編輯
-    list.find('input, select').attr('disabled', true).addClass('readonly');
+    $table.find('input, select').attr('disabled', true).addClass('readonly');
 
     //若有錯誤紅框，則清除紅框
-    if (list.find('.invalid').length) {
-      list.find('.invalid').removeClass('invalid');
+    if ($table.find('.invalid').length) {
+      $table.find('.invalid').removeClass('invalid');
     };
 
     //表格欄位 學生名單-[查看] 可按
-    list.find('button').attr('disabled', false);
+    $table.find('button').attr('disabled', false);
 
     //表格欄位 隱藏刪除、顯示序號
-    list.DataTable().column('.col-delete').visible(false);
-    list.DataTable().column('.col-index').visible(true);
+    $table.DataTable().column('.col-delete').visible(false);
+    $table.DataTable().column('.col-index').visible(true);
   });
 
   //[修改資料]>[確定修改]
@@ -758,29 +758,29 @@ $(document).ready(function () {
           $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
 
           //表格排序開啟
-          list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+          $table.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
             .addClass('sorting')
             .each(function () {
               let i = $(this).index(),
                 c = $(this).attr('class').replace(' sorting', '');
-              list.DataTable().order.listener('.' + c, i);
+              $table.DataTable().order.listener('.' + c, i);
             });
 
           //表格欄位 刪除隱藏 序號顯示
-          list.DataTable().column('.col-delete').visible(false);
-          list.DataTable().column('.col-index').visible(true);
+          $table.DataTable().column('.col-delete').visible(false);
+          $table.DataTable().column('.col-index').visible(true);
 
           //表格欄位不可編輯
-          list.find('input, select').attr('disabled', true).addClass('readonly');
+          $table.find('input, select').attr('disabled', true).addClass('readonly');
 
           //表格欄位 學生名單-[查看] 可按
-          list.find('button').attr('disabled', false);
+          $table.find('button').attr('disabled', false);
 
           //頁碼顯示
           $('.datatables-custom-footer').show();
 
           //[修改資料]-訊息 清空錯誤
-          list.find('.invalid').removeClass('invalid');
+          $table.find('.invalid').removeClass('invalid');
 
           //[修改資料]-按鈕 區域隱藏
           $('#blockEditBtns').hide();
@@ -788,7 +788,7 @@ $(document).ready(function () {
       }
     } else { //修改失敗 demo
       alertModal('<div class="text-red">請輸入班級名稱</div>', function () {
-        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-class input,
+        const invalidInputs = $table.find(`tbody tr:nth-child(1) .col-class input,
 												 tbody tr:nth-child(3) .col-class input`).addClass('invalid');
 
         // 如有錯誤欄位 → 捲動至第一個
@@ -873,16 +873,16 @@ $(document).ready(function () {
 
   //[搜尋]
   $('#btnSearch').click(function () {
-    list.DataTable().search($('#searchKeywords').val()).draw();
+    $table.DataTable().search($('#searchKeywords').val()).draw();
   });
   //[搜尋][X]重置
   $('#searchKeywords + .btn-close').click(function () {
-    list.DataTable().search('').draw();
+    $table.DataTable().search('').draw();
   });
 
   /////////////////////////////////////////////////////////////////////////////////////
   //[查看](班級學生名單)
-  list.on('click', '.col-studentList button', function () {
+  $table.on('click', '.col-studentList button', function () {
     $('#studentListModal').modal('show');
 
     //Datatable
@@ -890,7 +890,7 @@ $(document).ready(function () {
 
     //學生名單-[搜尋]
     $('#btnSearch_student').click(function () {
-      $('#studentListTable').DataTable().search($('#btnSearch_student').val()).draw();
+      $('#studentListTable').DataTable().search($('#searchKeywords_Student').val()).draw();
     });
     //學生名單-[搜尋][X]重置
     $('#btnSearch_student + .btn-close').click(function () {
@@ -1080,7 +1080,7 @@ function iniDatatable(table, json) {
     ],
     initComplete: function () {
       //初始設置表格欄位[選擇、序號]顯示與否
-      if (table == '#classStudentLists') {
+      if (table == '#studentListTable') {
         $(table).DataTable().columns('.col-check').visible(false);
         $(table).DataTable().columns('.col-index').visible(true);
       } else if (table == '#waitingLists') {

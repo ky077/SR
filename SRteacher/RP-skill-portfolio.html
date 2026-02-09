@@ -30,8 +30,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>閱讀力管理</h2>
-        <h2>學習歷程檔案管理</h2>
+        <h2 class="SR-h2"><span>閱讀力管理</span><span>學習歷程檔案管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 搜尋 start -->
           <div class="col-xl-12 mb-3" id="blockSearch">
@@ -189,18 +188,19 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
     //當前頁actvie
-    $('#sidebarMenu .nav-link[href$="RP-skill"]').addClass('active');
+    $('#sidebarMenu .nav-link[href="#RP-skill"]').addClass('active');
+		$('#sidebarMenu .nav-link[href*="RP-skill-portfolio"]').addClass('active');
   });
 
 
-  const list = $('#portfolioTable');
+  const $table = $('#portfolioTable');
   //班級 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -319,12 +319,12 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
   //[查看](學習歷程檔案)
-  list.on('click', '.col-portfolio button', function () {
+  $table.on('click', '.col-portfolio button', function () {
     $('#portfolioModal').modal('show');
 
     //先清空舊 iframe

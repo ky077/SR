@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>檢視學校報表</h2>
+        <h2 class="SR-h2"><span>檢視學校報表</span></h2>
         <!-- 學生資訊/班級資訊-頁籤 start -->
         <div class="row">
           <ul class="nav nav-tabs">
@@ -184,7 +184,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {

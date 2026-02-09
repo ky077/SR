@@ -24,8 +24,6 @@
 </head>
 
 <body>
-
-
 <div> 
   <!-- banner start -->
   <div class="page-banner myStudy">
@@ -130,10 +128,10 @@
                   </div>
                 </div>
                 <div class="audioRecord-tool">
-				  <button id="btn_startRec" class="tools__btn startRec" type="button"><i class="fa-solid fa-microphone" aria-hidden="true"></i>開始錄音</button>
+                  <button id="btn_startRec" class="tools__btn startRec" type="button"><i class="fa-solid fa-microphone" aria-hidden="true"></i>開始錄音</button>
                   <button id="btn_stopRec" class="tools__btn stopRec" type="button" style="display:none;"><i class="fa-solid fa-circle-stop" aria-hidden="true"></i>停止錄音</button>
                   <button id="btn_startPlay" class="tools__btn playRec" type="button" ><i class="fa-solid fa-play" aria-hidden="true"></i>播放錄音</button>
-                  <button id="btn_stopPlay" class="tools__btn stopPlayRec" type="button" style="display:none;"><i class="fa-solid fa-stop" aria-hidden="true"></i>停止播放</button>	
+                  <button id="btn_stopPlay" class="tools__btn stopPlayRec" type="button" style="display:none;"><i class="fa-solid fa-stop" aria-hidden="true"></i>停止播放</button>
                 </div>
               </div>
               <!-- --> 
@@ -172,12 +170,12 @@
                     <div class="upload-video__area-default__text">快將你的感動或觀察，化為影像記錄下來吧！<img src="Content/images/myStudy/video-default-img.png"> </div>
                   </div>
                   <div class="upload-video__area-answer" style="display: block;">
-                        <div class="upload-video__area-answer__videoWidth">
-                          <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA" title="臺師大SmartReading適性閱讀-親子篇" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                          </div>
-                        </div>
+                    <div class="upload-video__area-answer__videoWidth">
+                      <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/rp-FAlPNQIA" title="臺師大SmartReading適性閱讀-親子篇" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="upload-video__btns">
                   <div class="input-group">
@@ -219,7 +217,6 @@
   </div>
   <!-- --> 
 </div>
-
 <script>
 $('#modalCancel').click(function(){ 
 	$('#reviewModal').modal('hide');
@@ -367,8 +364,6 @@ recordedSeconds = demoSec;
 	
 $('#btn_startRec').prop("disabled", true);
 $('#btn_stopRec').prop("disabled", true);	
-</script> 
-	
-	
-	</body>
+</script>
+</body>
 </html>

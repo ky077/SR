@@ -30,7 +30,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>檢視班級成績</h2>
+        <h2 class="SR-h2"><span>檢視班級成績</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 搜尋 start -->
           <div class="col-xl-12 mb-3" id="blockSearch">
@@ -172,7 +172,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
 	
   $('footer').load('master_footer.html');
@@ -183,14 +183,14 @@ $(document).ready(function () {
   });
 
 	
-  const list = $('#classScore');
+  const $table = $('#classScore');
 
   //清空html
-  list.find('tbody').remove();
+  $table.find('tbody').remove();
   $('#searchClassGrade, #searchSessions').html('<option value="" disabled selected>請選擇...</option>');
 
   //班級成績 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -314,7 +314,7 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
@@ -395,8 +395,8 @@ $(document).ready(function () {
         });
 
         //datatable
-        list.DataTable().clear();
-        list.DataTable().rows.add(matchSession).draw();
+        $table.DataTable().clear();
+        $table.DataTable().rows.add(matchSession).draw();
 
         searchData = matchSession;
       });
@@ -408,15 +408,15 @@ $(document).ready(function () {
         sessionsVal = $('#searchSessions option:selected').val(),
         keywordsVal = $('#searchKeywords').val().trim();
 
-      list.DataTable().clear();
+      $table.DataTable().clear();
 
       if (!classGradeVal && !sessionsVal && !keywordsVal) {
         alertModal('<div class="text-red">請選擇班年級、場次<br>或輸入關鍵字。</div>');
       } else if (!classGradeVal && !sessionsVal && keywordsVal) {
-        list.DataTable().rows.add(searchData.data)
+        $table.DataTable().rows.add(searchData.data)
           .search($('#searchKeywords').val()).draw();
       } else {
-        list.DataTable().rows.add(searchData)
+        $table.DataTable().rows.add(searchData)
           .search($('#searchKeywords').val()).draw();
       }
     });
@@ -428,7 +428,7 @@ $(document).ready(function () {
         keywordsVal = $('#searchKeywords').val().trim();
 
       if (!classGradeVal && !sessionsVal && !keywordsVal) {
-        list.DataTable().clear().draw();
+        $table.DataTable().clear().draw();
       } else {
         $('#btnSearch').trigger('click');
       }

@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>教學書單管理</h2>
+        <h2 class="SR-h2"><span>教學書單管理</span></h2>
         <!-- 教學指定書單/班級學生書單-頁籤 start -->
         <div class="row">
           <ul class="nav nav-tabs">
@@ -330,7 +330,7 @@
                         <td class="col-topicType" data-th="題本類別">摘要題成長/生命教</td>
                         <td class="col-ebook"><img src="Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"  alt="">&nbsp;電子書</td>
                         <td class="col-checkbox"><div class="form-check form-check-inline">
-                            <input class="form-check-input border-primary" type="checkbox" value="" id="checkbox8">
+                            <input class="form-check-input border-primary me-0" type="checkbox" value="" id="checkbox8">
                             <label class="form-check-label visually-hidden" for="checkbox8">加入書單</label>
                           </div></td>
                         <td class="col-bookplanet"><img src="Content/images/recommendedBook/borrowLink/bookplanet.png" alt="布可星球"></td>
@@ -589,7 +589,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -597,9 +597,9 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');
   });
 
-  const list = $('#teachingOverviewTable');
+  const $table = $('#teachingOverviewTable');
   //教學指定書單 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -731,15 +731,15 @@ $(document).ready(function () {
     $('#blockSettingBtns').show();
 
     //表格欄位 可編輯
-    list.find('input, select').attr('disabled', false).removeClass('readonly');
+    $table.find('input, select').attr('disabled', false).removeClass('readonly');
 
     //表格欄位 顯示刪除、隱藏序號
-    list.DataTable().column('.col-delete').visible(true);
-    list.DataTable().column('.col-index').visible(false);
+    $table.DataTable().column('.col-delete').visible(true);
+    $table.DataTable().column('.col-index').visible(false);
 
     //表格按鈕 不可按
-    if (list.find('button').length) {
-      list.find('button').attr('disabled', true);
+    if ($table.find('button').length) {
+      $table.find('button').attr('disabled', true);
     }
   });
 
@@ -757,20 +757,20 @@ $(document).ready(function () {
     $('#blockSettingBtns').hide();
 
     //表格欄位 不可編輯
-    list.find('td:not(.col-delete)').find('input, select').attr('disabled', true).addClass('readonly');
+    $table.find('td:not(.col-delete)').find('input, select').attr('disabled', true).addClass('readonly');
 
     //表格欄位 隱藏刪除、顯示序號
-    list.DataTable().column('.col-delete').visible(false);
-    list.DataTable().column('.col-index').visible(true);
+    $table.DataTable().column('.col-delete').visible(false);
+    $table.DataTable().column('.col-index').visible(true);
 
     //表格按鈕 可按
-    if (list.find('button').length) {
-      list.find('button').attr('disabled', false);
+    if ($table.find('button').length) {
+      $table.find('button').attr('disabled', false);
     }
 
     //若有錯誤紅框，則清除紅框
-    if (list.find('.invalid').length) {
-      list.find('.invalid').removeClass('invalid');
+    if ($table.find('.invalid').length) {
+      $table.find('.invalid').removeClass('invalid');
     }
   });
 
@@ -816,26 +816,26 @@ $(document).ready(function () {
           $('#blockSettingBtns').hide();
 
           //表格欄位 不可編輯
-          list.find('input, select').attr('disabled', true).addClass('readonly');
+          $table.find('input, select').attr('disabled', true).addClass('readonly');
 
           //表格欄位 隱藏刪除、顯示序號
-          list.DataTable().column('.col-delete').visible(false);
-          list.DataTable().column('.col-index').visible(true);
+          $table.DataTable().column('.col-delete').visible(false);
+          $table.DataTable().column('.col-index').visible(true);
 
           //表格按鈕 可按
-          if (list.find('button').length) {
-            list.find('button').attr('disabled', false);
+          if ($table.find('button').length) {
+            $table.find('button').attr('disabled', false);
           }
 
           //若有錯誤紅框，則清除紅框
-          if (list.find('.invalid').length) {
-            list.find('.invalid').removeClass('invalid');
+          if ($table.find('.invalid').length) {
+            $table.find('.invalid').removeClass('invalid');
           }
         });
       }
     } else { //修改失敗 demo
       alertModal('<div class="text-red">書單名稱不可空白</div>', function () {
-        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-bookList input,
+        const invalidInputs = $table.find(`tbody tr:nth-child(1) .col-bookList input,
 												 tbody tr:nth-child(3) .col-bookList input`).addClass('invalid');
 
         // 如有錯誤欄位 → 捲動至第一個
@@ -861,7 +861,7 @@ $(document).ready(function () {
   });
 
   //表格-編輯書單 > [編輯]
-  list.on('click', '.col-editList button', function () {
+  $table.on('click', '.col-editList button', function () {
     $('#bookListModal').attr('data-modal-type', 'edit').modal('show');
 
     $('#bookListModal h3').text('編輯書單');
@@ -878,7 +878,7 @@ $(document).ready(function () {
   });
 
   //表格-指派班級 > [指派]
-  list.on('click', '.col-assignClass button', function () {
+  $table.on('click', '.col-assignClass button', function () {
     $('#assignModal').modal('show');
   });
 	
@@ -923,14 +923,14 @@ $(document).ready(function () {
 <!-- 新增/編輯書單 --> 
 <script>
 function loadteachingDetialTable(json) {
-  const list2 = $('#teachingDetialTable');
+  const $bookList = $('#teachingDetialTable');
 
-  if ($.fn.DataTable.isDataTable(list2)) {
-    list2.DataTable().clear().destroy();
-    list2.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($bookList)) {
+    $bookList.DataTable().clear().destroy();
+    $bookList.find('tbody').empty();
   }
 
-  list2.DataTable({
+  $bookList.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -1001,7 +1001,7 @@ function loadteachingDetialTable(json) {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list2);
+      datatableInputPage($bookList);
     }
   });
 }
@@ -1045,14 +1045,14 @@ $(function () {
 <!-- 增/減書籍(推薦書單) datatables  --> 
 <script>
 function loadRecommendedBook(json) {
-  const list3 = $('#recommendedBook');
+  const $recommendedBook = $('#recommendedBook');
 
-  if ($.fn.DataTable.isDataTable(list3)) {
-    list3.DataTable().clear().destroy();
-    list3.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($recommendedBook)) {
+    $recommendedBook.DataTable().clear().destroy();
+    $recommendedBook.find('tbody').empty();
   }
 
-  list3.DataTable({
+  $recommendedBook.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -1266,7 +1266,7 @@ function loadRecommendedBook(json) {
         orderable: false,
         render: function (data, type, row, meta) {
           return `<div class="form-check form-check-inline">
-                          <input class="form-check-input border-primary" type="checkbox" value="" id="checkbox8">
+                          <input class="form-check-input border-primary me-0" type="checkbox" value="" id="checkbox8">
                           <label class="form-check-label visually-hidden" for="checkbox` + data + `">加入書單</label>
                         </div>`;
         }
@@ -1297,7 +1297,7 @@ function loadRecommendedBook(json) {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list3);
+      datatableInputPage($recommendedBook);
     }
   });
 }

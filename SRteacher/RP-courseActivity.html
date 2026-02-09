@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>學生作品管理</h2>
+        <h2 class="SR-h2"><span>學生作品管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 搜尋 start -->
           <div class="col-xl-12 mb-3" id="blockSearch">
@@ -95,7 +95,7 @@
           <!-- 搜尋  end  --> 
           <!-- 表格 start -->
           <div class="col-xl-12 mb-5">
-            <table class="table table-bordered table-courseActivity" id="courseActivity">
+            <table class="table table-bordered table-courseActivity" id="courseActivityTable">
               <thead>
                 <tr>
                   <th scope="col" class="col-index">序號</th>
@@ -198,7 +198,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -206,9 +206,9 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="RP-courseActivity"]').addClass('active');
   });
 
-  const list = $('#courseActivity');
+  const $table = $('#courseActivityTable');
   //datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     ordering: false,
@@ -340,12 +340,12 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
   //[查看]
-  list.on('click', '[data-review]', function () {
+  $table.on('click', '[data-review]', function () {
     var _target = $(this).attr('data-review');
 
     $('#reviewModal').on('shown.bs.modal', function (e) {

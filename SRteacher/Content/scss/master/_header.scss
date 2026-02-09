@@ -12,55 +12,61 @@ header {
     }
     
     .navbar-brand{
-        margin-right: 0;
-        h1{
-            display: flex;
-            align-items: center;
-            margin-bottom: 0;
-            font-size: 1.2rem;
-            @media screen and (min-width: 576px) {
-            font-size: 1.5rem; 
-            transform: none;    
-            }
-        }
-        .SR-logo{
-            width: 5.1rem;
-            @media screen and (min-width: 576px) {
-            width: 7.7rem;
-            }    
-        }
-        .SR-h1{
-            &::before{
-                content: "";
-                display: inline-block;
-                width: 1px;
-                height: 1.5rem*1.1;
-                background-color: $gray-900;
-                margin: 0 .5rem;
-                vertical-align: middle;
-                @media screen and (min-width: 576px) {
-                margin: 0 .75rem;    
-                }
-            }
-            .SR-h1-current{
-                display: none;
-                font-size: 1.2rem;
-                &.active::before{
-                    content: "";
-                    display: inline-block;
-                    width: .75rem;
-                    height: .75rem;
-                    border-right: 1px solid $gray-900;
-                    border-bottom: 1px solid $gray-900;
-                    transform: rotate(-45deg);
-                    margin-left: .25rem;
-                    margin-right: .75rem;
-                }
-                @media screen and (min-width: 576px) {
-                display: inline-block;   
-                }
-            }
-        }
+			display: flex;
+    	align-items: center;
+			margin-right: 0;
+			.SR-h1{
+				display: flex;
+				align-items: center;
+				margin-bottom: 0;
+				font-size: 1.2rem;
+				@media screen and (min-width: 576px) {
+				font-size: 1.5rem; 
+				transform: none;    
+				}
+				.SR-logo{
+					width: 5.1rem;
+					@media screen and (min-width: 576px) {
+					width: 7.7rem;
+					}  
+				}
+				.SR-title{
+					&::before{
+						content: "";
+						display: inline-block;
+						width: 1px;
+						height: 1.5rem*1.1;
+						background-color: $gray-900;
+						margin: 0 .5rem;
+						vertical-align: middle;
+						@media screen and (min-width: 576px) {
+						margin: 0 .75rem;    
+						}
+					}
+				}
+			}
+			.current-page{
+				display: none;
+				font-size: 1.2rem;
+				font-weight: 500;
+				> span{
+					&::before{
+						content: "";
+						display: inline-block;
+						width: .75rem;
+						height: .75rem;
+						border-right: 1px solid $gray-900;
+						border-bottom: 1px solid $gray-900;
+						transform: rotate(-45deg);
+						margin-left: .25rem;
+						margin-right: .75rem;
+					}	
+				}
+				
+				@media screen and (min-width: 576px) {
+				display: inline-block;   
+				}
+			}
     }
     .SR-user{
         position: absolute;

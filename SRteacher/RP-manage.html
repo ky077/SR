@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- -------  ------- -->
-        <h2>閱讀計畫管理</h2>
+        <h2 class="SR-h2"><span>閱讀計畫管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 搜尋 start -->
           <div class="col-xl-12 mb-3" id="blockSearch">
@@ -298,7 +298,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -307,10 +307,10 @@ $(document).ready(function () {
   });
 
 
-  const list = $('#RPmanageOverviewTable');
+  const $table = $('#RPmanageOverviewTable');
 
   //班級 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -375,12 +375,12 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
   //班級閱讀計畫[查看]
-  list.on('click', '.col-classRP button', function () {
+  $table.on('click', '.col-classRP button', function () {
     $('#classRPModal').modal('show');
 
     loadClassRPTable();
@@ -392,14 +392,14 @@ $(document).ready(function () {
 <!-- 班級閱讀計畫 --> 
 <script>
 function loadClassRPTable() {
-  const list2 = $('#classRPTable');
+  const $table2 = $('#classRPTable');
 
-  if ($.fn.DataTable.isDataTable(list2)) {
-    list2.DataTable().clear().destroy();
-    list2.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($table2)) {
+    $table2.DataTable().clear().destroy();
+    $table2.find('tbody').empty();
   }
 
-  list2.DataTable({
+  $table2.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -531,18 +531,18 @@ function loadClassRPTable() {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list2);
+      datatableInputPage($table2);
     }
   });
 
   //金榜星星數[計分方式>>]
-  list2.on('click', 'th.col-superBoard button', function () {
+  $table2.on('click', 'th.col-superBoard button', function () {
     $('#superBoardModal').modal('show')
       .find('.load-body')
       .load('superBoard.html');
   });
   //金榜星星數[計分方式>>]
-  list2.on('click', 'td.col-superBoard button', function () {
+  $table2.on('click', 'td.col-superBoard button', function () {
     $('#superBoardModal').modal('show')
       .find('.load-body')
       .load('superBoard.html', function () {
@@ -551,7 +551,7 @@ function loadClassRPTable() {
   });
 
   //學生閱讀計畫[查看]
-  list2.on('click', '.col-studentRP button', function () {
+  $table2.on('click', '.col-studentRP button', function () {
     $('#studentRPModal').modal('show')
       .find('.load-body')
       .load('studentRP.html', function () {

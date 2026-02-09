@@ -30,7 +30,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>教師管理</h2>
+        <h2 class="SR-h2"><span>教師管理</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 按鈕 start -->
           <div class="col-xxl-5 mb-3" id="blockBtns">
@@ -271,7 +271,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
 
   $('footer').load('master_footer.html');
@@ -281,10 +281,10 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="account-teacher"]').addClass('active');
   });
 
-
-  const list = $('#accountTeacherTable');
   //教師 datatables 
-  list.DataTable({
+  const $table= $('#accountTeacherTable');
+  
+  $table.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -447,7 +447,7 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
@@ -463,12 +463,12 @@ $(document).ready(function () {
     $('#blockEditBtns').show();
 
     //表格排序 關閉
-    list.find('thead th, thead td')
+    $table.find('thead th, thead td')
       .removeClass('sorting sorting sorting_asc sorting_desc')
       .unbind('click');
 
     //表格欄位 可編輯
-    list.find('td:not(.col-account)')
+    $table.find('td:not(.col-account)')
       .find('input, select').attr('disabled', false).removeClass('readonly');
 
     //[依帳號新增時間排序] 顯示
@@ -489,23 +489,23 @@ $(document).ready(function () {
     $('#blockEditBtns').hide();
 
     //表格排序 開啟
-    list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+    $table.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
       .addClass('sorting')
       .each(function () {
         let i = $(this).index(),
           c = $(this).attr('class').replace(' sorting', '');
-        list.DataTable().order.listener('.' + c, i);
+        $table.DataTable().order.listener('.' + c, i);
       });
 
     //表格欄位 不可編輯
-    list.find('input, select').attr('disabled', true).addClass('readonly');
+    $table.find('input, select').attr('disabled', true).addClass('readonly');
 
     //[依帳號新增時間排序] 隱藏
     $('#blockSortTime').hide();
 
     //若有錯誤紅框，則清除紅框
-    if (list.find('.invalid').length) {
-      list.find('.invalid').removeClass('invalid');
+    if ($table.find('.invalid').length) {
+      $table.find('.invalid').removeClass('invalid');
     }
   });
 
@@ -528,29 +528,29 @@ $(document).ready(function () {
         $('#blockEditBtns').hide();
 
         //表格排序 開啟
-        list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+        $table.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
           .addClass('sorting')
           .each(function () {
             let i = $(this).index(),
               c = $(this).attr('class').replace(' sorting', '');
-            list.DataTable().order.listener('.' + c, i);
+            $table.DataTable().order.listener('.' + c, i);
           });
 
         //表格欄位 不可編輯
-        list.find('input, select').attr('disabled', true).addClass('readonly');
+        $table.find('input, select').attr('disabled', true).addClass('readonly');
 
         //[依帳號新增時間排序] 區域隱藏
         $('#blockSortTime').hide();
 
         //若有錯誤紅框，則清除紅框
-        if (list.find('.invalid').length) {
-          list.find('.invalid').removeClass('invalid');
+        if ($table.find('.invalid').length) {
+          $table.find('.invalid').removeClass('invalid');
         }
       });
     } else { //修改失敗 demo
       alertModal('<div class="text-red">密碼請勿小於4碼！</div>', function () {
         //demo填寫錯誤的地方
-        const invalidInputs = list.find(`tbody tr:nth-child(1) .col-password input,
+        const invalidInputs = $table.find(`tbody tr:nth-child(1) .col-password input,
 											 tbody tr:nth-child(3) .col-password input`).addClass('invalid');
 
         //如有錯誤欄位，則捲動至第一個
@@ -586,7 +586,7 @@ $(document).ready(function () {
     let validationField = '';
 
     if ($(this).attr('id') == 'insertSin') {
-      validationField = '#insertAccount, #insertPassword, #insertChineseName, #insertLang';
+      validationField = '#insertAccount, #insertPassword, #insertChineseName, #insertLanguage';
     } else if ($(this).attr('id') == 'insertBat') {
       validationField = '#inputCSV';
     }
@@ -641,11 +641,11 @@ $(document).ready(function () {
 
   //[搜尋]
   $('#btnSearch').click(function () {
-    list.DataTable().search($('#searchKeywords').val()).draw();
+    $table.DataTable().search($('#searchKeywords').val()).draw();
   });
   //[搜尋][X]重置
   $('#searchKeywords + .btn-close').click(function () {
-    list.DataTable().search('').draw();
+    $table.DataTable().search('').draw();
   });
 });
 </script>

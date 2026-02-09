@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>檢視全校統計資訊</h2>
+        <h2 class="SR-h2"><span>檢視全校統計資訊</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 年級統計資訊 start -->
           <h3 class="h5 text-center mb-4">年級統計資訊</h3>
@@ -213,7 +213,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {

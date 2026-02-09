@@ -31,7 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>班級學生書單</h2>
+        <h2 class="SR-h2"><span>班級學生書單</span></h2>
         <!-- 教學指定書單/班級學生書單-頁籤 start -->
         <div class="row">
           <ul class="nav nav-tabs">
@@ -147,7 +147,7 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
@@ -155,10 +155,10 @@ $(document).ready(function () {
     $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');
   });
 
-  const list = $('#classOverviewTable');
+  const $table = $('#classOverviewTable');
 
   //班級 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -223,14 +223,14 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
   //[顯示班級資訊]
-  list.on('click', '.btn-toggle-child', function () {
+  $table.on('click', '.btn-toggle-child', function () {
     var tr = $(this).parents('tr');
-    var row = list.DataTable().row(tr);
+    var row = $table.DataTable().row(tr);
 
     //toggle 自己
     if (row.child.isShown()) { //當前打開=>關閉自己child及銷毀childTable
@@ -240,7 +240,7 @@ $(document).ready(function () {
       row.child.hide();
       $(this).parents('td').removeClass('showChild');
     } else { //當前關閉=>關閉其他child及銷毀childTable
-      list.DataTable().rows().every(function () {
+      $table.DataTable().rows().every(function () {
         if (this.child.isShown()) {
           const childTable = $(this.child()).find('table.dataTable').DataTable();
           if (childTable) childTable.destroy();
@@ -275,15 +275,15 @@ function format(rowIndex) {
 
 //[顯示班級資訊] datatables
 function loadclassDetialTable(rowIndex) {
-  const list2 = $(`#classDetialTable_${rowIndex}`);
+  const $table2 = $(`#classDetialTable_${rowIndex}`);
 
-  if ($.fn.DataTable.isDataTable(list2)) {
-    list2.DataTable().clear().destroy();
-    list2.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($table2)) {
+    $table2.DataTable().clear().destroy();
+    $table2.find('tbody').empty();
   }
 
   //班級學生 datatables 
-  list2.DataTable({
+  $table2.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -367,7 +367,7 @@ function loadclassDetialTable(rowIndex) {
   });
 
   //學生閱讀計畫[檢視]
-  list2.on('click', '.col-tool button', function () {
+  $table2.on('click', '.col-tool button', function () {
     $('#studentRPModal').modal('show')
       .find('.modal-body .load-body')
       .load('studentRP.html', function () {

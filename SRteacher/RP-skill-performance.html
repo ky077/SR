@@ -31,8 +31,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>閱讀力管理</h2>
-        <h2>閱讀力表現</h2>
+        <h2 class="SR-h2"><span>閱讀力管理</span><span>閱讀力表現</span></h2>
         <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
           <!-- 搜尋 start -->
           <div class="col-xl-12 mb-3" id="blockSearch">
@@ -323,19 +322,20 @@ $(document).ready(function () {
   //call header、footer、 sidebar  
   $('header').load('master_header.html', function () {
     //當前頁名稱顯示
-    $('#currentPage').text($('main h2').text()).addClass('active');
+    $('#currentPage').html($('main .SR-h2').html());
   });
   $('footer').load('master_footer.html');
   $('#sidebarMenu').load('master_sidebar.html', function () {
     //當前頁actvie
-    $('#sidebarMenu .nav-link[href*="RP-skill"]').addClass('active');
+    $('#sidebarMenu .nav-link[href="#RP-skill"]').addClass('active');
+		$('#sidebarMenu .nav-link[href*="RP-skill-performance"]').addClass('active');
   });
 
 
-  const list = $('#performanceTable');
+  const $table = $('#performanceTable');
 
   //閱讀力表現 datatables 
-  list.DataTable({
+  $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -414,14 +414,14 @@ $(document).ready(function () {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list);
+      datatableInputPage($table);
     }
   });
 
   //學生選單[顯示詳情]
-  list.on('click', '.btn-toggle-child', function () {
+  $table.on('click', '.btn-toggle-child', function () {
     var tr = $(this).parents('tr');
-    var row = list.DataTable().row(tr);
+    var row = $table.DataTable().row(tr);
 
     var rowData = row.data();
     var rowIndex = row.index();
@@ -446,7 +446,7 @@ $(document).ready(function () {
   });
 
   //選擇 - [全選]
-  list.on('change', '.col-check input[name="checkAll"]', function () {
+  $table.on('change', '.col-check input[name="checkAll"]', function () {
     var tr = $(this).closest('tr'); // 當前主列
     if (!tr.hasClass('dt-hasChild')) return;
 
@@ -454,7 +454,7 @@ $(document).ready(function () {
     $(this).is(':checked') ? checkboxes.prop('checked', true) : checkboxes.prop('checked', false);
   });
   //選擇 - 反向選取
-  list.on('change', '.table-performance-students input[name="check"]', function () {
+  $table.on('change', '.table-performance-students input[name="check"]', function () {
     var $table = $(this).closest('.table-performance-students'); // 當前表格
 
     var $all = $table.find('input[name="check"]');
@@ -569,14 +569,14 @@ function syncChildChecksFromCheckAll($mainTr) {
 
 //學生閱讀歷程之閱讀力表現
 function loadStudentRATable() {
-  const list2 = $('#studentRATable');
+  const $table2 = $('#studentRATable');
 
-  if ($.fn.DataTable.isDataTable(list2)) {
-    list2.DataTable().clear().destroy();
-    list2.find('tbody').empty();
+  if ($.fn.DataTable.isDataTable($table2)) {
+    $table2.DataTable().clear().destroy();
+    $table2.find('tbody').empty();
   }
 
-  list2.DataTable({
+  $table2.DataTable({
     //serverSide: true,
     order: [], //取消默認排序icon
     autoWidth: false,
@@ -679,12 +679,12 @@ function loadStudentRATable() {
     ],
     initComplete: function () {
       //datatable footer input page
-      datatableInputPage(list2);
+      datatableInputPage($table2);
     }
   });
 
   //學生閱讀計畫[查看]
-  list2.on('click', '.col-portfolio button', function () {
+  $table2.on('click', '.col-portfolio button', function () {
     $('#studentRAportfolioModal').modal('show');
 
     loadStudentRAportfolioTable();
@@ -795,13 +795,13 @@ function loadStudentRAportfolioTable() {
     renderLegend(studentRAportfolioChart);
 
     /* ========= Table ========= */
-    const list3 = $('#studentRAportfolioTable');
+    const $table3 = $('#studentRAportfolioTable');
 
-    if ($.fn.DataTable.isDataTable(list3)) {
-      list3.DataTable().clear().destroy();
+    if ($.fn.DataTable.isDataTable($table3)) {
+      $table3.DataTable().clear().destroy();
     }
 
-    list3.DataTable({
+    $table3.DataTable({
       //serverSide: true,     // 開啟伺服端模式
       processing: true,
       order: [], //取消默認排序icon

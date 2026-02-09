@@ -30,7 +30,7 @@
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
       <main class="col-xl-10"> 
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
-        <h2>帳號資訊</h2>
+        <h2 class="SR-h2"><span>帳號資訊</span></h2>
         <div class="row justify-content-center py-4">
           <div class="col-xl-7 col-xxl-6"> 
             <!-- [編輯資料] start -->
@@ -212,6 +212,7 @@
 $(document).ready(function() {
     //call header、footer、 sidebar  
     $('header').load('master_header.html', function(){
+    	//帳號資訊頁為首頁，header不顯示當前頁名稱
     }); 
 	
     $('footer').load('master_footer.html'); 

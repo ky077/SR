@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">	
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
-<body>
+<body data-sidebar="index">
 <form>
   <header> </header>
   <div class="container-fluid">
@@ -210,16 +210,6 @@
 <script src="Content/js/main.js"></script> 
 <script>
 $(document).ready(function() {
-    //call header、footer、 sidebar  
-    $('header').load('master_header.html', function(){
-    	//帳號資訊頁為首頁，header不顯示當前頁名稱
-    }); 
-	
-    $('footer').load('master_footer.html'); 
-	
-    $('#sidebarMenu').load('master_sidebar.html', function(){
-    }); 
-    
     //初始畫面
     editFieldState('editable');//不可編輯
     

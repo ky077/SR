@@ -17,16 +17,15 @@
 <!-- widgets CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
-<link rel="stylesheet" type="text/css" href="Content/widgets/bootstrap-select-1.14.0-beta3/dist/css/bootstrap-select.min.css">	
+<link rel="stylesheet" type="text/css" href="Content/widgets/bootstrap-select-1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
 <!-- template CSS -->
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
-<body>
+<body data-sidebar="RP-bookList RP-bookList-class">
 <form>
   <header> </header>
-	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -145,18 +144,7 @@
 <!-- my JS --> 
 <script src="Content/js/main.js"></script> 
 <script>
-$(document).ready(function () {
-  //call header、footer、 sidebar  
-  $('header').load('master_header.html', function () {
-    //當前頁名稱顯示
-    $('#currentPage').html($('main .SR-h2').html());
-  });
-  $('footer').load('master_footer.html');
-  $('#sidebarMenu').load('master_sidebar.html', function () {
-    //當前頁actvie
-    $('#sidebarMenu .nav-link[href*="RP-bookList"]').addClass('active');
-  });
-
+$(function () {
   const $table = $('#classOverviewTable');
 
   //班級 datatables 

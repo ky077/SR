@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
-<body>
+<body data-sidebar="RP-skill-performance">
 <form>
   <header> </header>
 	
@@ -319,19 +319,6 @@
 <script src="Content/js/main.js"></script> 
 <script>
 $(document).ready(function () {
-  //call header、footer、 sidebar  
-  $('header').load('master_header.html', function () {
-    //當前頁名稱顯示
-    $('#currentPage').html($('main .SR-h2').html());
-  });
-  $('footer').load('master_footer.html');
-  $('#sidebarMenu').load('master_sidebar.html', function () {
-    //當前頁actvie
-    $('#sidebarMenu .nav-link[href="#RP-skill"]').addClass('active');
-		$('#sidebarMenu .nav-link[href*="RP-skill-performance"]').addClass('active');
-  });
-
-
   const $table = $('#performanceTable');
 
   //閱讀力表現 datatables 

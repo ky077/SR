@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
-<body>
+<body data-sidebar="account-student">
 <form>
   <header> </header>
 	
@@ -46,7 +46,10 @@
                 <label for="searchStatus" class="col-form-label fs-7">狀態</label>
               </div>
               <div class="col-auto">
-                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus">
+                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus" 
+												data-dt-target="#accountStudentTable"
+												data-dt-column=".col-status"
+												data-dt-trigger="change">
                   <option value="" selected>全部</option>
                   <option value="1">ON</option>
                   <option value="0">OFF</option>
@@ -56,7 +59,7 @@
                 <label for="searchKeywords" class="col-form-label fs-7e">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#accountStudentTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -321,18 +324,8 @@
 <script src="Content/js/main.js"></script> 
 <script>
 $(document).ready(function () {
-  //call header、footer、 sidebar  
-  $('header').load('master_header.html', function () {
-    //當前頁名稱顯示
-    $('#currentPage').html($('main .SR-h2').html());
-  });
-  $('footer').load('master_footer.html');
-  $('#sidebarMenu').load('master_sidebar.html', function () {
-    //當前頁actvie
-    $('#sidebarMenu .nav-link[href*="account-student"]').addClass('active');
-  });
-
   const $table = $('#accountStudentTable');
+	
   //學生 datatables 
   $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
@@ -349,7 +342,8 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     ajax: 'Content/json/account-student/accountStudent.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
         className: 'col-index',
@@ -376,6 +370,8 @@ $(document).ready(function () {
         data: 'password',
         className: 'col-password',
         orderable: false,
+				orderDataType: 'dom-text',
+				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled  autocomplete="off">`;
         }
@@ -410,6 +406,8 @@ $(document).ready(function () {
         data: 'nationalId',
         className: 'col-nationalId',
         orderable: false,
+				orderDataType: 'dom-text',
+				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
         }
@@ -423,6 +421,10 @@ $(document).ready(function () {
         orderDataType: 'dom-select',
         type: 'numeric',
         render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return data; // 搜尋用原始資料
+					}
+					
           var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -448,6 +450,8 @@ $(document).ready(function () {
         data: 'class',
         className: 'col-class',
         orderable: false,
+				orderDataType: 'dom-text',
+				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
         }
@@ -482,7 +486,13 @@ $(document).ready(function () {
         data: 'language',
         className: 'col-language',
         orderable: false,
+				orderDataType: 'dom-select',
+				type: 'string',
         render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return data; // 搜尋用原始資料
+					}
+					
           var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="TW">TW</option>
                                       <option value="CN">CN</option>
@@ -500,7 +510,13 @@ $(document).ready(function () {
         data: 'gender',
         className: 'col-gender',
         orderable: false,
+				orderDataType: 'dom-select',
+				type: 'numeric',
         render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return data === 1 ? '男' : '女'; // 搜尋用文字
+					}
+					
           var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="1">男</option>
                                       <option value="2">女</option>
@@ -518,23 +534,23 @@ $(document).ready(function () {
         className: 'col-status',
         orderable: false,
         render: function (data, type, row, meta) {
-          let status;
+					if (type !== 'display') {
+						return data; // 0 / 1
+					}
           switch (data) {
             case 0:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+												</div>`;
+
             case 1:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
+												</div>`;
+
             default:
-              status = '';
-              break
+              return '';
           }
-          return status;
         }
       }
     ],
@@ -720,14 +736,8 @@ $(document).ready(function () {
     }
   });
 
-  //[搜尋]
-  $('#btnSearch').click(function () {
-    $table.DataTable().search($('#searchKeywords').val()).draw();
-  });
-  //[搜尋][X]重置
-  $('#searchKeywords + .btn-close').click(function () {
-    $table.DataTable().search('').draw();
-  });
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 });
 </script>
 </body>

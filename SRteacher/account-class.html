@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-custom.css">
 <link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
 </head>
-<body>
+<body data-sidebar="account-class">
 <form>
   <header> </header>
 	
@@ -47,7 +47,10 @@
                 <label for="searchStatus" class="col-form-label fs-7">狀態</label>
               </div>
               <div class="col-auto">
-                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus">
+                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus" 
+												data-dt-target="#accountClassTable"
+												data-dt-column=".col-status"
+												data-dt-trigger="change">
                   <option value="" selected>全部</option>
                   <option value="1">ON</option>
                   <option value="0">OFF</option>
@@ -57,7 +60,7 @@
                 <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#accountClassTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -263,8 +266,11 @@
                           <label for="searchGrade" class="col-form-label fs-8">年級</label>
                         </div>
                         <div class="col-auto">
-                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade">
-                            <option value="">請選擇...</option>
+                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchGrade" 
+																	data-dt-target="#waitingListTable"
+																	data-dt-column=".col-grade"
+																	data-dt-trigger="change">
+                            <option value="">全部</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -283,8 +289,11 @@
                           <label for="searchClass" class="col-form-label fs-8">班級</label>
                         </div>
                         <div class="col-auto">
-                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass">
-                            <option value="">請選擇...</option>
+                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass" 
+																	data-dt-target="#waitingListTable"
+																	data-dt-column=".col-class"
+																	data-dt-trigger="change">
+                            <option value="">全部</option>
                             <option value="Test 02">Test 02</option>
                             <option value="Test 01">Test 01</option>
                           </select>
@@ -294,8 +303,11 @@
                           <label for="searchYear" class="col-form-label fs-8">入學年</label>
                         </div>
                         <div class="col-auto">
-                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
-                            <option value="">請選擇...</option>
+                          <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear" 
+																	data-dt-target="#waitingListTable"
+																	data-dt-column=".col-entryYear"
+																	data-dt-trigger="change">
+                            <option value="">全部</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -309,7 +321,7 @@
                           <label for="searchKeywords_waiting" class="col-form-label fs-7">搜尋</label>
                         </div>
                         <div class="col-auto">
-                          <div class="input-group">
+                          <div class="input-group" data-dt-target="#waitingListTable">
                             <div class="input-group-clear">
                               <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch_waiting" id="searchKeywords_waiting">
                               <button class="btn btn-close" type="button"></button>
@@ -385,7 +397,7 @@
                       <label for="searchKeywords_Student" class="col-form-label fs-7">搜尋</label>
                     </div>
                     <div class="col-auto">
-                      <div class="input-group">
+                      <div class="input-group" data-dt-target="#studentListTable">
                         <div class="input-group-clear">
                           <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch_student" id="searchKeywords_Student">
                           <button class="btn btn-close" type="button"></button>
@@ -474,17 +486,6 @@
 <script src="Content/js/main.js"></script> 
 <script>
 $(document).ready(function () {
-  //call header、footer、 sidebar  
-  $('header').load('master_header.html', function () {
-    //當前頁名稱顯示
-    $('#currentPage').html($('main .SR-h2').html());
-  });
-  $('footer').load('master_footer.html');
-  $('#sidebarMenu').load('master_sidebar.html', function () {
-    //當前頁actvie
-    $('#sidebarMenu .nav-link[href*="account-class"]').addClass('active');
-  });
-
   const $table = $('#accountClassTable');
   //班級 datatables 
   $table.DataTable({
@@ -502,7 +503,8 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     ajax: 'Content/json/account-class/accountClass.json',
-    columnDefs: [{ //刪除
+    columnDefs: [
+			{ //刪除
         targets: 0,
         title: '刪除',
         className: 'col-delete',
@@ -529,6 +531,8 @@ $(document).ready(function () {
         data: 'school',
         className: 'col-school',
         orderable: false,
+				orderDataType: 'dom-text',
+				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -554,6 +558,10 @@ $(document).ready(function () {
         orderDataType: 'dom-select',
         type: 'numeric',
         render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return data; // 搜尋用原始資料
+					}
+					
           var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="1">1</option>
                                       <option value="2">2</option>
@@ -581,7 +589,7 @@ $(document).ready(function () {
         className: 'col-class',
         orderable: true,
         orderDataType: 'dom-text',
-        type: 'string',
+				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
         }
@@ -595,6 +603,10 @@ $(document).ready(function () {
         orderDataType: 'dom-select',
         type: 'string',
         render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return data; // 搜尋用原始資料
+					}
+					
           var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
                                       <option value="李夏夏">李夏夏</option>
                                       <option value="李夏一">李夏一</option>
@@ -611,6 +623,8 @@ $(document).ready(function () {
         data: 'studentCount',
         className: 'col-studentCount',
         orderable: false,
+				orderDataType: 'dom-text',
+				type: 'numeric',
       },
       { //學生名單
         targets: 8,
@@ -628,24 +642,23 @@ $(document).ready(function () {
         className: 'col-status',
         orderable: false,
         render: function (data, type, row, meta) {
-          let status;
+					if (type !== 'display') {
+						return data; // 0 / 1
+					}
           switch (data) {
             case 0:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+												</div>`;
+
             case 1:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
+												</div>`;
 
             default:
-              status = '';
-              break
+              return '';
           }
-          return status;
         }
       }
 
@@ -871,14 +884,8 @@ $(document).ready(function () {
     }
   });
 
-  //[搜尋]
-  $('#btnSearch').click(function () {
-    $table.DataTable().search($('#searchKeywords').val()).draw();
-  });
-  //[搜尋][X]重置
-  $('#searchKeywords + .btn-close').click(function () {
-    $table.DataTable().search('').draw();
-  });
+  //DataTable 搜尋共用功能
+  initDataTableSearch();
 
   /////////////////////////////////////////////////////////////////////////////////////
   //[查看](班級學生名單)
@@ -887,15 +894,9 @@ $(document).ready(function () {
 
     //Datatable
     iniDatatable('#studentListTable', 'studentList');
-
-    //學生名單-[搜尋]
-    $('#btnSearch_student').click(function () {
-      $('#studentListTable').DataTable().search($('#searchKeywords_Student').val()).draw();
-    });
-    //學生名單-[搜尋][X]重置
-    $('#btnSearch_student + .btn-close').click(function () {
-      $('#studentListTable').DataTable().search('').draw();
-    });
+		
+		//DataTable 搜尋共用功能
+  	initDataTableSearch();
   });
 
   //[新增(班級)學生]
@@ -915,15 +916,9 @@ $(document).ready(function () {
     //待選名單 欄位選取顯示、序號隱藏
     $('#waitingListTable').DataTable().columns('.col-check').visible(true);
     $('#waitingListTable').DataTable().columns('.col-index').visible(false);
-
-    //待選名單-[搜尋]
-    $('#btnSearch_waiting').click(function () {
-      $('#waitingListTable').DataTable().search($('#searchKeywords_waiting').val()).draw();
-    });
-    //待選名單-[搜尋][X]重置
-    $('#searchKeywords_waiting + .btn-close').click(function () {
-      $('#waitingListTable').DataTable().search('').draw();
-    });
+		
+		//DataTable 搜尋共用功能
+  	initDataTableSearch();
   });
 
   //[返回查看名單]
@@ -991,7 +986,6 @@ function iniDatatable(table, json) {
         title: '序號',
         className: 'col-index',
         orderable: false,
-        type: 'numeric',
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -1015,7 +1009,7 @@ function iniDatatable(table, json) {
         className: 'col-password',
         orderable: false,
         orderDataType: 'dom-text',
-        type: 'numeric',
+        type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }

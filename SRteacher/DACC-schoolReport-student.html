@@ -25,6 +25,7 @@
 <body data-sidebar="DACC-schoolReport DACC-schoolReport-student">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -369,6 +370,7 @@
       </main>
     </div>
   </div>
+	
   <footer> </footer>
 </form>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -543,7 +545,7 @@ $(document).ready(function () {
         title: '班級',
         data: 'class',
         className: 'col-class',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -554,7 +556,7 @@ $(document).ready(function () {
         data: 'studentName',
         className: 'col-studentName',
         orderDataType: 'dom-text',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -564,14 +566,14 @@ $(document).ready(function () {
         title: 'SR分數',
         data: 'SR',
         className: 'col-SR',
-        type: 'numeric',
+        orderable: false,
       },
       { //DACC等級
         targets: 3,
         title: '<a href="#" role="button" data-bs-toggle="popover" class="popover-DACClevel">DACC等級<i class="fa-regular fa-circle-question"></i></a>',
         data: 'DACClevel',
         className: 'col-DACC',
-        type: 'numeric',
+        orderable: false,
       }
     ]
   });

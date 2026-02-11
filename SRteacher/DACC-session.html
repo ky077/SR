@@ -25,6 +25,7 @@
 <body data-sidebar="DACC-session">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -44,17 +45,20 @@
                 <label for="searchStatus" class="col-form-label fs-7">狀態</label>
               </div>
               <div class="col-auto">
-                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus">
+                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus" 
+												data-dt-target="#sessionTable"
+												data-dt-column=".col-status"
+												data-dt-trigger="change">
                   <option value="" selected>全部</option>
-                  <option value="ON">ON</option>
-                  <option value="OFF">OFF</option>
+                  <option value="1">ON</option>
+                  <option value="0">OFF</option>
                 </select>
               </div>
               <div class="col-auto d-none d-lg-inline ms-3">
                 <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#sessionTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -91,7 +95,7 @@
                   <td class="col-testCount">22</td>
                   <td class="col-completedCount">22</td>
                   <td class="col-tool"><button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentSet" data-bs-toggle="tooltip"><img src="Content/images/icon-user-add.svg" alt="設定學生"/></button>
-                    <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentLists" data-bs-toggle="tooltip"><img src="Content/images/icon-paper.svg" alt="學生名單"/></button>
+                    <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentList" data-bs-toggle="tooltip"><img src="Content/images/icon-paper.svg" alt="學生名單"/></button>
                     <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-sessionSet" data-bs-toggle="tooltip"><img src="Content/images/icon-tool.svg" alt="場次設定"/></button></td>
                   <td class="col-status"><div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" role="switch">
@@ -432,7 +436,7 @@
                       <label for="searchKeywords_studentLists" class="col-form-label fs-7">搜尋</label>
                     </div>
                     <div class="col-auto">
-                      <div class="input-group">
+                      <div class="input-group" data-dt-target="#sessionStudentList">
                         <div class="input-group-clear">
                           <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch_studentLists" id="searchKeywords_studentLists">
                           <button class="btn btn-close" type="button"></button>
@@ -452,11 +456,11 @@
                 <label class="form-check-label" for="showList-all">顯示所有名單</label>
               </div>
               <div class="form-check form-check-inline me-3 fs-7">
-                <input class="form-check-input" type="checkbox" name="showList" id="showList-done" value="<span>完成</span>">
+                <input class="form-check-input" type="checkbox" name="showList" id="showList-done" value="1">
                 <label class="form-check-label" for="showList-done">僅顯示完成名單</label>
               </div>
               <div class="form-check form-check-inline me-3 fs-7">
-                <input class="form-check-input" type="checkbox" name="showList" id="showList-undone" value="<span class='text-red'>未完成</span>">
+                <input class="form-check-input" type="checkbox" name="showList" id="showList-undone" value="0">
                 <label class="form-check-label" for="showList-undone">僅顯示未完成名單</label>
               </div>
             </div>
@@ -615,12 +619,12 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     ajax: 'Content/json/DACC-session/session.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
-        width: '4%',
         className: 'col-index',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -629,9 +633,8 @@ $(document).ready(function () {
         targets: 1,
         title: '場次',
         data: 'session',
-        width: '12%',
         className: 'col-session',
-        type: 'string',
+				orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -640,9 +643,8 @@ $(document).ready(function () {
         targets: 2,
         title: '備註',
         data: 'remark',
-        width: '12%',
         className: 'col-remark',
-        type: 'string',
+				orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -651,43 +653,38 @@ $(document).ready(function () {
         targets: 3,
         title: '開始時間',
         data: 'startDatetime',
-        width: '16%',
         className: 'col-startDatetime',
-        type: 'date',
+				orderable: false,
       },
       { //結束時間
         targets: 4,
         title: '結束時間',
         data: 'endDatetime',
-        width: '16%',
         className: 'col-endDatetime',
-        type: 'date',
+				orderable: false,
       },
       { //測驗人數
         targets: 5,
         title: '測驗人數',
         data: 'testCount',
-        width: '8%',
         className: 'col-testCount',
-        type: 'numeric',
+				orderable: false,
       },
       { //完成人數
         targets: 6,
         title: '完成人數',
         data: 'completedCount',
-        width: '8%',
         className: 'col-completedCount',
-        type: 'numeric',
+        orderable: false,
       },
       { //功能操作
         targets: 7,
         title: '功能操作',
-        width: '14%',
         className: 'col-tool',
-        type: 'html',
+			  orderable: false,
         render: function (data, type, row, meta) {
           return `<button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentSet" data-bs-toggle="tooltip"><img src="Content/images/icon-user-add.svg" alt="設定學生"/></button>
-                  <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentLists" data-bs-toggle="tooltip"><img src="Content/images/icon-paper.svg" alt="學生名單"/></button>
+                  <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-studentList" data-bs-toggle="tooltip"><img src="Content/images/icon-paper.svg" alt="學生名單"/></button>
                   <button type="button" class="btn btn-outline-primary bg-gradient my-1 px-1 btn-session-sessionSet" data-bs-toggle="tooltip"><img src="Content/images/icon-tool.svg" alt="場次設定"/></button>`;
         }
       },
@@ -695,27 +692,26 @@ $(document).ready(function () {
         targets: 8,
         title: '狀態',
         data: 'status',
-        width: '10%',
         className: 'col-status',
-        type: 'html',
+        orderable: false,
         render: function (data, type, row, meta) {
-          let status;
+					if (type !== 'display') {
+						return data; // 0 / 1
+					}
           switch (data) {
-						case 0:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
-                                      </div>`;
-              break	
+            case 0:
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+												</div>`;
+
             case 1:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
+												</div>`;
+
             default:
-              status = '';
-              break
+              return '';
           }
-          return status;
         }
       }
     ],
@@ -730,7 +726,7 @@ $(document).ready(function () {
         title: function () {
           if ($(this).hasClass('btn-session-studentSet')) {
             return '設定學生';
-          } else if ($(this).hasClass('btn-session-studentLists')) {
+          } else if ($(this).hasClass('btn-session-studentList')) {
             return '學生名單';
           } else if ($(this).hasClass('btn-session-sessionSet')) {
             return '場次設定';
@@ -740,15 +736,8 @@ $(document).ready(function () {
     }
   });
 
-  //[搜尋]
-  $('#btnSearch').click(function () {
-    console.log($('#searchKeywords').val());
-    $table.DataTable().search($('#searchKeywords').val()).draw();
-  });
-  //[搜尋][X]重置
-  $('#searchKeywords + .btn-close').click(function () {
-    $table.DataTable().search('').draw();
-  });
+  //DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[新增場次]
   $('#insert').click(function () {
@@ -801,7 +790,7 @@ $(document).ready(function () {
     }
   });
 
-  /////////////////////////////////////////////////
+  /////// /////// /////// /////// /////// /////// ///////
 
   //[設定學生]
   $table.on('click', '.btn-session-studentSet', function () {
@@ -960,7 +949,8 @@ $(document).ready(function () {
 			}
 		});
 	}
-  /////////////////////////////////////////////////
+	
+  /////// /////// /////// /////// /////// /////// ///////
 
   //[學生名單]datatables 
   $('#sessionStudentList').DataTable({
@@ -978,12 +968,12 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     //ajax: 'Content/json/DACC-session/sessionStudentList.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
-        width: '8%',
         className: 'col-index',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -992,17 +982,17 @@ $(document).ready(function () {
         targets: 1,
         title: '年級',
         data: 'grade',
-        width: '10%',
         className: 'col-grade',
+        orderable: true,
+        orderDataType: 'dom-select',
         type: 'numeric',
       },
       { //班級
         targets: 2,
         title: '班級',
         data: 'class',
-        width: '12%',
         className: 'col-class',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -1011,9 +1001,8 @@ $(document).ready(function () {
         targets: 3,
         title: '姓名',
         data: 'studentName',
-        width: '13%',
         className: 'col-studentName',
-        type: 'string',
+				orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -1022,9 +1011,8 @@ $(document).ready(function () {
         targets: 4,
         title: '學號',
         data: 'studentId',
-        width: '13%',
         className: 'col-studentId',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -1033,9 +1021,8 @@ $(document).ready(function () {
         targets: 5,
         title: '帳號/信箱',
         data: 'account',
-        width: '34%',
         className: 'col-account',
-        type: 'string',
+				orderable: false,
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -1044,24 +1031,16 @@ $(document).ready(function () {
         targets: 6,
         title: '狀態',
         data: 'status',
-        width: '10%',
         className: 'col-status',
-        type: 'html',
-        orderDataType: 'dom-text',
-        render: function (data, type, row, meta) {
-          let status;
-          switch (data) {
-            case 0:
-              status = `<span class="text-red">未完成</span>`;
-              break
-            case 1:
-              status = `<span>完成</span>`;
-              break
-            default:
-              status = '';
-              break
-          }
-          return status;
+        orderable: false,
+				render: function (data, type, row, meta) {
+					if (type === 'filter' || type === 'search') {
+						return String(data); // 搜尋用原始資料 [0|1]
+					}
+
+					return data === 1
+						? '<span>完成</span>'
+						: '<span class="text-red">未完成</span>';
         }
       }
 
@@ -1071,8 +1050,12 @@ $(document).ready(function () {
       datatableInputPage($('#sessionStudentList'));
     }
   });
+	
+  //DataTable 搜尋共用功能
+  initDataTableSearch();
+	
   //[學生名單]
-  $table.on('click', '.btn-session-studentLists', function () {
+  $table.on('click', '.btn-session-studentList', function () {
     $('#studentListsModal').modal('show');
 
     //do something... (取得sessionLists行列項目資料)
@@ -1081,32 +1064,43 @@ $(document).ready(function () {
       $('#sessionStudentList').DataTable().ajax.url('Content/json/DACC-session/sessionStudentList.json').load();
     });
   });
-  //[學生名單] > [搜尋]
-  $('#btnSearch_studentLists').click(function () {
-    $('#sessionStudentList').DataTable().search($('#searchKeywords_studentLists').val()).draw();
-  });
-  //[學生名單] > [搜尋][X]重置
-  $('#searchKeywords_studentLists + .btn-close').click(function () {
-    $('#sessionStudentList').DataTable().search('').draw();
-  });
-  //[學生名單] - checkbox只能擇一 - 搜尋
-  $('input[name="showList"]').click(function () {
-    if ($(this).prop('checked')) {
-      $('.SRform-check input:checkbox').prop('checked', false);
-      $(this).prop('checked', true);
+	
+  //[顯示名單]-搜尋 checkbox (顯示所有名單/僅顯示完成名單/僅顯示未完成名單)
+	$(document).on('change', 'input[name="showList"]', function () { console.log('0')
+		const $this = $(this);
+		const list = $('#sessionStudentList').DataTable();
 
-      //$('#sessionStudentList').DataTable().column('.col-status').search('<span class="text-red">未完成</span>', true, true).draw();
-    }
-  });
+		// checkbox只能擇一
+		$('input[name="showList"]').not(this).prop('checked', false);
 
-  /////////////////////////////////////////////////
+		// 若全部都被取消（防呆）
+		if (!$this.is(':checked')) {
+			$('#showList-all').prop('checked', true);
+			list.column('.col-status').search('').draw();
+			return;
+		}
+
+		const val = $this.val();
+ 
+		if (val === '') {
+			// 顯示所有
+			list.column('.col-status').search('').draw();
+		} else {
+			// 僅顯示 完成 / 未完成
+			list.column('.col-status').search(val, false, false).draw();
+		}
+	});
+
+
+  /////// /////// /////// /////// /////// /////// ///////
 
   //[場次設定]
   $table.on('click', '.btn-session-sessionSet', function () {
     $('#sessionSetModal').modal('show');
 
-    //do something... 取得表格值
+    //do something... 取得欄位值
   });
+	
   //[場次設定] > [儲存設定]
   $('#updateSession').click(function () {
     let updateOk = true; //[true | false] [成功 | 失敗]

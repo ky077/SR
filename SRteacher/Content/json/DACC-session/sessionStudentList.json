@@ -1,17 +1,17 @@
 {
   "data": [
 		{
-      "grade": "5",
-      "class": "Test 01",
+      "grade": 5,
+      "class": "Test11",
       "studentName": "張花花",
       "studentId": "20200153",
       "account": "srtt01@smartreading.com",
       "status": 0
     },
     {
-      "grade": "5",
-      "class": "Test 01",
-      "studentName": "張花花",
+      "grade": 5,
+      "class": "Test 02",
+      "studentName": "張花一",
       "studentId": "20200154",
       "account": "srtt02@smartreading.com",
       "status": 1

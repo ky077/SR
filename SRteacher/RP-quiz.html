@@ -25,6 +25,7 @@
 <body data-sidebar="RP-quiz">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -45,7 +46,7 @@
                 <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#quizTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -567,6 +568,9 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[編輯設定]
   $('#setting').click(function () {
@@ -754,8 +758,6 @@ $(document).ready(function () {
 		//移除data-modal-type模式標記
 		$modal.removeAttr('data-modal-type');
 	});
-
-
 });
 
 function format(rowIndex) {
@@ -860,11 +862,10 @@ function loadQuizDetialTable(rowIndex) {
 
     $('#quizModal h3').text('查看/編輯題本');
     $('#quizConfirm').text('儲存題本');
+		
+		iniQuizModal();
   });
-
-
 }
-
 </script> 
 
 <!-- 發表新題本及題目 SRrangeBar -->
@@ -1223,8 +1224,7 @@ function iniQuizModal() {
     // 加上綠底虛線樣式
     $block.addClass('bg-primary-dashed');
 
-    // 顯示關閉按鈕、配分欄、調序提示
-    $block.find('.btn-close, .modal-quiz-gradingWeight').show();
+    // 顯示調序提示
     $('.modal-quiz-sortableTip').show();
 
     // 顯示對應題型
@@ -1242,7 +1242,6 @@ function iniQuizModal() {
     $clone.find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
     $clone.find('select').val('請選擇題型');
     $clone.find('.multiple, .picture, .QandA, .video').hide();
-    $clone.find('.btn-close, .modal-quiz-gradingWeight').hide();
     $clone.removeClass('bg-primary-dashed');
 
     // 插入新的區塊
@@ -1349,7 +1348,6 @@ function resetQuizNumber() {
       .html(`題目${i + 1}<span class="text-red">*</span>`);
   });
 }
-
 </script> 
 
 <!-- 題本排序 Sortable  --> 

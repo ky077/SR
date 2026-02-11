@@ -26,6 +26,7 @@
 <body data-sidebar="RP-manage">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -46,7 +47,6 @@
                       <div class="col-auto">
                         <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchYear">
                           <option value="" disabled selected>請選擇...</option>
-                          <option value="2024">2024</option>
                           <option value="2023">2023</option>
                           <option value="2022">2022</option>
                         </select>
@@ -63,7 +63,6 @@
                           <option value="" disabled selected>請選擇...</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
-                          <option value="3">3</option>
                         </select>
                       </div>
                     </div>
@@ -76,9 +75,9 @@
                       <div class="col-auto">
                         <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchClass">
                           <option value="" disabled selected>請選擇...</option>
-                          <option value="CLASS 1">Test 01</option>
-                          <option value="CLASS 2">Test 02</option>
-                          <option value="CLASS 3">Test 03</option>
+                          <option value="Test 01">Test 01</option>
+                          <option value="Test 02">Test 02</option>
+                          <option value="Test 03">Test 03</option>
                         </select>
                       </div>
                     </div>
@@ -296,7 +295,10 @@
 <script>
 $(document).ready(function () {
   const $table = $('#RPmanageOverviewTable');
-
+	
+	//清空 html
+  $table.find('tbody').remove();
+	
   //班級 datatables 
   $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
@@ -312,7 +314,7 @@ $(document).ready(function () {
     language: {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
-    ajax: 'Content/json/RP-manage/RPmanage.json',
+    //ajax: 'Content/json/RP-manage/RPmanage.json',
     columnDefs: [{ //序號
         targets: 0,
         title: '序號',
@@ -366,6 +368,34 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+	//下拉 年度、年級、班級，三個都選才搜尋
+	$('#searchYear, #searchGrade, #searchClass').on('change', function () {
+		const year = $('#searchYear').val();
+		const grade = $('#searchGrade').val();
+		const className = $('#searchClass').val();
+
+		const table = $table.DataTable();
+
+		// 三個都有值才顯示資料
+		if (year && grade && className) {
+
+			table.ajax.url('Content/json/RP-manage/RPmanage.json').load(function () {
+
+				table
+					.column('.col-year').search(year)
+					.column('.col-grade').search(grade)
+					.column('.col-class').search(className)
+					.draw();
+
+			});
+
+		} else {
+			// 任一沒選 → 清空
+			table.clear().draw();
+		}
+	});
+
 
   //班級閱讀計畫[查看]
   $table.on('click', '.col-classRP button', function () {

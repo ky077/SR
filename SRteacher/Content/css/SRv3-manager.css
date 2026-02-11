@@ -264,6 +264,8 @@ option[value=""]{ color: $secondary;
 .table .form-check-inline { float: none; }
 .table input, .table select { font-size: .8rem !important; }
 
+.table .fa-circle-question { margin-left: .125em; }
+
 .border-dashed { border-style: dashed !important; }
 
 .w-min-auto { min-width: auto !important; }
@@ -735,26 +737,26 @@ height:95px;
 .table-account-student > thead > tr > th.col-gender, .table-account-student > thead > tr > td.col-gender, .table-account-student > tbody > tr > th.col-gender, .table-account-student > tbody > tr > td.col-gender { width: 6%; }
 .table-account-student > thead > tr > th.col-status, .table-account-student > thead > tr > td.col-status, .table-account-student > tbody > tr > th.col-status, .table-account-student > tbody > tr > td.col-status { width: 6%; }
 
-.table-sessionLists > thead > tr > th.col-index, .table-sessionLists > thead > tr > td.col-index, .table-sessionLists > tbody > tr > th.col-index, .table-sessionLists > tbody > tr > td.col-index { width: 4%; }
-.table-sessionLists > thead > tr > th.col-session, .table-sessionLists > thead > tr > td.col-session, .table-sessionLists > tbody > tr > th.col-session, .table-sessionLists > tbody > tr > td.col-session { width: 12%; }
-.table-sessionLists > thead > tr > th.col-remark, .table-sessionLists > thead > tr > td.col-remark, .table-sessionLists > tbody > tr > th.col-remark, .table-sessionLists > tbody > tr > td.col-remark { width: 12%; }
-.table-sessionLists > thead > tr > th.col-startTime, .table-sessionLists > thead > tr > td.col-startTime, .table-sessionLists > tbody > tr > th.col-startTime, .table-sessionLists > tbody > tr > td.col-startTime { width: 16%; }
-.table-sessionLists > thead > tr > th.col-endTime, .table-sessionLists > thead > tr > td.col-endTime, .table-sessionLists > tbody > tr > th.col-endTime, .table-sessionLists > tbody > tr > td.col-endTime { width: 16%; }
-.table-sessionLists > thead > tr > th.col-testNum, .table-sessionLists > thead > tr > td.col-testNum, .table-sessionLists > tbody > tr > th.col-testNum, .table-sessionLists > tbody > tr > td.col-testNum { width: 8%; }
-.table-sessionLists > thead > tr > th.col-doneNum, .table-sessionLists > thead > tr > td.col-doneNum, .table-sessionLists > tbody > tr > th.col-doneNum, .table-sessionLists > tbody > tr > td.col-doneNum { width: 8%; }
-.table-sessionLists > thead > tr > th.col-tool, .table-sessionLists > thead > tr > td.col-tool, .table-sessionLists > tbody > tr > th.col-tool, .table-sessionLists > tbody > tr > td.col-tool { width: 14%; }
-.table-sessionLists > thead > tr > th.col-state, .table-sessionLists > thead > tr > td.col-state, .table-sessionLists > tbody > tr > th.col-state, .table-sessionLists > tbody > tr > td.col-state { width: 10%; }
+.table-session > thead > tr > th.col-index, .table-session > thead > tr > td.col-index, .table-session > tbody > tr > th.col-index, .table-session > tbody > tr > td.col-index { width: 4%; }
+.table-session > thead > tr > th.col-session, .table-session > thead > tr > td.col-session, .table-session > tbody > tr > th.col-session, .table-session > tbody > tr > td.col-session { width: 12%; }
+.table-session > thead > tr > th.col-remark, .table-session > thead > tr > td.col-remark, .table-session > tbody > tr > th.col-remark, .table-session > tbody > tr > td.col-remark { width: 12%; }
+.table-session > thead > tr > th.col-startTime, .table-session > thead > tr > td.col-startTime, .table-session > tbody > tr > th.col-startTime, .table-session > tbody > tr > td.col-startTime { width: 16%; }
+.table-session > thead > tr > th.col-endTime, .table-session > thead > tr > td.col-endTime, .table-session > tbody > tr > th.col-endTime, .table-session > tbody > tr > td.col-endTime { width: 16%; }
+.table-session > thead > tr > th.col-testNum, .table-session > thead > tr > td.col-testNum, .table-session > tbody > tr > th.col-testNum, .table-session > tbody > tr > td.col-testNum { width: 8%; }
+.table-session > thead > tr > th.col-doneNum, .table-session > thead > tr > td.col-doneNum, .table-session > tbody > tr > th.col-doneNum, .table-session > tbody > tr > td.col-doneNum { width: 8%; }
+.table-session > thead > tr > th.col-tool, .table-session > thead > tr > td.col-tool, .table-session > tbody > tr > th.col-tool, .table-session > tbody > tr > td.col-tool { width: 14%; }
+.table-session > thead > tr > th.col-status, .table-session > thead > tr > td.col-status, .table-session > tbody > tr > th.col-status, .table-session > tbody > tr > td.col-status { width: 10%; }
 
 [class*="btn-session"] { line-height: 1; }
 
-.table-sessionStudentLists { min-width: 730px; }
-.table-sessionStudentLists > thead > tr > th.col-index, .table-sessionStudentLists > thead > tr > td.col-index, .table-sessionStudentLists > tbody > tr > th.col-index, .table-sessionStudentLists > tbody > tr > td.col-index { width: 8%; }
-.table-sessionStudentLists > thead > tr > th.col-grade, .table-sessionStudentLists > thead > tr > td.col-grade, .table-sessionStudentLists > tbody > tr > th.col-grade, .table-sessionStudentLists > tbody > tr > td.col-grade { width: 10%; }
-.table-sessionStudentLists > thead > tr > th.col-class, .table-sessionStudentLists > thead > tr > td.col-class, .table-sessionStudentLists > tbody > tr > th.col-class, .table-sessionStudentLists > tbody > tr > td.col-class { width: 12%; }
-.table-sessionStudentLists > thead > tr > th.col-studentName, .table-sessionStudentLists > thead > tr > td.col-studentName, .table-sessionStudentLists > tbody > tr > th.col-studentName, .table-sessionStudentLists > tbody > tr > td.col-studentName { width: 13%; }
-.table-sessionStudentLists > thead > tr > th.col-Sid, .table-sessionStudentLists > thead > tr > td.col-Sid, .table-sessionStudentLists > tbody > tr > th.col-Sid, .table-sessionStudentLists > tbody > tr > td.col-Sid { width: 13%; }
-.table-sessionStudentLists > thead > tr > th.col-account, .table-sessionStudentLists > thead > tr > td.col-account, .table-sessionStudentLists > tbody > tr > th.col-account, .table-sessionStudentLists > tbody > tr > td.col-account { width: 34%; }
-.table-sessionStudentLists > thead > tr > th.col-state, .table-sessionStudentLists > thead > tr > td.col-state, .table-sessionStudentLists > tbody > tr > th.col-state, .table-sessionStudentLists > tbody > tr > td.col-state { width: 10%; }
+.table-sessionStudentList { min-width: 730px; }
+.table-sessionStudentList > thead > tr > th.col-index, .table-sessionStudentList > thead > tr > td.col-index, .table-sessionStudentList > tbody > tr > th.col-index, .table-sessionStudentList > tbody > tr > td.col-index { width: 8%; }
+.table-sessionStudentList > thead > tr > th.col-grade, .table-sessionStudentList > thead > tr > td.col-grade, .table-sessionStudentList > tbody > tr > th.col-grade, .table-sessionStudentList > tbody > tr > td.col-grade { width: 10%; }
+.table-sessionStudentList > thead > tr > th.col-class, .table-sessionStudentList > thead > tr > td.col-class, .table-sessionStudentList > tbody > tr > th.col-class, .table-sessionStudentList > tbody > tr > td.col-class { width: 12%; }
+.table-sessionStudentList > thead > tr > th.col-studentName, .table-sessionStudentList > thead > tr > td.col-studentName, .table-sessionStudentList > tbody > tr > th.col-studentName, .table-sessionStudentList > tbody > tr > td.col-studentName { width: 13%; }
+.table-sessionStudentList > thead > tr > th.col-Sid, .table-sessionStudentList > thead > tr > td.col-Sid, .table-sessionStudentList > tbody > tr > th.col-Sid, .table-sessionStudentList > tbody > tr > td.col-Sid { width: 13%; }
+.table-sessionStudentList > thead > tr > th.col-account, .table-sessionStudentList > thead > tr > td.col-account, .table-sessionStudentList > tbody > tr > th.col-account, .table-sessionStudentList > tbody > tr > td.col-account { width: 34%; }
+.table-sessionStudentList > thead > tr > th.col-status, .table-sessionStudentList > thead > tr > td.col-status, .table-sessionStudentList > tbody > tr > th.col-status, .table-sessionStudentList > tbody > tr > td.col-status { width: 10%; }
 
 .table-studentSet { min-width: 730px; }
 .table-studentSet > thead > tr > th.col-classCheck, .table-studentSet > thead > tr > td.col-classCheck, .table-studentSet > tbody > tr > th.col-classCheck, .table-studentSet > tbody > tr > td.col-classCheck { width: 24%; }
@@ -923,6 +925,8 @@ height:95px;
 .modal-quiz .modal-quiz-assign { display: none; }
 .modal-quiz .modal-quiz-checkbox { display: none; }
 .modal-quiz .modal-quiz-checkbox .d-grid { gap: 0; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); align-items: stretch; }
+.modal-quiz .modal-quiz-block.bg-primary-dashed .btn-close { display: block; }
+.modal-quiz .modal-quiz-block.bg-primary-dashed .modal-quiz-gradingWeight { display: block; }
 
 .bg-primary-dashed { background-color: #43a047; background-color: rgba(var(--bs-primary-rgb), 0.1); border: 2px dashed var(--bs-border-color); padding-top: 1rem; padding-bottom: 1rem; }
 
@@ -994,6 +998,7 @@ height:95px;
 .studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item { display: flex; flex-direction: row; justify-content: center; align-items: center; border: 1px solid #C6C6C6; padding: 7px 5px; border-radius: 2rem; }
 .studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item .legend-dot { display: inline-block; width: 24px; height: 24px; border-radius: 100%; margin-right: 5px; }
 .studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item .legend-text { font-size: 14px; margin-right: 2px; }
+.studentRAportfolio-chart .studentRAportfolio-chart-legend .legend-item.is-hidden { text-decoration: line-through; }
 
 .table-studentRAportfolio > thead > tr > th.col-index, .table-studentRAportfolio > thead > tr > td.col-index, .table-studentRAportfolio > tbody > tr > th.col-index, .table-studentRAportfolio > tbody > tr > td.col-index { width: 5%; }
 .table-studentRAportfolio > thead > tr > th.col-dateRange, .table-studentRAportfolio > thead > tr > td.col-dateRange, .table-studentRAportfolio > tbody > tr > th.col-dateRange, .table-studentRAportfolio > tbody > tr > td.col-dateRange { width: 33%; }

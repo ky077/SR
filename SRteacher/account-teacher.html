@@ -25,6 +25,7 @@
 <body data-sidebar="account-teacher">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -340,8 +341,6 @@ $(document).ready(function () {
         data: 'password',
         className: 'col-password',
         orderable: false,
-				orderDataType: 'dom-text',
-				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled  autocomplete="off">`;
         }
@@ -364,8 +363,6 @@ $(document).ready(function () {
         data: 'englishName',
         className: 'col-englishName',
 				orderable: false,
-				orderDataType: 'dom-text',
-        type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
         }
@@ -376,8 +373,6 @@ $(document).ready(function () {
         data: 'nationalId',
         className: 'col-nationalId',
         orderable: false,
-				orderDataType: 'dom-text',
-				type: 'string',
         render: function (data, type, row, meta) {
 					if (type === 'filter' || type === 'search') return data; // 搜尋用原始文字
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
@@ -389,8 +384,6 @@ $(document).ready(function () {
         data: 'language',
         className: 'col-language',
         orderable: false,
-				orderDataType: 'dom-select',
-				type: 'string',
         render: function (data, type, row, meta) {
 					if (type === 'filter' || type === 'search') {
 						return data; // 搜尋用原始資料
@@ -413,8 +406,6 @@ $(document).ready(function () {
 				data: 'gender',
         className: 'col-gender',  
 				orderable: false,
-				orderDataType: 'dom-select',
-        type: 'numeric',
      		render: function (data, type, row, meta) {   
 					if (type === 'filter' || type === 'search') {
 						return data === 1 ? '男' : '女'; // 搜尋用文字
@@ -461,6 +452,9 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[修改資料]
   $('#edit').click(function () {
@@ -649,9 +643,6 @@ $(document).ready(function () {
       }
     }
   });
-
-	//DataTable 搜尋共用功能
-  initDataTableSearch();
 });
 </script>
 </body>

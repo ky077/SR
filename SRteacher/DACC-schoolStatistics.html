@@ -228,11 +228,12 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     //ajax: 'Content/json/DACC-schoolStatistics/gradeStatistics.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
         className: 'col-index',
-        type: 'numeric',
+			  orderable: false,
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -242,14 +243,14 @@ $(document).ready(function () {
         title: '年級',
         data: 'grade',
         className: 'col-grade',
-        type: 'numeric',
+        orderable: false,
       },
       { //平均成績 
         targets: 2,
         title: '平均成績',
         data: 'average',
         className: 'col-average',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -262,7 +263,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
         data: 'DACCall',
         className: 'col-DACCall',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -275,7 +276,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-word">字</span>字詞辨識',
         data: 'DACCword',
         className: 'col-DACCword',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -288,7 +289,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-superficial">表</span>表層文意理解',
         data: 'DACCsuperficial',
         className: 'col-DACCsuperficial',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -301,7 +302,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-textual">文</span>文意統整',
         data: 'DACCtextual',
         className: 'col-DACCtextual',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -314,7 +315,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-inference">推</span>推論理解',
         data: 'DACCinference',
         className: 'col-DACCinference',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -327,7 +328,7 @@ $(document).ready(function () {
         title: '<span class="DACCicon-analysis">分</span>分析評鑑',
         data: 'DACCanalysis',
         className: 'col-DACCanalysis',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (!data) {
             return '-'
@@ -514,7 +515,7 @@ $(document).ready(function () {
           targets: 0,
           title: '序號',
           className: 'col-index',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             return meta.row + 1;
           }
@@ -524,7 +525,7 @@ $(document).ready(function () {
           title: '班級',
           data: 'class',
           className: 'col-class',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
           }
@@ -534,7 +535,7 @@ $(document).ready(function () {
           title: `<a href="#" role="button" data-bs-toggle="popover" class="popover-average">平均成績<i class="fa-regular fa-circle-question"></i></a>`,
           data: 'average',
           className: 'col-average',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -547,7 +548,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
           data: 'DACCall',
           className: 'col-DACCall',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -560,7 +561,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-word">字</span>字詞辨識',
           data: 'DACCword',
           className: 'col-DACCword',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -573,7 +574,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-superficial">表</span>表層文意理解',
           data: 'DACCsuperficial',
           className: 'col-DACCsuperficial',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -586,7 +587,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-textual">文</span>文意統整',
           data: 'DACCtextual',
           className: 'col-DACCtextual',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -599,7 +600,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-inference">推</span>推論理解',
           data: 'DACCinference',
           className: 'col-DACCinference',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'
@@ -612,7 +613,7 @@ $(document).ready(function () {
           title: '<span class="DACCicon-analysis">分</span>分析評鑑',
           data: 'DACCanalysis',
           className: 'col-DACCanalysis',
-          type: 'numeric',
+          orderable: false,
           render: function (data, type, row, meta) {
             if (!data) {
               return '-'

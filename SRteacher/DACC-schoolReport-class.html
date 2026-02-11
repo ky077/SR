@@ -359,11 +359,11 @@ $(document).ready(function () {
         tooltip: {
           callbacks: {
             label: function (context) {
-              return [' 最 小 值 : ' + context.parsed.min,
-                ' 上四分位: ' + context.parsed.q1,
-                ' 中 位 數 : ' + context.parsed.median,
-                ' 下四分位: ' + context.parsed.q3,
-                ' 最 大 值 : ' + context.parsed.max
+              return ['最小值：'   + context.parsed.min,
+											'上四分位：' + context.parsed.q1,
+											'中位數：'   + context.parsed.median,
+											'下四分位：' + context.parsed.q3,
+											'最大值：'   + context.parsed.max
               ];
             }
           }
@@ -452,10 +452,6 @@ $(document).ready(function () {
         $('#searchStartDate').text(sessionArray[0]);
         $('#searchEndDate').text(sessionArray[1]);
       }
-
-      //選擇[測驗場次]後，是否有要更新[年級]的選單，使之僅顯示有參與的年級？請工程師判定後處理。
-      /*原因：怕無資料，使用者看無畫面更動會以為壞掉... 
-             或可解決辦法：跳出訊息alertModal(html)告知無資料*/
 
       //選擇[向度選擇][年級][測驗場次]後，更新圖表
       if (dimensionVal && gradeVal && sessionVal) {

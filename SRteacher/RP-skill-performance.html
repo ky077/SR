@@ -68,7 +68,7 @@
                         <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
                       </div>
                       <div class="col-auto">
-                        <div class="input-group">
+                        <div class="input-group" data-dt-target="#performanceTable">
                           <div class="input-group-clear">
                             <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                             <button class="btn btn-close" type="button"></button>
@@ -173,7 +173,7 @@
                       <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
                     </div>
                     <div class="col-auto">
-                      <div class="input-group">
+                      <div class="input-group" data-dt-target="#studentRATable">
                         <div class="input-group-clear">
                           <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords_studentRA">
                           <button class="btn btn-close" type="button"></button>
@@ -404,6 +404,9 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //學生選單[顯示詳情]
   $table.on('click', '.btn-toggle-child', function () {
@@ -859,6 +862,9 @@ function loadStudentRAportfolioTable() {
         }
       ]
     });
+		
+		//DataTable 搜尋共用功能
+  	initDataTableSearch();
   });
 }
 

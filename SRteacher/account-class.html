@@ -487,6 +487,7 @@
 <script>
 $(document).ready(function () {
   const $table = $('#accountClassTable');
+	
   //班級 datatables 
   $table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
@@ -531,8 +532,6 @@ $(document).ready(function () {
         data: 'school',
         className: 'col-school',
         orderable: false,
-				orderDataType: 'dom-text',
-				type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -623,8 +622,6 @@ $(document).ready(function () {
         data: 'studentCount',
         className: 'col-studentCount',
         orderable: false,
-				orderDataType: 'dom-text',
-				type: 'numeric',
       },
       { //學生名單
         targets: 8,
@@ -668,6 +665,9 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+  //DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[修改資料]
   $('#edit').click(function () {
@@ -884,10 +884,8 @@ $(document).ready(function () {
     }
   });
 
-  //DataTable 搜尋共用功能
-  initDataTableSearch();
-
-  /////////////////////////////////////////////////////////////////////////////////////
+  /////// /////// /////// /////// /////// /////// ///////
+	
   //[查看](班級學生名單)
   $table.on('click', '.col-studentList button', function () {
     $('#studentListModal').modal('show');
@@ -913,12 +911,13 @@ $(document).ready(function () {
 
     //Datatable
     iniDatatable('#waitingListTable', 'waitingList');
-    //待選名單 欄位選取顯示、序號隱藏
-    $('#waitingListTable').DataTable().columns('.col-check').visible(true);
-    $('#waitingListTable').DataTable().columns('.col-index').visible(false);
 		
 		//DataTable 搜尋共用功能
   	initDataTableSearch();
+		
+    //待選名單 欄位選取顯示、序號隱藏
+    $('#waitingListTable').DataTable().columns('.col-check').visible(true);
+    $('#waitingListTable').DataTable().columns('.col-index').visible(false);
   });
 
   //[返回查看名單]
@@ -1008,8 +1007,6 @@ function iniDatatable(table, json) {
         data: 'password',
         className: 'col-password',
         orderable: false,
-        orderDataType: 'dom-text',
-        type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
@@ -1041,8 +1038,6 @@ function iniDatatable(table, json) {
         data: 'class',
         className: 'col-class',
         orderable: false,
-        orderDataType: 'dom-text',
-        type: 'string',
         render: function (data, type, row, meta) {
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }

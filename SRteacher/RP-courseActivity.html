@@ -26,6 +26,7 @@
 <body data-sidebar="RP-courseActivity">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -60,10 +61,13 @@
                         <label for="searchSessions" class="col-form-label fs-8">類別</label>
                       </div>
                       <div class="col-auto">
-                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
-                          <option value="" disabled selected>請選擇...</option>
-                          <option value="系統題本">系統題本</option>
-                          <option value="我的書房">我的書房</option>
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions" 
+																data-dt-target="#courseActivityTable"
+																data-dt-column=".col-topicType"
+																data-dt-trigger="change">
+                          <option value="" selected>全部</option>
+                          <option value="sysTopic">系統題本</option>
+                          <option value="myStudy">我的書房</option>
                         </select>
                       </div>
                     </div>
@@ -78,7 +82,7 @@
                         <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
                       </div>
                       <div class="col-auto">
-                        <div class="input-group">
+                        <div class="input-group" data-dt-target="#courseActivityTable">
                           <div class="input-group-clear">
                             <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                             <button class="btn btn-close" type="button"></button>
@@ -196,6 +200,10 @@
 <script>
 $(document).ready(function () {
   const $table = $('#courseActivityTable');
+	
+	//清空 html
+  //$table.find('tbody').remove();
+	
   //datatables 
   $table.DataTable({
     //serverSide: true,
@@ -212,11 +220,12 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     ajax: 'Content/json/RP-courseActivity/courseActivity.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
         className: 'col-index',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -226,14 +235,14 @@ $(document).ready(function () {
         title: '年級',
         data: 'grade',
         className: 'col-grade',
-        type: 'numeric',
+        orderable: false,
       },
       { //班級
         targets: 2,
         title: '班級',
         data: 'class',
         className: 'col-class',
-        type: 'string',
+        orderable: false,
       },
       { //姓名
         targets: 3,
@@ -241,7 +250,7 @@ $(document).ready(function () {
         data: 'studentName',
         className: 'col-studentName',
         orderDataType: 'dom-text',
-        type: 'string',
+        orderable: false,
       },
       { //書名
         targets: 4,
@@ -249,35 +258,30 @@ $(document).ready(function () {
         data: 'bookTitle',
         className: 'col-bookTitle',
         orderDataType: 'dom-text',
-        type: 'string',
+        orderable: false,
       },
       { //類別
         targets: 5,
         title: '類別',
         data: 'topicType',
         className: 'col-topicType',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
-          let topicText;
-          switch (data) {
-            case 'sysTopic':
-              topicText = "系統題本";
-              break
-            case 'myStudy':
-              topicText = "我的書房";
-              break
-            default:
-              topicText = "";
-              break
-          }
-          return topicText;
-        }
+					if (type === 'display') {
+						switch (data) {
+							case 'sysTopic': return "系統題本";
+							case 'myStudy': return "我的書房";
+							default: return "";
+						}
+					}
+					return data; 
+				}
       },
       { //分數/完成度
         targets: 6,
         title: '分數/完成度',
         className: 'col-scroeComp',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           if (row.topicType === 'sysTopic') {
             return `<span class="userScore passed byTeacher">${row.scroe || '-'}</span>`;
@@ -300,7 +304,7 @@ $(document).ready(function () {
         targets: 7,
         title: '讚/留言',
         className: 'col-likeCmt',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<div class="d-inline mx-1"><img src="Content/images/icon-thumbs.png" alt="" class="me-1"/>${row.like || 0}</div>
                   			<div class="d-inline mx-1"><img src="Content/images/icon-comment.png" alt="" class="me-1"/> ${row.Cmt || 0}</div>`;
@@ -310,7 +314,7 @@ $(document).ready(function () {
         targets: 8,
         title: '我的操作',
         className: 'col-tool',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
           return `<button type="button" class="btn btn-outline-primary bg-gradient px-2" data-review="${row.topicType}">
 							  <img src="Content/images/icon-eye.png" alt="" class="me-1"/>查看
@@ -332,6 +336,9 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[查看]
   $table.on('click', '[data-review]', function () {

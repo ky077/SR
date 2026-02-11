@@ -26,6 +26,7 @@
 <body data-sidebar="RP-bookList RP-bookList-teaching">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -56,7 +57,10 @@
                 <label for="searchStatus" class="col-form-label fs-7">狀態</label>
               </div>
               <div class="col-auto">
-                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus">
+                <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchStatus"
+												data-dt-target="#teachingOverviewTable"
+												data-dt-column=".col-status"
+												data-dt-trigger="change">
                   <option value="" selected>全部</option>
                   <option value="1">ON</option>
                   <option value="0">OFF</option>
@@ -66,7 +70,7 @@
                 <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#teachingOverviewTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -171,7 +175,7 @@
                       <label for="searchKeywords_adjustBook" class="col-form-label fs-7">搜尋</label>
                     </div>
                     <div class="col-auto">
-                      <div class="input-group">
+                      <div class="input-group" data-dt-target="#teachingDetialTable">
                         <div class="input-group-clear">
                           <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch_adjustBook" id="searchKeywords_adjustBook">
                           <button class="btn btn-close" type="button"></button>
@@ -243,7 +247,7 @@
             <div class="row mb-3 justify-content-center">
               <label for="inputSearchBook" class="col-sm-auto col-form-label">搜索書籍</label>
               <div class="col-sm-6">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#recommendedBook">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" >
                     <button class="btn btn-close" type="button"></button>
@@ -627,6 +631,7 @@
 <script>
 $(document).ready(function () {
   const $table = $('#teachingOverviewTable');
+	
   //教學指定書單 datatables 
   $table.DataTable({
     //serverSide: true,
@@ -670,6 +675,7 @@ $(document).ready(function () {
         className: 'col-bookList',
         orderable: false,
         render: function (data, type, row, meta) {
+					if(type === 'filter' || type === 'search') return data; // 搜尋用原始資料
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
         }
       },
@@ -721,23 +727,23 @@ $(document).ready(function () {
         className: 'col-status',
         orderable: false,
         render: function (data, type, row, meta) {
-          let status;
+					if (type !== 'display') {
+						return data; // 0 / 1
+					}
           switch (data) {
             case 0:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+												</div>`;
+
             case 1:
-              status = `<div class="form-check form-switch form-check-inline m-0">
-                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
-                                      </div>`;
-              break
+              return `<div class="form-check form-switch form-check-inline m-0">
+													<input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
+												</div>`;
+
             default:
-              status = '';
-              break
+              return '';
           }
-          return status;
         }
       }
 
@@ -747,6 +753,9 @@ $(document).ready(function () {
       datatableInputPage(list);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[書單設定]
   $('#setting').click(function () {
@@ -888,6 +897,13 @@ $(document).ready(function () {
 
     loadteachingDetialTable(null);
   });
+	
+	 //表格-指派班級 > [指派]
+  $table.on('click', '.col-assignClass button', function () {
+    $('#assignModal').modal('show');
+		
+		//do something...載入班級
+  });
 
   //表格-編輯書單 > [編輯]
   $table.on('click', '.col-editList button', function () {
@@ -904,11 +920,6 @@ $(document).ready(function () {
     $('#adjustBookModal').modal('show');
 
     loadRecommendedBook();
-  });
-
-  //表格-指派班級 > [指派]
-  $table.on('click', '.col-assignClass button', function () {
-    $('#assignModal').modal('show');
   });
 	
 	 //全選
@@ -983,7 +994,8 @@ function loadteachingDetialTable(json) {
         });
       }
     },
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
         className: 'col-index',
@@ -1329,6 +1341,8 @@ function loadRecommendedBook(json) {
       datatableInputPage($recommendedBook);
     }
   });
+	
+
 }
 </script>
 </body>

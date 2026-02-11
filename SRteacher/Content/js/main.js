@@ -222,32 +222,20 @@ function initDataTableSearch() {
   });
 	
 	// 搜尋 狀態
-/*	$(document).on('change', '[id*="searchStatus"]', function () {
-		const $select = $(this);
-		const tableSelector = $select.data('dt-target');
-		const val = $select.val();
+	$(document).on('change', '[data-dt-column]', function () {
+		const $el = $(this);
+
+		const tableSelector = $el.data('dt-target');
+		const columnSelector = $el.data('dt-column');
+		const val = $el.val();
+
+		if (!tableSelector || !columnSelector) return;
 
 		const table = $(tableSelector).DataTable();
 
 		table
-			.column('.col-status') // ⭐ 狀態欄統一用 class
+			.column(columnSelector)
 			.search(val)
 			.draw();
-	});*/
-	$(document).on('change', '[data-dt-column]', function () {
-  const $el = $(this);
-
-  const tableSelector = $el.data('dt-target');
-  const columnSelector = $el.data('dt-column');
-  const val = $el.val();
-
-  if (!tableSelector || !columnSelector) return;
-
-  const table = $(tableSelector).DataTable();
-
-  table
-    .column(columnSelector)
-    .search(val)
-    .draw();
-});
+	});
 }

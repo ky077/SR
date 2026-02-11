@@ -1,10 +1,10 @@
 {
   "data": [
-    {
+		{
       "sn": "1",
       "school": "師大附中",
       "year": "2023",
-      "grade": "3",
+      "grade": 3,
       "class": "Test 32",
       "teacher": "李夏夏",
       "studentCount": 22,
@@ -14,7 +14,7 @@
       "sn": "2",
       "school": "師大附中",
       "year": "2022-1",
-      "grade": "2",
+      "grade": 2,
       "class": "Test 01",
       "teacher": "李夏一",
       "studentCount": 25,
@@ -24,7 +24,7 @@
       "sn": "2",
       "school": "師大附中",
       "year": "2022-2",
-      "grade": "2",
+      "grade": 2,
       "class": "Test 01",
       "teacher": "李夏一",
       "studentCount": 20,
@@ -34,12 +34,12 @@
       "sn": "2",
       "school": "師大附中",
       "year": "2022-1",
-      "grade": "2",
+      "grade": 2,
       "class": "Test 03",
       "teacher": "李夏一",
       "studentCount": 20,
       "status": 0
-    }       
+    }
 
   ]
 }

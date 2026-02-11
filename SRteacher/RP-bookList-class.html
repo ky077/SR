@@ -26,6 +26,7 @@
 <body data-sidebar="RP-bookList RP-bookList-class">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -50,7 +51,7 @@
                 <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
               </div>
               <div class="col-auto">
-                <div class="input-group">
+                <div class="input-group" data-dt-target="#classOverviewTable">
                   <div class="input-group-clear">
                     <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                     <button class="btn btn-close" type="button"></button>
@@ -216,6 +217,9 @@ $(function () {
       datatableInputPage($table);
     }
   });
+	
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
 
   //[顯示班級資訊]
   $table.on('click', '.btn-toggle-child', function () {
@@ -314,7 +318,6 @@ function loadclassDetialTable(rowIndex) {
         data: 'studentName',
         className: 'col-studentName',
         orderable: false,
-        type: 'string',
       },
       { //最新DACC分數
         targets: 2,

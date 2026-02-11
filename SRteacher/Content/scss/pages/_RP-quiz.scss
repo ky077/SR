@@ -55,7 +55,13 @@
 		}
 	}
 	
-	
+	//
+	.modal-quiz-block.bg-primary-dashed {
+		.btn-close{ 
+			display: block;
+		}
+		.modal-quiz-gradingWeight{ display: block;}
+	}
 }
 
 .bg-primary-dashed{
@@ -64,4 +70,5 @@
 	border: 2px dashed var(--bs-border-color);
 	padding-top: map-get($spacers, 3);
 	padding-bottom: map-get($spacers, 3);
+	
 }

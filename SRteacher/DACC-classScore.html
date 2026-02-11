@@ -25,6 +25,7 @@
 <body data-sidebar="DACC-classScore">
 <form>
   <header> </header>
+	
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
@@ -54,10 +55,10 @@
                   <div class="col-auto">
                     <div class="row g-2 align-items-center">
                       <div class="col-auto">
-                        <label for="searchSessions" class="col-form-label fs-8">場次</label>
+                        <label for="searchSession" class="col-form-label fs-8">場次</label>
                       </div>
                       <div class="col-auto">
-                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSessions">
+                        <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchSession">
                           <option value="" disabled selected>請選擇...</option>
                           <option value="2023/03/24,2023/06/30">2023 Demo</option>
                         </select>
@@ -86,7 +87,7 @@
                         <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
                       </div>
                       <div class="col-auto">
-                        <div class="input-group">
+                        <div class="input-group" data-dt-target="#classScore">
                           <div class="input-group-clear">
                             <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
                             <button class="btn btn-close" type="button"></button>
@@ -149,6 +150,7 @@
       </main>
     </div>
   </div>
+	
   <footer> </footer>
 </form>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -171,12 +173,14 @@
 $(document).ready(function () {
   const $table = $('#classScore');
 
-  //清空html
+  //清空 html
   $table.find('tbody').remove();
-  $('#searchClassGrade, #searchSessions').html('<option value="" disabled selected>請選擇...</option>');
+	
+  $('#searchClassGrade, #searchSession').html('<option value="" disabled selected>請選擇...</option>');
 
   //班級成績 datatables 
-  $table.DataTable({
+	if (!$.fn.DataTable.isDataTable($table)) { //先生成空 DataTable
+  	$table.DataTable({
     //serverSide: true,     // 開啟伺服端模式
     processing: true,
     order: [], //取消默認排序icon
@@ -192,11 +196,12 @@ $(document).ready(function () {
       url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
     },
     //ajax: 'Content/json/DACC-classScore/classScore.json',
-    columnDefs: [{ //序號
+    columnDefs: [
+			{ //序號
         targets: 0,
         title: '序號',
         className: 'col-index',
-        type: 'numeric',
+        orderable: false,
         render: function (data, type, row, meta) {
           return meta.row + 1;
         }
@@ -206,22 +211,23 @@ $(document).ready(function () {
         title: '測驗日期',
         data: 'testDate',
         className: 'col-testDate',
-        type: 'date',
+        orderable: false,
       },
       { //年級 
         targets: 2,
         title: '年級',
         data: 'grade',
         className: 'col-grade',
-        type: 'numeric',
+				orderable: false,
       },
       { //班級
         targets: 3,
         title: '班級',
         data: 'class',
         className: 'col-class',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
+					if(type === 'filter' || type === 'search') return data; // 搜尋用原始資料
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
       },
@@ -230,9 +236,9 @@ $(document).ready(function () {
         title: '學號',
         data: 'Sid',
         className: 'col-studentId',
-        orderDataType: 'dom-text',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
+					if(type === 'filter' || type === 'search') return data; // 搜尋用原始資料
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
       },
@@ -241,9 +247,9 @@ $(document).ready(function () {
         title: '姓名',
         data: 'studentName',
         className: 'col-studentName',
-        orderDataType: 'dom-text',
-        type: 'string',
+        orderable: false,
         render: function (data, type, row, meta) {
+					if(type === 'filter' || type === 'search') return data; // 搜尋用原始資料
           return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
         }
       },
@@ -252,49 +258,49 @@ $(document).ready(function () {
         title: '<span class="DACCicon-all">整</span>整體閱讀理解能力',
         data: 'DACCall',
         className: 'col-DACCall',
-        type: 'numeric',
+        orderable: false,
       },
       { //字詞辨識
         targets: 7,
         title: '<span class="DACCicon-word">字</span>字詞辨識',
         data: 'DACCword',
         className: 'col-DACCword',
-        type: 'numeric',
+        orderable: false,
       },
       { //表層文意理解
         targets: 8,
         title: '<span class="DACCicon-superficial">表</span>表層文意理解',
         data: 'DACCsuperficial',
         className: 'col-DACCsuperficial',
-        type: 'numeric',
+        orderable: false,
       },
       { //文意統整
         targets: 9,
         title: '<span class="DACCicon-textual">文</span>文意統整',
         data: 'DACCtextual',
         className: 'col-DACCtextual',
-        type: 'numeric',
+        orderable: false,
       },
       { //推論理解
         targets: 10,
         title: '<span class="DACCicon-inference">推</span>推論理解',
         data: 'DACCinference',
         className: 'col-DACCinference',
-        type: 'numeric',
+        orderable: false,
       },
       { //分析評鑑
         targets: 11,
         title: '<span class="DACCicon-analysis">分</span>分析評鑑',
         data: 'DACCanalysis',
         className: 'col-DACCanalysis',
-        type: 'numeric',
+        orderable: false,
       },
       { //PR
         targets: 12,
         title: 'PR',
         data: 'PR',
         className: 'col-PR',
-        type: 'numeric',
+        orderable: false,
       }
 
     ],
@@ -303,7 +309,11 @@ $(document).ready(function () {
       datatableInputPage($table);
     }
   });
+	}
 
+	//DataTable 搜尋共用功能
+  initDataTableSearch();
+	
   //demo
   let searchData = null; //當前要搜尋的json資料
   $.getJSON('Content/json/DACC-classScore/classScore.json', function (data) {
@@ -321,9 +331,10 @@ $(document).ready(function () {
       selectHtmlCG += '<option value="' + uniqueSelectArrayCG[i] + '">' + uniqueSelectArrayCG[i].split(',')[0] + '年' + uniqueSelectArrayCG[i].split(',')[1] + '班</option>';
     }
 
-    $('#searchClassGrade').html(`<option value="" disabled selected>請選擇...</option>
-                                     <option value="0">全校班級</option>`
-      + selectHtmlCG);
+    $('#searchClassGrade').html(`
+				<option value="" disabled selected>請選擇...</option>
+					<option value="0">全校班級</option>`
+      		+ selectHtmlCG);
 
     //選擇[班年級]
     $('#searchClassGrade').change(function () {
@@ -361,15 +372,15 @@ $(document).ready(function () {
 
           optionHtmlS += '<option value="' + filterSession[0].startDate + ',' + filterSession[0].endDate + '">' + uniqueSelectArrayS[i] + '</option>';
 
-          $('#searchSessions').html(`<option value="" disabled selected>請選擇...</option>`
+          $('#searchSession').html(`<option value="" disabled selected>請選擇...</option>`
             + optionHtmlS);
         });
       }
 
       //選擇[場次]
-      $('#searchSessions').change(function () {
+      $('#searchSession').off('change').on('change', function () {
         //顯示時間
-        let SessionsArray = $('#searchSessions').val().split(',');
+        let SessionsArray = $('#searchSession').val().split(',');
         $('#searchStartDate').text(SessionsArray[0]);
         $('#searchEndDate').text(SessionsArray[1]);
 
@@ -381,43 +392,12 @@ $(document).ready(function () {
         });
 
         //datatable
-        $table.DataTable().clear();
-        $table.DataTable().rows.add(matchSession).draw();
+        //$table.DataTable().clear();
+        //$table.DataTable().rows.add(matchSession).draw();
+				$table.DataTable().clear().rows.add(matchSession).draw();
 
         searchData = matchSession;
       });
-    });
-
-    //[搜尋]關鍵字
-    $('#btnSearch').click(function () {
-      let classGradeVal = $('#searchClassGrade option:selected').val(),
-        sessionsVal = $('#searchSessions option:selected').val(),
-        keywordsVal = $('#searchKeywords').val().trim();
-
-      $table.DataTable().clear();
-
-      if (!classGradeVal && !sessionsVal && !keywordsVal) {
-        alertModal('<div class="text-red">請選擇班年級、場次<br>或輸入關鍵字。</div>');
-      } else if (!classGradeVal && !sessionsVal && keywordsVal) {
-        $table.DataTable().rows.add(searchData.data)
-          .search($('#searchKeywords').val()).draw();
-      } else {
-        $table.DataTable().rows.add(searchData)
-          .search($('#searchKeywords').val()).draw();
-      }
-    });
-
-    //[搜尋][X]重置
-    $('#searchKeywords + .btn-close').click(function () {
-      let classGradeVal = $('#searchClassGrade option:selected').val(),
-        sessionsVal = $('#searchSessions option:selected').val(),
-        keywordsVal = $('#searchKeywords').val().trim();
-
-      if (!classGradeVal && !sessionsVal && !keywordsVal) {
-        $table.DataTable().clear().draw();
-      } else {
-        $('#btnSearch').trigger('click');
-      }
     });
   });
 });

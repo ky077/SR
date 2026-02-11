@@ -1,4 +1,4 @@
-.table-sessionLists{  
+.table-session{  
     > thead, > tbody{
         > tr{
             >th, > td {
@@ -10,23 +10,17 @@
                 &.col-testNum		{ width:  8%; }
                 &.col-doneNum		{ width:  8%; }
                 &.col-tool			{ width: 14%; }
-                &.col-state			{ width: 10%; }
+                &.col-status			{ width: 10%; }
             }   
         }
     } 
-    > tbody{
-        > tr{
-            > td {
-            }   
-        }
-    }
 }
 
 [class*="btn-session"]{
     line-height: 1;
 }
 
-.table-sessionStudentLists{
+.table-sessionStudentList{
     min-width: 730px;
     > thead, > tbody{
         > tr{
@@ -37,7 +31,7 @@
                   &.col-studentName		{ width:  13%; }
                   &.col-Sid						{ width:  13%; }
                   &.col-account				{	width:  34%; }  
-                  &.col-state					{ width:  10%; } 
+                  &.col-status					{ width:  10%; } 
             }
         }
     }

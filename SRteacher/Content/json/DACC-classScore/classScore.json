@@ -1,26 +1,26 @@
 {
   "data": [
 		{
-      "testDate": "2023/03/24",
+      "testDate": "2023/03/25",
       "session": "2023 DEMO",
-      "grade": "4",
+      "grade": 4,
       "class": "DEMO",
-      "Sid": "2010123",
+      "Sid": "2010121",
       "studentName": "SR 學生 24 G4",
-      "DACCall": "500",
-      "DACCword": "100",
+      "DACCall": "499",
+      "DACCword": "99",
       "DACCsuperficial": "100",
       "DACCtextual": "100",
       "DACCinference": "100",
       "DACCanalysis": "100",
-      "PR": "60"
+      "PR": "65"
     },
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "4",
+      "grade": 4,
       "class": "DEMO",
-      "Sid": "2010123",
+      "Sid": "2010122",
       "studentName": "SR 學生 27 G4",
       "DACCall": "500",
       "DACCword": "100",
@@ -33,7 +33,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "4",
+      "grade": 4,
       "class": "DEMO",
       "Sid": "2010123",
       "studentName": "SR 學生 28 G4",
@@ -48,9 +48,9 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "4",
+      "grade": 4,
       "class": "DEMO",
-      "Sid": "2010123",
+      "Sid": "2010124",
       "studentName": "SR 學生 29 G4",
       "DACCall": "500",
       "DACCword": "100",
@@ -63,9 +63,9 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "5",
+      "grade": 5,
       "class": "Test 01",
-      "Sid": "2010123",
+      "Sid": "2010125",
       "studentName": "張花花",
       "DACCall": "500",
       "DACCword": "100",
@@ -78,9 +78,9 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "5",
+      "grade": 5,
       "class": "Test 02",
-      "Sid": "2010123",
+      "Sid": "2010126",
       "studentName": "張花一",
       "DACCall": "500",
       "DACCword": "100",
@@ -93,7 +93,22 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "6",
+      "grade": 6,
+      "class": "Test 01",
+      "Sid": "2010127",
+      "studentName": "張花花",
+      "DACCall": "500",
+      "DACCword": "100",
+      "DACCsuperficial": "100",
+      "DACCtextual": "100",
+      "DACCinference": "100",
+      "DACCanalysis": "100",
+      "PR": "60"
+    },
+    {
+      "testDate": "2023/04/28",
+      "session": "111 demo",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -108,22 +123,7 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "6",
-      "class": "Test 01",
-      "Sid": "2010123",
-      "studentName": "張花花",
-      "DACCall": "500",
-      "DACCword": "100",
-      "DACCsuperficial": "100",
-      "DACCtextual": "100",
-      "DACCinference": "100",
-      "DACCanalysis": "100",
-      "PR": "60"
-    },
-    {
-      "testDate": "2023/04/28",
-      "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -138,7 +138,7 @@
     {
       "testDate": "2023/04/27",
       "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -153,7 +153,7 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -168,7 +168,7 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -183,7 +183,7 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -198,7 +198,7 @@
     {
       "testDate": "2023/04/28",
       "session": "111 demo",
-      "grade": "6",
+      "grade": 6,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -213,7 +213,7 @@
     {
       "testDate": "2023/04/22",
       "session": "111 demo",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -228,7 +228,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -243,7 +243,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -258,7 +258,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -273,7 +273,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -288,7 +288,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "7",
+      "grade": 7,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -303,7 +303,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -318,7 +318,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -333,7 +333,7 @@
     {
       "testDate": "2021/02/20",
       "session": "2021 DACC",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -348,7 +348,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -363,7 +363,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -378,7 +378,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -393,7 +393,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -408,7 +408,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -423,7 +423,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -438,7 +438,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -453,7 +453,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -468,7 +468,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -483,7 +483,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -498,7 +498,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -513,7 +513,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -528,7 +528,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -543,7 +543,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -558,7 +558,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -573,7 +573,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -588,7 +588,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -603,7 +603,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -618,7 +618,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -633,7 +633,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -648,7 +648,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -663,7 +663,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -678,7 +678,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -693,7 +693,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -708,7 +708,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -723,7 +723,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -738,7 +738,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -753,7 +753,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -768,7 +768,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -783,7 +783,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -798,7 +798,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -813,7 +813,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -828,7 +828,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -843,7 +843,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -858,7 +858,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -873,7 +873,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -888,7 +888,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -903,7 +903,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -918,7 +918,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -933,7 +933,7 @@
     {
       "testDate": "2023/03/25",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -948,7 +948,7 @@
     {
       "testDate": "2023/03/27",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -963,7 +963,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -978,7 +978,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -993,7 +993,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1008,7 +1008,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1023,7 +1023,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1038,7 +1038,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1053,7 +1053,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1068,7 +1068,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1083,7 +1083,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1098,7 +1098,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1113,7 +1113,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1128,7 +1128,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1143,7 +1143,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1158,7 +1158,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1173,7 +1173,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1188,7 +1188,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1203,7 +1203,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1218,7 +1218,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1233,7 +1233,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1248,7 +1248,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1263,7 +1263,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1278,7 +1278,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1293,7 +1293,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1308,7 +1308,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",
@@ -1323,7 +1323,7 @@
     {
       "testDate": "2023/03/24",
       "session": "2023 DEMO",
-      "grade": "8",
+      "grade": 8,
       "class": "Test 01",
       "Sid": "2010123",
       "studentName": "張花花",

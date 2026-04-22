@@ -126,7 +126,7 @@
 </header>
 <main id="content">
 <!-- Modal#start -->
-<div class="modal fade show modal-start" tabindex="-1" style="display: none;" aria-modal="true" role="dialog">
+<div class="modal fade show modal-start" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
   <div class="modal-dialog modal-fullscreen modal-dialog-centered">
     <div class="modal-content border-0 bg-black bg-opacity-75">
       <div class="modal-body py-0 text-center">
@@ -1683,7 +1683,13 @@ $(document).ready(function () {
 	
 	
   // 只顯示第一個 chatInterface-frame
-  $('.chatInterface-frame').hide().eq(0).show();
+	$('.chatInterface-frame').hide();
+  //
+	
+	$('#start').click(function () {
+		$('.modal-start').hide();	
+		$('.chatInterface-frame').eq(0).show();
+	});
 });
 
 //設定animate動畫方向	

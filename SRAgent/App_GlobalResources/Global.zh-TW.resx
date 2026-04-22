@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Welcome" xml:space="preserve">
+    <value>歡迎！</value>
+  </data>
+  <data name="App1" xml:space="preserve">
+    <value>聊天機器人 | 英語文說寫能力檢測平台</value>
+  </data>
+  <data name="App2" xml:space="preserve">
+    <value>跳到主要內容</value>
+  </data>
+  <data name="Home1" xml:space="preserve">
+    <value>Hi, I'm TEEMI-Bot. Let's chat!</value>
+  </data>
+  <data name="Home2" xml:space="preserve">
+    <value>嗨！我是TEEMI-Bot，來聊天吧</value>
+  </data>
+  <data name="Home3" xml:space="preserve">
+    <value>聊天</value>
+  </data>
+  <data name="Home4" xml:space="preserve">
+    <value>練習相關句子</value>
+  </data>
+  <data name="Home5" xml:space="preserve">
+    <value>我的使用紀錄</value>
+  </data>
+  <data name="ChatTopic1" xml:space="preserve">
+    <value>Choose a topic.</value>
+  </data>
+  <data name="ChatTopic2" xml:space="preserve">
+    <value>今天想聊什麼呢？</value>
+  </data>
+  <data name="ChatTopic3" xml:space="preserve">
+    <value>生活英語</value>
+  </data>
+  <data name="ChatTopic4" xml:space="preserve">
+    <value>專科英語</value>
+  </data>
+  <data name="ChatTopic5" xml:space="preserve">
+    <value>全部完成</value>
+  </data>
+  <data name="ChatTopic6" xml:space="preserve">
+    <value>尚未完成</value>
+  </data>
+  <data name="ChatTopic7" xml:space="preserve">
+    <value>簡單，已完成</value>
+  </data>
+  <data name="ChatTopic8" xml:space="preserve">
+    <value>簡單，未完成</value>
+  </data>
+  <data name="ChatTopic9" xml:space="preserve">
+    <value>中等，已完成</value>
+  </data>
+  <data name="ChatTopic10" xml:space="preserve">
+    <value>中等，未完成</value>
+  </data>
+  <data name="ChatTopic11" xml:space="preserve">
+    <value>困難，已完成</value>
+  </data>
+  <data name="ChatTopic12" xml:space="preserve">
+    <value>困難，未完成</value>
+  </data>
+  <data name="ChatTopic13" xml:space="preserve">
+    <value>回上頁</value>
+  </data>
+  <data name="ChatDifficulty1" xml:space="preserve">
+    <value>請選擇聊天難度。</value>
+  </data>
+  <data name="ChatDifficulty2" xml:space="preserve">
+    <value>英語難度</value>
+  </data>
+  <data name="ChatDifficulty3" xml:space="preserve">
+    <value>專科知能難度</value>
+  </data>
+  <data name="ChatDifficulty4" xml:space="preserve">
+    <value>簡單</value>
+  </data>
+  <data name="ChatDifficulty5" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="ChatDifficulty6" xml:space="preserve">
+    <value>困難</value>
+  </data>
+  <data name="ChatDifficulty7" xml:space="preserve">
+    <value>開始聊天</value>
+  </data>
+  <data name="ChatDifficulty8" xml:space="preserve">
+    <value>請先選擇難度</value>
+  </data>
+  <data name="ChatDifficulty9" xml:space="preserve">
+    <value>回上頁</value>
+  </data>
+  <data name="ChatSession1" xml:space="preserve">
+    <value>調整聊天機器人語速</value>
+  </data>
+  <data name="ChatSession2" xml:space="preserve">
+    <value>聊天機器人語速</value>
+  </data>
+  <data name="ChatSession3" xml:space="preserve">
+    <value>錄製檔案</value>
+  </data>
+  <data name="ChatSession4" xml:space="preserve">
+    <value>停止錄製</value>
+  </data>
+  <data name="ChatSession5" xml:space="preserve">
+    <value>結束對話</value>
+  </data>
+  <data name="ChatSession6" xml:space="preserve">
+    <value>顯示翻譯</value>
+  </data>
+  <data name="ChatSession7" xml:space="preserve">
+    <value>隱藏翻譯</value>
+  </data>
+  <data name="ChatSession8" xml:space="preserve">
+    <value>顯示機器人說的話</value>
+  </data>
+  <data name="ChatSession9" xml:space="preserve">
+    <value>隱藏機器人說的話</value>
+  </data>
+  <data name="ChatSession10" xml:space="preserve">
+    <value>顯示可以這麼說</value>
+  </data>
+  <data name="ChatSession11" xml:space="preserve">
+    <value>隱藏可以這麼說</value>
+  </data>
+  <data name="ChatSession12" xml:space="preserve">
+    <value>顯示我說的話</value>
+  </data>
+  <data name="ChatSession13" xml:space="preserve">
+    <value>隱藏我說的話</value>
+  </data>
+  <data name="ChatSession14" xml:space="preserve">
+    <value>可以這麼說</value>
+  </data>
+  <data name="ChatSession15" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="ChatSession16" xml:space="preserve">
+    <value>要結束對話嗎？滿 10 輪才能得到評語喔！</value>
+  </data>
+  <data name="ChatSession17" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="ChatSession18" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ChatSession19" xml:space="preserve">
+    <value>「聊天」介面導覽</value>
+  </data>
+  <data name="ChatSession20" xml:space="preserve">
+    <value>I'm ready!</value>
+  </data>
+  <data name="ChatSession21" xml:space="preserve">
+    <value>準備好了！</value>
+  </data>
+  <data name="ChatSession22" xml:space="preserve">
+    <value>End Conversation</value>
+  </data>
+  <data name="ChatSession23" xml:space="preserve">
+    <value>結束對話</value>
+  </data>
+  <data name="ChatEnd1" xml:space="preserve">
+    <value>聊天結束</value>
+  </data>
+  <data name="ChatEnd2" xml:space="preserve">
+    <value>簡單，已完成</value>
+  </data>
+  <data name="ChatEnd3" xml:space="preserve">
+    <value>簡單，未完成</value>
+  </data>
+  <data name="ChatEnd4" xml:space="preserve">
+    <value>中等，已完成</value>
+  </data>
+  <data name="ChatEnd5" xml:space="preserve">
+    <value>中等，未完成</value>
+  </data>
+  <data name="ChatEnd6" xml:space="preserve">
+    <value>困難，已完成</value>
+  </data>
+  <data name="ChatEnd7" xml:space="preserve">
+    <value>困難，未完成</value>
+  </data>
+  <data name="ChatEnd8" xml:space="preserve">
+    <value>學習天數</value>
+  </data>
+  <data name="ChatEnd9" xml:space="preserve">
+    <value>這輪口說字數</value>
+  </data>
+  <data name="ChatEnd10" xml:space="preserve">
+    <value>TEEMI 檢測首頁</value>
+  </data>
+  <data name="ChatEnd11" xml:space="preserve">
+    <value>回 TEEMI-Bot 首頁</value>
+  </data>
+  <data name="PracticeTopic1" xml:space="preserve">
+    <value>選擇練習相關句子。</value>
+  </data>
+  <data name="PracticeTopic2" xml:space="preserve">
+    <value>生活英語</value>
+  </data>
+  <data name="PracticeTopic3" xml:space="preserve">
+    <value>專科英語</value>
+  </data>
+  <data name="PracticeTopic4" xml:space="preserve">
+    <value>全部完成</value>
+  </data>
+  <data name="PracticeTopic5" xml:space="preserve">
+    <value>尚未完成</value>
+  </data>
+  <data name="PracticeTopic6" xml:space="preserve">
+    <value>簡單，已完成</value>
+  </data>
+  <data name="PracticeTopic7" xml:space="preserve">
+    <value>簡單，未完成</value>
+  </data>
+  <data name="PracticeTopic8" xml:space="preserve">
+    <value>中等，已完成</value>
+  </data>
+  <data name="PracticeTopic9" xml:space="preserve">
+    <value>中等，未完成</value>
+  </data>
+  <data name="PracticeTopic10" xml:space="preserve">
+    <value>困難，已完成</value>
+  </data>
+  <data name="PracticeTopic11" xml:space="preserve">
+    <value>困難，未完成</value>
+  </data>
+  <data name="PracticeTopic12" xml:space="preserve">
+    <value>回上頁</value>
+  </data>
+  <data name="PracticeDifficulty1" xml:space="preserve">
+    <value>請選擇練習句的難度。</value>
+  </data>
+  <data name="PracticeDifficulty2" xml:space="preserve">
+    <value>英語難度</value>
+  </data>
+  <data name="PracticeDifficulty3" xml:space="preserve">
+    <value>專科知能難度</value>
+  </data>
+  <data name="PracticeDifficulty4" xml:space="preserve">
+    <value>簡單</value>
+  </data>
+  <data name="PracticeDifficulty5" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="PracticeDifficulty6" xml:space="preserve">
+    <value>困難</value>
+  </data>
+  <data name="PracticeDifficulty7" xml:space="preserve">
+    <value>開始練習</value>
+  </data>
+  <data name="PracticeDifficulty8" xml:space="preserve">
+    <value>請先選擇難度</value>
+  </data>
+  <data name="PracticeDifficulty9" xml:space="preserve">
+    <value>回上頁</value>
+  </data>
+  <data name="PracticeSentence1" xml:space="preserve">
+    <value>調整句子語速</value>
+  </data>
+  <data name="PracticeSentence2" xml:space="preserve">
+    <value>句子語速</value>
+  </data>
+  <data name="PracticeSentence3" xml:space="preserve">
+    <value>聽聽看</value>
+  </data>
+  <data name="PracticeSentence4" xml:space="preserve">
+    <value>錄製語音</value>
+  </data>
+  <data name="PracticeSentence5" xml:space="preserve">
+    <value>停止錄製</value>
+  </data>
+  <data name="PracticeSentence6" xml:space="preserve">
+    <value>播放我的錄音</value>
+  </data>
+  <data name="PracticeSentence7" xml:space="preserve">
+    <value>下一句</value>
+  </data>
+  <data name="PracticeSentence8" xml:space="preserve">
+    <value>確定要結束句子練習嗎？</value>
+  </data>
+  <data name="PracticeSentence9" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="PracticeSentence10" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="PracticeSentence11" xml:space="preserve">
+    <value>「練習相關句子」介面導覽</value>
+  </data>
+  <data name="PracticeSentence12" xml:space="preserve">
+    <value>I'm ready!</value>
+  </data>
+  <data name="PracticeSentence13" xml:space="preserve">
+    <value>準備好了！</value>
+  </data>
+  <data name="PracticeSentence14" xml:space="preserve">
+    <value>End Practice</value>
+  </data>
+  <data name="PracticeSentence15" xml:space="preserve">
+    <value>結束練習</value>
+  </data>
+  <data name="PracticeSentence16" xml:space="preserve">
+    <value>Recording error!</value>
+  </data>
+  <data name="PracticeSentence17" xml:space="preserve">
+    <value>錄音錯誤！</value>
+  </data>
+  <data name="PracticeEnd1" xml:space="preserve">
+    <value>練習完成</value>
+  </data>
+  <data name="PracticeEnd2" xml:space="preserve">
+    <value>簡單，已完成</value>
+  </data>
+  <data name="PracticeEnd3" xml:space="preserve">
+    <value>簡單，未完成</value>
+  </data>
+  <data name="PracticeEnd4" xml:space="preserve">
+    <value>中等，已完成</value>
+  </data>
+  <data name="PracticeEnd5" xml:space="preserve">
+    <value>中等，未完成</value>
+  </data>
+  <data name="PracticeEnd6" xml:space="preserve">
+    <value>困難，已完成</value>
+  </data>
+  <data name="PracticeEnd7" xml:space="preserve">
+    <value>困難，未完成</value>
+  </data>
+  <data name="PracticeEnd8" xml:space="preserve">
+    <value>練習其他主題</value>
+  </data>
+  <data name="PracticeEnd9" xml:space="preserve">
+    <value>TEEMI 檢測首頁</value>
+  </data>
+  <data name="PracticeEnd10" xml:space="preserve">
+    <value>回 TEEMI-Bot 首頁</value>
+  </data>
+  <data name="Statistics1" xml:space="preserve">
+    <value>你的使用紀錄。</value>
+  </data>
+  <data name="Statistics2" xml:space="preserve">
+    <value>學習天數</value>
+  </data>
+  <data name="Statistics3" xml:space="preserve">
+    <value>總口說字數</value>
+  </data>
+  <data name="Statistics4" xml:space="preserve">
+    <value>生活英語</value>
+  </data>
+  <data name="Statistics5" xml:space="preserve">
+    <value>專科英語</value>
+  </data>
+  <data name="Statistics6" xml:space="preserve">
+    <value>生活英語聊天主題完成度</value>
+  </data>
+  <data name="Statistics7" xml:space="preserve">
+    <value>生活英語練習句子完成度</value>
+  </data>
+  <data name="Statistics8" xml:space="preserve">
+    <value>專科英語聊天主題完成度</value>
+  </data>
+  <data name="Statistics9" xml:space="preserve">
+    <value>專科英語練習句子完成度</value>
+  </data>
+  <data name="Statistics10" xml:space="preserve">
+    <value>簡單</value>
+  </data>
+  <data name="Statistics11" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="Statistics12" xml:space="preserve">
+    <value>困難</value>
+  </data>
+  <data name="Statistics13" xml:space="preserve">
+    <value>聊天紀錄</value>
+  </data>
+  <data name="Statistics14" xml:space="preserve">
+    <value>評語清單</value>
+  </data>
+  <data name="Statistics15" xml:space="preserve">
+    <value>生活英語聊天紀錄</value>
+  </data>
+  <data name="Statistics16" xml:space="preserve">
+    <value>生活英語評語清單</value>
+  </data>
+  <data name="Statistics17" xml:space="preserve">
+    <value>專科英語聊天紀錄</value>
+  </data>
+  <data name="Statistics18" xml:space="preserve">
+    <value>專科英語評語清單</value>
+  </data>
+</root>

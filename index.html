@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">	
 <title>SmartReading</title>
 <style>
+* {
+	transition: all .3s ease-in;
+}	
 body {
 	font-size: 20px;
 }
@@ -34,8 +37,19 @@ table tfoot td a {
 	color: #FFF;
 }
 a {
+	display: inline-block;
 	text-underline-offset: 4px;
 }
+a:hover {
+	transform: scale(1.2);
+	font-weight: bold;
+}
+table tr:hover {
+	background-color: #ffffee;
+}
+.text-muted, .text-muted * {
+	color: #bbb;
+}	
 </style>
 </head>
 

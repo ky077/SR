@@ -24,21 +24,22 @@
 </head>
 <body data-sidebar="RP-quiz">
 <form>
-  <header> </header>
-	
+  <header>
+  </header>
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse"> </nav>
-      <main class="col-xl-10"> 
+      <nav id="sidebarMenu" class="col-xl-2 d-xl-block bg-white sidebar collapse">
+      </nav>
+      <main class="col-xl-10">
         <!-- ------- ------- ------- ------- ------- ------- ------- -->
         <h2 class="SR-h2"><span>教師命題管理</span></h2>
-        <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+        <div class="row py-3 py-xl-5 px-1 px-xl-4">
           <!-- 按鈕 start -->
           <div class="col-xxl-5 mb-3" id="blockBtns">
             <button type="button" class="btn btn-primary my-1" id="setting"><i class="fa-solid fa-pen-to-square me-1"></i>編輯設定</button>
             <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="insert"><i class="fa-solid fa-plus me-1"></i>發表新題本及題目</button>
           </div>
-          <!-- 按鈕  end  --> 
+          <!-- 按鈕  end  -->
           <!-- 搜尋 start -->
           <div class="col-xxl-7 mb-3" id="blockSearch">
             <div class="row g-2 align-items-center justify-content-end">
@@ -56,7 +57,7 @@
               </div>
             </div>
           </div>
-          <!-- 搜尋  end  --> 
+          <!-- 搜尋  end  -->
           <!-- 表格 start -->
           <div class="col-xl-12 mb-5">
             <table class="table table-bordered table-quiz" id="quizTable">
@@ -88,7 +89,7 @@
               </tbody>
             </table>
           </div>
-          <!-- 表格  end  --> 
+          <!-- 表格  end  -->
           <!-- [編輯設定]-按鈕 start -->
           <div class="col-xl-12 text-center mb-5" id="blockSettingBtns" style="display: none;">
             <div>
@@ -96,10 +97,10 @@
               <button type="button" class="btn btn-primary m-1" id="settingConfirm">確定設定</button>
             </div>
           </div>
-          <!-- [編輯設定]-按鈕  end  --> 
+          <!-- [編輯設定]-按鈕  end  -->
         </div>
         
-        <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
       </main>
     </div>
   </div>
@@ -111,7 +112,7 @@
         <div class="modal-header">
           <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body"> 
+        <div class="modal-body">
           <!-- ↓ 跟10重複的地方↓ -->
           <div class="row mb-3">
             <h3 class="text-center h6">發表新題本及題目</h3>
@@ -120,12 +121,16 @@
           <div class="row mb-3 justify-content-center">
             <label for="inputSearchBook" class="col-auto col-form-label">搜索書籍</label>
             <div class="col-lg-8">
-              <div class="input-group mb-3 position-relative"> 
+              <div class="input-group mb-3 position-relative">
                 <!-- -->
                 <button class="btn btn-link border-primary bg-gray-200 rounded-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">系統推薦</button>
                 <ul class="dropdown-menu rounded-0 p-0 fs-7 border-primary w-min-auto">
-                  <li><a class="dropdown-item" href="#">系統推薦</a></li>
-                  <li><a class="dropdown-item" href="#">未分級書單</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">系統推薦</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">未分級書單</a>
+                  </li>
                 </ul>
                 <!-- -->
                 <input type="text" class="form-control border-primary border-end-0 rounded-0" aria-label="Text input with dropdown button" placeholder="輸入書名...">
@@ -163,7 +168,7 @@
                 </div>
                 <!-- -->
                 <button type="button" class="btn btn-primary rounded-0">搜索</button>
-                <!-- --> 
+                <!-- -->
               </div>
             </div>
           </div>
@@ -171,14 +176,16 @@
             <label for="SRrangeBar-s-control" class="col-xl-auto control-label small">推薦難度範圍</label>
             <div class="col-xl-auto flex-grow-1">
               <div class="SRrangeBar">
-                <div id="SRrangeBar-s-range" class="SRrangeBar-slider s-range"> </div>
-                <div id="SRrangeBar-s-control" class="SRrangeBar-slider s-control" data-popup-enabled="true"> </div>
+                <div id="SRrangeBar-s-range" class="SRrangeBar-slider s-range">
+                </div>
+                <div id="SRrangeBar-s-control" class="SRrangeBar-slider s-control" data-popup-enabled="true">
+                </div>
               </div>
             </div>
           </div>
-          <!-- 搜尋  end  --> 
+          <!-- 搜尋  end  -->
           <!-- 表格 start -->
-          <div class="bg-body mx-n3 mb-n3"> 
+          <div class="bg-body mx-n3 mb-n3">
             <!-- recommendedBook-list start -->
             <div class="recommendedBook-list">
               <div class="container">
@@ -216,15 +223,15 @@
                 </table>
               </div>
             </div>
-            <!-- recommendedBook-list end --> 
+            <!-- recommendedBook-list end -->
           </div>
-          <!-- 表格  end  --> 
-          <!-- ↑跟10重複的地方↑ --> 
+          <!-- 表格  end  -->
+          <!-- ↑跟10重複的地方↑ -->
         </div>
       </div>
     </div>
   </div>
-  <!-- Modal#insertModal 發表新題本及題目  end  --> 
+  <!-- Modal#insertModal 發表新題本及題目  end  -->
   
   <!-- Modal#quizModal 新增本書題本 / 查看/編輯題本 start -->
   <div class="modal fade modal-quiz" id="quizModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
@@ -233,7 +240,7 @@
         <div class="modal-header">
           <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body"> 
+        <div class="modal-body">
           <!-- 新增本書題本 / 查看/編輯題本 start -->
           <div class="row mb-3 justify-content-center">
             <h3 class="col-sm-4 text-center h6">新增本書題本 / 查看/編輯題本</h3>
@@ -398,7 +405,8 @@
             <!-- -->
             <div class="mb-5 row align-items-start">
               <label for="insertMoreClass" class="col-sm-3 col-form-label text-sm-end" value="zhanghuahua">分派班級</label>
-              <div class="col-sm-9"> <span class="modal-quiz-assign">
+              <div class="col-sm-9">
+                <span class="modal-quiz-assign">
                 <button type="button" class="btn btn-outline-primary bg-gradient me-1 mb-1"><i class="fa-solid fa-xmark me-1"></i>3年1班</button>
                 <button type="button" class="btn btn-outline-primary bg-gradient me-1 mb-1"><i class="fa-solid fa-xmark me-1"></i>3年2班</button>
                 <button type="button" class="btn btn-outline-primary bg-gradient me-1 mb-1"><i class="fa-solid fa-xmark me-1"></i>3年3班</button>
@@ -449,31 +457,32 @@
               </div>
             </div>
           </div>
-          <!-- 新增本書題本 / 查看/編輯題本  end  --> 
+          <!-- 新增本書題本 / 查看/編輯題本  end  -->
         </div>
       </div>
     </div>
   </div>
   <!-- Modal#quizModal 新增本書題本  end  -->
   
-  <footer> </footer>
+  <footer>
+  </footer>
 </form>
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<!-- ------- ------- ------- ------- ------- ------- ------- --> 
-<script src="Content/js/jquery-3.6.0.min.js"></script> 
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<script src="Content/js/jquery-3.6.0.min.js"></script>
 
-<!-- widgets JS --> 
-<script src="Content/js/bootstrap.bundle.min.js"></script> 
-<script src="Content/js/doubleScorollbar.js"></script> 
-<script src="Content/widgets/DataTables/datatables.min.js"></script> 
-<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script> 
-<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script> 
-<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script> 
-<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script> 
+<!-- widgets JS -->
+<script src="Content/js/bootstrap.bundle.min.js"></script>
+<script src="Content/js/doubleScorollbar.js"></script>
+<script src="Content/widgets/DataTables/datatables.min.js"></script>
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.html5.min.js"></script>
+<script src="Content/widgets/DataTables/buttons-2.4.2/js/buttons.print.min.js"></script>
+<script src="Content/widgets/bootstrap-select-1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
-<!-- my JS --> 
-<script src="Content/js/main.js"></script> 
+<!-- my JS -->
+<script src="Content/js/main.js"></script>
 <script>
 $(document).ready(function () {
   const $table = $('#quizTable');
@@ -753,7 +762,7 @@ $(document).ready(function () {
 		$modal.find('#sortable .modal-quiz-block').removeClass('bg-primary-dashed').not(':first').remove();
 
 		//刪除圖示、配分、題型區塊隱藏（避免殘留）
-		$modal.find('.btn-close, .modal-quiz-gradingWeight, .multiple, .picture, .QandA, .video').hide();
+		$modal.find('.modal-quiz-gradingWeight, .multiple, .picture, .QandA, .video').hide();
 
 		//移除data-modal-type模式標記
 		$modal.removeAttr('data-modal-type');
@@ -866,12 +875,12 @@ function loadQuizDetialTable(rowIndex) {
 		iniQuizModal();
   });
 }
-</script> 
+</script>
 
 <!-- 發表新題本及題目 SRrangeBar -->
 <link rel="stylesheet" type="text/css" href="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> 
-<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script> 
+<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script>
 <script>
 $(function () {
   $('#SRrangeBar-s-range').slider({
@@ -902,9 +911,9 @@ $(function () {
   $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + $("#SRrangeBar-s-control").slider("values", 1));
 });
 
-</script> 
+</script>
 
-<!-- 發表新題本及題目 datatables  --> 
+<!-- 發表新題本及題目 datatables  -->
 <script>
 function loadRecommendedBook(json) {
   const $recommendedBook= $('#recommendedBook');
@@ -1211,13 +1220,19 @@ function loadRecommendedBook(json) {
   });
 }
 
-</script> 
+</script>
 
-<!-- 新增本書題本/ 查看/編輯題本  --> 
+<!-- 新增本書題本/ 查看/編輯題本  -->
 <script>
 function iniQuizModal() {
+  const $modal = $('#quizModal');
+  const eventNamespace = '.quizModal';
+
+  // iniQuizModal 可能會在每次開啟題本視窗時執行，先移除本函式上次綁定的事件，避免累積觸發
+  $modal.off(eventNamespace);
+
   // 選擇題型事件
-  $(document).on('change', '#modalQuizTopic', function () {
+  $modal.on('change' + eventNamespace, '#modalQuizTopic', function () {
     const $block = $(this).closest('.modal-quiz-block');
     const selectedType = $(this).val();
 
@@ -1225,7 +1240,7 @@ function iniQuizModal() {
     $block.addClass('bg-primary-dashed');
 
     // 顯示調序提示
-    $('.modal-quiz-sortableTip').show();
+    $modal.find('.modal-quiz-sortableTip').show();
 
     // 顯示對應題型
     $block.find('.multiple, .picture, .QandA, .video').hide();
@@ -1233,8 +1248,8 @@ function iniQuizModal() {
   });
 
   // [新增更多題目]
-  $('#insertMoreTopic').on('click', function () {
-    const $last = $('.modal-quiz-block').last();
+  $modal.on('click' + eventNamespace, '#insertMoreTopic', function () {
+    const $last = $modal.find('.modal-quiz-block').last();
     const $clone = $last.clone();
 
     // 清空內容
@@ -1245,30 +1260,32 @@ function iniQuizModal() {
     $clone.removeClass('bg-primary-dashed');
 
     // 插入新的區塊
-    $('#sortable').append($clone);
-    $('#sortable').sortable('refresh');
+    $modal.find('#sortable').append($clone);
+    if ($modal.find('#sortable').hasClass('ui-sortable')) {
+      $modal.find('#sortable').sortable('refresh');
+    }
 
     // 重新編號
     resetQuizNumber();
   });
 
   // 點擊X刪除題目區塊
-  $(document).on('click', '.modal-quiz-block .btn-close', function () {
-    const $blocks = $('.modal-quiz-block');
+  $modal.on('click' + eventNamespace, '.modal-quiz-block .btn-close', function () {
+    const $blocks = $modal.find('.modal-quiz-block');
     const $current = $(this).closest('.modal-quiz-block');
 
     if ($blocks.length === 1) {
       confirmModal('是否確定刪除唯一個題目？');
 
       // 點擊確定後執行還原初始狀態
-      $('#confirmOk').off('click').on('click', function () {
+      $('#confirmOk').off('click.quizModalDelete').on('click.quizModalDelete', function () {
         $current.removeClass('bg-primary-dashed');
         $current.find('input[type="text"], textarea').val('');
         $current.find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
         $current.find('select').val('請選擇題型');
         $current.find('.multiple, .picture, .QandA, .video').hide();
-        $current.find('.btn-close, .modal-quiz-gradingWeight').hide();
-        $('.modal-quiz-sortableTip').hide();
+        $current.find('.modal-quiz-gradingWeight').hide();
+        $modal.find('.modal-quiz-sortableTip').hide();
       });
 
       return;
@@ -1283,9 +1300,9 @@ function iniQuizModal() {
 
 
   // 分派班級區塊邏輯
-  const $assignBox = $('.modal-quiz-checkbox');
-  const $assignBtn = $('#insertMoreClass');
-  const $assignContainer = $('.modal-quiz-assign');
+  const $assignBox = $modal.find('.modal-quiz-checkbox');
+  const $assignBtn = $modal.find('#insertMoreClass');
+  const $assignContainer = $modal.find('.modal-quiz-assign');
 
   // 初始隱藏
   $assignBtn.prop('disabled', false);
@@ -1293,19 +1310,19 @@ function iniQuizModal() {
   $assignContainer.hide();
 
   // 點擊「新增更多班級」
-  $assignBtn.on('click', function () {
+  $modal.on('click' + eventNamespace, '#insertMoreClass', function () {
     $(this).prop('disabled', true);
     $assignBox.slideDown(200);
   });
 
   // checkbox區塊「取消」
-  $assignBox.find('button:contains("取消")').on('click', function () {
+  $modal.on('click' + eventNamespace, '.modal-quiz-checkbox button:contains("取消")', function () {
     $assignBox.slideUp(200);
     $assignBtn.prop('disabled', false);
   });
 
   // 綠底區塊「確定」
-  $assignBox.find('button:contains("確定")').on('click', function () {
+  $modal.on('click' + eventNamespace, '.modal-quiz-checkbox button:contains("確定")', function () {
     const checked = $assignBox.find('input[type="checkbox"]:checked');
     $assignContainer.empty();
 
@@ -1325,33 +1342,36 @@ function iniQuizModal() {
   });
 
   // 點擊班級按鈕刪除自己 & 取消勾選
-  $(document).on('click', '.modal-quiz-assign .btn', function () {
+  $modal.on('click' + eventNamespace, '.modal-quiz-assign .btn', function () {
     const className = $(this).text().trim();
     $(this).remove();
     $assignBox.find(`#${className}`).prop('checked', false);
 
-    if ($('.modal-quiz-assign .btn').length === 0)
-      $('.modal-quiz-assign').hide();
+    if ($assignContainer.find('.btn').length === 0)
+      $assignContainer.hide();
   });
 
   //[確定新增]/[儲存題本]
-  $('#quizConfirm').click(function () {
-    $('#quizModal').modal('hide');
+  $modal.on('click' + eventNamespace, '#quizConfirm', function () {
+    $modal.modal('hide');
     alertModal('<div class="text-red">新增成功！</div>');
   });
 }
 
 // 重新編號
-function resetQuizNumber() {
-  $('.modal-quiz-block').each(function (i) {
+function resetQuizNumber($scope) {
+  ($scope || $('#quizModal')).find('.modal-quiz-block').each(function (i) {
     $(this).find('.modal-quiz-topic')
       .html(`題目${i + 1}<span class="text-red">*</span>`);
   });
 }
-</script> 
 
-<!-- 題本排序 Sortable  --> 
-<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script> 
+// 先初始化一次，讓推薦書流程也能使用新增題目功能；之後重複呼叫 iniQuizModal 仍不會累積事件
+iniQuizModal();
+</script>
+
+<!-- 題本排序 Sortable  -->
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 <script> 
 $(function () {
   $('#sortable').sortable({

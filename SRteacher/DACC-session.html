@@ -950,6 +950,21 @@ $(document).ready(function () {
 		});
 	}
 	
+	//[設定學生] > [確定儲存]
+	$('#studentSetConfirm').click(function () {
+		const hasSelectedStudent = $('#studentSetModal input[name="check"]:checked').length > 0;
+
+		if (hasSelectedStudent) {
+			alertModal('<div class="text-red">新增成功！</div>');
+
+			$('#alertModal').on('hidden.bs.modal', function () {
+				$('#studentSetModal').modal('hide');
+			});
+		} else {
+			alertModal('<div class="text-red">請確實選擇班級學生</div>');
+		}
+	});	
+	
   /////// /////// /////// /////// /////// /////// ///////
 
   //[學生名單]datatables 

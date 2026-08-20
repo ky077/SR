@@ -655,7 +655,7 @@ $(document).ready(function () {
         visible: false,
         render: function (data, type, row, meta) {
           return `<div class="form-check form-check-inline form-check-red">
-										<input class="form-check-input" type="checkbox" name="delete">
+										<input class="form-check-input m-0" type="checkbox" name="delete">
 									</div>`;
         }
       },
@@ -768,12 +768,13 @@ $(document).ready(function () {
     //[書單設定]-按鈕 顯示
     $('#blockSettingBtns').show();
 
-    //表格欄位 可編輯
-    $table.find('input, select').attr('disabled', false).removeClass('readonly');
-
     //表格欄位 顯示刪除、隱藏序號
-    $table.DataTable().column('.col-delete').visible(true);
-    $table.DataTable().column('.col-index').visible(false);
+    const dataTable = $table.DataTable();
+    dataTable.column('.col-delete').visible(true);
+    dataTable.column('.col-index').visible(false);
+
+    //表格欄位 可編輯（先顯示刪除欄，再恢復欄位內的 checkbox 狀態）
+    $table.find('input, select').prop('disabled', false).removeClass('readonly');
 
     //表格按鈕 不可按
     if ($table.find('button').length) {
@@ -830,18 +831,18 @@ $(document).ready(function () {
         confirmModal('是否確定要刪除書單：<b class="text-red">' + selectedClass.join('、') + '</b>？');
 
         $('#confirmOk').click(function () {
-          //do something... (修改)
+          //do something... (刪除)
 
           editOkAlert();
         });
       } else {
-        //do something... (修改)
+        //do something... (刪除)
 
         editOkAlert();
       }
 
       function editOkAlert() {
-        alertModal('<div class="text-red">修改成功！</div>');
+        alertModal('<div class="text-red">設定成功！</div>');
 
         $('#alertModal').on('hidden.bs.modal', function () {
           //功能按鈕區、搜尋區 可按
@@ -914,6 +915,18 @@ $(document).ready(function () {
 
     loadteachingDetialTable('Content/json/RP-bookList/teachingDetial.json');
   });
+	
+	//新增或編輯書單 > [確定新增/編輯]
+  $('#bookListConfirm').click(function () {
+    const modalType = $('#bookListModal').attr('data-modal-type');
+    const successMessage = modalType === 'edit' ? '編輯成功！' : '新增成功！';
+
+    alertModal('<div class="text-red">' + successMessage + '</div>');
+
+    $('#alertModal').off('hidden.bs.modal.bookListConfirm').one('hidden.bs.modal.bookListConfirm', function () {
+      $('#bookListModal').modal('hide');
+    });
+  });
 
   //[增/減書籍]
   $('#adjustBook').click(function () {
@@ -957,6 +970,20 @@ $(document).ready(function () {
 		}
 	});
 	
+	//表格-指派班級 > [指派] > [確定指派]
+  $('#insertSession').click(function () { 
+		const hasSelectedClasses = $('.table-assign-class input[name="check"]:checked').length > 0;
+
+		if (hasSelectedClasses) {
+			alertModal('<div class="text-red">指派成功！</div>');
+
+			$('#alertModal').on('hidden.bs.modal', function () {
+				$('#assignModal').modal('hide');
+			});
+		} else {
+			alertModal('<div class="text-red">請確實選擇班級學生</div>');
+		}
+  });
 });
 </script> 
 
@@ -1080,6 +1107,48 @@ $(function () {
   }).find('.ui-slider-handle').append('<span class="slider-tooltip"></span>');
   $('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR ' + $("#SRrangeBar-s-control").slider("values", 0));
   $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + $("#SRrangeBar-s-control").slider("values", 1));
+	
+	//增/減書籍 > [確定設定]
+  $('#adjustBookConfirm').click(function () {
+    const recommendedTable = $('#recommendedBook').DataTable();
+    const selectedBooks = [];
+
+    recommendedTable.rows().every(function () {
+      const $row = $(this.node());
+
+      if ($row.find('input[type="checkbox"]').prop('checked')) {
+        selectedBooks.push(this.data());
+      }
+    });
+
+    const modalType = $('#bookListModal').attr('data-modal-type');
+
+    if (selectedBooks.length > 0) {
+      const successMessage = modalType === 'edit' ? '書籍更新成功！' : '書籍新增成功！';
+      alertModal('<div class="text-red">' + successMessage + '</div>');
+			
+			$('#alertModal').off('hidden.bs.modal.bookListAdjust').one('hidden.bs.modal.bookListAdjust', function () {
+				if (modalType === 'insert') {
+					const detailTable = $('#teachingDetialTable').DataTable();
+					const detailBooks = selectedBooks.map(function (book) {
+						return {
+							bookTitle: book.bookTitle || '',
+							author: book.author || '',
+							publisher: book.publisher || '',
+							publicationYear: book.publicationYear || '',
+							SR: book.SR || ''
+						};
+					});
+
+					detailTable.clear().rows.add(detailBooks).draw();
+				}
+
+				$('#adjustBookModal').modal('hide');
+			});
+    } else {
+      alertModal('<div class="text-red">請確實選擇書籍</div>');
+    }
+  });
 });
 </script> 
 

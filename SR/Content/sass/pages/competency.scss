@@ -1,0 +1,702 @@
+$competency-yellow: #fff293; 
+$competency-green: #b7cb7d; 
+$competency-blue: #b7cb7d; 
+
+$competency-section-bg: #edf2f7;					// 大區塊背景
+
+$competency-title-color: #894e00; 				// 大標題
+$competency-text-color:  #332700; 				// 大標題文字
+$competency-text-writing-color: #385d89;  // 大標題草字文字
+$competency-text-writing-bg: $competency-yellow; 	  // 大標題草字背景
+$competency-block-bg: #fef8e5;  				 //內容區塊背景 #f8f0d0
+$competency-block-border: 1px solid #c0dd9b;  //內容區塊線條
+
+
+//第一線教育現場
+$competency-frontline-parents: #5ea63f; 
+$competency-frontline-teacher: #da542f; 
+$competency-frontline-block-bg: $competency-block-bg; 
+$competency-frontline-block-border: $competency-block-border; 
+//我們的堅守
+$competency-beliefs-info-bg: #6884a9;
+$competency-beliefs-info-text: #e9ffff; 
+$competency-beliefs-info-strong: $competency-yellow;
+//全素養養成路徑
+$competency-path-title: #00672e;
+$competency-path-subtitle: #8d6e48; 
+//老師的神隊友
+$competency-teacher-counter-bg: $competency-green; 
+//家長的好幫手
+$competency-parent-block-bg: #ececec;
+$competency-parent-incorrect-title: #b33d45;
+$competency-parent-incorrect-bg: #f1acb7;
+$competency-parent-correct-title: #519e2e; 
+$competency-parent-correct-bg: $competency-green; 
+$competency-parent-step-bg: $competency-block-bg;
+$competency-parent-step-border: $competency-block-border;
+//全新功能
+$competency-feature-info-bg: $competency-block-bg;
+$competency-feature-border: $competency-block-border;
+$competency-feature-text: #9c692d;
+$competency-feature-star: $competency-green;
+//終極目標
+$competency-goal-block-bg: #f6faf3;
+$competency-goal-block-border: $competency-block-border;
+$competency-goal-block-title: #57925e;
+//全素養教學
+$competency-cta-apply:#f3c455;
+$competency-cta-contact:$competency-green;
+
+// 1em = 20px; 1rem = 10px
+
+[class*="competency-section"]{
+	color: $competency-text-color;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	&:nth-child(odd) {
+		background-color: $competency-section-bg;
+	}
+	.container{
+		@media screen and (min-width: 1400px) {
+		width: 1320px;
+		}
+		@media screen and (min-width: 1600px) {
+		width: 1440px;
+		}
+	}
+	.competency-title {
+		color: $competency-title-color;
+		font-size: 2em;
+		font-weight: 600;
+		margin-top: 0;
+		margin-bottom: .5rem;
+	}
+	.competency-text { 
+		color: $competency-text-color;
+		font-size: 1.5em;
+		margin-bottom: 3rem;
+		.competency-text-writing{
+      background: linear-gradient(to bottom,  transparent 0%, transparent 65%, $competency-text-writing-bg 65%, $competency-text-writing-bg 100%); 
+			color: $competency-text-writing-color;
+			font-family: "wenwriting-proportional", sans-serif; //彣書 不等寬
+			font-size: 125%;
+			font-weight: 400;
+			font-style: normal;
+			margin-left: .5rem;
+		}
+	}
+}
+
+//第一線教育現場
+.competency-section-frontline {
+	.frontline-block{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		@media screen and (min-width: 1200px) {
+		flex-direction: row;	
+		}
+		[class*="frontline-block-"]{
+			flex: 1;
+			background-color: $competency-frontline-block-bg;
+			border: $competency-frontline-block-border;
+			border-radius: .75rem;
+			padding: 2rem 3rem;
+			> .row{
+				display: flex;
+				flex-direction: row;
+				height: 100%;
+			}
+			.flex-img{
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+	.frontline-title{
+		font-size: 1.25em;
+		font-weight: 600;
+		margin-bottom: 2rem;
+	}
+	.frontline-label{ 
+		display: inline-block;
+		border-radius: 2rem;
+		color: #ffffff;
+		font-size: 75%;
+		font-weight: 400;
+		text-transform: uppercase;
+		vertical-align: middle;
+		margin-left: .75rem;
+		padding: .75rem 1.5rem;
+	}
+	.frontline-list{
+		list-style-type: none;
+		padding-left: calc(.7em + .5rem);
+		li{
+			font-size: 1em;
+			margin-bottom: 2.5rem;
+			&::before{
+				content: "";
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: .5em 0 .5em .7em;
+				border-color: transparent transparent transparent #007bff;
+				margin-right: .5rem;
+				margin-left: calc((.7em + .5rem)*-1);
+			}
+		}	
+	}
+	.frontline-block-parents{
+		.frontline-label{
+			background-color: $competency-frontline-parents;
+		}
+		li{
+			&::before{
+				border-color: transparent transparent transparent $competency-frontline-parents;
+			}
+		}	
+	}
+	.frontline-block-teacher{
+		.frontline-label{
+			background-color: $competency-frontline-teacher;
+		}
+		li{
+			&::before{
+				border-color: transparent transparent transparent $competency-frontline-teacher;
+			}
+		}	
+	}
+}
+//我們的堅守
+.competency-section-beliefs {
+	.beliefs-img{
+		width: 75%;
+    margin: 2rem auto;
+	}
+	.beliefs-title{
+		font-size: 1.5em;
+		font-weight: 600;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	.beliefs-text{
+		font-size: 1.1em;
+		line-height: 1.8;
+		text-align: center;
+		> br{
+			display: none;
+			
+		}
+	}
+	.beliefs-info{
+		background-color: $competency-beliefs-info-bg;
+		border-radius: .75rem;
+		color: $competency-beliefs-info-text;
+		font-size: 1.4em;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		padding: 1.5rem 1rem .75rem 1rem;
+		text-align: center;
+		> strong{
+			font-size: 140%;	
+			color: $competency-beliefs-info-strong;
+			margin: 0 .125em;
+			vertical-align: middle;
+			position: relative;
+    	top: -.125em;
+		}
+	}
+}
+//全素養養成路徑
+.competency-section-path {
+	.path-stairs{ 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-left: 3rem;
+		@media screen and (min-width: 992px) {
+		flex-direction: row;	
+		align-items: flex-end;	
+		gap: 0;	
+		}
+		.path-stairs-block{  
+			position: relative;
+			margin-bottom: 6rem + 5rem;
+			&::before{
+				content: "";
+				display: block;
+				width: calc(100% - 3px);
+				height: 6rem;
+				background: -webkit-linear-gradient(rgba(#edd5b7, .5) 0%, transparent 100%);
+				background:      -o-linear-gradient(rgba(#edd5b7, .5) 0%, transparent 100%);
+				background:         linear-gradient(rgba(#edd5b7, .5) 0%, transparent 100%); 
+				position: absolute;
+				top: calc(100% + 2px);
+				left: 3px;
+			}
+			&::after{
+				content: "";
+				display: block;
+				width: 3rem;
+				height: 6rem + 3rem;
+				background: -webkit-linear-gradient(rgba(#edd5b7, .5) 3rem, transparent 95%);
+				background:      -o-linear-gradient(rgba(#edd5b7, .5) 3rem, transparent 95%);
+				background:         linear-gradient(rgba(#edd5b7, .5) 3rem, transparent 95%); 
+				position: absolute;
+				top: calc(100% + 2px - 3rem);
+				left: calc(3px - 3rem);
+				clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% calc(100% - 3rem));
+			}
+			@media screen and (min-width: 992px) {
+			&:not(:first-child)	{
+				&::before{
+					width: calc(100%);	
+					left: 0;
+				}
+				&::after{
+					display: none;
+				}
+			}
+			}
+			.path-stairs-img {
+				margin-bottom: -5.5%;
+			  padding-left: 2rem;
+				padding-right: 3rem;
+				position: relative;
+				z-index: 5;
+			}
+			.path-stairs-panel { 
+				text-align: center;
+				background-color: #fbf2e2;
+				margin-left: 3px;
+				padding-top: 3rem + 1.5rem;
+				padding-bottom: 1.5rem;
+				position: relative;
+				&::before{
+					content: "";
+					display: block;
+					width: calc(100% + 3rem);
+					height: 6rem;
+					background-color: #f4e1c8;
+					clip-path: polygon(0% 3rem, calc(100% - 3rem) 0%, 100% calc(100% - 3rem), 3rem 100%);
+					position: absolute;
+					top: -3rem;
+					right: 0;
+				}
+				&::after{
+					content: "";
+					display: block;
+					width: 3rem;
+					height: 100%;
+					background-color: #edd5b7;
+					clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% calc(100% - 3rem));
+					position: absolute;
+					bottom: 0;
+					left: -3rem;
+				}
+				.path-stairs-content{ 
+					padding-left: 3vw;
+					padding-right: 3vw;	
+				} 
+			}
+		}
+		.path-stairs-block:nth-child(1){
+			.path-stairs-panel {
+				z-index: 4;
+				@media screen and (min-width: 992px) {
+				padding-bottom: 1.5rem + 6rem*0;
+				}
+			}
+		}
+		.path-stairs-block:nth-child(2){
+			.path-stairs-panel {
+				z-index: 3;
+				@media screen and (min-width: 992px) {
+				padding-bottom: 1.5rem + 6rem*1;
+				}
+			}
+		}
+		.path-stairs-block:nth-child(3){
+			.path-stairs-panel {
+				z-index: 2;
+				@media screen and (min-width: 992px) {
+				padding-bottom: 1.5rem + 6rem*2;
+				}
+			}
+		}
+		.path-stairs-block:nth-child(4){
+			.path-stairs-panel {
+				z-index: 1;
+				@media screen and (min-width: 992px) {
+				padding-bottom: 1.5rem + 6rem*3;
+				}
+			}
+		}
+	}
+	.stairs-title{
+		color: $competency-path-title;
+		font-size: 1.1em;
+		margin: 0;
+	}
+	.stairs-subtitle{
+		color: $competency-path-subtitle;
+		font-size: 1em;
+	}
+	.stairs-text{
+		font-size: .8em;
+		margin-bottom: 0;
+	}
+}
+//老師的神隊友
+.competency-section-teacher {
+	.row{
+		display: flex;
+		flex-wrap: wrap; 
+    align-items: stretch;
+	}
+	.teacher-img{
+		padding: 0 2rem 2rem 2rem;
+	}
+	.teacher-list{ 
+		counter-reset: list-counter;
+		list-style: none;
+		padding-left: 0;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: space-around;
+		li{
+			counter-increment: list-counter;
+			margin-top: 3rem;
+    	margin-bottom: 3rem;
+			padding-left: calc(1.5em + 1em);
+			position: relative;
+			&::before {
+				content: counter(list-counter);
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1.5em;
+				height: 1.5em;
+				background-color: $competency-teacher-counter-bg;
+				border-radius: 50%;
+				color: #ffffff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.25em;
+			}
+		}
+	}
+	.teacher-title{
+		font-size: 1.5em;
+		font-weight: 600;
+		margin-top: 0;
+	}
+	.teacher-text{
+		font-size: 1.1em;
+	}
+}
+//家長的好幫手
+.competency-section-parent { 
+	.parent-usage{
+		display: flex;
+		flex-direction: column-reverse;	
+		@media screen and (min-width: 992px) {
+		flex-direction: row;	
+		}
+		.parent-usage-block{ 
+			background-color: $competency-parent-block-bg;	
+			border-radius: .75rem;
+			flex: 1;
+			margin: 3rem 2vw;
+			padding: 0 2rem 2rem 2rem;
+			.usage-title{
+				display: inline-block;
+				border-radius: 1rem;
+				font-weight: 600;
+				font-size: 1.4em;
+				margin: 0;
+				padding: 1rem 3rem;
+				position: relative;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			}
+			[class*="parent-chat"]{ 
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				width: 100%;
+				margin-bottom: 1rem;
+				.chat-avatar{
+					position: relative;
+					z-index: 1;
+					width: calc((1.1em*1.42857143 + 1.5rem*2)*1.2);
+					height: calc((1.1em*1.42857143 + 1.5rem*2)*1.2);
+				}
+				.chat-dialogue{
+					background-color: #ffffff;
+					border: $competency-block-border;
+					border-radius: 2rem;
+					font-size: 1.1em;
+					padding: 1.5rem 2rem;
+					position: relative;
+					width: auto;
+				}
+			}
+			.parent-chat-left{
+				flex-direction: row;
+				.chat-dialogue{
+					border-bottom-left-radius: 0;
+					&::before{//右下三角形
+						content: "";
+						display: block;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 0 2rem 2rem;
+						border-color: transparent transparent #ffffff transparent;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						filter: drop-shadow(0 1px $competency-green) drop-shadow(-1px 0 $competency-green);
+						transform: translateX(-100%);
+					}
+					&::after{ //圓形遮
+						content: "";
+						display: block;
+						width: 2rem;
+						height: 2rem;
+						background-color: $competency-parent-block-bg;
+						position: absolute;
+						bottom: 0;
+						border-bottom: $competency-block-border;
+						left: 0;
+						transform: translateX(-100%);
+						border-radius: 0 0 2rem 0;
+						border-right: $competency-block-border;
+					}
+				}
+			}
+			.parent-chat-right{
+				flex-direction: row-reverse;
+				.chat-dialogue{
+					border-bottom-right-radius: 0;
+					&::before{//左下三角形
+						content: "";
+						display: block;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width:  2rem 0 0 2rem;
+						border-color: transparent transparent transparent #ffffff;
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						filter: drop-shadow(0 1px $competency-green) drop-shadow(1px 0 $competency-green);
+						transform: translateX(100%);
+					}
+					&::after{ //圓形遮
+						content: "";
+						display: block;
+						width: 2rem;
+						height: 2rem;
+						background-color: $competency-parent-block-bg;
+						position: absolute;
+						bottom: 0;
+						border-bottom: $competency-block-border;
+						right: 0;
+						transform: translateX(100%);
+						border-radius: 0 0 0 2rem;
+						border-left: $competency-block-border;
+					}
+				}
+			}
+		}
+		.parent-usage-block.incorrect{
+			.usage-title{
+				background-color: $competency-parent-incorrect-bg;
+				color: $competency-parent-incorrect-title;
+			}
+		}
+		.parent-usage-block.correct{
+			.usage-title{
+				background-color: $competency-parent-correct-bg;
+				color: $competency-parent-correct-title;
+			}
+		}
+	}
+	.parent-step{
+		display: flex;
+		flex-direction: column;
+		background-color: $competency-block-bg;
+		border: $competency-block-border;
+		border-radius: .75rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		@media screen and (min-width: 992px) {
+		flex-direction: row;	
+		}
+		.parent-step-block{ 
+			flex: 1;
+			padding: 3rem 3vw;
+			position: relative;
+			&:not(:last-child){
+				&::after{
+					content: "";
+					display: block;
+					width: 4rem;
+					height: 8.75rem;
+					background-image: url("../images/competency/parent-step-arrow.png");
+					background-repeat: no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(90deg);
+					@media screen and (min-width: 992px) {
+					transform: translate(-50%, -50%) rotate(0deg);
+					top: 50%;
+					left: 100%;
+					}
+				}	
+			}
+		}
+		.step-title{
+			font-size: 1.1em;
+			font-weight: 600;
+		}
+		.step-text{
+			font-size: .9em;	
+		}
+	}
+}
+//全新功能
+.competency-section-feature {
+	.feature-info{
+		display: inline-block;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 1.5em;		
+		background-color: $competency-feature-info-bg;
+		border:$competency-block-border;
+		color: $competency-feature-text;
+		border-radius: .75rem;
+		padding: 1rem;
+		font-weight: 500;
+		margin-top: 2rem;
+		&::before, &::after{
+			content: "\f005";
+			display: inline;
+			font-family: "Font Awesome 5 Free"; 
+			font-weight: 900;
+			color: $competency-feature-star;
+			margin: 1rem;
+		}
+		
+	}
+}
+//終極目標
+.competency-section-goal {
+	.row{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		@media screen and (min-width: 992px) {
+		flex-direction: row;	
+		}
+	}
+	.goal-img{
+	  padding: 0 1rem;
+	}	
+	.goal-block{
+		background-color: $competency-goal-block-bg;
+		border: $competency-goal-block-border;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 2rem;
+		border-radius: .75rem;
+		margin: 1rem 0;
+		padding: 1rem 2rem;
+	}
+	.goal-icon{
+		width: 8rem;
+		height: 8rem;
+	}
+	.goal-title{
+		color: $competency-goal-block-title;
+		font-size: 1.5em;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.goal-subtitle{
+		font-size: 1.5em;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+//全素養教學
+.competency-section-cta {
+	background-image: url("../images/competency/cta-bg.png");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	.competency-title{
+		margin-top: 0;
+		margin-bottom: 1rem;
+		> img{
+			margin: 0 auto;
+		}
+	}
+	.competency-text { 
+		text-align: center;
+		margin-bottom: 6rem;
+		.competency-text-writing{
+			background: none;
+			font-size: 1.5em;
+			@media screen and (min-width: 992px) {
+			font-size: 2em;	
+			}
+			.hidden-xs{
+				display: none;
+				@media screen and (min-width: 992px) {
+				display: block;	
+				}
+			}
+		}
+	}
+	.cta-btn{
+		text-align: center;
+		margin-bottom: 11%;
+		.btn{
+			color: #333333;
+			border-radius: 5rem;
+			font-size: 1.5em;
+			font-weight: 400;
+			margin: 1rem 3rem;
+			min-width: calc(6em + 2rem*2);
+			padding: .5rem 3rem;
+			transition: all .35s ease-out;
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
+		.cta-apply{
+			background-color: $competency-cta-apply;
+			&:hover{
+				background-color: darken($competency-cta-apply, 7%);
+			}
+		}
+		.cta-contact{
+			background-color: $competency-cta-contact;
+			&:hover{
+				background-color: darken($competency-cta-contact, 7%);
+			}
+		}
+	}
+}

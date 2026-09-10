@@ -25,6 +25,9 @@
 .competency-section-beliefs .beliefs-title { font-size: 1.5em; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center; }
 .competency-section-beliefs .beliefs-text { font-size: 1.1em; line-height: 1.8; text-align: center; }
 .competency-section-beliefs .beliefs-text > br { display: none; }
+@media screen and (min-width: 420px) { .competency-section-beliefs .beliefs-text > br { display: block; } }
+@media screen and (min-width: 992px) and (max-width: 1399px) { .competency-section-beliefs .beliefs-text > br { display: none; } }
+@media screen and (min-width: 1400px) { .competency-section-beliefs .beliefs-text > br { display: block; } }
 .competency-section-beliefs .beliefs-info { background-color: #6884a9; border-radius: .75rem; color: #e9ffff; font-size: 1.4em; margin-top: 2rem; margin-bottom: 2rem; padding: 1.5rem 1rem .75rem 1rem; text-align: center; }
 .competency-section-beliefs .beliefs-info > strong { font-size: 140%; color: #fff293; margin: 0 .125em; vertical-align: middle; position: relative; top: -.125em; }
 

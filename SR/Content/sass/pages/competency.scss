@@ -188,7 +188,15 @@ $competency-cta-contact:$competency-green;
 		text-align: center;
 		> br{
 			display: none;
-			
+			@media screen and (min-width: 420px) {
+			display: block;	
+			}
+			@media screen and (min-width: 992px) and (max-width: 1399px) {
+			display: none;	
+			}
+			@media screen and (min-width: 1400px) {
+			display: block;	
+			}
 		}
 	}
 	.beliefs-info{

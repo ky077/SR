@@ -1,3 +1,8 @@
+body main { font-size: 14px; }
+@media screen and (min-width: 768px) { body main { font-size: 16px; } }
+@media screen and (min-width: 1200px) { body main { font-size: 18px; } }
+@media screen and (min-width: 1600px) { body main { font-size: 20px; } }
+
 [class*="competency-section"] { color: #332700; padding-top: 5rem; padding-bottom: 5rem; }
 [class*="competency-section"]:nth-child(odd) { background-color: #edf2f7; }
 @media screen and (min-width: 1400px) { [class*="competency-section"] .container { width: 1320px; } }

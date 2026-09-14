@@ -11,6 +11,8 @@ body main { font-size: 14px; }
 [class*="competency-section"] .competency-text { color: #332700; font-size: 1.5em; margin-bottom: 3rem; }
 [class*="competency-section"] .competency-text .competency-text-writing { background: linear-gradient(to bottom, transparent 0%, transparent 65%, #fff293 65%, #fff293 100%); color: #385d89; font-family: "wenwriting-proportional", sans-serif; font-size: 125%; font-weight: 400; font-style: normal; margin-left: .5rem; }
 
+.index-banner .carousel:has(.carousel-inner > .item:only-child) .carousel-control, .index-banner .carousel:has(.carousel-inner > .item:only-child) .carousel-indicators { display: none; }
+
 .competency-section-frontline .frontline-block { display: flex; flex-direction: column; gap: 1rem; }
 @media screen and (min-width: 1200px) { .competency-section-frontline .frontline-block { flex-direction: row; } }
 .competency-section-frontline .frontline-block [class*="frontline-block-"] { flex: 1; background-color: #fef8e5; border: 1px solid #c0dd9b; border-radius: .75rem; padding: 2rem 3rem; }
@@ -60,9 +62,12 @@ body main { font-size: 14px; }
 @media screen and (min-width: 992px) { .competency-section-path .path-stairs .path-stairs-block:nth-child(3) .path-stairs-panel { padding-bottom: 13.5rem; } }
 .competency-section-path .path-stairs .path-stairs-block:nth-child(4) .path-stairs-panel { z-index: 1; }
 @media screen and (min-width: 992px) { .competency-section-path .path-stairs .path-stairs-block:nth-child(4) .path-stairs-panel { padding-bottom: 19.5rem; } }
-.competency-section-path .path-stairs .animate__animated:nth-child(2) { animation-delay: .5s; }
-.competency-section-path .path-stairs .animate__animated:nth-child(3) { animation-delay: 1s; }
-.competency-section-path .path-stairs .animate__animated:nth-child(4) { animation-delay: 1.5s; }
+.competency-section-path .path-stairs .animate__animated { /*&:nth-child(2){ animation-delay:  .5s;}
+&:nth-child(3){ animation-delay: 1s;}
+&:nth-child(4){ animation-delay: 1.5s;}*/ }
+.competency-section-path .path-stairs .animate__animated:nth-child(2) { animation-duration: 1.5s; }
+.competency-section-path .path-stairs .animate__animated:nth-child(3) { animation-duration: 2s; }
+.competency-section-path .path-stairs .animate__animated:nth-child(4) { animation-duration: 2.5s; }
 .competency-section-path .stairs-title { color: #00672e; font-size: 1.1em; margin: 0; }
 .competency-section-path .stairs-subtitle { color: #8d6e48; font-size: 1em; }
 .competency-section-path .stairs-text { font-size: .8em; margin-bottom: 0; }

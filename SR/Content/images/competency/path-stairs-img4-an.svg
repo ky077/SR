@@ -219,57 +219,321 @@
       opacity: 0;
       stroke-dasharray: 120;
       stroke-dashoffset: 120;
-      animation-name: writeLine;
-      animation-duration: .18s;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
+      animation-duration: 8s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
     }
 
-    #paperText line:nth-child(1) { animation-delay: 0.65s; }
-    #paperText line:nth-child(2) { animation-delay: 0.735s; }
-    #paperText line:nth-child(3) { animation-delay: 0.82s; }
-    #paperText line:nth-child(4) { animation-delay: 0.905s; }
-    #paperText line:nth-child(5) { animation-delay: 0.99s; }
-    #paperText line:nth-child(6) { animation-delay: 1.075s; }
-    #paperText line:nth-child(7) { animation-delay: 1.16s; }
-    #paperText line:nth-child(8) { animation-delay: 1.245s; }
-    #paperText line:nth-child(9) { animation-delay: 1.33s; }
-    #paperText line:nth-child(10) { animation-delay: 1.415s; }
-    #paperText line:nth-child(11) { animation-delay: 1.5s; }
-    #paperText line:nth-child(12) { animation-delay: 1.585s; }
-    #paperText line:nth-child(13) { animation-delay: 1.67s; }
-    #paperText line:nth-child(14) { animation-delay: 1.755s; }
-    #paperText line:nth-child(15) { animation-delay: 1.84s; }
-    #paperText line:nth-child(16) { animation-delay: 1.925s; }
-    #paperText line:nth-child(17) { animation-delay: 2.01s; }
-    #paperText line:nth-child(18) { animation-delay: 2.095s; }
-    #paperText line:nth-child(19) { animation-delay: 2.18s; }
-    #paperText line:nth-child(20) { animation-delay: 2.265s; }
-    #paperText line:nth-child(21) { animation-delay: 2.35s; }
-    #paperText line:nth-child(22) { animation-delay: 2.435s; }
-    #paperText1 line:nth-child(1) { animation-delay: 2.35s; }
-    #paperText1 line:nth-child(2) { animation-delay: 2.435s; }
-    #paperText1 line:nth-child(3) { animation-delay: 2.52s; }
-    #paperText1 line:nth-child(4) { animation-delay: 2.605s; }
-    #paperText1 line:nth-child(5) { animation-delay: 2.69s; }
-    #paperText1 line:nth-child(6) { animation-delay: 2.775s; }
-    #paperText1 line:nth-child(7) { animation-delay: 2.86s; }
-    #paperText1 line:nth-child(8) { animation-delay: 2.945s; }
-    #paperText1 line:nth-child(9) { animation-delay: 3.03s; }
-    #paperText1 line:nth-child(10) { animation-delay: 3.115s; }
-    #paperText1 line:nth-child(11) { animation-delay: 3.2s; }
-    #paperText1 line:nth-child(12) { animation-delay: 3.285s; }
-    #paperText1 line:nth-child(13) { animation-delay: 3.37s; }
-    #paperText1 line:nth-child(14) { animation-delay: 3.455s; }
-    #paperText1 line:nth-child(15) { animation-delay: 3.54s; }
-    #paperText1 line:nth-child(16) { animation-delay: 3.625s; }
-    #paperText1 line:nth-child(17) { animation-delay: 3.71s; }
-    #paperText1 line:nth-child(18) { animation-delay: 3.795s; }
-    #paperText1 line:nth-child(19) { animation-delay: 3.88s; }
-    #paperText1 line:nth-child(20) { animation-delay: 3.965s; }
-    #paperText1 line:nth-child(21) { animation-delay: 4.05s; }
-    #paperText1 line:nth-child(22) { animation-delay: 4.135s; }
+    #paperText line:nth-child(1) { animation-name: writeRear1; }
+    #paperText line:nth-child(2) { animation-name: writeRear2; }
+    #paperText line:nth-child(3) { animation-name: writeRear3; }
+    #paperText line:nth-child(4) { animation-name: writeRear4; }
+    #paperText line:nth-child(5) { animation-name: writeRear5; }
+    #paperText line:nth-child(6) { animation-name: writeRear6; }
+    #paperText line:nth-child(7) { animation-name: writeRear7; }
+    #paperText line:nth-child(8) { animation-name: writeRear8; }
+    #paperText line:nth-child(9) { animation-name: writeRear9; }
+    #paperText line:nth-child(10) { animation-name: writeRear10; }
+    #paperText line:nth-child(11) { animation-name: writeRear11; }
+    #paperText line:nth-child(12) { animation-name: writeRear12; }
+    #paperText line:nth-child(13) { animation-name: writeRear13; }
+    #paperText line:nth-child(14) { animation-name: writeRear14; }
+    #paperText line:nth-child(15) { animation-name: writeRear15; }
+    #paperText line:nth-child(16) { animation-name: writeRear16; }
+    #paperText line:nth-child(17) { animation-name: writeRear17; }
+    #paperText line:nth-child(18) { animation-name: writeRear18; }
+    #paperText line:nth-child(19) { animation-name: writeRear19; }
+    #paperText line:nth-child(20) { animation-name: writeRear20; }
+    #paperText line:nth-child(21) { animation-name: writeRear21; }
+    #paperText line:nth-child(22) { animation-name: writeRear22; }
+    #paperText1 line:nth-child(1) { animation-name: writeFront1; }
+    #paperText1 line:nth-child(2) { animation-name: writeFront2; }
+    #paperText1 line:nth-child(3) { animation-name: writeFront3; }
+    #paperText1 line:nth-child(4) { animation-name: writeFront4; }
+    #paperText1 line:nth-child(5) { animation-name: writeFront5; }
+    #paperText1 line:nth-child(6) { animation-name: writeFront6; }
+    #paperText1 line:nth-child(7) { animation-name: writeFront7; }
+    #paperText1 line:nth-child(8) { animation-name: writeFront8; }
+    #paperText1 line:nth-child(9) { animation-name: writeFront9; }
+    #paperText1 line:nth-child(10) { animation-name: writeFront10; }
+    #paperText1 line:nth-child(11) { animation-name: writeFront11; }
+    #paperText1 line:nth-child(12) { animation-name: writeFront12; }
+    #paperText1 line:nth-child(13) { animation-name: writeFront13; }
+    #paperText1 line:nth-child(14) { animation-name: writeFront14; }
+    #paperText1 line:nth-child(15) { animation-name: writeFront15; }
+    #paperText1 line:nth-child(16) { animation-name: writeFront16; }
+    #paperText1 line:nth-child(17) { animation-name: writeFront17; }
+    #paperText1 line:nth-child(18) { animation-name: writeFront18; }
+    #paperText1 line:nth-child(19) { animation-name: writeFront19; }
+    #paperText1 line:nth-child(20) { animation-name: writeFront20; }
+    #paperText1 line:nth-child(21) { animation-name: writeFront21; }
+    #paperText1 line:nth-child(22) { animation-name: writeFront22; }
 
+    @keyframes writeRear1 {
+      0%, 7.375% { opacity: 0; stroke-dashoffset: -120; }
+      7.5% { opacity: 1; stroke-dashoffset: -120; }
+      10.5%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear2 {
+      0%, 8.438% { opacity: 0; stroke-dashoffset: -120; }
+      8.562% { opacity: 1; stroke-dashoffset: -120; }
+      11.562%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear3 {
+      0%, 9.5% { opacity: 0; stroke-dashoffset: -120; }
+      9.625% { opacity: 1; stroke-dashoffset: -120; }
+      12.625%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear4 {
+      0%, 10.562% { opacity: 0; stroke-dashoffset: -120; }
+      10.688% { opacity: 1; stroke-dashoffset: -120; }
+      13.688%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear5 {
+      0%, 11.625% { opacity: 0; stroke-dashoffset: -120; }
+      11.75% { opacity: 1; stroke-dashoffset: -120; }
+      14.75%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear6 {
+      0%, 12.687% { opacity: 0; stroke-dashoffset: -120; }
+      12.812% { opacity: 1; stroke-dashoffset: -120; }
+      15.812%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear7 {
+      0%, 13.75% { opacity: 0; stroke-dashoffset: -120; }
+      13.875% { opacity: 1; stroke-dashoffset: -120; }
+      16.875%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear8 {
+      0%, 14.812% { opacity: 0; stroke-dashoffset: -120; }
+      14.938% { opacity: 1; stroke-dashoffset: -120; }
+      17.938%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear9 {
+      0%, 15.875% { opacity: 0; stroke-dashoffset: -120; }
+      16% { opacity: 1; stroke-dashoffset: -120; }
+      19%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear10 {
+      0%, 16.938% { opacity: 0; stroke-dashoffset: -120; }
+      17.062% { opacity: 1; stroke-dashoffset: -120; }
+      20.062%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear11 {
+      0%, 18% { opacity: 0; stroke-dashoffset: -120; }
+      18.125% { opacity: 1; stroke-dashoffset: -120; }
+      21.125%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear12 {
+      0%, 19.062% { opacity: 0; stroke-dashoffset: -120; }
+      19.188% { opacity: 1; stroke-dashoffset: -120; }
+      22.188%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear13 {
+      0%, 20.125% { opacity: 0; stroke-dashoffset: -120; }
+      20.25% { opacity: 1; stroke-dashoffset: -120; }
+      23.25%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear14 {
+      0%, 21.188% { opacity: 0; stroke-dashoffset: -120; }
+      21.312% { opacity: 1; stroke-dashoffset: -120; }
+      24.312%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear15 {
+      0%, 22.25% { opacity: 0; stroke-dashoffset: -120; }
+      22.375% { opacity: 1; stroke-dashoffset: -120; }
+      25.375%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear16 {
+      0%, 23.312% { opacity: 0; stroke-dashoffset: -120; }
+      23.438% { opacity: 1; stroke-dashoffset: -120; }
+      26.438%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear17 {
+      0%, 24.375% { opacity: 0; stroke-dashoffset: -120; }
+      24.5% { opacity: 1; stroke-dashoffset: -120; }
+      27.5%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear18 {
+      0%, 25.438% { opacity: 0; stroke-dashoffset: -120; }
+      25.562% { opacity: 1; stroke-dashoffset: -120; }
+      28.562%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear19 {
+      0%, 26.5% { opacity: 0; stroke-dashoffset: -120; }
+      26.625% { opacity: 1; stroke-dashoffset: -120; }
+      29.625%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear20 {
+      0%, 27.562% { opacity: 0; stroke-dashoffset: -120; }
+      27.688% { opacity: 1; stroke-dashoffset: -120; }
+      30.688%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear21 {
+      0%, 28.625% { opacity: 0; stroke-dashoffset: -120; }
+      28.75% { opacity: 1; stroke-dashoffset: -120; }
+      31.75%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeRear22 {
+      0%, 29.688% { opacity: 0; stroke-dashoffset: -120; }
+      29.812% { opacity: 1; stroke-dashoffset: -120; }
+      32.812%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: -120; }
+    }
+    @keyframes writeFront1 {
+      0%, 36.125% { opacity: 0; stroke-dashoffset: 120; }
+      36.25% { opacity: 1; stroke-dashoffset: 120; }
+      39.25%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront2 {
+      0%, 37.188% { opacity: 0; stroke-dashoffset: 120; }
+      37.312% { opacity: 1; stroke-dashoffset: 120; }
+      40.312%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront3 {
+      0%, 38.25% { opacity: 0; stroke-dashoffset: 120; }
+      38.375% { opacity: 1; stroke-dashoffset: 120; }
+      41.375%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront4 {
+      0%, 39.312% { opacity: 0; stroke-dashoffset: 120; }
+      39.438% { opacity: 1; stroke-dashoffset: 120; }
+      42.437%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront5 {
+      0%, 40.375% { opacity: 0; stroke-dashoffset: 120; }
+      40.5% { opacity: 1; stroke-dashoffset: 120; }
+      43.5%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront6 {
+      0%, 41.438% { opacity: 0; stroke-dashoffset: 120; }
+      41.562% { opacity: 1; stroke-dashoffset: 120; }
+      44.563%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront7 {
+      0%, 42.5% { opacity: 0; stroke-dashoffset: 120; }
+      42.625% { opacity: 1; stroke-dashoffset: 120; }
+      45.625%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront8 {
+      0%, 43.563% { opacity: 0; stroke-dashoffset: 120; }
+      43.688% { opacity: 1; stroke-dashoffset: 120; }
+      46.688%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront9 {
+      0%, 44.625% { opacity: 0; stroke-dashoffset: 120; }
+      44.75% { opacity: 1; stroke-dashoffset: 120; }
+      47.75%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront10 {
+      0%, 45.688% { opacity: 0; stroke-dashoffset: 120; }
+      45.812% { opacity: 1; stroke-dashoffset: 120; }
+      48.812%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront11 {
+      0%, 46.75% { opacity: 0; stroke-dashoffset: 120; }
+      46.875% { opacity: 1; stroke-dashoffset: 120; }
+      49.875%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront12 {
+      0%, 47.812% { opacity: 0; stroke-dashoffset: 120; }
+      47.938% { opacity: 1; stroke-dashoffset: 120; }
+      50.938%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront13 {
+      0%, 48.875% { opacity: 0; stroke-dashoffset: 120; }
+      49% { opacity: 1; stroke-dashoffset: 120; }
+      52%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront14 {
+      0%, 49.938% { opacity: 0; stroke-dashoffset: 120; }
+      50.062% { opacity: 1; stroke-dashoffset: 120; }
+      53.062%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront15 {
+      0%, 51% { opacity: 0; stroke-dashoffset: 120; }
+      51.125% { opacity: 1; stroke-dashoffset: 120; }
+      54.125%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront16 {
+      0%, 52.062% { opacity: 0; stroke-dashoffset: 120; }
+      52.188% { opacity: 1; stroke-dashoffset: 120; }
+      55.188%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront17 {
+      0%, 53.125% { opacity: 0; stroke-dashoffset: 120; }
+      53.25% { opacity: 1; stroke-dashoffset: 120; }
+      56.25%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront18 {
+      0%, 54.188% { opacity: 0; stroke-dashoffset: 120; }
+      54.312% { opacity: 1; stroke-dashoffset: 120; }
+      57.312%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront19 {
+      0%, 55.25% { opacity: 0; stroke-dashoffset: 120; }
+      55.375% { opacity: 1; stroke-dashoffset: 120; }
+      58.375%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront20 {
+      0%, 56.312% { opacity: 0; stroke-dashoffset: 120; }
+      56.437% { opacity: 1; stroke-dashoffset: 120; }
+      59.438%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront21 {
+      0%, 57.375% { opacity: 0; stroke-dashoffset: 120; }
+      57.5% { opacity: 1; stroke-dashoffset: 120; }
+      60.5%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
+    @keyframes writeFront22 {
+      0%, 58.438% { opacity: 0; stroke-dashoffset: 120; }
+      58.562% { opacity: 1; stroke-dashoffset: 120; }
+      61.562%, 90% { opacity: 1; stroke-dashoffset: 0; animation-timing-function: steps(1, end); }
+      100% { opacity: 0; stroke-dashoffset: 120; }
+    }
     @keyframes srWalk {
       0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
       25% { transform: translate(1px, -1px) rotate(-1deg); }
@@ -308,7 +572,7 @@
 
     @keyframes paperFloatA {
       0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-      50% { transform: translate(-1px, 1px) rotate(-.6deg); }
+      50% { transform: translate(-1px, 1px) rotate(0deg); }
     }
 
     @keyframes paperFloatB {
@@ -319,12 +583,6 @@
     @keyframes pencilFloat {
       0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
       50% { transform: translate(1px, -1px) rotate(1.6deg); }
-    }
-
-    @keyframes writeLine {
-      0% { opacity: 0; stroke-dashoffset: 120; }
-      25% { opacity: 1; }
-      100% { opacity: 1; stroke-dashoffset: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -370,28 +628,28 @@
         <g id="paper2" data-name="paper">
           <path id="paperBg1" data-name="paperBg" class="st16" d="M225.8,45.5c.5-3.4,3.4-6,6.8-6h74.2c3.1,0,5.5,2.8,5,5.9h0c0,0-6,41.1-6,41.1v-.2c0,0-9.1,61.9-9.1,61.9h-85.9l15-102.7Z"/>
           <g id="paperText1" data-name="paperText">
-            <line class="st10" x1="284.2" y1="50.7" x2="249.8" y2="50.7"/>
-            <line class="st10" x1="261.1" y1="64" x2="230.8" y2="64"/>
-            <line class="st10" x1="293.8" y1="64" x2="265.8" y2="64"/>
-            <line class="st10" x1="245" y1="70.6" x2="230" y2="70.6"/>
-            <line class="st10" x1="300.3" y1="70.6" x2="253.2" y2="70.6"/>
-            <line class="st10" x1="279.6" y1="77.2" x2="229.2" y2="77.2"/>
-            <line class="st10" x1="299.5" y1="77.2" x2="285.8" y2="77.2"/>
-            <line class="st10" x1="298.7" y1="83.9" x2="243.4" y2="83.9"/>
-            <line class="st10" x1="259.5" y1="90.5" x2="227.5" y2="90.5"/>
-            <line class="st10" x1="289" y1="90.5" x2="264.1" y2="90.5"/>
-            <line class="st10" x1="234" y1="97.1" x2="226.7" y2="97.1"/>
-            <line class="st10" x1="297.1" y1="97.1" x2="237.5" y2="97.1"/>
-            <line class="st10" x1="243.5" y1="103.8" x2="225.9" y2="103.8"/>
-            <line class="st10" x1="272.4" y1="103.8" x2="247.8" y2="103.8"/>
-            <line class="st10" x1="296.3" y1="103.8" x2="276.8" y2="103.8"/>
-            <line class="st10" x1="295.5" y1="110.4" x2="240.7" y2="110.4"/>
-            <line class="st10" x1="252.2" y1="117.1" x2="224.3" y2="117.1"/>
-            <line class="st10" x1="289" y1="117.1" x2="257.1" y2="117.1"/>
-            <line class="st10" x1="236.2" y1="123.7" x2="223.5" y2="123.7"/>
-            <line class="st10" x1="273" y1="123.7" x2="239.2" y2="123.7"/>
-            <line class="st10" x1="293.8" y1="123.7" x2="277.8" y2="123.7"/>
-            <line class="st10" x1="279.6" y1="130.3" x2="222.2" y2="130.3"/>
+            <line class="st10" x1="249.8" y1="50.7" x2="284.2" y2="50.7"/>
+            <line class="st10" x1="230.8" y1="64" x2="261.1" y2="64"/>
+            <line class="st10" x1="265.8" y1="64" x2="293.8" y2="64"/>
+            <line class="st10" x1="230" y1="70.6" x2="245" y2="70.6"/>
+            <line class="st10" x1="253.2" y1="70.6" x2="300.3" y2="70.6"/>
+            <line class="st10" x1="229.2" y1="77.2" x2="279.6" y2="77.2"/>
+            <line class="st10" x1="285.8" y1="77.2" x2="299.5" y2="77.2"/>
+            <line class="st10" x1="243.4" y1="83.9" x2="298.7" y2="83.9"/>
+            <line class="st10" x1="227.5" y1="90.5" x2="259.5" y2="90.5"/>
+            <line class="st10" x1="264.1" y1="90.5" x2="289" y2="90.5"/>
+            <line class="st10" x1="226.7" y1="97.1" x2="234" y2="97.1"/>
+            <line class="st10" x1="237.5" y1="97.1" x2="297.1" y2="97.1"/>
+            <line class="st10" x1="225.9" y1="103.8" x2="243.5" y2="103.8"/>
+            <line class="st10" x1="247.8" y1="103.8" x2="272.4" y2="103.8"/>
+            <line class="st10" x1="276.8" y1="103.8" x2="296.3" y2="103.8"/>
+            <line class="st10" x1="240.7" y1="110.4" x2="295.5" y2="110.4"/>
+            <line class="st10" x1="224.3" y1="117.1" x2="252.2" y2="117.1"/>
+            <line class="st10" x1="257.1" y1="117.1" x2="289" y2="117.1"/>
+            <line class="st10" x1="223.5" y1="123.7" x2="236.2" y2="123.7"/>
+            <line class="st10" x1="239.2" y1="123.7" x2="273" y2="123.7"/>
+            <line class="st10" x1="277.8" y1="123.7" x2="293.8" y2="123.7"/>
+            <line class="st10" x1="222.2" y1="130.3" x2="279.6" y2="130.3"/>
           </g>
         </g>
       </g>
@@ -560,3 +818,8 @@
     </g>
   </g>
 </svg>
+
+
+
+
+

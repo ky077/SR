@@ -35,6 +35,10 @@ body main { font-size: 14px; }
 @media screen and (min-width: 1400px) { .competency-section-beliefs .beliefs-text > br { display: block; } }
 .competency-section-beliefs .beliefs-info { background-color: #6884a9; border-radius: .75rem; color: #e9ffff; font-size: 1.4em; margin-top: 2rem; margin-bottom: 2rem; padding: 1.5rem 1rem .75rem 1rem; text-align: center; }
 .competency-section-beliefs .beliefs-info > strong { font-size: 140%; color: #fff293; margin: 0 .125em; vertical-align: middle; position: relative; top: -.125em; }
+.competency-section-beliefs .row .animate__animated:nth-child(1) { animation-delay: .5s; }
+.competency-section-beliefs .row .animate__animated:nth-child(2) { animation-delay: 1s; }
+.competency-section-beliefs .row .animate__animated:nth-child(3) { animation-delay: 1.5s; }
+.competency-section-beliefs .beliefs-info.animate__animated { nimation-delay: 2s; }
 
 .competency-section-path .path-stairs { display: flex; flex-direction: column; align-items: center; padding-left: 3rem; }
 @media screen and (min-width: 992px) { .competency-section-path .path-stairs { flex-direction: row; align-items: flex-end; gap: 0; } }
@@ -56,6 +60,9 @@ body main { font-size: 14px; }
 @media screen and (min-width: 992px) { .competency-section-path .path-stairs .path-stairs-block:nth-child(3) .path-stairs-panel { padding-bottom: 13.5rem; } }
 .competency-section-path .path-stairs .path-stairs-block:nth-child(4) .path-stairs-panel { z-index: 1; }
 @media screen and (min-width: 992px) { .competency-section-path .path-stairs .path-stairs-block:nth-child(4) .path-stairs-panel { padding-bottom: 19.5rem; } }
+.competency-section-path .path-stairs .animate__animated:nth-child(2) { animation-delay: .5s; }
+.competency-section-path .path-stairs .animate__animated:nth-child(3) { animation-delay: 1s; }
+.competency-section-path .path-stairs .animate__animated:nth-child(4) { animation-delay: 1.5s; }
 .competency-section-path .stairs-title { color: #00672e; font-size: 1.1em; margin: 0; }
 .competency-section-path .stairs-subtitle { color: #8d6e48; font-size: 1em; }
 .competency-section-path .stairs-text { font-size: .8em; margin-bottom: 0; }
@@ -92,6 +99,9 @@ body main { font-size: 14px; }
 @media screen and (min-width: 992px) { .competency-section-parent .parent-step .parent-step-block:not(:last-child)::after { transform: translate(-50%, -50%) rotate(0deg); top: 50%; left: 100%; } }
 .competency-section-parent .parent-step .step-title { font-size: 1.1em; font-weight: 600; }
 .competency-section-parent .parent-step .step-text { font-size: .9em; }
+.competency-section-parent .parent-step .animate__animated:nth-child(1) { animation-delay: .5s; }
+.competency-section-parent .parent-step .animate__animated:nth-child(2) { animation-delay: 1s; }
+.competency-section-parent .parent-step .animate__animated:nth-child(3) { animation-delay: 1.5s; }
 
 .competency-section-feature .feature-info { display: inline-block; position: relative; left: 50%; transform: translateX(-50%); font-size: 1.5em; background-color: #fef8e5; border: 1px solid #c0dd9b; color: #9c692d; border-radius: .75rem; padding: 1rem; font-weight: 500; margin-top: 2rem; }
 .competency-section-feature .feature-info::before, .competency-section-feature .feature-info::after { content: "\f005"; display: inline; font-family: "Font Awesome 5 Free"; font-weight: 900; color: #b7cb7d; margin: 1rem; }

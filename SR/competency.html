@@ -277,7 +277,8 @@
       <div class="competency-text wow animate__animated animate__fadeInUp">從「有內容」到「敢表達」<span class="competency-text-writing">四階段循序養成孩子的思考力、表達力與自信。</span>
       </div>
       <div class="path-stairs">
-        <div class="path-stairs-block wow animate__animated animate__fadeInUp">
+        <div class="path-stairs-block wow stair-reveal" data-wow-delay="0s">
+          <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img1-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
             <div class="path-stairs-content">
@@ -286,8 +287,10 @@
               <p class="stairs-text">讀得懂、感興趣，從根源解決「說話沒內容」的問題。</p>
             </div>
           </div>
+          </div>
         </div>
-        <div class="path-stairs-block wow animate__animated animate__fadeInUp">
+        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".2s">
+          <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img2-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
             <div class="path-stairs-content">
@@ -296,8 +299,10 @@
               <p class="stairs-text">與 AI 雙向對話，在安全無壓力的情境下練習開口。</p>
             </div>
           </div>
+          </div>
         </div>
-        <div class="path-stairs-block wow animate__animated animate__fadeInUp">
+        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".4s">
+          <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img3-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
             <div class="path-stairs-content">
@@ -306,8 +311,10 @@
               <p class="stairs-text">透過自然提問與推論，逐步跨越至批判性思考。</p>
             </div>
           </div>
+          </div>
         </div>
-        <div class="path-stairs-block wow animate__animated animate__fadeInUp">
+        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".6s">
+          <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img4-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
             <div class="path-stairs-content">
@@ -315,6 +322,7 @@
               <h4 class="stairs-subtitle">文字轉化</h4>
               <p class="stairs-text">口語論述自然轉化為具個人觀點的高品質作文。</p>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -628,7 +636,9 @@ function setPathContentMinHeight() {
 	
 $(document).ready(function() {
   //MDB	
-  new WOW().init();
+  new WOW({
+		offset: Math.round(window.innerHeight / 2)
+	}).init();
 
   // SVG 進入視窗後重新載入，讓 SVG 內部的 CSS 動效從頭播放
   var svgObserver = new IntersectionObserver(function (entries, observer) {

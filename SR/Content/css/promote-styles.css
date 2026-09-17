@@ -98,7 +98,7 @@ a { text-decoration: none; cursor: pointer; -webkit-transition: all 0.2s ease-in
 .footer-info .footer-info__sitemap > ul { margin: 0; padding: 0; }
 .footer-info .footer-info__sitemap > ul > li { list-style: none; }
 .footer-info .footer-info__sitemap > ul > li > span { font-size: 1.0em; display: inline-block; margin-top: 50px; margin-bottom: 40px; color: #FFF; text-align: left; }
-.footer-info .footer-info__sitemap > ul > li > a { font-size: 0.8em; display: inline-block; margin-top: 50px; margin-bottom: 40px; color: #FFF; text-align: left; position: relative; text-decoration: none; }
+.footer-info .footer-info__sitemap > ul > li > a { display: inline-block; margin-top: 50px; margin-bottom: 40px; color: #FFF; text-align: left; position: relative; text-decoration: none; }
 .footer-info .footer-info__sitemap > ul > li > a:hover, .footer-info .footer-info__sitemap > ul > li > a:focus, .footer-info .footer-info__sitemap > ul > li > a:active { box-shadow: 0 1px #FFF; }
 .footer-info .footer-info__sitemap > ul > li ul { margin: 0; padding: 0; }
 .footer-info .footer-info__sitemap > ul > li ul li { list-style: none; }
@@ -2754,4 +2754,4 @@ html:lang(en-us) .SRcanHelp .SRcanHelp__item .SRcanHelp__item__show .SRcanHelp__
 html:lang(en-us) .SRcanHelp .SRcanHelp__item .SRcanHelp__item__hoverShow h3, html:lang(en-US) .SRcanHelp .SRcanHelp__item .SRcanHelp__item__hoverShow h3 { line-height: 1.4; }
 html:lang(en-us) .index-reading3step .index-reading3step__step1 h3, html:lang(en-US) .index-reading3step .index-reading3step__step1 h3 { white-space: normal; }
 
-/*20251201*/
+/*20260917*/

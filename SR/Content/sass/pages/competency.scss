@@ -59,6 +59,7 @@ body main{
 	@media screen and (min-width: 1600px) {
 	font-size: 20px;    
 	}
+	overflow-y: hidden;
 }
 
 [class*="competency-section"]{
@@ -243,18 +244,29 @@ body main{
 	//animate.style 控制
 	.row{
 		.animate__animated{
-			&:nth-child(1){ animation-delay:  .5s;}
-			&:nth-child(2){ animation-delay: 1s;}
-			&:nth-child(3){ animation-delay: 1.5s;}
+			&:nth-child(2){ animation-delay: .5s;}
+			&:nth-child(3){ animation-delay: 1s;}
 		}
 	}
-	.beliefs-info.animate__animated{
-		nimation-delay: 2s;
+	/*.beliefs-info.animate__animated{
+		animation-delay: 1.5s;
+	}*/
+}
+//全素養養成路徑：從每個階梯自身的底部平面向上長出
+@keyframes stairGrow {
+	from {
+		opacity: 0;
+		transform: scaleY(0);
+		transform-origin: bottom center;
+	}
+	to {
+		opacity: 1;
+		transform: scaleY(1);
+		transform-origin: bottom center;
 	}
 }
-//全素養養成路徑
 .competency-section-path {
-	.path-stairs{ 
+	.path-stairs{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -264,10 +276,23 @@ body main{
 		align-items: flex-end;	
 		gap: 0;	
 		}
-		.path-stairs-block{  
+		.path-stairs-block{
 			position: relative;
 			margin-bottom: 6rem + 5rem;
-			&::before{
+			&:nth-child(1) { z-index: 4; }
+			&:nth-child(2) { z-index: 3; }
+			&:nth-child(3) { z-index: 2; }
+			&:nth-child(4) { z-index: 1; }
+			.path-stairs-reveal {
+				position: relative;
+				opacity: 0;
+				transform: scaleY(0);
+				transform-origin: bottom center;
+			}
+			&.animated .path-stairs-reveal {
+				animation: stairGrow 1.5s cubic-bezier(.22, .61, .36, 1) forwards;
+			}
+			.path-stairs-reveal::before{
 				content: "";
 				display: block;
 				width: calc(100% - 3px);
@@ -279,7 +304,7 @@ body main{
 				top: calc(100% + 2px);
 				left: 3px;
 			}
-			&::after{
+			.path-stairs-reveal::after{
 				content: "";
 				display: block;
 				width: 3rem;
@@ -294,11 +319,11 @@ body main{
 			}
 			@media screen and (min-width: 992px) {
 			&:not(:first-child)	{
-				&::before{
+				.path-stairs-reveal::before{
 					width: calc(100%);	
 					left: 0;
 				}
-				&::after{
+				.path-stairs-reveal::after{
 					display: none;
 				}
 			}
@@ -376,15 +401,6 @@ body main{
 				padding-bottom: 1.5rem + 6rem*3;
 				}
 			}
-		}
-		//animate.style 控制
-		.animate__animated{
-			/*&:nth-child(2){ animation-delay:  .5s;}
-			&:nth-child(3){ animation-delay: 1s;}
-			&:nth-child(4){ animation-delay: 1.5s;}*/
-			&:nth-child(2){ animation-duration: 1.5s;}
-			&:nth-child(3){ animation-duration: 2s;}
-			&:nth-child(4){ animation-duration: 2.5s;}
 		}
 	}
 	.stairs-title{

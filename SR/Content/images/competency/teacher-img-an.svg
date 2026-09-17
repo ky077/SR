@@ -316,21 +316,22 @@
       .st74 {
         fill: #42559c;
       }
-      /* teacher-img floating symbols */
+    /* teacher-img background symbols: reveal in sequence, then float and replay */
     #symbol > g, #symbol > path {
       transform-box: fill-box;
       transform-origin: center;
+      opacity: 0;
       will-change: transform, opacity;
     }
-    #symbol > #gear { animation: symbolGear 7.2s ease-in-out -1.8s infinite; }
-    #symbol > #share { animation: symbolShare 8.6s ease-in-out -2.1s infinite; }
-    #symbol > #eye { animation: symbolEye 6.8s ease-in-out -1.4s infinite; }
-    #symbol > #A_x2B__x2B_ { animation: symbolA 9.4s ease-in-out -4.2s infinite; }
-    #symbol > #Gene { animation: symbolGene 8.1s ease-in-out -3.2s infinite; }
-    #symbol > #chart { animation: symbolChart 7.7s ease-in-out -1.9s infinite; }
-    #symbol > #Atom { animation: symbolAtom 10.2s ease-in-out -5.1s infinite; }
-    #symbol > #cloud { animation: symbolCloud 8.9s ease-in-out -3.8s infinite; }
-    #symbol > #plus1 { animation: symbolPlus1 6.6s ease-in-out -2.6s infinite; }
+    #symbol > #gear { --float-x: 3px; --float-y: -6px; --float-r: 2deg; animation: symbolRevealFloat 10s ease-in-out 0s both infinite; }
+    #symbol > #eye { --float-x: -5px; --float-y: -3px; --float-r: -3deg; animation: symbolRevealFloat 10s ease-in-out .4s both infinite; }
+    #symbol > #A_x2B__x2B_ { --float-x: 4px; --float-y: 5px; --float-r: 3deg; animation: symbolRevealFloat 10s ease-in-out .8s both infinite; }
+    #symbol > #share { --float-x: -6px; --float-y: 4px; --float-r: 2deg; animation: symbolRevealFloat 10s ease-in-out 1.2s both infinite; }
+    #symbol > #Gene { --float-x: 5px; --float-y: -5px; --float-r: -4deg; animation: symbolRevealFloat 10s ease-in-out 1.6s both infinite; }
+    #symbol > #chart { --float-x: -4px; --float-y: -4px; --float-r: -2deg; animation: symbolRevealFloat 10s ease-in-out 2s both infinite; }
+    #symbol > #Atom { --float-x: 6px; --float-y: 2px; --float-r: 4deg; animation: symbolRevealFloat 10s ease-in-out 2.4s both infinite; }
+    #symbol > #cloud { --float-x: -3px; --float-y: 6px; --float-r: -2deg; animation: symbolRevealFloat 10s ease-in-out 2.8s both infinite; }
+    /*#symbol > #plus1 { animation: symbolPlus1 6.6s ease-in-out -2.6s infinite; }
     #symbol > #plus2 { animation: symbolPlus2 8.3s ease-in-out -5.4s infinite; }
     #symbol > #plus3 { animation: symbolPlus3 7.1s ease-in-out -1.1s infinite; }
     #symbol > #plus4 { animation: symbolPlus4 9.1s ease-in-out -4.7s infinite; }
@@ -339,7 +340,8 @@
     #symbol > #plus7 { animation: symbolPlus7 7.5s ease-in-out -.8s infinite; }
     #symbol > #plus8 { animation: symbolPlus8 9.6s ease-in-out -2.9s infinite; }
     #symbol > #plus9 { animation: symbolPlus9 8s ease-in-out -4s infinite; }
-    #symbol > #plus10 { animation: symbolPlus10 7s ease-in-out -1.7s infinite; }
+    #symbol > #plus10 { animation: symbolPlus10 7s ease-in-out -1.7s infinite; }*/
+    #symbol > [id^="plus"] { animation: none; opacity: 1; }
 
     #_x30_2-Right-arm > #UpperArm {
       transform-box: view-box;
@@ -348,37 +350,15 @@
       will-change: transform;
     }
 
-    @keyframes symbolGear {
-      0%, 100% { transform: translate(0, 0) rotate(-3deg); opacity: .72; }
-      50% { transform: translate(2px, -7px) rotate(5deg); opacity: 1; }
-    }
-    @keyframes symbolShare {
-      0%, 100% { transform: translate(0, 0) rotate(-2deg); opacity: .68; }
-      50% { transform: translate(-7px, 5px) rotate(4deg); opacity: 1; }
-    }
-    @keyframes symbolEye {
-      0%, 100% { transform: translate(0, 0) rotate(2deg); opacity: .7; }
-      50% { transform: translate(5px, -5px) rotate(-3deg); opacity: 1; }
-    }
-    @keyframes symbolA {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: .66; }
-      50% { transform: translate(-4px, 7px) rotate(3deg); opacity: 1; }
-    }
-    @keyframes symbolGene {
-      0%, 100% { transform: translate(0, 0) rotate(-2deg); opacity: .7; }
-      50% { transform: translate(5px, -6px) rotate(4deg); opacity: 1; }
-    }
-    @keyframes symbolChart {
-      0%, 100% { transform: translate(0, 0) rotate(1deg); opacity: .65; }
-      50% { transform: translate(-5px, 4px) rotate(-3deg); opacity: 1; }
-    }
-    @keyframes symbolAtom {
-      0%, 100% { transform: translate(0, 0) rotate(-4deg); opacity: .7; }
-      50% { transform: translate(6px, -4px) rotate(4deg); opacity: 1; }
-    }
-    @keyframes symbolCloud {
-      0%, 100% { transform: translate(0, 0) rotate(1deg); opacity: .66; }
-      50% { transform: translate(-6px, 5px) rotate(-2deg); opacity: 1; }
+    @keyframes symbolRevealFloat {
+      0%{ transform: translate(0, 0) rotate(0deg); opacity: 0; }
+			4%{ transform: translate(0, 0) rotate(0deg); opacity: .9; }
+      17% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      35% { transform: translate(var(--float-x), var(--float-y)) rotate(var(--float-r)); opacity: 1; }
+      58% { transform: translate(calc(var(--float-x) * -0.6), calc(var(--float-y) * -0.5)) rotate(calc(var(--float-r) * -1)); opacity: 1; }
+      82% { transform: translate(calc(var(--float-x) * 0.8), calc(var(--float-y) * 0.8)) rotate(var(--float-r)); opacity: .9; }
+      90% { transform: translate(0, 0) rotate(0deg); opacity: .85; }
+      100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
     }
     @keyframes symbolPlus1 { 0%,100% { transform: translate(0,0) rotate(0deg); opacity:.62; } 50% { transform: translate(-5px,6px) rotate(8deg); opacity:1; } }
     @keyframes symbolPlus2 { 0%,100% { transform: translate(0,0) rotate(-5deg); opacity:.65; } 50% { transform: translate(6px,-4px) rotate(6deg); opacity:1; } }

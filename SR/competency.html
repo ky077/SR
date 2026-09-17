@@ -276,8 +276,8 @@
       <h2 class="competency-title wow animate__animated animate__fadeInUp">全素養養成路徑</h2>
       <div class="competency-text wow animate__animated animate__fadeInUp">從「有內容」到「敢表達」<span class="competency-text-writing">四階段循序養成孩子的思考力、表達力與自信。</span>
       </div>
-      <div class="path-stairs">
-        <div class="path-stairs-block wow stair-reveal" data-wow-delay="0s">
+      <div class="path-stairs wow stair-reveal">
+        <div class="path-stairs-block">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img1-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -289,7 +289,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".2s">
+        <div class="path-stairs-block">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img2-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -301,7 +301,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".4s">
+        <div class="path-stairs-block">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img3-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -313,7 +313,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block wow stair-reveal" data-wow-delay=".6s">
+        <div class="path-stairs-block">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img4-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -637,7 +637,7 @@ function setPathContentMinHeight() {
 $(document).ready(function() {
   //MDB	
   new WOW({
-		offset: Math.round(window.innerHeight / 2)
+		offset: Math.round(window.innerHeight / 4)
 	}).init();
 
   // SVG 進入視窗後重新載入，讓 SVG 內部的 CSS 動效從頭播放

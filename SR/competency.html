@@ -246,19 +246,19 @@
       <div class="competency-text wow animate__animated animate__fadeInUp">來自臺師大團隊的科學專業<span class="competency-text-writing">以研究、數據與標準，打造適性教育系統。</span>
       </div>
       <div class="row">
-        <div class="col-md-4 wow animate__animated animate__fadeInUp">
+        <div class="col-xs-12 col-md-4 wow animate__animated animate__fadeInUp">
           <div class="beliefs-img"><img src="Content/images/competency/beliefs-img1.png" class="img-responsive center-block" alt=""/></div>
           <h3 class="beliefs-title">專家研發</h3>
           <p class="beliefs-text">結合教育學、認知心理學與 AI 大數據，<br>
             打造科學實證的學習發展環境。</p>
         </div>
-        <div class="col-md-4 wow animate__animated animate__fadeInUp">
+        <div class="col-xs-12 col-md-4 wow animate__animated animate__fadeInUp">
           <div class="beliefs-img"><img src="Content/images/competency/beliefs-img2.png" class="img-responsive center-block" alt=""/></div>
           <h3 class="beliefs-title">緊扣108課綱</h3>
           <p class="beliefs-text">緊扣108課綱與各學習階段核心，<br>
             全面落實素養導向的適性教學。</p>
         </div>
-        <div class="col-md-4 wow animate__animated animate__fadeInUp">
+        <div class="col-xs-12 col-md-4 wow animate__animated animate__fadeInUp">
           <div class="beliefs-img"><img src="Content/images/competency/beliefs-img3.png" class="img-responsive center-block" alt=""/></div>
           <h3 class="beliefs-title">精準適性</h3>
           <p class="beliefs-text">DACC中文閱讀能力診斷 × SR圖書分級<br>
@@ -276,8 +276,8 @@
       <h2 class="competency-title wow animate__animated animate__fadeInUp">全素養養成路徑</h2>
       <div class="competency-text wow animate__animated animate__fadeInUp">從「有內容」到「敢表達」<span class="competency-text-writing">四階段循序養成孩子的思考力、表達力與自信。</span>
       </div>
-      <div class="path-stairs wow stair-reveal">
-        <div class="path-stairs-block">
+      <div class="path-stairs stair-trigger-desktop">
+        <div class="path-stairs-block stair-trigger-mobile">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img1-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -289,7 +289,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block">
+        <div class="path-stairs-block stair-trigger-mobile">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img2-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -301,7 +301,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block">
+        <div class="path-stairs-block stair-trigger-mobile">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img3-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -313,7 +313,7 @@
           </div>
           </div>
         </div>
-        <div class="path-stairs-block">
+        <div class="path-stairs-block stair-trigger-mobile">
           <div class="path-stairs-reveal">
           <div class="path-stairs-img scroll-svg-animation"><img src="Content/images/competency/path-stairs-img4-an.svg" class="img-responsive" alt=""/></div>
           <div class="path-stairs-panel">
@@ -337,10 +337,10 @@
       <div class="competency-text wow animate__animated animate__fadeInUp">最專業的 AI 語文教學助理<span class="competency-text-writing">透過 AI 精準的認知鷹架，與老師攜手深化教學，落實真正「因材施教」。</span>
       </div>
       <div class="row">
-        <div class="col-md-7 wow animate__animated animate__fadeIn">
+        <div class="col-xs-12 col-md-7 wow animate__animated animate__fadeIn">
           <div class="teacher-img scroll-svg-animation"><img src="Content/images/competency/teacher-img-an.svg" class="img-responsive" alt=""/></div>
         </div>
-        <div class="col-md-5">
+        <div class="col-xs-12 col-md-5">
           <ol class="teacher-list">
             <li class=" wow animate__animated animate__fadeInRight">
               <h3 class="teacher-title">完美銜接</h3>
@@ -432,10 +432,10 @@
       <div class="competency-text wow animate__animated animate__fadeInUp">培養孩子受用一生的溝通表達力<span class="competency-text-writing">從扎根到結果，成為自信的未來領導者。</span>
       </div>
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-xs-12 col-md-5">
           <div class="goal-img wow animate__animated animate__fadeIn scroll-svg-animation"><img src="Content/images/competency/goal-img-an.svg" class="img-responsive" alt=""/></div>
         </div>
-        <div class="col-md-7">
+        <div class="col-xs-12 col-md-7">
           <div class="goal-block wow animate__animated animate__fadeInRight">
             <div class="goal-icon"><img src="Content/images/competency/goal-icon1.png" class="img-responsive" alt=""/></div>
             <div class="goal-content">
@@ -636,8 +636,15 @@ function setPathContentMinHeight() {
 	
 $(document).ready(function() {
   //MDB	
+  // 小螢幕：各階梯個別觸發；大螢幕：整組階梯統一觸發
+  if (window.matchMedia('(min-width: 992px)').matches) {
+    $('.stair-trigger-desktop').addClass('wow stair-reveal');
+  } else {
+    $('.stair-trigger-mobile').addClass('wow stair-reveal');
+  }
+
   new WOW({
-		offset: Math.round(window.innerHeight / 4)
+		offset: Math.round(window.innerHeight / 2)
 	}).init();
 
   // SVG 進入視窗後重新載入，讓 SVG 內部的 CSS 動效從頭播放

@@ -89,7 +89,7 @@ body main { font-size: 14px; overflow-y: hidden; }
 .competency-section-teacher .teacher-title { font-size: 1.5em; font-weight: 600; margin-top: 0; }
 .competency-section-teacher .teacher-text { font-size: 1.1em; }
 
-.competency-section-parent .parent-usage { display: flex; flex-direction: column-reverse; }
+.competency-section-parent .parent-usage { display: flex; flex-direction: column; }
 @media screen and (min-width: 992px) { .competency-section-parent .parent-usage { flex-direction: row; } }
 .competency-section-parent .parent-usage .parent-usage-block { background-color: #ececec; border-radius: .75rem; flex: 1; margin: 3rem 2vw; padding: 0 2rem 2rem 2rem; }
 .competency-section-parent .parent-usage .parent-usage-block .usage-title { display: inline-block; border-radius: 1rem; font-weight: 600; font-size: 1.4em; margin: 0; padding: 1rem 3rem; position: relative; left: 50%; transform: translate(-50%, -50%); }

@@ -108,6 +108,7 @@ body main { font-size: 14px; }
 .competency-section-parent .parent-step .animate__animated:nth-child(2) { animation-delay: 1s; }
 .competency-section-parent .parent-step .animate__animated:nth-child(3) { animation-delay: 1.5s; }
 
+.competency-section-feature .feature-img { max-width: 75%; margin: 0 auto; }
 .competency-section-feature .feature-info { display: inline-block; position: relative; left: 50%; transform: translateX(-50%); font-size: 1.5em; background-color: #fef8e5; border: 1px solid #c0dd9b; color: #9c692d; border-radius: .75rem; padding: 1rem; font-weight: 500; margin-top: 2rem; }
 .competency-section-feature .feature-info::before, .competency-section-feature .feature-info::after { content: "\f005"; display: inline; font-family: "Font Awesome 5 Free"; font-weight: 900; color: #b7cb7d; margin: 1rem; }
 

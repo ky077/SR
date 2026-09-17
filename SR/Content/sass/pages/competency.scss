@@ -633,6 +633,10 @@ body main{
 }
 //全新功能
 .competency-section-feature {
+	.feature-img{
+		max-width: 9/12*100%;
+		margin: 0 auto;
+	}
 	.feature-info{
 		display: inline-block;
 		position: relative;

@@ -81,7 +81,7 @@ body main { font-size: 14px; overflow-y: hidden; }
 .competency-section-path .stairs-subtitle { color: #8d6e48; font-size: 1em; }
 .competency-section-path .stairs-text { font-size: .8em; margin-bottom: 0; }
 
-.competency-section-teacher .row { display: flex; flex-wrap: wrap; align-items: stretch; }
+.competency-section-teacher .row { display: flex; flex-wrap: wrap; align-items: center; }
 .competency-section-teacher .teacher-img { padding: 0 2rem 2rem 2rem; }
 .competency-section-teacher .teacher-list { counter-reset: list-counter; list-style: none; padding-left: 0; display: flex; flex-direction: column; height: 100%; justify-content: space-around; }
 .competency-section-teacher .teacher-list li { counter-increment: list-counter; margin-top: 3rem; margin-bottom: 3rem; padding-left: calc(1.5em + 1em); position: relative; }
@@ -117,7 +117,8 @@ body main { font-size: 14px; overflow-y: hidden; }
 .competency-section-parent .parent-step .animate__animated:nth-child(2) { animation-delay: 1s; }
 .competency-section-parent .parent-step .animate__animated:nth-child(3) { animation-delay: 1.5s; }
 
-.competency-section-feature .feature-img { max-width: 75%; margin: 0 auto; }
+.competency-section-feature .feature-img { margin: 0 auto; }
+@media screen and (min-width: 992px) { .competency-section-feature .feature-img { max-width: 75%; } }
 .competency-section-feature .feature-info { display: inline-block; position: relative; left: 50%; transform: translateX(-50%); font-size: 1.5em; background-color: #fef8e5; border: 1px solid #c0dd9b; color: #9c692d; border-radius: .75rem; padding: 1rem; font-weight: 500; margin-top: 2rem; }
 .competency-section-feature .feature-info::before, .competency-section-feature .feature-info::after { content: "\f005"; display: inline; font-family: "Font Awesome 5 Free"; font-weight: 900; color: #b7cb7d; margin: 1rem; }
 

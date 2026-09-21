@@ -439,7 +439,7 @@ body main{
 	.row{
 		display: flex;
 		flex-wrap: wrap; 
-    align-items: stretch;
+    align-items: center;
 	}
 	.teacher-img{
 		padding: 0 2rem 2rem 2rem;
@@ -667,8 +667,10 @@ body main{
 //全新功能
 .competency-section-feature {
 	.feature-img{
-		max-width: 9/12*100%;
 		margin: 0 auto;
+		@media screen and (min-width: 992px) {
+		max-width: 9/12*100%;	
+		}
 	}
 	.feature-info{
 		display: inline-block;

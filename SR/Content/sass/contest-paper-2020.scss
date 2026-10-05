@@ -205,6 +205,56 @@ label{
 /* ******* ******* ******* ******* ******* ******* ******* */
 /* ******* ******* ******* ******* ******* ******* ******* */
 /*1*/
+.arrowBar{ 
+		height:34px;
+		margin-top:5px;
+		margin-bottom:5px;
+		position:relative;
+		overflow:hidden;
+		background-image:url(../images/contest-paper-2020/tab1/arrowBar-gray.png) !important;
+		background-repeat:no-repeat !important;
+		background-size:100% 100% !important;
+		.arrowBar-color{ 
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:1;
+
+			> img{
+				display: block;
+				width:100%;
+				height:100%;
+			}
+		}
+		.arrowBar-gray{ 
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:2;
+			> img{
+				display: block;
+				width:100%;
+				height:100%;
+			}
+		}
+		.arrowBar-cover{
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:3;
+			> img{
+				display: block;
+				width:100%;
+				height:100%;
+			}
+		}
+	}
 .section-block{
 	background-color:#FFF !important;
 	border-left:2px solid #efefef !important;
@@ -241,50 +291,6 @@ label{
 		}
 		.arrowBar{ 
 			height:34px;
-			margin-top:5px;
-			margin-bottom:5px;
-			position:relative;
-			overflow:hidden;
-			background-image:url(../images/contest-paper-2020/tab1/arrowBar-gray.png) !important;
-			background-repeat:no-repeat !important;
-			background-size:100% 34px !important;
-			.arrowBar-color{ 
-				width:100%;
-				height:34px;
-				position:absolute;
-				top:0;
-				left:0;
-				z-index:1;
-				
-				> img{
-					width:100%;
-					height:34px;
-				}
-			}
-			.arrowBar-gray{ 
-				width:100%;
-				height:34px;
-				position:absolute;
-				top:0;
-				left:0;
-				z-index:2;
-				> img{
-					width:100%;
-					height:34px;
-				}
-			}
-			.arrowBar-cover{
-				width:100%;
-				height:34px;
-				position:absolute;
-				top:0;
-				left:0;
-				z-index:3;
-				> img{
-					width:100%;
-					height:34px;
-				}
-			}
 		}
 		.text{
 			height:1.2em * 2;
@@ -440,6 +446,25 @@ div[data-toggle="tooltip"]:hover{
 		text-align:left;
 	}
 }
+.tooltip.mission-tooltip {
+	opacity: 1;
+	filter: drop-shadow(0 .125em .25em rgba(0,0,0, .25));
+	.tooltip-arrow{
+		top: 50%;
+    left: 0;
+    margin-top: -8px;
+    border-width: 8px 10px 8px 0;
+		border-right-color: #fff;
+	}
+	.tooltip-inner {
+		max-width: none;
+		white-space: nowrap;
+		background-color: #fff;
+		color:#333;
+		border-radius: 2em;
+		font-weight: 600;
+	}
+}
 
 
 .section-fiveSkills{
@@ -571,6 +596,92 @@ div[data-toggle="tooltip"]:hover{
 			background-image: none !important;
 			height:0 !important;
 			visibility:hidden !important;
+		}
+	}
+}
+
+//2026
+.section-block-mission{
+	padding-left: 0;
+	padding-right: 0;
+	.mission-title{
+		background-color:#efefef;
+		font-size: 24px;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		[class*="star"]{
+			background-color: #0068b7;
+			color: #fff;
+			border-radius: 100%;
+			font-size: 14px;
+			letter-spacing: 0;
+			padding: 2px;
+			margin-right: 8px;
+			vertical-align: middle;
+		}
+	}
+	.mission-panel{
+		margin-top: 15px;
+		text-align: center;
+		.mission-header{
+			display: flex;
+			flex-direction: row;
+			justify-content:space-between;
+		}
+		.arrowBar{ 
+			height:20px;
+			.arrowBar-color{
+				> img {
+					display: none;
+				}	
+			}
+		}
+		[class*="mission-btn"]{
+			border: none;
+			background-color: #ee8919;
+			border-radius: 2em;
+			line-height: 1;
+			padding: .5em;
+			margin-top: 10px;
+		}
+		.mission-btn-done{
+			color: #fff;
+		}
+	}
+	
+	//顏色
+	.mission-panel{
+		&.book{
+			.arrowBar .arrowBar-color,
+			[class*="mission-btn"]{
+				background-color: #ee8919;
+			} 
+		}
+		&.article{
+			.arrowBar .arrowBar-color,
+			[class*="mission-btn"]{
+				background-color: #00abce;
+			} 
+		}
+		&.aibadge{
+			.arrowBar .arrowBar-color,
+			[class*="mission-btn"]{
+				background-color: #e56287;
+			} 
+		}
+		&.aibook{
+			.arrowBar .arrowBar-color,
+			[class*="mission-btn"]{
+				background-color: #96bb1e;
+			} 
+		}
+		&.storytelling{
+			.arrowBar .arrowBar-color,
+			[class*="mission-btn"]{
+				background-color: #9b7cb6;
+			} 
 		}
 	}
 }

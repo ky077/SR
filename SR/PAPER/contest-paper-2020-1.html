@@ -120,7 +120,7 @@
               <div class="arrowBar-color wow fadeInLeft">
                 <img src="../Content/images/contest-paper-2020/tab1/arrowBar-overall.png">
               </div>
-              <div class="arrowBar-gray" style="left:calc(10/20*100%);">
+              <div class="arrowBar-gray" style="left:calc(1/6*100%);">
                 <img src="../Content/images/contest-paper-2020/tab1/arrowBar-gray.png">
               </div>
               <div class="arrowBar-cover">
@@ -487,14 +487,14 @@ $(document).ready(function() {
 <script>
 $(function () {
 	//加分任務 tooltip
-	var missionTemplate =
-    '<div class="tooltip mission-tooltip" role="tooltip">' +
+	var nowrapTemplate =
+    '<div class="tooltip tooltip-nowrap" role="tooltip">' +
       '<div class="tooltip-arrow"></div>' +
       '<div class="tooltip-inner"></div>' +
     '</div>';
 	
   $('.mission-title-tooltip').tooltip({
-    template: missionTemplate
+    template: nowrapTemplate
   });
 	
 	//閱讀力 tooltip

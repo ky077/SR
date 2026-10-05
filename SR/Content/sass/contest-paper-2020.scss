@@ -446,23 +446,10 @@ div[data-toggle="tooltip"]:hover{
 		text-align:left;
 	}
 }
-.tooltip.mission-tooltip {
-	opacity: 1;
-	filter: drop-shadow(0 .125em .25em rgba(0,0,0, .25));
-	.tooltip-arrow{
-		top: 50%;
-    left: 0;
-    margin-top: -8px;
-    border-width: 8px 10px 8px 0;
-		border-right-color: #fff;
-	}
+.tooltip-nowrap {
 	.tooltip-inner {
 		max-width: none;
 		white-space: nowrap;
-		background-color: #fff;
-		color:#333;
-		border-radius: 2em;
-		font-weight: 600;
 	}
 }
 

@@ -600,7 +600,7 @@ div[data-toggle="tooltip"]:hover{
 	padding-left: 0;
 	padding-right: 0;
 	.mission-title{
-		background-color:#efefef;
+		background-color:#efefef !important;
 		font-size: 24px;
 		margin-top: 0;
 		margin-left: -15px;
@@ -608,8 +608,8 @@ div[data-toggle="tooltip"]:hover{
 		padding-top: 10px;
 		padding-bottom: 10px;
 		[class*="star"]{
-			background-color: #0068b7;
-			color: #fff;
+			background-color: #0068b7 !important;
+			color: #fff !important;
 			border-radius: 100%;
 			font-size: 14px;
 			letter-spacing: 0;
@@ -640,14 +640,14 @@ div[data-toggle="tooltip"]:hover{
 		}
 		[class*="mission-btn"]{
 			border: none;
-			background-color: #ee8919;
+			background-color: #ee8919 !important;
 			border-radius: 2em;
 			line-height: 1;
 			padding: .5em;
 			margin-top: 10px;
 		}
 		.mission-btn-done{
-			color: #fff;
+			color: #fff !important;
 		}
 	}
 	

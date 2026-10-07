@@ -444,7 +444,7 @@ label{
 	}
 }
 
-div[data-toggle="tooltip"]:hover{
+[data-toggle="tooltip"]:hover{
 	cursor:pointer;
 }
 .tooltip{
@@ -656,31 +656,31 @@ div[data-toggle="tooltip"]:hover{
 		&.book{
 			.arrowBar .arrowBar-color,
 			[class*="mission-btn"]{
-				background-color: #ee8919;
+				background-color: #ee8919 !important;
 			} 
 		}
 		&.article{
 			.arrowBar .arrowBar-color,
 			[class*="mission-btn"]{
-				background-color: #00abce;
+				background-color: #00abce !important;
 			} 
 		}
 		&.aibadge{
 			.arrowBar .arrowBar-color,
 			[class*="mission-btn"]{
-				background-color: #e56287;
+				background-color: #e56287 !important;
 			} 
 		}
 		&.aibook{
 			.arrowBar .arrowBar-color,
 			[class*="mission-btn"]{
-				background-color: #96bb1e;
+				background-color: #96bb1e !important;
 			} 
 		}
 		&.storytelling{
 			.arrowBar .arrowBar-color,
 			[class*="mission-btn"]{
-				background-color: #9b7cb6;
+				background-color: #9b7cb6 !important;
 			} 
 		}
 	}

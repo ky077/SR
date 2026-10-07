@@ -94,7 +94,7 @@ label { font-weight: normal; }
 .fa.fa-question-circle-o { font-size: 16px; position: absolute; top: -8px; right: -16px; }
 @media print { .fa.fa-question-circle-o { display: none; } }
 
-div[data-toggle="tooltip"]:hover { cursor: pointer; }
+[data-toggle="tooltip"]:hover { cursor: pointer; }
 
 .tooltip { font-size: 16px; }
 .tooltip .tooltip-inner { max-width: 200px; text-align: left; }
@@ -138,11 +138,11 @@ div[data-toggle="tooltip"]:hover { cursor: pointer; }
 .section-block-mission .mission-panel .arrowBar .arrowBar-color > img { display: none; }
 .section-block-mission .mission-panel [class*="mission-btn"] { border: none; background-color: #ee8919 !important; border-radius: 2em; line-height: 1; padding: .5em; margin-top: 10px; }
 .section-block-mission .mission-panel .mission-btn-done { color: #fff !important; }
-.section-block-mission .mission-panel.book .arrowBar .arrowBar-color, .section-block-mission .mission-panel.book [class*="mission-btn"] { background-color: #ee8919; }
-.section-block-mission .mission-panel.article .arrowBar .arrowBar-color, .section-block-mission .mission-panel.article [class*="mission-btn"] { background-color: #00abce; }
-.section-block-mission .mission-panel.aibadge .arrowBar .arrowBar-color, .section-block-mission .mission-panel.aibadge [class*="mission-btn"] { background-color: #e56287; }
-.section-block-mission .mission-panel.aibook .arrowBar .arrowBar-color, .section-block-mission .mission-panel.aibook [class*="mission-btn"] { background-color: #96bb1e; }
-.section-block-mission .mission-panel.storytelling .arrowBar .arrowBar-color, .section-block-mission .mission-panel.storytelling [class*="mission-btn"] { background-color: #9b7cb6; }
+.section-block-mission .mission-panel.book .arrowBar .arrowBar-color, .section-block-mission .mission-panel.book [class*="mission-btn"] { background-color: #ee8919 !important; }
+.section-block-mission .mission-panel.article .arrowBar .arrowBar-color, .section-block-mission .mission-panel.article [class*="mission-btn"] { background-color: #00abce !important; }
+.section-block-mission .mission-panel.aibadge .arrowBar .arrowBar-color, .section-block-mission .mission-panel.aibadge [class*="mission-btn"] { background-color: #e56287 !important; }
+.section-block-mission .mission-panel.aibook .arrowBar .arrowBar-color, .section-block-mission .mission-panel.aibook [class*="mission-btn"] { background-color: #96bb1e !important; }
+.section-block-mission .mission-panel.storytelling .arrowBar .arrowBar-color, .section-block-mission .mission-panel.storytelling [class*="mission-btn"] { background-color: #9b7cb6 !important; }
 
 /* ******* ******* ******* ******* ******* ******* ******* */
 /* ******* ******* ******* ******* ******* ******* ******* */
